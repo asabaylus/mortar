@@ -1,0 +1,28 @@
+{
+  "name": "mortar",
+  "description": "National Geographic Society Living Style Guide",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "load-grunt-tasks": "~0.3.0",
+    "time-grunt": "~0.2.9",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-shell": "~0.6.4",
+    "grunt-contrib-compass": "~0.7.2",
+    "grunt-build-control": "git+ssh://git@github.com:robwierzbowski/grunt-build-control.git",
+    "grunt-browser-sync": "~0.6.0",
+    "grunt-autoprefixer": "~0.7.2",
+    "browser-sync": "~0.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/natgeo/mortar.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/natgeo/mortar/issues"
+  }
+}

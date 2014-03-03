@@ -1,0 +1,18 @@
+{
+  "name": "Mortar",
+  "version": "0.1.0",
+  "homepage": "https://github.com/natgeo/icongs",
+  "authors": [
+    "Welch Canavan <welch.canavan@gmail.com>"
+  ],
+  "description": "The default icon font for the National Geographic Society",
+  "dependencies" : {
+    "icongs": "git@github.com:natgeo/icongs.git#0.1.0"
+  },
+  "keywords": [
+    "icon",
+    "font"
+  ],
+  "license": "MIT",
+  "private": true
+}

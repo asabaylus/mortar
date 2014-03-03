@@ -1,0 +1,15 @@
+@function btn-text-color( $color ) {
+    @return if( yiq($color) >= 128, $color-text, $color-text-inverse);
+}
+
+@mixin btn( $color ) {
+    background-color: $color;
+    color: btn-text-color( $color );
+    box-shadow: 0 $btn-offset-y darken( $color, 20 );
+
+    &:hover {
+        background-color: lighten( $color, 10 );
+        color: lighten( btn-text-color( $color ), 10);
+        box-shadow: 0 $btn-offset-y $color;
+    }
+}
