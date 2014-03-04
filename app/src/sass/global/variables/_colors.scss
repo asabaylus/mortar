@@ -1,24 +1,49 @@
-// Colors
-// ======
+// Color Variables
+// ===============
 //
-// These are just to create
+// These should not be referenced outside of this partial
 
-$brand-blue:    #021122;
-$medium-blue:   #282e5c;
-$bright-blue:   #4d58ec;
-$medium-grey:   #898a8d;
-$light-grey:    #f3f4f4;
-$off-white:     #f5f6f6;
-$brand-gold:    #ffcc00;
+$brand-blue:    hsl(212, 89%, 7%);
+$medium-blue:   hsl(233, 39%, 26%);
+$bright-blue:   hsl(236, 81%, 61%);
+$medium-grey:   hsl(225, 2%, 55%);
+$light-grey:    hsl(180, 4%, 85%);
+$off-white:     hsl(180, 5%, 98%);
+$brand-gold:    hsl(48, 100%, 50%);
 $red:           darken(red, 10);
 
 // Semantic Variables
 // ==================
+//
+// These variables are for use throughout the project
 
 $color-basic:           $off-white;
+$color-inverse:         $brand-blue;
 $color-primary:         $medium-blue;
 $color-highlight:       $brand-gold;
 $color-lowlight:        $light-grey;
 $color-danger:          $red;
 $color-text:            $brand-blue;
 $color-text-inverse:    $off-white;
+$color-link:            $bright-blue;
+$color-link-inverse:    lighten( $bright-blue, 10 );
+// $color-link-inverse:    invert( $bright-blue );
+
+/*doc
+---
+title: Colors
+name: colors
+category: Sass
+---
+
+<div class="layout_colorsample">
+    <figure class="colorsample-container">
+        <div class="colorsample-sample" style="background-color: #f5f6f6">test</div>
+        <figcaption>
+            var: <code>$color-basic</code><br />
+            hex: <code>#f5f6f6</code><br />
+        </figcaption>
+    </figure>
+</div>
+
+*/

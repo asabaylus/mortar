@@ -24,6 +24,8 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
+    modular-scale (2.0.4)
+      compass (>= 0.12.0)
     multi_json (1.8.4)
     posix-spawn (0.3.8)
     pygments.rb (0.4.2)
@@ -54,4 +56,5 @@ PLATFORMS
 DEPENDENCIES
   compass (~> 1.0.0.alpha.18)
   hologram (~> 1.0.0)
+  modular-scale (~> 2.0.4)
   sass-globbing (~> 1.1.0)

@@ -40,9 +40,11 @@ module.exports = (grunt) ->
                     sassDir: '<%= app.mortarScss %>'
                     cssDir: '.tmp/css'
                     bundleExec: true
-                    noLineComments: true
+                    debugInfo: false
+                    trace: true
                     require: [
                         'sass-globbing'
+                        'modular-scale'
                     ]
 
         autoprefixer:

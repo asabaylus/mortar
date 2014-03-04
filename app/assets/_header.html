@@ -1,25 +1,40 @@
 <!doctype html>
-<html>
-  <head>
-    <title>a brand new styleguide: <%= title %></title>
-    <link rel="stylesheet" href="./css/mortar.css">
-  </head>
-  <body>
+<html class="backgroundbasic">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>a brand new styleguide: <%= title %></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <header>
-        <h1>Mortar</h1>
-        <nav>
-          <ul>
-          <% @categories.each do |category, file_name| %>
-            <li><a href="<%= file_name %>"><%= category %></a></li>
-          <% end %>
-          </ul>
-        </nav>
-    </header>
+        <link rel="stylesheet" href="./css/mortar.css">
+        <script type="text/javascript">
+            (function(d) {
+                var config = {
+                    kitId: 'rxz3wjw',
+                    scriptTimeout: 3000
+            },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            })(document);
+        </script>
+    </head>
 
-    <section class="content">
-      <ul>
-      <% @blocks.each do |b| %>
-        <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
-      <% end %>
-      </ul>
+    <body>
+        <header>
+            <hgroup class="backgroundhighlight">
+                <h1><a href="/">Mortar</a></h1>
+                <h2 class="subh5">A living style guide for the National Geographic Society</h2>
+            </hgroup>
+            <nav class="backgroundinverse">
+            <% @categories.each do |category, file_name| %>
+                <a class="headinginverse h5" href="<%= file_name %>"><%= category %></a>
+            <% end %>
+                <a href="http://natgeo.github.io/icongs/" class="headinginverse h5">icoNGS</a>
+            </nav>
+        </header>
+
+        <section class="content">
+            <ul class="backgroundlowlight">
+            <% @blocks.each do |b| %>
+                <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
+            <% end %>
+            </ul>

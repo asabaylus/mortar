@@ -1,5 +1,100 @@
-%h4 {
-  font-family: $font-headline;
-  font-weight: 600;
-  font-size: 1em;
+// Headings
+// ========
+
+.h1 {
+    @extend h1;
+}
+
+.h2 {
+    @extend h2;
+}
+
+.h3 {
+    @extend h3;
+}
+
+.h4 {
+    @extend h4;
+}
+
+.h5 {
+    @extend h5;
+}
+
+.h6 {
+    @extend h6;
+}
+
+// Sub Headings
+// ============
+
+/*doc
+---
+title: Sub Headings
+name: subheadings
+parent: headings
+---
+
+```html_example
+<h1 class="subh1">Sub Heading 1</h1>
+<h2 class="subh2">Sub Heading 2</h2>
+<h3 class="subh3">Sub Heading 3</h3>
+<h4 class="subh4">Sub Heading 4</h4>
+<h5 class="subh5">Sub Heading 5</h5>
+<h6 class="subh6">Sub Heading 6</h6>
+```
+
+*/
+
+.subh1,
+.subh2,
+.subh3,
+.subh3,
+.subh4,
+.subh5,
+.subh6 {
+    @extend %font-default;
+}
+
+.subh1 {
+    @extend %font-size-xxlrg;
+}
+
+.subh2 {
+    @extend %font-size-xlrg;
+}
+
+.subh3 {
+    @extend %font-size-lrg;
+}
+
+.subh4 {
+    @extend %font-size-med;
+}
+
+.subh5 {
+    @extend %font-size-norm;
+}
+
+.subh6 {
+    @extend %font-size-sm;
+}
+
+// Heading of inverse color
+
+.headinginverse {
+    text-decoration: none;
+    color: $color-text-inverse;
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: underline;
+        color: $color-text-inverse;
+    }
+
+    &:visited {
+        text-decoration: none;
+        color: $color-text-inverse;
+    }
 }

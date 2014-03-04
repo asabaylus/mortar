@@ -1,0 +1,100 @@
+@import "compass/typography/vertical_rhythm";
+
+%font-default {
+    font-family: $font-default;
+    font-weight: normal;
+}
+
+%font-default-strong {
+    font-family: $font-default;
+    font-weight: 700;
+}
+
+%font-default-em {
+    font-family: $font-default;
+    font-style: italic;
+}
+
+%font-default-strong-em {
+    font-family: $font-default;
+    font-weight: 700;
+    font-style: italic;
+}
+
+%font-alternate {
+    font-family: $font-alternate;
+    font-weight: 700;
+}
+
+/*doc
+---
+title: Fonts
+name: fonts
+category: Typography
+---
+
+Primary font: "minion-pro", Georgia, Times, "Times New Roman", serif
+
+<em>Primary font italic: "minion-pro", Georgia, Times, "Times New Roman", serif</em>
+
+<strong>Primary font bold: "minion-pro", Georgia, Times, "Times New Roman", serif</strong>
+
+<strong><em>Primary font bold italic: "minion-pro", Georgia, Times, "Times New Roman", serif</em></strong>
+
+<p class="h6">Secondary font: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</p>
+
+*/
+
+%font-size-xsm {
+    @include adjust-font-size-to( $ms-xsm );
+}
+
+%font-size-sm {
+    @include adjust-font-size-to( $ms-sm );
+}
+
+%font-size-norm {
+    @include adjust-font-size-to( $ms-norm );
+}
+
+%font-size-med {
+    @include adjust-font-size-to( $ms-med );
+}
+
+%font-size-lrg {
+    @include adjust-font-size-to( $ms-lrg );
+}
+
+%font-size-xlrg {
+    @include adjust-font-size-to( $ms-xlrg );
+}
+
+%font-size-xxlrg {
+    @include adjust-font-size-to( $ms-xxlrg );
+}
+
+%font-size-xxxlrg {
+    @include adjust-font-size-to( $ms-xxxlrg );
+}
+
+%font-size-xxxxlrg {
+    @include adjust-font-size-to( $ms-xxxxlrg );
+}
+
+/*doc
+---
+title: Headings
+name: headings
+category: Typography
+---
+
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+
+*/
+
+
