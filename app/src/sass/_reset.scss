@@ -125,7 +125,8 @@ mark {
  */
 
 small {
-  font-size: 80%;
+    @extend %font-size-sm;
+    // font-size: 80%;
 }
 
 /**
@@ -134,10 +135,11 @@ small {
 
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+    @extend %font-size-xsm;
+    // font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
 }
 
 sup {
@@ -224,7 +226,8 @@ svg:not(:root) {
  */
 
 figure {
-    @extend %default-padding;
+    @extend %default-text-margin;
+    margin-left: 0;
 }
 
 /**
@@ -232,8 +235,6 @@ figure {
  */
 
 hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
   height: 0;
 }
 
@@ -343,21 +344,29 @@ input::-moz-focus-inner {
  */
 
 input {
-  line-height: normal;
+    &:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
+        @extend %input-text-theme;
+    }
+
+    &:not([type="checkbox"]):not([type="radio"]) {
+        width: 100%;
+    }
+
+    line-height: normal;
 }
 
 /**
  * It's recommended that you don't attempt to style these elements.
  * Firefox's implementation doesn't respect box-sizing, padding, or width.
  *
- * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
 
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+    // width: auto;
+    margin-right: $padding-quarter;
+    padding: 0; /* 2 */
 }
 
 /**
@@ -373,15 +382,10 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /**
  * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
- *    (include `-moz` to future-proof).
  */
 
 input[type="search"] {
   -webkit-appearance: textfield; /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box; /* 2 */
-  box-sizing: content-box;
 }
 
 /**
@@ -393,6 +397,10 @@ input[type="search"] {
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
+}
+
+input[type="color"] {
+    height: $ms-med * 2;
 }
 
 /**
@@ -411,8 +419,11 @@ fieldset {
  */
 
 legend {
-  border: 0; /* 1 */
-  padding: 0; /* 2 */
+    @extend label;
+    @extend h5;
+
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
 }
 
 /**
@@ -420,7 +431,10 @@ legend {
  */
 
 textarea {
-  overflow: auto;
+    @extend %input-text-theme;
+
+    width: 100%;
+    overflow: auto;
 }
 
 /**
@@ -429,8 +443,147 @@ textarea {
  */
 
 optgroup {
-  font-weight: bold;
+    font-weight: bold;
 }
+
+label {
+    display: block;
+    margin-bottom: $padding-quarter;
+}
+
+/*doc
+---
+title: Text Fields
+name: textfields
+category: Elements
+---
+
+<form>
+    <fieldset>
+        <div class="field-container">
+            <label for="text">Text Input <abbr title="Required">*</abbr></label>
+            <input id="text" type="text" placeholder="Text Input">
+        </div>
+        <div class="field-container">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Type your Password">
+        </div>
+        <div class="field-container">
+            <label for="webaddress">Web Address</label>
+            <input id="webaddress" type="url" placeholder="http://yoursite.com">
+        </div>
+        <div class="field-container">
+            <label for="emailaddress">Email Address</label>
+            <input id="emailaddress" type="email" placeholder="name@email.com">
+        </div>
+        <div class="field-container">
+            <label for="search">Search</label>
+            <input id="search" type="search" placeholder="Enter Search Term">
+        </div>
+        <div class="field-container">
+            <label for="text">Number Input <abbr title="Required">*</abbr></label>
+            <input id="text" type="number" placeholder="Enter a Number" pattern="[0-9]*">
+        </div>
+        <div class="field-container">
+            <label for="textarea">Textarea</label>
+            <textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
+        </div>
+        <div class="field-container">
+            <label class="error">Error Input</label>
+            <input class="is-error" type="text" placeholder="Text Input">
+        </div>
+        <div class="field-container">
+            <label class="valid">Valid</label>
+            <input class="is-valid" type="text" placeholder="Text Input">
+        </div>
+    </fieldset>
+</form>
+
+*/
+
+/*doc
+title: Select Menu
+name: selectmenu
+category: Elements
+
+<form>
+    <fieldset>
+        <div class="field-container">
+            <label for="select">Select</label>
+            <select id="select">
+                <optgroup label="Option Group">
+                    <option>Option One</option>
+                    <option>Option Two</option>
+                    <option>Option Three</option>
+                </optgroup>
+            </select>
+        </div>
+    </fieldset>
+</form>
+
+*/
+
+/*doc
+---
+title: Checkbox
+name: checkbox
+category: Elements
+---
+
+<form>
+    <fieldset class="options">
+        <legend>Checkbox <abbr title="Required">*</abbr></legend>
+        <ul>
+            <li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> Choice A</label></li>
+            <li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Choice B</label></li>
+            <li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice C</label></li>
+        </ul>
+    </fieldset>
+</form>
+
+*/
+
+/*doc
+---
+title: Radio Buttons
+name: radiobuttons
+category: Elements
+---
+
+<form>
+    <fieldset class="options">
+        <legend>Radio</legend>
+        <ul>
+            <li><label for="radio1"><input id="radio1" name="radio" type="radio" class="radio" checked="checked"> Option 1</label></li>
+            <li><label for="radio2"><input id="radio2" name="radio" type="radio" class="radio"> Option 2</label></li>
+            <li><label for="radio3"><input id="radio3" name="radio" type="radio" class="radio"> Option 3</label></li>
+        </ul>
+    </fieldset>
+</form>
+
+*/
+
+/*doc
+---
+title: HTML5 Inputs
+name: htmlfiveinputs
+category: Elements
+---
+
+<form>
+    <fieldset>
+        <div class="field-container"><label for="ic">Color input</label> <input type="color" id="ic" value="#000000"></div>
+        <div class="field-container"><label for="in">Number input</label> <input type="number" id="in" min="0" max="10" value="5"></div>
+        <div class="field-container"><label for="ir">Range input</label> <input type="range" id="ir" value="10"></div>
+        <div class="field-container"><label for="idd">Date input</label> <input type="date" id="idd" value="1970-01-01"></div>
+        <div class="field-container"><label for="idm">Month input</label> <input type="month" id="idm" value="1970-01"></div>
+        <div class="field-container"><label for="idw">Week input</label> <input type="week" id="idw" value="1970-W01"></div>
+        <div class="field-container"><label for="idt">Datetime input</label> <input type="datetime" id="idt" value="1970-01-01T00:00:00Z"></div>
+        <div class="field-container"><label for="idtl">Datetime-local input</label> <input type="datetime-local" id="idtl" value="1970-01-01T00:00"></div>
+    </fieldset>
+</form>
+
+*/
 
 /* Tables
    ========================================================================== */

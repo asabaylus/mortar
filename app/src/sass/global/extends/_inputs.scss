@@ -1,0 +1,8 @@
+// Inputs, including text area
+
+%input-text-theme {
+    @extend %font-default-em;
+    border: 1px solid $color-text;
+    padding: $padding-quarter $padding-half;
+    margin: 0;
+}

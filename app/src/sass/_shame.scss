@@ -1,3 +1,6 @@
+// Hologram specific things
+// ========================
+
 // Layout Variables
 
 $center-column-width-sm: 85%;
@@ -44,12 +47,71 @@ footer {
     padding-bottom: $padding-half;
 }
 
-.content {
+main {
     margin-left: auto;
     margin-right: auto;
     width: $center-column-width-sm;
+    margin-bottom: $padding-double;
 }
 
+.field-container {
+    margin-bottom: $padding-default;
+}
+
+.navitem {
+    margin-right: $padding-default;
+    padding-top: $padding-quarter;
+    padding-bottom: $padding-quarter;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+main {
+    > h1 {
+        @include margin-leader( 2, $ms-xxxxlrg );
+        @include margin-trailer( 1, $ms-xxxxlrg );
+
+        + h1 {
+            margin-bottom: 0;
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    > h2 {
+        @include margin-leader( 1, $ms-xxxxlrg );
+        @include margin-trailer( .5, $ms-xxxxlrg );
+    }
+}
+
+// Code Blocks
+
+.codeExample {
+    // border-radius: $ms-norm;
+    // overflow: hidden;
+    border: 2px solid $color-lowlight;
+}
+
+.exampleOutput {
+    padding: $padding-half $padding-default;
+}
+
+.codeBlock {
+    background-color: white;
+    padding: $padding-half $padding-default;
+    border-top: 2px solid $color-lowlight;
+
+    pre {
+        margin: 0;
+    }
+}
+
+// Things with no home
+// ===================
 
 
 .textinverse {

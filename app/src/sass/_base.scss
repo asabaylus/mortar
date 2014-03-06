@@ -86,7 +86,23 @@ a:visited {
     color: $color-link;
 }
 
-// Headings
+/*doc
+---
+title: Headings
+name: headings
+category: Typography
+---
+
+```html_example
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+```
+
+*/
 
 h1,
 h2,
@@ -98,24 +114,6 @@ h6 {
 
     margin: 0;
     padding: 0;
-
-    a {
-        color: $color-text;
-        text-decoration: none;
-    }
-
-    a:visited {
-        color: $color-text;
-        text-decoration: none;
-    }
-
-    a:hover,
-    a:focus,
-    a:active {
-        color: lighten( $color-text, 15);
-        text-decoration: none;
-    }
-
 }
 
 h1 {
@@ -145,7 +143,7 @@ h6 {
 // paragraphs
 
 p {
-    @extend %default-padding;
+    @extend %default-text-margin;
 }
 
 
@@ -154,7 +152,7 @@ p {
 
 ul,
 ol {
-    @extend %default-padding;
+    @extend %default-text-margin;
     padding-left: $padding-one-and-half;
 
     > li > ul,
@@ -186,8 +184,16 @@ ol {
         counter-increment: custom-ol;
         list-style-type: decimal-leading-zero;
         position: absolute;
-        left: -#{$padding-default};
+        left: -#{$padding-one-and-half};
         top: 0;
+    }
+}
+
+form {
+    ol,
+    ul {
+        list-style: none;
+        padding-left: 0;
     }
 }
 

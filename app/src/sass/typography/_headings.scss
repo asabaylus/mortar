@@ -1,5 +1,21 @@
-// Headings
-// ========
+// Heading Classes
+// ===============
+
+/*doc
+---
+title: Heading Classes
+name: heading classes
+parent: headings
+---
+
+Headings are also available as classes so you can use them when a semantic tag doesn't line up with style need.
+
+```html_example
+<h1 class="h3">h1 styled as h3</h1>
+<span class="h1">span styled as h1</h1>
+```
+
+*/
 
 .h1 {
     @extend h1;
@@ -78,6 +94,27 @@ parent: headings
 
 .subh6 {
     @extend %font-size-sm;
+}
+
+// Heading with link
+
+.headingwithlink {
+    > a {
+        color: $color-text;
+        text-decoration: none;
+
+        &:visited {
+            color: $color-text;
+            text-decoration: none;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: lighten( $color-text, 15);
+            text-decoration: none;
+        }
+    }
 }
 
 // Heading of inverse color

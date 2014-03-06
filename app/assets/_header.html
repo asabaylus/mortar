@@ -7,6 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="./css/mortar.css">
+        <link rel="stylesheet" href="bower_components/pygments/css/colorful.css">
+        <script src="bower_components/modernizr/modernizr.js"></script>
+
         <script type="text/javascript">
             (function(d) {
                 var config = {
@@ -21,18 +24,18 @@
     <body>
         <header>
             <hgroup class="backgroundhighlight">
-                <h1><a href="/">Mortar</a></h1>
-                <h2 class="subh5">A living style guide for the National Geographic Society</h2>
+                <h1 class="headingwithlink"><a href="/">Mortar</a></h1>
+                <h2 class="subh4">A living style guide for the National Geographic Society</h2>
             </hgroup>
             <nav class="backgroundinverse">
             <% @categories.each do |category, file_name| %>
-                <a class="headinginverse h5" href="<%= file_name %>"><%= category %></a>
+                <a class="navitem headinginverse h5" href="<%= file_name %>"><%= category %></a>
             <% end %>
-                <a href="http://natgeo.github.io/icongs/" class="headinginverse h5">icoNGS</a>
+                <a class="navitem headinginverse h5" href="http://natgeo.github.io/icongs/">icoNGS</a>
             </nav>
         </header>
 
-        <section class="content">
+        <main class="content">
             <ul class="backgroundlowlight">
             <% @blocks.each do |b| %>
                 <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
