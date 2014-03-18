@@ -7,7 +7,7 @@
   ],
   "description": "The default icon font for the National Geographic Society",
   "dependencies": {
-    "icongs": "git@github.com:natgeo/icongs.git#0.1.0"
+    "icongs": "git@github.com:natgeo/icongs.git#0.2.0"
   },
   "keywords": [
     "icon",
