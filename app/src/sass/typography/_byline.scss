@@ -1,0 +1,18 @@
+/*doc
+---
+title: Byline
+name: byline
+category: Typography
+---
+
+```html_example
+<p class="byline">Photograph by Kacker Pempel</p>
+```
+
+*/
+
+.byline {
+    @extend .subh5;
+
+    color: $color-beta;
+}

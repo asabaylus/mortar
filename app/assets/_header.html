@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="./css/mortar.css">
+        <link rel="stylesheet" href="./css/hologram.css">
         <link rel="stylesheet" href="bower_components/pygments/css/colorful.css">
         <script src="bower_components/modernizr/modernizr.js"></script>
 
@@ -35,9 +36,12 @@
             </nav>
         </header>
 
-        <main class="content">
-            <ul class="backgroundlowlight">
-            <% @blocks.each do |b| %>
-                <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
-            <% end %>
-            </ul>
+        <div class="container cf">
+            <nav class="subnav">
+                <ul>
+                <% @blocks.each do |b| %>
+                    <li class="headingwithlink"><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
+                <% end %>
+                </ul>
+            </nav>
+            <main class="content">

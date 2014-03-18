@@ -66,37 +66,59 @@ parent: headings
 .subh2,
 .subh3,
 .subh3,
-.subh4,
+.subh4 {
+    @extend %font-alternate-strong;
+}
+
 .subh5,
 .subh6 {
-    @extend %font-default;
+    @extend %font-alternate;
+
+    strong {
+        @extend %font-alternate-strong;
+    }
 }
 
 .subh1 {
-    @extend %font-size-xxlrg;
-}
-
-.subh2 {
-    @extend %font-size-xlrg;
-}
-
-.subh3 {
     @extend %font-size-lrg;
 }
 
-.subh4 {
+.subh2 {
     @extend %font-size-med;
 }
 
-.subh5 {
+.subh3 {
     @extend %font-size-norm;
+    text-transform: uppercase;
+}
+
+.subh4 {
+    @extend %font-size-norm;
+}
+
+.subh5 {
+    @extend %font-size-sm;
+
+    text-transform: uppercase;
 }
 
 .subh6 {
     @extend %font-size-sm;
 }
 
-// Heading with link
+/*doc
+---
+title: Heading with link
+name: headingwithlink
+parent: headings
+---
+
+```html_example
+<h3 class="headingwithlink"><a href="#">Heading with link</a></h3>
+<h3 class="subh3 headingwithlink"><a href="#">Sub Heading with link</a></h3>
+```
+
+*/
 
 .headingwithlink {
     > a {

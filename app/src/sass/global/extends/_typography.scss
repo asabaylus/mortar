@@ -1,13 +1,33 @@
 @import "compass/typography/vertical_rhythm";
 
+/*doc
+---
+title: Fonts
+name: fonts
+category: Typography
+---
+
+Primary font: "utopia-std", Georgia, Times, "Times New Roman", serif
+
+<em>Primary font italic: "utopia-std", Georgia, Times, "Times New Roman", serif</em>
+
+<strong>Primary font bold: "utopia-std", Georgia, Times, "Times New Roman", serif</strong>
+
+<strong><em>Primary font bold italic: "utopia-std", Georgia, Times, "Times New Roman", serif</em></strong>
+
+<p class="subh5">Secondary font: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</p>
+
+<p class="subh5"><strong>Secondary font bold: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</strong></p>
+
+*/
+
 %font-default {
     font-family: $font-default;
-    font-weight: normal;
 }
 
 %font-default-strong {
     font-family: $font-default;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 %font-default-em {
@@ -17,33 +37,20 @@
 
 %font-default-strong-em {
     font-family: $font-default;
-    font-weight: 700;
+    font-weight: 600;
     font-style: italic;
 }
 
 %font-alternate {
     font-family: $font-alternate;
+}
+
+%font-alternate-strong {
+    font-family: $font-alternate;
     font-weight: 700;
 }
 
-/*doc
----
-title: Fonts
-name: fonts
-category: Typography
----
-
-Primary font: "minion-pro", Georgia, Times, "Times New Roman", serif
-
-<em>Primary font italic: "minion-pro", Georgia, Times, "Times New Roman", serif</em>
-
-<strong>Primary font bold: "minion-pro", Georgia, Times, "Times New Roman", serif</strong>
-
-<strong><em>Primary font bold italic: "minion-pro", Georgia, Times, "Times New Roman", serif</em></strong>
-
-<p class="h6">Secondary font: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</p>
-
-*/
+// Font sizes
 
 %font-size-xsm {
     @include adjust-font-size-to( $ms-xsm );

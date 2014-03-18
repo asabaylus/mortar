@@ -5,6 +5,7 @@ html {
     @extend %font-default;
     @extend %font-size-norm;
 
+    font-weight: normal;
     color: $color-text;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -110,7 +111,8 @@ h3,
 h4,
 h5,
 h6 {
-    @extend %font-alternate;
+    @extend %font-default;
+    font-weight: 400;
 
     margin: 0;
     padding: 0;
@@ -177,8 +179,10 @@ ol {
         list-style-type: none;
     }
 
-    > li:before {
-        @extend h6;
+    > li::before {
+        @extend %font-alternate;
+        @extend %font-size-sm;
+        font-weight: 700;
 
         content: counter(custom-ol, decimal-leading-zero) ".";
         counter-increment: custom-ol;
@@ -235,3 +239,38 @@ category: Typography
 </ol>
 
 */
+
+blockquote {
+    @extend .subh1;
+    margin: 0;
+    quotes: "\201C""\201D""\2018""\2019";
+    position: relative;
+
+    &::before {
+        content: open-quote;
+        position: absolute;
+        top: 0;
+        left: -#{$padding-half};
+    }
+
+    &::after {
+        content: close-quote;
+    }
+}
+
+/*doc
+---
+title: Blockquote
+name: blockquote
+category: Typography
+---
+
+```html_example
+<blockquote>History as well as life itself is complicated -- neither life nor history is an enterprise for those who seek simplicity and consistency.</blockquote>
+```
+
+*/
+
+figcaption {
+    @extend .caption;
+}

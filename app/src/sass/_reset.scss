@@ -116,8 +116,8 @@ dfn {
  */
 
 mark {
-  background: #ff0;
-  color: #000;
+  background: $color-highlight;
+  color: $color-text;
 }
 
 /**
@@ -126,7 +126,6 @@ mark {
 
 small {
     @extend %font-size-sm;
-    // font-size: 80%;
 }
 
 /**
@@ -136,7 +135,6 @@ small {
 sub,
 sup {
     @extend %font-size-xsm;
-    // font-size: 75%;
     line-height: 0;
     position: relative;
     vertical-align: baseline;

@@ -1,0 +1,20 @@
+/*doc
+---
+title: Caption
+name: caption
+category: Typography
+---
+
+```html_example
+<p class="caption">A man fishes in an artificial lake outside Poland's coal-fired Belchatow Power Station October 31, 2013. The Polish government's decision to host a coal-industry conference during international climate talks has drawn fire from environmental activists.</p>
+
+<p>or</p>
+
+<figcaption>A man fishes in an artificial lake outside Poland's coal-fired Belchatow Power Station October 31, 2013. The Polish government's decision to host a coal-industry conference during international climate talks has drawn fire from environmental activists.</figcaption>
+```
+
+*/
+
+.caption {
+    @extend .subh6;
+}
