@@ -1,8 +1,12 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-# gem "rails"
+# hologram only
 gem "hologram", "~> 1.0.0"
-gem "compass", "~> 1.0.0.alpha.18"
+gem "breakpoint", "~> 2.4.1"
+gem "singularitygs", "~> 1.2.0.rc.6"
+
+# mortar
+gem "compass", "~> 1.0.0.alpha.19"
 gem "sass-globbing", "~> 1.1.0"
 gem "modular-scale", "~> 2.0.4"
