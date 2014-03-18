@@ -11,6 +11,8 @@ module.exports = (grunt) ->
     appConfig =
         mortarScss: 'app/src/sass'
         mortarCss: '.tmp/css/mortar.css'
+        hologramScss: 'app/doc_src/sass'
+        hologramCss: '.tmp/css/hologram.css'
         docsCss: '.docs/css/'
 
     grunt.initConfig
@@ -23,7 +25,6 @@ module.exports = (grunt) ->
                     'app/assets/*'
                 ]
                 tasks: 'shell:hologram'
-
             mortarScss:
                 files: '<%= app.mortarScss %>/**/*'
                 tasks: [
@@ -31,25 +32,40 @@ module.exports = (grunt) ->
                     'autoprefixer:mortar'
                     'copy:mortarCss'
                 ]
+            hologramScss:
+                files: '<%= app.hologramScss %>/**/*'
+                tasks: [
+                    'compass:hologram'
+                    'autoprefixer:hologram'
+                    'copy:hologramCss'
+                ]
 
         clean: ['.tmp/', '.docs/', '.component/']
 
         compass:
+            options:
+                bundleExec: true
+                debugInfo: false
+                require: [
+                    'sass-globbing'
+                    'modular-scale'
+                    'breakpoint'
+                    'singularitygs'
+                ]
+            hologram:
+                options:
+                    sassDir: '<%= app.hologramScss %>'
+                    cssDir: '.tmp/css'
             mortar:
                 options:
                     sassDir: '<%= app.mortarScss %>'
                     cssDir: '.tmp/css'
-                    bundleExec: true
-                    debugInfo: false
-                    trace: true
-                    require: [
-                        'sass-globbing'
-                        'modular-scale'
-                    ]
 
         autoprefixer:
             mortar:
                 src: '<%= app.mortarCss %>'
+            hologram:
+                src: '<%= app.hologramCss %>'
 
         copy:
             mortarCss:
@@ -57,7 +73,11 @@ module.exports = (grunt) ->
                 flatten: true
                 src: '<%= app.mortarCss %>'
                 dest: '<%= app.docsCss %>'
-
+            hologramCss:
+                expand: true
+                flatten: true
+                src: '<%= app.hologramCss %>'
+                dest: '<%= app.docsCss %>'
 
         shell:
             hologram:
@@ -65,7 +85,7 @@ module.exports = (grunt) ->
                     stdout: true
                 command: 'bundle exec hologram'
 
-        browser_sync:
+        browserSync:
             serve:
                 bsFiles:
                     src: [
@@ -74,14 +94,15 @@ module.exports = (grunt) ->
                     ]
                 options:
                     watchTask: true
+                    hostnameSuffix: ".xip.io"
                     server:
                         baseDir: '.docs'
 
     grunt.registerTask 'serve', [
         'clean'
         'shell:hologram'
-        'compass:mortar'
+        'compass'
         'copy'
-        'browser_sync:serve'
+        'browserSync:serve'
         'watch'
     ]
