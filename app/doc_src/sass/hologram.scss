@@ -24,6 +24,20 @@ $center-column-width-sm: 85%;
 
 $border-default: 2px solid $color-lowlight;
 
+// Font
+
+@import "compass/css3/font-face";
+
+@include font-face("icongs",
+  font-files(
+    "icongs_4176808f3eae2f9b12b92233f91f7ba2.woff",
+    "icongs_4176808f3eae2f9b12b92233f91f7ba2.ttf",
+    "icongs_4176808f3eae2f9b12b92233f91f7ba2.svg"
+  ),
+  "icongs_4176808f3eae2f9b12b92233f91f7ba2.eot",
+  normal
+);
+
 .layout_colorsample {
     @for $i from 1 to 10 {
         @media screen and (min-width: $i * 15em) {
