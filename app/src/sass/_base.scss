@@ -241,7 +241,9 @@ category: Typography
 */
 
 blockquote {
-    @extend .subh1;
+    @extend %font-alternate-strong;
+    @extend %font-size-lrg;
+
     margin: 0;
     quotes: "\201C""\201D""\2018""\2019";
     position: relative;

@@ -104,7 +104,7 @@ footer {
 
 main {
     > h1 {
-        @include margin-leader( 2, $ms-xxxxlrg );
+        @include margin-leader( 4, $ms-xxxxlrg );
         @include margin-trailer( 1, $ms-xxxxlrg );
 
         + h1 {
@@ -117,8 +117,8 @@ main {
     }
 
     > h2 {
-        @include margin-leader( 1, $ms-xxxxlrg );
-        @include margin-trailer( .5, $ms-xxxxlrg );
+        @include margin-leader( 2, $ms-xxxxlrg );
+        @include margin-trailer( 1, $ms-xxxxlrg );
     }
 
     @include breakpoint( $bp-mlrg ) {
