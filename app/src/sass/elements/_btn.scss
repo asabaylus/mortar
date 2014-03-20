@@ -22,15 +22,16 @@ Button                                              | Class               | Desc
 .btn {
     @extend %font-alternate;
     @extend %font-size-norm;
-    line-height: 1;
-    // text-transform: uppercase;
+
     border: 0;
-    padding: 1em;
     border-radius: .5em;
-    margin-bottom: $btn-offset-y * 2;
-    text-align: center;
     box-sizing: border-box;
     cursor: default;
+    line-height: 1;
+    margin-bottom: $btn-offset-y * 2;
+    padding: 1em;
+    text-align: center;
+    // text-transform: uppercase;
 
     // Iterate over button skins
 
@@ -43,8 +44,8 @@ Button                                              | Class               | Desc
     // This rule set must be last
 
     &:active {
+        box-shadow: none;
         position: relative;
         top: $btn-offset-y;
-        box-shadow: none;
     }
 }

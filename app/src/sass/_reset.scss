@@ -431,8 +431,8 @@ legend {
 textarea {
     @extend %input-text-theme;
 
-    width: 100%;
     overflow: auto;
+    width: 100%;
 }
 
 /**

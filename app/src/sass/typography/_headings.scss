@@ -48,18 +48,18 @@ parent: headings
 // Heading of inverse color
 
 .headinginverse {
-    text-decoration: none;
     color: $color-text-inverse;
+    text-decoration: none;
 
     &:hover,
     &:focus,
     &:active {
-        text-decoration: underline;
         color: $color-text-inverse;
+        text-decoration: underline;
     }
 
     &:visited {
-        text-decoration: none;
         color: $color-text-inverse;
+        text-decoration: none;
     }
 }
