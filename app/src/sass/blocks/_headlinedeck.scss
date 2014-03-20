@@ -9,7 +9,7 @@ category: Blocks
 <p class="subh5 headlinedeck-duration">3 Min read</p>
 <p class="subh3 headlinedeck-category">Behind the Cover</p>
 <h1>Photos: With Ukraine in Disarray, Crimea Heats Up</h1>
-<h2 class="subh2 headlinedeck-subtitle">Step into the Void, a new 12,650-foot (3,856-meter) perch in the French Alps, the scariest?</h2>
+<h2 class="subh2 headlinedeck-subtitle">Step into the Void, a new 12,650-foot perch in the French Alps, the scariest?</h2>
 
 <p class="subh6 headlinedeck-author">By <strong>Brian Handwerk</strong></p>
 <p class="byline">Published November 22, 2013</p>
@@ -18,19 +18,19 @@ category: Blocks
 
 
 .headlinedeck {
-    @include e( duration ) {
+    @include e(duration) {
         margin-bottom: 0;
     }
 
-    @include e( category ) {
+    @include e(category) {
         margin-bottom: 0;
     }
 
-    @include e( subtitle ) {
+    @include e(subtitle) {
         @include margin-trailer(2, $ms-sm);
     }
 
-    @include e( author ) {
+    @include e(author) {
         margin-bottom: 0;
     }
 }

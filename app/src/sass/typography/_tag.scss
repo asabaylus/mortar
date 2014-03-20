@@ -12,7 +12,7 @@ category: Typography
 */
 
 .tag {
-    @extend .subh4;
+    @extend %subh4;
 
     padding: $padding-half;
     border: $border-default;

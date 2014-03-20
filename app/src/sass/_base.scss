@@ -119,27 +119,27 @@ h6 {
 }
 
 h1 {
-    @extend %font-size-xxxxlrg;
+    @extend %h1;
 }
 
 h2 {
-    @extend %font-size-xxlrg;
+    @extend %h2;
 }
 
 h3 {
-    @extend %font-size-lrg;
+    @extend %h3;
 }
 
 h4 {
-    @extend %font-size-med;
+    @extend %h4;
 }
 
 h5 {
-    @extend %font-size-norm;
+    @extend %h5;
 }
 
 h6 {
-    @extend %font-size-sm;
+    @extend %h6;
 }
 
 // paragraphs
@@ -245,7 +245,7 @@ blockquote {
     @extend %font-size-lrg;
 
     margin: 0;
-    quotes: "\201C""\201D""\2018""\2019";
+    quotes: "\201C" "\201D" "\2018" "\2019";
     position: relative;
 
     &::before {
@@ -274,5 +274,5 @@ category: Typography
 */
 
 figcaption {
-    @extend .caption;
+    @extend %caption;
 }

@@ -1,0 +1,11 @@
+linters:
+    Comment:
+        enabled: false
+    Indentation:
+        width: 4
+    PropertySortOrder:
+        enabled: false
+    SpaceBetweenParens:
+        spaces: 0
+    StringQuotes:
+        style: double_quotes

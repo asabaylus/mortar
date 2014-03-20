@@ -10,7 +10,7 @@ $medium-grey:   hsl(225, 2%, 65%);
 $light-grey:    hsl(180, 4%, 85%);
 $off-white:     hsl(180, 5%, 98%);
 $brand-gold:    hsl(48, 100%, 50%);
-$red:           darken(red, 10);
+$red:           darken(#f00, 10);
 
 // Semantic Variables
 // ==================
@@ -26,9 +26,8 @@ $color-danger:          $red;
 $color-text:            $brand-blue;
 $color-text-inverse:    $off-white;
 $color-link:            $bright-blue;
-$color-link-inverse:    lighten( $bright-blue, 10 );
+$color-link-inverse:    lighten($bright-blue, 10);
 $color-beta:            $medium-grey;
-// $color-link-inverse:    invert( $bright-blue );
 
 /*doc
 ---

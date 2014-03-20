@@ -14,25 +14,28 @@
     }
 }
 
-
 // .block {
-//   color: red;
-//   @include e(element) {
-//     color: green;
-//     @include m(modifier) {
-//       color: blue;
+//     color: red;
+//
+//     @include e(element) {
+//         color: green;
+//
+//         @include m(modifier) {
+//             color: blue;
+//         }
 //     }
-//   }
 // }
-
+//
 // will compile to this:
-
+//
 // .block {
-//   color: red;
+//     color: red;
 // }
+//
 // .block-element {
-//   color: green;
+//     color: green;
 // }
+//
 // .block-element--modifier {
-//   color: blue;
+//     color: blue;
 // }

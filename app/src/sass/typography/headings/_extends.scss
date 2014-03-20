@@ -1,0 +1,108 @@
+// Heading Classes
+// ===============
+
+/*doc
+---
+title: Heading Classes
+name: heading classes
+parent: headings
+---
+
+Headings are also available as classes so you can use them when a semantic tag doesn't line up with style need.
+
+```html_example
+<h1 class="h3">h1 styled as h3</h1>
+<span class="h1">span styled as h1</h1>
+```
+
+*/
+
+// Headings
+
+%h1 {
+    @extend %font-size-xxxxlrg;
+}
+
+%h2 {
+    @extend %font-size-xxlrg;
+}
+
+%h3 {
+    @extend %font-size-lrg;
+}
+
+%h4 {
+    @extend %font-size-med;
+}
+
+%h5 {
+    @extend %font-size-norm;
+}
+
+%h6 {
+    @extend %font-size-sm;
+}
+
+// Sub Headings
+// ============
+
+/*doc
+---
+title: Sub Headings
+name: subheadings
+parent: headings
+---
+
+```html_example
+<h1 class="subh1">Sub Heading 1</h1>
+<h2 class="subh2">Sub Heading 2</h2>
+<h3 class="subh3">Sub Heading 3</h3>
+<h4 class="subh4">Sub Heading 4</h4>
+<h5 class="subh5">Sub Heading 5</h5>
+<h6 class="subh6">Sub Heading 6</h6>
+```
+
+*/
+
+%subh1,
+%subh2 {
+    @extend %font-alternate-strong;
+}
+
+%subh3,
+%subh4,
+%subh5 {
+    @extend %font-alternate;
+
+    strong {
+        @extend %font-alternate-strong;
+    }
+}
+
+%subh1 {
+    @extend %font-size-norm;
+
+    text-transform: uppercase;
+}
+
+%subh2 {
+    @extend %font-size-norm;
+}
+
+%subh3 {
+    @extend %font-size-norm;
+}
+
+%subh4 {
+    @extend %font-size-sm;
+
+    text-transform: uppercase;
+}
+
+%subh5 {
+    @extend %font-size-sm;
+}
+
+%subh6 {
+    @extend %font-size-sm;
+}

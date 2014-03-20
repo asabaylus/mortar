@@ -5,7 +5,7 @@
  */
 
 body {
-  margin: 0;
+    margin: 0;
 }
 
 /* HTML5 display definitions
@@ -27,7 +27,7 @@ main,
 nav,
 section,
 summary {
-  display: block;
+    display: block;
 }
 
 /**
@@ -39,8 +39,8 @@ audio,
 canvas,
 progress,
 video {
-  display: inline-block; /* 1 */
-  vertical-align: baseline; /* 2 */
+    display: inline-block; /* 1 */
+    vertical-align: baseline; /* 2 */
 }
 
 /**
@@ -49,8 +49,8 @@ video {
  */
 
 audio:not([controls]) {
-  display: none;
-  height: 0;
+    display: none;
+    height: 0;
 }
 
 /**
@@ -60,7 +60,7 @@ audio:not([controls]) {
 
 [hidden],
 template {
-  display: none;
+    display: none;
 }
 
 /* Links
@@ -71,7 +71,7 @@ template {
  */
 
 a {
-  background: transparent;
+    background: transparent;
 }
 
 /**
@@ -80,7 +80,7 @@ a {
 
 a:active,
 a:hover {
-  outline: 0;
+    outline: 0;
 }
 
 /* Text-level semantics
@@ -91,7 +91,7 @@ a:hover {
  */
 
 abbr[title] {
-  border-bottom: 1px dotted;
+    border-bottom: 1px dotted;
 }
 
 /**
@@ -100,7 +100,7 @@ abbr[title] {
 
 b,
 strong {
-  @extend %font-default-strong;
+    @extend %font-default-strong;
 }
 
 /**
@@ -108,7 +108,7 @@ strong {
  */
 
 dfn {
-  font-style: italic;
+    font-style: italic;
 }
 
 /**
@@ -116,8 +116,8 @@ dfn {
  */
 
 mark {
-  background: $color-highlight;
-  color: $color-text;
+    background: $color-highlight;
+    color: $color-text;
 }
 
 /**
@@ -141,11 +141,11 @@ sup {
 }
 
 sup {
-  top: -0.5em;
+    top: -.5em;
 }
 
 sub {
-  bottom: -0.25em;
+    bottom: -.25em;
 }
 
 /*doc
@@ -205,7 +205,7 @@ The <var>variarble element</var>, such as <var>x</var> = <var>y</var>
  */
 
 img {
-  border: 0;
+    border: 0;
 }
 
 /**
@@ -213,7 +213,7 @@ img {
  */
 
 svg:not(:root) {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 /* Grouping content
@@ -233,7 +233,7 @@ figure {
  */
 
 hr {
-  height: 0;
+    height: 0;
 }
 
 /**
@@ -241,7 +241,7 @@ hr {
  */
 
 pre {
-  overflow: auto;
+    overflow: auto;
 }
 
 /**
@@ -252,8 +252,8 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
+    font-family: monospace, monospace;
+    font-size: 1em;
 }
 
 /* Forms
@@ -276,9 +276,9 @@ input,
 optgroup,
 select,
 textarea {
-  color: inherit; /* 1 */
-  font: inherit; /* 2 */
-  margin: 0; /* 3 */
+    color: inherit; /* 1 */
+    font: inherit; /* 2 */
+    margin: 0; /* 3 */
 }
 
 /**
@@ -286,7 +286,7 @@ textarea {
  */
 
 button {
-  overflow: visible;
+    overflow: visible;
 }
 
 /**
@@ -298,7 +298,7 @@ button {
 
 button,
 select {
-  text-transform: none;
+    text-transform: none;
 }
 
 /**
@@ -313,8 +313,8 @@ button,
 html input[type="button"], /* 1 */
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button; /* 2 */
-  cursor: pointer; /* 3 */
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
 }
 
 /**
@@ -323,7 +323,7 @@ input[type="submit"] {
 
 button[disabled],
 html input[disabled] {
-  cursor: default;
+    cursor: default;
 }
 
 /**
@@ -332,8 +332,8 @@ html input[disabled] {
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
+    border: 0;
+    padding: 0;
 }
 
 /**
@@ -342,6 +342,8 @@ input::-moz-focus-inner {
  */
 
 input {
+    line-height: normal;
+
     &:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
         @extend %input-text-theme;
     }
@@ -349,8 +351,6 @@ input {
     &:not([type="checkbox"]):not([type="radio"]) {
         width: 100%;
     }
-
-    line-height: normal;
 }
 
 /**
@@ -375,7 +375,7 @@ input[type="radio"] {
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
+    height: auto;
 }
 
 /**
@@ -383,7 +383,7 @@ input[type="number"]::-webkit-outer-spin-button {
  */
 
 input[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
+    -webkit-appearance: textfield; /* 1 */
 }
 
 /**
@@ -394,7 +394,7 @@ input[type="search"] {
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 input[type="color"] {
@@ -406,9 +406,9 @@ input[type="color"] {
  */
 
 fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: .35em .625em .75em;
 }
 
 /**
@@ -417,8 +417,8 @@ fieldset {
  */
 
 legend {
-    @extend label;
-    @extend h5;
+    @extend %label;
+    @extend %h5;
 
     border: 0; /* 1 */
     padding: 0; /* 2 */
@@ -444,9 +444,13 @@ optgroup {
     font-weight: bold;
 }
 
-label {
+%label {
     display: block;
     margin-bottom: $padding-quarter;
+}
+
+label {
+    @extend %label;
 }
 
 /*doc
@@ -591,11 +595,11 @@ category: Elements
  */
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 td,
 th {
-  padding: 0;
+    padding: 0;
 }

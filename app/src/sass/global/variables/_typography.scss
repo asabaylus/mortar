@@ -10,7 +10,7 @@ $font-alternate: $font-sans;
 // Font Sizes
 // ==========
 
-@import 'modular-scale';
+@import "modular-scale";
 
 // Defaults
 
@@ -42,7 +42,7 @@ $base-line-height  : $ms-med;
 // typographic rhythm
 
 // Crazy to convert px to em
-$padding-default: (( $ms-med / ( $ms-med * 0 + 1 ) ) / 16 ) * 1em;
+$padding-default: (($ms-med / ($ms-med * 0 + 1)) / 16) * 1em;
 
 $padding-half: $padding-default / 2;
 $padding-quarter: $padding-default / 4;

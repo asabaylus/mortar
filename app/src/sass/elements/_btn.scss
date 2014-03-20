@@ -24,7 +24,7 @@ Button                                              | Class               | Desc
     @extend %font-size-norm;
     line-height: 1;
     // text-transform: uppercase;
-    border: none;
+    border: 0;
     padding: 1em;
     border-radius: .5em;
     margin-bottom: $btn-offset-y * 2;
@@ -35,8 +35,8 @@ Button                                              | Class               | Desc
     // Iterate over button skins
 
     @each $btn-type, $btn-color in $btn-colors {
-        @include m( $btn-type ) {
-            @include btn( $btn-color );
+        @include m($btn-type) {
+            @include btn($btn-color);
         }
     }
 

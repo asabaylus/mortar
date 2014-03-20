@@ -9,11 +9,11 @@ category: Typography
 */
 
 .social {
-    @include e( icon ) {
+    @include e(icon) {
         margin-right: $padding-quarter;
     }
 
-    @include e( number ) {
+    @include e(number) {
         margin-right: $padding-quarter;
     }
 }

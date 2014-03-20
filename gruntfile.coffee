@@ -28,6 +28,7 @@ module.exports = (grunt) ->
             mortarScss:
                 files: '<%= app.mortarScss %>/**/*'
                 tasks: [
+                    'scsslint'
                     'compass:mortar'
                     'autoprefixer:mortar'
                     'copy:mortarCss'
@@ -56,6 +57,8 @@ module.exports = (grunt) ->
                 options:
                     sassDir: '<%= app.hologramScss %>'
                     cssDir: '.tmp/css'
+                    fontsDir: 'app/bower_components/icongs/fonts'
+                    httpFontsDir: 'bower_components/icongs/fonts'
             mortar:
                 options:
                     sassDir: '<%= app.mortarScss %>'
@@ -80,6 +83,10 @@ module.exports = (grunt) ->
                 dest: '<%= app.docsCss %>'
 
         shell:
+            update:
+                options:
+                    stdout: true
+                command: 'bundle && npm install && bower install'
             hologram:
                 options:
                     stdout: true
@@ -98,9 +105,17 @@ module.exports = (grunt) ->
                     server:
                         baseDir: '.docs'
 
+        scsslint:
+            allfiles: [
+                '<%= app.mortarScss %>/**/*.scss'
+            ]
+            options:
+                config: '.scss-lint.yml'
+                reporterOoutput: 'scss-lint-report.xml'
+
     grunt.registerTask 'serve', [
         'clean'
-        'shell:hologram'
+        'shell'
         'compass'
         'copy'
         'browserSync:serve'

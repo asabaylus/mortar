@@ -15,6 +15,10 @@ category: Typography
 
 */
 
+%caption {
+    @extend %subh5;
+}
+
 .caption {
-    @extend .subh5;
+    @extend %caption;
 }

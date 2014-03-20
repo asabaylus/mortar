@@ -21,15 +21,15 @@ category: Blocks
 
 
 .related {
-    @include e( title ) {
-        @include margin-trailer( .5, $ms-sm );
+    @include e(title) {
+        @include margin-trailer(.5, $ms-sm);
     }
 
-    @include e( category ) {
+    @include e(category) {
         margin-bottom: 0;
     }
 
-    @include e( article ) {
-        @include margin-trailer( 1, $ms-norm );
+    @include e(article) {
+        @include margin-trailer(1, $ms-norm);
     }
 }

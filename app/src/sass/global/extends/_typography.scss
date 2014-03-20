@@ -53,39 +53,37 @@ Primary font: "utopia-std", Georgia, Times, "Times New Roman", serif
 // Font sizes
 
 %font-size-xsm {
-    @include adjust-font-size-to( $ms-xsm );
+    @include adjust-font-size-to($ms-xsm);
 }
 
 %font-size-sm {
-    @include adjust-font-size-to( $ms-sm );
+    @include adjust-font-size-to($ms-sm);
 }
 
 %font-size-norm {
-    @include adjust-font-size-to( $ms-norm );
+    @include adjust-font-size-to($ms-norm);
 }
 
 %font-size-med {
-    @include adjust-font-size-to( $ms-med );
+    @include adjust-font-size-to($ms-med);
 }
 
 %font-size-lrg {
-    @include adjust-font-size-to( $ms-lrg );
+    @include adjust-font-size-to($ms-lrg);
 }
 
 %font-size-xlrg {
-    @include adjust-font-size-to( $ms-xlrg );
+    @include adjust-font-size-to($ms-xlrg);
 }
 
 %font-size-xxlrg {
-    @include adjust-font-size-to( $ms-xxlrg );
+    @include adjust-font-size-to($ms-xxlrg);
 }
 
 %font-size-xxxlrg {
-    @include adjust-font-size-to( $ms-xxxlrg );
+    @include adjust-font-size-to($ms-xxxlrg);
 }
 
 %font-size-xxxxlrg {
-    @include adjust-font-size-to( $ms-xxxxlrg );
+    @include adjust-font-size-to($ms-xxxxlrg);
 }
-
-
