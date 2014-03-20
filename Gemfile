@@ -6,6 +6,8 @@ gem "compass", "~> 1.0.0.alpha.19"
 gem "sass-globbing", "~> 1.1.0"
 gem "modular-scale", "~> 2.0.4"
 gem "scss-lint", "~> 0.19.0"
+gem "csscss", "~> 1.3.2"
+gem 'compass-csscss', '~> 0.1.0'
 
 # hologram only
 gem "hologram", "~> 1.0.0"

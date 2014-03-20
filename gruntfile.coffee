@@ -43,6 +43,8 @@ module.exports = (grunt) ->
 
         clean: ['.tmp/', '.docs/', '.component/']
 
+        # CSS Processing
+
         compass:
             options:
                 bundleExec: true
@@ -69,6 +71,28 @@ module.exports = (grunt) ->
                 src: '<%= app.mortarCss %>'
             hologram:
                 src: '<%= app.hologramCss %>'
+
+        # CSS Tests
+
+        scsslint:
+            allfiles: [
+                '<%= app.mortarScss %>/**/*.scss'
+            ]
+            options:
+                config: '.scss-lint.yml'
+                reporterOutput: 'scss-lint-report.xml'
+
+        csscss:
+            options:
+                bundleExec: true
+                failWhenDuplicates: true
+                minMatch: 4
+                shorthand: false
+                verbose: true
+            mortar:
+                src: ['<%= app.mortarCss %>']
+
+        # Doing things
 
         copy:
             mortarCss:
@@ -104,14 +128,6 @@ module.exports = (grunt) ->
                     hostnameSuffix: ".xip.io"
                     server:
                         baseDir: '.docs'
-
-        scsslint:
-            allfiles: [
-                '<%= app.mortarScss %>/**/*.scss'
-            ]
-            options:
-                config: '.scss-lint.yml'
-                reporterOoutput: 'scss-lint-report.xml'
 
     grunt.registerTask 'serve', [
         'clean'

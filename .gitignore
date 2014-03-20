@@ -32,7 +32,8 @@ Thumbs.db
 *.tar
 *.zip
 
-# Ignore for Yeoman-Jekyll projects #
+# Ignore for Mortar #
 app/bower_components
 node_modules
 .tmp
+scss-lint-report.xml
