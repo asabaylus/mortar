@@ -5,7 +5,7 @@
 source: ./app/src
 
 # The directory that hologram will build to
-destination: ./.docs
+destination: ./docs
 
 # The assets needed to build the docs (includes header.html,
 # footer.html, etc)

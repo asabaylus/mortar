@@ -13,7 +13,7 @@ module.exports = (grunt) ->
         mortarCss: '.tmp/css/mortar.css'
         hologramScss: 'app/doc_src/sass'
         hologramCss: '.tmp/css/hologram.css'
-        docsCss: '.docs/css/'
+        docsCss: 'docs/css/'
 
     grunt.initConfig
         app: appConfig
@@ -28,9 +28,7 @@ module.exports = (grunt) ->
             mortarScss:
                 files: '<%= app.mortarScss %>/**/*'
                 tasks: [
-                    'scsslint'
-                    'compass:mortar'
-                    'autoprefixer:mortar'
+                    'processMortarCss'
                     'copy:mortarCss'
                 ]
             hologramScss:
@@ -41,7 +39,7 @@ module.exports = (grunt) ->
                     'copy:hologramCss'
                 ]
 
-        clean: ['.tmp/', '.docs/', '.component/']
+        clean: ['.tmp/', 'docs/', '.component/']
 
         # CSS Processing
 
@@ -71,6 +69,13 @@ module.exports = (grunt) ->
                 src: '<%= app.mortarCss %>'
             hologram:
                 src: '<%= app.hologramCss %>'
+
+        cssmin:
+            mortar:
+                files:
+                    'docs/css/mortar.min.css' : ['<%= app.mortarCss %>']
+                options:
+                    report: 'gzip'
 
         # CSS Tests
 
@@ -120,20 +125,29 @@ module.exports = (grunt) ->
             serve:
                 bsFiles:
                     src: [
-                        # '.docs/*.html'
-                        '.docs/css/*.css'
+                        # 'docs/*.html'
+                        'docs/css/*.css'
                     ]
                 options:
                     watchTask: true
                     hostnameSuffix: ".xip.io"
                     server:
-                        baseDir: '.docs'
+                        baseDir: 'docs'
 
     grunt.registerTask 'serve', [
         'clean'
         'shell'
-        'compass'
+        'processMortarCss'
+        'compass:hologram'
         'copy'
         'browserSync:serve'
         'watch'
+    ]
+
+    grunt.registerTask 'processMortarCss', [
+        'scsslint'
+        'compass:mortar'
+        'csscss'
+        'autoprefixer:mortar'
+        'cssmin'
     ]

@@ -153,6 +153,7 @@ p {
 ul,
 ol {
     @extend %default-text-margin;
+
     padding-left: $padding-one-and-half;
 
     > li > ul,
