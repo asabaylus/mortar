@@ -87,6 +87,18 @@ module.exports = (grunt) ->
                 config: '.scss-lint.yml'
                 reporterOutput: 'scss-lint-report.xml'
 
+        csslint:
+            options:
+                csslintrc: '.csslintrc'
+                formatters: [
+                    {
+                        id: 'csslint-xml'
+                        dest: 'css-lint-report.xml'
+                    }
+                ]
+            mortar:
+                src:'<%= app.mortarCss %>'
+
         csscss:
             options:
                 bundleExec: true

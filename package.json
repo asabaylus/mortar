@@ -16,7 +16,9 @@
     "grunt-autoprefixer": "~0.7.2",
     "browser-sync": "~0.7.0",
     "grunt-scss-lint": "~0.1.2",
-    "grunt-csscss": "~0.6.1"
+    "grunt-csscss": "~0.6.1",
+    "csslint": "~0.10.0",
+    "grunt-contrib-csslint": "~0.2.0"
   },
   "repository": {
     "type": "git",

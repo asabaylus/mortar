@@ -40,5 +40,5 @@ docs
 component
 
 # Ignore reports #
-
 scss-lint-report.xml
+css-lint-report.xml
