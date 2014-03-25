@@ -157,7 +157,7 @@ module.exports = (grunt) ->
     ]
 
     grunt.registerTask 'processMortarCss', [
-        'scsslint'
+        # 'scsslint'
         'compass:mortar'
         'csscss'
         'autoprefixer:mortar'

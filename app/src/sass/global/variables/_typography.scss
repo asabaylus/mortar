@@ -19,8 +19,6 @@ $ms-ratio: $minor-third;
 
 // Variants
 
-$ms-xxxsm    : ms(-4);
-$ms-xxsm     : ms(-3);
 $ms-xsm      : ms(-2);
 $ms-sm       : ms(-1);
 $ms-norm     : $ms-base;
@@ -28,8 +26,21 @@ $ms-med      : ms(2);
 $ms-lrg      : ms(3);
 $ms-xlrg     : ms(4);
 $ms-xxlrg    : ms(5);
-$ms-xxxlrg   : ms(6);
-$ms-xxxxlrg  : ms(7);
+$ms-xxxlrg   : ms(7);
+
+// Small Screen Variants
+
+$ms-smscr-ratio: $major-second;
+
+$ms-smscr-xsm      : ms(-2, $ms-base, $ms-smscr-ratio);
+$ms-smscr-sm       : ms(-1, $ms-base, $ms-smscr-ratio);
+$ms-smscr-norm     : $ms-base;
+$ms-smscr-med      : ms(2, $ms-base, $ms-smscr-ratio);
+$ms-smscr-lrg      : ms(3, $ms-base, $ms-smscr-ratio);
+$ms-smscr-xlrg     : ms(4, $ms-base, $ms-smscr-ratio);
+$ms-smscr-xxlrg    : ms(5, $ms-base, $ms-smscr-ratio);
+$ms-smscr-xxxlrg   : ms(6, $ms-base, $ms-smscr-ratio);
+
 
 // Type
 

@@ -57,38 +57,43 @@ Primary font: "utopia-std", Georgia, Times, "Times New Roman", serif
 
 // Font sizes
 
-%font-size-xsm {
-    @include adjust-font-size-to($ms-xsm);
-}
+$font-sizes: (
+    font-size-xsm: (
+        $ms-smscr-xsm,
+        $ms-xsm
+    ),
+    font-size-sm: (
+        $ms-smscr-sm,
+        $ms-sm
+    ),
+    font-size-norm: (
+        $ms-smscr-norm,
+        $ms-norm
+    ),
+    font-size-med: (
+        $ms-smscr-med,
+        $ms-med
+    ),
+    font-size-lrg: (
+        $ms-smscr-lrg,
+        $ms-lrg
+    ),
+    font-size-xxlrg: (
+        $ms-smscr-xxlrg,
+        $ms-xxlrg
+    ),
+    font-size-xxxlrg: (
+        $ms-smscr-xxxlrg,
+        $ms-xxxlrg
+    )
+);
 
-%font-size-sm {
-    @include adjust-font-size-to($ms-sm);
-}
+@each $font-size, $ms-size in $font-sizes {
+    %#{$font-size} {
+        @include adjust-font-size-to( nth($ms-size, 1) );
 
-%font-size-norm {
-    @include adjust-font-size-to($ms-norm);
-}
-
-%font-size-med {
-    @include adjust-font-size-to($ms-med);
-}
-
-%font-size-lrg {
-    @include adjust-font-size-to($ms-lrg);
-}
-
-%font-size-xlrg {
-    @include adjust-font-size-to($ms-xlrg);
-}
-
-%font-size-xxlrg {
-    @include adjust-font-size-to($ms-xxlrg);
-}
-
-%font-size-xxxlrg {
-    @include adjust-font-size-to($ms-xxxlrg);
-}
-
-%font-size-xxxxlrg {
-    @include adjust-font-size-to($ms-xxxxlrg);
+        @media screen and (min-width:40em) {
+            @include adjust-font-size-to( nth($ms-size, 2) );
+        }
+    }
 }
