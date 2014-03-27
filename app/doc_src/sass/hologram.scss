@@ -20,10 +20,6 @@ $center-column-width-sm: 85%;
 
 @include add-grid(4);
 
-// Theme Variables
-
-$border-default: 2px solid $color-lowlight;
-
 // Font
 
 @import "compass/css3/font-face";
@@ -107,9 +103,11 @@ footer {
 }
 
 .subnav {
-    border: $border-default;
-    padding: $padding-quarter $padding-default 0 0;
     margin-bottom: $padding-default;
+
+    ul {
+        margin: $padding-quarter $padding-default $padding-half 0;
+    }
 
     @include breakpoint( $bp-mlrg ) {
         @include grid-span(1, 1);

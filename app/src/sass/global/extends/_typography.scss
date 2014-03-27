@@ -58,9 +58,9 @@ Primary font: "utopia-std", Georgia, Times, "Times New Roman", serif
 // Font sizes
 
 $font-sizes: (
-    font-size-xsm: (
-        $ms-smscr-xsm,
-        $ms-xsm
+    font-size-xsm: ( // Font size
+        $ms-smscr-xsm, // Small screen modular scale size
+        $ms-xsm // Default modular scale size
     ),
     font-size-sm: (
         $ms-smscr-sm,
@@ -88,6 +88,8 @@ $font-sizes: (
     )
 );
 
+
+// Loop through font-sizes
 @each $font-size, $ms-size in $font-sizes {
     %#{$font-size} {
         @include adjust-font-size-to( nth($ms-size, 1) );

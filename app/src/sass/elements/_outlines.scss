@@ -1,0 +1,18 @@
+/*doc
+---
+title: Outlines
+name: outlines
+category: Theme
+---
+
+<div class="background--basic border--default">Example</div>
+<div class="background--basic border--inverse">Example</div>
+*/
+
+.border--default {
+    border: $border-default;
+}
+
+.border--inverse {
+    border: $border-inverse;
+}
