@@ -28,6 +28,7 @@ $color-text-inverse:    $off-white;
 $color-link:            $bright-blue;
 $color-link-inverse:    lighten($bright-blue, 10);
 $color-beta:            $medium-grey;
+$color-image-mask:      transparentize($brand-blue, .2);
 
 /*doc
 ---

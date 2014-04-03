@@ -601,5 +601,6 @@ table {
 
 td,
 th {
-    padding: 0;
+    padding: $padding-half;
+    border: $border-default;
 }

@@ -17,6 +17,7 @@ documentation_assets: ./app/assets
 # document. May also include additional folders as needed.
 dependencies:
 - ./app/bower_components
+- ./app/img
 
 # Mark which category should be the index page
 # Alternatively, you may have an index.md in the documenatation assets
