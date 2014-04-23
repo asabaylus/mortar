@@ -19,61 +19,62 @@ Primary font: "utopia-std", Georgia, Times, "Times New Roman", serif
 
 */
 @font-face {
-  font-family: "icongs";
-  src: url('/bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.eot?1395247613');
-  src: url('/bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.eot?&1395247613#iefix') format('embedded-opentype'), url('/bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.woff?1395247613') format('woff'), url('/bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.ttf?1395247613') format('truetype'), url('/bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.svg?1395247613') format('svg');
-  font-weight: normal;
+  font-family: 'icongs';
+  src: url("../bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.eot");
+  /* IE9 Compat Modes */
+  src: url("../bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.eot?#iefix") format("embedded-opentype"), url("../bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.woff") format("woff"), url("../bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.ttf") format("truetype"), url("../bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.svg#svgFontName") format("svg");
+  /* Legacy iOS */
 }
 @media screen and (min-width: 15em) {
-  /* line 37, ../../app/doc_src/sass/hologram.scss */
+  /* line 34, ../../app/doc_src/sass/hologram.scss */
   .layout_colorsample {
     width: 100%;
   }
 }
 @media screen and (min-width: 30em) {
-  /* line 37, ../../app/doc_src/sass/hologram.scss */
+  /* line 34, ../../app/doc_src/sass/hologram.scss */
   .layout_colorsample {
     width: 50%;
   }
 }
 @media screen and (min-width: 45em) {
-  /* line 37, ../../app/doc_src/sass/hologram.scss */
+  /* line 34, ../../app/doc_src/sass/hologram.scss */
   .layout_colorsample {
     width: 33.33333%;
   }
 }
 @media screen and (min-width: 60em) {
-  /* line 37, ../../app/doc_src/sass/hologram.scss */
+  /* line 34, ../../app/doc_src/sass/hologram.scss */
   .layout_colorsample {
     width: 25%;
   }
 }
 @media screen and (min-width: 75em) {
-  /* line 37, ../../app/doc_src/sass/hologram.scss */
+  /* line 34, ../../app/doc_src/sass/hologram.scss */
   .layout_colorsample {
     width: 20%;
   }
 }
 @media screen and (min-width: 90em) {
-  /* line 37, ../../app/doc_src/sass/hologram.scss */
+  /* line 34, ../../app/doc_src/sass/hologram.scss */
   .layout_colorsample {
     width: 16.66667%;
   }
 }
 @media screen and (min-width: 105em) {
-  /* line 37, ../../app/doc_src/sass/hologram.scss */
+  /* line 34, ../../app/doc_src/sass/hologram.scss */
   .layout_colorsample {
     width: 14.28571%;
   }
 }
 @media screen and (min-width: 120em) {
-  /* line 37, ../../app/doc_src/sass/hologram.scss */
+  /* line 34, ../../app/doc_src/sass/hologram.scss */
   .layout_colorsample {
     width: 12.5%;
   }
 }
 @media screen and (min-width: 135em) {
-  /* line 37, ../../app/doc_src/sass/hologram.scss */
+  /* line 34, ../../app/doc_src/sass/hologram.scss */
   .layout_colorsample {
     width: 11.11111%;
   }
@@ -91,12 +92,12 @@ Primary font: "utopia-std", Georgia, Times, "Times New Roman", serif
   padding: .5em;
 }
 
-/* line 58, ../../app/doc_src/sass/hologram.scss */
+/* line 55, ../../app/doc_src/sass/hologram.scss */
 header {
   margin-bottom: 1.44em;
 }
 
-/* line 62, ../../app/doc_src/sass/hologram.scss */
+/* line 59, ../../app/doc_src/sass/hologram.scss */
 header > hgroup,
 header > nav,
 footer {
@@ -104,24 +105,24 @@ footer {
   padding-right: 7.5%;
 }
 
-/* line 69, ../../app/doc_src/sass/hologram.scss */
+/* line 66, ../../app/doc_src/sass/hologram.scss */
 header > hgroup {
   padding-bottom: 0.72em;
 }
 
-/* line 73, ../../app/doc_src/sass/hologram.scss */
+/* line 70, ../../app/doc_src/sass/hologram.scss */
 header > nav {
   padding-top: 0.36em;
   padding-bottom: 0.36em;
 }
 
-/* line 78, ../../app/doc_src/sass/hologram.scss */
+/* line 75, ../../app/doc_src/sass/hologram.scss */
 footer {
   padding-top: 0.72em;
   padding-bottom: 0.72em;
 }
 
-/* line 83, ../../app/doc_src/sass/hologram.scss */
+/* line 80, ../../app/doc_src/sass/hologram.scss */
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -129,32 +130,32 @@ footer {
   margin-bottom: 2.88em;
 }
 
-/* line 91, ../../app/doc_src/sass/hologram.scss */
+/* line 88, ../../app/doc_src/sass/hologram.scss */
 .field-container {
   margin-bottom: 1.44em;
 }
 
-/* line 95, ../../app/doc_src/sass/hologram.scss */
+/* line 92, ../../app/doc_src/sass/hologram.scss */
 .navitem {
   margin-right: 1.44em;
   padding-top: 0.36em;
   padding-bottom: 0.36em;
 }
-/* line 100, ../../app/doc_src/sass/hologram.scss */
+/* line 97, ../../app/doc_src/sass/hologram.scss */
 .navitem:last-child {
   margin-right: 0;
 }
 
-/* line 105, ../../app/doc_src/sass/hologram.scss */
+/* line 102, ../../app/doc_src/sass/hologram.scss */
 .subnav {
   margin-bottom: 1.44em;
 }
-/* line 108, ../../app/doc_src/sass/hologram.scss */
+/* line 105, ../../app/doc_src/sass/hologram.scss */
 .subnav ul {
   margin: 0.36em 1.44em 0.72em 0;
 }
 @media (min-width: 50em) {
-  /* line 105, ../../app/doc_src/sass/hologram.scss */
+  /* line 102, ../../app/doc_src/sass/hologram.scss */
   .subnav {
     width: 21.05263%;
     float: left;
@@ -164,26 +165,26 @@ footer {
   }
 }
 
-/* line 118, ../../app/doc_src/sass/hologram.scss */
+/* line 115, ../../app/doc_src/sass/hologram.scss */
 main > h1 {
   margin-top: 1.60751em;
   margin-bottom: 0.40188em;
 }
-/* line 122, ../../app/doc_src/sass/hologram.scss */
+/* line 119, ../../app/doc_src/sass/hologram.scss */
 main > h1 + h1 {
   margin-bottom: 0;
 }
-/* line 126, ../../app/doc_src/sass/hologram.scss */
+/* line 123, ../../app/doc_src/sass/hologram.scss */
 main > h1:first-of-type {
   margin-top: 0;
 }
-/* line 131, ../../app/doc_src/sass/hologram.scss */
+/* line 128, ../../app/doc_src/sass/hologram.scss */
 main > h2 {
   margin-top: 0.80376em;
   margin-bottom: 0.40188em;
 }
 @media (min-width: 50em) {
-  /* line 117, ../../app/doc_src/sass/hologram.scss */
+  /* line 114, ../../app/doc_src/sass/hologram.scss */
   main {
     width: 73.68421%;
     float: right;
@@ -193,23 +194,23 @@ main > h2 {
   }
 }
 
-/* line 143, ../../app/doc_src/sass/hologram.scss */
+/* line 140, ../../app/doc_src/sass/hologram.scss */
 .codeExample {
   border: 1px solid #d7dada;
 }
 
-/* line 149, ../../app/doc_src/sass/hologram.scss */
+/* line 146, ../../app/doc_src/sass/hologram.scss */
 .exampleOutput {
   padding: 0.72em 1.44em;
 }
 
-/* line 153, ../../app/doc_src/sass/hologram.scss */
+/* line 150, ../../app/doc_src/sass/hologram.scss */
 .codeBlock {
   background-color: white;
   padding: 0.72em 1.44em;
   border-top: 1px solid #d7dada;
 }
-/* line 158, ../../app/doc_src/sass/hologram.scss */
+/* line 155, ../../app/doc_src/sass/hologram.scss */
 .codeBlock pre {
   margin: 0;
 }
