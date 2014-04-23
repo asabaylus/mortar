@@ -146,6 +146,24 @@ module.exports = (grunt) ->
                     server:
                         baseDir: 'docs'
 
+        buildcontrol:
+            options:
+                commit: true
+                push: true
+                remote: 'git@github.com:natgeo/mortar.git'
+                connectCommits: false
+            pages:
+                options:
+                    dir: 'docs'
+                    branch: 'gh-pages'
+                    message: 'Built %sourceName% pages from commit %sourceCommit% on branch %sourceBranch%'
+            component:
+                options:
+                    dir: 'component'
+                    branch: 'component'
+                    message: 'Built %sourceName% component from commit %sourceCommit% on branch %sourceBranch%'
+                    # tag: bwr.version
+
     grunt.registerTask 'serve', [
         'clean'
         'shell'
@@ -154,6 +172,19 @@ module.exports = (grunt) ->
         'copy'
         'browserSync:serve'
         'watch'
+    ]
+
+    grunt.registerTask 'build', [
+        'clean'
+        'shell'
+        'processMortarCss'
+        'compass:hologram'
+        'copy'
+    ]
+
+    grunt.registerTask 'deploy', [
+        'build'
+        'buildcontrol:pages'
     ]
 
     grunt.registerTask 'processMortarCss', [

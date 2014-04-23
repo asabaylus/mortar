@@ -29,22 +29,3 @@ $color-link:            $bright-blue;
 $color-link-inverse:    lighten($bright-blue, 10);
 $color-beta:            $medium-grey;
 $color-image-mask:      transparentize($brand-blue, .2);
-
-/*doc
----
-title: Colors
-name: colors
-category: Sass
----
-
-<div class="layout_colorsample">
-    <figure class="colorsample-container">
-        <div class="colorsample-sample" style="background-color: #f5f6f6">test</div>
-        <figcaption>
-            var: <code>$color-basic</code><br />
-            hex: <code>#f5f6f6</code><br />
-        </figcaption>
-    </figure>
-</div>
-
-*/
