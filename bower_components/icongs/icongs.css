@@ -1,0 +1,88 @@
+.icongs {
+  display: inline-block;
+  font-family: "icongs";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-transform: none;
+  vertical-align: middle;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+.icongs.icongs-arrowdown:before {
+  content: "\2193";
+}
+.icongs.icongs-arrowleft:before {
+  content: "\2190";
+}
+.icongs.icongs-arrowright:before {
+  content: "\2192";
+}
+.icongs.icongs-arrowup:before {
+  content: "\2191";
+}
+.icongs.icongs-audio:before {
+  content: "\f117";
+}
+.icongs.icongs-border:before {
+  content: "\f12b";
+}
+.icongs.icongs-close:before {
+  content: "\d7";
+}
+.icongs.icongs-comment:before {
+  content: "\1f4ac";
+}
+.icongs.icongs-directiondown:before {
+  content: "\f12a";
+}
+.icongs.icongs-directionleft:before {
+  content: "\f12c";
+}
+.icongs.icongs-directionright:before {
+  content: "\f12d";
+}
+.icongs.icongs-directionup:before {
+  content: "\f12e";
+}
+.icongs.icongs-email:before {
+  content: "\f127";
+}
+.icongs.icongs-facebook:before {
+  content: "\f121";
+}
+.icongs.icongs-gallery:before {
+  content: "\f12f";
+}
+.icongs.icongs-googleplus:before {
+  content: "\f123";
+}
+.icongs.icongs-headphones:before {
+  content: "\f130";
+}
+.icongs.icongs-instagram:before {
+  content: "\f125";
+}
+.icongs.icongs-linkedin:before {
+  content: "\f124";
+}
+.icongs.icongs-lock:before {
+  content: "\f11c";
+}
+.icongs.icongs-menu:before {
+  content: "\2630";
+}
+.icongs.icongs-search:before {
+  content: "\1f50d";
+}
+.icongs.icongs-share:before {
+  content: "\f11f";
+}
+.icongs.icongs-twitter:before {
+  content: "\f122";
+}
+.icongs.icongs-youtube:before {
+  content: "\f126";
+}

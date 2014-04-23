@@ -1,0 +1,185 @@
+<!doctype html>
+<html class="backgroundbasic">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>a brand new styleguide: Elements</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="./css/mortar.css">
+        <link rel="stylesheet" href="./css/hologram.css">
+        <link rel="stylesheet" href="bower_components/pygments/css/colorful.css">
+        <link rel="stylesheet" href="bower_components/icongs/icongs.css">
+        <script src="bower_components/modernizr/modernizr.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <hgroup class="backgroundhighlight">
+                <h1 class="headingwithlink"><a href="/">Mortar</a></h1>
+                <h2 class="subh2">A living style guide for the National Geographic Society</h2>
+            </hgroup>
+            <nav class="backgroundinverse">
+            
+                <a class="navitem headinginverse h5" href="theme.html">Theme</a>
+            
+                <a class="navitem headinginverse h5" href="typography.html">Typography</a>
+            
+                <a class="navitem headinginverse h5" href="elements.html">Elements</a>
+            
+                <a class="navitem headinginverse h5" href="blocks.html">Blocks</a>
+            
+                <a class="navitem headinginverse h5" href="http://natgeo.github.io/icongs/">icoNGS</a>
+            </nav>
+        </header>
+
+        <div class="container cf">
+            
+            <nav class="subnav background--lowlight">
+                <ul>
+                
+                    <li class="headingwithlink"><a href="#buttonSkins">Button Styles</a></li>
+                
+                    <li class="headingwithlink"><a href="#checkbox">Checkbox</a></li>
+                
+                    <li class="headingwithlink"><a href="#htmlfiveinputs">HTML5 Inputs</a></li>
+                
+                    <li class="headingwithlink"><a href="#radiobuttons">Radio Buttons</a></li>
+                
+                    <li class="headingwithlink"><a href="#textfields">Text Fields</a></li>
+                
+                </ul>
+            </nav>
+            
+            <main class="content">
+<h1 id="buttonSkins">Button Styles</h1>
+
+<table><thead>
+<tr>
+<th>Button</th>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><button class="btn btn--default">Default</button></td>
+<td><code>btn btn--default</code></td>
+<td>This is what buttons look like, this is the go to button style.</td>
+</tr>
+<tr>
+<td><button class="btn btn--primary">Primary</button></td>
+<td><code>btn btn--primary</code></td>
+<td>Use this button as the primary call to action</td>
+</tr>
+<tr>
+<td><button class="btn btn--danger">Delete</button></td>
+<td><code>btn btn--danger</code></td>
+<td>This button is for delete actions, these actions should also have a confirmation dialog</td>
+</tr>
+<tr>
+<td><button class="btn btn--disabled">Disabled</button></td>
+<td><code>btn btn--disabled</code></td>
+<td>I&#39;m afraid I can&#39;t let you do that, yet.</td>
+</tr>
+</tbody></table>
+
+<h1 id="checkbox">Checkbox</h1>
+
+<form>
+    <fieldset class="options">
+        <legend>Checkbox <abbr title="Required">*</abbr></legend>
+        <ul>
+            <li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> Choice A</label></li>
+            <li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Choice B</label></li>
+            <li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice C</label></li>
+        </ul>
+    </fieldset>
+</form>
+
+<h1 id="htmlfiveinputs">HTML5 Inputs</h1>
+
+<form>
+    <fieldset>
+        <div class="field-container"><label for="ic">Color input</label> <input type="color" id="ic" value="#000000"></div>
+        <div class="field-container"><label for="in">Number input</label> <input type="number" id="in" min="0" max="10" value="5"></div>
+        <div class="field-container"><label for="ir">Range input</label> <input type="range" id="ir" value="10"></div>
+        <div class="field-container"><label for="idd">Date input</label> <input type="date" id="idd" value="1970-01-01"></div>
+        <div class="field-container"><label for="idm">Month input</label> <input type="month" id="idm" value="1970-01"></div>
+        <div class="field-container"><label for="idw">Week input</label> <input type="week" id="idw" value="1970-W01"></div>
+        <div class="field-container"><label for="idt">Datetime input</label> <input type="datetime" id="idt" value="1970-01-01T00:00:00Z"></div>
+        <div class="field-container"><label for="idtl">Datetime-local input</label> <input type="datetime-local" id="idtl" value="1970-01-01T00:00"></div>
+    </fieldset>
+</form>
+
+<h1 id="radiobuttons">Radio Buttons</h1>
+
+<form>
+    <fieldset class="options">
+        <legend>Radio</legend>
+        <ul>
+            <li><label for="radio1"><input id="radio1" name="radio" type="radio" class="radio" checked="checked"> Option 1</label></li>
+            <li><label for="radio2"><input id="radio2" name="radio" type="radio" class="radio"> Option 2</label></li>
+            <li><label for="radio3"><input id="radio3" name="radio" type="radio" class="radio"> Option 3</label></li>
+        </ul>
+    </fieldset>
+</form>
+
+<h1 id="textfields">Text Fields</h1>
+
+<form>
+    <fieldset>
+        <div class="field-container">
+            <label for="text">Text Input <abbr title="Required">*</abbr></label>
+            <input id="text" type="text" placeholder="Text Input">
+        </div>
+        <div class="field-container">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Type your Password">
+        </div>
+        <div class="field-container">
+            <label for="webaddress">Web Address</label>
+            <input id="webaddress" type="url" placeholder="http://yoursite.com">
+        </div>
+        <div class="field-container">
+            <label for="emailaddress">Email Address</label>
+            <input id="emailaddress" type="email" placeholder="name@email.com">
+        </div>
+        <div class="field-container">
+            <label for="search">Search</label>
+            <input id="search" type="search" placeholder="Enter Search Term">
+        </div>
+        <div class="field-container">
+            <label for="text">Number Input <abbr title="Required">*</abbr></label>
+            <input id="text" type="number" placeholder="Enter a Number" pattern="[0-9]*">
+        </div>
+        <div class="field-container">
+            <label for="textarea">Textarea</label>
+            <textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
+        </div>
+        <div class="field-container">
+            <label class="error">Error Input</label>
+            <input class="is-error" type="text" placeholder="Text Input">
+        </div>
+        <div class="field-container">
+            <label class="valid">Valid</label>
+            <input class="is-valid" type="text" placeholder="Text Input">
+        </div>
+    </fieldset>
+</form>
+            </main>
+        </div>
+        <footer class="backgroundinverse textinverse">
+            <p>This documentation generated using <a href="http://github.com/trulia/hologram">Hologram</a>
+        </footer>
+
+        <script type="text/javascript">
+            (function(d) {
+                var config = {
+                    kitId: 'rxz3wjw',
+                    scriptTimeout: 3000
+            },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            })(document);
+        </script>
+    </body>
+</html>

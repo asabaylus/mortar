@@ -1,0 +1,1446 @@
+@charset "UTF-8";
+/* normalize.css v3.0.0 | MIT License | git.io/normalize */
+/**
+ * Remove default margin.
+ */
+/* line 7, ../../app/src/sass/_reset.scss */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+/* line 18, ../../app/src/sass/_reset.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 38, ../../app/src/sass/_reset.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 51, ../../app/src/sass/_reset.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+/* line 61, ../../app/src/sass/_reset.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 73, ../../app/src/sass/_reset.scss */
+a {
+  background: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 81, ../../app/src/sass/_reset.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+/* line 93, ../../app/src/sass/_reset.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+/* line 110, ../../app/src/sass/_reset.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 118, ../../app/src/sass/_reset.scss */
+mark {
+  background: #ffcc00;
+  color: #021122;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 135, ../../app/src/sass/_reset.scss */
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 143, ../../app/src/sass/_reset.scss */
+sup {
+  top: -.5em;
+}
+
+/* line 147, ../../app/src/sass/_reset.scss */
+sub {
+  bottom: -.25em;
+}
+
+/*doc
+---
+title: Inline Elements
+name: inlineelements
+category: Typography
+---
+
+<a href="#">This is a text link</a>
+
+<strong>Strong is used to indicate strong importance</strong>
+
+<em>This text has added emphasis</em>
+
+The <b>b element</b> is stylistically different text from normal text, without any special importance
+
+The <i>i element</i> is text that is set off from the normal text
+
+The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation
+
+<del>This text is deleted</del> and <ins>This text is inserted</ins>
+
+<s>This text has a strikethrough</s>
+
+Superscript<sup>®</sup>
+
+Subscript for things like H<sub>2</sub>O
+
+<small>This small text is small for for fine print, etc.</small>
+
+Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr>
+
+Keybord input: <kbd>Cmd</kbd>
+
+<q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation</q>
+
+<cite>This is a citation</cite>
+
+The <dfn>dfn element</dfn> indicates a definition.
+
+The <mark>mark element</mark> indicates a highlight
+
+This is what <code>inline code</code> looks like.
+
+<samp>This is sample output from a computer program</samp>
+
+The <var>variarble element</var>, such as <var>x</var> = <var>y</var>
+
+*/
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+/* line 207, ../../app/src/sass/_reset.scss */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+/* line 215, ../../app/src/sass/_reset.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+/* line 226, ../../app/src/sass/_reset.scss */
+figure {
+  margin-left: 0;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 235, ../../app/src/sass/_reset.scss */
+hr {
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+/* line 243, ../../app/src/sass/_reset.scss */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 251, ../../app/src/sass/_reset.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 274, ../../app/src/sass/_reset.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10.
+ */
+/* line 288, ../../app/src/sass/_reset.scss */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8+, and Opera
+ * Correct `select` style inheritance in Firefox.
+ */
+/* line 299, ../../app/src/sass/_reset.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 312, ../../app/src/sass/_reset.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 324, ../../app/src/sass/_reset.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 333, ../../app/src/sass/_reset.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 344, ../../app/src/sass/_reset.scss */
+input {
+  line-height: normal;
+}
+/* line 351, ../../app/src/sass/_reset.scss */
+input:not([type="checkbox"]):not([type="radio"]) {
+  width: 100%;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 363, ../../app/src/sass/_reset.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 0.36em;
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 376, ../../app/src/sass/_reset.scss */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ */
+/* line 385, ../../app/src/sass/_reset.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+/* line 395, ../../app/src/sass/_reset.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 400, ../../app/src/sass/_reset.scss */
+input[type="color"] {
+  height: 46.08px;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 408, ../../app/src/sass/_reset.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: .35em .625em .75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 419, ../../app/src/sass/_reset.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9.
+ */
+/* line 431, ../../app/src/sass/_reset.scss */
+textarea {
+  overflow: auto;
+  width: 100%;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+/* line 443, ../../app/src/sass/_reset.scss */
+optgroup {
+  font-weight: bold;
+}
+
+/* line 447, ../../app/src/sass/_reset.scss */
+legend, label {
+  display: block;
+  margin-bottom: 0.36em;
+}
+
+/*doc
+---
+title: Text Fields
+name: textfields
+category: Elements
+---
+
+<form>
+    <fieldset>
+        <div class="field-container">
+            <label for="text">Text Input <abbr title="Required">*</abbr></label>
+            <input id="text" type="text" placeholder="Text Input">
+        </div>
+        <div class="field-container">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Type your Password">
+        </div>
+        <div class="field-container">
+            <label for="webaddress">Web Address</label>
+            <input id="webaddress" type="url" placeholder="http://yoursite.com">
+        </div>
+        <div class="field-container">
+            <label for="emailaddress">Email Address</label>
+            <input id="emailaddress" type="email" placeholder="name@email.com">
+        </div>
+        <div class="field-container">
+            <label for="search">Search</label>
+            <input id="search" type="search" placeholder="Enter Search Term">
+        </div>
+        <div class="field-container">
+            <label for="text">Number Input <abbr title="Required">*</abbr></label>
+            <input id="text" type="number" placeholder="Enter a Number" pattern="[0-9]*">
+        </div>
+        <div class="field-container">
+            <label for="textarea">Textarea</label>
+            <textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
+        </div>
+        <div class="field-container">
+            <label class="error">Error Input</label>
+            <input class="is-error" type="text" placeholder="Text Input">
+        </div>
+        <div class="field-container">
+            <label class="valid">Valid</label>
+            <input class="is-valid" type="text" placeholder="Text Input">
+        </div>
+    </fieldset>
+</form>
+
+*/
+/*doc
+title: Select Menu
+name: selectmenu
+category: Elements
+
+<form>
+    <fieldset>
+        <div class="field-container">
+            <label for="select">Select</label>
+            <select id="select">
+                <optgroup label="Option Group">
+                    <option>Option One</option>
+                    <option>Option Two</option>
+                    <option>Option Three</option>
+                </optgroup>
+            </select>
+        </div>
+    </fieldset>
+</form>
+
+*/
+/*doc
+---
+title: Checkbox
+name: checkbox
+category: Elements
+---
+
+<form>
+    <fieldset class="options">
+        <legend>Checkbox <abbr title="Required">*</abbr></legend>
+        <ul>
+            <li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> Choice A</label></li>
+            <li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Choice B</label></li>
+            <li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice C</label></li>
+        </ul>
+    </fieldset>
+</form>
+
+*/
+/*doc
+---
+title: Radio Buttons
+name: radiobuttons
+category: Elements
+---
+
+<form>
+    <fieldset class="options">
+        <legend>Radio</legend>
+        <ul>
+            <li><label for="radio1"><input id="radio1" name="radio" type="radio" class="radio" checked="checked"> Option 1</label></li>
+            <li><label for="radio2"><input id="radio2" name="radio" type="radio" class="radio"> Option 2</label></li>
+            <li><label for="radio3"><input id="radio3" name="radio" type="radio" class="radio"> Option 3</label></li>
+        </ul>
+    </fieldset>
+</form>
+
+*/
+/*doc
+---
+title: HTML5 Inputs
+name: htmlfiveinputs
+category: Elements
+---
+
+<form>
+    <fieldset>
+        <div class="field-container"><label for="ic">Color input</label> <input type="color" id="ic" value="#000000"></div>
+        <div class="field-container"><label for="in">Number input</label> <input type="number" id="in" min="0" max="10" value="5"></div>
+        <div class="field-container"><label for="ir">Range input</label> <input type="range" id="ir" value="10"></div>
+        <div class="field-container"><label for="idd">Date input</label> <input type="date" id="idd" value="1970-01-01"></div>
+        <div class="field-container"><label for="idm">Month input</label> <input type="month" id="idm" value="1970-01"></div>
+        <div class="field-container"><label for="idw">Week input</label> <input type="week" id="idw" value="1970-W01"></div>
+        <div class="field-container"><label for="idt">Datetime input</label> <input type="datetime" id="idt" value="1970-01-01T00:00:00Z"></div>
+        <div class="field-container"><label for="idtl">Datetime-local input</label> <input type="datetime-local" id="idtl" value="1970-01-01T00:00"></div>
+    </fieldset>
+</form>
+
+*/
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 597, ../../app/src/sass/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 602, ../../app/src/sass/_reset.scss */
+td,
+th {
+  padding: 0.72em;
+  border: 1px solid #d7dada;
+}
+
+/* line 4, ../../app/src/sass/_base.scss */
+html {
+  color: #021122;
+  font-weight: normal;
+}
+
+/* line 16, ../../app/src/sass/_base.scss */
+::-moz-selection {
+  background: #ffcc00;
+  text-shadow: none;
+}
+
+/* line 21, ../../app/src/sass/_base.scss */
+::-moz-selection {
+  background: #ffcc00;
+  text-shadow: none;
+}
+::selection {
+  background: #ffcc00;
+  text-shadow: none;
+}
+
+/* line 28, ../../app/src/sass/_base.scss */
+hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* line 40, ../../app/src/sass/_base.scss */
+audio,
+canvas,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/* line 50, ../../app/src/sass/_base.scss */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 58, ../../app/src/sass/_base.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 66, ../../app/src/sass/_base.scss */
+textarea {
+  resize: vertical;
+}
+
+/* line 72, ../../app/src/sass/_base.scss */
+a {
+  color: #4b56ec;
+  text-decoration: none;
+}
+
+/* line 77, ../../app/src/sass/_base.scss */
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+}
+
+/* line 83, ../../app/src/sass/_base.scss */
+a:visited {
+  color: #4b56ec;
+  text-decoration: none;
+}
+
+/*doc
+---
+title: Headings
+name: headings
+category: Typography
+---
+
+```html_example
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+```
+
+*/
+/* line 106, ../../app/src/sass/_base.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 153, ../../app/src/sass/_base.scss */
+ul,
+ol {
+  padding-left: 2.16em;
+}
+/* line 159, ../../app/src/sass/_base.scss */
+ul > li > ul,
+ul > li > ol,
+ol > li > ul,
+ol > li > ol {
+  margin: 0;
+}
+
+/* line 167, ../../app/src/sass/_base.scss */
+ul {
+  list-style-type: square;
+}
+
+/* line 173, ../../app/src/sass/_base.scss */
+ol {
+  counter-reset: custom-ol;
+}
+/* line 176, ../../app/src/sass/_base.scss */
+ol > li {
+  list-style-type: none;
+  position: relative;
+}
+/* line 181, ../../app/src/sass/_base.scss */
+ol > li::before {
+  content: counter(custom-ol,decimal-leading-zero) ".";
+  counter-increment: custom-ol;
+  font-weight: 700;
+  left: -2.16em;
+  list-style-type: decimal-leading-zero;
+  position: absolute;
+  top: 0;
+}
+
+/* line 196, ../../app/src/sass/_base.scss */
+form ol,
+form ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/*doc
+---
+title: Lists
+name: lists
+category: Typography
+---
+
+## Unordered List
+
+<ul>
+    <li>This is a list item in an unordered list</li>
+    <li>An unordered list is a list in which the sequence of items is not important. Sometimes, an unordered list is a bulleted list. And this is a long list item in an unordered list that can wrap onto a new line. </li>
+    <li>
+        Lists can be nested inside of each other
+        <ul>
+            <li>This is a nested list item</li>
+            <li>This is another nested list item in an unordered list</li>
+        </ul>
+    </li>
+    <li>This is the last list item</li>
+</ul>
+
+## Ordered List
+
+<ol>
+    <li>This is a list item in an ordered list</li>
+    <li>An ordered list is a list in which the sequence of items is important. An ordered list does not necessarily contain sequence characters.</li>
+    <li>
+        Lists can be nested inside of each other
+        <ol>
+            <li>This is a nested list item</li>
+            <li>This is another nested list item in an ordered list</li>
+        </ol>
+    </li>
+    <li>This is the last list item</li>
+</ol>
+
+*/
+/* line 242, ../../app/src/sass/_base.scss */
+blockquote {
+  margin: 0;
+  position: relative;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+/* line 250, ../../app/src/sass/_base.scss */
+blockquote::before {
+  content: open-quote;
+  left: -0.72em;
+  position: absolute;
+  top: 0;
+}
+/* line 257, ../../app/src/sass/_base.scss */
+blockquote::after {
+  content: close-quote;
+}
+
+/*doc
+---
+title: Blockquote
+name: blockquote
+category: Typography
+---
+
+```html_example
+<blockquote>History as well as life itself is complicated -- neither life nor history is an enterprise for those who seek simplicity and consistency.</blockquote>
+```
+
+*/
+/* line 3, ../../app/src/sass/global/extends/_inputs.scss */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), textarea {
+  border: 1px solid #021122;
+  margin: 0;
+  padding: 0.36em 0.72em;
+}
+
+/* line 1, ../../app/src/sass/global/extends/_padding.scss */
+figure, p, ul,
+ol {
+  margin-bottom: 1.44em;
+  margin-top: 0;
+}
+
+/*doc
+---
+title: Fonts
+name: fonts
+category: Typography
+---
+
+Primary font: "utopia-std", Georgia, Times, "Times New Roman", serif
+
+<em>Primary font italic: "utopia-std", Georgia, Times, "Times New Roman", serif</em>
+
+<strong>Primary font bold: "utopia-std", Georgia, Times, "Times New Roman", serif</strong>
+
+<strong><em>Primary font bold italic: "utopia-std", Georgia, Times, "Times New Roman", serif</em></strong>
+
+<p class="subh5">Secondary font: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</p>
+
+<p class="subh5"><strong>Secondary font bold: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</strong></p>
+
+*/
+/* line 29, ../../app/src/sass/global/extends/_typography.scss */
+html, h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "utopia-std", Georgia, Times, "Times New Roman", serif;
+}
+
+/* line 33, ../../app/src/sass/global/extends/_typography.scss */
+b,
+strong {
+  font-family: "utopia-std", Georgia, Times, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+/* line 38, ../../app/src/sass/global/extends/_typography.scss */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), textarea {
+  font-family: "utopia-std", Georgia, Times, "Times New Roman", serif;
+  font-style: italic;
+}
+
+/* line 49, ../../app/src/sass/global/extends/_typography.scss */
+ol > li::before, .subh3,
+.byline,
+.subh4,
+.tag,
+figcaption,
+.caption,
+.subh5 {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+}
+
+/* line 53, ../../app/src/sass/global/extends/_typography.scss */
+blockquote, .subh1,
+.subh2,
+.btn, .subh3 strong,
+.byline strong,
+.subh4 strong,
+.tag strong,
+figcaption strong,
+.caption strong,
+.subh5 strong {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+  font-weight: 700;
+}
+
+/* line 94, ../../app/src/sass/global/extends/_typography.scss */
+sub,
+sup {
+  font-size: 0.82397em;
+  line-height: 1.74763em;
+}
+@media screen and (min-width: 40em) {
+  /* line 94, ../../app/src/sass/global/extends/_typography.scss */
+  sub,
+  sup {
+    font-size: 0.69444em;
+    line-height: 2.0736em;
+  }
+}
+
+/* line 94, ../../app/src/sass/global/extends/_typography.scss */
+small, ol > li::before, h6, .byline, .subh4, .tag, figcaption, .caption, .subh5, .subh6 {
+  font-size: 0.87891em;
+  line-height: 1.6384em;
+}
+@media screen and (min-width: 40em) {
+  /* line 94, ../../app/src/sass/global/extends/_typography.scss */
+  small, ol > li::before, h6, .byline, .subh4, .tag, figcaption, .caption, .subh5, .subh6 {
+    font-size: 0.83333em;
+    line-height: 1.728em;
+  }
+}
+
+/* line 94, ../../app/src/sass/global/extends/_typography.scss */
+html, legend, h5, .subh1, .subh2, .btn, .subh3 {
+  font-size: 1em;
+  line-height: 1.44em;
+}
+@media screen and (min-width: 40em) {
+  /* line 94, ../../app/src/sass/global/extends/_typography.scss */
+  html, legend, h5, .subh1, .subh2, .btn, .subh3 {
+    font-size: 1em;
+    line-height: 1.44em;
+  }
+}
+
+/* line 94, ../../app/src/sass/global/extends/_typography.scss */
+h4 {
+  font-size: 1.13778em;
+  line-height: 1.26562em;
+}
+@media screen and (min-width: 40em) {
+  /* line 94, ../../app/src/sass/global/extends/_typography.scss */
+  h4 {
+    font-size: 1.44em;
+    line-height: 2em;
+  }
+}
+
+/* line 94, ../../app/src/sass/global/extends/_typography.scss */
+blockquote, h3 {
+  font-size: 1.38084em;
+  line-height: 2.08569em;
+}
+@media screen and (min-width: 40em) {
+  /* line 94, ../../app/src/sass/global/extends/_typography.scss */
+  blockquote, h3 {
+    font-size: 1.728em;
+    line-height: 1.66667em;
+  }
+}
+
+/* line 94, ../../app/src/sass/global/extends/_typography.scss */
+h2 {
+  font-size: 1.67583em;
+  line-height: 1.71855em;
+}
+@media screen and (min-width: 40em) {
+  /* line 94, ../../app/src/sass/global/extends/_typography.scss */
+  h2 {
+    font-size: 2.48832em;
+    line-height: 1.15741em;
+  }
+}
+
+/* line 94, ../../app/src/sass/global/extends/_typography.scss */
+h1 {
+  font-size: 1.78755em;
+  line-height: 1.61114em;
+}
+@media screen and (min-width: 40em) {
+  /* line 94, ../../app/src/sass/global/extends/_typography.scss */
+  h1 {
+    font-size: 3.58318em;
+    line-height: 1.20563em;
+  }
+}
+
+/*doc
+---
+title: Byline
+name: byline
+category: Typography
+---
+
+```html_example
+<p class="byline">Photograph by Kacker Pempel</p>
+```
+
+*/
+/* line 14, ../../app/src/sass/typography/_byline.scss */
+.byline {
+  color: #a4a5a8;
+}
+
+/*doc
+---
+title: Caption
+name: caption
+category: Typography
+---
+
+```html_example
+<p class="caption">A man fishes in an artificial lake outside Poland's coal-fired Belchatow Power Station October 31, 2013. The Polish government's decision to host a coal-industry conference during international climate talks has drawn fire from environmental activists.</p>
+
+<p>or</p>
+
+<figcaption>A man fishes in an artificial lake outside Poland's coal-fired Belchatow Power Station October 31, 2013. The Polish government's decision to host a coal-industry conference during international climate talks has drawn fire from environmental activists.</figcaption>
+```
+
+*/
+/*doc
+---
+title: Heading Classes
+name: heading classes
+parent: headings
+---
+
+Headings are also available as classes so you can use them when a semantic tag doesn't line up with style need.
+
+```html_example
+<h1 class="h3">h1 styled as h3</h1>
+<span class="h1">span styled as h1</h1>
+```
+
+*/
+/*doc
+---
+title: Sub Headings
+name: subheadings
+parent: headings
+---
+
+```html_example
+<h1 class="subh1">Sub Heading 1</h1>
+<h2 class="subh2">Sub Heading 2</h2>
+<h3 class="subh3">Sub Heading 3</h3>
+<h4 class="subh4">Sub Heading 4</h4>
+<h5 class="subh5">Sub Heading 5</h5>
+<h6 class="subh6">Sub Heading 6</h6>
+```
+
+*/
+/* line 82, ../../app/src/sass/typography/headings/_extends.scss */
+.subh1 {
+  text-transform: uppercase;
+}
+
+/* line 96, ../../app/src/sass/typography/headings/_extends.scss */
+.byline, .subh4, .tag {
+  text-transform: uppercase;
+}
+
+/*doc
+---
+title: Heading with link
+name: headingwithlink
+parent: headings
+---
+
+```html_example
+<h3 class="headingwithlink"><a href="#">Heading with link</a></h3>
+<h3 class="subh3 headingwithlink"><a href="#">Sub Heading with link</a></h3>
+```
+
+*/
+/* line 30, ../../app/src/sass/typography/_headings.scss */
+.headingwithlink > a {
+  color: #021122;
+  text-decoration: none;
+}
+/* line 34, ../../app/src/sass/typography/_headings.scss */
+.headingwithlink > a:visited {
+  color: #021122;
+  text-decoration: none;
+}
+/* line 39, ../../app/src/sass/typography/_headings.scss */
+.headingwithlink > a:hover, .headingwithlink > a:focus, .headingwithlink > a:active {
+  color: #06356a;
+  text-decoration: none;
+}
+
+/* line 50, ../../app/src/sass/typography/_headings.scss */
+.headinginverse {
+  color: #fafafa;
+  text-decoration: none;
+}
+/* line 54, ../../app/src/sass/typography/_headings.scss */
+.headinginverse:hover, .headinginverse:focus, .headinginverse:active {
+  color: #fafafa;
+  text-decoration: underline;
+}
+/* line 61, ../../app/src/sass/typography/_headings.scss */
+.headinginverse:visited {
+  color: #fafafa;
+  text-decoration: none;
+}
+
+/*doc
+---
+title: Tag
+name: tag
+category: Typography
+---
+
+```html_example
+<p><span class="tag">Beautiful</span> <span class="tag">environment</span> <span class="tag">maya empire</span> <span class="tag">food</span></p>
+```
+
+*/
+/* line 14, ../../app/src/sass/typography/_tag.scss */
+.tag {
+  border: 1px solid #d7dada;
+  display: inline-block;
+  padding: 0.72em;
+  text-transform: uppercase;
+}
+
+/*doc
+---
+title: Backgrounds
+name: backgrounds
+category: Theme
+---
+
+<div class="backgroundbasic border--default paddingdefault margininlinebottom"><code>.backgroundbasic</code></div>
+<div class="backgroundinverse textinverse border--default paddingdefault margininlinebottom"><code>.backgroundinverse</code></div>
+<div class="backgroundhighlight border--default paddingdefault margininlinebottom"><code>.backgroundhighlight</code></div>
+<div class="backgroundlowlight border--inverse paddingdefault"><code>.backgroundlowlight</code></div>
+
+*/
+/* line 23, ../../app/src/sass/theme/_backgrounds.scss */
+.backgroundbasic {
+  background-color: #fafafa;
+}
+
+/* line 23, ../../app/src/sass/theme/_backgrounds.scss */
+.backgroundinverse {
+  background-color: #021122;
+}
+
+/* line 23, ../../app/src/sass/theme/_backgrounds.scss */
+.backgroundhighlight {
+  background-color: #ffcc00;
+}
+
+/* line 23, ../../app/src/sass/theme/_backgrounds.scss */
+.backgroundlowlight {
+  background-color: #d7dada;
+}
+
+/* line 1, ../../app/src/sass/theme/_margin.scss */
+.margininlinebottom {
+  margin-bottom: 1.44em;
+}
+
+/*doc
+---
+title: Outlines
+name: outlines
+category: Theme
+---
+
+```html_example
+<div class="background--basic border--default paddingdefault margininlinebottom">Default border</div>
+<div class="background--basic border--inverse paddingdefault">Inverse border</div>
+```
+*/
+/* line 14, ../../app/src/sass/theme/_outlines.scss */
+.border--default {
+  border: 1px solid #d7dada;
+}
+
+/* line 18, ../../app/src/sass/theme/_outlines.scss */
+.border--inverse {
+  border: 1px solid #021122;
+}
+
+/* line 1, ../../app/src/sass/theme/_padding.scss */
+.paddingdefault {
+  padding: 1.44em;
+}
+
+/* line 12, ../../app/src/sass/helpers/_clearfix.scss */
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+/* line 18, ../../app/src/sass/helpers/_clearfix.scss */
+.cf:after {
+  clear: both;
+}
+
+/* line 4, ../../app/src/sass/helpers/_hidden.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* line 13, ../../app/src/sass/helpers/_hidden.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* line 27, ../../app/src/sass/helpers/_hidden.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* line 40, ../../app/src/sass/helpers/_hidden.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/*doc
+---
+title: Button Styles
+name: buttonSkins
+category: Elements
+---
+
+Button                                              | Class               | Description
+--------------------------------------------------- | ------------------- | -----------
+<button class="btn btn--default">Default</button>   | `btn btn--default`  | This is what buttons look like, this is the go to button style.
+<button class="btn btn--primary">Primary</button>   | `btn btn--primary`  | Use this button as the primary call to action
+<button class="btn btn--danger">Delete</button>     | `btn btn--danger`   | This button is for delete actions, these actions should also have a confirmation dialog
+<button class="btn btn--disabled">Disabled</button> | `btn btn--disabled` | I'm afraid I can't let you do that, yet.
+
+*/
+/* line 22, ../../app/src/sass/elements/_btn.scss */
+.btn {
+  border: 0;
+  cursor: default;
+  line-height: 1;
+  margin-bottom: 0.4em;
+  padding: 1em;
+  text-align: center;
+}
+/* line 12, ../../app/src/sass/global/mixins/_bem.scss */
+.btn--default {
+  background-color: #282e5c;
+  color: #fafafa;
+}
+/* line 9, ../../app/src/sass/elements/btn/_mixins.scss */
+.btn--default:hover {
+  background-color: #384080;
+  color: white;
+}
+/* line 12, ../../app/src/sass/global/mixins/_bem.scss */
+.btn--primary {
+  background-color: #ffcc00;
+  color: #021122;
+}
+/* line 9, ../../app/src/sass/elements/btn/_mixins.scss */
+.btn--primary:hover {
+  background-color: #ffd633;
+  color: #052952;
+}
+/* line 12, ../../app/src/sass/global/mixins/_bem.scss */
+.btn--danger {
+  background-color: #cc0000;
+  color: #fafafa;
+}
+/* line 9, ../../app/src/sass/elements/btn/_mixins.scss */
+.btn--danger:hover {
+  background-color: red;
+  color: white;
+}
+/* line 42, ../../app/src/sass/elements/_btn.scss */
+.btn:active {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  position: relative;
+  top: 0.2em;
+}
+
+/*doc
+---
+title: Headline Deck
+name: headlineDeck
+category: Blocks
+---
+
+```html_example
+<p class="subh5 headlinedeck-duration">3 Min read</p>
+<p class="subh3 headlinedeck-category">Behind the Cover</p>
+<h1>Photos: With Ukraine in Disarray, Crimea Heats Up</h1>
+<h2 class="subh2 headlinedeck-subtitle">Step into the Void, a new 12,650-foot perch in the French Alps, the scariest?</h2>
+
+<p class="subh6 headlinedeck-author">By <strong>Brian Handwerk</strong></p>
+<p class="byline">Published November 22, 2013</p>
+```
+*/
+/* line 4, ../../app/src/sass/global/mixins/_bem.scss */
+.headlinedeck-duration {
+  margin-bottom: 0;
+}
+/* line 4, ../../app/src/sass/global/mixins/_bem.scss */
+.headlinedeck-category {
+  margin-bottom: 0;
+}
+/* line 4, ../../app/src/sass/global/mixins/_bem.scss */
+.headlinedeck-subtitle {
+  margin-bottom: 3.456em;
+}
+/* line 4, ../../app/src/sass/global/mixins/_bem.scss */
+.headlinedeck-author {
+  margin-bottom: 0;
+}
+
+/*doc
+---
+title: Text on Image
+name: textOnImage
+category: Blocks
+---
+
+```html_example
+<aside style="background-image: url('img/cabin.jpg');" class="textonimage-container textinverse paddingdefault">
+    <div class="textonimage-textcontainer">
+        <p class="subh5 headlinedeck-duration">3 Min read</p>
+        <p class="subh3 headlinedeck-category">Behind the Cover</p>
+        <h1>Photos: With Ukraine in Disarray, Crimea Heats Up</h1>
+        <h2 class="subh2 headlinedeck-subtitle">Step into the Void, a new 12,650-foot perch in the French Alps, the scariest?</h2>
+
+        <p class="subh6 headlinedeck-author">By <strong>Brian Handwerk</strong></p>
+        <p class="byline">Published November 22, 2013</p>
+    </div>
+</aside>
+```
+*/
+/* line 4, ../../app/src/sass/global/mixins/_bem.scss */
+.textonimage-container {
+  background-position: center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+/* line 29, ../../app/src/sass/blocks/_headlineonimage.scss */
+.textonimage-container:before {
+  background-color: rgba(2, 17, 34, 0.8);
+  bottom: 0;
+  content: ' ';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+/* line 4, ../../app/src/sass/global/mixins/_bem.scss */
+.textonimage-textcontainer {
+  position: relative;
+  z-index: 20;
+}
+
+/*doc
+---
+title: Related
+name: related
+category: Blocks
+---
+
+```html_example
+<h1 class="subh4 related-title">Related News</h1>
+
+<p class="subh5 related-category">Mission</p>
+<h2 class="subh2 related-article">Best Space Photos 2013: Awesome Year of the Comet Shines Bright</h2>
+
+<p class="subh5 related-category">From the Magazine</p>
+<h2 class="subh2 related-article">Photos: Superior Ice Caves</h2>
+
+<p class="subh5 related-category">Weird</p>
+<h2 class="subh2 related-article">Methane Emissions Far Worse Than U.S. Estimates, Study Finds</h2>
+```
+*/
+/* line 4, ../../app/src/sass/global/mixins/_bem.scss */
+.related-title {
+  margin-bottom: 0.864em;
+}
+/* line 4, ../../app/src/sass/global/mixins/_bem.scss */
+.related-category {
+  margin-bottom: 0;
+}
+/* line 4, ../../app/src/sass/global/mixins/_bem.scss */
+.related-article {
+  margin-bottom: 1.44em;
+}
+
+/*doc
+---
+title: Social
+name: social
+category: Typography
+---
+
+<i class="social-icon icongs icongs-comment"></i><span class="subh5"><strong class="social-number">23</strong> comments</span>
+*/
+/* line 4, ../../app/src/sass/global/mixins/_bem.scss */
+.social-icon {
+  margin-right: 0.36em;
+}
+/* line 4, ../../app/src/sass/global/mixins/_bem.scss */
+.social-number {
+  margin-right: 0.36em;
+}
+
+/* line 7, ../../app/src/sass/_shame.scss */
+.textinverse {
+  color: #fafafa;
+}
+/* line 10, ../../app/src/sass/_shame.scss */
+.textinverse a {
+  text-decoration: none;
+  color: #7981f1;
+}
+/* line 15, ../../app/src/sass/_shame.scss */
+.textinverse a:hover,
+.textinverse a:focus,
+.textinverse a:active {
+  text-decoration: underline;
+  color: #7981f1;
+}
+/* line 22, ../../app/src/sass/_shame.scss */
+.textinverse a:visited {
+  text-decoration: none;
+  color: #7981f1;
+}
