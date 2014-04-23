@@ -22,17 +22,14 @@ $center-column-width-sm: 85%;
 
 // Font
 
-@import "compass/css3/font-face";
-
-@include font-face("icongs",
-  font-files(
-    "icongs_4176808f3eae2f9b12b92233f91f7ba2.woff",
-    "icongs_4176808f3eae2f9b12b92233f91f7ba2.ttf",
-    "icongs_4176808f3eae2f9b12b92233f91f7ba2.svg"
-  ),
-  "icongs_4176808f3eae2f9b12b92233f91f7ba2.eot",
-  normal
-);
+@font-face {
+  font-family: 'icongs';
+  src: url('../bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.eot'); /* IE9 Compat Modes */
+  src: url('../bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.woff') format('woff'), /* Modern Browsers */
+       url('../bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
 
 .layout_colorsample {
     @for $i from 1 to 10 {
