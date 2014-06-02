@@ -7,6 +7,9 @@ module.exports = (grunt) ->
     # Load all grunt tasks
     require('load-grunt-tasks') grunt
 
+    # Load bower.json, for use in variables
+    bwr = require('./bower.json')
+
     # Configurable Paths
     appConfig =
         mortarScss: 'app/src/sass'
@@ -39,7 +42,7 @@ module.exports = (grunt) ->
                     'copy:hologramCss'
                 ]
 
-        clean: ['.tmp/', 'docs/', '.component/']
+        clean: ['.tmp/', 'docs/', 'component/']
 
         # CSS Processing
 
@@ -122,6 +125,16 @@ module.exports = (grunt) ->
                 flatten: true
                 src: '<%= app.hologramCss %>'
                 dest: '<%= app.docsCss %>'
+            componentCss:
+                expand: true
+                flatten: true
+                src: '<%= app.mortarCss %>'
+                dest: 'component'
+            componentScss:
+                expand: true
+                cwd: '<%= app.mortarScss %>/'
+                src: '**'
+                dest: 'component/sass/'
 
         shell:
             update:
@@ -162,7 +175,7 @@ module.exports = (grunt) ->
                     dir: 'component'
                     branch: 'component'
                     message: 'Built %sourceName% component from commit %sourceCommit% on branch %sourceBranch%'
-                    # tag: bwr.version
+                    tag: bwr.version
 
     grunt.registerTask 'serve', [
         'clean'
@@ -185,6 +198,7 @@ module.exports = (grunt) ->
     grunt.registerTask 'deploy', [
         'build'
         'buildcontrol:pages'
+        'buildcontrol:component'
     ]
 
     grunt.registerTask 'processMortarCss', [
