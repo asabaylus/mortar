@@ -1,0 +1,61 @@
+// Font Families
+// =============
+
+$font-serif: "utopia-std", Georgia, Times, "Times New Roman", serif;
+$font-sans: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+
+$font-default: $font-serif;
+$font-alternate: $font-sans;
+
+// Font Sizes
+// ==========
+
+@import "modular-scale";
+
+// Defaults
+
+$ms-base: 16px; // don't worry, it gets converted to ems
+$ms-ratio: $minor-third;
+
+// Variants
+
+$ms-xsm      : ms(-2);
+$ms-sm       : ms(-1);
+$ms-norm     : $ms-base;
+$ms-med      : ms(2);
+$ms-lrg      : ms(3);
+$ms-xlrg     : ms(4);
+$ms-xxlrg    : ms(5);
+$ms-xxxlrg   : ms(7);
+
+// Small Screen Variants
+
+$ms-smscr-ratio: $minor-second $minor-third;
+
+$ms-smscr-xsm      : ms(-4, $ms-base, $ms-smscr-ratio);
+$ms-smscr-sm       : ms(-2, $ms-base, $ms-smscr-ratio);
+$ms-smscr-norm     : $ms-base;
+$ms-smscr-med      : ms(2, $ms-base, $ms-smscr-ratio);
+$ms-smscr-lrg      : ms(6, $ms-base, $ms-smscr-ratio);
+$ms-smscr-xlrg     : ms(9, $ms-base, $ms-smscr-ratio);
+$ms-smscr-xxlrg    : ms(10, $ms-base, $ms-smscr-ratio);
+$ms-smscr-xxxlrg   : ms(12, $ms-base, $ms-smscr-ratio);
+
+
+// Type
+
+$base-font-size    : $ms-norm;
+$base-line-height  : $ms-med;
+
+// Padding
+//
+// Defined here because it relates to the overall
+// typographic rhythm
+
+// Crazy to convert px to em
+$padding-default: (($ms-med / ($ms-med * 0 + 1)) / 16) * 1em;
+
+$padding-half: $padding-default / 2;
+$padding-quarter: $padding-default / 4;
+$padding-one-and-half: $padding-default * 1.5;
+$padding-double: $padding-default * 2;

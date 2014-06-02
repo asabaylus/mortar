@@ -1,0 +1,65 @@
+@import "headings/extends";
+
+@each $tag in (h1, h2, h3, h4, h5, h6) {
+    #{$tag} {
+        @extend %#{$tag};
+    }
+}
+
+@each $class in (subh1, subh2, subh3, subh4, subh5, subh6) {
+    .#{$class} {
+        @extend %#{$class};
+    }
+}
+
+/*doc
+---
+title: Heading with link
+name: headingwithlink
+parent: headings
+---
+
+```html_example
+<h3 class="headingwithlink"><a href="#">Heading with link</a></h3>
+<h3 class="subh3 headingwithlink"><a href="#">Sub Heading with link</a></h3>
+```
+
+*/
+
+.headingwithlink {
+    > a {
+        color: $color-text;
+        text-decoration: none;
+
+        &:visited {
+            color: $color-text;
+            text-decoration: none;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: lighten($color-text, 15);
+            text-decoration: none;
+        }
+    }
+}
+
+// Heading of inverse color
+
+.headinginverse {
+    color: $color-text-inverse;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color-text-inverse;
+        text-decoration: underline;
+    }
+
+    &:visited {
+        color: $color-text-inverse;
+        text-decoration: none;
+    }
+}
