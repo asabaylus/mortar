@@ -12,13 +12,15 @@
     "grunt-shell": "~0.6.4",
     "grunt-contrib-compass": "~0.7.2",
     "grunt-build-control": "git+ssh://git@github.com:robwierzbowski/grunt-build-control.git",
-    "grunt-browser-sync": "~0.7.0",
+    "grunt-browser-sync": "~0.9.1",
     "grunt-autoprefixer": "~0.7.2",
-    "browser-sync": "~0.7.0",
+    "browser-sync": "~0.9.1",
     "grunt-scss-lint": "~0.1.2",
     "grunt-csscss": "~0.6.1",
     "csslint": "~0.10.0",
-    "grunt-contrib-csslint": "~0.2.0"
+    "grunt-contrib-csslint": "~0.2.0",
+    "grunt-weinre": "0.0.2",
+    "grunt-concurrent": "~0.5.0"
   },
   "repository": {
     "type": "git",

@@ -159,6 +159,17 @@ module.exports = (grunt) ->
                     server:
                         baseDir: 'docs'
 
+        weinre:
+            dev:
+                options:
+                    httpPort: 8082
+                    boundHost: '-all-'
+        concurrent:
+            dev:
+                tasks: ['weinre', 'watch']
+            options:
+                logConcurrentOutput: true
+
         buildcontrol:
             options:
                 commit: true
@@ -184,7 +195,7 @@ module.exports = (grunt) ->
         'compass:hologram'
         'copy'
         'browserSync:serve'
-        'watch'
+        'concurrent:dev'
     ]
 
     grunt.registerTask 'build', [
@@ -204,7 +215,7 @@ module.exports = (grunt) ->
     grunt.registerTask 'processMortarCss', [
         # 'scsslint'
         'compass:mortar'
-        'csscss'
+        # 'csscss'
         'autoprefixer:mortar'
         'cssmin'
     ]
