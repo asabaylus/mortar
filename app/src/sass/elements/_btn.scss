@@ -11,6 +11,7 @@ Button                                              | Class               | Desc
 <button class="btn btn--primary">Primary</button>   | `btn btn--primary`  | Use this button as the primary call to action
 <button class="btn btn--danger">Delete</button>     | `btn btn--danger`   | This button is for delete actions, these actions should also have a confirmation dialog
 <button class="btn btn--disabled">Disabled</button> | `btn btn--disabled` | I'm afraid I can't let you do that, yet.
+<button class="btn--naked">Naked</button>           | `btn--naked`        | When a button is semantically correct, but visually inapropriate
 
 */
 
@@ -35,6 +36,13 @@ Button                                              | Class               | Desc
         @include m($btn-type) {
             @include btn($btn-color);
         }
+    }
+
+    @include m(naked) {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0;
     }
 
     // This rule set must be last
