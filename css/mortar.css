@@ -844,19 +844,19 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "utopia-std", Georgia, Times, "Times New Roman", serif;
+  font-family: "minion-pro", Georgia, Times, "Times New Roman", serif;
 }
 
 /* line 33, ../../app/src/sass/global/extends/_typography.scss */
 b,
 strong {
-  font-family: "utopia-std", Georgia, Times, "Times New Roman", serif;
+  font-family: "minion-pro", Georgia, Times, "Times New Roman", serif;
   font-weight: 600;
 }
 
 /* line 38, ../../app/src/sass/global/extends/_typography.scss */
 input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), textarea {
-  font-family: "utopia-std", Georgia, Times, "Times New Roman", serif;
+  font-family: "minion-pro", Georgia, Times, "Times New Roman", serif;
   font-style: italic;
 }
 
@@ -1244,9 +1244,10 @@ Button                                              | Class               | Desc
 <button class="btn btn--primary">Primary</button>   | `btn btn--primary`  | Use this button as the primary call to action
 <button class="btn btn--danger">Delete</button>     | `btn btn--danger`   | This button is for delete actions, these actions should also have a confirmation dialog
 <button class="btn btn--disabled">Disabled</button> | `btn btn--disabled` | I'm afraid I can't let you do that, yet.
+<button class="btn--naked">Naked</button>           | `btn--naked`        | When a button is semantically correct, but visually inapropriate
 
 */
-/* line 22, ../../app/src/sass/elements/_btn.scss */
+/* line 23, ../../app/src/sass/elements/_btn.scss */
 .btn {
   border: 0;
   cursor: default;
@@ -1285,12 +1286,72 @@ Button                                              | Class               | Desc
   background-color: red;
   color: white;
 }
-/* line 42, ../../app/src/sass/elements/_btn.scss */
+/* line 12, ../../app/src/sass/global/mixins/_bem.scss */
+.btn--naked {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+/* line 50, ../../app/src/sass/elements/_btn.scss */
 .btn:active {
   -webkit-box-shadow: none;
   box-shadow: none;
   position: relative;
   top: 0.2em;
+}
+
+/*doc
+---
+title: Intrinsic Ratios
+name: intratio
+category: Elements
+---
+
+Intrinsic ratios are a useful trick for helping interactives, flash videos, and galleries to be fluidly responsive. First documented as "<a href="http://daverupert.com/2012/04/uncle-daves-ol-padded-box/">Uncle Dave's Ol' Padded Box</a>. Ratios taken from the wikipedia <a href="http://en.wikipedia.org/wiki/Aspect_ratio_(image)">Aspect Ratio (image)</a> article.
+
+<p><div class="intratio--tv backgroundinverse textinverse"><code>.intratio--tv</code> (4:3)</div></p>
+
+<p><div class="intratio--imax backgroundinverse textinverse"><code>.intratio--imax</code> (1.43:1)</div></p>
+
+<p><div class="intratio--photo backgroundinverse textinverse"><code>.intratio--photo</code> (3:2)</div></p>
+
+<p><div class="intratio--golden backgroundinverse textinverse"><code>.intratio--golden</code> (1.618:1)</div></p>
+
+<p><div class="intratio--broadcast backgroundinverse textinverse"><code>.intratio--broadcast</code> (16:9)</div></p>
+
+<p><div class="intratio--widescreen backgroundinverse textinverse"><code>.intratio--widescreen</code> (1.85:1)</div></p>
+
+*/
+/* line 12, ../../app/src/sass/global/mixins/_bem.scss */
+.intratio--tv {
+  height: 0;
+  padding-bottom: 75%;
+}
+/* line 12, ../../app/src/sass/global/mixins/_bem.scss */
+.intratio--imax {
+  height: 0;
+  padding-bottom: 69.93%;
+}
+/* line 12, ../../app/src/sass/global/mixins/_bem.scss */
+.intratio--photo {
+  height: 0;
+  padding-bottom: 66.66%;
+}
+/* line 12, ../../app/src/sass/global/mixins/_bem.scss */
+.intratio--golden {
+  height: 0;
+  padding-bottom: 61.8%;
+}
+/* line 12, ../../app/src/sass/global/mixins/_bem.scss */
+.intratio--broadcast {
+  height: 0;
+  padding-bottom: 56.25%;
+}
+/* line 12, ../../app/src/sass/global/mixins/_bem.scss */
+.intratio--widescreen {
+  height: 0;
+  padding-bottom: 54.05%;
 }
 
 /*doc
