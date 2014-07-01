@@ -22,13 +22,11 @@ Intrinsic ratios are a useful trick for helping interactives, flash videos, and 
 */
 
 @import "intratio/variables";
-@import "intratio/extends";
 
 .intratio {
     @each $int-ratio, $percentage in $int-ratios {
         @include m($int-ratio) {
-            @extend %intratio;
-
+            height: 0;
             padding-bottom: $percentage;
         }
     }
