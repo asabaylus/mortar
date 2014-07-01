@@ -1,0 +1,33 @@
+/*doc
+---
+title: Intrinsic Ratios
+name: intratio
+category: Elements
+---
+
+Intrinsic ratios are a useful trick for helping interactives, flash videos, and galleries to be fluidly responsive. First documented as "<a href="http://daverupert.com/2012/04/uncle-daves-ol-padded-box/">Uncle Dave's Ol' Padded Box</a>. Ratios taken from the wikipedia <a href="http://en.wikipedia.org/wiki/Aspect_ratio_(image)">Aspect Ratio (image)</a> article.
+
+<p><div class="intratio--tv backgroundinverse textinverse"><code>.intratio--tv</code> (4:3)</div></p>
+
+<p><div class="intratio--imax backgroundinverse textinverse"><code>.intratio--imax</code> (1.43:1)</div></p>
+
+<p><div class="intratio--photo backgroundinverse textinverse"><code>.intratio--photo</code> (3:2)</div></p>
+
+<p><div class="intratio--golden backgroundinverse textinverse"><code>.intratio--golden</code> (1.618:1)</div></p>
+
+<p><div class="intratio--broadcast backgroundinverse textinverse"><code>.intratio--broadcast</code> (16:9)</div></p>
+
+<p><div class="intratio--widescreen backgroundinverse textinverse"><code>.intratio--widescreen</code> (1.85:1)</div></p>
+
+*/
+
+@import "intratio/variables";
+
+.intratio {
+    @each $int-ratio, $percentage in $int-ratios {
+        @include m($int-ratio) {
+            height: 0;
+            padding-bottom: $percentage;
+        }
+    }
+}
