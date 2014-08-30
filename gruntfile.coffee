@@ -12,11 +12,14 @@ module.exports = (grunt) ->
 
     # Configurable Paths
     appConfig =
-        mortarScss: 'app/src/sass'
-        mortarCss: '.tmp/css/mortar.css'
-        hologramScss: 'app/doc_src/sass'
-        hologramCss: '.tmp/css/hologram.css'
+        cssDir: '.tmp/css/'
         docsCss: 'docs/css/'
+        mortarCss: '.tmp/css/mortar.css'
+        mortarScss: 'app/src/sass/mortar.scss'
+        mortarScssDir: 'app/src/sass/'
+        hologramCss: '.tmp/css/hologram.css'
+        hologramScss: 'app/doc_src/sass/hologram.scss'
+        hologramScssDir: 'app/doc_src/sass/'
 
     grunt.initConfig
         app: appConfig
@@ -37,7 +40,7 @@ module.exports = (grunt) ->
             hologramScss:
                 files: '<%= app.hologramScss %>/**/*'
                 tasks: [
-                    'compass:hologram'
+                    'sass:hologram'
                     'autoprefixer:hologram'
                     'copy:hologramCss'
                 ]
@@ -46,26 +49,37 @@ module.exports = (grunt) ->
 
         # CSS Processing
 
-        compass:
+        sass:
             options:
                 bundleExec: true
-                debugInfo: false
                 require: [
                     'sass-globbing'
-                    'modular-scale'
-                    'breakpoint'
-                    'singularitygs'
                 ]
             hologram:
                 options:
-                    sassDir: '<%= app.hologramScss %>'
-                    cssDir: '.tmp/css'
-                    fontsDir: 'app/bower_components/icongs/fonts'
-                    httpFontsDir: 'bower_components/icongs/fonts'
+                    loadPath: [ '<%= app.hologramScssDir %>' ]
+                    require: [
+                        'sass-globbing'
+                        'singularitygs'
+                        'breakpoint'
+                    ]
+                files: [
+                    expand: true
+                    cwd: '<%= app.hologramScssDir %>'
+                    src: 'hologram.scss'
+                    dest: '<%= app.cssDir %>'
+                    ext: '.css'
+                ]
             mortar:
                 options:
-                    sassDir: '<%= app.mortarScss %>'
-                    cssDir: '.tmp/css'
+                    loadPath: [ '<%= app.mortarScssDir %>' ]
+                files: [{
+                    expand: true
+                    cwd: '<%= app.mortarScssDir %>'
+                    src: 'mortar.scss'
+                    dest: '<%= app.cssDir %>'
+                    ext: '.css'
+                }]
 
         autoprefixer:
             mortar:
@@ -182,7 +196,7 @@ module.exports = (grunt) ->
         'clean'
         'shell'
         'processMortarCss'
-        'compass:hologram'
+        'sass:hologram'
         'copy'
         'browserSync:serve'
         'watch'
@@ -192,7 +206,7 @@ module.exports = (grunt) ->
         'clean'
         'shell'
         'processMortarCss'
-        'compass:hologram'
+        'sass:hologram'
         'copy'
     ]
 
@@ -204,7 +218,7 @@ module.exports = (grunt) ->
 
     grunt.registerTask 'processMortarCss', [
         # 'scsslint'
-        'compass:mortar'
+        'sass:mortar'
         # 'csscss'
         'autoprefixer:mortar'
         'cssmin'
