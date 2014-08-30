@@ -82,13 +82,13 @@ module.exports = (grunt) ->
 
         # CSS Tests
 
-        scsslint:
-            allfiles: [
-                '<%= app.mortarScss %>/**/*.scss'
-            ]
-            options:
-                config: '.scss-lint.yml'
-                reporterOutput: 'scss-lint-report.xml'
+        # scsslint:
+        #     allfiles: [
+        #         '<%= app.mortarScss %>/**/*.scss'
+        #     ]
+        #     options:
+        #         config: '.scss-lint.yml'
+        #         reporterOutput: 'scss-lint-report.xml'
 
         csslint:
             options:
@@ -102,15 +102,15 @@ module.exports = (grunt) ->
             mortar:
                 src:'<%= app.mortarCss %>'
 
-        csscss:
-            options:
-                bundleExec: true
-                failWhenDuplicates: true
-                minMatch: 4
-                shorthand: false
-                verbose: true
-            mortar:
-                src: ['<%= app.mortarCss %>']
+        # csscss:
+        #     options:
+        #         bundleExec: true
+        #         failWhenDuplicates: true
+        #         minMatch: 4
+        #         shorthand: false
+        #         verbose: true
+        #     mortar:
+        #         src: ['<%= app.mortarCss %>']
 
         # Doing things
 
@@ -154,21 +154,11 @@ module.exports = (grunt) ->
                         'docs/css/*.css'
                     ]
                 options:
+                    open: "external"
                     watchTask: true
                     hostnameSuffix: ".xip.io"
                     server:
                         baseDir: 'docs'
-
-        weinre:
-            dev:
-                options:
-                    httpPort: 8082
-                    boundHost: '-all-'
-        concurrent:
-            dev:
-                tasks: ['weinre', 'watch']
-            options:
-                logConcurrentOutput: true
 
         buildcontrol:
             options:
@@ -195,7 +185,7 @@ module.exports = (grunt) ->
         'compass:hologram'
         'copy'
         'browserSync:serve'
-        'concurrent:dev'
+        'watch'
     ]
 
     grunt.registerTask 'build', [
