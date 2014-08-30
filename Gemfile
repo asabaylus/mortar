@@ -10,6 +10,6 @@ gem "csscss", "~> 1.3.2"
 gem 'compass-csscss', '~> 0.1.0'
 
 # hologram only
-gem "hologram", "~> 1.0.0"
+gem "hologram", "~> 1.2.0"
 gem "breakpoint", "~> 2.4.1"
 gem "singularitygs", "~> 1.2.0.rc.6"
