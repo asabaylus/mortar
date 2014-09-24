@@ -1,5 +1,6 @@
 # Hologram will run from same directory where this config file resides
 # All paths should be relative to there
+title: Mortar
 
 # The directory containing the source files to parse recursively
 source: ./app/src

@@ -12,9 +12,8 @@
     "grunt-shell": "~0.6.4",
     "grunt-contrib-sass": "~0.8.1",
     "grunt-build-control": "git+ssh://git@github.com:robwierzbowski/grunt-build-control.git",
-    "grunt-browser-sync": "~1.3.6",
+    "grunt-browser-sync": "~1.5.2",
     "grunt-autoprefixer": "~1.0.1",
-    "browser-sync": "~1.3.6",
     "csslint": "~0.10.0",
     "grunt-contrib-csslint": "~0.2.0"
   },

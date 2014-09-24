@@ -164,7 +164,7 @@ module.exports = (grunt) ->
             serve:
                 bsFiles:
                     src: [
-                        # 'docs/*.html'
+                        'docs/*.html'
                         'docs/css/*.css'
                     ]
                 options:
