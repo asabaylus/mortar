@@ -6,8 +6,8 @@ category: Blocks
 ---
 
 ```html_example
-<aside style="background-image: url('img/cabin.jpg');" class="textonimage-container textinverse paddingdefault">
-    <div class="textonimage-textcontainer">
+<aside style="background-image: url('img/cabin.jpg');" class="mt_textonimage-container textinverse mt_paddingdefault">
+    <div class="mt_textonimage-textcontainer">
         <p class="subh5 headlinedeck-duration">3 Min read</p>
         <p class="subh3 headlinedeck-category">Behind the Cover</p>
         <h1>Photos: With Ukraine in Disarray, Crimea Heats Up</h1>
@@ -20,14 +20,14 @@ category: Blocks
 ```
 */
 
-.textonimage {
+.mt_textonimage {
     @include e(container) {
         background-position: center center;
         background-size: cover;
         position: relative;
 
         &:before {
-            background-color: $color-image-mask;
+            background-color: $mt_color-image-mask;
             bottom: 0;
             content: ' ';
             left: 0;

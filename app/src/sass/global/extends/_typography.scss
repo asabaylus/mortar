@@ -27,75 +27,75 @@ Primary font: "utopia-std", Georgia, Times, "Times New Roman", serif
 }
 
 %font-default {
-    font-family: $font-default;
+    font-family: $mt_font-default;
 }
 
 %font-default-strong {
-    font-family: $font-default;
+    font-family: $mt_font-default;
     font-weight: 600;
 }
 
 %font-default-em {
-    font-family: $font-default;
+    font-family: $mt_font-default;
     font-style: italic;
 }
 
 %font-default-strong-em {
-    font-family: $font-default;
+    font-family: $mt_font-default;
     font-style: italic;
     font-weight: 600;
 }
 
 %font-alternate {
-    font-family: $font-alternate;
+    font-family: $mt_font-alternate;
 }
 
 %font-alternate-strong {
-    font-family: $font-alternate;
+    font-family: $mt_font-alternate;
     font-weight: 700;
 }
 
 // Font sizes
 
-$font-sizes: (
+$mt_font-sizes: (
     font-size-xsm: ( // Font size
-        $ms-smscr-xsm, // Small screen modular scale size
-        $ms-xsm // Default modular scale size
+        $mt_ms-smscr-xsm, // Small screen modular scale size
+        $mt_ms-xsm // Default modular scale size
     ),
     font-size-sm: (
-        $ms-smscr-sm,
-        $ms-sm
+        $mt_ms-smscr-sm,
+        $mt_ms-sm
     ),
     font-size-norm: (
-        $ms-smscr-norm,
-        $ms-norm
+        $mt_ms-smscr-norm,
+        $mt_ms-norm
     ),
     font-size-med: (
-        $ms-smscr-med,
-        $ms-med
+        $mt_ms-smscr-med,
+        $mt_ms-med
     ),
     font-size-lrg: (
-        $ms-smscr-lrg,
-        $ms-lrg
+        $mt_ms-smscr-lrg,
+        $mt_ms-lrg
     ),
     font-size-xxlrg: (
-        $ms-smscr-xxlrg,
-        $ms-xxlrg
+        $mt_ms-smscr-xxlrg,
+        $mt_ms-xxlrg
     ),
     font-size-xxxlrg: (
-        $ms-smscr-xxxlrg,
-        $ms-xxxlrg
+        $mt_ms-smscr-xxxlrg,
+        $mt_ms-xxxlrg
     )
 );
 
 
 // Loop through font-sizes
-@each $font-size, $ms-size in $font-sizes {
-    %#{$font-size} {
-        @include adjust-font-size-to( nth($ms-size, 1) );
+@each $mt_font-size, $mt_ms-size in $mt_font-sizes {
+    %#{$mt_font-size} {
+        @include adjust-font-size-to( nth($mt_ms-size, 1) );
 
         @media screen and (min-width:40em) {
-            @include adjust-font-size-to( nth($ms-size, 2) );
+            @include adjust-font-size-to( nth($mt_ms-size, 2) );
         }
     }
 }

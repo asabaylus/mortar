@@ -27,15 +27,15 @@ module.exports = (grunt) ->
         watch:
             hologram:
                 files: [
-                    'app/src/**/*'
                     'app/assets/*'
                 ]
                 tasks: 'shell:hologram'
             mortarScss:
-                files: '<%= app.mortarScss %>/**/*'
+                files: '<%= app.mortarScssDir %>/**/*.scss'
                 tasks: [
                     'processMortarCss'
                     'copy:mortarCss'
+                    'shell:hologram'
                 ]
             hologramScss:
                 files: '<%= app.hologramScss %>/**/*'
@@ -221,5 +221,5 @@ module.exports = (grunt) ->
         'sass:mortar'
         # 'csscss'
         'autoprefixer:mortar'
-        'cssmin'
+        # 'cssmin'
     ]

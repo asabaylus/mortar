@@ -28,18 +28,18 @@ parent: headings
 
 .headingwithlink {
     > a {
-        color: $color-text;
+        color: $mt_color-text;
         text-decoration: none;
 
         &:visited {
-            color: $color-text;
+            color: $mt_color-text;
             text-decoration: none;
         }
 
         &:hover,
         &:focus,
         &:active {
-            color: lighten($color-text, 15);
+            color: lighten($mt_color-text, 15);
             text-decoration: none;
         }
     }
@@ -48,18 +48,18 @@ parent: headings
 // Heading of inverse color
 
 .headinginverse {
-    color: $color-text-inverse;
+    color: $mt_color-text-inverse;
     text-decoration: none;
 
     &:hover,
     &:focus,
     &:active {
-        color: $color-text-inverse;
+        color: $mt_color-text-inverse;
         text-decoration: underline;
     }
 
     &:visited {
-        color: $color-text-inverse;
+        color: $mt_color-text-inverse;
         text-decoration: none;
     }
 }

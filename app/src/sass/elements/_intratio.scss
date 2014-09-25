@@ -21,7 +21,20 @@ Intrinsic ratios are a useful trick for helping interactives, flash videos, and 
 
 */
 
-@import "intratio/variables";
+// Variables
+// =========
+
+$int-ratios: (
+  tv: 75%, // (4:3)
+  imax: 69.93%, // (1.43:1)
+  photo: 66.66%, // (3:2)
+  golden: 61.8%, // (1.618:1)
+  broadcast: 56.25%, // (16:9)
+  widescreen: 54.05% // (1.85:1)
+);
+
+// Style
+// =====
 
 .intratio {
     @each $int-ratio, $percentage in $int-ratios {

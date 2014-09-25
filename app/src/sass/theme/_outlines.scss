@@ -6,15 +6,15 @@ category: Theme
 ---
 
 ```html_example
-<div class="background--basic border--default paddingdefault margininlinebottom">Default border</div>
-<div class="background--basic border--inverse paddingdefault">Inverse border</div>
+<div class="mt_background--basic mt_border--default mt_paddingdefault mt_margininlinebottom">Default border</div>
+<div class="mt_background--basic mt_border--inverse mt_paddingdefault">Inverse border</div>
 ```
 */
 
-.border--default {
-    border: $border-default;
+.mt_border--default {
+    border: $mt_border-default;
 }
 
-.border--inverse {
-    border: $border-inverse;
+.mt_border--inverse {
+    border: $mt_border-inverse;
 }

@@ -1,4 +1,4 @@
-@function yiq($color) {
+@function mt_yiq($color) {
     $red: red($color);
     $green: green($color);
     $blue: blue($color);

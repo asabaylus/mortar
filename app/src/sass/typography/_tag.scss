@@ -14,8 +14,8 @@ category: Typography
 .tag {
     @extend %subh4;
 
-    border: $border-default;
+    border: $mt_border-default;
     display: inline-block;
-    padding: $padding-half;
+    padding: $mt_padding-half;
     text-transform: uppercase;
 }

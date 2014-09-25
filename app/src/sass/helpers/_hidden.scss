@@ -1,7 +1,7 @@
 // Hide from both screenreaders and browsers: h5bp.com/u
 // Probably don't use this one
 
-.hidden {
+.mt_hidden {
     display: none !important;
     visibility: hidden;
 }
@@ -10,7 +10,7 @@
 // Hide only visually, but have it available for screenreaders: h5bp.com/v
 // Probably use this one
 
-.visuallyhidden {
+.mt_visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -24,8 +24,8 @@
 // Extends the .visuallyhidden class to allow the element to be focusable
 // when navigated to via the keyboard: h5bp.com/p
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
+.mt_visuallyhidden.focusable:active,
+.mt_visuallyhidden.focusable:focus {
     clip: auto;
     height: auto;
     margin: 0;
@@ -37,6 +37,6 @@
 // Hide visually and from screenreaders, but maintain layout
 // Use this one rarely.
 
-.invisible {
+.mt_invisible {
     visibility: hidden;
 }

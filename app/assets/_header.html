@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="backgroundbasic">
+<html class="mt_backgroundbasic">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,11 +15,11 @@
 
     <body>
         <header>
-            <hgroup class="backgroundhighlight">
+            <hgroup class="mt_backgroundhighlight">
                 <h1 class="headingwithlink"><a href="/">Mortar</a></h1>
                 <h2 class="subh2">A living style guide for the National Geographic Society</h2>
             </hgroup>
-            <nav class="backgroundinverse">
+            <nav class="mt_backgroundinverse">
             <% @categories.each do |category, file_name| %>
                 <a class="navitem headinginverse h5" href="<%= file_name %>"><%= category %></a>
             <% end %>
@@ -27,9 +27,9 @@
             </nav>
         </header>
 
-        <div class="container cf">
+        <div class="container mt_cf">
             <%if @blocks %>
-            <nav class="subnav background--lowlight">
+            <nav class="subnav mt_background--lowlight">
                 <ul>
                 <% @blocks.each do |b| %>
                     <li class="headingwithlink"><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>

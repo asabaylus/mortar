@@ -5,7 +5,7 @@ html {
     @extend %font-default;
     @extend %font-size-norm;
 
-    color: $color-text;
+    color: $mt_color-text;
     font-weight: normal;
 }
 
@@ -14,12 +14,12 @@ html {
 // These selection rule sets have to be separate.
 
 ::-moz-selection {
-    background: $color-highlight;
+    background: $mt_color-highlight;
     text-shadow: none;
 }
 
 ::selection {
-    background: $color-highlight;
+    background: $mt_color-highlight;
     text-shadow: none;
 }
 
@@ -70,7 +70,7 @@ textarea {
 // links
 
 a {
-    color: $color-link;
+    color: $mt_color-link;
     text-decoration: none;
 }
 
@@ -81,7 +81,7 @@ a:active {
 }
 
 a:visited {
-    color: $color-link;
+    color: $mt_color-link;
     text-decoration: none;
 }
 
@@ -143,7 +143,7 @@ h6 {
 // paragraphs
 
 p {
-    @extend %default-text-margin;
+    @extend %mt_default-text-margin;
 }
 
 
@@ -152,9 +152,9 @@ p {
 
 ul,
 ol {
-    @extend %default-text-margin;
+    @extend %mt_default-text-margin;
 
-    padding-left: $padding-one-and-half;
+    padding-left: $mt_padding-one-and-half;
 
     > li > ul,
     > li > ol {
@@ -185,7 +185,7 @@ ol {
         content: counter(custom-ol, decimal-leading-zero) ".";
         counter-increment: custom-ol;
         font-weight: 700;
-        left: -#{$padding-one-and-half};
+        left: -#{$mt_padding-one-and-half};
         list-style-type: decimal-leading-zero;
         position: absolute;
         top: 0;
@@ -249,7 +249,7 @@ blockquote {
 
     &::before {
         content: open-quote;
-        left: -#{$padding-half};
+        left: -#{$mt_padding-half};
         position: absolute;
         top: 0;
     }

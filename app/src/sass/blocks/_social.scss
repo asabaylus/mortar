@@ -5,15 +5,15 @@ name: social
 category: Typography
 ---
 
-<i class="social-icon icongs icongs-comment"></i><span class="subh5"><strong class="social-number">23</strong> comments</span>
+<i class="mt_social-icon icongs icongs-comment"></i><span class="subh5"><strong class="mt_social-number">23</strong> comments</span>
 */
 
-.social {
+.mt_social {
     @include e(icon) {
-        margin-right: $padding-quarter;
+        margin-right: $mt_padding-quarter;
     }
 
     @include e(number) {
-        margin-right: $padding-quarter;
+        margin-right: $mt_padding-quarter;
     }
 }

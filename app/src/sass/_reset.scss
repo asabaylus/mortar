@@ -116,8 +116,8 @@ dfn {
  */
 
 mark {
-    background: $color-highlight;
-    color: $color-text;
+    background: $mt_color-highlight;
+    color: $mt_color-text;
 }
 
 /**
@@ -224,7 +224,7 @@ svg:not(:root) {
  */
 
 figure {
-    @extend %default-text-margin;
+    @extend %mt_default-text-margin;
     margin-left: 0;
 }
 
@@ -345,7 +345,7 @@ input {
     line-height: normal;
 
     &:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
-        @extend %input-text-theme;
+        @extend %mt_input-text-theme;
     }
 
     &:not([type="checkbox"]):not([type="radio"]) {
@@ -363,7 +363,7 @@ input {
 input[type="checkbox"],
 input[type="radio"] {
     // width: auto;
-    margin-right: $padding-quarter;
+    margin-right: $mt_padding-quarter;
     padding: 0; /* 2 */
 }
 
@@ -398,7 +398,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 input[type="color"] {
-    height: $ms-med * 2;
+    height: $mt_ms-med * 2;
 }
 
 /**
@@ -429,7 +429,7 @@ legend {
  */
 
 textarea {
-    @extend %input-text-theme;
+    @extend %mt_input-text-theme;
 
     overflow: auto;
     width: 100%;
@@ -446,7 +446,7 @@ optgroup {
 
 %label {
     display: block;
-    margin-bottom: $padding-quarter;
+    margin-bottom: $mt_padding-quarter;
 }
 
 label {
@@ -601,6 +601,6 @@ table {
 
 td,
 th {
-    padding: $padding-half;
-    border: $border-default;
+    padding: $mt_padding-half;
+    border: $mt_border-default;
 }

@@ -7,34 +7,63 @@ category: Elements
 
 Button                                              | Class               | Description
 --------------------------------------------------- | ------------------- | -----------
-<button class="btn btn--default">Default</button>   | `btn btn--default`  | This is what buttons look like, this is the go to button style.
-<button class="btn btn--primary">Primary</button>   | `btn btn--primary`  | Use this button as the primary call to action
-<button class="btn btn--danger">Delete</button>     | `btn btn--danger`   | This button is for delete actions, these actions should also have a confirmation dialog
-<button class="btn btn--disabled">Disabled</button> | `btn btn--disabled` | I'm afraid I can't let you do that, yet.
-<button class="btn--naked">Naked</button>           | `btn--naked`        | When a button is semantically correct, but visually inapropriate
+<button class="mt_btn mt_btn--default">Default</button>   | `mt_btn mt_btn--default`  | This is what buttons look like, this is the go to button style.
+<button class="mt_btn mt_btn--primary">Primary</button>   | `mt_btn mt_btn--primary`  | Use this button as the primary call to action
+<button class="mt_btn mt_btn--danger">Delete</button>     | `mt_btn mt_btn--danger`   | This button is for delete actions, these actions should also have a confirmation dialog
+<button class="mt_btn mt_btn--disabled">Disabled</button> | `mt_btn mt_btn--disabled` | I'm afraid I can't let you do that, yet.
+<button class="mt_btn--naked">Naked</button>           | `mt_btn--naked`        | When a button is semantically correct, but visually inapropriate
 
 */
 
-@import "btn/variables";
-@import "btn/mixins";
-@import "btn/extends";
+
+// Variables
+// ======
+
+$mt_btn-offset-y: .2em;
+
+$mt_btn-colors: (
+  default: $mt_color-primary,
+  primary: $mt_color-highlight,
+  danger: $mt_color-danger
+);
 
 
-.btn {
+// Mixins
+// ======
+
+@function mt_btn-text-color($color) {
+    @return if(mt_yiq($color) >= 128, $mt_color-text, $mt_color-text-inverse);
+}
+
+@mixin mt_btn($color) {
+    background-color: $color;
+    color: mt_btn-text-color($color);
+
+    &:hover {
+        background-color: lighten($color, 10);
+        color: lighten(mt_btn-text-color($color), 10);
+    }
+}
+
+
+// Style
+// =====
+
+.mt_btn {
     @extend %subh2;
 
     border: 0;
     cursor: default;
     line-height: 1;
-    margin-bottom: $btn-offset-y * 2;
+    margin-bottom: $mt_btn-offset-y * 2;
     padding: 1em;
     text-align: center;
 
     // Iterate over button skins
 
-    @each $btn-type, $btn-color in $btn-colors {
+    @each $btn-type, $btn-color in $mt_btn-colors {
         @include m($btn-type) {
-            @include btn($btn-color);
+            @include mt_btn($btn-color);
         }
     }
 
@@ -50,6 +79,6 @@ Button                                              | Class               | Desc
     &:active {
         box-shadow: none;
         position: relative;
-        top: $btn-offset-y;
+        top: $mt_btn-offset-y;
     }
 }

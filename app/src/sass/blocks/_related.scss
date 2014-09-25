@@ -6,23 +6,23 @@ category: Blocks
 ---
 
 ```html_example
-<h1 class="subh4 related-title">Related News</h1>
+<h1 class="subh4 mt_related-title">Related News</h1>
 
-<p class="subh5 related-category">Mission</p>
-<h2 class="subh2 related-article">Best Space Photos 2013: Awesome Year of the Comet Shines Bright</h2>
+<p class="subh5 mt_related-category">Mission</p>
+<h2 class="subh2 mt_related-article">Best Space Photos 2013: Awesome Year of the Comet Shines Bright</h2>
 
-<p class="subh5 related-category">From the Magazine</p>
-<h2 class="subh2 related-article">Photos: Superior Ice Caves</h2>
+<p class="subh5 mt_related-category">From the Magazine</p>
+<h2 class="subh2 mt_related-article">Photos: Superior Ice Caves</h2>
 
-<p class="subh5 related-category">Weird</p>
-<h2 class="subh2 related-article">Methane Emissions Far Worse Than U.S. Estimates, Study Finds</h2>
+<p class="subh5 mt_related-category">Weird</p>
+<h2 class="subh2 mt_related-article">Methane Emissions Far Worse Than U.S. Estimates, Study Finds</h2>
 ```
 */
 
 
-.related {
+.mt_related {
     @include e(title) {
-        @include margin-trailer(.5, $ms-sm);
+        @include margin-trailer(.5, $mt_ms-sm);
     }
 
     @include e(category) {
@@ -30,6 +30,6 @@ category: Blocks
     }
 
     @include e(article) {
-        @include margin-trailer(1, $ms-norm);
+        @include margin-trailer(1, $mt_ms-norm);
     }
 }

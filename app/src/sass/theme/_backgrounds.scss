@@ -5,22 +5,22 @@ name: backgrounds
 category: Theme
 ---
 
-<div class="backgroundbasic border--default paddingdefault margininlinebottom"><code>.backgroundbasic</code></div>
-<div class="backgroundinverse textinverse border--default paddingdefault margininlinebottom"><code>.backgroundinverse</code></div>
-<div class="backgroundhighlight border--default paddingdefault margininlinebottom"><code>.backgroundhighlight</code></div>
-<div class="backgroundlowlight border--inverse paddingdefault"><code>.backgroundlowlight</code></div>
+<div class="mt_backgroundbasic mt_border--default mt_paddingdefault mt_margininlinebottom"><code>.mt_backgroundbasic</code></div>
+<div class="mt_backgroundinverse textinverse mt_border--default mt_paddingdefault mt_margininlinebottom"><code>.mt_backgroundinverse</code></div>
+<div class="mt_backgroundhighlight mt_border--default mt_paddingdefault mt_margininlinebottom"><code>.mt_backgroundhighlight</code></div>
+<div class="mt_backgroundlowlight mt_border--inverse mt_paddingdefault"><code>.mt_backgroundlowlight</code></div>
 
 */
 
-$backgrounds: (
-    basic: $color-basic,
-    inverse: $color-inverse,
-    highlight: $color-highlight,
-    lowlight: $color-lowlight
+$mt_backgrounds: (
+    basic: $mt_color-basic,
+    inverse: $mt_color-inverse,
+    highlight: $mt_color-highlight,
+    lowlight: $mt_color-lowlight
 );
 
-@each $background, $color in $backgrounds {
-    .background#{$background} {
+@each $background, $color in $mt_backgrounds {
+    .mt_background#{$background} {
         background-color: $color;
     }
 }

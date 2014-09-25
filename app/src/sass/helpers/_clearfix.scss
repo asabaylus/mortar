@@ -9,12 +9,12 @@
 //    `:before` to contain the top-margins of child elements.
 
 
-.cf:before,
-.cf:after {
+.mt_cf:before,
+.mt_cf:after {
     content: " "; /* 1 */
     display: table; /* 2 */
 }
 
-.cf:after {
+.mt_cf:after {
     clear: both;
 }
