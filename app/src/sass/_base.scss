@@ -5,8 +5,17 @@ html {
     @extend %font-default;
     @extend %font-size-norm;
 
+    box-sizing: border-box;
     color: $mt_color-text;
     font-weight: normal;
+}
+
+// Make border-box the default box-sizing method
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 // Text highlighting color
@@ -43,14 +52,6 @@ img,
 svg,
 video {
     vertical-align: middle;
-}
-
-// Make border-box the default box-sizing method
-
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
 }
 
 // Remove default fieldset styles.

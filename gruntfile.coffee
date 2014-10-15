@@ -54,6 +54,7 @@ module.exports = (grunt) ->
                 bundleExec: true
                 require: [
                     'sass-globbing'
+                    'susy'
                 ]
             hologram:
                 options:
