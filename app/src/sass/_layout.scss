@@ -1,3 +1,44 @@
+$bps: (
+  sm: $mq-sm,
+  md: $mq-md,
+  lg: $mq-lg
+);
+
+$columns: 12;
+
+// Object oriented grid classes in the style of bootstrap
+// Reference: http://getbootstrap.com/css/#grid
+
+%col-padding {
+    float: left;
+    padding-left: $mt_padding-half;
+    padding-right: $mt_padding-half;
+}
+
+@for $i from 1 through $columns { // loop through grid spans
+    .mt_cols-#{$i} { // build the class name
+        @extend %col-padding;
+
+        width: percentage( $i / $columns );
+    }
+}
+
+@each $bp, $width in $bps { // loop through breakpoints
+    @for $i from 1 through $columns { // loop through grid spans
+        .mt_cols-#{$bp}-#{$i} {
+            @extend %col-padding;
+        }
+    }
+
+    @media #{ $width } {
+        @for $i from 1 through $columns { // loop through grid spans
+            .mt_cols-#{$bp}-#{$i} {
+                width: percentage( $i / $columns );
+            }
+        }
+    }
+}
+
 /*doc
 ---
 title: Grid
@@ -54,44 +95,6 @@ category: Layout
 </div>
 
 */
-
-@import "susy";
-
-$susy: (
-  columns: 12, // Define grid
-  global-box-sizing: border-box,
-  gutters: 0
-);
-
-$bps: (
-  xs: null,
-  sm: $mq-sm,
-  md: $mq-md,
-  lg: $mq-lg
-);
-
-// Object oriented grid classes in the style of bootstrap
-// Reference: http://getbootstrap.com/css/#grid
-
-@each $bp, $width in $bps { // loop through breakpoints
-    @for $i from 1 through susy_get( columns ) { // loop through grid spans
-        @if not $width { // check for breakpoint width
-            .mt_cols-#{$i} { // build the class name
-                @include span( $i );
-                padding-left: $mt_padding-half;
-                padding-right: $mt_padding-half;
-            }
-        } @else {
-            .mt_cols-#{$bp}-#{$i} { // build the class name
-                @media #{ $width } {
-                    @include span( $i );
-                    padding-left: $mt_padding-half;
-                    padding-right: $mt_padding-half;
-                }
-            }
-        }
-    }
-}
 
 /*doc
 ---
