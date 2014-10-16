@@ -55,6 +55,8 @@ $base-line-height  : $mt_ms-med;
 // Crazy to convert px to em
 $mt_padding-default: (($mt_ms-med / ($mt_ms-med * 0 + 1)) / 16) * 1em;
 
+$mt_unit: $mt_padding-default;
+
 $mt_padding-half: $mt_padding-default / 2;
 $mt_padding-quarter: $mt_padding-default / 4;
 $mt_padding-one-and-half: $mt_padding-default * 1.5;

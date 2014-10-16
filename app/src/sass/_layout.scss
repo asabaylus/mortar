@@ -1,3 +1,7 @@
+// TO DO
+// * gutters are adjustable at breakpoints
+// * row gutter adds margin bottom
+
 $bps: (
   sm: $mq-sm,
   md: $mq-md,
@@ -11,8 +15,6 @@ $columns: 12;
 
 %col-padding {
     float: left;
-    padding-left: $mt_padding-half;
-    padding-right: $mt_padding-half;
     position: relative;
 }
 
@@ -36,7 +38,7 @@ $columns: 12;
     }
 }
 
-.mt_col-push-0 {
+.mt_col-offset-0 {
     margin-left: 0;
 }
 
@@ -49,14 +51,16 @@ $columns: 12;
 }
 
 @each $bp, $width in $bps { // loop through breakpoints
-    @for $i from 1 through $columns { // loop through grid spans
+
+    // hack to get around inability to extend from within media queries
+    @for $i from 1 through $columns {
         .mt_col-#{$bp}-#{$i} {
             @extend %col-padding;
         }
     }
 
     @media #{ $width } {
-        @for $i from 1 through $columns { // loop through grid spans
+        @for $i from 1 through $columns {
             .mt_col-#{$bp}-#{$i} {
                 width: percentage( $i / $columns );
             }
@@ -88,9 +92,114 @@ $columns: 12;
     }
 }
 
-.mt_row {
-    @extend .mt_cf;
+.mt_col-gut-half {
+    padding-left: $mt_unit / 2;
+    padding-right: $mt_unit / 2;
 }
+
+@for $i from 1 through 4 {
+    .mt_col-gut-#{$i} {
+        padding-left: $mt_unit * $i;
+        padding-right: $mt_unit * $i;
+    }
+}
+
+@each $bp, $width in $bps { // loop through breakpoints
+    @media #{ $width } {
+        .mt_col-#{$bp}-gut-half {
+            padding-left: $mt_unit / 2;
+            padding-right: $mt_unit / 2;
+        }
+
+        @for $i from 1 through 4 {
+            .mt_col-#{$bp}-gut-#{$i} {
+                padding-left: $mt_unit * $i;
+                padding-right: $mt_unit * $i;
+            }
+        }
+    }
+}
+
+/*doc
+---
+title: Gutters
+name: gutters
+category: Layout
+---
+
+Default Gutters
+
+```html_example
+    <div class="mt_row mt_row-gut-1">
+        <div class="mt_col-6">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row mt_row-gut-1">
+        <div class="mt_col-6 mt_col-gut-half">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-half">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row mt_row-gut-1">
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row mt_row-gut-1">
+        <div class="mt_col-6 mt_col-gut-2">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-2">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row mt_row-gut-1">
+        <div class="mt_col-6 mt_col-gut-3">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-3">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row mt_row-gut-1">
+        <div class="mt_col-6 mt_col-gut-4">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-4">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+```
+
+Responsive Gutters
+
+```html_example
+    <div class="mt_row mt_row-gut-1">
+        <div class="mt_col-6 mt_col-gut-half mt_col-sm-gut-1 mt_col-md-gut-2">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-half mt_col-sm-gut-1 mt_col-md-gut-2">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+```
+
+*/
+
 
 /*doc
 ---
@@ -99,53 +208,75 @@ name: grid
 category: Layout
 ---
 
+## Breakpoints
+
+breakpoint | size
+---------- | ---------------
+sm         | > 30em (480px)
+med        | > 50em (800px)
+lrg        | > 70em (1120px)
+
+## Available Classes
+
+            | default breakpoint | sm breakpoint      | md breakpoint       | lrg breakpoint
+----------- | ------------------ | ------------------ | ------------------- | ------------------
+**Column**  | `.col-*`           | `.col-sm-*`        | `.col-md-*`         | `.col-lrg-*`
+**Offset**  | `.col-offset-*`    | `.col-sm-offset-*` | `.col-md-offset-*`  | `.col-lrg-offset-*`
+**Pull**    | `.col-pull-*`      | `.col-sm-pull-*`   | `.col-md-pull-*`    | `.col-lrg-pull-*`
+**Push**    | `.col-push-*`      | `.col-sm-push-*`   | `.col-md-push-*`    | `.col-lrg-push*`
+**Gutter**  | `.col-gut-*`       | `.col-sm-gut-*`    | `.col-md-gut-*`     | `.col-lrg-gut*`
+
+### Example
+
+```html_example
 <div class="mt_row">
     <div class="mt_col-12">
-        <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">12</div>
+        <div class="mt_backgroundhighlight mt_paddingdefault mt_row-gut-1">12</div>
     </div>
 
     <div class="mt_col-1">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">1</div>
+        <div class="mt_backgroundlowlight mt_paddingdefault mt_row-gut-1">1</div>
     </div>
     <div class="mt_col-11">
-        <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">11</div>
+        <div class="mt_backgroundhighlight mt_paddingdefault mt_row-gut-1">11</div>
     </div>
 
     <div class="mt_col-2">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">2</div>
+        <div class="mt_backgroundlowlight mt_paddingdefault mt_row-gut-1">2</div>
     </div>
     <div class="mt_col-10">
-        <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">10</div>
+        <div class="mt_backgroundhighlight mt_paddingdefault mt_row-gut-1">10</div>
     </div>
 
     <div class="mt_col-3">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">3</div>
+        <div class="mt_backgroundlowlight mt_paddingdefault mt_row-gut-1">3</div>
     </div>
     <div class="mt_col-9">
-        <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">9</div>
+        <div class="mt_backgroundhighlight mt_paddingdefault mt_row-gut-1">9</div>
     </div>
 
     <div class="mt_col-4">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">4</div>
+        <div class="mt_backgroundlowlight mt_paddingdefault mt_row-gut-1">4</div>
     </div>
     <div class="mt_col-8">
-        <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">8</div>
+        <div class="mt_backgroundhighlight mt_paddingdefault mt_row-gut-1">8</div>
     </div>
 
     <div class="mt_col-5">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">5</div>
+        <div class="mt_backgroundlowlight mt_paddingdefault mt_row-gut-1">5</div>
     </div>
     <div class="mt_col-7">
-        <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">7</div>
+        <div class="mt_backgroundhighlight mt_paddingdefault mt_row-gut-1">7</div>
     </div>
 
     <div class="mt_col-6">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">6</div>
+        <div class="mt_backgroundlowlight mt_paddingdefault">6</div>
     </div>
     <div class="mt_col-6">
-        <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">6</div>
+        <div class="mt_backgroundhighlight mt_paddingdefault">6</div>
     </div>
 </div>
+```
 
 */
 
@@ -157,42 +288,42 @@ category: Layout
 ---
 
 ```html_example
-<div class="mt_row">
+<div class="mt_cf">
     <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        <div class="mt_backgroundlowlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
     </div>
     <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        <div class="mt_backgroundhighlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
     </div>
     <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        <div class="mt_backgroundlowlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
     </div>
     <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        <div class="mt_backgroundhighlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
     </div>
     <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        <div class="mt_backgroundlowlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
     </div>
     <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        <div class="mt_backgroundhighlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
     </div>
     <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        <div class="mt_backgroundlowlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
     </div>
     <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        <div class="mt_backgroundhighlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
     </div>
     <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        <div class="mt_backgroundlowlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
     </div>
     <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        <div class="mt_backgroundhighlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
     </div>
     <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        <div class="mt_backgroundlowlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
     </div>
     <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
-        <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        <div class="mt_backgroundhighlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
     </div>
 </div>
 ```
@@ -209,22 +340,22 @@ category: Layout
 ```html_example
     <div class="mt_row">
         <div class="mt_col-6 mt_col-offset-3">
-            <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+            <div class="mt_backgroundlowlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
         </div>
     </div>
 
     <div class="mt_row">
         <div class="mt_col-3 mt_col-offset-4">
-            <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+            <div class="mt_backgroundhighlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
         </div>
         <div class="mt_col-3 mt_col-offset-2">
-            <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+            <div class="mt_backgroundhighlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
         </div>
     </div>
 
     <div class="mt_row">
         <div class="mt_col-4 mt_col-offset-1">
-            <div class="mt_backgroundinverse mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+            <div class="mt_backgroundinverse mt_paddingdefault mt_row-gut-1">&nbsp;</div>
         </div>
     </div>
 ```
@@ -241,12 +372,21 @@ category: Layout
 ```html_example
     <div class="mt_cf">
         <div class="mt_col-3 mt_col-push-9">
-            <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+            <div class="mt_backgroundlowlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
         </div>
 
         <div class="mt_col-9 mt_col-pull-3">
-            <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+            <div class="mt_backgroundhighlight mt_paddingdefault mt_row-gut-1">&nbsp;</div>
         </div>
     </div>
 ```
 */
+
+.mt_row {
+    @extend .mt_cf;
+}
+
+// .mt_row-gut-1
+.mt_row-gut-1 {
+    margin-bottom: $mt_padding-default;
+}
