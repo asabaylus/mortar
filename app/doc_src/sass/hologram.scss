@@ -151,6 +151,8 @@ main {
     background-color: white;
     padding: $mt_padding-half $mt_padding-default;
     border-top: $mt_border-default;
+    max-height: 20em;
+    overflow-y: scroll;
 
     pre {
         margin: 0;

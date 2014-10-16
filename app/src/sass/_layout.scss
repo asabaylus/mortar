@@ -13,6 +13,7 @@ $columns: 12;
     float: left;
     padding-left: $mt_padding-half;
     padding-right: $mt_padding-half;
+    position: relative;
 }
 
 @for $i from 1 through $columns { // loop through grid spans
@@ -21,6 +22,30 @@ $columns: 12;
 
         width: percentage( $i / $columns );
     }
+
+    .mt_cols-offset-#{$i} {
+        margin-left: percentage( $i / $columns );
+    }
+
+    .mt_cols-pull-#{$i} {
+        right: percentage( $i / $columns );
+    }
+
+    .mt_cols-push-#{$i} {
+        left: percentage( $i / $columns );
+    }
+}
+
+.mt_cols-push-0 {
+    margin-left: 0;
+}
+
+.mt_cols-pull-0 {
+    right: auto;
+}
+
+.mt_cols-push-0 {
+    left: auto;
 }
 
 @each $bp, $width in $bps { // loop through breakpoints
@@ -35,8 +60,36 @@ $columns: 12;
             .mt_cols-#{$bp}-#{$i} {
                 width: percentage( $i / $columns );
             }
+
+            .mt_cols-#{$bp}-offset-#{$i} {
+                margin-left: percentage( $i / $columns );
+            }
+
+            .mt_cols-#{$bp}-pull-#{$i} {
+                right: percentage( $i / $columns );
+            }
+
+            .mt_cols-#{$bp}-push-#{$i} {
+                left: percentage( $i / $columns );
+            }
+        }
+
+        .mt_cols-#{$bp}-offset-0 {
+            margin-left: 0;
+        }
+
+        .mt_cols-#{$bp}-pull-0 {
+            right: auto;
+        }
+
+        .mt_cols-#{$bp}-push-0 {
+            left: auto;
         }
     }
+}
+
+.mt_row {
+    @extend .mt_cf;
 }
 
 /*doc
@@ -46,7 +99,7 @@ name: grid
 category: Layout
 ---
 
-<div class="mt_cf">
+<div class="mt_row">
     <div class="mt_cols-12">
         <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">12</div>
     </div>
@@ -103,7 +156,8 @@ name: resp-grid
 category: Layout
 ---
 
-<div class="mt_cf">
+```html_example
+<div class="mt_row">
     <div class="mt_cols-6 mt_cols-sm-4 mt_cols-md-3 mt_cols-lg-2">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
     </div>
@@ -141,5 +195,58 @@ category: Layout
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
     </div>
 </div>
+```
 
+*/
+
+/*doc
+---
+title: Offsetting
+name: push-pull
+category: Layout
+---
+
+```html_example
+    <div class="mt_row">
+        <div class="mt_cols-6 mt_cols-offset-3">
+            <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row">
+        <div class="mt_cols-3 mt_cols-offset-4">
+            <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        </div>
+        <div class="mt_cols-3 mt_cols-offset-2">
+            <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row">
+        <div class="mt_cols-4 mt_cols-offset-1">
+            <div class="mt_backgroundinverse mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        </div>
+    </div>
+```
+
+*/
+
+/*doc
+---
+title: Reorder
+name: reorder
+category: Layout
+---
+
+```html_example
+    <div class="mt_cf">
+        <div class="mt_cols-3 mt_cols-push-9">
+            <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        </div>
+
+        <div class="mt_cols-9 mt_cols-pull-3">
+            <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
+        </div>
+    </div>
+```
 */
