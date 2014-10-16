@@ -222,5 +222,5 @@ module.exports = (grunt) ->
         'sass:mortar'
         # 'csscss'
         'autoprefixer:mortar'
-        # 'cssmin'
+        'cssmin'
     ]
