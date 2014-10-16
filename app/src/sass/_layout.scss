@@ -17,72 +17,72 @@ $columns: 12;
 }
 
 @for $i from 1 through $columns { // loop through grid spans
-    .mt_cols-#{$i} { // build the class name
+    .mt_col-#{$i} { // build the class name
         @extend %col-padding;
 
         width: percentage( $i / $columns );
     }
 
-    .mt_cols-offset-#{$i} {
+    .mt_col-offset-#{$i} {
         margin-left: percentage( $i / $columns );
     }
 
-    .mt_cols-pull-#{$i} {
+    .mt_col-pull-#{$i} {
         right: percentage( $i / $columns );
     }
 
-    .mt_cols-push-#{$i} {
+    .mt_col-push-#{$i} {
         left: percentage( $i / $columns );
     }
 }
 
-.mt_cols-push-0 {
+.mt_col-push-0 {
     margin-left: 0;
 }
 
-.mt_cols-pull-0 {
+.mt_col-pull-0 {
     right: auto;
 }
 
-.mt_cols-push-0 {
+.mt_col-push-0 {
     left: auto;
 }
 
 @each $bp, $width in $bps { // loop through breakpoints
     @for $i from 1 through $columns { // loop through grid spans
-        .mt_cols-#{$bp}-#{$i} {
+        .mt_col-#{$bp}-#{$i} {
             @extend %col-padding;
         }
     }
 
     @media #{ $width } {
         @for $i from 1 through $columns { // loop through grid spans
-            .mt_cols-#{$bp}-#{$i} {
+            .mt_col-#{$bp}-#{$i} {
                 width: percentage( $i / $columns );
             }
 
-            .mt_cols-#{$bp}-offset-#{$i} {
+            .mt_col-#{$bp}-offset-#{$i} {
                 margin-left: percentage( $i / $columns );
             }
 
-            .mt_cols-#{$bp}-pull-#{$i} {
+            .mt_col-#{$bp}-pull-#{$i} {
                 right: percentage( $i / $columns );
             }
 
-            .mt_cols-#{$bp}-push-#{$i} {
+            .mt_col-#{$bp}-push-#{$i} {
                 left: percentage( $i / $columns );
             }
         }
 
-        .mt_cols-#{$bp}-offset-0 {
+        .mt_col-#{$bp}-offset-0 {
             margin-left: 0;
         }
 
-        .mt_cols-#{$bp}-pull-0 {
+        .mt_col-#{$bp}-pull-0 {
             right: auto;
         }
 
-        .mt_cols-#{$bp}-push-0 {
+        .mt_col-#{$bp}-push-0 {
             left: auto;
         }
     }
@@ -100,49 +100,49 @@ category: Layout
 ---
 
 <div class="mt_row">
-    <div class="mt_cols-12">
+    <div class="mt_col-12">
         <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">12</div>
     </div>
 
-    <div class="mt_cols-1">
+    <div class="mt_col-1">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">1</div>
     </div>
-    <div class="mt_cols-11">
+    <div class="mt_col-11">
         <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">11</div>
     </div>
 
-    <div class="mt_cols-2">
+    <div class="mt_col-2">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">2</div>
     </div>
-    <div class="mt_cols-10">
+    <div class="mt_col-10">
         <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">10</div>
     </div>
 
-    <div class="mt_cols-3">
+    <div class="mt_col-3">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">3</div>
     </div>
-    <div class="mt_cols-9">
+    <div class="mt_col-9">
         <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">9</div>
     </div>
 
-    <div class="mt_cols-4">
+    <div class="mt_col-4">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">4</div>
     </div>
-    <div class="mt_cols-8">
+    <div class="mt_col-8">
         <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">8</div>
     </div>
 
-    <div class="mt_cols-5">
+    <div class="mt_col-5">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">5</div>
     </div>
-    <div class="mt_cols-7">
+    <div class="mt_col-7">
         <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">7</div>
     </div>
 
-    <div class="mt_cols-6">
+    <div class="mt_col-6">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">6</div>
     </div>
-    <div class="mt_cols-6">
+    <div class="mt_col-6">
         <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">6</div>
     </div>
 </div>
@@ -158,40 +158,40 @@ category: Layout
 
 ```html_example
 <div class="mt_row">
-    <div class="mt_cols-6 mt_cols-sm-4 mt_cols-md-3 mt_cols-lg-2">
+    <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
     </div>
-    <div class="mt_cols-6 mt_cols-sm-4 mt_cols-md-3 mt_cols-lg-2">
+    <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
     </div>
-    <div class="mt_cols-6 mt_cols-sm-4 mt_cols-md-3 mt_cols-lg-2">
+    <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
     </div>
-    <div class="mt_cols-6 mt_cols-sm-4 mt_cols-md-3 mt_cols-lg-2">
+    <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
     </div>
-    <div class="mt_cols-6 mt_cols-sm-4 mt_cols-md-3 mt_cols-lg-2">
+    <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
     </div>
-    <div class="mt_cols-6 mt_cols-sm-4 mt_cols-md-3 mt_cols-lg-2">
+    <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
     </div>
-    <div class="mt_cols-6 mt_cols-sm-4 mt_cols-md-3 mt_cols-lg-2">
+    <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
     </div>
-    <div class="mt_cols-6 mt_cols-sm-4 mt_cols-md-3 mt_cols-lg-2">
+    <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
     </div>
-    <div class="mt_cols-6 mt_cols-sm-4 mt_cols-md-3 mt_cols-lg-2">
+    <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
     </div>
-    <div class="mt_cols-6 mt_cols-sm-4 mt_cols-md-3 mt_cols-lg-2">
+    <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
     </div>
-    <div class="mt_cols-6 mt_cols-sm-4 mt_cols-md-3 mt_cols-lg-2">
+    <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
     </div>
-    <div class="mt_cols-6 mt_cols-sm-4 mt_cols-md-3 mt_cols-lg-2">
+    <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
         <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
     </div>
 </div>
@@ -208,22 +208,22 @@ category: Layout
 
 ```html_example
     <div class="mt_row">
-        <div class="mt_cols-6 mt_cols-offset-3">
+        <div class="mt_col-6 mt_col-offset-3">
             <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
         </div>
     </div>
 
     <div class="mt_row">
-        <div class="mt_cols-3 mt_cols-offset-4">
+        <div class="mt_col-3 mt_col-offset-4">
             <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
         </div>
-        <div class="mt_cols-3 mt_cols-offset-2">
+        <div class="mt_col-3 mt_col-offset-2">
             <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
         </div>
     </div>
 
     <div class="mt_row">
-        <div class="mt_cols-4 mt_cols-offset-1">
+        <div class="mt_col-4 mt_col-offset-1">
             <div class="mt_backgroundinverse mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
         </div>
     </div>
@@ -240,11 +240,11 @@ category: Layout
 
 ```html_example
     <div class="mt_cf">
-        <div class="mt_cols-3 mt_cols-push-9">
+        <div class="mt_col-3 mt_col-push-9">
             <div class="mt_backgroundlowlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
         </div>
 
-        <div class="mt_cols-9 mt_cols-pull-3">
+        <div class="mt_col-9 mt_col-pull-3">
             <div class="mt_backgroundhighlight mt_paddingdefault mt_margininlinebottom">&nbsp;</div>
         </div>
     </div>
