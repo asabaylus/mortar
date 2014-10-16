@@ -152,9 +152,10 @@ main {
     padding: $mt_padding-half $mt_padding-default;
     border-top: $mt_border-default;
     max-height: 20em;
-    overflow-y: scroll;
+    overflow: auto;
 
     pre {
         margin: 0;
+        overflow: visible;
     }
 }
