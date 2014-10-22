@@ -1,26 +1,5 @@
 @import "../../../../bower_components/vertical-rhythms-without-compass/vertical-rhythms";
 
-/*doc
----
-title: Fonts
-name: fonts
-category: Typography
----
-
-Primary font: "utopia-std", Georgia, Times, "Times New Roman", serif
-
-<em>Primary font italic: "utopia-std", Georgia, Times, "Times New Roman", serif</em>
-
-<strong>Primary font bold: "utopia-std", Georgia, Times, "Times New Roman", serif</strong>
-
-<strong><em>Primary font bold italic: "utopia-std", Georgia, Times, "Times New Roman", serif</em></strong>
-
-<p class="subh5">Secondary font: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</p>
-
-<p class="subh5"><strong>Secondary font bold: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</strong></p>
-
-*/
-
 %font-antialiased {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -48,12 +27,53 @@ Primary font: "utopia-std", Georgia, Times, "Times New Roman", serif
 
 %font-alternate {
     font-family: $mt_font-alternate;
+    font-style: normal;
+    font-weight: 300;
+}
+
+%font-alternate-em {
+    font-family: $mt_font-alternate;
+    font-style: italic;
+    font-weight: 300;
 }
 
 %font-alternate-strong {
     font-family: $mt_font-alternate;
+    font-style: normal;
     font-weight: 700;
 }
+
+%font-alternate-strong-em {
+    font-family: $mt_font-alternate;
+    font-style: italic;
+    font-weight: 700;
+}
+
+/*doc
+---
+title: Fonts
+name: fonts
+category: Typography
+---
+
+Primary font: "utopia-std", Georgia, Times, "Times New Roman", serif
+
+<em>Primary font italic: "utopia-std", Georgia, Times, "Times New Roman", serif</em>
+
+<strong>Primary font bold: "utopia-std", Georgia, Times, "Times New Roman", serif</strong>
+
+<strong><em>Primary font bold italic: "utopia-std", Georgia, Times, "Times New Roman", serif</em></strong>
+
+<p class="subh5">Secondary font: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</p>
+
+<p class="subh5"><em>Secondary font italic: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</em></p>
+
+<p class="subh5"><strong>Secondary font bold: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</strong></p>
+
+<p class="subh5"><strong><em>Secondary font bold italic: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</em></strong></p>
+
+*/
+
 
 // Font sizes
 

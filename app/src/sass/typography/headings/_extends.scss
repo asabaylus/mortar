@@ -74,8 +74,17 @@ parent: headings
 %subh5 {
     @extend %font-alternate;
 
+    em {
+        @extend %font-alternate-em;
+    }
+
     strong {
         @extend %font-alternate-strong;
+    }
+
+    em strong,
+    strong em {
+        @extend %font-alternate-strong-em;
     }
 }
 
