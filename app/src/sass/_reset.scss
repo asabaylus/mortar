@@ -595,6 +595,8 @@ category: Elements
  */
 
 table {
+    @extend %mt_default-text-margin;
+    
     border-collapse: collapse;
     border-spacing: 0;
 }

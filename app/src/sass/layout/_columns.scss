@@ -1,12 +1,6 @@
 // TO DO
 // * row gutter adds margin bottom
 
-$bps: (
-  sm: $mq-sm,
-  md: $mq-md,
-  lg: $mq-lg
-);
-
 $columns: 12;
 
 // Object oriented grid classes in the style of bootstrap
@@ -49,7 +43,7 @@ $columns: 12;
     left: auto;
 }
 
-@each $bp, $width in $bps { // loop through breakpoints
+@each $bp, $width in $layout-bps { // loop through breakpoints
 
     // hack to get around inability to extend from within media queries
     @for $i from 1 through $columns {
@@ -91,115 +85,6 @@ $columns: 12;
     }
 }
 
-.mt_col-gut-half {
-    padding-left: $mt_unit / 2;
-    padding-right: $mt_unit / 2;
-}
-
-@for $i from 1 through 4 {
-    .mt_col-gut-#{$i} {
-        padding-left: $mt_unit * $i;
-        padding-right: $mt_unit * $i;
-    }
-}
-
-@each $bp, $width in $bps { // loop through breakpoints
-    @media #{ $width } {
-        .mt_col-#{$bp}-gut-half {
-            padding-left: $mt_unit / 2;
-            padding-right: $mt_unit / 2;
-        }
-
-        @for $i from 1 through 4 {
-            .mt_col-#{$bp}-gut-#{$i} {
-                padding-left: $mt_unit * $i;
-                padding-right: $mt_unit * $i;
-            }
-        }
-    }
-}
-
-/*doc
----
-title: Gutters
-name: gutters
-category: Layout
----
-
-Default Gutters
-
-```html_example
-    <div class="mt_row mt_row-gut-1">
-        <div class="mt_col-6">
-            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
-        </div>
-        <div class="mt_col-6">
-            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
-        </div>
-    </div>
-
-    <div class="mt_row mt_row-gut-1">
-        <div class="mt_col-6 mt_col-gut-half">
-            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
-        </div>
-        <div class="mt_col-6 mt_col-gut-half">
-            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
-        </div>
-    </div>
-
-    <div class="mt_row mt_row-gut-1">
-        <div class="mt_col-6 mt_col-gut-1">
-            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
-        </div>
-        <div class="mt_col-6 mt_col-gut-1">
-            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
-        </div>
-    </div>
-
-    <div class="mt_row mt_row-gut-1">
-        <div class="mt_col-6 mt_col-gut-2">
-            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
-        </div>
-        <div class="mt_col-6 mt_col-gut-2">
-            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
-        </div>
-    </div>
-
-    <div class="mt_row mt_row-gut-1">
-        <div class="mt_col-6 mt_col-gut-3">
-            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
-        </div>
-        <div class="mt_col-6 mt_col-gut-3">
-            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
-        </div>
-    </div>
-
-    <div class="mt_row mt_row-gut-1">
-        <div class="mt_col-6 mt_col-gut-4">
-            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
-        </div>
-        <div class="mt_col-6 mt_col-gut-4">
-            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
-        </div>
-    </div>
-```
-
-Responsive Gutters
-
-```html_example
-    <div class="mt_row mt_row-gut-1">
-        <div class="mt_col-6 mt_col-gut-half mt_col-sm-gut-1 mt_col-md-gut-2">
-            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
-        </div>
-        <div class="mt_col-6 mt_col-gut-half mt_col-sm-gut-1 mt_col-md-gut-2">
-            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
-        </div>
-    </div>
-```
-
-*/
-
-
 /*doc
 ---
 title: Grid
@@ -207,23 +92,28 @@ name: grid
 category: Layout
 ---
 
-## Breakpoints
+### Available classes
+
+"`*`" can be replaced with a relevant number. Column, offset, push, and pull are all respective to the twelve column grid so 1 through 12 are available. Gutters are avaiable in half, 1, 2, 3, and 4.
+
+                   | default breakpoint | sm breakpoint      | md breakpoint       | lrg breakpoint
+------------------ | ------------------ | ------------------ | ------------------- | ------------------
+**Column**         | `.col-*`           | `.col-sm-*`        | `.col-md-*`         | `.col-lrg-*`
+**Offset**         | `.col-offset-*`    | `.col-sm-offset-*` | `.col-md-offset-*`  | `.col-lrg-offset-*`
+**Pull**           | `.col-pull-*`      | `.col-sm-pull-*`   | `.col-md-pull-*`    | `.col-lrg-pull-*`
+**Push**           | `.col-push-*`      | `.col-sm-push-*`   | `.col-md-push-*`    | `.col-lrg-push*`
+**Column Gutter**  | `.col-gut-*`       | `.col-sm-gut-*`    | `.col-md-gut-*`     | `.col-lrg-gut*`
+**Row Gutter**     | `.row-gut-*`       | `.row-sm-gut-*`    | `.row-md-gut-*`     | `.row-lrg-gut*`
+
+### Available breakpoints
+
+Column, offset, pull, push, column gutter, and row gutter can all be adjusted at the following breakpoints.
 
 breakpoint | size
 ---------- | ---------------
 sm         | > 30em (480px)
 med        | > 50em (800px)
 lrg        | > 70em (1120px)
-
-## Available Classes
-
-            | default breakpoint | sm breakpoint      | md breakpoint       | lrg breakpoint
------------ | ------------------ | ------------------ | ------------------- | ------------------
-**Column**  | `.col-*`           | `.col-sm-*`        | `.col-md-*`         | `.col-lrg-*`
-**Offset**  | `.col-offset-*`    | `.col-sm-offset-*` | `.col-md-offset-*`  | `.col-lrg-offset-*`
-**Pull**    | `.col-pull-*`      | `.col-sm-pull-*`   | `.col-md-pull-*`    | `.col-lrg-pull-*`
-**Push**    | `.col-push-*`      | `.col-sm-push-*`   | `.col-md-push-*`    | `.col-lrg-push*`
-**Gutter**  | `.col-gut-*`       | `.col-sm-gut-*`    | `.col-md-gut-*`     | `.col-lrg-gut*`
 
 ### Example
 
@@ -286,6 +176,8 @@ name: resp-grid
 category: Layout
 ---
 
+Use the breakpoint classes to override layouts at certain browser widths. Mobile first!
+
 ```html_example
 <div class="mt_cf">
     <div class="mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2">
@@ -336,6 +228,8 @@ name: push-pull
 category: Layout
 ---
 
+Offset classes use `margin-left` to "skip" columns and create larger gaps between rows.
+
 ```html_example
     <div class="mt_row">
         <div class="mt_col-6 mt_col-offset-3">
@@ -368,6 +262,8 @@ name: reorder
 category: Layout
 ---
 
+"Push" and "pull" classes can be used to switch the graphical presentation from the source order of the html.
+
 ```html_example
     <div class="mt_cf">
         <div class="mt_col-3 mt_col-push-9">
@@ -380,12 +276,3 @@ category: Layout
     </div>
 ```
 */
-
-.mt_row {
-    @extend .mt_cf;
-}
-
-// .mt_row-gut-1
-.mt_row-gut-1 {
-    margin-bottom: $mt_padding-default;
-}
