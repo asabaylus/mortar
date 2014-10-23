@@ -5,25 +5,70 @@
     -webkit-font-smoothing: antialiased;
 }
 
-%font-default {
-    font-family: $mt_font-default;
-}
+// Chronicle self-hosted with instructions from Hoefler
+// https://github.com/natgeo/font-chronicle
 
-%font-default-strong {
-    font-family: $mt_font-default;
-    font-weight: 600;
+%font-default {
+    font-family: "Chronicle SSm 3r", $mt_font-serif-stack;
+    font-style: normal;
+    font-weight: normal;
 }
 
 %font-default-em {
-    font-family: $mt_font-default;
-    font-style: italic;
+    font-family: "Chronicle SSm 3i", $mt_font-serif-stack;
+    font-style: normal;
+    font-weight: normal;
 }
 
-%font-default-strong-em {
-    font-family: $mt_font-default;
-    font-style: italic;
-    font-weight: 600;
+%font-default-strong {
+    font-family: "Chronicle SSm 6r", $mt_font-serif-stack;
+    font-style: normal;
+    font-weight: normal;
 }
+
+
+%font-default-strong-em {
+    font-family: "Chronicle SSm 6i", $mt_font-serif-stack;
+    font-style: normal;
+    font-weight: normal;
+}
+
+%font-default-deck-strong {
+    font-family: "Chronicle Deck 6r", $mt_font-serif-stack;
+    font-style: normal;
+    font-weight: normal;
+
+    i,
+    em {
+        @extend %font-default-deck-strong-em;
+    }
+}
+
+%font-default-deck-strong-em {
+    font-family: "Chronicle Deck 6i", $mt_font-serif-stack;
+    font-style: normal;
+    font-weight: normal;
+}
+
+%font-default-display-light {
+    font-family: "Chronicle Display 3r", $mt_font-serif-stack;
+    font-style: normal;
+    font-weight: normal;
+
+    i,
+    em {
+        @extend %font-default-display-light-em;
+    }
+}
+
+%font-default-display-light-em {
+    font-family: "Chronicle Display 3i", $mt_font-serif-stack;
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+// Pragmatica self-hosted with directions from typekit
 
 %font-alternate {
     font-family: $mt_font-alternate;
@@ -56,21 +101,29 @@ name: fonts
 category: Typography
 ---
 
-Primary font: "utopia-std", Georgia, Times, "Times New Roman", serif
+Primary font: “utopia-std”, Georgia, Times, “Times New Roman”, serif
 
-<em>Primary font italic: "utopia-std", Georgia, Times, "Times New Roman", serif</em>
+<em>Primary font italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em>
 
-<strong>Primary font bold: "utopia-std", Georgia, Times, "Times New Roman", serif</strong>
+<strong>Primary font bold: “utopia-std”, Georgia, Times, “Times New Roman”, serif</strong>
 
-<strong><em>Primary font bold italic: "utopia-std", Georgia, Times, "Times New Roman", serif</em></strong>
+<strong><em>Primary font bold italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></strong>
 
-<p class="subh5">Secondary font: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</p>
+<p><span class="h5">Primary font deck: “utopia-std”, Georgia, Times, “Times New Roman”, serif</span></p>
 
-<p class="subh5"><em>Secondary font italic: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</em></p>
+<p><span class="h5"><em>Primary font deck italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></span></p>
 
-<p class="subh5"><strong>Secondary font bold: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</strong></p>
+<p><span class="h5--alt">Primary font display: “utopia-std”, Georgia, Times, “Times New Roman”, serif</span></p>
 
-<p class="subh5"><strong><em>Secondary font bold italic: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</em></strong></p>
+<p><span class="h5--alt"><em>Primary font display italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></span></p>
+
+<p class="subh5">Secondary font: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</p>
+
+<p class="subh5"><em>Secondary font italic: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</em></p>
+
+<p class="subh5"><strong>Secondary font bold: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</strong></p>
+
+<p class="subh5"><strong><em>Secondary font bold italic: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</em></strong></p>
 
 */
 

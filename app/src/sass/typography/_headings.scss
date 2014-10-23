@@ -1,8 +1,9 @@
 @import "headings/extends";
 
 @each $tag in (h1, h2, h3, h4, h5, h6) {
-    #{$tag} {
-        @extend %#{$tag};
+    .#{$tag},
+    .#{$tag}--alt {
+        @extend #{$tag};
     }
 }
 
@@ -63,3 +64,34 @@ parent: headings
         text-decoration: none;
     }
 }
+
+.h1--alt,
+.h2--alt,
+.h3--alt,
+.h4--alt,
+.h5--alt,
+.h6--alt {
+    @extend %font-default-display-light;
+
+    margin: 0;
+    padding: 0;
+    // text-transform: uppercase;
+}
+
+/*doc
+---
+title: Alternate Headings
+name: headings-alt
+parent: headings
+---
+
+```html_example
+<h1 class="h1--alt">Heading 1 Alternate</h1>
+<h2 class="h2--alt">Heading 2 Alternate</h2>
+<h3 class="h3--alt">Heading 3 Alternate</h3>
+<h4 class="h4--alt">Heading 4 Alternate</h4>
+<h5 class="h5--alt">Heading 5 Alternate</h5>
+<h6 class="h6--alt">Heading 6 Alternate</h6>
+```
+
+*/
