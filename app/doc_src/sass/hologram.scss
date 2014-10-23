@@ -138,9 +138,8 @@ main {
 // Code Blocks
 
 .codeExample {
-    // border-radius: $mt_ms-norm;
-    // overflow: hidden;
     border: $mt_border-default;
+    margin-bottom: $mt_unit;
 }
 
 .exampleOutput {
@@ -149,10 +148,13 @@ main {
 
 .codeBlock {
     background-color: white;
-    padding: $mt_padding-half $mt_padding-default;
     border-top: $mt_border-default;
+    max-height: 20em;
+    padding: $mt_padding-half $mt_padding-default;
+    overflow: auto;
 
     pre {
         margin: 0;
+        overflow: visible;
     }
 }

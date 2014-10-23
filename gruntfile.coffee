@@ -54,6 +54,7 @@ module.exports = (grunt) ->
                 bundleExec: true
                 require: [
                     'sass-globbing'
+                    'susy'
                 ]
             hologram:
                 options:
@@ -221,5 +222,5 @@ module.exports = (grunt) ->
         'sass:mortar'
         # 'csscss'
         'autoprefixer:mortar'
-        # 'cssmin'
+        'cssmin'
     ]

@@ -1,0 +1,127 @@
+
+.mt_row {
+    @extend .mt_cf;
+}
+
+.mt_row-gut-half {
+    margin-bottom: $mt_unit / 2;
+}
+
+@for $i from 1 through 4 {
+    .mt_row-gut-#{$i} {
+        margin-bottom: $mt_unit * $i;
+    }
+}
+
+@each $bp, $width in $layout-bps { // loop through breakpoints
+    @media #{ $width } {
+        .mt_row-#{$bp}-gut-half {
+            margin-bottom: $mt_unit / 2;
+        }
+
+        @for $i from 1 through 4 {
+            .mt_row-#{$bp}-gut-#{$i} {
+                margin-bottom: $mt_unit * $i;
+            }
+        }
+    }
+}
+
+/*doc
+---
+title: Rows
+name: rows
+category: Layout
+---
+
+The `.mt_row` class is really just a semantic extension of a clearfix to make sure a row clears floated columns.
+
+Additionally you can add row gutter classes that will specify a margin bottom on a row.
+
+```html_example
+    <div class="mt_row mt_row-gut-half">
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundinverse mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row mt_row-gut-1">
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundinverse mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row mt_row-gut-2">
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundinverse mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row mt_row-gut-3">
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundinverse mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row mt_row-gut-4">
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundinverse mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row">
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundinverse mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+```
+*/
+
+/*doc
+---
+title: Responsive Row Gutter
+name: resp-row-gut
+parent: rows
+---
+
+Row gutters can be additionally grown or shrunk at breakpoints.
+
+```html_example
+    <div class="mt_row mt_row-gut-1 mt_row-md-gut-2 mt_row-lg-gut-4">
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundinverse mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row">
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundinverse mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+```
+
+*/
