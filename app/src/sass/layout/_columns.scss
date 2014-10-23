@@ -96,26 +96,38 @@ category: Layout
 
 "`*`" can be replaced with a relevant number. Column, offset, push, and pull are all respective to the twelve column grid so 1 through 12 are available. Gutters are avaiable in half, 1, 2, 3, and 4.
 
-                   | default breakpoint | sm breakpoint      | md breakpoint       | lrg breakpoint
------------------- | ------------------ | ------------------ | ------------------- | ------------------
-**Column**         | `.col-*`           | `.col-sm-*`        | `.col-md-*`         | `.col-lrg-*`
-**Offset**         | `.col-offset-*`    | `.col-sm-offset-*` | `.col-md-offset-*`  | `.col-lrg-offset-*`
-**Pull**           | `.col-pull-*`      | `.col-sm-pull-*`   | `.col-md-pull-*`    | `.col-lrg-pull-*`
-**Push**           | `.col-push-*`      | `.col-sm-push-*`   | `.col-md-push-*`    | `.col-lrg-push*`
-**Column Gutter**  | `.col-gut-*`       | `.col-sm-gut-*`    | `.col-md-gut-*`     | `.col-lrg-gut*`
-**Row Gutter**     | `.row-gut-*`       | `.row-sm-gut-*`    | `.row-md-gut-*`     | `.row-lrg-gut*`
+                   | default class name    | class name with breakpoint
+------------------ | --------------------- | ----------------------------
+**Column**         | `.mt_col-*`           | `.mt_col-[sm, md, lrg]-*`
+**Offset**         | `.mt_col-offset-*`    | `.mt_col-[sm, md, lrg]-offset-*`
+**Pull**           | `.mt_col-pull-*`      | `.mt_col-[sm, md, lrg]-pull-*`
+**Push**           | `.mt_col-push-*`      | `.mt_col-[sm, md, lrg]-push-*`
+**Column Gutter**  | `.mt_col-gut-*`       | `.mt_col-[sm, md, lrg]-gut-*`
+**Row Gutter**     | `.mt_row-gut-*`       | `.mt_row-[sm, md, lrg]-gut-*`
 
 ### Available breakpoints
 
 Column, offset, pull, push, column gutter, and row gutter can all be adjusted at the following breakpoints.
 
-breakpoint | size
----------- | ---------------
-sm         | > 30em (480px)
-med        | > 50em (800px)
-lrg        | > 70em (1120px)
+breakpoint name | size
+--------------- | ---------------
+sm              | > 30em (480px)
+md              | > 50em (800px)
+lg              | > 70em (1120px)
+
+*/
+
+/*
 
 ### Example
+
+---
+title: Columns
+name: columns
+category: Layout
+---
+
+The classes provided are based upon a twelve column grid available at any breakpoin
 
 ```html_example
 <div class="mt_row">
