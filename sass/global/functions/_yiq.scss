@@ -1,9 +1,0 @@
-@function yiq($color) {
-    $red: red($color);
-    $green: green($color);
-    $blue: blue($color);
-
-    $yiq: (($red * 299) + ($green * 587) + ($blue * 114)) / 1000;
-
-    @return $yiq;
-}
