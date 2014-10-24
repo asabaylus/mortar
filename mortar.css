@@ -1,4 +1,22 @@
 @charset "UTF-8";
+/*
+  FLUIDITY v0.1.0
+  @mrmrs • http://mrmrs.cc
+  MIT
+*/
+/*
+
+  Responsive Utilities
+
+*/
+img, canvas, iframe, video, svg {
+  max-width: 100%; }
+
+/* Wrap tables or pre elements in a div with this class */
+.overflow-container {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
+
 /* normalize.css v3.0.0 | MIT License | git.io/normalize */
 /**
  * Remove default margin.
@@ -77,9 +95,6 @@ a:hover {
 abbr[title] {
   border-bottom: 1px dotted; }
 
-/**
- * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
- */
 /**
  * Address styling not present in Safari 5 and Chrome.
  */
@@ -175,12 +190,6 @@ svg:not(:root) {
 
 /* Grouping content
    ========================================================================== */
-/**
- * Address margin not present in IE 8/9 and Safari 5.
- */
-figure {
-  margin-left: 0; }
-
 /**
  * Address differences between Firefox and other browsers.
  */
@@ -575,13 +584,23 @@ category: Typography
 ```
 
 */
-h1,
+h1, .h1,
+.h1--alt,
 h2,
+.h2,
+.h2--alt,
 h3,
+.h3,
+.h3--alt,
 h4,
+.h4,
+.h4--alt,
 h5,
-h6 {
-  font-weight: 400;
+.h5,
+.h5--alt,
+h6,
+.h6,
+.h6--alt {
   margin: 0;
   padding: 0; }
 
@@ -678,52 +697,143 @@ category: Typography
 ```
 
 */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin-left: 0;
+  margin-right: 0; }
+
+/*doc
+---
+title: Figure
+name: figure
+category: Blocks
+---
+
+<figure>
+    <img src="img/cabin.jpg">
+    <figcaption>A picture of a cabin.</figcaption>
+</figure>
+*/
 input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), textarea {
   border: 1px solid #021122;
   margin: 0;
   padding: 0.36em 0.72em; }
 
-figure, table, p, ul,
-ol {
-  margin-bottom: 1.44em;
-  margin-top: 0; }
+html {
+  font-family: "Chronicle SSm 3r", Georgia, Times, "Times New Roman", serif;
+  font-style: normal;
+  font-weight: 300; }
 
-/*doc
----
-title: Fonts
-name: fonts
-category: Typography
----
-
-Primary font: "utopia-std", Georgia, Times, "Times New Roman", serif
-
-<em>Primary font italic: "utopia-std", Georgia, Times, "Times New Roman", serif</em>
-
-<strong>Primary font bold: "utopia-std", Georgia, Times, "Times New Roman", serif</strong>
-
-<strong><em>Primary font bold italic: "utopia-std", Georgia, Times, "Times New Roman", serif</em></strong>
-
-<p class="subh5">Secondary font: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</p>
-
-<p class="subh5"><strong>Secondary font bold: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</strong></p>
-
-*/
-html, h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "minion-pro", Georgia, Times, "Times New Roman", serif; }
+i,
+em, input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), textarea {
+  font-family: "Chronicle SSm 3i", Georgia, Times, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 300; }
 
 b,
 strong {
-  font-family: "minion-pro", Georgia, Times, "Times New Roman", serif;
+  font-family: "Chronicle SSm 6r", Georgia, Times, "Times New Roman", serif;
+  font-style: normal;
   font-weight: 600; }
 
-input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), textarea {
-  font-family: "minion-pro", Georgia, Times, "Times New Roman", serif;
-  font-style: italic; }
+b i,
+b em,
+strong i,
+strong em, i b,
+i strong,
+em b,
+em strong {
+  font-family: "Chronicle SSm 6i", Georgia, Times, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 600; }
+
+h1, .h1,
+.h1--alt,
+h2,
+.h2,
+.h2--alt,
+h3,
+.h3,
+.h3--alt,
+h4,
+.h4,
+.h4--alt,
+h5,
+.h5,
+.h5--alt,
+h6,
+.h6,
+.h6--alt {
+  font-family: "Chronicle Deck 6r", Georgia, Times, "Times New Roman", serif;
+  font-style: normal;
+  font-weight: 600; }
+
+h1 i, .h1 i,
+.h1--alt i,
+h2 i,
+.h2 i,
+.h2--alt i,
+h3 i,
+.h3 i,
+.h3--alt i,
+h4 i,
+.h4 i,
+.h4--alt i,
+h5 i,
+.h5 i,
+.h5--alt i,
+h6 i,
+.h6 i,
+.h6--alt i,
+h1 em,
+.h1 em,
+.h1--alt em,
+h2 em,
+.h2 em,
+.h2--alt em,
+h3 em,
+.h3 em,
+.h3--alt em,
+h4 em,
+.h4 em,
+.h4--alt em,
+h5 em,
+.h5 em,
+.h5--alt em,
+h6 em,
+.h6 em,
+.h6--alt em {
+  font-family: "Chronicle Deck 6i", Georgia, Times, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 600; }
+
+.h1--alt,
+.h2--alt,
+.h3--alt,
+.h4--alt,
+.h5--alt,
+.h6--alt {
+  font-family: "Chronicle Display 3r", Georgia, Times, "Times New Roman", serif;
+  font-style: normal;
+  font-weight: 300; }
+
+.h1--alt i,
+.h2--alt i,
+.h3--alt i,
+.h4--alt i,
+.h5--alt i,
+.h6--alt i,
+.h1--alt em,
+.h2--alt em,
+.h3--alt em,
+.h4--alt em,
+.h5--alt em,
+.h6--alt em {
+  font-family: "Chronicle Display 3i", Georgia, Times, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 300; }
 
 ol > li::before, .subh3,
 .byline,
@@ -732,7 +842,20 @@ ol > li::before, .subh3,
 figcaption,
 .caption,
 .subh5 {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif; }
+  font-family: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+  font-style: normal;
+  font-weight: 300; }
+
+.subh3 em,
+.byline em,
+.subh4 em,
+.tag em,
+figcaption em,
+.caption em,
+.subh5 em {
+  font-family: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+  font-style: italic;
+  font-weight: 300; }
 
 blockquote, .subh1,
 .subh2,
@@ -743,9 +866,60 @@ blockquote, .subh1,
 figcaption strong,
 .caption strong,
 .subh5 strong {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+  font-family: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+  font-style: normal;
   font-weight: 700; }
 
+.subh3 em strong,
+.subh3 strong em,
+.byline em strong,
+.subh4 em strong,
+.tag em strong,
+.byline strong em,
+.subh4 strong em,
+.tag strong em,
+figcaption em strong,
+.caption em strong,
+.subh5 em strong,
+figcaption strong em,
+.caption strong em,
+.subh5 strong em {
+  font-family: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+  font-style: italic;
+  font-weight: 700; }
+
+/*doc
+---
+title: Fonts
+name: fonts
+category: Typography
+---
+
+Primary font: “utopia-std”, Georgia, Times, “Times New Roman”, serif
+
+<em>Primary font italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em>
+
+<strong>Primary font bold: “utopia-std”, Georgia, Times, “Times New Roman”, serif</strong>
+
+<strong><em>Primary font bold italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></strong>
+
+<p><span class="h5">Primary font deck: “utopia-std”, Georgia, Times, “Times New Roman”, serif</span></p>
+
+<p><span class="h5"><em>Primary font deck italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></span></p>
+
+<p><span class="h5--alt">Primary font display: “utopia-std”, Georgia, Times, “Times New Roman”, serif</span></p>
+
+<p><span class="h5--alt"><em>Primary font display italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></span></p>
+
+<p class="subh5">Secondary font: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</p>
+
+<p class="subh5"><em>Secondary font italic: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</em></p>
+
+<p class="subh5"><strong>Secondary font bold: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</strong></p>
+
+<p class="subh5"><strong><em>Secondary font bold italic: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</em></strong></p>
+
+*/
 sub,
 sup {
   font-size: 0.82397em;
@@ -756,51 +930,63 @@ sup {
       font-size: 0.69444em;
       line-height: 2.0736em; } }
 
-small, ol > li::before, h6, .byline, .subh4, .tag, figcaption, .caption, .subh5, .subh6 {
+small, ol > li::before, h6, .h6,
+.h6--alt, .byline, .subh4, .tag, figcaption, .caption, .subh5, .subh6 {
   font-size: 0.87891em;
   line-height: 1.6384em; }
   @media screen and (min-width: 40em) {
-    small, ol > li::before, h6, .byline, .subh4, .tag, figcaption, .caption, .subh5, .subh6 {
+    small, ol > li::before, h6, .h6,
+    .h6--alt, .byline, .subh4, .tag, figcaption, .caption, .subh5, .subh6 {
       font-size: 0.83333em;
       line-height: 1.728em; } }
 
-html, legend, h5, .subh1, .subh2, .mt_btn, .subh3 {
+html, legend, h5, .h5,
+.h5--alt, .subh1, .subh2, .mt_btn, .subh3 {
   font-size: 1em;
   line-height: 1.44em; }
   @media screen and (min-width: 40em) {
-    html, legend, h5, .subh1, .subh2, .mt_btn, .subh3 {
+    html, legend, h5, .h5,
+    .h5--alt, .subh1, .subh2, .mt_btn, .subh3 {
       font-size: 1em;
       line-height: 1.44em; } }
 
-h4 {
+h4, .h4,
+.h4--alt {
   font-size: 1.13778em;
   line-height: 1.26562em; }
   @media screen and (min-width: 40em) {
-    h4 {
+    h4, .h4,
+    .h4--alt {
       font-size: 1.44em;
       line-height: 2em; } }
 
-blockquote, h3 {
+blockquote, h3, .h3,
+.h3--alt {
   font-size: 1.38084em;
   line-height: 2.08569em; }
   @media screen and (min-width: 40em) {
-    blockquote, h3 {
+    blockquote, h3, .h3,
+    .h3--alt {
       font-size: 1.728em;
       line-height: 1.66667em; } }
 
-h2 {
+h2, .h2,
+.h2--alt {
   font-size: 1.67583em;
   line-height: 1.71855em; }
   @media screen and (min-width: 40em) {
-    h2 {
+    h2, .h2,
+    .h2--alt {
       font-size: 2.48832em;
       line-height: 1.15741em; } }
 
-h1 {
+h1, .h1,
+.h1--alt {
   font-size: 1.78755em;
   line-height: 1.61114em; }
   @media screen and (min-width: 40em) {
-    h1 {
+    h1, .h1,
+    .h1--alt {
       font-size: 3.58318em;
       line-height: 1.20563em; } }
 
@@ -906,6 +1092,32 @@ parent: headings
     color: #fafafa;
     text-decoration: none; }
 
+.h1--alt,
+.h2--alt,
+.h3--alt,
+.h4--alt,
+.h5--alt,
+.h6--alt {
+  margin: 0;
+  padding: 0; }
+
+/*doc
+---
+title: Alternate Headings
+name: headings-alt
+parent: headings
+---
+
+```html_example
+<h1 class="h1--alt">Heading 1 Alternate</h1>
+<h2 class="h2--alt">Heading 2 Alternate</h2>
+<h3 class="h3--alt">Heading 3 Alternate</h3>
+<h4 class="h4--alt">Heading 4 Alternate</h4>
+<h5 class="h5--alt">Heading 5 Alternate</h5>
+<h6 class="h6--alt">Heading 6 Alternate</h6>
+```
+
+*/
 /*doc
 ---
 title: Tag
@@ -924,6 +1136,20 @@ category: Typography
   padding: 0.72em;
   text-transform: uppercase; }
 
+.mt_textinverse {
+  color: #fafafa; }
+  .mt_textinverse a {
+    text-decoration: none;
+    color: #7981f1; }
+  .mt_textinverse a:hover,
+  .mt_textinverse a:focus,
+  .mt_textinverse a:active {
+    text-decoration: underline;
+    color: #7981f1; }
+  .mt_textinverse a:visited {
+    text-decoration: none;
+    color: #7981f1; }
+
 /*doc
 ---
 title: Backgrounds
@@ -932,7 +1158,7 @@ category: Theme
 ---
 
 <div class="mt_backgroundbasic mt_border--default mt_paddingdefault mt_row-gut-1"><code>.mt_backgroundbasic</code></div>
-<div class="mt_backgroundinverse textinverse mt_border--default mt_paddingdefault mt_row-gut-1"><code>.mt_backgroundinverse</code></div>
+<div class="mt_backgroundinverse mt_textinverse mt_border--default mt_paddingdefault mt_row-gut-1"><code>.mt_backgroundinverse</code></div>
 <div class="mt_backgroundhighlight mt_border--default mt_paddingdefault mt_row-gut-1"><code>.mt_backgroundhighlight</code></div>
 <div class="mt_backgroundlowlight mt_border--inverse mt_paddingdefault"><code>.mt_backgroundlowlight</code></div>
 
@@ -1067,35 +1293,35 @@ category: Elements
 
 Intrinsic ratios are a useful trick for helping interactives, flash videos, and galleries to be fluidly responsive. First documented as "<a href="http://daverupert.com/2012/04/uncle-daves-ol-padded-box/">Uncle Dave's Ol' Padded Box</a>. Ratios taken from the wikipedia <a href="http://en.wikipedia.org/wiki/Aspect_ratio_(image)">Aspect Ratio (image)</a> article.
 
-<p><div class="intratio--tv backgroundinverse textinverse"><code>.intratio--tv</code> (4:3)</div></p>
+<p><div class="mt_intratio--tv mt_backgroundinverse mt_textinverse"><code>.mt_intratio--tv</code> (4:3)</div></p>
 
-<p><div class="intratio--imax backgroundinverse textinverse"><code>.intratio--imax</code> (1.43:1)</div></p>
+<p><div class="mt_intratio--imax mt_backgroundinverse mt_textinverse"><code>.mt_intratio--imax</code> (1.43:1)</div></p>
 
-<p><div class="intratio--photo backgroundinverse textinverse"><code>.intratio--photo</code> (3:2)</div></p>
+<p><div class="mt_intratio--photo mt_backgroundinverse mt_textinverse"><code>.mt_intratio--photo</code> (3:2)</div></p>
 
-<p><div class="intratio--golden backgroundinverse textinverse"><code>.intratio--golden</code> (1.618:1)</div></p>
+<p><div class="mt_intratio--golden mt_backgroundinverse mt_textinverse"><code>.mt_intratio--golden</code> (1.618:1)</div></p>
 
-<p><div class="intratio--broadcast backgroundinverse textinverse"><code>.intratio--broadcast</code> (16:9)</div></p>
+<p><div class="mt_intratio--broadcast mt_backgroundinverse mt_textinverse"><code>.mt_intratio--broadcast</code> (16:9)</div></p>
 
-<p><div class="intratio--widescreen backgroundinverse textinverse"><code>.intratio--widescreen</code> (1.85:1)</div></p>
+<p><div class="mt_intratio--widescreen mt_backgroundinverse mt_textinverse"><code>.intratio--widescreen</code> (1.85:1)</div></p>
 
 */
-.intratio--tv {
+.mt_intratio--tv {
   height: 0;
   padding-bottom: 75%; }
-.intratio--imax {
+.mt_intratio--imax {
   height: 0;
   padding-bottom: 69.93%; }
-.intratio--photo {
+.mt_intratio--photo {
   height: 0;
   padding-bottom: 66.66%; }
-.intratio--golden {
+.mt_intratio--golden {
   height: 0;
   padding-bottom: 61.8%; }
-.intratio--broadcast {
+.mt_intratio--broadcast {
   height: 0;
   padding-bottom: 56.25%; }
-.intratio--widescreen {
+.mt_intratio--widescreen {
   height: 0;
   padding-bottom: 54.05%; }
 
@@ -1133,7 +1359,7 @@ category: Blocks
 ---
 
 ```html_example
-<aside style="background-image: url('img/cabin.jpg');" class="mt_textonimage-container textinverse mt_paddingdefault">
+<aside style="background-image: url('img/cabin.jpg');" class="mt_textonimage-container mt_textinverse mt_paddingdefault">
     <div class="mt_textonimage-textcontainer">
         <p class="subh5 headlinedeck-duration">3 Min read</p>
         <p class="subh3 headlinedeck-category">Behind the Cover</p>
@@ -2189,7 +2415,8 @@ category: Layout
 .mt_row-gut-half {
   margin-bottom: 0.72em; }
 
-.mt_row-gut-1 {
+.mt_row-gut-1, table, p, ul,
+ol, figure {
   margin-bottom: 1.44em; }
 
 .mt_row-gut-2 {
@@ -2343,16 +2570,3 @@ Row gutters can be additionally grown or shrunk at breakpoints.
 ```
 
 */
-.textinverse {
-  color: #fafafa; }
-  .textinverse a {
-    text-decoration: none;
-    color: #7981f1; }
-  .textinverse a:hover,
-  .textinverse a:focus,
-  .textinverse a:active {
-    text-decoration: underline;
-    color: #7981f1; }
-  .textinverse a:visited {
-    text-decoration: none;
-    color: #7981f1; }

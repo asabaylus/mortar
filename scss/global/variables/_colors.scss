@@ -1,0 +1,31 @@
+// Color Variables
+// ===============
+//
+// These should not be referenced outside of this partial
+
+$brand-blue:    hsl(212, 89%, 7%);
+$medium-blue:   hsl(233, 39%, 26%);
+$bright-blue:   hsl(236, 81%, 61%);
+$medium-grey:   hsl(225, 2%, 65%);
+$light-grey:    hsl(180, 4%, 85%);
+$off-white:     hsl(180, 5%, 98%);
+$brand-gold:    hsl(48, 100%, 50%);
+$red:           darken(#f00, 10);
+
+// Semantic Variables
+// ==================
+//
+// These variables are for use throughout the project
+
+$mt_color-basic:           $off-white;
+$mt_color-inverse:         $brand-blue;
+$mt_color-primary:         $medium-blue;
+$mt_color-highlight:       $brand-gold;
+$mt_color-lowlight:        $light-grey;
+$mt_color-danger:          $red;
+$mt_color-text:            $brand-blue;
+$mt_color-text-inverse:    $off-white;
+$mt_color-link:            $bright-blue;
+$mt_color-link-inverse:    lighten($bright-blue, 10);
+$mt_color-beta:            $medium-grey;
+$mt_color-image-mask:      transparentize($brand-blue, .2);

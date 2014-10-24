@@ -1,0 +1,26 @@
+/*doc
+---
+title: Backgrounds
+name: backgrounds
+category: Theme
+---
+
+<div class="mt_backgroundbasic mt_border--default mt_paddingdefault mt_row-gut-1"><code>.mt_backgroundbasic</code></div>
+<div class="mt_backgroundinverse mt_textinverse mt_border--default mt_paddingdefault mt_row-gut-1"><code>.mt_backgroundinverse</code></div>
+<div class="mt_backgroundhighlight mt_border--default mt_paddingdefault mt_row-gut-1"><code>.mt_backgroundhighlight</code></div>
+<div class="mt_backgroundlowlight mt_border--inverse mt_paddingdefault"><code>.mt_backgroundlowlight</code></div>
+
+*/
+
+$mt_backgrounds: (
+    basic: $mt_color-basic,
+    inverse: $mt_color-inverse,
+    highlight: $mt_color-highlight,
+    lowlight: $mt_color-lowlight
+);
+
+@each $background, $color in $mt_backgrounds {
+    .mt_background#{$background} {
+        background-color: $color;
+    }
+}

@@ -1,0 +1,116 @@
+.mt_col-gut-half {
+    padding-left: $mt_unit / 2;
+    padding-right: $mt_unit / 2;
+}
+
+@for $i from 1 through 4 {
+    .mt_col-gut-#{$i} {
+        padding-left: $mt_unit * $i;
+        padding-right: $mt_unit * $i;
+    }
+}
+
+@each $bp, $width in $layout-bps { // loop through breakpoints
+    @media #{ $width } {
+        .mt_col-#{$bp}-gut-half {
+            padding-left: $mt_unit / 2;
+            padding-right: $mt_unit / 2;
+        }
+
+        @for $i from 1 through 4 {
+            .mt_col-#{$bp}-gut-#{$i} {
+                padding-left: $mt_unit * $i;
+                padding-right: $mt_unit * $i;
+            }
+        }
+    }
+}
+
+/*doc
+---
+title: Gutters
+name: gutters
+category: Layout
+---
+
+Column Gutters are available in half, single, double, triple, and quadruple sizes.
+
+```html_example
+    <div class="mt_row mt_row-gut-1">
+        <div class="mt_col-6">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6">
+            <div class="mt_backgroundinverse mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row mt_row-gut-1">
+        <div class="mt_col-6 mt_col-gut-half">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-half">
+            <div class="mt_backgroundinverse mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row mt_row-gut-1">
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-1">
+            <div class="mt_backgroundinverse mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row mt_row-gut-1">
+        <div class="mt_col-6 mt_col-gut-2">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-2">
+            <div class="mt_backgroundinverse mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row mt_row-gut-1">
+        <div class="mt_col-6 mt_col-gut-3">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-3">
+            <div class="mt_backgroundinverse mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="mt_row mt_row-gut-1">
+        <div class="mt_col-6 mt_col-gut-4">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-4">
+            <div class="mt_backgroundinverse mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+```
+
+*/
+
+/*doc
+---
+title: Responsive Gutters
+name: resp-gut
+parent: gutters
+---
+
+Use the breakpoint classes to additionally grow or shrink gutters at different breakpoints.
+
+```html_example
+    <div class="mt_row mt_row-gut-1">
+        <div class="mt_col-6 mt_col-gut-half mt_col-sm-gut-1 mt_col-md-gut-2">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+        <div class="mt_col-6 mt_col-gut-half mt_col-sm-gut-1 mt_col-md-gut-2">
+            <div class="mt_backgroundlowlight mt_paddingdefault">&nbsp;</div>
+        </div>
+    </div>
+```
+
+*/

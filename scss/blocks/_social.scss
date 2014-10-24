@@ -1,0 +1,19 @@
+/*doc
+---
+title: Social
+name: social
+category: Typography
+---
+
+<i class="mt_social-icon icongs icongs-comment"></i><span class="subh5"><strong class="mt_social-number">23</strong> comments</span>
+*/
+
+.mt_social {
+    @include e(icon) {
+        margin-right: $mt_padding-quarter;
+    }
+
+    @include e(number) {
+        margin-right: $mt_padding-quarter;
+    }
+}

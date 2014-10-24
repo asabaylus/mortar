@@ -1,0 +1,174 @@
+@import "../../../../bower_components/vertical-rhythms-without-compass/vertical-rhythms";
+
+%mt_font-antialiased {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+// Chronicle self-hosted with instructions from Hoefler
+// https://github.com/natgeo/font-chronicle
+
+%mt_font-default {
+    font-family: "Chronicle SSm 3r", $mt_font-serif-stack;
+    font-style: normal;
+    font-weight: 300;
+}
+
+%mt_font-default-em {
+    font-family: "Chronicle SSm 3i", $mt_font-serif-stack;
+    font-style: italic;
+    font-weight: 300;
+}
+
+%mt_font-default-strong {
+    font-family: "Chronicle SSm 6r", $mt_font-serif-stack;
+    font-style: normal;
+    font-weight: 600;
+}
+
+
+%mt_font-default-strong-em {
+    font-family: "Chronicle SSm 6i", $mt_font-serif-stack;
+    font-style: italic;
+    font-weight: 600;
+}
+
+%mt_font-default-deck-strong {
+    font-family: "Chronicle Deck 6r", $mt_font-serif-stack;
+    font-style: normal;
+    font-weight: 600;
+
+    i,
+    em {
+        @extend %mt_font-default-deck-strong-em;
+    }
+}
+
+%mt_font-default-deck-strong-em {
+    font-family: "Chronicle Deck 6i", $mt_font-serif-stack;
+    font-style: italic;
+    font-weight: 600;
+}
+
+%mt_font-default-display-light {
+    font-family: "Chronicle Display 3r", $mt_font-serif-stack;
+    font-style: normal;
+    font-weight: 300;
+
+    i,
+    em {
+        @extend %mt_font-default-display-light-em;
+    }
+}
+
+%mt_font-default-display-light-em {
+    font-family: "Chronicle Display 3i", $mt_font-serif-stack;
+    font-style: italic;
+    font-weight: 300;
+}
+
+
+// Pragmatica self-hosted with directions from typekit
+
+%mt_font-alternate {
+    font-family: $mt_font-alternate;
+    font-style: normal;
+    font-weight: 300;
+}
+
+%mt_font-alternate-em {
+    font-family: $mt_font-alternate;
+    font-style: italic;
+    font-weight: 300;
+}
+
+%mt_font-alternate-strong {
+    font-family: $mt_font-alternate;
+    font-style: normal;
+    font-weight: 700;
+}
+
+%mt_font-alternate-strong-em {
+    font-family: $mt_font-alternate;
+    font-style: italic;
+    font-weight: 700;
+}
+
+/*doc
+---
+title: Fonts
+name: fonts
+category: Typography
+---
+
+Primary font: “utopia-std”, Georgia, Times, “Times New Roman”, serif
+
+<em>Primary font italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em>
+
+<strong>Primary font bold: “utopia-std”, Georgia, Times, “Times New Roman”, serif</strong>
+
+<strong><em>Primary font bold italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></strong>
+
+<p><span class="h5">Primary font deck: “utopia-std”, Georgia, Times, “Times New Roman”, serif</span></p>
+
+<p><span class="h5"><em>Primary font deck italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></span></p>
+
+<p><span class="h5--alt">Primary font display: “utopia-std”, Georgia, Times, “Times New Roman”, serif</span></p>
+
+<p><span class="h5--alt"><em>Primary font display italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></span></p>
+
+<p class="subh5">Secondary font: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</p>
+
+<p class="subh5"><em>Secondary font italic: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</em></p>
+
+<p class="subh5"><strong>Secondary font bold: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</strong></p>
+
+<p class="subh5"><strong><em>Secondary font bold italic: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</em></strong></p>
+
+*/
+
+
+// Font sizes
+
+$mt_font-sizes: (
+    mt_font-size-xsm: ( // Font size
+        $mt_ms-smscr-xsm, // Small screen modular scale size
+        $mt_ms-xsm // Default modular scale size
+    ),
+    mt_font-size-sm: (
+        $mt_ms-smscr-sm,
+        $mt_ms-sm
+    ),
+    mt_font-size-norm: (
+        $mt_ms-smscr-norm,
+        $mt_ms-norm
+    ),
+    mt_font-size-med: (
+        $mt_ms-smscr-med,
+        $mt_ms-med
+    ),
+    mt_font-size-lrg: (
+        $mt_ms-smscr-lrg,
+        $mt_ms-lrg
+    ),
+    mt_font-size-xxlrg: (
+        $mt_ms-smscr-xxlrg,
+        $mt_ms-xxlrg
+    ),
+    mt_font-size-xxxlrg: (
+        $mt_ms-smscr-xxxlrg,
+        $mt_ms-xxxlrg
+    )
+);
+
+
+// Loop through font-sizes
+@each $mt_font-size, $mt_ms-size in $mt_font-sizes {
+    %#{$mt_font-size} {
+        @include adjust-font-size-to( nth($mt_ms-size, 1) );
+
+        @media screen and (min-width:40em) {
+            @include adjust-font-size-to( nth($mt_ms-size, 2) );
+        }
+    }
+}

@@ -1,0 +1,45 @@
+/*doc
+---
+title: Text on Image
+name: textOnImage
+category: Blocks
+---
+
+```html_example
+<aside style="background-image: url('img/cabin.jpg');" class="mt_textonimage-container mt_textinverse mt_paddingdefault">
+    <div class="mt_textonimage-textcontainer">
+        <p class="subh5 headlinedeck-duration">3 Min read</p>
+        <p class="subh3 headlinedeck-category">Behind the Cover</p>
+        <h1>Photos: With Ukraine in Disarray, Crimea Heats Up</h1>
+        <h2 class="subh2 headlinedeck-subtitle">Step into the Void, a new 12,650-foot perch in the French Alps, the scariest?</h2>
+
+        <p class="subh6 headlinedeck-author">By <strong>Brian Handwerk</strong></p>
+        <p class="byline">Published November 22, 2013</p>
+    </div>
+</aside>
+```
+*/
+
+.mt_textonimage {
+    @include e(container) {
+        background-position: center center;
+        background-size: cover;
+        position: relative;
+
+        &:before {
+            background-color: $mt_color-image-mask;
+            bottom: 0;
+            content: ' ';
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: $mt_z-bottom;
+        }
+    }
+
+    @include e(textcontainer) {
+        position: relative;
+        z-index: $mt_z-top;
+    }
+}

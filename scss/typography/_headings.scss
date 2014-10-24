@@ -1,0 +1,97 @@
+@import "headings/extends";
+
+@each $tag in (h1, h2, h3, h4, h5, h6) {
+    .#{$tag},
+    .#{$tag}--alt {
+        @extend #{$tag};
+    }
+}
+
+@each $class in (subh1, subh2, subh3, subh4, subh5, subh6) {
+    .#{$class} {
+        @extend %#{$class};
+    }
+}
+
+/*doc
+---
+title: Heading with link
+name: headingwithlink
+parent: headings
+---
+
+```html_example
+<h3 class="headingwithlink"><a href="#">Heading with link</a></h3>
+<h3 class="subh3 headingwithlink"><a href="#">Sub Heading with link</a></h3>
+```
+
+*/
+
+.headingwithlink {
+    > a {
+        color: $mt_color-text;
+        text-decoration: none;
+
+        &:visited {
+            color: $mt_color-text;
+            text-decoration: none;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: lighten($mt_color-text, 15);
+            text-decoration: none;
+        }
+    }
+}
+
+// Heading of inverse color
+
+.headinginverse {
+    color: $mt_color-text-inverse;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $mt_color-text-inverse;
+        text-decoration: underline;
+    }
+
+    &:visited {
+        color: $mt_color-text-inverse;
+        text-decoration: none;
+    }
+}
+
+.h1--alt,
+.h2--alt,
+.h3--alt,
+.h4--alt,
+.h5--alt,
+.h6--alt {
+    @extend %mt_font-default-display-light;
+
+    margin: 0;
+    padding: 0;
+    // text-transform: uppercase;
+}
+
+/*doc
+---
+title: Alternate Headings
+name: headings-alt
+parent: headings
+---
+
+```html_example
+<h1 class="h1--alt">Heading 1 Alternate</h1>
+<h2 class="h2--alt">Heading 2 Alternate</h2>
+<h3 class="h3--alt">Heading 3 Alternate</h3>
+<h4 class="h4--alt">Heading 4 Alternate</h4>
+<h5 class="h5--alt">Heading 5 Alternate</h5>
+<h6 class="h6--alt">Heading 6 Alternate</h6>
+```
+
+*/

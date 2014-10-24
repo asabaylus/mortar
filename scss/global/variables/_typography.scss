@@ -1,0 +1,62 @@
+// Font Families
+// =============
+
+$mt_font-serif-stack: Georgia, Times, "Times New Roman", serif;
+$mt_font-sans: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+
+$mt_font-alternate: $mt_font-sans;
+
+// Font Sizes
+// ==========
+
+@import "../../../../bower_components/modular-scale/stylesheets/modular-scale";
+
+// Defaults
+
+$ms-base: 16px; // don't worry, it gets converted to ems
+$ms-ratio: $minor-third;
+
+// Variants
+
+$mt_ms-xsm      : ms(-2);
+$mt_ms-sm       : ms(-1);
+$mt_ms-norm     : $ms-base;
+$mt_ms-med      : ms(2);
+$mt_ms-lrg      : ms(3);
+$mt_ms-xlrg     : ms(4);
+$mt_ms-xxlrg    : ms(5);
+$mt_ms-xxxlrg   : ms(7);
+
+// Small Screen Variants
+
+$mt_ms-smscr-ratio: $minor-second $minor-third;
+
+$mt_ms-smscr-xsm      : ms(-4, $ms-base, $mt_ms-smscr-ratio);
+$mt_ms-smscr-sm       : ms(-2, $ms-base, $mt_ms-smscr-ratio);
+$mt_ms-smscr-norm     : $ms-base;
+$mt_ms-smscr-med      : ms(2, $ms-base, $mt_ms-smscr-ratio);
+$mt_ms-smscr-lrg      : ms(6, $ms-base, $mt_ms-smscr-ratio);
+$mt_ms-smscr-xlrg     : ms(9, $ms-base, $mt_ms-smscr-ratio);
+$mt_ms-smscr-xxlrg    : ms(10, $ms-base, $mt_ms-smscr-ratio);
+$mt_ms-smscr-xxxlrg   : ms(12, $ms-base, $mt_ms-smscr-ratio);
+
+
+// Type
+
+$base-font-size    : $mt_ms-norm;
+$base-line-height  : $mt_ms-med;
+
+// Padding
+//
+// Defined here because it relates to the overall
+// typographic rhythm
+
+// Crazy to convert px to em
+$mt_padding-default: (($mt_ms-med / ($mt_ms-med * 0 + 1)) / 16) * 1em;
+
+$mt_unit: $mt_padding-default;
+
+$mt_padding-half: $mt_padding-default / 2;
+$mt_padding-quarter: $mt_padding-default / 4;
+$mt_padding-one-and-half: $mt_padding-default * 1.5;
+$mt_padding-double: $mt_padding-default * 2;

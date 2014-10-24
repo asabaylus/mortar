@@ -1,0 +1,9 @@
+// Inputs, including text area
+
+%mt_input-text-theme {
+    @extend %mt_font-default-em;
+
+    border: 1px solid $mt_color-text;
+    margin: 0;
+    padding: $mt_padding-quarter $mt_padding-half;
+}

@@ -1,0 +1,84 @@
+/*doc
+---
+title: Button Styles
+name: buttonSkins
+category: Elements
+---
+
+Button                                              | Class               | Description
+--------------------------------------------------- | ------------------- | -----------
+<button class="mt_btn mt_btn--default">Default</button>   | `mt_btn mt_btn--default`  | This is what buttons look like, this is the go to button style.
+<button class="mt_btn mt_btn--primary">Primary</button>   | `mt_btn mt_btn--primary`  | Use this button as the primary call to action
+<button class="mt_btn mt_btn--danger">Delete</button>     | `mt_btn mt_btn--danger`   | This button is for delete actions, these actions should also have a confirmation dialog
+<button class="mt_btn mt_btn--disabled">Disabled</button> | `mt_btn mt_btn--disabled` | I'm afraid I can't let you do that, yet.
+<button class="mt_btn--naked">Naked</button>           | `mt_btn--naked`        | When a button is semantically correct, but visually inapropriate
+
+*/
+
+
+// Variables
+// ======
+
+$mt_btn-offset-y: .2em;
+
+$mt_btn-colors: (
+  default: $mt_color-primary,
+  primary: $mt_color-highlight,
+  danger: $mt_color-danger
+);
+
+
+// Mixins
+// ======
+
+@function mt_btn-text-color($color) {
+    @return if(mt_yiq($color) >= 128, $mt_color-text, $mt_color-text-inverse);
+}
+
+@mixin mt_btn($color) {
+    background-color: $color;
+    color: mt_btn-text-color($color);
+
+    &:hover {
+        background-color: lighten($color, 10);
+        color: lighten(mt_btn-text-color($color), 10);
+    }
+}
+
+
+// Style
+// =====
+
+.mt_btn {
+    @extend %subh2;
+
+    border: 0;
+    cursor: default;
+    line-height: 1;
+    margin-bottom: $mt_btn-offset-y * 2;
+    padding: 1em;
+    text-align: center;
+
+    // Iterate over button skins
+
+    @each $btn-type, $btn-color in $mt_btn-colors {
+        @include m($btn-type) {
+            @include mt_btn($btn-color);
+        }
+    }
+
+    @include m(naked) {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0;
+    }
+
+    // This rule set must be last
+
+    &:active {
+        box-shadow: none;
+        position: relative;
+        top: $mt_btn-offset-y;
+    }
+}

@@ -1,0 +1,21 @@
+/*doc
+---
+title: Tag
+name: tag
+category: Typography
+---
+
+```html_example
+<p><span class="tag">Beautiful</span> <span class="tag">environment</span> <span class="tag">maya empire</span> <span class="tag">food</span></p>
+```
+
+*/
+
+.tag {
+    @extend %subh4;
+
+    border: $mt_border-default;
+    display: inline-block;
+    padding: $mt_padding-half;
+    text-transform: uppercase;
+}

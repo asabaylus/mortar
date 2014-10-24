@@ -1,0 +1,36 @@
+/*doc
+---
+title: Headline Deck
+name: headlineDeck
+category: Blocks
+---
+
+```html_example
+<p class="subh5 mt_headlinedeck-duration">3 Min read</p>
+<p class="subh3 mt_headlinedeck-category">Behind the Cover</p>
+<h1>Photos: With Ukraine in Disarray, Crimea Heats Up</h1>
+<h2 class="subh2 mt_headlinedeck-subtitle">Step into the Void, a new 12,650-foot perch in the French Alps, the scariest?</h2>
+
+<p class="subh6 mt_headlinedeck-author">By <strong>Brian Handwerk</strong></p>
+<p class="byline">Published November 22, 2013</p>
+```
+*/
+
+
+.mt_headlinedeck {
+    @include e(duration) {
+        margin-bottom: 0;
+    }
+
+    @include e(category) {
+        margin-bottom: 0;
+    }
+
+    @include e(subtitle) {
+        @include margin-trailer(2, $mt_ms-sm);
+    }
+
+    @include e(author) {
+        margin-bottom: 0;
+    }
+}

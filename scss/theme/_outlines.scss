@@ -1,0 +1,20 @@
+/*doc
+---
+title: Outlines
+name: outlines
+category: Theme
+---
+
+```html_example
+<div class="mt_background--basic mt_border--default mt_paddingdefault mt_row-gut-1">Default border</div>
+<div class="mt_background--basic mt_border--inverse mt_paddingdefault">Inverse border</div>
+```
+*/
+
+.mt_border--default {
+    border: $mt_border-default;
+}
+
+.mt_border--inverse {
+    border: $mt_border-inverse;
+}
