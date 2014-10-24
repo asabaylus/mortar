@@ -1,13 +1,13 @@
-$mq-sm: "screen and (min-width: 30em)";
-$mq-md: "screen and (min-width: 50em)";
-$mq-lg: "screen and (min-width: 70em)";
+$mt_mq-sm: "screen and (min-width: 30em)";
+$mt_mq-md: "screen and (min-width: 50em)";
+$mt_mq-lg: "screen and (min-width: 70em)";
 
 // Example Use
 // ===========
 //
 // mq variables will need to be interpolated like so:
 //
-// @media #{$mq-sm} {
+// @media #{$mt_mq-sm} {
 //     div {
 //         color: red;
 //     }
@@ -15,7 +15,7 @@ $mq-lg: "screen and (min-width: 70em)";
 
 
 $layout-bps: (
-  sm: $mq-sm,
-  md: $mq-md,
-  lg: $mq-lg
+  sm: $mt_mq-sm,
+  md: $mt_mq-md,
+  lg: $mt_mq-lg
 );

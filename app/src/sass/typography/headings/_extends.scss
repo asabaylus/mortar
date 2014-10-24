@@ -20,27 +20,27 @@ Headings are also available as classes so you can use them when a semantic tag d
 // Headings
 
 %h1 {
-    @extend %font-size-xxxlrg;
+    @extend %mt_font-size-xxxlrg;
 }
 
 %h2 {
-    @extend %font-size-xxlrg;
+    @extend %mt_font-size-xxlrg;
 }
 
 %h3 {
-    @extend %font-size-lrg;
+    @extend %mt_font-size-lrg;
 }
 
 %h4 {
-    @extend %font-size-med;
+    @extend %mt_font-size-med;
 }
 
 %h5 {
-    @extend %font-size-norm;
+    @extend %mt_font-size-norm;
 }
 
 %h6 {
-    @extend %font-size-sm;
+    @extend %mt_font-size-sm;
 }
 
 // Sub Headings
@@ -66,52 +66,52 @@ parent: headings
 
 %subh1,
 %subh2 {
-    @extend %font-alternate-strong;
+    @extend %mt_font-alternate-strong;
 }
 
 %subh3,
 %subh4,
 %subh5 {
-    @extend %font-alternate;
+    @extend %mt_font-alternate;
 
     em {
-        @extend %font-alternate-em;
+        @extend %mt_font-alternate-em;
     }
 
     strong {
-        @extend %font-alternate-strong;
+        @extend %mt_font-alternate-strong;
     }
 
     em strong,
     strong em {
-        @extend %font-alternate-strong-em;
+        @extend %mt_font-alternate-strong-em;
     }
 }
 
 %subh1 {
-    @extend %font-size-norm;
+    @extend %mt_font-size-norm;
 
     text-transform: uppercase;
 }
 
 %subh2 {
-    @extend %font-size-norm;
+    @extend %mt_font-size-norm;
 }
 
 %subh3 {
-    @extend %font-size-norm;
+    @extend %mt_font-size-norm;
 }
 
 %subh4 {
-    @extend %font-size-sm;
+    @extend %mt_font-size-sm;
 
     text-transform: uppercase;
 }
 
 %subh5 {
-    @extend %font-size-sm;
+    @extend %mt_font-size-sm;
 }
 
 %subh6 {
-    @extend %font-size-sm;
+    @extend %mt_font-size-sm;
 }
