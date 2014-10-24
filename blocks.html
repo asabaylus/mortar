@@ -6,10 +6,11 @@
         <title>Mortar: Blocks</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="stylesheet" href="https://fonts.ngeo.com/hoefler/1-0-1/hco_fonts.css">
+        <link rel="stylesheet" href="http://assets.nationalgeographic.com/icongs_0-10-0/icongs.css">
         <link rel="stylesheet" href="./css/mortar.css">
         <link rel="stylesheet" href="./css/hologram.css">
         <link rel="stylesheet" href="bower_components/pygments/css/colorful.css">
-        <link rel="stylesheet" href="bower_components/icongs/icongs.css">
         <script src="bower_components/modernizr/modernizr.js"></script>
     </head>
 
@@ -27,9 +28,9 @@
             
                 <a class="navitem headinginverse h5" href="elements.html">Elements</a>
             
-                <a class="navitem headinginverse h5" href="layout.html">Layout</a>
-            
                 <a class="navitem headinginverse h5" href="blocks.html">Blocks</a>
+            
+                <a class="navitem headinginverse h5" href="layout.html">Layout</a>
             
                 <a class="navitem headinginverse h5" href="http://natgeo.github.io/icongs/">icoNGS</a>
             </nav>
@@ -39,6 +40,8 @@
             
             <nav class="subnav mt_background--lowlight">
                 <ul>
+                
+                    <li class="headingwithlink"><a href="#figure">Figure</a></li>
                 
                     <li class="headingwithlink"><a href="#headlineDeck">Headline Deck</a></li>
                 
@@ -50,6 +53,13 @@
             </nav>
             
             <main class="content">
+<h1 id="figure">Figure</h1>
+
+<figure>
+    <img src="img/cabin.jpg">
+    <figcaption>A picture of a cabin.</figcaption>
+</figure>
+
 <h1 id="headlineDeck">Headline Deck</h1>
 <div class="codeExample"><div class="exampleOutput"><p class="subh5 mt_headlinedeck-duration">3 Min read</p>
 <p class="subh3 mt_headlinedeck-category">Behind the Cover</p>
@@ -89,7 +99,7 @@
 <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"subh2 mt_related-article"</span><span class="nt">&gt;</span>Methane Emissions Far Worse Than U.S. Estimates, Study Finds<span class="nt">&lt;/h2&gt;</span>
 </pre></div></div></div>
 <h1 id="textOnImage">Text on Image</h1>
-<div class="codeExample"><div class="exampleOutput"><aside style="background-image: url('img/cabin.jpg');" class="mt_textonimage-container textinverse mt_paddingdefault">
+<div class="codeExample"><div class="exampleOutput"><aside style="background-image: url('img/cabin.jpg');" class="mt_textonimage-container mt_textinverse mt_paddingdefault">
     <div class="mt_textonimage-textcontainer">
         <p class="subh5 headlinedeck-duration">3 Min read</p>
         <p class="subh3 headlinedeck-category">Behind the Cover</p>
@@ -100,7 +110,7 @@
         <p class="byline">Published November 22, 2013</p>
     </div>
 </aside>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;aside</span> <span class="na">style=</span><span class="s">"background-image: url('img/cabin.jpg');"</span> <span class="na">class=</span><span class="s">"mt_textonimage-container textinverse mt_paddingdefault"</span><span class="nt">&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;aside</span> <span class="na">style=</span><span class="s">"background-image: url('img/cabin.jpg');"</span> <span class="na">class=</span><span class="s">"mt_textonimage-container mt_textinverse mt_paddingdefault"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mt_textonimage-textcontainer"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"subh5 headlinedeck-duration"</span><span class="nt">&gt;</span>3 Min read<span class="nt">&lt;/p&gt;</span>
         <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"subh3 headlinedeck-category"</span><span class="nt">&gt;</span>Behind the Cover<span class="nt">&lt;/p&gt;</span>
@@ -120,7 +130,7 @@
         <script>
           (function(d) {
             var config = {
-              kitId: 'rxz3wjw',
+              kitId: 'wdv5zcl',
               scriptTimeout: 3000
             },
             h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//fonts.ngeo.com/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)

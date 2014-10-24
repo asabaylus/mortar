@@ -1,6 +1,6 @@
 {
   "name": "icongs",
-  "version": "0.8.0",
+  "version": "0.10.0",
   "homepage": "https://github.com/natgeo/icongs",
   "authors": [
     "Welch Canavan <welch.canavan@gmail.com>"
@@ -12,13 +12,13 @@
   ],
   "license": "MIT",
   "private": true,
-  "_release": "0.8.0",
+  "_release": "0.10.0",
   "_resolution": {
     "type": "version",
-    "tag": "0.8.0",
-    "commit": "dde805c8600dd51fca45d6fd8146831a835b9241"
+    "tag": "0.10.0",
+    "commit": "47933684caf277e5b136dc476097baf9642c1a24"
   },
   "_source": "git@github.com:natgeo/icongs.git",
-  "_target": "0.8.0",
+  "_target": "0.10.0",
   "_originalSource": "git@github.com:natgeo/icongs.git"
 }

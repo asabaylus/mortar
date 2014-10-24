@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .icongs {
   display: inline-block;
   font-family: "icongs";
@@ -11,144 +12,161 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
+.icongs.icongs-arrowchunky:before {
+  content: "🔮";
+}
 .icongs.icongs-arrowdown:before {
-  content: "\2193";
+  content: "↓";
 }
 .icongs.icongs-arrowleft:before {
-  content: "\2190";
+  content: "←";
 }
 .icongs.icongs-arrowne:before {
-  content: "\1f523";
+  content: "🔣";
 }
 .icongs.icongs-arrownw:before {
-  content: "\1f522";
+  content: "🔢";
 }
 .icongs.icongs-arrowright:before {
-  content: "\2192";
+  content: "→";
 }
 .icongs.icongs-arrowse:before {
-  content: "\1f524";
+  content: "🔤";
 }
 .icongs.icongs-arrowsw:before {
-  content: "\1f521";
+  content: "🔡";
 }
 .icongs.icongs-arrowup:before {
-  content: "\2191";
+  content: "↑";
 }
 .icongs.icongs-audio:before {
-  content: "\f117";
+  content: "";
 }
 .icongs.icongs-border:before {
-  content: "\f12b";
+  content: "";
 }
 .icongs.icongs-close:before {
-  content: "\d7";
+  content: "×";
 }
 .icongs.icongs-comment:before {
-  content: "\1f4ac";
+  content: "💬";
 }
 .icongs.icongs-directiondown:before {
-  content: "\f12a";
+  content: "";
 }
 .icongs.icongs-directionleft:before {
-  content: "\f12c";
+  content: "";
 }
 .icongs.icongs-directionright:before {
-  content: "\f12d";
+  content: "";
 }
 .icongs.icongs-directionup:before {
-  content: "\f12e";
+  content: "";
 }
 .icongs.icongs-email:before {
-  content: "\f127";
+  content: "";
 }
 .icongs.icongs-facebook:before {
-  content: "\f121";
+  content: "";
 }
 .icongs.icongs-fullscreen:before {
-  content: "\1f514";
+  content: "🔔";
 }
 .icongs.icongs-gallery:before {
-  content: "\f12f";
+  content: "";
 }
 .icongs.icongs-googleplus:before {
-  content: "\f123";
+  content: "";
 }
 .icongs.icongs-headphones:before {
-  content: "\f130";
+  content: "";
 }
 .icongs.icongs-heart:before {
-  content: "\1f525";
+  content: "🔥";
+}
+.icongs.icongs-hearthollow:before {
+  content: "🔫";
 }
 .icongs.icongs-home:before {
-  content: "\1f513";
+  content: "🔓";
 }
 .icongs.icongs-instagram:before {
-  content: "\1f511";
+  content: "🔑";
 }
 .icongs.icongs-lightarrowdown:before {
-  content: "\1f515";
+  content: "🔕";
 }
 .icongs.icongs-lightarrowleft:before {
-  content: "\1f516";
+  content: "🔖";
 }
 .icongs.icongs-lightarrowright:before {
-  content: "\1f517";
+  content: "🔗";
 }
 .icongs.icongs-lightarrowup:before {
-  content: "\1f518";
+  content: "🔘";
 }
 .icongs.icongs-lightdirectiondown:before {
-  content: "\1f519";
+  content: "🔙";
 }
 .icongs.icongs-lightdirectionleft:before {
-  content: "\1f51a";
+  content: "🔚";
 }
 .icongs.icongs-lightdirectionright:before {
-  content: "\1f51b";
+  content: "🔛";
 }
 .icongs.icongs-lightdirectionup:before {
-  content: "\1f51c";
+  content: "🔜";
 }
 .icongs.icongs-linkedin:before {
-  content: "\f124";
+  content: "";
 }
 .icongs.icongs-lock:before {
-  content: "\f11c";
+  content: "";
+}
+.icongs.icongs-member:before {
+  content: "🔲";
 }
 .icongs.icongs-menu:before {
-  content: "\2630";
+  content: "☰";
 }
 .icongs.icongs-open:before {
-  content: "\2b";
+  content: "+";
 }
 .icongs.icongs-pinterest:before {
-  content: "\1f529";
+  content: "🔩";
+}
+.icongs.icongs-play:before {
+  content: "🔬";
 }
 .icongs.icongs-print:before {
-  content: "\1f528";
+  content: "🔨";
+}
+.icongs.icongs-refresh:before {
+  content: "🔭";
 }
 .icongs.icongs-remove:before {
-  content: "\2212";
+  content: "−";
 }
 .icongs.icongs-search:before {
-  content: "\1f50d";
+  content: "🔍";
 }
 .icongs.icongs-searchmenu:before {
-  content: "\1f51f";
+  content: "🔟";
 }
 .icongs.icongs-share:before {
-  content: "\f11f";
+  content: "";
 }
 .icongs.icongs-tv:before {
-  content: "\1f50e";
+  content: "🔎";
 }
 .icongs.icongs-twitter:before {
-  content: "\f122";
+  content: "";
 }
 .icongs.icongs-usermenu:before {
-  content: "\1f512";
+  content: "🔒";
 }
 .icongs.icongs-youtube:before {
-  content: "\f126";
+  content: "";
 }
+
+/*# sourceMappingURL=icongs.css.map */

@@ -4,6 +4,7 @@
 
 // Variables
 
+$icongs-arrowchunky: "\1f52e";
 $icongs-arrowdown: "\2193";
 $icongs-arrowleft: "\2190";
 $icongs-arrowne: "\1f523";
@@ -27,6 +28,7 @@ $icongs-gallery: "\f12f";
 $icongs-googleplus: "\f123";
 $icongs-headphones: "\f130";
 $icongs-heart: "\1f525";
+$icongs-hearthollow: "\1f52b";
 $icongs-home: "\1f513";
 $icongs-instagram: "\1f511";
 $icongs-lightarrowdown: "\1f515";
@@ -39,10 +41,13 @@ $icongs-lightdirectionright: "\1f51b";
 $icongs-lightdirectionup: "\1f51c";
 $icongs-linkedin: "\f124";
 $icongs-lock: "\f11c";
+$icongs-member: "\1f532";
 $icongs-menu: "\2630";
 $icongs-open: "\2b";
 $icongs-pinterest: "\1f529";
+$icongs-play: "\1f52c";
 $icongs-print: "\1f528";
+$icongs-refresh: "\1f52d";
 $icongs-remove: "\2212";
 $icongs-search: "\1f50d";
 $icongs-searchmenu: "\1f51f";
@@ -65,6 +70,9 @@ $icongs-youtube: "\f126";
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 
+	&.icongs-arrowchunky:before {
+		content: $icongs-arrowchunky;
+	}
 	&.icongs-arrowdown:before {
 		content: $icongs-arrowdown;
 	}
@@ -134,6 +142,9 @@ $icongs-youtube: "\f126";
 	&.icongs-heart:before {
 		content: $icongs-heart;
 	}
+	&.icongs-hearthollow:before {
+		content: $icongs-hearthollow;
+	}
 	&.icongs-home:before {
 		content: $icongs-home;
 	}
@@ -170,6 +181,9 @@ $icongs-youtube: "\f126";
 	&.icongs-lock:before {
 		content: $icongs-lock;
 	}
+	&.icongs-member:before {
+		content: $icongs-member;
+	}
 	&.icongs-menu:before {
 		content: $icongs-menu;
 	}
@@ -179,8 +193,14 @@ $icongs-youtube: "\f126";
 	&.icongs-pinterest:before {
 		content: $icongs-pinterest;
 	}
+	&.icongs-play:before {
+		content: $icongs-play;
+	}
 	&.icongs-print:before {
 		content: $icongs-print;
+	}
+	&.icongs-refresh:before {
+		content: $icongs-refresh;
 	}
 	&.icongs-remove:before {
 		content: $icongs-remove;

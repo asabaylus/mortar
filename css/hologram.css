@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*doc
 ---
 title: Fonts
@@ -5,24 +6,36 @@ name: fonts
 category: Typography
 ---
 
-Primary font: "utopia-std", Georgia, Times, "Times New Roman", serif
+Primary font: “utopia-std”, Georgia, Times, “Times New Roman”, serif
 
-<em>Primary font italic: "utopia-std", Georgia, Times, "Times New Roman", serif</em>
+<em>Primary font italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em>
 
-<strong>Primary font bold: "utopia-std", Georgia, Times, "Times New Roman", serif</strong>
+<strong>Primary font bold: “utopia-std”, Georgia, Times, “Times New Roman”, serif</strong>
 
-<strong><em>Primary font bold italic: "utopia-std", Georgia, Times, "Times New Roman", serif</em></strong>
+<strong><em>Primary font bold italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></strong>
 
-<p class="subh5">Secondary font: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</p>
+<p><span class="h5">Primary font deck: “utopia-std”, Georgia, Times, “Times New Roman”, serif</span></p>
 
-<p class="subh5"><strong>Secondary font bold: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</strong></p>
+<p><span class="h5"><em>Primary font deck italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></span></p>
+
+<p><span class="h5--alt">Primary font display: “utopia-std”, Georgia, Times, “Times New Roman”, serif</span></p>
+
+<p><span class="h5--alt"><em>Primary font display italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></span></p>
+
+<p class="subh5">Secondary font: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</p>
+
+<p class="subh5"><em>Secondary font italic: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</em></p>
+
+<p class="subh5"><strong>Secondary font bold: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</strong></p>
+
+<p class="subh5"><strong><em>Secondary font bold italic: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</em></strong></p>
 
 */
 @font-face {
   font-family: 'icongs';
-  src: url("../bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.eot");
+  src: url("../bower_components/icongs/fonts/icongs_a5b67007ff5a80787e9ee410b47e8038.eot");
   /* IE9 Compat Modes */
-  src: url("../bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.eot?#iefix") format("embedded-opentype"), url("../bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.woff") format("woff"), url("../bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.ttf") format("truetype"), url("../bower_components/icongs/fonts/icongs_4176808f3eae2f9b12b92233f91f7ba2.svg#svgFontName") format("svg");
+  src: url("../bower_components/icongs/fonts/icongs_a5b67007ff5a80787e9ee410b47e8038.eot?#iefix") format("embedded-opentype"), url("../bower_components/icongs/fonts/icongs_a5b67007ff5a80787e9ee410b47e8038.woff") format("woff"), url("../bower_components/icongs/fonts/icongs_a5b67007ff5a80787e9ee410b47e8038.ttf") format("truetype"), url("../bower_components/icongs/fonts/icongs_a5b67007ff5a80787e9ee410b47e8038.svg#svgFontName") format("svg");
   /* Legacy iOS */ }
 @media screen and (min-width: 15em) {
   .layout_colorsample {
