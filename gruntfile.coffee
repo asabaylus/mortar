@@ -147,9 +147,9 @@ module.exports = (grunt) ->
                 dest: 'component'
             componentScss:
                 expand: true
-                cwd: '<%= app.mortarScss %>/'
-                src: '**'
-                dest: 'component/sass/'
+                cwd: '<%= app.mortarScssDir %>'
+                src: './**'
+                dest: 'component/scss'
 
         shell:
             update:
