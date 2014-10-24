@@ -11,32 +11,32 @@
 %font-default {
     font-family: "Chronicle SSm 3r", $mt_font-serif-stack;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 300;
 }
 
 %font-default-em {
     font-family: "Chronicle SSm 3i", $mt_font-serif-stack;
-    font-style: normal;
-    font-weight: normal;
+    font-style: italic;
+    font-weight: 300;
 }
 
 %font-default-strong {
     font-family: "Chronicle SSm 6r", $mt_font-serif-stack;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 600;
 }
 
 
 %font-default-strong-em {
     font-family: "Chronicle SSm 6i", $mt_font-serif-stack;
-    font-style: normal;
-    font-weight: normal;
+    font-style: italic;
+    font-weight: 600;
 }
 
 %font-default-deck-strong {
     font-family: "Chronicle Deck 6r", $mt_font-serif-stack;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 600;
 
     i,
     em {
@@ -46,14 +46,14 @@
 
 %font-default-deck-strong-em {
     font-family: "Chronicle Deck 6i", $mt_font-serif-stack;
-    font-style: normal;
-    font-weight: normal;
+    font-style: italic;
+    font-weight: 600;
 }
 
 %font-default-display-light {
     font-family: "Chronicle Display 3r", $mt_font-serif-stack;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 300;
 
     i,
     em {
@@ -63,8 +63,8 @@
 
 %font-default-display-light-em {
     font-family: "Chronicle Display 3i", $mt_font-serif-stack;
-    font-style: normal;
-    font-weight: normal;
+    font-style: italic;
+    font-weight: 300;
 }
 
 
