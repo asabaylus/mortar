@@ -15,7 +15,7 @@ You can include it as a bower dependency by running `bower install git@github.co
 ``` json
 {
   "dependencies": {
-    "icongs": "git@github.com:natgeo/mortar.git#0.1.x"
+    "mortar": "git@github.com:natgeo/mortar.git#0.1.x"
   }
 }
 ```
