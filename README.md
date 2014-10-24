@@ -41,7 +41,7 @@ You can use fuzzy tags (e.g. `2.x`, `0.2.x`) or a specific version (e.g. `0.2.0`
 
 - **Including fonts**
 
-You'll likely need the right fonts to work in concert with Mortar each of which has different instructions for inclusion. Our icon font has instructions at  [it's repository](https://github.com/natgeo/icongs). Visit confluence for our self hosted vendor font installation instructions.
+You'll likely need the right fonts to work in concert with Mortar each of which has different instructions for inclusion. Our icon font has instructions at  [it's repository](https://github.com/natgeo/icongs). Visit [confluence](https://confluence.nationalgeographic.com/display/DS/Web+Fonts) for our self hosted vendor font installation instructions.
 
 ## Development Environment
 
