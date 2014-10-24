@@ -1,7 +1,7 @@
 // Inputs, including text area
 
 %mt_input-text-theme {
-    @extend %font-default-em;
+    @extend %mt_font-default-em;
 
     border: 1px solid $mt_color-text;
     margin: 0;

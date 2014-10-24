@@ -15,8 +15,8 @@ module.exports = (grunt) ->
         cssDir: '.tmp/css/'
         docsCss: 'docs/css/'
         mortarCss: '.tmp/css/mortar.css'
-        mortarScss: 'app/src/sass/mortar.scss'
-        mortarScssDir: 'app/src/sass/'
+        mortarScss: 'app/src/styles/mortar.scss'
+        mortarScssDir: 'app/src/styles/'
         hologramCss: '.tmp/css/hologram.css'
         hologramScss: 'app/doc_src/sass/hologram.scss'
         hologramScssDir: 'app/doc_src/sass/'
@@ -147,9 +147,9 @@ module.exports = (grunt) ->
                 dest: 'component'
             componentScss:
                 expand: true
-                cwd: '<%= app.mortarScss %>/'
-                src: '**'
-                dest: 'component/sass/'
+                cwd: '<%= app.mortarScssDir %>'
+                src: './**'
+                dest: 'component/scss'
 
         shell:
             update:

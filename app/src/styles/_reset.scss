@@ -116,7 +116,7 @@ mark {
  */
 
 small {
-    @extend %font-size-sm;
+    @extend %mt_font-size-sm;
 }
 
 /**
@@ -125,7 +125,7 @@ small {
 
 sub,
 sup {
-    @extend %font-size-xsm;
+    @extend %mt_font-size-xsm;
     line-height: 0;
     position: relative;
     vertical-align: baseline;
@@ -209,15 +209,6 @@ svg:not(:root) {
 
 /* Grouping content
    ========================================================================== */
-
-/**
- * Address margin not present in IE 8/9 and Safari 5.
- */
-
-figure {
-    @extend %mt_default-text-margin;
-    margin-left: 0;
-}
 
 /**
  * Address differences between Firefox and other browsers.
@@ -586,8 +577,8 @@ category: Elements
  */
 
 table {
-    @extend %mt_default-text-margin;
-    
+    @extend .mt_row-gut-1;
+
     border-collapse: collapse;
     border-spacing: 0;
 }

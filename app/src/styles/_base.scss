@@ -2,8 +2,8 @@
 // Body Text
 
 html {
-    @extend %font-default;
-    @extend %font-size-norm;
+    @extend %mt_font-default;
+    @extend %mt_font-size-norm;
 
     box-sizing: border-box;
     color: $mt_color-text;
@@ -88,21 +88,21 @@ a:visited {
 
 b,
 strong {
-    @extend %font-default-strong;
+    @extend %mt_font-default-strong;
 
     i,
     em {
-        @extend %font-default-strong-em;
+        @extend %mt_font-default-strong-em;
     }
 }
 
 i,
 em {
-    @extend %font-default-em;
+    @extend %mt_font-default-em;
 
     b,
     strong {
-        @extend %font-default-strong-em;
+        @extend %mt_font-default-strong-em;
     }
 }
 
@@ -130,7 +130,7 @@ h3,
 h4,
 h5,
 h6 {
-    @extend %font-default-deck-strong;
+    @extend %mt_font-default-deck-strong;
 
     margin: 0;
     padding: 0;
@@ -163,7 +163,7 @@ h6 {
 // paragraphs
 
 p {
-    @extend %mt_default-text-margin;
+    @extend .mt_row-gut-1;
 }
 
 
@@ -172,7 +172,7 @@ p {
 
 ul,
 ol {
-    @extend %mt_default-text-margin;
+    @extend .mt_row-gut-1;
 
     padding-left: $mt_padding-one-and-half;
 
@@ -199,8 +199,8 @@ ol {
     }
 
     > li::before {
-        @extend %font-alternate;
-        @extend %font-size-sm;
+        @extend %mt_font-alternate;
+        @extend %mt_font-size-sm;
 
         content: counter(custom-ol, decimal-leading-zero) ".";
         counter-increment: custom-ol;
@@ -260,8 +260,8 @@ category: Typography
 */
 
 blockquote {
-    @extend %font-alternate-strong;
-    @extend %font-size-lrg;
+    @extend %mt_font-alternate-strong;
+    @extend %mt_font-size-lrg;
 
     margin: 0;
     position: relative;
@@ -292,6 +292,30 @@ category: Typography
 
 */
 
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    @extend .mt_row-gut-1;
+
+    margin-left: 0;
+    margin-right: 0;
+}
+
 figcaption {
     @extend %caption;
 }
+
+/*doc
+---
+title: Figure
+name: figure
+category: Blocks
+---
+
+<figure>
+    <img src="img/cabin.jpg">
+    <figcaption>A picture of a cabin.</figcaption>
+</figure>
+*/

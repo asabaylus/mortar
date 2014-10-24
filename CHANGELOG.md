@@ -1,8 +1,15 @@
-## 1.0.0 (not released yet)
+## 1.0.0
 
 Features:
 
-- all class names and variables are not namespaced
+- all class names and variables are now namespaced
+- update all fonts (serif, sans serif, and icon)
+- add layout classes
+- include [fluidity.css](http://fluidity.sexy) for responsiveness
+
+Bugfixes:
+
+- fix margins around <figure>s
 
 ## 0.1.0 (2014-07-01)
 
@@ -17,4 +24,4 @@ Features:
 Features:
 
 - proof of concept
- - loose structure of styleguide
+- loose structure of styleguide

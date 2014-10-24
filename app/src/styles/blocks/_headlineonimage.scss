@@ -6,7 +6,7 @@ category: Blocks
 ---
 
 ```html_example
-<aside style="background-image: url('img/cabin.jpg');" class="mt_textonimage-container textinverse mt_paddingdefault">
+<aside style="background-image: url('img/cabin.jpg');" class="mt_textonimage-container mt_textinverse mt_paddingdefault">
     <div class="mt_textonimage-textcontainer">
         <p class="subh5 headlinedeck-duration">3 Min read</p>
         <p class="subh3 headlinedeck-category">Behind the Cover</p>
@@ -34,12 +34,12 @@ category: Blocks
             position: absolute;
             right: 0;
             top: 0;
-            z-index: $z-bottom;
+            z-index: $mt_z-bottom;
         }
     }
 
     @include e(textcontainer) {
         position: relative;
-        z-index: $z-top;
+        z-index: $mt_z-top;
     }
 }

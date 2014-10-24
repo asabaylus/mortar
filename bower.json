@@ -1,6 +1,6 @@
 {
   "name": "Mortar",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/natgeo/icongs",
   "authors": [
     "Welch Canavan <welch.canavan@gmail.com>"
@@ -16,6 +16,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "fluidity": "git@github.com:mrmrs/fluidity.git#~v0.2.0",
     "modernizr": "~2.7.2",
     "pygments": "~1.6.0",
     "modular-scale": "~2.0.5",
