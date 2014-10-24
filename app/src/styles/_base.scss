@@ -292,6 +292,30 @@ category: Typography
 
 */
 
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    @extend .mt_row-gut-1;
+
+    margin-left: 0;
+    margin-right: 0;
+}
+
 figcaption {
     @extend %caption;
 }
+
+/*doc
+---
+title: Figure
+name: figure
+category: Blocks
+---
+
+<figure>
+    <img src="img/cabin.jpg">
+    <figcaption>A picture of a cabin.</figcaption>
+</figure>
+*/

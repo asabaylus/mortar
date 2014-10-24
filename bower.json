@@ -16,6 +16,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "fluidity": "git@github.com:mrmrs/fluidity.git#~v0.2.0",
     "modernizr": "~2.7.2",
     "pygments": "~1.6.0",
     "modular-scale": "~2.0.5",

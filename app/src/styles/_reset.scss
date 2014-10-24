@@ -211,15 +211,6 @@ svg:not(:root) {
    ========================================================================== */
 
 /**
- * Address margin not present in IE 8/9 and Safari 5.
- */
-
-figure {
-    @extend .mt_row-gut-1;
-    margin-left: 0;
-}
-
-/**
  * Address differences between Firefox and other browsers.
  */
 
