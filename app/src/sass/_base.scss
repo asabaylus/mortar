@@ -86,6 +86,26 @@ a:visited {
     text-decoration: none;
 }
 
+b,
+strong {
+    @extend %font-default-strong;
+
+    i,
+    em {
+        @extend %font-default-strong-em;
+    }
+}
+
+i,
+em {
+    @extend %font-default-em;
+
+    b,
+    strong {
+        @extend %font-default-strong-em;
+    }
+}
+
 /*doc
 ---
 title: Headings
@@ -110,8 +130,7 @@ h3,
 h4,
 h5,
 h6 {
-    @extend %font-default;
-    font-weight: 400;
+    @extend %font-default-deck-strong;
 
     margin: 0;
     padding: 0;
