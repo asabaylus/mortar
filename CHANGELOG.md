@@ -1,3 +1,13 @@
+## 1.0.1
+
+Features:
+
+- new classes to reset gutters to 0 if need be
+- bring colors in line with news
+
+Bugfixes:
+- fix unprefixed classes
+
 ## 1.0.0
 
 Features:

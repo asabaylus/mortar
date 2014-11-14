@@ -1,20 +1,34 @@
 .mt_textinverse {
     color: $mt_color-text-inverse;
 
-    a {
+    a,
+    a:visited {
         text-decoration: none;
-        color: $mt_color-link-inverse;
+        color: $mt_color-text-inverse;
     }
 
     a:hover,
     a:focus,
     a:active {
-        text-decoration: underline;
-        color: $mt_color-link-inverse;
+        border-bottom: 1px solid $mt_color-beta;
+        color: $mt_color-beta;
+        text-decoration: none;
+    }
+}
+
+.mt_headinginverse {
+    &,
+    &:visited {
+        border-bottom: none;
+        text-decoration: none;
+        color: $mt_color-text-inverse;
     }
 
-    a:visited {
+    &:hover,
+    &:focus,
+    &:active {
+        border-bottom: none;
+        color: $mt_color-beta;
         text-decoration: none;
-        color: $mt_color-link-inverse;
     }
 }
