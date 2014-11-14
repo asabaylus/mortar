@@ -7,7 +7,7 @@
     margin-bottom: $mt_unit / 2;
 }
 
-@for $i from 1 through 4 {
+@for $i from 0 through 4 {
     .mt_row-gut-#{$i} {
         margin-bottom: $mt_unit * $i;
     }
@@ -19,7 +19,7 @@
             margin-bottom: $mt_unit / 2;
         }
 
-        @for $i from 1 through 4 {
+        @for $i from 0 through 4 {
             .mt_row-#{$bp}-gut-#{$i} {
                 margin-bottom: $mt_unit * $i;
             }

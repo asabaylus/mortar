@@ -50,7 +50,7 @@ $mt_btn-colors: (
 // =====
 
 .mt_btn {
-    @extend %subh2;
+    @extend %mt_subh2;
 
     border: 0;
     cursor: default;

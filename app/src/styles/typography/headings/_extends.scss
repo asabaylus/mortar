@@ -54,24 +54,24 @@ parent: headings
 ---
 
 ```html_example
-<h1 class="subh1">Sub Heading 1</h1>
-<h2 class="subh2">Sub Heading 2</h2>
-<h3 class="subh3">Sub Heading 3</h3>
-<h4 class="subh4">Sub Heading 4</h4>
-<h5 class="subh5">Sub Heading 5</h5>
-<h6 class="subh6">Sub Heading 6</h6>
+<h1 class="mt_subh1">Sub Heading 1</h1>
+<h2 class="mt_subh2">Sub Heading 2</h2>
+<h3 class="mt_subh3">Sub Heading 3</h3>
+<h4 class="mt_subh4">Sub Heading 4</h4>
+<h5 class="mt_subh5">Sub Heading 5</h5>
+<h6 class="mt_subh6">Sub Heading 6</h6>
 ```
 
 */
 
-%subh1,
-%subh2 {
+%mt_subh1,
+%mt_subh2 {
     @extend %mt_font-alternate-strong;
 }
 
-%subh3,
-%subh4,
-%subh5 {
+%mt_subh3,
+%mt_subh4,
+%mt_subh5 {
     @extend %mt_font-alternate;
 
     em {
@@ -88,30 +88,30 @@ parent: headings
     }
 }
 
-%subh1 {
+%mt_subh1 {
     @extend %mt_font-size-norm;
 
     text-transform: uppercase;
 }
 
-%subh2 {
+%mt_subh2 {
     @extend %mt_font-size-norm;
 }
 
-%subh3 {
+%mt_subh3 {
     @extend %mt_font-size-norm;
 }
 
-%subh4 {
+%mt_subh4 {
     @extend %mt_font-size-sm;
 
     text-transform: uppercase;
 }
 
-%subh5 {
+%mt_subh5 {
     @extend %mt_font-size-sm;
 }
 
-%subh6 {
+%mt_subh6 {
     @extend %mt_font-size-sm;
 }
