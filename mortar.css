@@ -555,16 +555,20 @@ textarea {
   resize: vertical; }
 
 a {
-  color: #4b56ec;
+  border-bottom: 1px solid #ffcc00;
+  color: black;
   text-decoration: none; }
 
 a:hover,
 a:focus,
 a:active {
-  text-decoration: underline; }
+  border-bottom: 1px solid #999999;
+  color: #999999;
+  text-decoration: none; }
 
 a:visited {
-  color: #4b56ec;
+  border-bottom: 1px solid #ffcc00;
+  color: black;
   text-decoration: none; }
 
 /*doc
@@ -994,7 +998,7 @@ category: Typography
 
 */
 .byline {
-  color: #a4a5a8; }
+  color: #999999; }
 
 /*doc
 ---
@@ -1125,17 +1129,25 @@ category: Typography
 
 .mt_textinverse {
   color: #f7f7f7; }
-  .mt_textinverse a {
+  .mt_textinverse a,
+  .mt_textinverse a:visited {
     text-decoration: none;
-    color: #7981f1; }
+    color: #f7f7f7; }
   .mt_textinverse a:hover,
   .mt_textinverse a:focus,
   .mt_textinverse a:active {
-    text-decoration: underline;
-    color: #7981f1; }
-  .mt_textinverse a:visited {
-    text-decoration: none;
-    color: #7981f1; }
+    border-bottom: 1px solid #999999;
+    color: #999999;
+    text-decoration: none; }
+
+.mt_headinginverse, .mt_headinginverse:visited {
+  border-bottom: none;
+  text-decoration: none;
+  color: #f7f7f7; }
+.mt_headinginverse:hover, .mt_headinginverse:focus, .mt_headinginverse:active {
+  border-bottom: none;
+  color: #999999;
+  text-decoration: none; }
 
 /*doc
 ---

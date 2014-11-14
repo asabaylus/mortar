@@ -71,18 +71,22 @@ textarea {
 // links
 
 a {
-    color: $mt_color-link;
+    border-bottom: 1px solid $mt_color-highlight;
+    color: $mt_color-inverse;
     text-decoration: none;
 }
 
 a:hover,
 a:focus,
 a:active {
-    text-decoration: underline;
+    border-bottom: 1px solid $mt_color-beta;
+    color: $mt_color-beta;
+    text-decoration: none;
 }
 
 a:visited {
-    color: $mt_color-link;
+    border-bottom: 1px solid $mt_color-highlight;
+    color: $mt_color-inverse;
     text-decoration: none;
 }
 
