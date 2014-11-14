@@ -106,7 +106,7 @@ dfn {
  */
 mark {
   background: #ffcc00;
-  color: #021122; }
+  color: black; }
 
 /**
  * Address inconsistent and variable font size in all browsers.
@@ -509,12 +509,12 @@ table {
 td,
 th {
   padding: 0.72em;
-  border: 1px solid #d7dada; }
+  border: 1px solid #e6e6e6; }
 
 html {
   -moz-box-sizing: border-box;
        box-sizing: border-box;
-  color: #021122;
+  color: black;
   font-weight: normal; }
 
 *,
@@ -697,9 +697,6 @@ category: Typography
 ```
 
 */
-/**
- * Address margin not present in IE 8/9 and Safari 5.
- */
 figure {
   margin-left: 0;
   margin-right: 0; }
@@ -717,7 +714,7 @@ category: Blocks
 </figure>
 */
 input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), textarea {
-  border: 1px solid #021122;
+  border: 1px solid black;
   margin: 0;
   padding: 0.36em 0.72em; }
 
@@ -835,55 +832,55 @@ h6 em,
   font-style: italic;
   font-weight: 300; }
 
-ol > li::before, .subh3,
+ol > li::before, .mt_subh3,
 .byline,
-.subh4,
+.mt_subh4,
 .tag,
 figcaption,
 .caption,
-.subh5 {
+.mt_subh5 {
   font-family: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
   font-style: normal;
   font-weight: 300; }
 
-.subh3 em,
+.mt_subh3 em,
 .byline em,
-.subh4 em,
+.mt_subh4 em,
 .tag em,
 figcaption em,
 .caption em,
-.subh5 em {
+.mt_subh5 em {
   font-family: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
   font-style: italic;
   font-weight: 300; }
 
-blockquote, .subh1,
-.subh2,
-.mt_btn, .subh3 strong,
+blockquote, .mt_subh1,
+.mt_subh2,
+.mt_btn, .mt_subh3 strong,
 .byline strong,
-.subh4 strong,
+.mt_subh4 strong,
 .tag strong,
 figcaption strong,
 .caption strong,
-.subh5 strong {
+.mt_subh5 strong {
   font-family: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
   font-style: normal;
   font-weight: 700; }
 
-.subh3 em strong,
-.subh3 strong em,
+.mt_subh3 em strong,
+.mt_subh3 strong em,
 .byline em strong,
-.subh4 em strong,
+.mt_subh4 em strong,
 .tag em strong,
 .byline strong em,
-.subh4 strong em,
+.mt_subh4 strong em,
 .tag strong em,
 figcaption em strong,
 .caption em strong,
-.subh5 em strong,
+.mt_subh5 em strong,
 figcaption strong em,
 .caption strong em,
-.subh5 strong em {
+.mt_subh5 strong em {
   font-family: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
   font-style: italic;
   font-weight: 700; }
@@ -931,22 +928,22 @@ sup {
       line-height: 2.0736em; } }
 
 small, ol > li::before, h6, .h6,
-.h6--alt, .byline, .subh4, .tag, figcaption, .caption, .subh5, .subh6 {
+.h6--alt, .byline, .mt_subh4, .tag, figcaption, .caption, .mt_subh5, .mt_subh6 {
   font-size: 0.87891em;
   line-height: 1.6384em; }
   @media screen and (min-width: 40em) {
     small, ol > li::before, h6, .h6,
-    .h6--alt, .byline, .subh4, .tag, figcaption, .caption, .subh5, .subh6 {
+    .h6--alt, .byline, .mt_subh4, .tag, figcaption, .caption, .mt_subh5, .mt_subh6 {
       font-size: 0.83333em;
       line-height: 1.728em; } }
 
 html, legend, h5, .h5,
-.h5--alt, .subh1, .subh2, .mt_btn, .subh3 {
+.h5--alt, .mt_subh1, .mt_subh2, .mt_btn, .mt_subh3 {
   font-size: 1em;
   line-height: 1.44em; }
   @media screen and (min-width: 40em) {
     html, legend, h5, .h5,
-    .h5--alt, .subh1, .subh2, .mt_btn, .subh3 {
+    .h5--alt, .mt_subh1, .mt_subh2, .mt_btn, .mt_subh3 {
       font-size: 1em;
       line-height: 1.44em; } }
 
@@ -1044,19 +1041,19 @@ parent: headings
 ---
 
 ```html_example
-<h1 class="subh1">Sub Heading 1</h1>
-<h2 class="subh2">Sub Heading 2</h2>
-<h3 class="subh3">Sub Heading 3</h3>
-<h4 class="subh4">Sub Heading 4</h4>
-<h5 class="subh5">Sub Heading 5</h5>
-<h6 class="subh6">Sub Heading 6</h6>
+<h1 class="mt_subh1">Sub Heading 1</h1>
+<h2 class="mt_subh2">Sub Heading 2</h2>
+<h3 class="mt_subh3">Sub Heading 3</h3>
+<h4 class="mt_subh4">Sub Heading 4</h4>
+<h5 class="mt_subh5">Sub Heading 5</h5>
+<h6 class="mt_subh6">Sub Heading 6</h6>
 ```
 
 */
-.subh1 {
+.mt_subh1 {
   text-transform: uppercase; }
 
-.byline, .subh4, .tag {
+.byline, .mt_subh4, .tag {
   text-transform: uppercase; }
 
 /*doc
@@ -1073,23 +1070,23 @@ parent: headings
 
 */
 .headingwithlink > a {
-  color: #021122;
+  color: black;
   text-decoration: none; }
   .headingwithlink > a:visited {
-    color: #021122;
+    color: black;
     text-decoration: none; }
   .headingwithlink > a:hover, .headingwithlink > a:focus, .headingwithlink > a:active {
-    color: #06356a;
+    color: #262626;
     text-decoration: none; }
 
 .headinginverse {
-  color: #fafafa;
+  color: #f7f7f7;
   text-decoration: none; }
   .headinginverse:hover, .headinginverse:focus, .headinginverse:active {
-    color: #fafafa;
+    color: #f7f7f7;
     text-decoration: underline; }
   .headinginverse:visited {
-    color: #fafafa;
+    color: #f7f7f7;
     text-decoration: none; }
 
 .h1--alt,
@@ -1131,13 +1128,13 @@ category: Typography
 
 */
 .tag {
-  border: 1px solid #d7dada;
+  border: 1px solid #e6e6e6;
   display: inline-block;
   padding: 0.72em;
   text-transform: uppercase; }
 
 .mt_textinverse {
-  color: #fafafa; }
+  color: #f7f7f7; }
   .mt_textinverse a {
     text-decoration: none;
     color: #7981f1; }
@@ -1164,16 +1161,16 @@ category: Theme
 
 */
 .mt_backgroundbasic {
-  background-color: #fafafa; }
+  background-color: white; }
 
 .mt_backgroundinverse {
-  background-color: #021122; }
+  background-color: black; }
 
 .mt_backgroundhighlight {
   background-color: #ffcc00; }
 
 .mt_backgroundlowlight {
-  background-color: #d7dada; }
+  background-color: #e6e6e6; }
 
 /*doc
 ---
@@ -1188,10 +1185,10 @@ category: Theme
 ```
 */
 .mt_border--default {
-  border: 1px solid #d7dada; }
+  border: 1px solid #e6e6e6; }
 
 .mt_border--inverse {
-  border: 1px solid #021122; }
+  border: 1px solid black; }
 
 .mt_paddingdefault {
   padding: 1.44em; }
@@ -1258,19 +1255,19 @@ Button                                              | Class               | Desc
   text-align: center; }
   .mt_btn--default {
     background-color: #282e5c;
-    color: #fafafa; }
+    color: #f7f7f7; }
     .mt_btn--default:hover {
       background-color: #384080;
       color: white; }
   .mt_btn--primary {
     background-color: #ffcc00;
-    color: #021122; }
+    color: black; }
     .mt_btn--primary:hover {
       background-color: #ffd633;
-      color: #052952; }
+      color: #1a1a1a; }
   .mt_btn--danger {
     background-color: #cc0000;
-    color: #fafafa; }
+    color: #f7f7f7; }
     .mt_btn--danger:hover {
       background-color: red;
       color: white; }
@@ -1377,7 +1374,7 @@ category: Blocks
   background-size: cover;
   position: relative; }
   .mt_textonimage-container:before {
-    background-color: rgba(2, 17, 34, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     bottom: 0;
     content: ' ';
     left: 0;
@@ -1455,6 +1452,10 @@ category: Typography
     padding-left: 0.72em;
     padding-right: 0.72em; }
 
+  .mt_col-sm-gut-0 {
+    padding-left: 0em;
+    padding-right: 0em; }
+
   .mt_col-sm-gut-1 {
     padding-left: 1.44em;
     padding-right: 1.44em; }
@@ -1475,6 +1476,10 @@ category: Typography
     padding-left: 0.72em;
     padding-right: 0.72em; }
 
+  .mt_col-md-gut-0 {
+    padding-left: 0em;
+    padding-right: 0em; }
+
   .mt_col-md-gut-1 {
     padding-left: 1.44em;
     padding-right: 1.44em; }
@@ -1494,6 +1499,10 @@ category: Typography
   .mt_col-lg-gut-half {
     padding-left: 0.72em;
     padding-right: 0.72em; }
+
+  .mt_col-lg-gut-0 {
+    padding-left: 0em;
+    padding-right: 0em; }
 
   .mt_col-lg-gut-1 {
     padding-left: 1.44em;
@@ -2415,6 +2424,9 @@ category: Layout
 .mt_row-gut-half {
   margin-bottom: 0.72em; }
 
+.mt_row-gut-0 {
+  margin-bottom: 0em; }
+
 .mt_row-gut-1, table, p, ul,
 ol, figure {
   margin-bottom: 1.44em; }
@@ -2432,6 +2444,9 @@ ol, figure {
   .mt_row-sm-gut-half {
     margin-bottom: 0.72em; }
 
+  .mt_row-sm-gut-0 {
+    margin-bottom: 0em; }
+
   .mt_row-sm-gut-1 {
     margin-bottom: 1.44em; }
 
@@ -2447,6 +2462,9 @@ ol, figure {
   .mt_row-md-gut-half {
     margin-bottom: 0.72em; }
 
+  .mt_row-md-gut-0 {
+    margin-bottom: 0em; }
+
   .mt_row-md-gut-1 {
     margin-bottom: 1.44em; }
 
@@ -2461,6 +2479,9 @@ ol, figure {
 @media screen and (min-width: 70em) {
   .mt_row-lg-gut-half {
     margin-bottom: 0.72em; }
+
+  .mt_row-lg-gut-0 {
+    margin-bottom: 0em; }
 
   .mt_row-lg-gut-1 {
     margin-bottom: 1.44em; }

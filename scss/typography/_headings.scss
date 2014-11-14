@@ -7,7 +7,7 @@
     }
 }
 
-@each $class in (subh1, subh2, subh3, subh4, subh5, subh6) {
+@each $class in (mt_subh1, mt_subh2, mt_subh3, mt_subh4, mt_subh5, mt_subh6) {
     .#{$class} {
         @extend %#{$class};
     }

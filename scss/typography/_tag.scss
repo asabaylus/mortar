@@ -12,7 +12,7 @@ category: Typography
 */
 
 .tag {
-    @extend %subh4;
+    @extend %mt_subh4;
 
     border: $mt_border-default;
     display: inline-block;

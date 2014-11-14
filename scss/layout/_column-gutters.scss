@@ -17,7 +17,7 @@
             padding-right: $mt_unit / 2;
         }
 
-        @for $i from 1 through 4 {
+        @for $i from 0 through 4 {
             .mt_col-#{$bp}-gut-#{$i} {
                 padding-left: $mt_unit * $i;
                 padding-right: $mt_unit * $i;
