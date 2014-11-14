@@ -69,7 +69,7 @@ Primary font: “utopia-std”, Georgia, Times, “Times New Roman”, serif
   width: 100%;
   height: 0;
   padding-bottom: 100%;
-  border: solid 1px #021122; }
+  border: solid 1px black; }
 .colorsample-container {
   padding: .5em; }
 
@@ -140,7 +140,7 @@ main > h2 {
     clear: none; } }
 
 .codeExample {
-  border: 1px solid #d7dada;
+  border: 1px solid #e6e6e6;
   margin-bottom: 1.44em; }
 
 .exampleOutput {
@@ -148,7 +148,7 @@ main > h2 {
 
 .codeBlock {
   background-color: white;
-  border-top: 1px solid #d7dada;
+  border-top: 1px solid #e6e6e6;
   max-height: 20em;
   padding: 0.72em 1.44em;
   overflow: auto; }
