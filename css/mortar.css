@@ -806,28 +806,22 @@ h6 em,
   font-style: italic;
   font-weight: 600; }
 
-.h1--alt,
-.h2--alt,
-.h3--alt,
-.h4--alt,
-.h5--alt,
-.h6--alt {
+.mt_h1--alt,
+.mt_h2--alt,
+.mt_h3--alt,
+.mt_h4--alt {
   font-family: "Chronicle Display 3r", Georgia, Times, "Times New Roman", serif;
   font-style: normal;
   font-weight: 300; }
 
-.h1--alt i,
-.h2--alt i,
-.h3--alt i,
-.h4--alt i,
-.h5--alt i,
-.h6--alt i,
-.h1--alt em,
-.h2--alt em,
-.h3--alt em,
-.h4--alt em,
-.h5--alt em,
-.h6--alt em {
+.mt_h1--alt i,
+.mt_h2--alt i,
+.mt_h3--alt i,
+.mt_h4--alt i,
+.mt_h1--alt em,
+.mt_h2--alt em,
+.mt_h3--alt em,
+.mt_h4--alt em {
   font-family: "Chronicle Display 3i", Georgia, Times, "Times New Roman", serif;
   font-style: italic;
   font-weight: 300; }
@@ -1059,42 +1053,40 @@ parent: headings
 /*doc
 ---
 title: Heading with link
-name: headingwithlink
+name: mt_headingwithlink
 parent: headings
 ---
 
 ```html_example
-<h3 class="headingwithlink"><a href="#">Heading with link</a></h3>
-<h3 class="subh3 headingwithlink"><a href="#">Sub Heading with link</a></h3>
+<h3 class="mt_headingwithlink"><a href="#">Heading with link</a></h3>
+<h3 class="subh3 mt_headingwithlink"><a href="#">Sub Heading with link</a></h3>
 ```
 
 */
-.headingwithlink > a {
+.mt_headingwithlink > a {
   color: black;
   text-decoration: none; }
-  .headingwithlink > a:visited {
+  .mt_headingwithlink > a:visited {
     color: black;
     text-decoration: none; }
-  .headingwithlink > a:hover, .headingwithlink > a:focus, .headingwithlink > a:active {
+  .mt_headingwithlink > a:hover, .mt_headingwithlink > a:focus, .mt_headingwithlink > a:active {
     color: #262626;
     text-decoration: none; }
 
-.headinginverse {
+.mt_headinginverse {
   color: #f7f7f7;
   text-decoration: none; }
-  .headinginverse:hover, .headinginverse:focus, .headinginverse:active {
+  .mt_headinginverse:hover, .mt_headinginverse:focus, .mt_headinginverse:active {
     color: #f7f7f7;
     text-decoration: underline; }
-  .headinginverse:visited {
+  .mt_headinginverse:visited {
     color: #f7f7f7;
     text-decoration: none; }
 
-.h1--alt,
-.h2--alt,
-.h3--alt,
-.h4--alt,
-.h5--alt,
-.h6--alt {
+.mt_h1--alt,
+.mt_h2--alt,
+.mt_h3--alt,
+.mt_h4--alt {
   margin: 0;
   padding: 0; }
 
@@ -1106,12 +1098,10 @@ parent: headings
 ---
 
 ```html_example
-<h1 class="h1--alt">Heading 1 Alternate</h1>
-<h2 class="h2--alt">Heading 2 Alternate</h2>
-<h3 class="h3--alt">Heading 3 Alternate</h3>
-<h4 class="h4--alt">Heading 4 Alternate</h4>
-<h5 class="h5--alt">Heading 5 Alternate</h5>
-<h6 class="h6--alt">Heading 6 Alternate</h6>
+<h1 class="mt_h1--alt">Heading 1 Alternate</h1>
+<h2 class="mt_h2--alt">Heading 2 Alternate</h2>
+<h3 class="mt_h3--alt">Heading 3 Alternate</h3>
+<h4 class="mt_h4--alt">Heading 4 Alternate</h4>
 ```
 
 */
