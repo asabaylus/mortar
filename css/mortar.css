@@ -288,9 +288,12 @@ input::-moz-focus-inner {
  * the UA stylesheet.
  */
 input {
-  line-height: normal; }
-  input:not([type="checkbox"]):not([type="radio"]) {
-    width: 100%; }
+  line-height: normal;
+  width: 100%; }
+
+[type="checkbox"],
+[type="radio"] {
+  width: auto; }
 
 /**
  * It's recommended that you don't attempt to style these elements.
@@ -717,7 +720,7 @@ category: Blocks
     <figcaption>A picture of a cabin.</figcaption>
 </figure>
 */
-input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), textarea {
+input, textarea {
   border: 1px solid black;
   margin: 0;
   padding: 0.36em 0.72em; }
@@ -728,7 +731,7 @@ html {
   font-weight: 300; }
 
 i,
-em, input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), textarea {
+em, input, textarea {
   font-family: "Chronicle SSm 3i", Georgia, Times, "Times New Roman", serif;
   font-style: italic;
   font-weight: 300; }
