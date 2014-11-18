@@ -324,15 +324,18 @@ input::-moz-focus-inner {
  */
 
 input {
+    @extend %mt_input-text-theme;
+
     line-height: normal;
+    width: 100%;
 
-    &:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
-        @extend %mt_input-text-theme;
-    }
+}
 
-    &:not([type="checkbox"]):not([type="radio"]) {
-        width: 100%;
-    }
+// Reset checkbox and radio width
+
+[type="checkbox"],
+[type="radio"] {
+    width: auto;
 }
 
 /**
