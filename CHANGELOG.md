@@ -1,3 +1,8 @@
+## 1.0.2
+
+Bugfixes:
+- reduce overspecificity of certain input selectors
+
 ## 1.0.1
 
 Features:
