@@ -1,8 +1,8 @@
 @import "headings/extends";
 
 @each $tag in (h1, h2, h3, h4, h5, h6) {
-    .#{$tag},
-    .#{$tag}--alt {
+    .mt_#{$tag},
+    .mt-#{$tag}--alt {
         @extend #{$tag};
     }
 }
@@ -68,7 +68,8 @@ parent: headings
 .mt_h1--alt,
 .mt_h2--alt,
 .mt_h3--alt,
-.mt_h4--alt {
+.mt_h4--alt,
+.mt_h5--alt {
     @extend %mt_font-default-display-light;
 
     margin: 0;
@@ -88,6 +89,7 @@ parent: headings
 <h2 class="mt_h2--alt">Heading 2 Alternate</h2>
 <h3 class="mt_h3--alt">Heading 3 Alternate</h3>
 <h4 class="mt_h4--alt">Heading 4 Alternate</h4>
+<h5 class="mt_h5--alt">Heading 5 Alternate</h4>
 ```
 
 */
