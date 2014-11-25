@@ -591,23 +591,23 @@ category: Typography
 ```
 
 */
-h1, .h1,
-.h1--alt,
+h1, .mt_h1,
+.mt-h1--alt,
 h2,
-.h2,
-.h2--alt,
+.mt_h2,
+.mt-h2--alt,
 h3,
-.h3,
-.h3--alt,
+.mt_h3,
+.mt-h3--alt,
 h4,
-.h4,
-.h4--alt,
+.mt_h4,
+.mt-h4--alt,
 h5,
-.h5,
-.h5--alt,
+.mt_h5,
+.mt-h5--alt,
 h6,
-.h6,
-.h6--alt {
+.mt_h6,
+.mt-h6--alt {
   margin: 0;
   padding: 0; }
 
@@ -753,62 +753,62 @@ em strong {
   font-style: italic;
   font-weight: 600; }
 
-h1, .h1,
-.h1--alt,
+h1, .mt_h1,
+.mt-h1--alt,
 h2,
-.h2,
-.h2--alt,
+.mt_h2,
+.mt-h2--alt,
 h3,
-.h3,
-.h3--alt,
+.mt_h3,
+.mt-h3--alt,
 h4,
-.h4,
-.h4--alt,
+.mt_h4,
+.mt-h4--alt,
 h5,
-.h5,
-.h5--alt,
+.mt_h5,
+.mt-h5--alt,
 h6,
-.h6,
-.h6--alt {
+.mt_h6,
+.mt-h6--alt {
   font-family: "Chronicle Deck 6r", Georgia, Times, "Times New Roman", serif;
   font-style: normal;
   font-weight: 600; }
 
-h1 i, .h1 i,
-.h1--alt i,
+h1 i, .mt_h1 i,
+.mt-h1--alt i,
 h2 i,
-.h2 i,
-.h2--alt i,
+.mt_h2 i,
+.mt-h2--alt i,
 h3 i,
-.h3 i,
-.h3--alt i,
+.mt_h3 i,
+.mt-h3--alt i,
 h4 i,
-.h4 i,
-.h4--alt i,
+.mt_h4 i,
+.mt-h4--alt i,
 h5 i,
-.h5 i,
-.h5--alt i,
+.mt_h5 i,
+.mt-h5--alt i,
 h6 i,
-.h6 i,
-.h6--alt i,
+.mt_h6 i,
+.mt-h6--alt i,
 h1 em,
-.h1 em,
-.h1--alt em,
+.mt_h1 em,
+.mt-h1--alt em,
 h2 em,
-.h2 em,
-.h2--alt em,
+.mt_h2 em,
+.mt-h2--alt em,
 h3 em,
-.h3 em,
-.h3--alt em,
+.mt_h3 em,
+.mt-h3--alt em,
 h4 em,
-.h4 em,
-.h4--alt em,
+.mt_h4 em,
+.mt-h4--alt em,
 h5 em,
-.h5 em,
-.h5--alt em,
+.mt_h5 em,
+.mt-h5--alt em,
 h6 em,
-.h6 em,
-.h6--alt em {
+.mt_h6 em,
+.mt-h6--alt em {
   font-family: "Chronicle Deck 6i", Georgia, Times, "Times New Roman", serif;
   font-style: italic;
   font-weight: 600; }
@@ -816,7 +816,8 @@ h6 em,
 .mt_h1--alt,
 .mt_h2--alt,
 .mt_h3--alt,
-.mt_h4--alt {
+.mt_h4--alt,
+.mt_h5--alt {
   font-family: "Chronicle Display 3r", Georgia, Times, "Times New Roman", serif;
   font-style: normal;
   font-weight: 300; }
@@ -825,10 +826,12 @@ h6 em,
 .mt_h2--alt i,
 .mt_h3--alt i,
 .mt_h4--alt i,
+.mt_h5--alt i,
 .mt_h1--alt em,
 .mt_h2--alt em,
 .mt_h3--alt em,
-.mt_h4--alt em {
+.mt_h4--alt em,
+.mt_h5--alt em {
   font-family: "Chronicle Display 3i", Georgia, Times, "Times New Roman", serif;
   font-style: italic;
   font-weight: 300; }
@@ -893,29 +896,29 @@ name: fonts
 category: Typography
 ---
 
-Primary font: “utopia-std”, Georgia, Times, “Times New Roman”, serif
+Primary font: "Chronicle SSm 3r", Georgia, Times, "Times New Roman", serif
 
-<em>Primary font italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em>
+<em>Primary font italic: "Chronicle SSm 3i", Georgia, Times, "Times New Roman", serif</em>
 
-<strong>Primary font bold: “utopia-std”, Georgia, Times, “Times New Roman”, serif</strong>
+<strong>Primary font bold: "Chronicle SSm 6r", Georgia, Times, "Times New Roman", serif</strong>
 
-<strong><em>Primary font bold italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></strong>
+<strong><em>Primary font bold italic: "Chronicle SSm 6i", Georgia, Times, "Times New Roman", serif</em></strong>
 
-<p><span class="h5">Primary font deck: “utopia-std”, Georgia, Times, “Times New Roman”, serif</span></p>
+<p><span class="mt_h5">Primary font deck: "Chronicle Deck 6r", Georgia, Times, "Times New Roman", serif</span></p>
 
-<p><span class="h5"><em>Primary font deck italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></span></p>
+<p><span class="mt_h5"><em>Primary font deck italic: "Chronicle Deck 6i", Georgia, Times, "Times New Roman", serif</em></span></p>
 
-<p><span class="h5--alt">Primary font display: “utopia-std”, Georgia, Times, “Times New Roman”, serif</span></p>
+<p><span class="mt_h5--alt">Primary font display: "Chronicle Display 3r", Georgia, Times, "Times New Roman", serif</span></p>
 
-<p><span class="h5--alt"><em>Primary font display italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></span></p>
+<p><span class="mt_h5--alt"><em>Primary font display italic: "Chronicle Display 3i", Georgia, Times, "Times New Roman", serif</em></span></p>
 
-<p class="subh5">Secondary font: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</p>
+<p class="mt_subh5">Secondary font: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</p>
 
-<p class="subh5"><em>Secondary font italic: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</em></p>
+<p class="mt_subh5"><em>Secondary font italic: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</em></p>
 
-<p class="subh5"><strong>Secondary font bold: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</strong></p>
+<p class="mt_subh5"><strong>Secondary font bold: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</strong></p>
 
-<p class="subh5"><strong><em>Secondary font bold italic: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</em></strong></p>
+<p class="mt_subh5"><strong><em>Secondary font bold italic: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</em></strong></p>
 
 */
 sub,
@@ -928,63 +931,63 @@ sup {
       font-size: 0.69444em;
       line-height: 2.0736em; } }
 
-small, ol > li::before, h6, .h6,
-.h6--alt, .byline, .mt_subh4, .tag, figcaption, .caption, .mt_subh5, .mt_subh6 {
+small, ol > li::before, h6, .mt_h6,
+.mt-h6--alt, .byline, .mt_subh4, .tag, figcaption, .caption, .mt_subh5, .mt_subh6 {
   font-size: 0.87891em;
   line-height: 1.6384em; }
   @media screen and (min-width: 40em) {
-    small, ol > li::before, h6, .h6,
-    .h6--alt, .byline, .mt_subh4, .tag, figcaption, .caption, .mt_subh5, .mt_subh6 {
+    small, ol > li::before, h6, .mt_h6,
+    .mt-h6--alt, .byline, .mt_subh4, .tag, figcaption, .caption, .mt_subh5, .mt_subh6 {
       font-size: 0.83333em;
       line-height: 1.728em; } }
 
-html, legend, h5, .h5,
-.h5--alt, .mt_subh1, .mt_subh2, .mt_btn, .mt_subh3 {
+html, legend, h5, .mt_h5,
+.mt-h5--alt, .mt_subh1, .mt_subh2, .mt_btn, .mt_subh3 {
   font-size: 1em;
   line-height: 1.44em; }
   @media screen and (min-width: 40em) {
-    html, legend, h5, .h5,
-    .h5--alt, .mt_subh1, .mt_subh2, .mt_btn, .mt_subh3 {
+    html, legend, h5, .mt_h5,
+    .mt-h5--alt, .mt_subh1, .mt_subh2, .mt_btn, .mt_subh3 {
       font-size: 1em;
       line-height: 1.44em; } }
 
-h4, .h4,
-.h4--alt {
+h4, .mt_h4,
+.mt-h4--alt {
   font-size: 1.13778em;
   line-height: 1.26562em; }
   @media screen and (min-width: 40em) {
-    h4, .h4,
-    .h4--alt {
+    h4, .mt_h4,
+    .mt-h4--alt {
       font-size: 1.44em;
       line-height: 2em; } }
 
-blockquote, h3, .h3,
-.h3--alt {
+blockquote, h3, .mt_h3,
+.mt-h3--alt {
   font-size: 1.38084em;
   line-height: 2.08569em; }
   @media screen and (min-width: 40em) {
-    blockquote, h3, .h3,
-    .h3--alt {
+    blockquote, h3, .mt_h3,
+    .mt-h3--alt {
       font-size: 1.728em;
       line-height: 1.66667em; } }
 
-h2, .h2,
-.h2--alt {
+h2, .mt_h2,
+.mt-h2--alt {
   font-size: 1.67583em;
   line-height: 1.71855em; }
   @media screen and (min-width: 40em) {
-    h2, .h2,
-    .h2--alt {
+    h2, .mt_h2,
+    .mt-h2--alt {
       font-size: 2.48832em;
       line-height: 1.15741em; } }
 
-h1, .h1,
-.h1--alt {
+h1, .mt_h1,
+.mt-h1--alt {
   font-size: 1.78755em;
   line-height: 1.61114em; }
   @media screen and (min-width: 40em) {
-    h1, .h1,
-    .h1--alt {
+    h1, .mt_h1,
+    .mt-h1--alt {
       font-size: 3.58318em;
       line-height: 1.20563em; } }
 
@@ -1093,7 +1096,8 @@ parent: headings
 .mt_h1--alt,
 .mt_h2--alt,
 .mt_h3--alt,
-.mt_h4--alt {
+.mt_h4--alt,
+.mt_h5--alt {
   margin: 0;
   padding: 0; }
 
@@ -1109,6 +1113,7 @@ parent: headings
 <h2 class="mt_h2--alt">Heading 2 Alternate</h2>
 <h3 class="mt_h3--alt">Heading 3 Alternate</h3>
 <h4 class="mt_h4--alt">Heading 4 Alternate</h4>
+<h5 class="mt_h5--alt">Heading 5 Alternate</h4>
 ```
 
 */

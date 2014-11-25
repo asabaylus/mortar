@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*doc
 ---
 title: Fonts
@@ -6,29 +5,29 @@ name: fonts
 category: Typography
 ---
 
-Primary font: “utopia-std”, Georgia, Times, “Times New Roman”, serif
+Primary font: "Chronicle SSm 3r", Georgia, Times, "Times New Roman", serif
 
-<em>Primary font italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em>
+<em>Primary font italic: "Chronicle SSm 3i", Georgia, Times, "Times New Roman", serif</em>
 
-<strong>Primary font bold: “utopia-std”, Georgia, Times, “Times New Roman”, serif</strong>
+<strong>Primary font bold: "Chronicle SSm 6r", Georgia, Times, "Times New Roman", serif</strong>
 
-<strong><em>Primary font bold italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></strong>
+<strong><em>Primary font bold italic: "Chronicle SSm 6i", Georgia, Times, "Times New Roman", serif</em></strong>
 
-<p><span class="h5">Primary font deck: “utopia-std”, Georgia, Times, “Times New Roman”, serif</span></p>
+<p><span class="mt_h5">Primary font deck: "Chronicle Deck 6r", Georgia, Times, "Times New Roman", serif</span></p>
 
-<p><span class="h5"><em>Primary font deck italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></span></p>
+<p><span class="mt_h5"><em>Primary font deck italic: "Chronicle Deck 6i", Georgia, Times, "Times New Roman", serif</em></span></p>
 
-<p><span class="h5--alt">Primary font display: “utopia-std”, Georgia, Times, “Times New Roman”, serif</span></p>
+<p><span class="mt_h5--alt">Primary font display: "Chronicle Display 3r", Georgia, Times, "Times New Roman", serif</span></p>
 
-<p><span class="h5--alt"><em>Primary font display italic: “utopia-std”, Georgia, Times, “Times New Roman”, serif</em></span></p>
+<p><span class="mt_h5--alt"><em>Primary font display italic: "Chronicle Display 3i", Georgia, Times, "Times New Roman", serif</em></span></p>
 
-<p class="subh5">Secondary font: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</p>
+<p class="mt_subh5">Secondary font: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</p>
 
-<p class="subh5"><em>Secondary font italic: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</em></p>
+<p class="mt_subh5"><em>Secondary font italic: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</em></p>
 
-<p class="subh5"><strong>Secondary font bold: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</strong></p>
+<p class="mt_subh5"><strong>Secondary font bold: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</strong></p>
 
-<p class="subh5"><strong><em>Secondary font bold italic: “pragmatica-web”, “Helvetica Neue”, Helvetica, Arial, “Nimbus Sans L”, sans-serif</em></strong></p>
+<p class="mt_subh5"><strong><em>Secondary font bold italic: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif</em></strong></p>
 
 */
 @font-face {
