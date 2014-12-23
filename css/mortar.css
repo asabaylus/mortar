@@ -2245,12 +2245,12 @@ category: Layout
 
                    | default class name    | class name with breakpoint
 ------------------ | --------------------- | ----------------------------
-**Column**         | `.mt_col-*`           | `.mt_col-[sm, md, lrg]-*`
-**Offset**         | `.mt_col-offset-*`    | `.mt_col-[sm, md, lrg]-offset-*`
-**Pull**           | `.mt_col-pull-*`      | `.mt_col-[sm, md, lrg]-pull-*`
-**Push**           | `.mt_col-push-*`      | `.mt_col-[sm, md, lrg]-push-*`
-**Column Gutter**  | `.mt_col-gut-*`       | `.mt_col-[sm, md, lrg]-gut-*`
-**Row Gutter**     | `.mt_row-gut-*`       | `.mt_row-[sm, md, lrg]-gut-*`
+**Column**         | `.mt_col-*`           | `.mt_col-[sm, md, lg]-*`
+**Offset**         | `.mt_col-offset-*`    | `.mt_col-[sm, md, lg]-offset-*`
+**Pull**           | `.mt_col-pull-*`      | `.mt_col-[sm, md, lg]-pull-*`
+**Push**           | `.mt_col-push-*`      | `.mt_col-[sm, md, lg]-push-*`
+**Column Gutter**  | `.mt_col-gut-*`       | `.mt_col-[sm, md, lg]-gut-*`
+**Row Gutter**     | `.mt_row-gut-*`       | `.mt_row-[sm, md, lg]-gut-*`
 
 ### Available breakpoints
 
