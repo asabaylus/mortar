@@ -1,16 +1,16 @@
 {
   "name": "pygments",
-  "version": "1.6.1",
+  "version": "1.6.0",
   "description": "Bower package for Pygments",
   "main": [
     "css/"
   ],
   "homepage": "https://github.com/xavierdutreilh/bower-pygments",
-  "_release": "1.6.1",
+  "_release": "1.6.0",
   "_resolution": {
     "type": "version",
-    "tag": "v1.6.1",
-    "commit": "66403c70cb0cb380866f6a9ce5a8ad4f21b0dd78"
+    "tag": "v1.6.0",
+    "commit": "18124e5f91da2887cc644c65198f8e016273ff8b"
   },
   "_source": "git://github.com/xavierdutreilh/bower-pygments.git",
   "_target": "~1.6.0",
