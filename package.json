@@ -1,5 +1,6 @@
 {
   "name": "mortar",
+  "version": "1.0.3",
   "description": "National Geographic Society Living Style Guide",
   "devDependencies": {
     "grunt": "~0.4.2",
