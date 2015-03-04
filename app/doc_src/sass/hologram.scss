@@ -1,24 +1,17 @@
-@import "breakpoint";
-@import "singularitygs";
+@import "../../src/styles/global/variables/colors";
+@import "../../src/styles/global/variables/mqs";
+@import "../../src/styles/global/variables/theme";
+@import "../../src/styles/global/variables/typography";
+@import "../../src/styles/global/variables/z-index";
 
-@import "../../src/styles/global/variables/*";
-@import "../../src/styles/global/functions/*";
-@import "../../src/styles/global/mixins/*";
-@import "../../src/styles/global/extends/*";
+@import "../../src/styles/global/functions/yiq";
 
-// MQ Variables
-
-$bp-med: 30em;
-$bp-mlrg: 50em;
-$bp-lrg: 70em;
-$bp-xlrg: 90em;
-$bp-xxlrg: 110em;
+@import "../../src/styles/global/extends/inputs";
+@import "../../src/styles/global/extends/typography";
 
 // Layout Variables
 
 $center-column-width-sm: 85%;
-
-@include add-grid(4);
 
 // Font
 
@@ -40,14 +33,14 @@ $center-column-width-sm: 85%;
 }
 
 .colorsample {
-    @include e( sample ) {
+    &-sample {
         width: 100%;
         height: 0;
         padding-bottom: 100%;
         border: solid 1px $mt_color-inverse;
     }
 
-    @include e( container ) {
+    &-container {
         padding: .5em;
     }
 }
@@ -78,7 +71,6 @@ footer {
 }
 
 .container {
-    @include background-grid;
     margin-left: auto;
     margin-right: auto;
     width: $center-column-width-sm;
@@ -105,10 +97,6 @@ footer {
     ul {
         margin: $mt_padding-quarter $mt_padding-default $mt_padding-half 0;
     }
-
-    @include breakpoint( $bp-mlrg ) {
-        @include grid-span(1, 1);
-    }
 }
 
 main {
@@ -128,10 +116,6 @@ main {
     > h2 {
         @include margin-leader( 2, $mt_ms-xxxlrg );
         @include margin-trailer( 1, $mt_ms-xxxlrg );
-    }
-
-    @include breakpoint( $bp-mlrg ) {
-        @include grid-span(3, 2);
     }
 }
 

@@ -38,7 +38,7 @@ $int-ratios: (
 
 .mt_intratio {
     @each $int-ratio, $percentage in $int-ratios {
-        @include m($int-ratio) {
+        &--#{$int-ratio} {
             height: 0;
             padding-bottom: $percentage;
         }

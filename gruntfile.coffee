@@ -205,7 +205,7 @@ module.exports = (grunt) ->
 
     grunt.registerTask 'build', [
         'clean'
-        'shell'
+        'shell:hologram'
         'processMortarCss'
         'sass:hologram'
         'copy'

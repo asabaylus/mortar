@@ -30,7 +30,7 @@
 
         <div class="container mt_cf">
             <%if @blocks %>
-            <nav class="subnav mt_background--lowlight">
+            <nav class="subnav mt_background--lowlight mt_col-md-3">
                 <ul>
                 <% @blocks.each do |b| %>
                     <li class="mt_headingwithlink"><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
@@ -38,4 +38,4 @@
                 </ul>
             </nav>
             <% end %>
-            <main class="content">
+            <main class="content mt_col-md-9">

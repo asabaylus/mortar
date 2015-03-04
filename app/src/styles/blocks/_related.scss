@@ -21,15 +21,15 @@ category: Blocks
 
 
 .mt_related {
-    @include e(title) {
+    &-title {
         @include margin-trailer(.5, $mt_ms-sm);
     }
 
-    @include e(category) {
+    &-category {
         margin-bottom: 0;
     }
 
-    @include e(article) {
+    &-article {
         @include margin-trailer(1, $mt_ms-norm);
     }
 }

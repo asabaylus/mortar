@@ -62,12 +62,12 @@ $mt_btn-colors: (
     // Iterate over button skins
 
     @each $btn-type, $btn-color in $mt_btn-colors {
-        @include m($btn-type) {
+        &--#{$btn-type} {
             @include mt_btn($btn-color);
         }
     }
 
-    @include m(naked) {
+    &--naked {
         background-color: transparent;
         border: none;
         outline: none;

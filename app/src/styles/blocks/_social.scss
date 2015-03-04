@@ -9,11 +9,11 @@ category: Typography
 */
 
 .mt_social {
-    @include e(icon) {
+    &-icon {
         margin-right: $mt_padding-quarter;
     }
 
-    @include e(number) {
+    &-number {
         margin-right: $mt_padding-quarter;
     }
 }

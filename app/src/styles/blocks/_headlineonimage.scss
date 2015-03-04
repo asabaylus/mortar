@@ -21,7 +21,7 @@ category: Blocks
 */
 
 .mt_textonimage {
-    @include e(container) {
+    &-container {
         background-position: center center;
         background-size: cover;
         position: relative;
@@ -38,7 +38,7 @@ category: Blocks
         }
     }
 
-    @include e(textcontainer) {
+    &-textcontainer {
         position: relative;
         z-index: $mt_z-top;
     }
