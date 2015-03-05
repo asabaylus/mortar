@@ -19,27 +19,27 @@ Headings are also available as classes so you can use them when a semantic tag d
 
 // Headings
 
-%h1 {
+%mt_h1 {
     @extend %mt_font-size-xxxlrg;
 }
 
-%h2 {
+%mt_h2 {
     @extend %mt_font-size-xxlrg;
 }
 
-%h3 {
+%mt_h3 {
     @extend %mt_font-size-lrg;
 }
 
-%h4 {
+%mt_h4 {
     @extend %mt_font-size-med;
 }
 
-%h5 {
+%mt_h5 {
     @extend %mt_font-size-norm;
 }
 
-%h6 {
+%mt_h6 {
     @extend %mt_font-size-sm;
 }
 

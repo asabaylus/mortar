@@ -2,6 +2,7 @@
 // Probably don't use this one
 
 .mt_hidden {
+    // scss-lint:disable ImportantRule
     display: none !important;
     visibility: hidden;
 }
@@ -24,8 +25,8 @@
 // Extends the .visuallyhidden class to allow the element to be focusable
 // when navigated to via the keyboard: h5bp.com/p
 
-.mt_visuallyhidden.focusable:active,
-.mt_visuallyhidden.focusable:focus {
+.mt_visuallyhidden.mt_focusable:active,
+.mt_visuallyhidden.mt_focusable:focus {
     clip: auto;
     height: auto;
     margin: 0;

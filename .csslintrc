@@ -3,6 +3,8 @@
   "box-model": false,
   "box-sizing": false,
   "compatible-vendor-prefixes": false,
+  "fallback-colors": false,
+  "font-sizes": false,
   "important": false,
   "outline-none": false,
   "qualified-headings": true,
