@@ -1,9 +1,11 @@
 {
   "name": "mortar",
   "version": "1.0.3",
+  "scripts": {
+    "test": "grunt test"
+  },
   "description": "National Geographic Society Living Style Guide",
   "devDependencies": {
-    "csslint": "~0.10.0",
     "grunt": "~0.4.2",
     "grunt-autoprefixer": "~1.0.1",
     "grunt-browser-sync": "~1.5.2",
