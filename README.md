@@ -1,5 +1,7 @@
 # Mortar [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
+[![Build Status][travis-image]][travis-url]
+
 A living style guide and usable component for National Geographic Society websites.
 
 ## Installing
@@ -92,3 +94,6 @@ This is a list of things to keep in mind when modifying the icon font
 - Don't throw just throw anything in the icon font, if this collection gets bloated we won't benefit from it's potential performance enhancement. Please consider the worth of all additions.
 - [Semantic Versioning](http://semver.org/) is used for the release tags. Make sure you understand this very well before making updates so any on projects pulling in icongs via Bower do not have rendering errors.
 - You'll need to update the semantic version in the [bower.json](https://github.com/natgeo/mortar/blob/0357dfdd41b10964acf296c2f4cea7bee10f3b94/bower.json#L3) and add a properly formatted entry to the [changelog](https://github.com/natgeo/mortar/blob/master/CHANGELOG.md) before deploying a new release.
+
+[travis-image]: https://img.shields.io/travis/natgeo/mortar.svg?branch=master&style=flat-square
+[travis-url]: https://travis-ci.org/natgeo/mortar

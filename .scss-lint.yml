@@ -5,6 +5,14 @@ linters:
         enabled: false
     Indentation:
         width: 4
+    NameFormat:
+        enabled: false
+    SelectorFormat:
+        enabled: true
+        convention: 'mt_([A-Za-z0-9\-]+)'
+        ignored_types:
+            - attribute,
+            - element
     SpaceBetweenParens:
         spaces: 0
     StringQuotes:

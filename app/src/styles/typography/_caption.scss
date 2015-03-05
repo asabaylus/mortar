@@ -6,7 +6,7 @@ category: Typography
 ---
 
 ```html_example
-<p class="caption">A man fishes in an artificial lake outside Poland's coal-fired Belchatow Power Station October 31, 2013. The Polish government's decision to host a coal-industry conference during international climate talks has drawn fire from environmental activists.</p>
+<p class="mt_caption">A man fishes in an artificial lake outside Poland's coal-fired Belchatow Power Station October 31, 2013. The Polish government's decision to host a coal-industry conference during international climate talks has drawn fire from environmental activists.</p>
 
 <p>or</p>
 
@@ -15,10 +15,10 @@ category: Typography
 
 */
 
-%caption {
+%mt_caption {
     @extend %mt_subh5;
 }
 
-.caption {
-    @extend %caption;
+.mt_caption {
+    @extend %mt_caption;
 }

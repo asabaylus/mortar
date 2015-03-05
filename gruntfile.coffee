@@ -97,13 +97,12 @@ module.exports = (grunt) ->
 
         # CSS Tests
 
-        # scsslint:
-        #     allfiles: [
-        #         '<%= app.mortarScss %>/**/*.scss'
-        #     ]
-        #     options:
-        #         config: '.scss-lint.yml'
-        #         reporterOutput: 'scss-lint-report.xml'
+        csscss:
+            options:
+                bundleExec: true
+                minMatch: 4
+            mortar:
+                src: ['<%= app.mortarCss %>']
 
         csslint:
             options:
@@ -117,15 +116,16 @@ module.exports = (grunt) ->
             mortar:
                 src:'<%= app.mortarCss %>'
 
-        # csscss:
-        #     options:
-        #         bundleExec: true
-        #         failWhenDuplicates: true
-        #         minMatch: 4
-        #         shorthand: false
-        #         verbose: true
-        #     mortar:
-        #         src: ['<%= app.mortarCss %>']
+        scsslint:
+            allfiles: [
+                '<%= app.mortarScssDir %>/**/*.scss'
+            ]
+            options:
+                bundleExec: true
+                colorizeOutput: true
+                config: '.scss-lint.yml'
+                reporterOutput: 'scss-lint-report.xml'
+
 
         # Doing things
 
@@ -217,10 +217,14 @@ module.exports = (grunt) ->
         'buildcontrol:component'
     ]
 
+    grunt.registerTask 'test', [
+        'scsslint'
+        'csslint'
+        'csscss'
+    ]
+
     grunt.registerTask 'processMortarCss', [
-        # 'scsslint'
         'sass:mortar'
-        # 'csscss'
         'autoprefixer:mortar'
         'cssmin'
     ]

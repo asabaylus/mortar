@@ -19,8 +19,13 @@
 
         @for $i from 0 through 4 {
             .mt_col-#{$bp}-gut-#{$i} {
-                padding-left: $mt_unit * $i;
-                padding-right: $mt_unit * $i;
+                @if $i < 1 {
+                    padding-left: 0;
+                    padding-right: 0;
+                } @else {
+                    padding-left: $mt_unit * $i;
+                    padding-right: $mt_unit * $i;
+                }
             }
         }
     }
