@@ -1,18 +1,63 @@
-@import "global/variables/*";
-@import "global/functions/*";
-@import "global/mixins/*";
+// Global Variables
+
+@import "global/variables/colors";
+@import "global/variables/mqs";
+@import "global/variables/theme";
+@import "global/variables/typography";
+@import "global/variables/z-index";
+
+// Global Functions
+
+@import "global/functions/yiq";
+
+// Various Resets/Bases
 
 @import "../../bower_components/fluidity/sass/fluidity";
 @import "reset";
 @import "base";
 
-@import "global/extends/*";
+// Global Extends
 
-@import "typography/*";
-@import "theme/*";
-@import "helpers/*";
-@import "elements/*";
-@import "blocks/*";
-@import "layout/*";
+@import "global/extends/inputs";
+@import "global/extends/typography";
+
+// Typography
+
+@import "typography/byline";
+@import "typography/caption";
+@import "typography/headings";
+@import "typography/tag";
+@import "typography/textinverse";
+
+// Theme
+
+@import "theme/backgrounds";
+@import "theme/outlines";
+@import "theme/padding";
+
+// Helpers
+
+@import "helpers/clearfix";
+@import "helpers/hidden";
+
+// Elements
+
+@import "elements/btn";
+@import "elements/intratio";
+
+// Blocks
+
+@import "blocks/headlinedeck";
+@import "blocks/headlineonimage";
+@import "blocks/related";
+@import "blocks/social";
+
+// Layout
+
+@import "layout/column-gutters";
+@import "layout/columns";
+@import "layout/rows";
+
+// For Shame!
 
 @import "shame";
