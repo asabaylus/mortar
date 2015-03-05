@@ -1,6 +1,6 @@
 
 .mt_row {
-    @extend .mt_cf;
+    @extend %mt_cf;
 }
 
 .mt_row-gut-half {
@@ -9,7 +9,11 @@
 
 @for $i from 0 through 4 {
     .mt_row-gut-#{$i} {
-        margin-bottom: $mt_unit * $i;
+        @if $i < 1 {
+            margin-bottom: 0;
+        } @else {
+            margin-bottom: $mt_unit * $i;
+        }
     }
 }
 
@@ -21,7 +25,11 @@
 
         @for $i from 0 through 4 {
             .mt_row-#{$bp}-gut-#{$i} {
-                margin-bottom: $mt_unit * $i;
+                @if $i < 1 {
+                    margin-bottom: 0;
+                } @else {
+                    margin-bottom: $mt_unit * $i;
+                }
             }
         }
     }

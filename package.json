@@ -10,10 +10,12 @@
     "grunt-build-control": "git+ssh://git@github.com:robwierzbowski/grunt-build-control.git",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-copy": "~0.5.0",
-    "grunt-contrib-csslint": "~0.2.0",
+    "grunt-contrib-csslint": "~0.4.0",
     "grunt-contrib-cssmin": "~0.12.2",
     "grunt-contrib-watch": "~0.5.3",
+    "grunt-csscss": "^0.6.2",
     "grunt-sass": "^0.18.0",
+    "grunt-scss-lint": "^0.3.4",
     "grunt-shell": "~0.6.4",
     "load-grunt-tasks": "~0.3.0",
     "time-grunt": "~0.2.9"

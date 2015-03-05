@@ -6,28 +6,29 @@ $columns: 12;
 // Object oriented grid classes in the style of bootstrap
 // Reference: http://getbootstrap.com/css/#grid
 
-%col-padding {
+%mt_col-padding {
     float: left;
     position: relative;
+    width: 100%;
 }
 
 @for $i from 1 through $columns { // loop through grid spans
     .mt_col-#{$i} { // build the class name
-        @extend %col-padding;
+        @extend %mt_col-padding;
 
-        width: percentage( $i / $columns );
+        width: percentage($i / $columns);
     }
 
     .mt_col-offset-#{$i} {
-        margin-left: percentage( $i / $columns );
+        margin-left: percentage($i / $columns);
     }
 
     .mt_col-pull-#{$i} {
-        right: percentage( $i / $columns );
+        right: percentage($i / $columns);
     }
 
     .mt_col-push-#{$i} {
-        left: percentage( $i / $columns );
+        left: percentage($i / $columns);
     }
 }
 
@@ -44,30 +45,29 @@ $columns: 12;
 }
 
 @each $bp, $width in $layout-bps { // loop through breakpoints
-
     // hack to get around inability to extend from within media queries
     @for $i from 1 through $columns {
         .mt_col-#{$bp}-#{$i} {
-            @extend %col-padding;
+            @extend %mt_col-padding;
         }
     }
 
     @media #{ $width } {
         @for $i from 1 through $columns {
             .mt_col-#{$bp}-#{$i} {
-                width: percentage( $i / $columns );
+                width: percentage($i / $columns);
             }
 
             .mt_col-#{$bp}-offset-#{$i} {
-                margin-left: percentage( $i / $columns );
+                margin-left: percentage($i / $columns);
             }
 
             .mt_col-#{$bp}-pull-#{$i} {
-                right: percentage( $i / $columns );
+                right: percentage($i / $columns);
             }
 
             .mt_col-#{$bp}-push-#{$i} {
-                left: percentage( $i / $columns );
+                left: percentage($i / $columns);
             }
         }
 
