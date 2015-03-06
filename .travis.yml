@@ -1,4 +1,4 @@
 language: node_js
 node_js:
   - "0.12"
-before_install: gem install bundle && bundle install && npm install -g grunt-cli
+before_install: gem install bundle && bundle install && npm install -g grunt-cli bower && bower install

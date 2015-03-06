@@ -7,7 +7,7 @@
   ],
   "description": "The default icon font for the National Geographic Society",
   "dependencies": {
-    "icongs": "git@github.com:natgeo/icongs.git#0.10.0"
+    "icongs": "git://github.com/natgeo/icongs.git#0.10.0"
   },
   "keywords": [
     "icon",
@@ -16,7 +16,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "fluidity": "git@github.com:mrmrs/fluidity.git#~v0.2.0",
+    "fluidity": "git://github.com/mrmrs/fluidity.git#~v0.2.0",
     "vertical-rhythms-without-compass": "~1.0.1",
     "modular-scale": "~2.0.5"
   },
