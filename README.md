@@ -49,16 +49,25 @@ You'll likely need the right fonts to work in concert with Mortar each of which 
 
 ### Installation
 
+Instructions are written for OS X. For Linux, switching references from `brew` to `apt-get` (or whichever package manager your linux distribution uses) should get the job done.
+
 1. Open Terminal (Applications/Utilities/Terminal)
-2. Install [Homebrew](http://brew.sh/): ```ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"``` you may need to run ```sudo ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"``` and make certain that your user has administrative rights for the file system
+- Install [Homebrew](http://brew.sh/): ```ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"``` you may need to run ```sudo ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"``` and make certain that your user has administrative rights for the file system
   1. You may need to install XCode
-  2. Make sure everything is running smoothly with ```brew doctor```
-3. Install [Node](http://nodejs.org/): ```brew install node```
-4. Install [Grunt-Cli](http://gruntjs.com/): ```npm install -g grunt-cli```
-5. Install [Bower](http://bower.io/): ```npm install -g bower```
-6. Install [Ruby](https://www.ruby-lang.org/en/): ```brew install ruby```
-7. Install [Bundler](http://bundler.io/): ```gem install bundler```
-8. Install packages by running ```npm install && bundle && bower install```
+  - Make sure everything is running smoothly with ```brew doctor```
+- Install [NVM](https://github.com/creationix/nvm): ```curl https://raw.githubusercontent.com/creationix/nvm/v0.23.3/install.sh | bash``` (brew install is discouraged by nvm)
+  1. Install [Node](http://nodejs.org/): ```nvm install 0.12```
+  - Set a default node version ```nvm alias default stable```
+  - If your project's node version is not the current stable version then you will need to run ```nvm use``` whenever you enter your project's repo
+- Install [Grunt-Cli](http://gruntjs.com/): ```npm install -g grunt-cli```
+- Install [Bower](http://bower.io/): ```npm install -g bower```
+- Install [rbenv](https://github.com/sstephenson/rbenv): ```brew install rbenv ruby-build```
+  1. **make sure to follow post install instructions**, add necessary lines to your shell profile. Run ```brew info rbenv``` if you missed them somehow the first time.
+  - Install [Ruby](https://www.ruby-lang.org/en/): ```rbenv install 2.2.0```
+  - Set a default ruby version ```rbenv global 2.2.0```
+  - rbenv automatically respects the `.ruby-version` file found within projects
+- Install [Bundler](http://bundler.io/): ```gem install bundler```
+- Install packages by running ```npm install && bundle && bower install``` from the root directory of the project
 
 ### Grunt Tasks
 
