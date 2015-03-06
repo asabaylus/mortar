@@ -63,7 +63,7 @@ Instructions are written for OS X. For Linux, switching references from `brew` t
 - Install [Bower](http://bower.io/): ```npm install -g bower```
 - Install [rbenv](https://github.com/sstephenson/rbenv): ```brew install rbenv ruby-build```
   1. **make sure to follow post install instructions**, add necessary lines to your shell profile. Run ```brew info rbenv``` if you missed them somehow the first time.
-  - Install [Ruby](https://www.ruby-lang.org/en/): ```rbenv install ruby 2.2.0```
+  - Install [Ruby](https://www.ruby-lang.org/en/): ```rbenv install 2.2.0```
   - Set a default ruby version ```rbenv global 2.2.0```
   - rbenv automatically respects the `.ruby-version` file found within projects
 - Install [Bundler](http://bundler.io/): ```gem install bundler```
