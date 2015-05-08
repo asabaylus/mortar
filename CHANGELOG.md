@@ -1,6 +1,11 @@
 ## 1.0.3
 
 Bugfixes:
+- fix dependency paths
+
+## 1.0.3
+
+Bugfixes:
 - fix font-family definitions and documentation references
 
 ## 1.0.2

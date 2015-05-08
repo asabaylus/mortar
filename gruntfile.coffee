@@ -150,6 +150,11 @@ module.exports = (grunt) ->
                 cwd: '<%= app.mortarScssDir %>'
                 src: './**'
                 dest: 'component/scss'
+            componentBower:
+                expand: true
+                flatten: true
+                src: './bower.json'
+                dest: 'component/'
 
         shell:
             update:
