@@ -32,10 +32,11 @@ Primary font: "Chronicle SSm 3r", Georgia, Times, "Times New Roman", serif
 */
 @font-face {
   font-family: 'icongs';
-  src: url("../bower_components/icongs/fonts/icongs_a5b67007ff5a80787e9ee410b47e8038.eot");
+  src: url('../bower_components/icongs/fonts/icongs_a5b67007ff5a80787e9ee410b47e8038.eot');
   /* IE9 Compat Modes */
-  src: url("../bower_components/icongs/fonts/icongs_a5b67007ff5a80787e9ee410b47e8038.eot?#iefix") format("embedded-opentype"), url("../bower_components/icongs/fonts/icongs_a5b67007ff5a80787e9ee410b47e8038.woff") format("woff"), url("../bower_components/icongs/fonts/icongs_a5b67007ff5a80787e9ee410b47e8038.ttf") format("truetype"), url("../bower_components/icongs/fonts/icongs_a5b67007ff5a80787e9ee410b47e8038.svg#svgFontName") format("svg");
+  src: url('../bower_components/icongs/fonts/icongs_a5b67007ff5a80787e9ee410b47e8038.eot?#iefix') format('embedded-opentype'), url('../bower_components/icongs/fonts/icongs_a5b67007ff5a80787e9ee410b47e8038.woff') format('woff'), url('../bower_components/icongs/fonts/icongs_a5b67007ff5a80787e9ee410b47e8038.ttf') format('truetype'), url('../bower_components/icongs/fonts/icongs_a5b67007ff5a80787e9ee410b47e8038.svg#svgFontName') format('svg');
   /* Legacy iOS */ }
+
 @media screen and (min-width: 15em) {
   .layout_colorsample {
     width: 100%; } }
@@ -44,7 +45,7 @@ Primary font: "Chronicle SSm 3r", Georgia, Times, "Times New Roman", serif
     width: 50%; } }
 @media screen and (min-width: 45em) {
   .layout_colorsample {
-    width: 33.33333%; } }
+    width: 33.3333333333%; } }
 @media screen and (min-width: 60em) {
   .layout_colorsample {
     width: 25%; } }
@@ -53,16 +54,16 @@ Primary font: "Chronicle SSm 3r", Georgia, Times, "Times New Roman", serif
     width: 20%; } }
 @media screen and (min-width: 90em) {
   .layout_colorsample {
-    width: 16.66667%; } }
+    width: 16.6666666667%; } }
 @media screen and (min-width: 105em) {
   .layout_colorsample {
-    width: 14.28571%; } }
+    width: 14.2857142857%; } }
 @media screen and (min-width: 120em) {
   .layout_colorsample {
     width: 12.5%; } }
 @media screen and (min-width: 135em) {
   .layout_colorsample {
-    width: 11.11111%; } }
+    width: 11.1111111111%; } }
 
 .colorsample-sample {
   width: 100%;
@@ -73,86 +74,68 @@ Primary font: "Chronicle SSm 3r", Georgia, Times, "Times New Roman", serif
   padding: .5em; }
 
 header {
-  margin-bottom: 1.44em; }
+  margin-bottom: 1.4375em; }
 
-header > hgroup,
-header > nav,
-footer {
+header > hgroup, header > nav, footer {
   padding-left: 7.5%;
   padding-right: 7.5%; }
 
 header > hgroup {
-  padding-bottom: 0.72em; }
+  padding-bottom: 0.71875em; }
 
 header > nav {
-  padding-top: 0.36em;
-  padding-bottom: 0.36em; }
+  padding-top: 0.359375em;
+  padding-bottom: 0.359375em; }
 
 footer {
-  padding-top: 0.72em;
-  padding-bottom: 0.72em; }
+  padding-top: 0.71875em;
+  padding-bottom: 0.71875em; }
 
 .container {
   margin-left: auto;
   margin-right: auto;
   width: 85%;
-  margin-bottom: 2.88em; }
+  margin-bottom: 2.875em; }
 
 .field-container {
-  margin-bottom: 1.44em; }
+  margin-bottom: 1.4375em; }
 
 .navitem {
-  margin-right: 1.44em;
-  padding-top: 0.36em;
-  padding-bottom: 0.36em; }
+  margin-right: 1.4375em;
+  padding-top: 0.359375em;
+  padding-bottom: 0.359375em; }
   .navitem:last-child {
     margin-right: 0; }
 
 .subnav {
-  margin-bottom: 1.44em; }
+  margin-bottom: 1.4375em; }
   .subnav ul {
-    margin: 0.36em 1.44em 0.72em 0; }
-  @media (min-width: 50em) {
-    .subnav {
-      width: 21.05263%;
-      float: left;
-      margin-right: -100%;
-      margin-left: 0;
-      clear: none; } }
+    margin: 0.359375em 1.4375em 0.71875em 0; }
 
 main > h1 {
-  margin-top: 1.60751em;
-  margin-bottom: 0.40188em; }
+  margin-top: 1.6140350877em;
+  margin-bottom: 0.4035087719em; }
   main > h1 + h1 {
     margin-bottom: 0; }
   main > h1:first-of-type {
     margin-top: 0; }
 main > h2 {
-  margin-top: 0.80376em;
-  margin-bottom: 0.40188em; }
-@media (min-width: 50em) {
-  main {
-    width: 73.68421%;
-    float: right;
-    margin-left: 0;
-    margin-right: 0;
-    clear: none; } }
+  margin-top: 0.8070175439em;
+  margin-bottom: 0.4035087719em; }
 
 .codeExample {
   border: 1px solid #e6e6e6;
-  margin-bottom: 1.44em; }
+  margin-bottom: 1.4375em; }
 
 .exampleOutput {
-  padding: 0.72em 1.44em; }
+  padding: 0.71875em 1.4375em; }
 
 .codeBlock {
   background-color: white;
   border-top: 1px solid #e6e6e6;
   max-height: 20em;
-  padding: 0.72em 1.44em;
+  padding: 0.71875em 1.4375em;
   overflow: auto; }
   .codeBlock pre {
     margin: 0;
     overflow: visible; }
-
-/*# sourceMappingURL=hologram.css.map */
