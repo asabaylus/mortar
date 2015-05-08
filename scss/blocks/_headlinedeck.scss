@@ -18,19 +18,19 @@ category: Blocks
 
 
 .mt_headlinedeck {
-    @include e(duration) {
+    &-duration {
         margin-bottom: 0;
     }
 
-    @include e(category) {
+    &-category {
         margin-bottom: 0;
     }
 
-    @include e(subtitle) {
+    &-subtitle {
         @include margin-trailer(2, $mt_ms-sm);
     }
 
-    @include e(author) {
+    &-author {
         margin-bottom: 0;
     }
 }

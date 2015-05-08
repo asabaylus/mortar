@@ -1,3 +1,5 @@
+// scss-lint:disable SelectorFormat QualifyingElement
+
 /* normalize.css v3.0.0 | MIT License | git.io/normalize */
 
 /**
@@ -391,7 +393,7 @@ input[type="color"] {
  */
 
 fieldset {
-    border: 1px solid #c0c0c0;
+    border: 1px solid $mt_color-lowlight;
     margin: 0 2px;
     padding: .35em .625em .75em;
 }
@@ -403,7 +405,7 @@ fieldset {
 
 legend {
     @extend %label;
-    @extend %h5;
+    @extend %mt_h5;
 
     border: 0; /* 1 */
     padding: 0; /* 2 */
@@ -580,14 +582,13 @@ category: Elements
  */
 
 table {
-    @extend .mt_row-gut-1;
-
     border-collapse: collapse;
     border-spacing: 0;
+    margin-bottom: $mt_unit;
 }
 
 td,
 th {
-    padding: $mt_padding-half;
     border: $mt_border-default;
+    padding: $mt_padding-half;
 }

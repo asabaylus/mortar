@@ -6,12 +6,12 @@ category: Typography
 ---
 
 ```html_example
-<p><span class="tag">Beautiful</span> <span class="tag">environment</span> <span class="tag">maya empire</span> <span class="tag">food</span></p>
+<p><span class="mt_tag">Beautiful</span> <span class="mt_tag">environment</span> <span class="mt_tag">maya empire</span> <span class="mt_tag">food</span></p>
 ```
 
 */
 
-.tag {
+.mt_tag {
     @extend %mt_subh4;
 
     border: $mt_border-default;

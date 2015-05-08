@@ -6,12 +6,12 @@ category: Typography
 ---
 
 ```html_example
-<p class="byline">Photograph by Kacker Pempel</p>
+<p class="mt_byline">Photograph by Kacker Pempel</p>
 ```
 
 */
 
-.byline {
+.mt_byline {
     @extend %mt_subh4;
 
     color: $mt_color-beta;
