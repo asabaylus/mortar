@@ -18,7 +18,7 @@
     "tag": "0.10.0",
     "commit": "47933684caf277e5b136dc476097baf9642c1a24"
   },
-  "_source": "git@github.com:natgeo/icongs.git",
+  "_source": "git://github.com/natgeo/icongs.git",
   "_target": "0.10.0",
-  "_originalSource": "git@github.com:natgeo/icongs.git"
+  "_originalSource": "git://github.com/natgeo/icongs.git"
 }

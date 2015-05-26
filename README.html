@@ -1,0 +1,222 @@
+<!doctype html>
+<html class="mt_backgroundbasic">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Mortar: </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://fonts.ngeo.com/hoefler/1-0-1/hco_fonts.css">
+        <link rel="stylesheet" href="http://assets.nationalgeographic.com/icongs_0-10-0/icongs.css">
+        <link rel="stylesheet" href="./css/mortar.css">
+        <link rel="stylesheet" href="./css/hologram.css">
+        <link rel="stylesheet" href="bower_components/pygments/css/colorful.css">
+        <script src="bower_components/modernizr/modernizr.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <hgroup class="mt_backgroundhighlight">
+                <h1 class="mt_h1--alt mt_headingwithlink"><a href="./">Mortar</a></h1>
+                <h2 class="mt_subh2">A living style guide for the National Geographic Society</h2>
+            </hgroup>
+            <nav class="mt_backgroundinverse">
+            
+                <a class="navitem mt_headinginverse h5" href="theme.html">Theme</a>
+            
+                <a class="navitem mt_headinginverse h5" href="typography.html">Typography</a>
+            
+                <a class="navitem mt_headinginverse h5" href="elements.html">Elements</a>
+            
+                <a class="navitem mt_headinginverse h5" href="blocks.html">Blocks</a>
+            
+                <a class="navitem mt_headinginverse h5" href="layout.html">Layout</a>
+            
+                <a class="navitem mt_headinginverse h5" href="http://natgeo.github.io/icongs/">icoNGS</a>
+            </nav>
+        </header>
+
+        <div class="container mt_cf">
+            
+            <nav class="subnav mt_background--lowlight mt_col-md-3">
+                <ul>
+                
+                </ul>
+            </nav>
+            
+            <main class="content mt_col-md-9">
+<h1>Modular Scale</h1>
+
+<p>A modular scale is a list of values that share the same relationship. These values are often used to size type and create a sense of harmony in a design. Proportions within modular scales are all around us from the spacing of the joints on our fingers to branches on trees. These natural proportions have been used since the time of the ancient Greeks in architecture and design and can be a tremendously helpful tool to leverage for web designers.</p>
+
+<p>Ems work especially well with modular scales as their recursive properties mimic modular scales making them more predictable and easier to manage. Pixels and other units work just fine and breakpoints in responsive web design can naturally fall on your scale to create better relevance to your text as all the values in your layout harmonize with each other.</p>
+
+<p>To get started, you need to select a ratio and a base value. The base value is usually your text font size or 1em. Optionally you can add another value to create a double standard modular scale which might be useful to create more options for in-between values. This base size paired with a ratio such as the golden ratio or any musical proportion will create your scale of values which all share this proportion.</p>
+
+<h2>Install</h2>
+
+<h3>Compass</h3>
+
+<ul>
+<li>Terminal: <code>gem install modular-scale</code></li>
+<li>Compass config: <code>require &#39;modular-scale&#39;</code></li>
+<li>SCSS: <code>@import &#39;modular-scale&#39;;</code></li>
+</ul>
+
+<h3>Bower</h3>
+
+<ul>
+<li>Terminal: <code>bower install modular-scale</code></li>
+<li>SCSS: <code>@import &#39;../link_to_component_dir/modular-scale&#39;;</code></li>
+</ul>
+
+<h3>Vanilla Sass</h3>
+
+<ul>
+<li><a href="https://github.com/Team-Sass/modular-scale/releases/latest">Download the latest zip</a></li>
+<li>Extract into your project</li>
+<li>SCSS: <code>@import &#39;modular-scale&#39;;</code></li>
+</ul>
+
+<h2>Compatibility</h2>
+
+<p>I have been working incredibly hard to make Modular Scale compatible with multiple versions of Sass. As a result, it will work and has been tested in <strong>Libsass</strong>, <strong>Sass 3.2</strong>, <strong>Sass 3.3</strong>, and <strong>Sass 3.4</strong>.</p>
+
+<p>These are dramatically different environments so things may have slight differences. <strong><a href="https://github.com/Team-Sass/modular-scale/tree/2.x#compass">For best results, install via the gem with Compass</a></strong>.</p>
+
+<h4><strong>Compass + Sass (best):</strong></h4>
+
+<ul>
+<li>non-integer values work with the <code>ms()</code> function. (Compass only)</li>
+<li>Significant speed increases as the gem does calculations natively in Ruby</li>
+</ul>
+
+<h4><strong>Libsass:</strong></h4>
+
+<ul>
+<li>Everything should be working, and work very quickly.</li>
+</ul>
+
+<h4><strong>Vanilla Sass:</strong></h4>
+
+<ul>
+<li>Works fine, but is slow when using multiple bases and ratios.</li>
+</ul>
+
+<h2>Usage</h2>
+
+<p>Modular Scale has two default variables that you should place with your other site wide variables. <code>$ms-base</code> is usually your font size or <code>1em</code> and can have multiple values. <code>$ms-ratio</code> is the factor of change between each number so if the ratio is <code>1.5</code> then each number in the sequence will be 1.5 times that of the previous number. Just as you can have multiple bases you can have multiple ratios.</p>
+<div class="codeBlock"><div class="highlight"><pre>$ms-base: 1em;
+$ms-ratio: $golden;
+</pre></div></div>
+<p>Modular-scale is used as a function. Simply pass it through in place of any value to generate a value based on a modular scale.</p>
+<div class="codeBlock"><div class="highlight"><pre>font-size: ms(2); // two up the modular scale
+font-size: ms(2, 16px); // two up the modular scale with a base size of 16px, default is 1em
+font-size: ms(2, 1em, $octave); // Same as above but on an octave scale
+</pre></div></div>
+<p>You can output a list to your terminal to help you find out what values are on your scale.</p>
+<div class="codeBlock"><div class="highlight"><pre>@debug ms-list($start, $end, $ms-base, $ms-ratio);
+</pre></div></div>
+<p>You can use a double standard scale by simply adding more base sizes in a space-separated list.
+<strong>note:</strong> the starting point of the scale will always be the <strong>first</strong> value in this list</p>
+<div class="codeBlock"><div class="highlight"><pre>.double-standard {
+  width: ms(7, 1em 2em);
+}
+</pre></div></div>
+<p>You can do the same thing with ratios</p>
+<div class="codeBlock"><div class="highlight"><pre>.multi-ratio {
+  width: ms(7, 1em, $golden $octave);
+}
+</pre></div></div>
+<p>You can use multiple $ms-bases and multiple $ms-ratio together</p>
+<div class="codeBlock"><div class="highlight"><pre>.multibase-multiratio {
+  width: ms(7, 16px 24px, $golden $fourth);
+}
+</pre></div></div>
+<h2>Ratios</h2>
+
+<p>Modular scale includes functions for a number of classic design and musical scale ratios. You can add your own ratios as well.</p>
+
+<p>By default, the variable <code>$ms-ratio</code> is set to <code>$golden</code>.</p>
+
+<table>
+
+  <tr><th>Function</th><th>Ratio</th><th>Decimal value</th></tr>
+
+  <tr><td>$phi</td><td>1:1.618</td><td>1.618</td></tr>
+  <tr><td>$golden</td><td>1:1.618</td><td>1.618</td></tr>
+  <tr><td>$double-octave</td><td>1:4</td><td>4</td></tr>
+  <tr><td>$major-twelfth</td><td>1:3</td><td>3</td></tr>
+  <tr><td>$major-eleventh</td><td>3:8</td><td>2.667</td></tr>
+  <tr><td>$major-tenth</td><td>2:5</td><td>2.5</td></tr>
+  <tr><td>$octave</td><td>1:2</td><td>2</td></tr>
+  <tr><td>$major-seventh</td><td>8:15</td><td>1.875</td></tr>
+  <tr><td>$minor-seventh</td><td>9:16</td><td>1.778</td></tr>
+  <tr><td>$major-sixth</td><td>3:5</td><td>1.667</td></tr>
+  <tr><td>$minor-sixth</td><td>5:8</td><td>1.6</td></tr>
+  <tr><td>$fifth</td><td>2:3</td><td>1.5</td></tr>
+  <tr><td>$augmented-fourth</td><td>1:√2</td><td>1.414</td></tr>
+  <tr><td>$fourth</td><td>3:4</td><td>1.333</td></tr>
+  <tr><td>$major-third</td><td>4:5</td><td>1.25</td></tr>
+  <tr><td>$minor-third</td><td>5:6</td><td>1.2</td></tr>
+  <tr><td>$major-second</td><td>8:9</td><td>1.125</td></tr>
+  <tr><td>$minor-second</td><td>15:16</td><td>1.067</td></tr>
+
+</table>
+
+<p>Add your own ratio in Sass by setting a variable and passing that to modular-scale.</p>
+<div class="codeBlock"><div class="highlight"><pre>$my-ratio: 1 / 3.14159265;
+$ms-ratio: $my-ratio;
+</pre></div></div>
+<h2>Responsive scales</h2>
+
+<p>At times you may want to have a scale with less contrast on small screens and big type with more contrast on larger screens. For this you can use the <code>ms-respond</code> mixin that allows you to plug in a range of ratios at various breakpoints.</p>
+
+<p>First, you will need to set your range. A range is a list of ratio and breakpoint values from smallest to largest.</p>
+<div class="codeBlock"><div class="highlight"><pre>$ms-range:
+  1.2 20em,
+  1.3 30em,
+  1.4 40em,
+  1.5 50em,
+  1.6 60em;
+</pre></div></div>
+<p>Now you can use the <code>ms-respond</code> mixin to output a range of values for a single point on a scale.</p>
+<div class="codeBlock"><div class="highlight"><pre>foo {
+  @include ms-respond(font-size, 2);
+}
+</pre></div></div><div class="codeBlock"><div class="highlight"><pre>foo { font-size: 1.44em; }
+@media (min-width: 30em) { foo { font-size: 1.69em; } }
+@media (min-width: 40em) { foo { font-size: 1.96em; } }
+@media (min-width: 50em) { foo { font-size: 2.25em; } }
+@media (min-width: 60em) { foo { font-size: 2.56em; } }
+</pre></div></div>
+<h2><a href="https://github.com/Team-Sass/modular-scale/releases">Changelog</a></h2>
+
+<h3>Licence</h3>
+
+<p>The MIT License (MIT)</p>
+
+<p>Copyright © 2015 <a href="http://www.scottkellum.com/">Scott Kellum</a> (<a href="http://twitter.com/scottkellum">@scottkellum</a>), <a href="http://adamstacoviak.com/">Adam Stacoviak</a> (<a href="http://twitter.com/adamstac">@adamstac</a>) and <a href="http://thecodingdesigner.com/">Mason Wendell</a> (<a href="http://twitter.com/codingdesigner">@codingdesigner</a>)</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p><strong>The software is provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and non-infringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.</strong></p>
+            </main>
+        </div>
+        <footer class="mt_backgroundinverse mt_textinverse">
+            <p>This documentation generated using <a href="http://github.com/trulia/hologram">Hologram</a>. View the <a href="https://github.com/natgeo/mortar">source</a>.</p>
+        </footer>
+
+        <script>
+          (function(d) {
+            var config = {
+              kitId: 'wdv5zcl',
+              scriptTimeout: 3000
+            },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//fonts.ngeo.com/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+          })(document);
+        </script>
+    </body>
+</html>
