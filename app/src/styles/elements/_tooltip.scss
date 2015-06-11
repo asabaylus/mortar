@@ -1,0 +1,191 @@
+/*doc
+---
+title: Tooltips
+name: tooltips
+category: Elements
+---
+
+<div class="icons">
+    <ul>
+        <li class="ico-open mt_tooltip-wrapper">
+            <div class="ico"></div>
+            <p>Open</p>
+            <div class="mt_tooltip top">Everyone’s welcome to contribute their best shot to open assignments.  <a href='/about/#section2'>Learn more</a>.</div>
+        </li>
+        <li class="ico-closed mt_tooltip-wrapper">
+            <div class="ico"></div>
+            <p>Closed</p>
+            <div class="mt_tooltip bottom">Completed assignments—with our favorite photos included—will be published online. <a href='/about/#section1'>Learn more</a>.</div>
+        </li>
+        <li class="ico-published mt_tooltip-wrapper">
+            <div class="ico"></div>
+            <p>Published</p>
+            <div class="mt_tooltip bottom">Once the submission period is over, we'll review all contributions and select our favorite images to be included in the story. <a href='/about/#section2'>Learn more</a>.</div>
+        </li>
+    </ul>
+</div>
+
+*/
+
+
+// Tooltips
+$color-alpha: #fff;
+$tooltip-background: $color-alpha;
+$tooltip-border: #cfcfcf;
+$tooltip-text: #777;
+
+/*
+Tooltips:
+
+CSS-only implementation of tooltips.  Installed as part of the main
+Desktop CSS file.  To activate:
+
+- Place the class "tooltip-wrapper" on the element that you want serve as
+  the trigger.  This element should serve as the parent.
+
+- Place your contents somewhere inside the tooltip-wrapper element with the
+  class "tooltip <<direction>>" where direction = where the callout triangle
+  should appear.  Ex:  class="tooltip bottom".  Direction is optonal, see notes below.
+
+
+NOTES:
+- Current directions for the callout triangle are:
+  - None (default - just use "tooltip" class by itself)
+  - top (places callout triangle in the center)
+  - top-left
+  - top-right
+  - bottom (places callout triangle in the center)
+  - bottom-left
+  - bottom-right
+
+- There wasn't much of a need for callout triangles on the left/right side,
+  but can easily be added.
+*/
+.mt_tooltip-wrapper {
+    cursor: pointer;
+    font-size: 13px;
+    position: relative;
+    text-align: center;
+}
+
+.mt_tooltip {
+    background: $tooltip-background;
+    border: 1px solid $tooltip-border;
+    border-radius: 6px;
+    bottom: 2em;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    color: $tooltip-text;
+    display: none;
+    height: auto;
+    left: 50%;
+    min-width: 200px;
+    padding: 10px;
+    pointer-events: none;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: all .25s ease-out;
+    width: auto;
+    z-index: 100;
+
+    .mt_tooltip-wrapper:hover & {
+        display: block;
+        pointer-events: auto;
+    }
+
+    /* Callout Triangles - Base */
+    &:before {
+        border: 0.8em solid transparent;
+        bottom: 5px;
+        content: " ";
+        display: block;
+        position: absolute;
+    }
+    &:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border: 0.8em solid transparent;
+        position: absolute;
+    }
+}
+
+/***** Callout Triangles - Top *****/
+.mt_tooltip-arrow--top {
+    &:before {
+        border-bottom: 10px solid $tooltip-border;
+        left: 45%;
+        bottom: 103%;
+    }
+    &:after {
+        border-bottom: 10px solid $tooltip-background;
+        left: 45%;
+        top: -20px;
+    }
+}
+
+.mt_tooltip-arrow--topleft {
+    &:before {
+        border-bottom: 10px solid $tooltip-border;
+        left: 5%;
+        bottom: 103%;
+    }
+    &:after {
+        border-bottom: 10px solid $tooltip-background;
+        left: 5%;
+        top: -20px;
+    }
+}
+
+.mt_tooltip-arrow--topright {
+    &:before {
+        border-bottom: 10px solid $tooltip-border;
+        bottom: 103%;
+        right: 5%;
+    }
+    &:after {
+        border-bottom: 10px solid $tooltip-background;
+        right: 5%;
+        top: -20px;
+    }
+}
+
+
+/***** Callout Triangles - Bottom *****/
+.mt_tooltip-arrow--bottom {
+    &:before {
+        border-top: 10px solid $tooltip-border;
+        bottom: -21px;
+        left: 45%;
+    }
+    &:after {
+        border-top: 10px solid $tooltip-background;
+        bottom: -20px;
+        left: 45%;
+    }
+}
+
+.mt_tooltip-arrow--bottomleft {
+    &:before {
+        border-top: 10px solid $tooltip-border;
+        bottom: -21px;
+        left: 5%;
+    }
+    &:after {
+        border-top: 10px solid $tooltip-background;
+        bottom: -20px;
+        left: 5%;
+    }
+}
+
+.mt_tooltip-arrow--bottomright {
+    &:before {
+        border-top: 10px solid $tooltip-border;
+        bottom: -21px;
+        right: 5%;
+    }
+    &:after {
+        border-top: 10px solid $tooltip-background;
+        bottom: -20px;
+        right: 5%;
+    }
+}
