@@ -10,44 +10,37 @@ category: Elements
         <li class="ico-open mt_tooltip-wrapper">
             <div class="ico"></div>
             <p>Top</p>
-            <div class="mt_tooltip mt_tooltip--bottom">Everyone’s welcome to contribute their best shot to open assignments.  <a href='/about/#section2'>Learn more</a>.</div>
+            <div class="mt_tooltip-tip mt_tooltip-tip--bottom">Everyone’s welcome to contribute their best shot to open assignments.  <a href='/about/#section2'>Learn more</a>.</div>
         </li>
         <li class="ico-closed mt_tooltip-wrapper">
             <div class="ico"></div>
             <p>Top left</p>
-            <div class="mt_tooltip mt_tooltip--bottom mt_tooltip-arrow--left">Completed assignments—with our favorite photos included—will be published online. <a href='/about/#section1'>Learn more</a>.</div>
+            <div class="mt_tooltip-tip mt_tooltip-tip--bottom mt_tooltip-arrow--left">Completed assignments—with our favorite photos included—will be published online. <a href='/about/#section1'>Learn more</a>.</div>
         </li>
         <li class="ico-published mt_tooltip-wrapper">
             <div class="ico"></div>
             <p>Top Right</p>
-            <div class="mt_tooltip  mt_tooltip--bottom mt_tooltip-arrow--right">Once the submission period is over, we'll review all contributions and select our favorite images to be included in the story. <a href='/about/#section2'>Learn more</a>.</div>
+            <div class="mt_tooltip-tip  mt_tooltip-tip--bottom mt_tooltip-arrow--right">Once the submission period is over, we'll review all contributions and select our favorite images to be included in the story. <a href='/about/#section2'>Learn more</a>.</div>
         </li>
         <li class="ico-open mt_tooltip-wrapper">
             <div class="ico"></div>
             <p>Bottom</p>
-            <div class="mt_tooltip mt_tooltip--top">Everyone’s welcome to contribute their best shot to open assignments.  <a href='/about/#section2'>Learn more</a>.</div>
+            <div class="mt_tooltip-tip mt_tooltip-tip--top">Everyone’s welcome to contribute their best shot to open assignments.  <a href='/about/#section2'>Learn more</a>.</div>
         </li>
         <li class="ico-closed mt_tooltip-wrapper">
             <div class="ico"></div>
             <p>Bottom Left</p>
-            <div class="mt_tooltip mt_tooltip--top mt_tooltip-arrow--left">Completed assignments—with our favorite photos included—will be published online. <a href='/about/#section1'>Learn more</a>.</div>
+            <div class="mt_tooltip-tip mt_tooltip-tip--top mt_tooltip-arrow--left">Completed assignments—with our favorite photos included—will be published online. <a href='/about/#section1'>Learn more</a>.</div>
         </li>
         <li class="ico-published mt_tooltip-wrapper">
             <div class="ico"></div>
             <p>Bottom Right</p>
-            <div class="mt_tooltip mt_tooltip--top mt_tooltip-arrow--right">Once the submission period is over, we'll review all contributions and select our favorite images to be included in the story. <a href='/about/#section2'>Learn more</a>.</div>
+            <div class="mt_tooltip-tip mt_tooltip-tip--top mt_tooltip-arrow--right">Once the submission period is over, we'll review all contributions and select our favorite images to be included in the story. <a href='/about/#section2'>Learn more</a>.</div>
         </li>
     </ul>
 </div>
 
 */
-
-
-// Tooltips
-$color-alpha: #fff;
-$tooltip-background: $color-alpha;
-$tooltip-border: #cfcfcf;
-$tooltip-text: #777;
 
 /*
 Tooltips:
@@ -83,14 +76,14 @@ NOTES:
     text-align: center;
 }
 
-.mt_tooltip {
+.mt_tooltip-tip {
     @extend %mt_font-alternate;
 
-    background: $tooltip-background;
-    border: 1px solid $tooltip-border;
+    background: $mt_color-basic;
+    border: 1px solid $mt_color-basic-alt;
     border-radius: .4em;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    color: $tooltip-text;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    color: $mt_color-beta;
     display: none;
     font-size: .9rem;
     height: auto;
@@ -111,48 +104,51 @@ NOTES:
 
     /* Callout Triangles - Base */
     &:before {
-        border: 0.8em solid transparent;
+        border: .8em solid transparent;
         bottom: 5px;
         content: " ";
         display: block;
         position: absolute;
     }
+
     &:after {
+        border: .8em solid transparent;
         content: "";
-        width: 0;
         height: 0;
-        border: 0.8em solid transparent;
         position: absolute;
+        width: 0;
     }
 }
 
 /***** Callout Triangles - Top *****/
 
-.mt_tooltip--top {
+.mt_tooltip-tip--top {
     top: 105%;
 
     &:before {
-        border-bottom: 10px solid $tooltip-border;
-        left: 45%;
+        border-bottom: 10px solid $mt_color-basic-alt;
         bottom: 100%;
+        left: 45%;
     }
+
     &:after {
-        border-bottom: 10px solid $tooltip-background;
+        border-bottom: 10px solid $mt_color-basic;
         left: 45%;
         top: -20px;
     }
 }
 
-.mt_tooltip--bottom {
+.mt_tooltip-tip--bottom {
     bottom: 105%;
 
     &:before {
-        border-top: 10px solid $tooltip-border;
+        border-top: 10px solid $mt_color-basic-alt;
         bottom: -21px;
         left: 45%;
     }
+
     &:after {
-        border-top: 10px solid $tooltip-background;
+        border-top: 10px solid $mt_color-basic;
         bottom: -20px;
         left: 45%;
     }
@@ -162,6 +158,7 @@ NOTES:
     &:before {
         left: 5%;
     }
+
     &:after {
         left: 5%;
     }
@@ -172,6 +169,7 @@ NOTES:
         left: auto;
         right: 5%;
     }
+
     &:after {
         left: auto;
         right: 5%;
