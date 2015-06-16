@@ -1,4 +1,6 @@
-exclude: 'app/src/sass/_shame.scss'
+exclude:
+    - 'app/src/styles/_shame.scss'
+    - 'app/src/styles/libs/**/*.scss'
 
 linters:
     Comment:
