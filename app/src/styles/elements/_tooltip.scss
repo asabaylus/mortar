@@ -5,63 +5,36 @@ name: tooltips
 category: Elements
 ---
 
+```html_example
 <div class="icons">
     <ul>
-        <li class="ico-open mt_tooltip-wrapper">
+        <li class="mt_tooltip-wrapper">
             <p>Top</p>
-            <div class="mt_tooltip-tip mt_tooltip-tip--bottom">Everyone’s welcome to contribute their best shot to open assignments.  <a href='/about/#section2'>Learn more</a>.</div>
+            <div class="mt_tooltip-tip mt_tooltip-tip--bottom mt_backgroundlowlight">Everyone’s welcome to contribute their best shot to open assignments.  <a href='/about/#section2'>Learn more</a>.</div>
         </li>
-        <li class="ico-closed mt_tooltip-wrapper">
+        <li class="mt_tooltip-wrapper">
             <p>Top left</p>
             <div class="mt_tooltip-tip mt_tooltip-tip--bottom mt_tooltip-arrow--left">Completed assignments—with our favorite photos included—will be published online. <a href='/about/#section1'>Learn more</a>.</div>
         </li>
-        <li class="ico-published mt_tooltip-wrapper">
+        <li class="mt_tooltip-wrapper">
             <p>Top Right</p>
             <div class="mt_tooltip-tip  mt_tooltip-tip--bottom mt_tooltip-arrow--right">Once the submission period is over, we'll review all contributions and select our favorite images to be included in the story. <a href='/about/#section2'>Learn more</a>.</div>
         </li>
-        <li class="ico-open mt_tooltip-wrapper">
+        <li class="mt_tooltip-wrapper">
             <p>Bottom</p>
             <div class="mt_tooltip-tip mt_tooltip-tip--top">Everyone’s welcome to contribute their best shot to open assignments.  <a href='/about/#section2'>Learn more</a>.</div>
         </li>
-        <li class="ico-closed mt_tooltip-wrapper">
+        <li class="mt_tooltip-wrapper">
             <p>Bottom Left</p>
             <div class="mt_tooltip-tip mt_tooltip-tip--top mt_tooltip-arrow--left">Completed assignments—with our favorite photos included—will be published online. <a href='/about/#section1'>Learn more</a>.</div>
         </li>
-        <li class="ico-published mt_tooltip-wrapper">
+        <li class="mt_tooltip-wrapper">
             <p>Bottom Right</p>
             <div class="mt_tooltip-tip mt_tooltip-tip--top mt_tooltip-arrow--right">Once the submission period is over, we'll review all contributions and select our favorite images to be included in the story. <a href='/about/#section2'>Learn more</a>.</div>
         </li>
     </ul>
 </div>
-
-*/
-
-/*
-Tooltips:
-
-CSS-only implementation of tooltips.  Installed as part of the main
-Desktop CSS file.  To activate:
-
-- Place the class "mt_tooltip-wrapper" on the element that you want serve as
-  the trigger.  This element should serve as the parent.
-
-- Place your contents somewhere inside the mt_tooltip-wrapper element with the
-  class "tooltip <<direction>>" where direction = where the callout triangle
-  should appear.  Ex:  class="tooltip bottom".  Direction is optonal, see notes below.
-
-
-NOTES:
-- Current directions for the callout triangle are:
-  - None (default - just use "tooltip" class by itself)
-  - top (places callout triangle in the center)
-  - top-left
-  - top-right
-  - bottom (places callout triangle in the center)
-  - bottom-left
-  - bottom-right
-
-- There wasn't much of a need for callout triangles on the left/right side,
-  but can easily be added.
+```
 */
 
 .mt_tooltip-wrapper {
@@ -73,14 +46,11 @@ NOTES:
 .mt_tooltip-tip {
     @extend %mt_font-alternate;
 
-    background: $mt_color-basic;
-    border: 1px solid $mt_color-basic-alt;
+    background-color: $mt_color-lowlight;
     border-radius: .4em;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-    color: $mt_color-beta;
+    box-shadow: 0 0 .25em .25em transparentize($mt_color-beta, .95);
     display: none;
     font-size: .9rem;
-    height: auto;
     left: 50%;
     min-width: 12rem;
     padding: $mt_padding-half;
@@ -97,14 +67,6 @@ NOTES:
     }
 
     /* Callout Triangles - Base */
-    &:before {
-        border: .8em solid transparent;
-        bottom: 5px;
-        content: " ";
-        display: block;
-        position: absolute;
-    }
-
     &:after {
         border: .8em solid transparent;
         content: "";
@@ -119,14 +81,8 @@ NOTES:
 .mt_tooltip-tip--top {
     top: 105%;
 
-    &:before {
-        border-bottom: 10px solid $mt_color-basic-alt;
-        bottom: 100%;
-        left: 45%;
-    }
-
     &:after {
-        border-bottom: 10px solid $mt_color-basic;
+        border-bottom: 10px solid $mt_color-lowlight;
         left: 45%;
         top: -20px;
     }
@@ -135,37 +91,18 @@ NOTES:
 .mt_tooltip-tip--bottom {
     bottom: 105%;
 
-    &:before {
-        border-top: 10px solid $mt_color-basic-alt;
-        bottom: -21px;
-        left: 45%;
-    }
-
     &:after {
-        border-top: 10px solid $mt_color-basic;
+        border-top: 10px solid $mt_color-lowlight;
         bottom: -20px;
         left: 45%;
     }
 }
 
-.mt_tooltip-arrow--left {
-    &:before {
-        left: 5%;
-    }
-
-    &:after {
-        left: 5%;
-    }
+.mt_tooltip-arrow--left:after {
+    left: 5%;
 }
 
-.mt_tooltip-arrow--right {
-    &:before {
-        left: auto;
-        right: 5%;
-    }
-
-    &:after {
-        left: auto;
-        right: 5%;
-    }
+.mt_tooltip-arrow--right:after {
+    left: auto;
+    right: 5%;
 }
