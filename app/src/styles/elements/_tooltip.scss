@@ -8,32 +8,26 @@ category: Elements
 <div class="icons">
     <ul>
         <li class="ico-open mt_tooltip-wrapper">
-            <div class="ico"></div>
             <p>Top</p>
             <div class="mt_tooltip-tip mt_tooltip-tip--bottom">Everyone’s welcome to contribute their best shot to open assignments.  <a href='/about/#section2'>Learn more</a>.</div>
         </li>
         <li class="ico-closed mt_tooltip-wrapper">
-            <div class="ico"></div>
             <p>Top left</p>
             <div class="mt_tooltip-tip mt_tooltip-tip--bottom mt_tooltip-arrow--left">Completed assignments—with our favorite photos included—will be published online. <a href='/about/#section1'>Learn more</a>.</div>
         </li>
         <li class="ico-published mt_tooltip-wrapper">
-            <div class="ico"></div>
             <p>Top Right</p>
             <div class="mt_tooltip-tip  mt_tooltip-tip--bottom mt_tooltip-arrow--right">Once the submission period is over, we'll review all contributions and select our favorite images to be included in the story. <a href='/about/#section2'>Learn more</a>.</div>
         </li>
         <li class="ico-open mt_tooltip-wrapper">
-            <div class="ico"></div>
             <p>Bottom</p>
             <div class="mt_tooltip-tip mt_tooltip-tip--top">Everyone’s welcome to contribute their best shot to open assignments.  <a href='/about/#section2'>Learn more</a>.</div>
         </li>
         <li class="ico-closed mt_tooltip-wrapper">
-            <div class="ico"></div>
             <p>Bottom Left</p>
             <div class="mt_tooltip-tip mt_tooltip-tip--top mt_tooltip-arrow--left">Completed assignments—with our favorite photos included—will be published online. <a href='/about/#section1'>Learn more</a>.</div>
         </li>
         <li class="ico-published mt_tooltip-wrapper">
-            <div class="ico"></div>
             <p>Bottom Right</p>
             <div class="mt_tooltip-tip mt_tooltip-tip--top mt_tooltip-arrow--right">Once the submission period is over, we'll review all contributions and select our favorite images to be included in the story. <a href='/about/#section2'>Learn more</a>.</div>
         </li>
@@ -48,10 +42,10 @@ Tooltips:
 CSS-only implementation of tooltips.  Installed as part of the main
 Desktop CSS file.  To activate:
 
-- Place the class "tooltip-wrapper" on the element that you want serve as
+- Place the class "mt_tooltip-wrapper" on the element that you want serve as
   the trigger.  This element should serve as the parent.
 
-- Place your contents somewhere inside the tooltip-wrapper element with the
+- Place your contents somewhere inside the mt_tooltip-wrapper element with the
   class "tooltip <<direction>>" where direction = where the callout triangle
   should appear.  Ex:  class="tooltip bottom".  Direction is optonal, see notes below.
 
