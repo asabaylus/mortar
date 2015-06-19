@@ -1,0 +1,108 @@
+/*doc
+---
+title: Tooltips
+name: tooltips
+category: Elements
+---
+
+```html_example
+<div class="icons">
+    <ul>
+        <li class="mt_tooltip-wrapper">
+            <p>Top</p>
+            <div class="mt_tooltip-tip mt_tooltip-tip--bottom mt_backgroundlowlight">Everyone’s welcome to contribute their best shot to open assignments.  <a href='/about/#section2'>Learn more</a>.</div>
+        </li>
+        <li class="mt_tooltip-wrapper">
+            <p>Top left</p>
+            <div class="mt_tooltip-tip mt_tooltip-tip--bottom mt_tooltip-arrow--left">Completed assignments—with our favorite photos included—will be published online. <a href='/about/#section1'>Learn more</a>.</div>
+        </li>
+        <li class="mt_tooltip-wrapper">
+            <p>Top Right</p>
+            <div class="mt_tooltip-tip  mt_tooltip-tip--bottom mt_tooltip-arrow--right">Once the submission period is over, we'll review all contributions and select our favorite images to be included in the story. <a href='/about/#section2'>Learn more</a>.</div>
+        </li>
+        <li class="mt_tooltip-wrapper">
+            <p>Bottom</p>
+            <div class="mt_tooltip-tip mt_tooltip-tip--top">Everyone’s welcome to contribute their best shot to open assignments.  <a href='/about/#section2'>Learn more</a>.</div>
+        </li>
+        <li class="mt_tooltip-wrapper">
+            <p>Bottom Left</p>
+            <div class="mt_tooltip-tip mt_tooltip-tip--top mt_tooltip-arrow--left">Completed assignments—with our favorite photos included—will be published online. <a href='/about/#section1'>Learn more</a>.</div>
+        </li>
+        <li class="mt_tooltip-wrapper">
+            <p>Bottom Right</p>
+            <div class="mt_tooltip-tip mt_tooltip-tip--top mt_tooltip-arrow--right">Once the submission period is over, we'll review all contributions and select our favorite images to be included in the story. <a href='/about/#section2'>Learn more</a>.</div>
+        </li>
+    </ul>
+</div>
+```
+*/
+
+.mt_tooltip-wrapper {
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+}
+
+.mt_tooltip-tip {
+    @extend %mt_font-alternate;
+
+    background-color: $mt_color-lowlight;
+    border-radius: .4em;
+    box-shadow: 0 0 .25em .25em transparentize($mt_color-beta, .95);
+    display: none;
+    font-size: .9rem;
+    left: 50%;
+    min-width: 12rem;
+    padding: $mt_padding-half;
+    pointer-events: none;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: all .25s ease-out;
+    width: auto;
+    z-index: 100;
+
+    .mt_tooltip-wrapper:hover & {
+        display: block;
+        pointer-events: auto;
+    }
+
+    /* Callout Triangles - Base */
+    &:after {
+        border: .8em solid transparent;
+        content: "";
+        height: 0;
+        position: absolute;
+        width: 0;
+    }
+}
+
+/***** Callout Triangles - Top *****/
+
+.mt_tooltip-tip--top {
+    top: 105%;
+
+    &:after {
+        border-bottom: 10px solid $mt_color-lowlight;
+        left: 45%;
+        top: -20px;
+    }
+}
+
+.mt_tooltip-tip--bottom {
+    bottom: 105%;
+
+    &:after {
+        border-top: 10px solid $mt_color-lowlight;
+        bottom: -20px;
+        left: 45%;
+    }
+}
+
+.mt_tooltip-arrow--left:after {
+    left: 5%;
+}
+
+.mt_tooltip-arrow--right:after {
+    left: auto;
+    right: 5%;
+}
