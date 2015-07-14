@@ -6,10 +6,6 @@
 
 // typography
 
-$type-default: "pragmatica-web", "Helvetica Neue", Helvetica, "nimbus sans", Arial, sans-serif;
-$type-buttons: "Chronicle Deck 6i", Georgia, Times, "Times New Roman", serif;
-$type-chronicle-ssmi: "Chronicle SSm 6i", Georgia, Times, "Times New Roman", serif;
-
 $base-font-size: 16px;
 
 $font-sm: 0.75em;
@@ -68,7 +64,7 @@ $icongs-check: "\2713";
 
 .op_btn {
     line-height: 24px;
-    font-family: $type-buttons;
+    font-family: $mt_font-serif-stack;
     font-style: italic;
     font-weight: 300;
     text-transform: uppercase;
@@ -79,12 +75,12 @@ $icongs-check: "\2713";
 }
 
 .op_check {
-    font-family: $type-default;
+    font-family: $mt_font-sans;
 }
 
 .op_links {
     border-bottom: none;
-    font-family: $type-default;
+    font-family: $mt_font-sans;
     &:visited {
         border-bottom: none;
     }
@@ -116,7 +112,7 @@ $icongs-check: "\2713";
 }
 
 .mt_strong-italic {
-    font-family: $type-chronicle-ssmi;
+    font-family: $mt_font-serif-stack-italic;
 }
 
 .mt_required {
