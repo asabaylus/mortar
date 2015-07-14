@@ -52,7 +52,7 @@ $icongs-check: "\2713";
 }
 
 .mt_line-separator {
-    border-bottom: 1px solid $gray-medium;
+    border-bottom: 1px solid $mt_color-beta;
     height: 11px;
 }
 
@@ -61,19 +61,19 @@ $icongs-check: "\2713";
 }
 
 .mt_color-gray-dark {
-    color: $gray-dark;
+    color: $mt_color-gamma;
 }
 
 .mt_background-gray-light {
-    background-color: $gray-light;
+    background-color: $mt_color-lowlight;
 }
 
 .mt_background-red-light {
-    background-color: $red-light;
+    background-color: $mt_color-danger-bg;
 }
 
 .mt_background-green-light {
-    background-color: $green-light;
+    background-color: $mt_color-success-bg;
 }
 
 .mt_strong-italic {
@@ -86,7 +86,7 @@ $icongs-check: "\2713";
         padding-left: 1.6em;
     }
     label:after {
-        color: $state-danger-text;
+        color: $mt_color-danger;
         content: "*";
         display: block;
         left: 0.7em;
@@ -101,7 +101,7 @@ $icongs-check: "\2713";
 }
 
 .mt_select-arrow {
-    color: $gray-medium;
+    color: $mt_color-gamma;
     right: 13px;
     position: absolute;
     top: 20px;
