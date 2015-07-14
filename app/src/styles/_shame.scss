@@ -1,2 +1,148 @@
 // Things with no home
 // ===================
+
+
+// Styles from Member Center
+
+// typography
+
+$type-default: "pragmatica-web", "Helvetica Neue", Helvetica, "nimbus sans", Arial, sans-serif;
+$type-buttons: "Chronicle Deck 6i", Georgia, Times, "Times New Roman", serif;
+$type-chronicle-ssmi: "Chronicle SSm 6i", Georgia, Times, "Times New Roman", serif;
+
+$base-font-size: 16px;
+
+$font-sm: 0.75em;
+$font-md: 0.8125em;
+$font-reg: 1em;
+$font-lrg: 1.25em;
+
+// Colors
+
+$state-danger-text: #D00000 !default;
+$state-good-text: #48B30C !default;
+$state-danger-bg: #F2DEDE !default;
+
+$blue-medium: #3c5b97;
+
+$gray-light: #F2F2F2;
+$gray-medium: #E0E0E0;
+$gray-dark: #666;
+
+$red-light: #FCEAE9;
+$green-light: #E9F7E7;
+
+$yellow-medium: #FFCC00;
+
+$icongs-check: "\2713";
+.icongs {
+    &.icongs-check:before {
+        content: $icongs-check;
+    }
+}
+
+.mt_bordergray {
+    border: 1px solid $gray-medium;
+}
+
+.mt_paddinghalf {
+    padding: 1em;
+}
+
+.mt_btn--facebook {
+    background-color: $blue-medium;
+    color: white;
+    padding: 0;
+}
+
+.mt_col-5-half {
+    float: left;
+    position: relative;
+    width: 40%;
+}
+
+.mt_col-margin-5 {
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.op_btn {
+    line-height: 24px;
+    font-family: $type-buttons;
+    font-style: italic;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.op_font-bold {
+    font-weight: 600;
+}
+
+.op_check {
+    font-family: $type-default;
+}
+
+.op_links {
+    border-bottom: none;
+    font-family: $type-default;
+    &:visited {
+        border-bottom: none;
+    }
+}
+
+.mt_line-separator {
+    border-bottom: 1px solid $gray-medium;
+    height: 11px;
+}
+
+.mt_label {
+    margin: 0.359375em 0;
+}
+
+.mt_color-gray-dark {
+    color: $gray-dark;
+}
+
+.mt_background-gray-light {
+    background-color: $gray-light;
+}
+
+.mt_background-red-light {
+    background-color: $red-light;
+}
+
+.mt_background-green-light {
+    background-color: $green-light;
+}
+
+.mt_strong-italic {
+    font-family: $type-chronicle-ssmi;
+}
+
+.mt_required {
+    position: relative;
+    .input-form {
+        padding-left: 1.6em;
+    }
+    label:after {
+        color: $state-danger-text;
+        content: "*";
+        display: block;
+        left: 0.7em;
+        position: absolute;
+        top: 1.2em;
+    }
+}
+
+.mt_select {
+    display: inline;
+    position: relative;
+}
+
+.mt_select-arrow {
+    color: $gray-medium;
+    right: 13px;
+    position: absolute;
+    top: 20px;
+    z-index: -1;
+}
