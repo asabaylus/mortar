@@ -74,6 +74,10 @@ $mt_btn-colors: (
         padding: 0;
     }
 
+    &--border {
+        border: $mt_border-default;
+    }
+
     &--facebook {
         background-color: $mt_color-facebook;
         color: $mt_color-basic;
