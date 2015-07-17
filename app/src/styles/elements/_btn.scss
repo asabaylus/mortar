@@ -42,6 +42,7 @@ $mt_btn-colors: (
     &:hover {
         background-color: lighten($color, 10);
         color: lighten(mt_btn-text-color($color), 10);
+        cursor: pointer;
     }
 }
 
