@@ -1,4 +1,4 @@
-@mixin form-control-validation($text-color: #555, $border-color: #ccc, $background-color: #f5f5f5) {
+@mixin form-control-validation($text-color: $mt_color-gamma, $border-color: $mt_border-default, $background-color: $mt_color-basic-alt) {
     // Color the label and help text
     .mt_help-block,
     .mt_radio,
