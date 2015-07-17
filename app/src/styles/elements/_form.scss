@@ -1,3 +1,24 @@
+/*doc
+---
+title: HTML5 Styled Inputs
+name: html5StyledInputs
+category: Elements
+---
+
+<form>
+    <fieldset>
+        <div class="field-container">
+            <label for="generic">Styled Input</label>
+            <input id="generic" name="generic" class="mt_paddinghalf mt_input--form input-generic" placeholder="I am an input!" autofocus="">
+        </div>
+        <div class="field-container">
+            <label for="styledEmail">Styled Email Input</label>
+            <input id="styledEmail" type="email" name="styledEmail" class="mt_paddinghalf mt_input--form input-email" placeholder="Email Address" autofocus="">
+        </div>
+    </fieldset>
+</form>
+*/
+
 .mt_input--form {
     background-color: white;
     border: 1px solid $mt_color-lowlight;
