@@ -10,6 +10,10 @@
 
 @import "global/functions/yiq";
 
+// Global Mixins
+
+@import "global/mixins/mixin";
+
 // Various Resets/Bases
 
 @import "libs/fluidity/sass/fluidity";
@@ -44,6 +48,7 @@
 // Elements
 
 @import "elements/btn";
+@import "elements/form";
 @import "elements/intratio";
 @import "elements/tooltip";
 
