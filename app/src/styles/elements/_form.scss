@@ -1,4 +1,4 @@
-.mt_input-form {
+.mt_input--form {
     background-color: white;
     border: 1px solid $mt_color-lowlight;
     color: $mt_color-gamma;
@@ -6,23 +6,25 @@
     font-style: normal;
     font-weight: 300;
     outline: none;
-    @include input-placeholder {
+
+    @include mt_input--placeholder {
         color: $mt_color-lowlight;
     }
 
-    @include input-autofill {
+    @include mt_input--autofill {
         box-shadow: 0 0 0 1000px white inset;
     }
 
     &:disabled {
         background-color: $mt_color-lowlight;
     }
+
     &:focus {
         border: 1px solid $mt_color-gamma;
     }
 }
 
-.mt_input-select {
+.mt_input--select {
     background-color: transparent;
     width: 100%;
 }
