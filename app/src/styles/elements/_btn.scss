@@ -42,7 +42,6 @@ $mt_btn-colors: (
     &:hover {
         background-color: lighten($color, 10);
         color: lighten(mt_btn-text-color($color), 10);
-        cursor: pointer;
     }
 }
 
@@ -83,6 +82,14 @@ $mt_btn-colors: (
         background-color: $mt_color-facebook;
         color: $mt_color-basic;
         padding: 0;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &--disabled:hover {
+        cursor: default;
     }
 
     // This rule set must be last
