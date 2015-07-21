@@ -10,10 +10,6 @@
 
 @import "global/functions/yiq";
 
-// Global Mixins
-
-@import "global/mixins/mixin";
-
 // Various Resets/Bases
 
 @import "libs/fluidity/sass/fluidity";
@@ -31,14 +27,13 @@
 @import "typography/caption";
 @import "typography/headings";
 @import "typography/tag";
-@import "typography/textinverse";
 
 // Theme
 
 @import "theme/backgrounds";
-@import "theme/colors";
 @import "theme/outlines";
 @import "theme/padding";
+@import "theme/textcolors";
 
 // Helpers
 
