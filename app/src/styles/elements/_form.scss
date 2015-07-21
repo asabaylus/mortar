@@ -28,14 +28,6 @@ category: Elements
     font-weight: 300;
     outline: none;
 
-    @include mt_input--placeholder {
-        color: $mt_color-lowlight;
-    }
-
-    @include mt_input--autofill {
-        box-shadow: 0 0 0 1000px white inset;
-    }
-
     &:disabled {
         background-color: $mt_color-lowlight;
     }
@@ -43,6 +35,14 @@ category: Elements
     &:focus {
         border: 1px solid $mt_color-gamma;
     }
+}
+
+.mt_autofill {
+    box-shadow: 0 0 0 1000px white inset;;
+}
+
+.mt_input--autofill {
+    box-shadow: 0 0 0 1000px white inset;
 }
 
 .mt_input--select {
