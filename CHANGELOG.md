@@ -1,3 +1,10 @@
+## 1.1.0
+
+Features:
+
+- loading spinner
+- tooltips
+
 ## 1.0.3
 
 Bugfixes:
