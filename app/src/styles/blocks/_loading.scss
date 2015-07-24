@@ -28,7 +28,7 @@ $mt_loadingthickness-md: $mt_loadingthickness-sm * 2;
 $mt_loadingsize-lg: $mt_loadingsize-sm * 3;
 $mt_loadingthickness-lg: $mt_loadingthickness-sm * 3;
 
-$mt_loadinganimationduration: .6s;
+$mt_loadinganimationduration: 1s;
 
 @keyframes mt_spinner-rotation {
     from {transform: rotate(0deg);}
@@ -81,7 +81,7 @@ $mt_loadinganimationduration: .6s;
 
     .mt_loading-ellipsis {
         &:nth-child(#{$i}) {
-            animation: mt_ellipsis-#{$i} $mt_loadinganimationduration*3 infinite linear;
+            animation: mt_ellipsis-#{$i} $mt_loadinganimationduration*2 infinite linear;
         }
     }
 }
