@@ -27,7 +27,7 @@
 @import "typography/caption";
 @import "typography/headings";
 @import "typography/tag";
-@import "typography/textinverse";
+@import "typography/textcolors";
 
 // Theme
 
@@ -44,11 +44,13 @@
 
 @import "elements/btn";
 @import "elements/intratio";
+@import "elements/tooltip";
 
 // Blocks
 
 @import "blocks/headlinedeck";
 @import "blocks/headlineonimage";
+@import "blocks/loading";
 @import "blocks/related";
 @import "blocks/social";
 

@@ -1,0 +1,87 @@
+/*doc
+---
+title: Loading Animation
+name: loadingAnimation
+category: Blocks
+---
+
+```html_example
+<div class="mt_loading-container">
+    <span class="mt_loading-spinner"></span>
+    <p class="mt_subh4 mt_textbeta">LOADING<span class="mt_loading-ellipsis">.</span><span class="mt_loading-ellipsis">.</span><span class="mt_loading-ellipsis">.</span></p>
+</div>
+<div class="mt_loading-container">
+    <span class="mt_loading-spinner mt_loading-spinner--md"></span>
+    <p class="mt_subh4 mt_textbeta">WAITING<span class="mt_loading-ellipsis">.</span><span class="mt_loading-ellipsis">.</span><span class="mt_loading-ellipsis">.</span></p>
+</div>
+<div class="mt_loading-container">
+    <span class="mt_loading-spinner mt_loading-spinner--lg"></span>
+    <p class="mt_subh1 mt_textbeta">HOLD ON<span class="mt_loading-ellipsis">.</span><span class="mt_loading-ellipsis">.</span><span class="mt_loading-ellipsis">.</span></p>
+</div>
+```
+*/
+
+$mt_loadingsize-sm: $mt_unit;
+$mt_loadingthickness-sm: $mt_unit / 3;
+$mt_loadingsize-md: $mt_loadingsize-sm * 2;
+$mt_loadingthickness-md: $mt_loadingthickness-sm * 2;
+$mt_loadingsize-lg: $mt_loadingsize-sm * 3;
+$mt_loadingthickness-lg: $mt_loadingthickness-sm * 3;
+
+$mt_loadinganimationduration: 1s;
+
+@keyframes mt_spinner-rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(359deg);}
+}
+
+.mt_loading-spinner {
+    animation: mt_spinner-rotation $mt_loadinganimationduration infinite linear;
+    // scss-lint:disable SpaceAfterPropertyColon, TrailingSemicolon
+    border-color:
+        transparentize($mt_color-beta, .9)
+        transparentize($brand-gold, .6)
+        transparentize($brand-gold, .4)
+        transparentize($brand-gold, .2)
+    ;
+    // scss-lint:enable SpaceAfterPropertyColon, TrailingSemicolon
+    border-radius: 100%;
+    border-style: solid;
+    border-width: $mt_loadingthickness-sm;
+    display: block;
+    height: $mt_loadingsize-sm;
+    margin: 0 auto;
+    position: relative;
+    width: $mt_loadingsize-sm;
+}
+
+.mt_loading-spinner--md {
+    border-width: $mt_loadingthickness-md;
+    height: $mt_loadingsize-md;
+    width: $mt_loadingsize-md;
+}
+
+.mt_loading-spinner--lg {
+    border-width: $mt_loadingthickness-lg;
+    height: $mt_loadingsize-lg;
+    width: $mt_loadingsize-lg;
+}
+
+.mt_loading-container {
+    text-align: center;
+}
+
+@for $i from 1 through 3 {
+    @keyframes mt_ellipsis-#{$i} {
+        0% {opacity: 0;}
+        #{$i * 25%} {opacity: 1;}
+        90% {opacity: 1;}
+        100% {opacity: 0;}
+    }
+
+    .mt_loading-ellipsis {
+        &:nth-child(#{$i}) {
+            animation: mt_ellipsis-#{$i} $mt_loadinganimationduration*2 infinite linear;
+        }
+    }
+}
