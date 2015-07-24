@@ -52,6 +52,7 @@ $icongs-remove: "\2212";
 $icongs-search: "\1f50d";
 $icongs-searchmenu: "\1f51f";
 $icongs-share: "\f11f";
+$icongs-tumblr: "\1d565";
 $icongs-tv: "\1f50e";
 $icongs-twitter: "\f122";
 $icongs-usermenu: "\1f512";
@@ -213,6 +214,9 @@ $icongs-youtube: "\f126";
 	}
 	&.icongs-share:before {
 		content: $icongs-share;
+	}
+	&.icongs-tumblr:before {
+		content: $icongs-tumblr;
 	}
 	&.icongs-tv:before {
 		content: $icongs-tv;

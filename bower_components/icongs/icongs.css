@@ -156,6 +156,9 @@
 .icongs.icongs-share:before {
   content: "";
 }
+.icongs.icongs-tumblr:before {
+  content: "𝕥";
+}
 .icongs.icongs-tv:before {
   content: "🔎";
 }
@@ -168,5 +171,3 @@
 .icongs.icongs-youtube:before {
   content: "";
 }
-
-/*# sourceMappingURL=icongs.css.map */

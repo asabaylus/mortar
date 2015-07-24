@@ -705,7 +705,7 @@ h1 i, .mt_h1 i, .mt-h1--alt i, h2 i, .mt_h2 i, .mt-h2--alt i, h3 i, .mt_h3 i, .m
   font-style: italic;
   font-weight: 300; }
 
-ol > li::before, .mt_subh3, .mt_byline, .mt_subh4, .mt_tag, figcaption, .mt_caption, .mt_subh5 {
+ol > li::before, .mt_subh3, .mt_byline, .mt_subh4, .mt_tag, figcaption, .mt_caption, .mt_subh5, .mt_tooltip-tip {
   font-family: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
   font-style: normal;
   font-weight: 300; }
@@ -972,6 +972,9 @@ category: Typography
   color: #999999;
   text-decoration: none; }
 
+.mt_textbeta {
+  color: #999999; }
+
 /*doc
 ---
 title: Backgrounds
@@ -1146,6 +1149,99 @@ Intrinsic ratios are a useful trick for helping interactives, flash videos, and 
 
 /*doc
 ---
+title: Tooltips
+name: tooltips
+category: Elements
+---
+
+```html_example
+<div class="icons">
+    <ul>
+        <li class="mt_tooltip-wrapper">
+            <p>Top</p>
+            <div class="mt_tooltip-tip mt_tooltip-tip--bottom mt_backgroundlowlight">Everyone’s welcome to contribute their best shot to open assignments.  <a href='/about/#section2'>Learn more</a>.</div>
+        </li>
+        <li class="mt_tooltip-wrapper">
+            <p>Top left</p>
+            <div class="mt_tooltip-tip mt_tooltip-tip--bottom mt_tooltip-arrow--left">Completed assignments—with our favorite photos included—will be published online. <a href='/about/#section1'>Learn more</a>.</div>
+        </li>
+        <li class="mt_tooltip-wrapper">
+            <p>Top Right</p>
+            <div class="mt_tooltip-tip  mt_tooltip-tip--bottom mt_tooltip-arrow--right">Once the submission period is over, we'll review all contributions and select our favorite images to be included in the story. <a href='/about/#section2'>Learn more</a>.</div>
+        </li>
+        <li class="mt_tooltip-wrapper">
+            <p>Bottom</p>
+            <div class="mt_tooltip-tip mt_tooltip-tip--top">Everyone’s welcome to contribute their best shot to open assignments.  <a href='/about/#section2'>Learn more</a>.</div>
+        </li>
+        <li class="mt_tooltip-wrapper">
+            <p>Bottom Left</p>
+            <div class="mt_tooltip-tip mt_tooltip-tip--top mt_tooltip-arrow--left">Completed assignments—with our favorite photos included—will be published online. <a href='/about/#section1'>Learn more</a>.</div>
+        </li>
+        <li class="mt_tooltip-wrapper">
+            <p>Bottom Right</p>
+            <div class="mt_tooltip-tip mt_tooltip-tip--top mt_tooltip-arrow--right">Once the submission period is over, we'll review all contributions and select our favorite images to be included in the story. <a href='/about/#section2'>Learn more</a>.</div>
+        </li>
+    </ul>
+</div>
+```
+*/
+.mt_tooltip-wrapper {
+  cursor: pointer;
+  position: relative;
+  text-align: center; }
+
+.mt_tooltip-tip {
+  background-color: #e6e6e6;
+  border-radius: .4em;
+  box-shadow: 0 0 .25em .25em rgba(153, 153, 153, 0.05);
+  display: none;
+  font-size: .9rem;
+  left: 50%;
+  min-width: 12rem;
+  padding: 0.71875em;
+  pointer-events: none;
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  transition: all .25s ease-out;
+  width: auto;
+  z-index: 100;
+  /* Callout Triangles - Base */ }
+  .mt_tooltip-wrapper:hover .mt_tooltip-tip {
+    display: block;
+    pointer-events: auto; }
+  .mt_tooltip-tip:after {
+    border: .8em solid transparent;
+    content: "";
+    height: 0;
+    position: absolute;
+    width: 0; }
+
+/***** Callout Triangles - Top *****/
+.mt_tooltip-tip--top {
+  top: 105%; }
+  .mt_tooltip-tip--top:after {
+    border-bottom: 10px solid #e6e6e6;
+    left: 45%;
+    top: -20px; }
+
+.mt_tooltip-tip--bottom {
+  bottom: 105%; }
+  .mt_tooltip-tip--bottom:after {
+    border-top: 10px solid #e6e6e6;
+    bottom: -20px;
+    left: 45%; }
+
+.mt_tooltip-arrow--left:after {
+  left: 5%; }
+
+.mt_tooltip-arrow--right:after {
+  left: auto;
+  right: 5%; }
+
+/*doc
+---
 title: Headline Deck
 name: headlineDeck
 category: Blocks
@@ -1207,6 +1303,161 @@ category: Blocks
 .mt_textonimage-textcontainer {
   position: relative;
   z-index: 20; }
+
+/*doc
+---
+title: Loading Animation
+name: loadingAnimation
+category: Blocks
+---
+
+```html_example
+<div class="mt_loading-container">
+    <span class="mt_loading-spinner"></span>
+    <p class="mt_subh4 mt_textbeta">LOADING<span class="mt_loading-ellipsis">.</span><span class="mt_loading-ellipsis">.</span><span class="mt_loading-ellipsis">.</span></p>
+</div>
+<div class="mt_loading-container">
+    <span class="mt_loading-spinner mt_loading-spinner--md"></span>
+    <p class="mt_subh4 mt_textbeta">WAITING<span class="mt_loading-ellipsis">.</span><span class="mt_loading-ellipsis">.</span><span class="mt_loading-ellipsis">.</span></p>
+</div>
+<div class="mt_loading-container">
+    <span class="mt_loading-spinner mt_loading-spinner--lg"></span>
+    <p class="mt_subh1 mt_textbeta">HOLD ON<span class="mt_loading-ellipsis">.</span><span class="mt_loading-ellipsis">.</span><span class="mt_loading-ellipsis">.</span></p>
+</div>
+```
+*/
+@-webkit-keyframes mt_spinner-rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg); } }
+@keyframes mt_spinner-rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg); } }
+
+.mt_loading-spinner {
+  -webkit-animation: mt_spinner-rotation 1s infinite linear;
+          animation: mt_spinner-rotation 1s infinite linear;
+  border-color: rgba(153, 153, 153, 0.1) rgba(255, 204, 0, 0.4) rgba(255, 204, 0, 0.6) rgba(255, 204, 0, 0.8);
+  border-radius: 100%;
+  border-style: solid;
+  border-width: 0.4791666667em;
+  display: block;
+  height: 1.4375em;
+  margin: 0 auto;
+  position: relative;
+  width: 1.4375em; }
+
+.mt_loading-spinner--md {
+  border-width: 0.9583333333em;
+  height: 2.875em;
+  width: 2.875em; }
+
+.mt_loading-spinner--lg {
+  border-width: 1.4375em;
+  height: 4.3125em;
+  width: 4.3125em; }
+
+.mt_loading-container {
+  text-align: center; }
+
+@-webkit-keyframes mt_ellipsis-1 {
+  0% {
+    opacity: 0; }
+
+  25% {
+    opacity: 1; }
+
+  90% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@keyframes mt_ellipsis-1 {
+  0% {
+    opacity: 0; }
+
+  25% {
+    opacity: 1; }
+
+  90% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+.mt_loading-ellipsis:nth-child(1) {
+  -webkit-animation: mt_ellipsis-1 2s infinite linear;
+          animation: mt_ellipsis-1 2s infinite linear; }
+
+@-webkit-keyframes mt_ellipsis-2 {
+  0% {
+    opacity: 0; }
+
+  50% {
+    opacity: 1; }
+
+  90% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@keyframes mt_ellipsis-2 {
+  0% {
+    opacity: 0; }
+
+  50% {
+    opacity: 1; }
+
+  90% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+.mt_loading-ellipsis:nth-child(2) {
+  -webkit-animation: mt_ellipsis-2 2s infinite linear;
+          animation: mt_ellipsis-2 2s infinite linear; }
+
+@-webkit-keyframes mt_ellipsis-3 {
+  0% {
+    opacity: 0; }
+
+  75% {
+    opacity: 1; }
+
+  90% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@keyframes mt_ellipsis-3 {
+  0% {
+    opacity: 0; }
+
+  75% {
+    opacity: 1; }
+
+  90% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+.mt_loading-ellipsis:nth-child(3) {
+  -webkit-animation: mt_ellipsis-3 2s infinite linear;
+          animation: mt_ellipsis-3 2s infinite linear; }
 
 /*doc
 ---
