@@ -4,6 +4,7 @@ Features:
 
 - loading spinner
 - tooltips
+- updated base form styles
 
 ## 1.0.3
 
