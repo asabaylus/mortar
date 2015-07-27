@@ -9,7 +9,9 @@ Button                                              | Class               | Desc
 --------------------------------------------------- | ------------------- | -----------
 <button class="mt_btn mt_btn--default">Default</button>   | `mt_btn mt_btn--default`  | This is what buttons look like, this is the go to button style.
 <button class="mt_btn mt_btn--primary">Primary</button>   | `mt_btn mt_btn--primary`  | Use this button as the primary call to action
+<button class="mt_btn mt_btn--primary mt_btn--border">Border</button> | `mt_btn mt_btn--border` | This button (very light) has a border!
 <button class="mt_btn mt_btn--danger">Delete</button>     | `mt_btn mt_btn--danger`   | This button is for delete actions, these actions should also have a confirmation dialog
+<button class="mt_btn mt_btn--facebook">Facebook</button> | `mt_btn mt_btn--facebook` | This is for when you need a Facebook button.
 <button class="mt_btn mt_btn--disabled">Disabled</button> | `mt_btn mt_btn--disabled` | I'm afraid I can't let you do that, yet.
 <button class="mt_btn--naked">Naked</button>           | `mt_btn--naked`        | When a button is semantically correct, but visually inapropriate
 
@@ -72,6 +74,23 @@ $mt_btn-colors: (
         border: 0;
         outline: none;
         padding: 0;
+    }
+
+    &--border {
+        border: $mt_border-default;
+    }
+
+    &--facebook {
+        background-color: $mt_color-facebook;
+        color: $mt_color-basic;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &--disabled:hover {
+        cursor: default;
     }
 
     // This rule set must be last

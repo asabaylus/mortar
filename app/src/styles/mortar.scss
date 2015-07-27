@@ -27,13 +27,13 @@
 @import "typography/caption";
 @import "typography/headings";
 @import "typography/tag";
-@import "typography/textcolors";
 
 // Theme
 
 @import "theme/backgrounds";
 @import "theme/outlines";
 @import "theme/padding";
+@import "theme/textcolors";
 
 // Helpers
 
@@ -43,6 +43,7 @@
 // Elements
 
 @import "elements/btn";
+@import "elements/form";
 @import "elements/intratio";
 @import "elements/tooltip";
 
