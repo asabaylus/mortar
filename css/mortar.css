@@ -305,7 +305,7 @@ input[type="color"] {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid #e6e6e6;
+  border: 1px solid #e0e0e0;
   margin: 0 2px;
   padding: .35em .625em .75em; }
 
@@ -477,7 +477,7 @@ table {
   margin-bottom: 1.4375em; }
 
 td, th {
-  border: 1px solid #e6e6e6;
+  border: 1px solid #e0e0e0;
   padding: 0.71875em; }
 
 html {
@@ -661,16 +661,18 @@ category: Blocks
 </figure>
 */
 input, textarea {
-  border: 1px solid black;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  color: #666666;
   margin: 0;
-  padding: 0.359375em 0.71875em; }
+  padding: 0.71875em; }
 
 html {
   font-family: "Chronicle SSm 3r", Georgia, Times, "Times New Roman", serif;
   font-style: normal;
   font-weight: 300; }
 
-i, em, input, textarea {
+i, em {
   font-family: "Chronicle SSm 3i", Georgia, Times, "Times New Roman", serif;
   font-style: italic;
   font-weight: 300; }
@@ -705,7 +707,7 @@ h1 i, .mt_h1 i, .mt-h1--alt i, h2 i, .mt_h2 i, .mt-h2--alt i, h3 i, .mt_h3 i, .m
   font-style: italic;
   font-weight: 300; }
 
-ol > li::before, .mt_subh3, .mt_byline, .mt_subh4, .mt_tag, figcaption, .mt_caption, .mt_subh5, .mt_tooltip-tip {
+ol > li::before, input, textarea, .mt_subh3, .mt_byline, .mt_subh4, .mt_tag, figcaption, .mt_caption, .mt_subh5, .mt_tooltip-tip {
   font-family: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
   font-style: normal;
   font-weight: 300; }
@@ -906,13 +908,13 @@ parent: headings
     text-decoration: none; }
 
 .mt_headinginverse {
-  color: #f7f7f7;
+  color: #f2f2f2;
   text-decoration: none; }
   .mt_headinginverse:hover, .mt_headinginverse:focus, .mt_headinginverse:active {
-    color: #f7f7f7;
+    color: #f2f2f2;
     text-decoration: underline; }
   .mt_headinginverse:visited {
-    color: #f7f7f7;
+    color: #f2f2f2;
     text-decoration: none; }
 
 .mt_h1--alt, .mt_h2--alt, .mt_h3--alt, .mt_h4--alt, .mt_h5--alt {
@@ -948,32 +950,10 @@ category: Typography
 
 */
 .mt_tag {
-  border: 1px solid #e6e6e6;
+  border: 1px solid #e0e0e0;
   display: inline-block;
   padding: 0.71875em;
   text-transform: uppercase; }
-
-.mt_textinverse {
-  color: #f7f7f7; }
-  .mt_textinverse a, .mt_textinverse a:visited {
-    color: #f7f7f7;
-    text-decoration: none; }
-  .mt_textinverse a:hover, .mt_textinverse a:focus, .mt_textinverse a:active {
-    border-bottom: 1px solid #999999;
-    color: #999999;
-    text-decoration: none; }
-
-.mt_headinginverse, .mt_headinginverse:visited {
-  border-bottom: 0;
-  color: #f7f7f7;
-  text-decoration: none; }
-.mt_headinginverse:hover, .mt_headinginverse:focus, .mt_headinginverse:active {
-  border-bottom: 0;
-  color: #999999;
-  text-decoration: none; }
-
-.mt_textbeta {
-  color: #999999; }
 
 /*doc
 ---
@@ -998,7 +978,7 @@ category: Theme
   background-color: #ffcc00; }
 
 .mt_backgroundlowlight {
-  background-color: #e6e6e6; }
+  background-color: #e0e0e0; }
 
 /*doc
 ---
@@ -1013,13 +993,53 @@ category: Theme
 ```
 */
 .mt_border--default {
-  border: 1px solid #e6e6e6; }
+  border: 1px solid #e0e0e0; }
 
 .mt_border--inverse {
   border: 1px solid black; }
 
 .mt_paddingdefault {
   padding: 1.4375em; }
+
+.mt_paddinghalf {
+  padding: 0.71875em; }
+
+/*doc
+---
+title: Colors
+name: colors
+category: Theme
+---
+```html_example
+<div class="mt_textinverse">Text Color Gamma</div>
+<div class="mt_textgamma">Text Color Gamma</div>
+```
+
+*/
+.mt_textgamma {
+  color: #666666; }
+
+.mt_textinverse {
+  color: #f2f2f2; }
+  .mt_textinverse a, .mt_textinverse a:visited {
+    color: #f2f2f2;
+    text-decoration: none; }
+  .mt_textinverse a:hover, .mt_textinverse a:focus, .mt_textinverse a:active {
+    border-bottom: 1px solid #999999;
+    color: #999999;
+    text-decoration: none; }
+
+.mt_headinginverse, .mt_headinginverse:visited {
+  border-bottom: 0;
+  color: #f2f2f2;
+  text-decoration: none; }
+.mt_headinginverse:hover, .mt_headinginverse:focus, .mt_headinginverse:active {
+  border-bottom: 0;
+  color: #999999;
+  text-decoration: none; }
+
+.mt_textbeta {
+  color: #999999; }
 
 .mt_cf:before, .mt_row:before, .mt_cf:after, .mt_row:after {
   content: " ";
@@ -1066,7 +1086,9 @@ Button                                              | Class               | Desc
 --------------------------------------------------- | ------------------- | -----------
 <button class="mt_btn mt_btn--default">Default</button>   | `mt_btn mt_btn--default`  | This is what buttons look like, this is the go to button style.
 <button class="mt_btn mt_btn--primary">Primary</button>   | `mt_btn mt_btn--primary`  | Use this button as the primary call to action
+<button class="mt_btn mt_btn--primary mt_btn--border">Border</button> | `mt_btn mt_btn--border` | This button (very light) has a border!
 <button class="mt_btn mt_btn--danger">Delete</button>     | `mt_btn mt_btn--danger`   | This button is for delete actions, these actions should also have a confirmation dialog
+<button class="mt_btn mt_btn--facebook">Facebook</button> | `mt_btn mt_btn--facebook` | This is for when you need a Facebook button.
 <button class="mt_btn mt_btn--disabled">Disabled</button> | `mt_btn mt_btn--disabled` | I'm afraid I can't let you do that, yet.
 <button class="mt_btn--naked">Naked</button>           | `mt_btn--naked`        | When a button is semantically correct, but visually inapropriate
 
@@ -1080,7 +1102,7 @@ Button                                              | Class               | Desc
   text-align: center; }
   .mt_btn--default {
     background-color: #282e5c;
-    color: #f7f7f7; }
+    color: #f2f2f2; }
     .mt_btn--default:hover {
       background-color: #384080;
       color: white; }
@@ -1091,20 +1113,61 @@ Button                                              | Class               | Desc
       background-color: #ffd633;
       color: #1a1a1a; }
   .mt_btn--danger {
-    background-color: #cc0000;
-    color: #f7f7f7; }
+    background-color: #d10000;
+    color: #f2f2f2; }
     .mt_btn--danger:hover {
-      background-color: red;
+      background-color: #ff0505;
       color: white; }
   .mt_btn--naked {
     background-color: transparent;
     border: 0;
     outline: none;
     padding: 0; }
+  .mt_btn--border {
+    border: 1px solid #e0e0e0; }
+  .mt_btn--facebook {
+    background-color: #3c5a96;
+    color: white; }
+  .mt_btn:hover {
+    cursor: pointer; }
+  .mt_btn--disabled:hover {
+    cursor: default; }
   .mt_btn:active {
     box-shadow: none;
     position: relative;
     top: 0.2em; }
+
+/*doc
+---
+title: Input Variations
+name: input variations
+category: Elements
+---
+
+<form>
+    <fieldset>
+        <div>
+            <label for="styledEmail">Normal input</label>
+            <input id="styledEmail" type="email" name="styledEmail" class="mt_input--form" placeholder="Email Address" autofocus="">
+        </div>
+        <div class="mt_input-container--error">
+            <label for="generic">Input with error</label>
+            <input id="generic" name="generic" class="mt_input--form" placeholder="I am an input!" autofocus="">
+        </div>
+    </fieldset>
+</form>
+*/
+.mt_input-container--error > label {
+  color: #d10000;
+  font-weight: bolder; }
+.mt_input-container--error > input {
+  border-color: #d10000;
+  color: #d10000;
+  font-weight: bolder; }
+
+.mt_input--select {
+  background-color: transparent;
+  width: 100%; }
 
 /*doc
 ---
@@ -1191,7 +1254,7 @@ category: Elements
   text-align: center; }
 
 .mt_tooltip-tip {
-  background-color: #e6e6e6;
+  background-color: #e0e0e0;
   border-radius: .4em;
   box-shadow: 0 0 .25em .25em rgba(153, 153, 153, 0.05);
   display: none;
@@ -1222,14 +1285,14 @@ category: Elements
 .mt_tooltip-tip--top {
   top: 105%; }
   .mt_tooltip-tip--top:after {
-    border-bottom: 10px solid #e6e6e6;
+    border-bottom: 10px solid #e0e0e0;
     left: 45%;
     top: -20px; }
 
 .mt_tooltip-tip--bottom {
   bottom: 105%; }
   .mt_tooltip-tip--bottom:after {
-    border-top: 10px solid #e6e6e6;
+    border-top: 10px solid #e0e0e0;
     bottom: -20px;
     left: 45%; }
 

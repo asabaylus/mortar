@@ -47,6 +47,8 @@
                 
                     <li class="mt_headingwithlink"><a href="#htmlfiveinputs">HTML5 Inputs</a></li>
                 
+                    <li class="mt_headingwithlink"><a href="#input variations">Input Variations</a></li>
+                
                     <li class="mt_headingwithlink"><a href="#intratio">Intrinsic Ratios</a></li>
                 
                     <li class="mt_headingwithlink"><a href="#radiobuttons">Radio Buttons</a></li>
@@ -79,9 +81,19 @@
 <td>Use this button as the primary call to action</td>
 </tr>
 <tr>
+<td><button class="mt_btn mt_btn--primary mt_btn--border">Border</button></td>
+<td><code>mt_btn mt_btn--border</code></td>
+<td>This button (very light) has a border!</td>
+</tr>
+<tr>
 <td><button class="mt_btn mt_btn--danger">Delete</button></td>
 <td><code>mt_btn mt_btn--danger</code></td>
 <td>This button is for delete actions, these actions should also have a confirmation dialog</td>
+</tr>
+<tr>
+<td><button class="mt_btn mt_btn--facebook">Facebook</button></td>
+<td><code>mt_btn mt_btn--facebook</code></td>
+<td>This is for when you need a Facebook button.</td>
 </tr>
 <tr>
 <td><button class="mt_btn mt_btn--disabled">Disabled</button></td>
@@ -120,6 +132,21 @@
         <div class="field-container"><label for="idw">Week input</label> <input type="week" id="idw" value="1970-W01"></div>
         <div class="field-container"><label for="idt">Datetime input</label> <input type="datetime" id="idt" value="1970-01-01T00:00:00Z"></div>
         <div class="field-container"><label for="idtl">Datetime-local input</label> <input type="datetime-local" id="idtl" value="1970-01-01T00:00"></div>
+    </fieldset>
+</form>
+
+<h1 id="input variations">Input Variations</h1>
+
+<form>
+    <fieldset>
+        <div>
+            <label for="styledEmail">Normal input</label>
+            <input id="styledEmail" type="email" name="styledEmail" class="mt_input--form" placeholder="Email Address" autofocus="">
+        </div>
+        <div class="mt_input-container--error">
+            <label for="generic">Input with error</label>
+            <input id="generic" name="generic" class="mt_input--form" placeholder="I am an input!" autofocus="">
+        </div>
     </fieldset>
 </form>
 
