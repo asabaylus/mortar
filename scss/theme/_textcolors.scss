@@ -1,3 +1,20 @@
+/*doc
+---
+title: Colors
+name: colors
+category: Theme
+---
+```html_example
+<div class="mt_textinverse">Text Color Gamma</div>
+<div class="mt_textgamma">Text Color Gamma</div>
+```
+
+*/
+
+.mt_textgamma {
+    color: $mt_color-gamma;
+}
+
 .mt_textinverse {
     color: $mt_color-text-inverse;
 

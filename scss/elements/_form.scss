@@ -1,0 +1,38 @@
+/*doc
+---
+title: Input Variations
+name: input variations
+category: Elements
+---
+
+<form>
+    <fieldset>
+        <div>
+            <label for="styledEmail">Normal input</label>
+            <input id="styledEmail" type="email" name="styledEmail" class="mt_input--form" placeholder="Email Address" autofocus="">
+        </div>
+        <div class="mt_input-container--error">
+            <label for="generic">Input with error</label>
+            <input id="generic" name="generic" class="mt_input--form" placeholder="I am an input!" autofocus="">
+        </div>
+    </fieldset>
+</form>
+*/
+
+.mt_input-container--error {
+    > label {
+        color: $mt_color-danger;
+        font-weight: bolder;
+    }
+
+    > input {
+        border-color: $mt_color-danger;
+        color: $mt_color-danger;
+        font-weight: bolder;
+    }
+}
+
+.mt_input--select {
+    background-color: transparent;
+    width: 100%;
+}
