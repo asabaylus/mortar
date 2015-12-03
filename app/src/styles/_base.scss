@@ -19,17 +19,15 @@ html {
     box-sizing: inherit;
 }
 
-// Text highlighting color
+// Use default selection color
 // Remove text-shadow in selection highlight: h5bp.com/i
 // These selection rule sets have to be separate.
 
 ::-moz-selection {
-    background: $mt_color-highlight;
     text-shadow: none;
 }
 
 ::selection {
-    background: $mt_color-highlight;
     text-shadow: none;
 }
 
