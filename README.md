@@ -1,4 +1,3 @@
--Mortar
-=======
+# Mortar 2.0
 
-NGS foundational framework
+NGP foundational framework

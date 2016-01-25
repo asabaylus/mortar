@@ -1,0 +1,35 @@
+{
+  "name": "mortar",
+  "version": "2.0.0",
+  "description": "a living styleguide for National Geographic Partners",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natgeo/mortar.git"
+  },
+  "author": "Welch Canavan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/natgeo/mortar/issues"
+  },
+  "homepage": "https://github.com/natgeo/mortar#readme",
+  "dependencies": {
+    "babelify": "^7.2.0",
+    "browser-sync": "^2.11.1",
+    "browserify": "^13.0.0",
+    "del": "^2.2.0",
+    "eslint": "^1.10.3",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-sass": "^2.1.1",
+    "metalsmith": "^2.1.0",
+    "metalsmith-layouts": "^1.4.2",
+    "metalsmith-markdown": "^0.2.1",
+    "require-dir": "^0.3.0",
+    "swig": "^1.4.2",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
