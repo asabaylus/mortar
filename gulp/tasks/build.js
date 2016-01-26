@@ -9,10 +9,10 @@ var layouts = require('metalsmith-layouts');
 gulp.task('build', function() {
   Metalsmith('./')
   .source('./app/site')
-  .destination('./.tmp/')
+  .destination('./.tmp')
   .metadata({
-    "title": "Mortar",
-    "description": "A living styleguide for National Geographic Partners"
+    'title': 'Mortar',
+    'description': 'A living styleguide for National Geographic Partners'
   })
   .ignore('layouts')
   .use(markdown())

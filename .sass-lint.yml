@@ -1,0 +1,9 @@
+#########################
+## Sample Sass Lint File
+#########################
+# File Options
+options:
+  formatter: stylish
+
+rules:
+  property-sort-order: 2

@@ -4,7 +4,7 @@
   "description": "a living styleguide for National Geographic Partners",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
@@ -23,8 +23,10 @@
     "del": "^2.2.0",
     "eslint": "^1.10.3",
     "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
     "gulp-eslint": "^1.1.1",
     "gulp-sass": "^2.1.1",
+    "gulp-sass-lint": "^1.1.1",
     "metalsmith": "^2.1.0",
     "metalsmith-layouts": "^1.4.2",
     "metalsmith-markdown": "^0.2.1",
