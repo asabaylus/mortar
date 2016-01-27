@@ -16,6 +16,6 @@ gulp.task('serve', ['clean', 'build', 'sass'], function() {
   gulp.watch('app/site/**/*.{md,html}', ['build']);
 
   // since the wintersmith files aren't created in a gulp stream it appears
-  // gulp watch has trouble with them. thankfully browsersync's does not
+  // gulp watch has trouble with them. thankfully browsersync's watch does not
   bs.watch('.tmp/**/*.html').on('change', bs.reload);
 });

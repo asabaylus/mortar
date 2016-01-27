@@ -1,6 +1,9 @@
 $color-primary: #008000;
-$color-primary: #f00;
 
 body {
   color: $color-primary;
+}
+
+.thing {
+  transform: rotate(7.5deg);
 }
