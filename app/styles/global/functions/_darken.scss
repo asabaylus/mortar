@@ -1,0 +1,11 @@
+// Slightly darken a color
+// @access public
+// @param {Color} $color - color to shade
+// @param {Number} $percentage - percentage of `$color` in returned color
+// @return {Color}
+//
+// Source: https://css-tricks.com/snippets/sass/tint-shade-functions/
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}

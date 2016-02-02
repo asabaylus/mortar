@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var Metalsmith = require('metalsmith');
 var markdown = require('metalsmith-markdown');
 var layouts = require('metalsmith-layouts');
+var inPlace = require('metalsmith-in-place');
 
 // Static server
 gulp.task('build', function() {
@@ -20,6 +21,9 @@ gulp.task('build', function() {
     'engine': 'swig',
     'default': 'default.html',
     'directory': './app/site/layouts/'
+  }))
+  .use(inPlace({
+    'engine': 'swig'
   }))
   .build(function(err) {
     if (err) throw err;

@@ -1,0 +1,28 @@
+$color-primary: hsl(48, 100%, 50%);
+$color-affirmation: hsl(141, 100%, 39%);
+$color-danger: hsl(14, 100%, 50%);
+$color-neutral: hsl(0, 0%, 50%);
+
+$colors: (
+  primary: $color-primary,
+  affirmation: $color-affirmation,
+  danger: $color-danger,
+  neutral: $color-neutral
+);
+
+
+$social-colors: (
+  google-plus: #dc4e41,
+  facebook: #3b5998,
+  flickr: #ff0084,
+  instagram: #3f729b,
+  linkedin: #0077b5,
+  pinterest: #bd081c,
+  snapchat: #fffc00,
+  tumblr: #35465c,
+  twitter: #55acee,
+  vine: #00bf8f,
+  vimeo: #1ab7ea,
+  whatsapp: #43d854,
+  youtube: #b00
+);

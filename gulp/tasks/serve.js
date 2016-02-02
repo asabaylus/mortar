@@ -5,14 +5,14 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 // Static server
-gulp.task('serve', ['clean', 'build', 'sass'], function() {
+gulp.task('serve', ['clean', 'build', 'styles'], function() {
   bs.init({
     open: 'external',
     server: '.tmp',
     xip: true
   });
 
-  gulp.watch('app/styles/*.scss', ['sass']);
+  gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/site/**/*.{md,html}', ['build']);
 
   // since the wintersmith files aren't created in a gulp stream it appears

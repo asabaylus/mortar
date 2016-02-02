@@ -1,0 +1,81 @@
+@function change-tint($color, $tint) {
+  @if $tint < 100 {
+    @return lighten($color, percentage((100 - $tint) / 200));
+  } @else if $tint > 100 {
+    @return darken($color, percentage(($tint - 100) / 200));
+  }
+}
+
+
+
+.bg-color-primary {
+  background-color: $color-primary;
+
+  &--light {
+    background-color: lighten($color-primary, 20);
+  }
+
+  &--lighter {
+    background-color: lighten($color-primary, 30);
+  }
+
+  &--lighter-even {
+    background-color: lighten($color-primary, 40);
+  }
+
+  &--lightest {
+    background-color: lighten($color-primary, 45);
+  }
+}
+
+.bg-color-danger {
+  background-color: $color-danger;
+
+  &--darkest {
+    background-color: lighten($color-danger, 20);
+  }
+}
+
+.bg-color-affirmation {
+  background-color: $color-affirmation;
+
+  &--darkest {
+    background-color: lighten($color-affirmation, 20);
+  }
+}
+
+.bg-color-neutral {
+  background-color: $color-neutral;
+
+  &--darkest {
+    background-color: darken($color-neutral, 50);
+  }
+
+  &--darker {
+    background-color: darken($color-neutral, 40);
+  }
+
+  &--dark {
+    background-color: darken($color-neutral, 30);
+  }
+
+  &--light {
+    background-color: lighten($color-neutral, 20);
+  }
+
+  &--lighter {
+    background-color: lighten($color-neutral, 30);
+  }
+
+  &--lighter-even {
+    background-color: lighten($color-neutral, 40);
+  }
+
+  &--lighter-even-even {
+    background-color: lighten($color-neutral, 45);
+  }
+
+  &--lightest {
+    background-color: lighten($color-neutral, 50);
+  }
+}
