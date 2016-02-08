@@ -1,0 +1,32 @@
+.mt_col-gut-half {
+  padding-left: $mt_unit / 2;
+  padding-right: $mt_unit / 2;
+}
+
+@for $i from 1 through 4 {
+  .mt_col-gut-#{$i} {
+    padding-left: $mt_unit * $i;
+    padding-right: $mt_unit * $i;
+  }
+}
+
+@each $bp, $width in $layout-bps { // loop through breakpoints
+  @media #{ $width } {
+    .mt_col-#{$bp}-gut-half {
+      padding-left: $mt_unit / 2;
+      padding-right: $mt_unit / 2;
+    }
+
+    @for $i from 0 through 4 {
+      .mt_col-#{$bp}-gut-#{$i} {
+        @if $i < 1 {
+          padding-left: 0;
+          padding-right: 0;
+        } @else {
+          padding-left: $mt_unit * $i;
+          padding-right: $mt_unit * $i;
+        }
+      }
+    }
+  }
+}

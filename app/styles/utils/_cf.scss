@@ -1,0 +1,9 @@
+.mt_cf:before,
+.mt_cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.mt_cf:after {
+  clear: both;
+}
