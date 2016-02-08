@@ -8,7 +8,7 @@
 
 
 
-.bg-color-primary {
+.mt_bg-color-primary {
   background-color: $color-primary;
 
   &--light {
@@ -28,7 +28,7 @@
   }
 }
 
-.bg-color-danger {
+.mt_bg-color-danger {
   background-color: $color-danger;
 
   &--darkest {
@@ -36,7 +36,7 @@
   }
 }
 
-.bg-color-affirmation {
+.mt_bg-color-affirmation {
   background-color: $color-affirmation;
 
   &--darkest {
@@ -44,7 +44,7 @@
   }
 }
 
-.bg-color-neutral {
+.mt_bg-color-neutral {
   background-color: $color-neutral;
 
   &--darkest {

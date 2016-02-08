@@ -12,6 +12,6 @@ gulp.task('styles', function() {
       .pipe(sass())
       .pipe(autoprefixer())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('.tmp/styles/'))
+    .pipe(gulp.dest('.tmp/assets/styles/'))
     .pipe(bs.stream({once: true}));
 });

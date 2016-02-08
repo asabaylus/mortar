@@ -10,7 +10,7 @@ var inPlace = require('metalsmith-in-place');
 gulp.task('build', function() {
   Metalsmith('./')
   .source('./app/site')
-  .destination('./.tmp')
+  .destination('./.tmp/site')
   .metadata({
     'title': 'Mortar',
     'description': 'A living styleguide for National Geographic Partners'

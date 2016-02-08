@@ -8,12 +8,17 @@ var sass = require('gulp-sass');
 gulp.task('serve', ['clean', 'build', 'styles'], function() {
   bs.init({
     open: 'external',
-    server: '.tmp',
+    server: {
+      baseDir: [
+        '.tmp/site',
+        '.tmp/assets'
+      ]
+    },
     xip: true
   });
 
   gulp.watch('app/styles/**/*.scss', ['styles']);
-  gulp.watch('app/site/**/*.{md,html}', ['build']);
+  gulp.watch('app/**/*.{md,html}', ['build']);
 
   // since the wintersmith files aren't created in a gulp stream it appears
   // gulp watch has trouble with them. thankfully browsersync's watch does not
