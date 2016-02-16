@@ -5,7 +5,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 // Static server
-gulp.task('serve', ['clean', 'build', 'styles'], function() {
+gulp.task('serve', ['clean', 'build', 'styles', 'icons'], function() {
   bs.init({
     open: 'external',
     server: {
