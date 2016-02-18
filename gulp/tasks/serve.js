@@ -17,10 +17,12 @@ gulp.task('serve', ['clean', 'build', 'styles', 'icons'], function() {
     xip: true
   });
 
+  gulp.watch('app/icons/*.svg', ['icons']);
   gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/**/*.{md,html}', ['build']);
 
   // since the wintersmith files aren't created in a gulp stream it appears
   // gulp watch has trouble with them. thankfully browsersync's watch does not
-  bs.watch('.tmp/**/*.html').on('change', bs.reload);
+  bs.watch('.tmp/site/**/*.html').on('change', bs.reload);
+  bs.watch('.tmp/assets/**/*.svg').on('change', bs.reload);
 });
