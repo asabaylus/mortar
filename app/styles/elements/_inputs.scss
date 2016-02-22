@@ -1,0 +1,60 @@
+$borders: (
+  mt_border-default: 1px solid #b3b3b3,
+  mt_border-default-hover: 1px solid #808080,
+  mt_border-danger: 1px solid $color-danger
+);
+
+@each $border, $border-color in $borders{
+  .mt_input--#{$border}:focus,
+  .mt_input--#{$border}:hover,
+  .mt_input-error#{$border},
+  .mt_textarea {
+    border: $border-color;
+  }
+}
+.mt_input,
+.mt_textarea {
+  font-family: 'Pragmatica-web';
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  opacity: 0.9;
+  padding: 14px 16px;
+  transition: 400ms;
+}
+
+.mt_input:hover,
+.mt_input:focus,
+.mt_textarea:hover,
+.mt_textarea:focus {
+  opacity: 1.0;
+  outline: none;
+}
+
+.mt_input[type="text"]:disabled,
+.mt_input[type="text"]:disabled:hover {
+  opacity: 0.4;
+}
+
+.mt_input-error,
+.mt_input-error:hover,
+.mt_input-error:focus {
+  box-shadow: 0 0 5px $color-danger;
+  opacity: 1.0;
+}
+.mt_input-error:focus {
+  box-shadow: none;
+}
+
+.mt_input-error-message {
+  color: $color-danger;
+  font-family: 'Pragmatica-web';
+  font-weight: bold;
+  font-size: 14px;
+  text-align: left;
+}
+
+.mt_textarea {
+  min-height:100px;
+}
