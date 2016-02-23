@@ -1,19 +1,9 @@
-$borders: (
-  mt_border-default: 1px solid #b3b3b3,
-  mt_border-default-hover: 1px solid #808080,
-  mt_border-danger: 1px solid $color-danger
-);
+$mt_border-default: 1px solid #b3b3b3;
+$mt_border-default-hover: 1px solid #808080;
+$mt_border-danger: 1px solid $color-danger;
 
-@each $border, $border-color in $borders{
-  .mt_input--#{$border}:focus,
-  .mt_input--#{$border}:hover,
-  .mt_input-error#{$border},
-  .mt_textarea {
-    border: $border-color;
-  }
-}
-.mt_input,
-.mt_textarea {
+.mt_input{
+  border: $mt_border-default;
   font-family: 'Pragmatica-web';
   font-size: 14px;
   font-weight: 300;
@@ -24,12 +14,16 @@ $borders: (
   transition: 400ms;
 }
 
-.mt_input:hover,
 .mt_input:focus,
-.mt_textarea:hover,
-.mt_textarea:focus {
+.mt_input:hover{
   opacity: 1.0;
   outline: none;
+  border: $mt_border-default-hover;
+}
+
+.mt_input-error,
+.mt_input-error:hover{
+  border: $mt_border-danger;
 }
 
 .mt_input[type="text"]:disabled,
