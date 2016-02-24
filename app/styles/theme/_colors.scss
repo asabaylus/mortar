@@ -38,6 +38,14 @@
   }
 }
 
+.mt_text-color-danger {
+  color: $color-danger;
+
+  &--darkest {
+    color: lighten($color-danger, 20);
+  }
+}
+
 .mt_bg-color-affirmation {
   background-color: $color-affirmation;
 
