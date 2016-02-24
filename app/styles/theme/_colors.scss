@@ -6,25 +6,23 @@
   }
 }
 
-
-
 .mt_bg-color-primary {
   background-color: $color-primary;
 
   &--light {
-    background-color: lighten($color-primary, 20);
+    background-color: $mt_color-primary-light;
   }
 
   &--lighter {
-    background-color: lighten($color-primary, 30);
+    background-color: $mt_color-primary-lighter;
   }
 
   &--lighter-even {
-    background-color: lighten($color-primary, 40);
+    background-color: $mt_color-primary-lighter-even;
   }
 
   &--lightest {
-    background-color: lighten($color-primary, 45);
+    background-color: $mt_color-primary-lightest;
   }
 }
 
@@ -32,7 +30,15 @@
   background-color: $color-danger;
 
   &--darkest {
-    background-color: lighten($color-danger, 20);
+    background-color: $mt_color-danger-darkest;
+  }
+}
+
+.mt_text-color-danger {
+  color: $color-danger;
+
+  &--darkest {
+    color: $mt_color-danger-darkest;
   }
 }
 
@@ -40,7 +46,7 @@
   background-color: $color-affirmation;
 
   &--darkest {
-    background-color: lighten($color-affirmation, 20);
+    background-color: $mt_color-affirmation-darkest;
   }
 }
 
@@ -48,34 +54,34 @@
   background-color: $color-neutral;
 
   &--darkest {
-    background-color: darken($color-neutral, 50);
+    background-color: $mt_color-neutral-darkest;
   }
 
   &--darker {
-    background-color: darken($color-neutral, 40);
+    background-color: $mt_color-neutral-darker;
   }
 
   &--dark {
-    background-color: darken($color-neutral, 30);
+    background-color: $mt_color-neutral-dark;
   }
 
   &--light {
-    background-color: lighten($color-neutral, 20);
+    background-color: $mt_color-neutral-light;
   }
 
   &--lighter {
-    background-color: lighten($color-neutral, 30);
+    background-color: $mt_color-neutral-lighter;
   }
 
   &--lighter-even {
-    background-color: lighten($color-neutral, 40);
+    background-color: $mt_color-neutral-lighter-even;
   }
 
   &--lighter-even-even {
-    background-color: lighten($color-neutral, 45);
+    background-color: $mt_color-neutral-lighter-even-even;
   }
 
   &--lightest {
-    background-color: lighten($color-neutral, 50);
+    background-color: $mt_color-neutral-lightest;
   }
 }
