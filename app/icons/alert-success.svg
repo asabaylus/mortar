@@ -1,1 +1,5 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><defs><style>.cls-1{fill:#00c846;}.cls-2{fill:#fff;}</style></defs><title>alert-success</title><circle class="cls-1" cx="18" cy="18" r="18"/><polygon class="cls-2" points="14.87 28.36 6.85 20.63 9.75 17.58 14.41 21.89 25.04 8.52 28.32 11.2 14.87 28.36"/></svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <title>alert-success</title>
+  <circle cx="18" cy="18" r="18" style="fill: #00c846"/>
+  <polygon points="14.87 28.36 6.85 20.63 9.75 17.58 14.41 21.89 25.04 8.52 28.32 11.2 14.87 28.36" style="fill: #fff"/>
+</svg>

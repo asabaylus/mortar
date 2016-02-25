@@ -21,8 +21,8 @@ $mt_color-neutral-lightest: lighten($color-neutral, 50);
 
 // Affirmation
 
-$mt_color-affirmation-darkest: lighten($color-affirmation, 20);
+$mt_color-affirmation-light: lighten($color-affirmation, 20);
 
 // Danger
 
-$mt_color-danger-darkest: lighten($color-danger, 20);
+$mt_color-danger-darkest: darken($color-danger, 20);

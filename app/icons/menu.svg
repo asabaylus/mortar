@@ -1,1 +1,6 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 23"><defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:5px;}</style></defs><title>menu</title><line class="cls-1" y1="2.5" x2="36" y2="2.5"/><line class="cls-1" y1="11.5" x2="36" y2="11.5"/><line class="cls-1" y1="20.5" x2="36" y2="20.5"/></svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 23">
+  <title>menu</title>
+  <line y1="2.5" x2="36" y2="2.5" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 5px"/>
+  <line y1="11.5" x2="36" y2="11.5" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 5px"/>
+  <line y1="20.5" x2="36" y2="20.5" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 5px"/>
+</svg>

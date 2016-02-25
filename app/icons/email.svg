@@ -1,1 +1,4 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 26"><title>email</title><path d="M496,267H464v26h32V267Zm-5.23,3L480,280.77,469.23,270h21.54ZM493,290H467V272.23l13,13,13-13V290Z" transform="translate(-464 -267)"/></svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 26">
+  <title>email</title>
+  <path d="M32,0H0V26H32V0ZM26.77,3L16,13.77,5.23,3H26.77ZM29,23H3V5.23l13,13,13-13V23Z"/>
+</svg>
