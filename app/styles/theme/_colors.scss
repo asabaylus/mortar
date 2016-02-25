@@ -6,6 +6,14 @@
   }
 }
 
+.mt_text-color-danger {
+  color: $color-danger;
+
+  &--darkest {
+    color: $mt_color-danger-darkest;
+  }
+}
+
 .mt_bg-color-primary {
   background-color: $color-primary;
 
@@ -29,16 +37,8 @@
 .mt_bg-color-danger {
   background-color: $color-danger;
 
-  &--darkest {
-    background-color: $mt_color-danger-darkest;
-  }
-}
-
-.mt_text-color-danger {
-  color: $color-danger;
-
-  &--darkest {
-    color: $mt_color-danger-darkest;
+  &--light{
+    background-color: $mt_color-danger-light;
   }
 }
 
