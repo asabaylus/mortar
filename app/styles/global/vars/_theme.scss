@@ -1,0 +1,28 @@
+// Primary colors
+
+$mt_color-primary-light: lighten($color-primary, 20);
+$mt_color-primary-lighter: lighten($color-primary, 30);
+$mt_color-primary-lighter-even: lighten($color-primary, 40);
+$mt_color-primary-lightest: lighten($color-primary, 45);
+
+// Neutrals -- Dark
+
+$mt_color-neutral-dark: darken($color-neutral, 30);
+$mt_color-neutral-darker: darken($color-neutral, 40);
+$mt_color-neutral-darkest: darken($color-neutral, 50);
+
+// Neutrals -- Light
+
+$mt_color-neutral-light: lighten($color-neutral, 20);
+$mt_color-neutral-lighter: lighten($color-neutral, 30);
+$mt_color-neutral-lighter-even: lighten($color-neutral, 40);
+$mt_color-neutral-lighter-even-even: lighten($color-neutral, 45);
+$mt_color-neutral-lightest: lighten($color-neutral, 50);
+
+// Affirmation
+
+$mt_color-affirmation-light: lighten($color-affirmation, 20);
+
+// Danger
+
+$mt_color-danger-light: lighten($color-danger, 20);
