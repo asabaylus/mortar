@@ -1,1 +1,6 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>print</title><path d="M494,272.83h-4V270l-4-4H470v6.83h-4V289h4v5h20v-5h4V272.83h0ZM472,268h13.17l2.83,2.83v2H472V268Zm16,21v3H472v-9h16v6Zm4-2h-2v-6H470v6h-2V276.83h24V287Z" transform="translate(-466 -266)"/><rect x="8" y="19" width="12" height="2"/><rect x="8" y="22" width="12" height="2"/></svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
+  <title>print</title>
+  <path d="M28,6.83H24V4L20,0H4V6.83H0V23H4v5H24V23h4V6.83h0ZM6,2H19.17L22,4.83v2H6V2ZM22,23v3H6V17H22v6Zm4-2H24V15H4v6H2V10.83H26V21Z"/>
+  <rect x="8" y="19" width="12" height="2"/>
+  <rect x="8" y="22" width="12" height="2"/>
+</svg>

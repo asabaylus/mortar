@@ -1,1 +1,7 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><title>gallery-grid</title><rect width="16" height="16"/><rect x="20" width="16" height="16"/><rect y="20" width="16" height="16"/><rect x="20" y="20" width="16" height="16"/></svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <title>grid</title>
+  <rect width="16" height="16"/>
+  <rect x="20" width="16" height="16"/>
+  <rect y="20" width="16" height="16"/>
+  <rect x="20" y="20" width="16" height="16"/>
+</svg>

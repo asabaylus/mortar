@@ -1,1 +1,4 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117.67 226.58"><defs><style>.cls-1{fill:#3b5998;}</style></defs><title>facebook_f</title><path id="f" class="cls-1" d="M530.7,413.45V310.09H565.4l5.19-40.28H530.7V244.1c0-11.66,3.24-19.61,20-19.61H572v-36a285.42,285.42,0,0,0-31.08-1.59c-30.75,0-51.81,18.77-51.81,53.24v29.71H454.33v40.28h34.78V413.45h41.6Z" transform="translate(-454.33 -186.86)"/></svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117.67 226.55">
+  <title>facebook_f</title>
+  <path id="f" d="M76.37,226.59V123.23h34.7l5.19-40.28H76.37V57.24c0-11.66,3.24-19.61,20-19.61h21.3v-36A285.42,285.42,0,0,0,86.59,0C55.84,0,34.78,18.81,34.78,53.28V83H0v40.28H34.78V226.59H76.37Z" transform="translate(0 -0.04)" style="fill: #3b5998"/>
+</svg>
