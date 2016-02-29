@@ -1,3 +1,13 @@
+// Extends
+
+%mt_h5 {
+  font-family: 'Pragmatica-web';
+  font-size: 14px;
+  font-weight: 600;
+}
+
+// Classes
+
 .mt_h1 {
   font-family: 'Chronicle Display 3r';
   font-size: 65px;
@@ -33,9 +43,7 @@
 }
 
 .mt_h5 {
-  font-family: 'Pragmatica-web';
-  font-size: 14px;
-  font-weight: 600;
+  @extend %mt_h5;
 }
 
 .mt_subh1 {

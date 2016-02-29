@@ -1,19 +1,20 @@
-$mt_btn-inactive-color: rgba(128, 128, 128, 0.4);
+// $mt_btn-inactive-color: rgba(128, 128, 128, 0.4);
 
-button,
-&.mt_btn {
-  @extend .mt_h5;
-  padding: 16px 32px 16px 32px;
-  margin: 0 10px 10px 0;
+.mt_btn {
+  @extend %mt_h5;
+
+  background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0;
   cursor: pointer;
+  margin: 0 10px 10px 0;
+  padding: 16px 32px 16px 32px;
   text-align: center;
   transition: 400ms;
-  background-color: transparent;
 
-  &.mt_btn-default{
+  &.mt_btn-default {
     background-color: $color-primary;
+
     &:hover{
       background-color: $mt_color-primary-light;
       border: 1px solid $mt_color-primary-light;
@@ -22,7 +23,8 @@ button,
     &--reversed{
       color: $mt_color-neutral-lightest;
     }
-    &--inactive{
+
+    &--inactive {
       background: $color-neutral;
       color: $mt_color-neutral-darkest;
       cursor: default;
@@ -30,25 +32,26 @@ button,
     }
   }
 
-  &.mt_btn-secondary{
+  &.mt_btn-secondary {
     border: 1px solid $mt_color-primary-light;
     &:hover{
-      background: $color-primary;
+      background: $mt_color-primary-light;
     }
-    &--reversed{
+
+    &--reversed {
+      border: 1px solid $mt_color-primary-light;
       color: $mt_color-neutral-lightest;
-      border: 1px solid $color-primary;
       &:hover{
-        background: $color-primary;
+        background: $mt_color-primary-light;
         color: $mt_color-neutral-darkest;
       }
     }
-    &--inactive{
-        border: 1px solid $mt_btn-inactive-color;
-        color: $mt_btn-inactive-color;
-        cursor: default;
-    }
 
+    &--inactive {
+      border: 1px solid transparentize($mt_color-neutral-light, .6);
+      color: transparentize($mt_color-neutral-light, .6);
+      cursor: default;
+    }
   }
 
   &.mt_btn-naked{
@@ -60,32 +63,37 @@ button,
       background-color: transparent;
       color: $color-primary;
     }
+
     &--reversed{
       color: $mt_color-neutral-lightest;
     }
+
     &--inactive{
-      color: $mt_btn-inactive-color;
+      color: rgba(128, 128, 128, 0.4);
       border: 0;
       cursor: default;
       &:hover{
-        color: $mt_btn-inactive-color;
+        color: rgba(128, 128, 128, 0.4);
       }
     }
   }
 
   &--success{
-    color: $mt_color-neutral-lightest;
     background-color: $color-affirmation;
     border: 1px solid $color-affirmation;
+    color: $mt_color-neutral-lightest;
+
     &:hover {
-        background-color: $mt_color-affirmation-light;
-        border: 1px solid $mt_color-affirmation-light;
+      background-color: $mt_color-affirmation-light;
+      border: 1px solid $mt_color-affirmation-light;
     }
   }
+
   &--error{
-    color: $mt_color-neutral-lightest;
     background-color: $color-danger;
     border: 1px solid $color-danger;
+    color: $mt_color-neutral-lightest;
+
     &:hover{
       background-color: $mt_color-danger-light;
       border: 1px solid $mt_color-danger-light;
