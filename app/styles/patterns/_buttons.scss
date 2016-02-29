@@ -4,6 +4,7 @@ button,
 &.mt_btn {
   @extend .mt_h5;
   padding: 16px 32px 16px 32px;
+  margin: 0 10px 10px 0;
   border: 1px solid transparent;
   border-radius: 0;
   cursor: pointer;
@@ -31,13 +32,16 @@ button,
 
   &.mt_btn-secondary{
     border: 1px solid $mt_color-primary-light;
+    &:hover{
+      background: $color-primary;
+    }
     &--reversed{
       color: $mt_color-neutral-lightest;
       border: 1px solid $color-primary;
       &:hover{
         background: $color-primary;
         color: $mt_color-neutral-darkest;
-        }
+      }
     }
     &--inactive{
         border: 1px solid $mt_btn-inactive-color;
@@ -49,15 +53,15 @@ button,
 
   &.mt_btn-naked{
     background: none;
-    border-bottom: 2px solid $color-primary;
-    padding: 0;
+    span{
+      border-bottom: 2px solid $color-primary;
+    }
     &:hover{
       background-color: transparent;
       color: $color-primary;
     }
     &--reversed{
       color: $mt_color-neutral-lightest;
-      border-bottom: 2px solid $color-primary;
     }
     &--inactive{
       color: $mt_btn-inactive-color;
