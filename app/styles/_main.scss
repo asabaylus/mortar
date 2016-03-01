@@ -6,8 +6,11 @@
 
 @import 'utils/cf';
 @import 'utils/intratios';
+@import 'utils/visibility';
 
 @import 'theme/colors';
 @import 'theme/fonts';
 
 @import 'elements/inputs';
+
+@import '../modules/modals/styles'

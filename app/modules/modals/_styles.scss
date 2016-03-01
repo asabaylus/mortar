@@ -1,0 +1,18 @@
+.mt_modal-container {
+  background-color: transparentize($mt_color-neutral-darkest, .15);
+  height: 85vh;
+  left: 7.5vw;
+  position: fixed;
+  opacity: 0;
+  top: 7.5vh;
+  transition: .2s;
+  width: 85vw;
+}
+
+.mt_module-container--active {
+  height: 100vh;
+  left: 0;
+  opacity: 100;
+  top: 0;
+  width: 100vw;
+}
