@@ -5,11 +5,13 @@ const modules = {
     const _this = this;
 
     $('body').click(function(e){
-      if (e.target.className === 'mt_JS_modal-open-button') {
+      console.log(e.target);
+      if ($(e.target).hasClass('mt_JS_modal-open-button')) {
         return _this.open(e.target.dataset.modalTarget)
-      } else if (e.target.className === 'mt_JS_modal-close-button') {
+      } else if ($(e.target).hasClass('mt_JS_modal-close-button')) {
         return _this.close(e.target.dataset.modalTarget)
       }
+      return _this.close($(e.target).closest('.mt_JS_modal-close-button').data().modalTarget)
     });
   },
   close: function(id) {
