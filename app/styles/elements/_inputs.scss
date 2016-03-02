@@ -1,28 +1,31 @@
-.mt_input{
+.mt_input {
   border: $mt_border-default;
-  opacity: 0.9;
+  opacity: .9;
   padding: $mt_fs-sm $mt_unit;
   transition: 400ms;
+
   &:focus,
-  &:hover{
-    opacity: 1.0;
-    outline: none;
+  &:hover {
     border: $mt_border-default-hover;
+    opacity: 1;
+    outline: none;
   }
-  &[type="text"]:disabled,
-  &[type="text"]:disabled:hover {
-    opacity: 0.4;
+
+  &[type='text']:disabled,
+  &[type='text']:disabled:hover {
+    opacity: .4;
   }
 
   &--error {
     &,
     &:focus,
     &:hover {
-      opacity: 1.0;
-      border: $mt-border-danger;
-      box-shadow: 0 0 $mt_unit-half $color-danger;
+      border: $mt_border-danger;
+      box-shadow: 0 0 $mt_unit-half $mt_color-danger;
+      opacity: 1;
     }
-    &:focus{
+
+    &:focus {
       box-shadow: none;
     }
   }

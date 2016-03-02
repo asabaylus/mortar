@@ -1,14 +1,25 @@
-#########################
-## Sample Sass Lint File
-#########################
-# File Options
 options:
   formatter: stylish
 
 rules:
-  property-sort-order: 2
-  class-name-format:
+  placeholder-name-format:
     - 2
     -
       convention: 'mt_([a-z0-9\-]+)'
-      convention-explanation: 'All class names must be prefaced with "mt_"'
+      convention-explanation: 'All placeholder names must be prefaced with "mt_" and contain only lowercase letters and dashes afterward'
+  class-name-format:
+    - 1
+    -
+      convention: 'mt_([a-z0-9\-]+)'
+      convention-explanation: 'All class names must be prefaced with "mt_" and contain only lowercase letters and dashes afterward'
+  no-mergeable-selectors:
+    - 2
+    -
+      whitelist:
+        - '.mt_col-,#{$mt_bp}-$mt_i'
+  property-sort-order: 2
+  variable-name-format:
+    - 1
+    -
+      convention: 'mt_([a-z0-9\-]+)'
+      convention-explanation: 'All variable names must be prefaced with "mt_" and contain only lowercase letters and dashes afterward'

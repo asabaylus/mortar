@@ -1,34 +1,34 @@
 // Primary colors
 
-$mt_color-primary-light: lighten($color-primary, 20);
-$mt_color-primary-lighter: lighten($color-primary, 30);
-$mt_color-primary-lighter-even: lighten($color-primary, 40);
-$mt_color-primary-lightest: lighten($color-primary, 45);
+$mt_color-primary-light: lighten($mt_color-primary, 20);
+$mt_color-primary-lighter: lighten($mt_color-primary, 30);
+$mt_color-primary-lighter-even: lighten($mt_color-primary, 40);
+$mt_color-primary-lightest: lighten($mt_color-primary, 45);
 
 // Neutrals -- Dark
 
-$mt_color-neutral-dark: darken($color-neutral, 30);
-$mt_color-neutral-darker: darken($color-neutral, 40);
-$mt_color-neutral-darkest: darken($color-neutral, 50);
+$mt_color-neutral-dark: darken($mt_color-neutral, 30);
+$mt_color-neutral-darker: darken($mt_color-neutral, 40);
+$mt_color-neutral-darkest: darken($mt_color-neutral, 50);
 
 // Neutrals -- Light
 
-$mt_color-neutral-light: lighten($color-neutral, 20);
-$mt_color-neutral-lighter: lighten($color-neutral, 30);
-$mt_color-neutral-lighter-even: lighten($color-neutral, 40);
-$mt_color-neutral-lighter-even-even: lighten($color-neutral, 45);
-$mt_color-neutral-lightest: lighten($color-neutral, 50);
+$mt_color-neutral-light: lighten($mt_color-neutral, 20);
+$mt_color-neutral-lighter: lighten($mt_color-neutral, 30);
+$mt_color-neutral-lighter-even: lighten($mt_color-neutral, 40);
+$mt_color-neutral-lighter-even-even: lighten($mt_color-neutral, 45);
+$mt_color-neutral-lightest: lighten($mt_color-neutral, 50);
 
 // Affirmation
 
-$mt_color-affirmation-light: lighten($color-affirmation, 20);
+$mt_color-affirmation-light: lighten($mt_color-affirmation, 20);
 
 // Danger
 
-$mt_color-danger-light: lighten($color-danger, 20);
+$mt_color-danger-light: lighten($mt_color-danger, 20);
 
 // Borders
 
 $mt_border-default: 1px solid #b3b3b3;
 $mt_border-default-hover: 1px solid #808080;
-$mt_border-danger: 1px solid $color-danger;
+$mt_border-danger: 1px solid $mt_color-danger;
