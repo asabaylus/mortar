@@ -1,9 +1,19 @@
-.mt_cf:before,
-.mt_cf:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
+// Extends
+
+%mt_cf {
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
 }
 
-.mt_cf:after {
-  clear: both;
+// Classes
+
+.mt_cf {
+  @extend %mt_cf;
 }

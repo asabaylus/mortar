@@ -1,32 +1,35 @@
 $mt_border-default: 1px solid #b3b3b3;
 $mt_border-default-hover: 1px solid #808080;
-$mt_border-danger: 1px solid $color-danger;
+$mt_border-danger: 1px solid $mt_color-danger;
 
-.mt_input{
+.mt_input {
   border: $mt_border-default;
-  opacity: 0.9;
+  opacity: .9;
   padding: 14px 16px;
   transition: 400ms;
+
   &:focus,
-  &:hover{
-    opacity: 1.0;
-    outline: none;
+  &:hover {
     border: $mt_border-default-hover;
+    opacity: 1;
+    outline: none;
   }
-  &[type="text"]:disabled,
-  &[type="text"]:disabled:hover {
-    opacity: 0.4;
+
+  &[type='text']:disabled,
+  &[type='text']:disabled:hover {
+    opacity: .4;
   }
 
   &--error {
     &,
     &:focus,
     &:hover {
-      opacity: 1.0;
-      border: $mt-border-danger;
-      box-shadow: 0 0 5px $color-danger;
+      border: $mt_border-danger;
+      box-shadow: 0 0 5px $mt_color-danger;
+      opacity: 1;
     }
-    &:focus{
+
+    &:focus {
       box-shadow: none;
     }
   }

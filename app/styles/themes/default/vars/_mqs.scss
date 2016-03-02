@@ -1,6 +1,6 @@
-$mt_mq-sm: "screen and (min-width: 30em)";
-$mt_mq-md: "screen and (min-width: 50em)";
-$mt_mq-lg: "screen and (min-width: 70em)";
+$mt_mq-sm: 'screen and (min-width: 30em)';
+$mt_mq-md: 'screen and (min-width: 50em)';
+$mt_mq-lg: 'screen and (min-width: 70em)';
 
 // Example Use
 // ===========
@@ -14,7 +14,7 @@ $mt_mq-lg: "screen and (min-width: 70em)";
 // }
 
 
-$layout-bps: (
+$mt_layout-bps: (
   sm: $mt_mq-sm,
   md: $mt_mq-md,
   lg: $mt_mq-lg
