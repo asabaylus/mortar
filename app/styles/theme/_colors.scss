@@ -1,17 +1,17 @@
-@function change-tint($color, $tint) {
-  @if $tint < 100 {
-    @return lighten($color, percentage((100 - $tint) / 200));
-  } @else if $tint > 100 {
-    @return darken($color, percentage(($tint - 100) / 200));
+@function change-tint($mt_color, $mt_tint) {
+  @if $mt_tint < 100 {
+    @return lighten($mt_color, percentage((100 - $mt_tint) / 200));
+  } @else if $mt_tint > 100 {
+    @return darken($mt_color, percentage(($mt_tint - 100) / 200));
   }
 }
 
 .mt_text-color-danger {
-  color: $color-danger;
+  color: $mt_color-danger;
 }
 
 .mt_bg-color-primary {
-  background-color: $color-primary;
+  background-color: $mt_color-primary;
 
   &--light {
     background-color: $mt_color-primary-light;
@@ -31,15 +31,15 @@
 }
 
 .mt_bg-color-danger {
-  background-color: $color-danger;
+  background-color: $mt_color-danger;
 
-  &--light{
+  &--light {
     background-color: $mt_color-danger-light;
   }
 }
 
 .mt_bg-color-affirmation {
-  background-color: $color-affirmation;
+  background-color: $mt_color-affirmation;
 
   &--light {
     background-color: $mt_color-affirmation-light;
@@ -47,7 +47,7 @@
 }
 
 .mt_bg-color-neutral {
-  background-color: $color-neutral;
+  background-color: $mt_color-neutral;
 
   &--darkest {
     background-color: $mt_color-neutral-darkest;

@@ -1,4 +1,4 @@
-$columns: 12;
+$mt_columns: 12;
 
 // Object oriented grid classes in the style of bootstrap
 // Reference: http://getbootstrap.com/css/#grid
@@ -9,23 +9,23 @@ $columns: 12;
   width: 100%;
 }
 
-@for $i from 1 through $columns { // loop through grid spans
-  .mt_col-#{$i} { // build the class name
+@for $mt_i from 1 through $mt_columns { // loop through grid spans
+  .mt_col-#{$mt_i} { // build the class name
     @extend %mt_col-padding;
 
-    width: percentage($i / $columns);
+    width: percentage($mt_i / $mt_columns);
   }
 
-  .mt_col-offset-#{$i} {
-    margin-left: percentage($i / $columns);
+  .mt_col-offset-#{$mt_i} {
+    margin-left: percentage($mt_i / $mt_columns);
   }
 
-  .mt_col-pull-#{$i} {
-    right: percentage($i / $columns);
+  .mt_col-pull-#{$mt_i} {
+    right: percentage($mt_i / $mt_columns);
   }
 
-  .mt_col-push-#{$i} {
-    left: percentage($i / $columns);
+  .mt_col-push-#{$mt_i} {
+    left: percentage($mt_i / $mt_columns);
   }
 }
 
@@ -41,42 +41,42 @@ $columns: 12;
   left: auto;
 }
 
-@each $bp, $width in $layout-bps { // loop through breakpoints
+@each $mt_bp, $mt_width in $mt_layout-bps { // loop through breakpoints
   // hack to get around inability to extend from within media queries
-  @for $i from 1 through $columns {
-    .mt_col-#{$bp}-#{$i} {
+  @for $mt_i from 1 through $mt_columns {
+    .mt_col-#{$mt_bp}-#{$mt_i} {
       @extend %mt_col-padding;
     }
   }
 
-  @media #{ $width } {
-    @for $i from 1 through $columns {
-      .mt_col-#{$bp}-#{$i} {
-        width: percentage($i / $columns);
+  @media #{$mt_width} {
+    @for $mt_i from 1 through $mt_columns {
+      .mt_col-#{$mt_bp}-#{$mt_i} {
+        width: percentage($mt_i / $mt_columns);
       }
 
-      .mt_col-#{$bp}-offset-#{$i} {
-        margin-left: percentage($i / $columns);
+      .mt_col-#{$mt_bp}-offset-#{$mt_i} {
+        margin-left: percentage($mt_i / $mt_columns);
       }
 
-      .mt_col-#{$bp}-pull-#{$i} {
-        right: percentage($i / $columns);
+      .mt_col-#{$mt_bp}-pull-#{$mt_i} {
+        right: percentage($mt_i / $mt_columns);
       }
 
-      .mt_col-#{$bp}-push-#{$i} {
-        left: percentage($i / $columns);
+      .mt_col-#{$mt_bp}-push-#{$mt_i} {
+        left: percentage($mt_i / $mt_columns);
       }
     }
 
-    .mt_col-#{$bp}-offset-0 {
+    .mt_col-#{$mt_bp}-offset-0 {
       margin-left: 0;
     }
 
-    .mt_col-#{$bp}-pull-0 {
+    .mt_col-#{$mt_bp}-pull-0 {
       right: auto;
     }
 
-    .mt_col-#{$bp}-push-0 {
+    .mt_col-#{$mt_bp}-push-0 {
       left: auto;
     }
   }
