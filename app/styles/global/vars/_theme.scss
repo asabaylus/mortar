@@ -26,3 +26,9 @@ $mt_color-affirmation-light: lighten($mt_color-affirmation, 20);
 // Danger
 
 $mt_color-danger-light: lighten($mt_color-danger, 20);
+
+// Borders
+
+$mt_border-default: 1px solid #b3b3b3;
+$mt_border-default-hover: 1px solid #808080;
+$mt_border-danger: 1px solid $mt_color-danger;

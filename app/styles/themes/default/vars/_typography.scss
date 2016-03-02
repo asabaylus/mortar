@@ -1,1 +1,96 @@
-$mt_unit: 1em;
+// Font Size Variables
+
+$mt_fs-xsm:    .75em;   // 12px
+$mt_fs-sm:     .875em;  // 14px
+$mt_fs-norm:   1em;      // 16px
+$mt_fs-med:    1.1875em; // 19px
+$mt_fs-lrg:    1.375em;  // 22px
+$mt_fs-xlrg:   1.6875em; // 27px
+$mt_fs-xxlrg:  3.375em;  // 54px
+$mt_fs-xxxlrg: 4.0625em; // 65px
+
+$mt_unit:           $mt_fs-norm;
+$mt_unit-quarter:   $mt_unit / 4;
+$mt_unit-half:      $mt_unit / 2;
+$mt_unit-double:    $mt_unit * 2;
+$mt_unit-triple:    $mt_unit * 3;
+$mt_unit-quadruple: $mt_unit * 4;
+
+// Style Extends
+
+%mt_h1 {
+  font-family: 'Chronicle Display 3r';
+  font-size: $mt_fs-xxxlrg;
+  font-weight: 300;
+  letter-spacing: .005em;
+  line-height: .95;
+  text-rendering: optimizeLegibility;
+}
+
+%mt_h2 {
+  font-family: 'Chronicle Deck 6r';
+  font-size: $mt_fs-xxlrg;
+  font-weight: 600;
+  letter-spacing: .005em;
+  line-height: 1.15;
+  text-rendering: optimizeLegibility;
+}
+
+%mt_h3 {
+  font-family: 'Pragmatica-web';
+  font-size: $mt_fs-xlrg;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  line-height: 1.185;
+}
+
+%mt_h4 {
+  font-family: 'Chronicle Deck 6r';
+  font-size: $mt_fs-lrg;
+  font-weight: 600;
+  letter-spacing: .003em;
+  line-height: 1.36;
+}
+
+%mt_h5 {
+  font-family: 'Pragmatica-web';
+  font-size: $mt_fs-sm;
+  font-weight: 600;
+}
+
+%mt_subh1 {
+  font-family: 'Pragmatica-web';
+  font-size: $mt_fs-med;
+  font-weight: 300;
+  line-height: 1.37;
+}
+
+%mt_subh2 {
+  font-family: 'Pragmatica-web';
+  font-size: $mt_fs-sm;
+  font-weight: 300;
+  line-height: 1.57;
+  text-transform: uppercase;
+}
+
+%mt_subh3 {
+  font-family: 'Pragmatica-web';
+  font-size: $mt_fs-xsm;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+%mt_subh4 {
+  font-family: 'Pragmatica-web';
+  font-size: $mt_fs-sm;
+  font-weight: 300;
+  line-height: 1.43;
+}
+
+%mt_body {
+  font-family: 'Chronicle Text Ssm 3r';
+  font-size: $mt_fs-norm;
+  font-weight: 300;
+  letter-spacing: .003em;
+  line-height: 1.6875;
+}

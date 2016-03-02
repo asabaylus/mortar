@@ -5,8 +5,9 @@
   border: 1px solid transparent;
   border-radius: 0;
   cursor: pointer;
-  margin: 0 10px 10px 0;
-  padding: 16px 32px;
+  margin-bottom: .675em;
+  margin-right: .675em;
+  padding: $mt_unit $mt_unit-double;
   text-align: center;
   transition: 400ms;
 
