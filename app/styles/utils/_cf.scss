@@ -1,9 +1,11 @@
-.mt_cf:before,
-.mt_cf:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
-}
+.mt_cf {
+  &:before,
+  &:after {
+    content: ' '; // 1
+    display: table; // 2
+  }
 
-.mt_cf:after {
-  clear: both;
+  &:after {
+    clear: both;
+  }
 }
