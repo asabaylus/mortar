@@ -49,7 +49,7 @@ $columns: 12;
     }
   }
 
-  @media #{ $width } {
+  @media #{$width} {
     @for $i from 1 through $columns {
       .mt_col-#{$bp}-#{$i} {
         width: percentage($i / $columns);
