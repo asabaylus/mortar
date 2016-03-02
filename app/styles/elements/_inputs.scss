@@ -1,11 +1,7 @@
-$mt_border-default: 1px solid #b3b3b3;
-$mt_border-default-hover: 1px solid #808080;
-$mt_border-danger: 1px solid $color-danger;
-
 .mt_input{
   border: $mt_border-default;
   opacity: 0.9;
-  padding: 14px 16px;
+  padding: $mt_fs-sm $mt_unit;
   transition: 400ms;
   &:focus,
   &:hover{
@@ -24,7 +20,7 @@ $mt_border-danger: 1px solid $color-danger;
     &:hover {
       opacity: 1.0;
       border: $mt-border-danger;
-      box-shadow: 0 0 5px $color-danger;
+      box-shadow: 0 0 $mt_unit-half $color-danger;
     }
     &:focus{
       box-shadow: none;
@@ -33,5 +29,5 @@ $mt_border-danger: 1px solid $color-danger;
 }
 
 .mt_textarea {
-  min-height: 100px;
+  min-height: $mt_unit * 6;
 }
