@@ -2,6 +2,11 @@ options:
   formatter: stylish
 
 rules:
+  placeholder-name-format:
+    - 2
+    -
+      convention: 'mt_([a-z0-9\-]+)'
+      convention-explanation: 'All placeholder names must be prefaced with "mt_" and contain only lowercase letters and dashes afterward'
   class-name-format:
     - 1
     -

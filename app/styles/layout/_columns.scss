@@ -3,7 +3,7 @@ $mt_columns: 12;
 // Object oriented grid classes in the style of bootstrap
 // Reference: http://getbootstrap.com/css/#grid
 
-%mt-col-padding {
+%mt_col-padding {
   float: left;
   position: relative;
   width: 100%;
@@ -11,7 +11,7 @@ $mt_columns: 12;
 
 @for $mt_i from 1 through $mt_columns { // loop through grid spans
   .mt_col-#{$mt_i} { // build the class name
-    @extend %mt-col-padding;
+    @extend %mt_col-padding;
 
     width: percentage($mt_i / $mt_columns);
   }
@@ -45,7 +45,7 @@ $mt_columns: 12;
   // hack to get around inability to extend from within media queries
   @for $mt_i from 1 through $mt_columns {
     .mt_col-#{$mt_bp}-#{$mt_i} {
-      @extend %mt-col-padding;
+      @extend %mt_col-padding;
     }
   }
 
