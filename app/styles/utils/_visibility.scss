@@ -1,0 +1,35 @@
+// Source: https://github.com/h5bp/html5-boilerplate/blob/77c09009f634ad79f78b61864d6d3bfe3694b078/dist/css/main.css#L118-L164
+
+// Hide visually and from screen readers
+
+.mt_hidden {
+    display: none !important;
+}
+
+// Hide only visually, but have it available for screen readers:
+// http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+
+.mt_visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+
+  // Extends the .visuallyhidden class to allow the element
+  // to be focusable when navigated to via the keyboard:
+  // https://www.drupal.org/node/897638
+
+  &.mt_focusable:active,
+  &.mt_focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
