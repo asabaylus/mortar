@@ -2,14 +2,19 @@ options:
   formatter: stylish
 
 rules:
-  property-sort-order: 2
   class-name-format:
-    - 2
+    - 1
     -
       convention: 'mt_([a-z0-9\-]+)'
       convention-explanation: 'All class names must be prefaced with "mt_" and contain only lowercase letters and dashes afterward'
-  variable-name-format:
+  no-mergeable-selectors:
     - 2
+    -
+      whitelist:
+        - '.mt_col-,#{$mt_bp}-$mt_i'
+  property-sort-order: 2
+  variable-name-format:
+    - 1
     -
       convention: 'mt_([a-z0-9\-]+)'
       convention-explanation: 'All variable names must be prefaced with "mt_" and contain only lowercase letters and dashes afterward'

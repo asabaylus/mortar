@@ -1,33 +1,33 @@
 .mt_row {
-  @extend .mt_cf;
+  @extend %mt-cf;
 }
 
 .mt_row-gut-half {
   margin-bottom: $mt_unit / 2;
 }
 
-@for $i from 0 through 4 {
-  .mt_row-gut-#{$i} {
-    @if $i < 1 {
+@for $mt_i from 0 through 4 {
+  .mt_row-gut-#{$mt_i} {
+    @if $mt_i < 1 {
       margin-bottom: 0;
     } @else {
-      margin-bottom: $mt_unit * $i;
+      margin-bottom: $mt_unit * $mt_i;
     }
   }
 }
 
-@each $bp, $width in $layout-bps { // loop through breakpoints
-  @media #{$width} {
-    .mt_row-#{$bp}-gut-half {
+@each $mt_bp, $mt_width in $mt_layout-bps { // loop through breakpoints
+  @media #{$mt_width} {
+    .mt_row-#{$mt_bp}-gut-half {
       margin-bottom: $mt_unit / 2;
     }
 
-    @for $i from 0 through 4 {
-      .mt_row-#{$bp}-gut-#{$i} {
-        @if $i < 1 {
+    @for $mt_i from 0 through 4 {
+      .mt_row-#{$mt_bp}-gut-#{$mt_i} {
+        @if $mt_i < 1 {
           margin-bottom: 0;
         } @else {
-          margin-bottom: $mt_unit * $i;
+          margin-bottom: $mt_unit * $mt_i;
         }
       }
     }

@@ -3,28 +3,28 @@
   padding-right: $mt_unit / 2;
 }
 
-@for $i from 1 through 4 {
-  .mt_col-gut-#{$i} {
-    padding-left: $mt_unit * $i;
-    padding-right: $mt_unit * $i;
+@for $mt_i from 1 through 4 {
+  .mt_col-gut-#{$mt_i} {
+    padding-left: $mt_unit * $mt_i;
+    padding-right: $mt_unit * $mt_i;
   }
 }
 
-@each $bp, $width in $layout-bps { // loop through breakpoints
-  @media #{$width} {
-    .mt_col-#{$bp}-gut-half {
+@each $mt_bp, $mt_width in $mt_layout-bps { // loop through breakpoints
+  @media #{$mt_width} {
+    .mt_col-#{$mt_bp}-gut-half {
       padding-left: $mt_unit / 2;
       padding-right: $mt_unit / 2;
     }
 
-    @for $i from 0 through 4 {
-      .mt_col-#{$bp}-gut-#{$i} {
-        @if $i < 1 {
+    @for $mt_i from 0 through 4 {
+      .mt_col-#{$mt_bp}-gut-#{$mt_i} {
+        @if $mt_i < 1 {
           padding-left: 0;
           padding-right: 0;
         } @else {
-          padding-left: $mt_unit * $i;
-          padding-right: $mt_unit * $i;
+          padding-left: $mt_unit * $mt_i;
+          padding-right: $mt_unit * $mt_i;
         }
       }
     }

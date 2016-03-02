@@ -1,16 +1,16 @@
-$color-primary: hsl(48, 100%, 50%);
-$color-affirmation: hsl(141, 100%, 39%);
-$color-danger: hsl(14, 100%, 50%);
-$color-neutral: hsl(0, 0%, 50%);
+$mt_color-primary: hsl(48, 100%, 50%);
+$mt_color-affirmation: hsl(141, 100%, 39%);
+$mt_color-danger: hsl(14, 100%, 50%);
+$mt_color-neutral: hsl(0, 0%, 50%);
 
-$colors: (
-  primary: $color-primary,
-  affirmation: $color-affirmation,
-  danger: $color-danger,
-  neutral: $color-neutral
+$mt_colors: (
+  primary: $mt_color-primary,
+  affirmation: $mt_color-affirmation,
+  danger: $mt_color-danger,
+  neutral: $mt_color-neutral
 );
 
-$social-colors: (
+$mt_social-colors: (
   google-plus: #dc4e41,
   facebook: #3b5998,
   flickr: #ff0084,

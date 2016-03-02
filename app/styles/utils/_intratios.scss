@@ -1,7 +1,7 @@
 // Variables
 // =========
 
-$int-ratios: (
+$mt_int-ratios: (
   tv: 75%, // (4:3)
   imax: 69.93%, // (1.43:1)
   photo: 66.66%, // (3:2)
@@ -14,10 +14,10 @@ $int-ratios: (
 // =====
 
 .mt_intratio {
-  @each $int-ratio, $percentage in $int-ratios {
-    &--#{$int-ratio} {
+  @each $mt_int-ratio, $mt_percentage in $mt_int-ratios {
+    &--#{$mt_int-ratio} {
       height: 0;
-      padding-bottom: $percentage;
+      padding-bottom: $mt_percentage;
     }
   }
 }

@@ -10,80 +10,9 @@
   text-align: center;
   transition: 400ms;
 
-  &.mt_btn-default {
-    background-color: $color-primary;
-
-    &:hover {
-      background-color: $mt_color-primary-light;
-      border: 1px solid $mt_color-primary-light;
-    }
-
-    &--reversed {
-      color: $mt_color-neutral-lightest;
-    }
-
-    &--inactive {
-      background: $color-neutral;
-      color: $mt_color-neutral-darkest;
-      cursor: default;
-      opacity: 0.3;
-    }
-  }
-
-  &.mt_btn-secondary {
-    border: 1px solid $mt_color-primary-light;
-
-    &:hover {
-      background: $mt_color-primary-light;
-    }
-
-    &--reversed {
-      border: 1px solid $mt_color-primary-light;
-      color: $mt_color-neutral-lightest;
-
-      &:hover {
-        background: $mt_color-primary-light;
-        color: $mt_color-neutral-darkest;
-      }
-    }
-
-    &--inactive {
-      border: 1px solid transparentize($mt_color-neutral-light, .6);
-      color: transparentize($mt_color-neutral-light, .6);
-      cursor: default;
-    }
-  }
-
-  &.mt_btn-naked {
-    background: none;
-
-    span {
-      border-bottom: 2px solid $color-primary;
-    }
-
-    &:hover {
-      background-color: transparent;
-      color: $color-primary;
-    }
-
-    &--reversed {
-      color: $mt_color-neutral-lightest;
-    }
-
-    &--inactive {
-      color: transparentize($mt_color-neutral-light, .6);
-      border: 0;
-      cursor: default;
-
-      &:hover {
-        color: transparentize($mt_color-neutral-light, .6);
-      }
-    }
-  }
-
   &--success {
-    background-color: $color-affirmation;
-    border: 1px solid $color-affirmation;
+    background-color: $mt_color-affirmation;
+    border: 1px solid $mt_color-affirmation;
     color: $mt_color-neutral-lightest;
 
     &:hover {
@@ -93,13 +22,84 @@
   }
 
   &--error {
-    background-color: $color-danger;
-    border: 1px solid $color-danger;
+    background-color: $mt_color-danger;
+    border: 1px solid $mt_color-danger;
     color: $mt_color-neutral-lightest;
 
     &:hover {
       background-color: $mt_color-danger-light;
       border: 1px solid $mt_color-danger-light;
+    }
+  }
+}
+
+.mt_btn-default {
+  background-color: $mt_color-primary;
+
+  &:hover {
+    background-color: $mt_color-primary-light;
+    border: 1px solid $mt_color-primary-light;
+  }
+
+  &--reversed {
+    color: $mt_color-neutral-lightest;
+  }
+
+  &--inactive {
+    background: $mt_color-neutral;
+    color: $mt_color-neutral-darkest;
+    cursor: default;
+    opacity: .3;
+  }
+}
+
+.mt_btn-secondary {
+  border: 1px solid $mt_color-primary-light;
+
+  &:hover {
+    background: $mt_color-primary-light;
+  }
+
+  &--reversed {
+    border: 1px solid $mt_color-primary-light;
+    color: $mt_color-neutral-lightest;
+
+    &:hover {
+      background: $mt_color-primary-light;
+      color: $mt_color-neutral-darkest;
+    }
+  }
+
+  &--inactive {
+    border: 1px solid transparentize($mt_color-neutral-light, .6);
+    color: transparentize($mt_color-neutral-light, .6);
+    cursor: default;
+  }
+}
+
+.mt_btn-naked {
+  background: none;
+
+  span {
+    border-bottom: 2px solid $mt_color-primary;
+  }
+
+  &:hover {
+    background-color: transparent;
+    color: $mt_color-primary;
+  }
+
+  &--reversed {
+    color: $mt_color-neutral-lightest;
+  }
+
+  &--inactive {
+    border: 0;
+    color: transparentize($mt_color-neutral-light, .6);
+    cursor: default;
+
+    &:hover {
+      color: transparentize($mt_color-neutral-light, .6);
     }
   }
 }
