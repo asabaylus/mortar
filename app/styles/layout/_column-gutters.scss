@@ -11,7 +11,7 @@
 }
 
 @each $bp, $width in $layout-bps { // loop through breakpoints
-  @media #{ $width } {
+  @media #{$width} {
     .mt_col-#{$bp}-gut-half {
       padding-left: $mt_unit / 2;
       padding-right: $mt_unit / 2;
