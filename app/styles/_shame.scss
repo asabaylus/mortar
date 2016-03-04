@@ -41,4 +41,13 @@
 .page-wrapper {
   max-width: 65em;
   margin: 0 auto;
+  @media screen and (max-width: 80em){
+
+  }
+  @media screen and (max-width: 800px){
+
+  }
+  @media screen and (max-width: 375px){
+
+  }
 }
