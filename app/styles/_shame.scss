@@ -20,7 +20,7 @@
 .color-page__color-section {
   li {
     display: inline-block;
-    margin: 0 10px;
+    margin-right: 1.5em;
     text-align: center;
   }
 }
@@ -30,6 +30,12 @@
     height: 8em;
     border-radius: 50%;
     border: 1px solid $mt_color-neutral-lightest;
+}
+
+@each $mt_social-color, $social-bg-color in $mt_social-colors {
+  .social-color--#{$mt_social-color}{
+    background-color: $social-bg-color;
+  }
 }
 
 .page-wrapper {
