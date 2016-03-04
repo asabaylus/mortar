@@ -10,3 +10,29 @@
   padding: .5em;
   width: 3em;
 }
+
+// Color page
+
+.color-page--divider {
+    border: 1px solid $mt_color-neutral-lighter-even;
+}
+
+.color-page__color-section {
+  li {
+    display: inline-block;
+    margin: 0 10px;
+    text-align: center;
+  }
+}
+
+.color-page__brand-color {
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    border: 1px solid $mt_color-neutral-lightest;
+}
+
+.page-wrapper {
+  max-width: 65em;
+  margin: 0 auto;
+}
