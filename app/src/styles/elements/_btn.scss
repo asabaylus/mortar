@@ -96,8 +96,6 @@ $mt_btn-colors: (
     // This rule set must be last
 
     &:active {
-        box-shadow: none;
         position: relative;
-        top: $mt_btn-offset-y;
     }
 }
