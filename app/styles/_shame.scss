@@ -13,41 +13,34 @@
 
 // Color page
 
-.color-page--divider {
-    border: 1px solid $mt_color-neutral-lighter-even;
-}
-
-.color-page__color-section {
-  li {
-    display: inline-block;
-    margin-right: 1.5em;
-    text-align: center;
+.pagewrapper {
+  @media #{$mt_mq-lg} {
+    margin: 0 auto;
+    max-width: 65em;
   }
 }
 
-.color-page__brand-color {
-    width: 8em;
-    height: 8em;
-    border-radius: 50%;
-    border: 1px solid $mt_color-neutral-lightest;
+.pagewrapper--divider {
+  border-top: 1px solid $mt_color-neutral-lighter-even;
+  border-bottom: 1px solid $mt_color-neutral-lighter-even;
+  height: 1em;
+}
+
+.illustratedexamples-item {
+  display: inline-block;
+  margin-right: 1.85em;
+  text-align: center;
+}
+
+.circle {
+  border: 1px solid $mt_color-neutral-lighter-even;
+  border-radius: 50%;
+  height: 8em;
+  width: 8em;
 }
 
 @each $mt_social-color, $social-bg-color in $mt_social-colors {
-  .social-color--#{$mt_social-color}{
+  .social-color--#{$mt_social-color} {
     background-color: $social-bg-color;
-  }
-}
-
-.page-wrapper {
-  max-width: 65em;
-  margin: 0 auto;
-  @media screen and (max-width: 80em){
-
-  }
-  @media screen and (max-width: 800px){
-
-  }
-  @media screen and (max-width: 375px){
-
   }
 }
