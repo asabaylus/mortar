@@ -16,7 +16,7 @@
 .pagewrapper {
   @media #{$mt_mq-lg} {
     margin: 0 auto;
-    max-width: 65em;
+    max-width: 70em;
   }
 }
 
@@ -27,8 +27,11 @@
 }
 
 .illustratedexamples-item {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   margin-right: 1.85em;
+  max-width: 9em;
   text-align: center;
 }
 
