@@ -16,11 +16,12 @@
 .pagewrapper {
   @media #{$mt_mq-lg} {
     margin: 0 auto;
+    padding: 0;
     max-width: 70em;
   }
 }
 
-.pagewrapper--divider {
+.divider {
   border-bottom: 1px solid $mt_color-neutral-lighter-even;
   border-top: 1px solid $mt_color-neutral-lighter-even;
   height: 1em;
@@ -50,7 +51,7 @@
 }
 
 @each $mt_social-color, $social-bg-color in $mt_social-colors {
-  .social-color--#{$mt_social-color} {
+  .mt_social-color--#{$mt_social-color} {
     background-color: $social-bg-color;
   }
 }
