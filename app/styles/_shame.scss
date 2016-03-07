@@ -21,16 +21,23 @@
 }
 
 .pagewrapper--divider {
-  border-top: 1px solid $mt_color-neutral-lighter-even;
   border-bottom: 1px solid $mt_color-neutral-lighter-even;
+  border-top: 1px solid $mt_color-neutral-lighter-even;
   height: 1em;
+}
+
+.illustratedexamples {
+  // Remove this declaration block once we have responsive classnames for .col-offset
+  @media #{$mt_mq-lg} {
+    margin-left: 8em;
+  }
 }
 
 .illustratedexamples-item {
   display: inline-flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-right: 1.85em;
+  margin-right: 1em;
   max-width: 9em;
   text-align: center;
 }
