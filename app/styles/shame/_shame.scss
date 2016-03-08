@@ -16,8 +16,8 @@
 .pagewrapper {
   @media #{$mt_mq-lg} {
     margin: 0 auto;
-    padding: 0;
     max-width: 70em;
+    padding: 0;
   }
 }
 
@@ -35,23 +35,33 @@
 }
 
 .illustratedexamples-item {
+  align-items: center;
   display: inline-flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-right: 1em;
+  margin-right: 1.59em;
   max-width: 9em;
   text-align: center;
+
+  @media #{$mt_mq-lg} {
+    margin-right: 1em;
+  }
 }
 
 .circle {
   border: 1px solid $mt_color-neutral-lighter-even;
   border-radius: 50%;
-  height: 8em;
-  width: 8em;
+  height: 9em;
+  width: 9em;
+
+  @media #{$mt_mq-lg} {
+    height: 8em;
+    width: 8em;
+  }
 }
 
-@each $mt_social-color, $social-bg-color in $mt_social-colors {
+@each $mt_social-color, $mt_social-bg-color in $mt_social-colors {
   .mt_social-color--#{$mt_social-color} {
-    background-color: $social-bg-color;
+    background-color: $mt_social-bg-color;
   }
 }
