@@ -11,7 +11,16 @@
   width: 3em;
 }
 
+// ====================
+// ====================
 // Color page
+// ====================
+// ====================
+
+
+// ====================
+// Page Wrapper
+// ====================
 
 .pagewrapper {
   @media #{$mt_mq-lg} {
@@ -21,11 +30,19 @@
   }
 }
 
+// ====================
+// Page Divider
+// ====================
+
 .divider {
   border-bottom: 1px solid $mt_color-neutral-lighter-even;
   border-top: 1px solid $mt_color-neutral-lighter-even;
   height: 1em;
 }
+
+// ====================
+// Illustrated Examples Block
+// ====================
 
 .illustratedexamples {
   // Remove this declaration block once we have responsive classnames for .col-offset
@@ -57,11 +74,5 @@
   @media #{$mt_mq-lg} {
     height: 8em;
     width: 8em;
-  }
-}
-
-@each $mt_social-color, $mt_social-bg-color in $mt_social-colors {
-  .mt_social-color--#{$mt_social-color} {
-    background-color: $mt_social-bg-color;
   }
 }
