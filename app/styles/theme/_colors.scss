@@ -1,16 +1,4 @@
-@function change-tint($mt_color, $mt_tint) {
-  @if $mt_tint < 100 {
-    @return lighten($mt_color, percentage((100 - $mt_tint) / 200));
-  } @else if $mt_tint > 100 {
-    @return darken($mt_color, percentage(($mt_tint - 100) / 200));
-  }
-}
-
-.mt_text-color-danger {
-  color: $mt_color-danger;
-}
-
-.mt_bg-color-primary {
+.mt_bgcolor--primary {
   background-color: $mt_color-primary;
 
   &--light {
@@ -30,7 +18,7 @@
   }
 }
 
-.mt_bg-color-danger {
+.mt_bgcolor--danger {
   background-color: $mt_color-danger;
 
   &--light {
@@ -38,7 +26,7 @@
   }
 }
 
-.mt_bg-color-affirmation {
+.mt_bgcolor--affirmation {
   background-color: $mt_color-affirmation;
 
   &--light {
@@ -46,7 +34,7 @@
   }
 }
 
-.mt_bg-color-neutral {
+.mt_bgcolor--neutral {
   background-color: $mt_color-neutral;
 
   &--darkest {
@@ -79,5 +67,87 @@
 
   &--lightest {
     background-color: $mt_color-neutral-lightest;
+  }
+}
+
+.mt_color--primary {
+  color: $mt_color-primary;
+
+  &--light {
+    color: $mt_color-primary-light;
+  }
+
+  &--lighter {
+    color: $mt_color-primary-lighter;
+  }
+
+  &--lighter-even {
+    color: $mt_color-primary-lighter-even;
+  }
+
+  &--lightest {
+    color: $mt_color-primary-lightest;
+  }
+}
+
+.mt_color--danger {
+  color: $mt_color-danger;
+
+  &--light {
+    color: $mt_color-danger-light;
+  }
+}
+
+.mt_color--affirmation {
+  color: $mt_color-affirmation;
+
+  &--light {
+    color: $mt_color-affirmation-light;
+  }
+}
+
+.mt_color--neutral {
+  color: $mt_color-neutral;
+
+  &--darkest {
+    color: $mt_color-neutral-darkest;
+  }
+
+  &--darker {
+    color: $mt_color-neutral-darker;
+  }
+
+  &--dark {
+    color: $mt_color-neutral-dark;
+  }
+
+  &--light {
+    color: $mt_color-neutral-light;
+  }
+
+  &--lighter {
+    color: $mt_color-neutral-lighter;
+  }
+
+  &--lighter-even {
+    color: $mt_color-neutral-lighter-even;
+  }
+
+  &--lighter-even-even {
+    color: $mt_color-neutral-lighter-even-even;
+  }
+
+  &--lightest {
+    color: $mt_color-neutral-lightest;
+  }
+}
+
+@each $mt_social-color, $mt_social-bg-color in $mt_social-colors {
+  .mt_bgcolor-social--#{$mt_social-color} {
+    background-color: $mt_social-bg-color;
+  }
+
+  .mt_color-social--#{$mt_social-color} {
+    color: $mt_social-bg-color;
   }
 }
