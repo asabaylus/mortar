@@ -83,13 +83,13 @@
 // ====================
 // ====================
 
-.typographicexamples {
+.typographyexamples {
   // Remove this declaration block once we have responsive classnames for .col-offset
   @media #{$mt_mq-lg} {
     margin-left: 8em;
   }
 }
 
-.typographicexamples-item {
+.typographyexamples-item {
   border: 1px solid $mt_color-neutral-lighter-even;
 }
