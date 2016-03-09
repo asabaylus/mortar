@@ -7,7 +7,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('styles', function() {
-  return gulp.src('app/styles/**/*.scss')
+  return gulp.src('app/styles/*.scss')
     .pipe(sourcemaps.init())
       .pipe(sass())
       .pipe(autoprefixer())
