@@ -76,3 +76,17 @@
     width: 8em;
   }
 }
+
+
+// ====================
+// ====================
+// Typography page
+// ====================
+// ====================
+
+.typographicexamples {
+  // Remove this declaration block once we have responsive classnames for .col-offset
+  @media #{$mt_mq-lg} {
+    margin-left: 8em;
+  }
+}
