@@ -1,6 +1,6 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 36">
   <title>headphones</title>
-  <path d="M4.76,29.9a6.1,6.1,0,0,0,6.1,6.1h0V23.81a6.09,6.09,0,0,0-6.1,6.08h0Z" transform="translate(0.05)"/>
-  <path d="M23,23.81V36A6.1,6.1,0,0,0,23,23.81Z" transform="translate(0.05)"/>
-  <path d="M17,0A17,17,0,0,0,0,17v9.91H3.43V17a13.52,13.52,0,1,1,27,0v9.91H34V17A17,17,0,0,0,17,0Z" transform="translate(0.05)"/>
+  <path style="fill:currentColor" d="M4.76,29.9a6.1,6.1,0,0,0,6.1,6.1h0V23.81a6.09,6.09,0,0,0-6.1,6.08h0Z" transform="translate(0.05)"/>
+  <path style="fill:currentColor" d="M23,23.81V36A6.1,6.1,0,0,0,23,23.81Z" transform="translate(0.05)"/>
+  <path style="fill:currentColor" d="M17,0A17,17,0,0,0,0,17v9.91H3.43V17a13.52,13.52,0,1,1,27,0v9.91H34V17A17,17,0,0,0,17,0Z" transform="translate(0.05)"/>
 </svg>

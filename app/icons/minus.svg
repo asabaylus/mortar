@@ -1,4 +1,4 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 2">
   <title>minus</title>
-  <line y1="1" x2="36" y2="1" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 2px; vector-effect:non-scaling-stroke;"/>
+  <line y1="1" x2="36" y2="1" style="fill: none;stroke: currentColor;stroke-miterlimit: 10;stroke-width: 2px; vector-effect:non-scaling-stroke;"/>
 </svg>
