@@ -1,4 +1,4 @@
-.mt_bg-color-primary {
+.mt_bgcolor--primary {
   background-color: $mt_color-primary;
 
   &--light {
@@ -18,7 +18,7 @@
   }
 }
 
-.mt_bg-color-danger {
+.mt_bgcolor--danger {
   background-color: $mt_color-danger;
 
   &--light {
@@ -26,7 +26,7 @@
   }
 }
 
-.mt_bg-color-affirmation {
+.mt_bgcolor--affirmation {
   background-color: $mt_color-affirmation;
 
   &--light {
@@ -34,7 +34,7 @@
   }
 }
 
-.mt_bg-color-neutral {
+.mt_bgcolor--neutral {
   background-color: $mt_color-neutral;
 
   &--darkest {
@@ -70,7 +70,7 @@
   }
 }
 
-.mt_color-primary {
+.mt_color--primary {
   color: $mt_color-primary;
 
   &--light {
@@ -90,7 +90,7 @@
   }
 }
 
-.mt_color-danger {
+.mt_color--danger {
   color: $mt_color-danger;
 
   &--light {
@@ -98,7 +98,7 @@
   }
 }
 
-.mt_color-affirmation {
+.mt_color--affirmation {
   color: $mt_color-affirmation;
 
   &--light {
@@ -106,7 +106,7 @@
   }
 }
 
-.mt_color-neutral {
+.mt_color--neutral {
   color: $mt_color-neutral;
 
   &--darkest {
@@ -139,5 +139,15 @@
 
   &--lightest {
     color: $mt_color-neutral-lightest;
+  }
+}
+
+@each $mt_social-color, $mt_social-bg-color in $mt_social-colors {
+  .mt_bgcolor-social--#{$mt_social-color} {
+    background-color: $mt_social-bg-color;
+  }
+
+  .mt_color-social--#{$mt_social-color} {
+    color: $mt_social-bg-color;
   }
 }
