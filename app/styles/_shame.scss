@@ -77,7 +77,6 @@
   }
 }
 
-
 // ====================
 // ====================
 // Typography page
@@ -89,4 +88,8 @@
   @media #{$mt_mq-lg} {
     margin-left: 8em;
   }
+}
+
+.typographicexamples-item {
+  border: 1px solid $mt_color-neutral-lighter-even;
 }
