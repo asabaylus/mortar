@@ -10,3 +10,69 @@
   padding: .5em;
   width: 3em;
 }
+
+// ====================
+// ====================
+// Color page
+// ====================
+// ====================
+
+
+// ====================
+// Page Wrapper
+// ====================
+
+.pagewrapper {
+  @media #{$mt_mq-lg} {
+    margin: 0 auto;
+    max-width: 70em;
+    padding: 0;
+  }
+}
+
+// ====================
+// Page Divider
+// ====================
+
+.divider {
+  border-bottom: 1px solid $mt_color-neutral-lighter-even;
+  border-top: 1px solid $mt_color-neutral-lighter-even;
+  height: 1em;
+}
+
+// ====================
+// Illustrated Examples Block
+// ====================
+
+.illustratedexamples {
+  // Remove this declaration block once we have responsive classnames for .col-offset
+  @media #{$mt_mq-lg} {
+    margin-left: 8em;
+  }
+}
+
+.illustratedexamples-item {
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-right: 1.59em;
+  max-width: 9em;
+  text-align: center;
+
+  @media #{$mt_mq-lg} {
+    margin-right: 1em;
+  }
+}
+
+.circle {
+  border: 1px solid $mt_color-neutral-lighter-even;
+  border-radius: 50%;
+  height: 9em;
+  width: 9em;
+
+  @media #{$mt_mq-lg} {
+    height: 8em;
+    width: 8em;
+  }
+}

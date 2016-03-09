@@ -1,6 +1,6 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
   <title>print</title>
-  <path d="M28,6.83H24V4L20,0H4V6.83H0V23H4v5H24V23h4V6.83h0ZM6,2H19.17L22,4.83v2H6V2ZM22,23v3H6V17H22v6Zm4-2H24V15H4v6H2V10.83H26V21Z"/>
-  <rect x="8" y="19" width="12" height="2"/>
-  <rect x="8" y="22" width="12" height="2"/>
+  <path style="fill:currentColor" d="M28,6.83H24V4L20,0H4V6.83H0V23H4v5H24V23h4V6.83h0ZM6,2H19.17L22,4.83v2H6V2ZM22,23v3H6V17H22v6Zm4-2H24V15H4v6H2V10.83H26V21Z"/>
+  <rect style="fill:currentColor" x="8" y="19" width="12" height="2"/>
+  <rect style="fill:currentColor" x="8" y="22" width="12" height="2"/>
 </svg>

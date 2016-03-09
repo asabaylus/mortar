@@ -6,6 +6,10 @@ $mt_fs-norm:   1em;      // 16px
 $mt_fs-med:    1.1875em; // 19px
 $mt_fs-lrg:    1.375em;  // 22px
 $mt_fs-xlrg:   1.6875em; // 27px
+
+$mt_fs-med-lrg:  2.5em; // 40px
+$mt_fs-med-xlrg: 2.8125em; // 45px
+
 $mt_fs-xxlrg:  3.375em;  // 54px
 $mt_fs-xxxlrg: 4.0625em; // 65px
 
@@ -20,28 +24,48 @@ $mt_unit-quadruple: $mt_unit * 4;
 
 %mt_h1 {
   font-family: 'Chronicle Display 3r';
-  font-size: $mt_fs-xxxlrg;
+  font-size: $mt_fs-med-xlrg;
   font-weight: 300;
   letter-spacing: .005em;
   line-height: .95;
   text-rendering: optimizeLegibility;
+
+  @media #{$mt_mq-md} {
+    font-size: $mt_fs-xxlrg;
+  }
+
+  @media #{$mt_mq-lg} {
+    font-size: $mt_fs-xxxlrg;
+  }
 }
 
 %mt_h2 {
   font-family: 'Chronicle Deck 6r';
-  font-size: $mt_fs-xxlrg;
+  font-size: $mt_fs-xlrg;
   font-weight: 600;
   letter-spacing: .005em;
   line-height: 1.15;
   text-rendering: optimizeLegibility;
+
+  @media #{$mt_mq-md} {
+    font-size: $mt_fs-med-lrg;
+  }
+
+  @media #{$mt_mq-lg} {
+    font-size: $mt_fs-xxlrg;
+  }
 }
 
 %mt_h3 {
   font-family: 'Pragmatica-web';
-  font-size: $mt_fs-xlrg;
+  font-size: $mt_fs-lrg;
   font-weight: 600;
   letter-spacing: -.01em;
   line-height: 1.185;
+
+  @media #{$mt_mq-lg} {
+    font-size: $mt_fs-xlrg;
+  }
 }
 
 %mt_h4 {
