@@ -1,5 +1,5 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.56 38.56">
   <title>search</title>
-  <circle cx="14.5" cy="14.5" r="13" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 3px; vector-effect:non-scaling-stroke;"/>
-  <line x1="37.5" y1="37.5" x2="23.69" y2="23.69" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 3px; vector-effect:non-scaling-stroke;"/>
+  <circle cx="14.5" cy="14.5" r="13" style="fill: none;stroke: currentColor;stroke-miterlimit: 10;stroke-width: 3px; vector-effect:non-scaling-stroke;"/>
+  <line x1="37.5" y1="37.5" x2="23.69" y2="23.69" style="fill: none;stroke: currentColor;stroke-miterlimit: 10;stroke-width: 3px; vector-effect:non-scaling-stroke;"/>
 </svg>
