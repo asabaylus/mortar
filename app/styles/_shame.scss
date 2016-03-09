@@ -76,3 +76,13 @@
     width: 8em;
   }
 }
+
+// ====================
+// Footer Copyright
+// ====================
+
+.copyright {
+  @media #{$mt_mq-lg} {
+    margin-bottom: 0;
+  }
+}
