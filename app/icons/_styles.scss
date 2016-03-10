@@ -1,9 +1,11 @@
 .mt_icon {
   height: $mt_unit;
   width: $mt_unit;
+  visibility: text-bottom;
 }
 
 .mt_icon--large {
   height: $mt_unit-double;
   width: $mt_unit-double;
+  vertical-align: bottom;
 }
