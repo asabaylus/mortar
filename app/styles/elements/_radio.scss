@@ -1,5 +1,5 @@
 // Default State
-.mt_checkbox {
+.mt_radio {
   visibility: hidden;
 
   & + * {
@@ -7,43 +7,43 @@
 
     &::before {
       background-size: contain;
-      background-image: $mt_checkbox-bg-unchecked;
+      background-image: $mt_radio-bg-unchecked;
       background-position: center;
       background-repeat: no-repeat;
       content: '';
       cursor: pointer;
       display: inline-block;
-      height: $mt_checkbox-height;
+      height: $mt_radio-height;
       margin-right: $mt_unit * .75;
       opacity: .9;
       vertical-align: bottom;
-      width: $mt_checkbox-width;
+      width: $mt_radio-width;
     }
   }
 
   // Hover State
-  &:not(.mt_checkbox--disabled):focus + *,
-  &:not(.mt_checkbox--disabled):hover + * {
+  &:not(.mt_radio--disabled):focus + *,
+  &:not(.mt_radio--disabled):hover + * {
     opacity: 1;
 
     &::before {
-      background-image: $mt_checkbox-bg-hover;
+      background-image: $mt_radio-bg-hover;
       opacity: 1;
     }
   }
 
   // Checked State
-  &:not(.mt_checkbox--disabled):checked + * {
+  &:not(.mt_radio--disabled):checked + * {
     opacity: 1;
 
     &::before {
-      background-image: $mt_checkbox-bg-checked;
+      background-image: $mt_radio-bg-checked;
       opacity: 1;
     }
   }
 
   // Disabled State
-  &.mt_checkbox--disabled {
+  &.mt_radio--disabled {
     opacity: .4;
 
     & + * {

@@ -1,11 +1,25 @@
 // 1. don't base64 (https://css-tricks.com/probably-dont-base64-svg/)
-// 2. run it through SVGO
+// 2. run it through SVGO (https://jakearchibald.github.io/svgomg/)
 // 3. run it through a URL encoder and don't specify the encoding type
 //  - https://stackoverflow.com/questions/30676125/svg-as-data-uri-triggers-xml-parsing-error-in-firefox/30676203#30676203
-//  - http://codepen.io/chriscoyier/pen/ZQgvyG/ 
+//  - http://codepen.io/chriscoyier/pen/ZQgvyG/
 
-$mt_checkox-height: 20px;
-$mt_checkox-width: 20px;
-$mt_checkox-bg-unchecked: url('data:image/svg+xml,%3Csvg%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M.5.5h19v19H.5z%22%2F%3E%3Cpath%20d%3D%22M19%201v18H1V1h18m1-1H0v20h20V0z%22%20fill%3D%22%23b3b4b4%22%2F%3E%3C%2Fsvg%3E');
-$mt_checkox-bg-hover: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M.5.5h19v19H.5z%22%2F%3E%3Cpath%20d%3D%22M19%201v18H1V1h18m1-1H0v20h20V0z%22%20fill%3D%22%23b3b4b4%22%2F%3E%3Cpath%20fill%3D%22%23e6e6e6%22%20d%3D%22M8.2%2016.5l-5.23-5.07%201.92-2%203.04%202.81%206.95-8.74%202.15%201.76L8.2%2016.5%22%2F%3E%3C%2Fsvg%3E');
-$mt_checkox-bg-checked: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M.5.5h19v19H.5z%22%2F%3E%3Cpath%20d%3D%22M19%201v18H1V1h18m1-1H0v20h20V0z%22%20fill%3D%22%23b3b4b4%22%2F%3E%3Cpath%20fill%3D%22%23FC0%22%20d%3D%22M8.2%2016.5l-5.23-5.07%201.92-2%203.04%202.81%206.95-8.74%202.15%201.76L8.2%2016.5%22%2F%3E%3C%2Fsvg%3E');
+// Checkbox Input Values
+
+$mt_checkbox-height: 20px;
+$mt_checkbox-width: 20px;
+$mt_checkbox-bg-unchecked: url('data:image/svg+xml,%3Csvg%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M.5.5h19v19H.5z%22%2F%3E%3Cpath%20d%3D%22M19%201v18H1V1h18m1-1H0v20h20V0z%22%20fill%3D%22%23b3b4b4%22%2F%3E%3C%2Fsvg%3E');
+$mt_checkbox-bg-hover: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M.5.5h19v19H.5z%22%2F%3E%3Cpath%20d%3D%22M19%201v18H1V1h18m1-1H0v20h20V0z%22%20fill%3D%22%23b3b4b4%22%2F%3E%3Cpath%20fill%3D%22%23e6e6e6%22%20d%3D%22M8.2%2016.5l-5.23-5.07%201.92-2%203.04%202.81%206.95-8.74%202.15%201.76L8.2%2016.5%22%2F%3E%3C%2Fsvg%3E');
+$mt_checkbox-bg-checked: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M.5.5h19v19H.5z%22%2F%3E%3Cpath%20d%3D%22M19%201v18H1V1h18m1-1H0v20h20V0z%22%20fill%3D%22%23b3b4b4%22%2F%3E%3Cpath%20fill%3D%22%23FC0%22%20d%3D%22M8.2%2016.5l-5.23-5.07%201.92-2%203.04%202.81%206.95-8.74%202.15%201.76L8.2%2016.5%22%2F%3E%3C%2Fsvg%3E');
+
+// Pre URL-encoded Active state checkbo SVG: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="#fff" d="M.5.5h19v19H.5z"/><path d="M19 1v18H1V1h18m1-1H0v20h20V0z" fill="#b3b4b4"/><path fill="#FC0" d="M8.2 16.5l-5.23-5.07 1.92-2 3.04 2.81 6.95-8.74 2.15 1.76L8.2 16.5"/></svg>
+
+// Radio Input Values
+
+$mt_radio-height: 20px;
+$mt_radio-width: 20px;
+$mt_radio-bg-unchecked: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20d%3D%22M10%2019.5a9.5%209.5%200%201%201%209.5-9.5%209.51%209.51%200%200%201-9.5%209.5z%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M10%201a9%209%200%201%201-9%209%209%209%200%200%201%209-9m0-1a10%2010%200%201%200%2010%2010A10%2010%200%200%200%2010%200z%22%20fill%3D%22%23b3b3b3%22%2F%3E%3C%2Fsvg%3E');
+$mt_radio-bg-hover: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20d%3D%22M10%2019.5a9.5%209.5%200%201%201%209.5-9.5%209.51%209.51%200%200%201-9.5%209.5z%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M10%201a9%209%200%201%201-9%209%209%209%200%200%201%209-9m0-1a10%2010%200%201%200%2010%2010A10%2010%200%200%200%2010%200z%22%20fill%3D%22%23b3b3b3%22%2F%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%2210%22%20r%3D%226%22%20fill%3D%22%23e6e6e6%22%2F%3E%3C%2Fsvg%3E');
+$mt_radio-bg-checked: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20d%3D%22M10%2019.5a9.5%209.5%200%201%201%209.5-9.5%209.51%209.51%200%200%201-9.5%209.5z%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M10%201a9%209%200%201%201-9%209%209%209%200%200%201%209-9m0-1a10%2010%200%201%200%2010%2010A10%2010%200%200%200%2010%200z%22%20fill%3D%22%23b3b3b3%22%2F%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%2210%22%20r%3D%226%22%20fill%3D%22%23FC0%22%2F%3E%3C%2Fsvg%3E');
+
+//  Pre URL-encoded Active state radio SVG: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 19.5a9.5 9.5 0 1 1 9.5-9.5 9.51 9.51 0 0 1-9.5 9.5z" fill="#fff"/><path d="M10 1a9 9 0 1 1-9 9 9 9 0 0 1 9-9m0-1a10 10 0 1 0 10 10A10 10 0 0 0 10 0z" fill="#b3b3b3"/><circle cx="10" cy="10" r="6" fill="#FC0"/></svg>
