@@ -84,3 +84,17 @@
 .examplepadding {
   padding: 2em;
 }
+
+// ====================
+// Footer / Copyright
+// ====================
+
+.footer {
+  padding: 2.5em;
+}
+
+.copyright {
+  @media #{$mt_mq-lg} {
+    margin-bottom: 0;
+  }
+}
