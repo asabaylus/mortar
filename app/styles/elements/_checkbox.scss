@@ -1,0 +1,56 @@
+// Default State
+.mt_checkbox {
+  visibility: hidden;
+
+  & + * {
+    margin-left: -#{$mt_unit * 1.25};
+
+    &::before {
+      background-size: contain;
+      background-image: $mt_checkox-bg-unchecked;
+      background-position: center;
+      background-repeat: no-repeat;
+      content: '';
+      cursor: pointer;
+      display: inline-block;
+      height: $mt_checkox-height;
+      margin-right: $mt_unit * .75;
+      opacity: .9;
+      vertical-align: bottom;
+      width: $mt_checkox-width;
+    }
+  }
+
+  // Hover State
+  &:not(.mt_checkbox--disabled):hover + * {
+    color: currentColor;
+
+    &::before {
+      background-image: $mt_checkox-bg-hover;
+      opacity: 1;
+    }
+  }
+
+  // Checked State
+  &:not(.mt_checkbox--disabled):checked + * {
+    color: currentColor;
+
+    &::before {
+      background-image: $mt_checkox-bg-checked;
+      opacity: 1;
+    }
+  }
+
+  // Disabled State
+  &.mt_checkbox--disabled {
+    opacity: .4;
+
+    & + * {
+      opacity: .4;
+
+      ::before {
+        cursor: default;
+      }
+    }
+  }
+}
