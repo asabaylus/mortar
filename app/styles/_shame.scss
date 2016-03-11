@@ -95,8 +95,12 @@
   padding: 1em;
 }
 
+.examplepadding {
+  padding: 2em;
+}
+
 // ====================
-// Footer Copyright
+// Footer / Copyright
 // ====================
 
 .footer {
@@ -107,4 +111,12 @@
   @media #{$mt_mq-lg} {
     margin-bottom: 0;
   }
+}
+
+// ====================
+// Fieldset
+// ====================
+
+.fieldset {
+  border: none;
 }
