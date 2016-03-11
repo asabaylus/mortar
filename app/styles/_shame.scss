@@ -78,8 +78,22 @@
 }
 
 // ====================
-// Page Divider
 // ====================
+// Typography page
+// ====================
+// ====================
+
+.typographyexamples {
+  // Remove this declaration block once we have responsive classnames for .col-offset
+  @media #{$mt_mq-lg} {
+    margin-left: 8em;
+  }
+}
+
+.typographyexamples-item {
+  border: 1px solid $mt_color-neutral-lighter-even;
+  padding: 1em;
+}
 
 .examplepadding {
   padding: 2em;
