@@ -1,0 +1,58 @@
+// Default State
+.mt_radio {
+  visibility: hidden;
+
+  & + * {
+    margin-left: -#{$mt_unit * 1.25};
+
+    &::before {
+      background-size: contain;
+      background-image: $mt_radio-bg-unchecked;
+      background-position: center;
+      background-repeat: no-repeat;
+      content: '';
+      display: inline-block;
+      height: $mt_radio-height;
+      margin-right: $mt_unit * .75;
+      opacity: .9;
+      vertical-align: bottom;
+      width: $mt_radio-width;
+    }
+  }
+
+  // Hover State
+  &:not(.mt_radio--disabled):focus + *,
+  &:not(.mt_radio--disabled):hover + * {
+    cursor: pointer;
+    opacity: 1;
+
+    &::before {
+      background-image: $mt_radio-bg-hover;
+      opacity: 1;
+    }
+  }
+
+  // Checked State
+  &:not(.mt_radio--disabled):checked + * {
+    cursor: pointer;
+    opacity: 1;
+
+    &::before {
+      background-image: $mt_radio-bg-checked;
+      opacity: 1;
+    }
+  }
+
+  // Disabled State
+  &.mt_radio--disabled {
+    opacity: .4;
+
+    & + * {
+      opacity: .4;
+
+      ::before {
+        cursor: default;
+      }
+    }
+  }
+}
