@@ -1,0 +1,30 @@
+.videopromo-container {
+  position: relative;
+  margin: 0;
+}
+
+.videopromo-button {
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: $mt_video-promo-play-button;
+  border: none;
+  height: 40%;
+  left: 50%;
+  opacity: .5;
+  position: absolute;
+  max-height: $mt_unit * 15;
+  max-width: $mt_unit * 15;
+  content: $mt_unit;
+  min-height: $mt_unit-double;
+  min-width: $mt_unit-double;
+  top: 50%;
+  transition: 400ms;
+  transform: translate(-50%, -50%);
+  width: 40%;
+
+  .videopromo-container:hover & {
+    opacity: .65;
+  }
+}
