@@ -1,43 +1,28 @@
-/*
-
 .mt_tooltip-container {
   max-width: 18.75em;
-  padding: 1em;
   position: relative;
   text-align: center;
-  display: none;
+  transition: 400ms;
+}
 
-  &:after {
-    border: 10px solid transparent;
-    border-top: 10px solid $mt_color-neutral-lighter-even-even;
-    content: '';
-    left: 10%;
-    bottom: -20%;
-    text-align: center;
-    position: absolute;
-    z-index: 98;
-  }
+.tooltip-tip {
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top: 10px solid $mt_color-neutral-lighter-even-even;
+  position: absolute;
+  right: 47%;
+  bottom: 27px;
+}
+
+.mt_tooltip-content {
+  padding: 1em;
+  opacity: 0;
 }
 
 .mt_tooltip {
   cursor: pointer;
-}
-
-.mt_module-tooltip-show {
-  display: block;
-}
-
-*/
-
-.tooltip-container {
-  position: relative;
-}
-
-.tooltip-tip {
-  opacity: 0;
-  position: absolute;
-  .tooltip-container:hover & {
+  &:hover > .mt_tooltip-content {
     opacity: 1;
-    transition: .4s;
   }
 }
