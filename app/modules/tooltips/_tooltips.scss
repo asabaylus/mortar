@@ -1,3 +1,4 @@
+
 .mt_tooltip-container {
   max-width: 18.75em;
   position: relative;
@@ -5,19 +6,19 @@
   transition: 400ms;
 }
 
-.tooltip-tip {
-  width: 0;
-  height: 0;
+.mt_tooltip-tip {
   border: 10px solid transparent;
   border-top: 10px solid $mt_color-neutral-lighter-even-even;
+  bottom: 27px;
+  height: 0;
   position: absolute;
   right: 47%;
-  bottom: 27px;
+  width: 0;
 }
 
 .mt_tooltip-content {
-  padding: 1em;
   opacity: 0;
+  padding: 1em;
 }
 
 .mt_tooltip {
