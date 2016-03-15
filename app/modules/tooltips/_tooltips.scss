@@ -8,7 +8,7 @@
 .mt_tooltip-content {
   $mt_arrowheight: .625rem;
 
-  bottom: calc(100% + $mt_arrowheight);
+  bottom: calc(100% + #{$mt_arrowheight});
   padding: 1em;
   position: absolute;
   text-align: center;
