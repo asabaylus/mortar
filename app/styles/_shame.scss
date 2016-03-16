@@ -11,11 +11,45 @@
   width: 3em;
 }
 
+
 // ====================
 // ====================
-// Color page
+// Homepage
 // ====================
 // ====================
+
+.herocontainer {
+  padding-top: 2em;
+  text-align: center;
+
+  @media #{$mt_mq-lg} {
+    padding-top: 6em;
+    text-align: left;
+  }
+}
+
+// Will eventually move this block to links documentation file
+
+.mt_link {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    border-bottom: 1px solid $mt_color-primary;
+    color: $mt_color-neutral-darkest;
+  }
+
+  &:hover {
+    color: $mt_color-neutral;
+    border-bottom: 1px solid $mt_color-neutral;
+  }
+}
+
+.markup {
+  border: 1px solid #e6e6e6;
+  display: block;
+  padding: 1.5em;
+  word-wrap: break-word;
+}
 
 
 // ====================
@@ -30,6 +64,7 @@
   }
 }
 
+
 // ====================
 // Page Divider
 // ====================
@@ -39,6 +74,14 @@
   border-top: 1px solid $mt_color-neutral-lighter-even;
   height: 1em;
 }
+
+
+// ====================
+// ====================
+// Color page
+// ====================
+// ====================
+
 
 // ====================
 // Illustrated Examples Block
