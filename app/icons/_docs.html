@@ -1,3 +1,5 @@
+<h4>Icons</h4>
+
 {% for icon in icons %}
   {% if loop.first %}<ul>{% endif %}
   <li>
@@ -5,18 +7,19 @@
     <svg class="mt_icon">
       <use xlink:href="/symbol/svg/sprite.symbol.svg#{{ icon }}"></use>
     </svg>
-    <svg class="mt_icon--large">
+  </li>
+  {% if loop.last %}</ul>{% endif %}
+{% endfor %}
+
+<h4>Social Icons</h4>
+
+{% for icon in socialIcons %}
+  {% if loop.first %}<ul>{% endif %}
+  <li>
+    <h3><code>{{ icon }}</code></h3>
+    <svg class="mt_icon">
       <use xlink:href="/symbol/svg/sprite.symbol.svg#{{ icon }}"></use>
     </svg>
-
-    <span style="display:inline-block;padding:1em" class="mt_bgcolor--neutral--darkest mt_color--neutral--lightest">
-      <svg class="mt_icon">
-        <use xlink:href="/symbol/svg/sprite.symbol.svg#{{ icon }}"></use>
-      </svg>
-      <svg class="mt_icon--large">
-        <use xlink:href="/symbol/svg/sprite.symbol.svg#{{ icon }}"></use>
-      </svg>
-    </span>
   </li>
   {% if loop.last %}</ul>{% endif %}
 {% endfor %}

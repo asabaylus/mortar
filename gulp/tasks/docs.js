@@ -10,6 +10,16 @@ var fs = require('fs');
 
 // Static server
 gulp.task('docs', function() {
+  const fileList = fs.readdirSync('app/icons/');
+  const icons = fileList
+    .filter(isSVG)
+    .filter(isNotSocial)
+    .map(trimExtension);
+  const socialIcons = fileList
+    .filter(isSVG)
+    .filter(isSocial)
+    .map(trimExtension);
+
   // remove file extension from SVGs
   function trimExtension(item) {
     return item.slice(0, -4);
@@ -21,6 +31,24 @@ gulp.task('docs', function() {
       return file
     }
   }
+
+  // filter non social icons out of array
+  function isSocial(file) {
+    if (file.startsWith('social-')) {
+      return file
+    }
+  }
+
+  // filter social icons out of array
+  function isNotSocial(file) {
+    if (!file.startsWith('social-')) {
+      return file
+    }
+  }
+
+  console.log('icons: ' + icons);
+
+  console.log('social icons: ' + socialIcons);
 
   Metalsmith('./')
   .source('./app/site')
@@ -43,10 +71,10 @@ gulp.task('docs', function() {
       'metadata': {
         // 1. read icon files from directory then
         // 2. filter SVGs from array
-        // 3. remove `.svg` file extension from strings
-        'icons': fs.readdirSync('app/icons/')
-                  .filter(isSVG)
-                  .map(trimExtension)
+        // 3. filter between social and non social icons
+        // 4. remove `.svg` file extension from strings
+        'icons': icons,
+        'socialIcons': socialIcons
       }
     }
   ]))
