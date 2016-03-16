@@ -33,19 +33,19 @@
 .mt_link {
   &:link,
   &:visited {
-    text-decoration: none;
     border-bottom: 1px solid $mt_color-primary;
     color: $mt_color-neutral-darkest;
+    text-decoration: none;
   }
 
   &:hover {
-    color: $mt_color-neutral;
     border-bottom: 1px solid $mt_color-neutral;
+    color: $mt_color-neutral;
   }
 }
 
-.markup {
-  border: 1px solid #e6e6e6;
+.codemarkup {
+  border: 1px solid $mt_color-neutral-lighter-even;
   display: block;
   padding: 1.5em;
   word-wrap: break-word;
@@ -106,6 +106,14 @@
   @media #{$mt_mq-lg} {
     margin-right: 1em;
   }
+
+  svg {
+    border: 1px solid $mt_color-neutral-lighter-even;
+    border-radius: 50%;
+    height: 9em;
+    padding: 1em;
+    width: 9em;
+  }
 }
 
 .circle {
@@ -119,6 +127,7 @@
     width: 8em;
   }
 }
+
 
 // ====================
 // ====================
@@ -172,5 +181,5 @@
 // ====================
 
 .photocaption {
-  margin-bottom: 0.4em;
+  margin-bottom: .4em;
 }
