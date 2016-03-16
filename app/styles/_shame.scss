@@ -28,6 +28,14 @@
   }
 }
 
+.examplelink {
+  &:link,
+  &:visited {
+    color: $mt_color-neutral-darkest;
+    text-decoration: none;
+  }
+}
+
 // Will eventually move this block to links documentation file
 
 .mt_link {
@@ -102,6 +110,7 @@
   margin-right: 1.59em;
   max-width: 9em;
   text-align: center;
+  border: 0;
 
   @media #{$mt_mq-lg} {
     margin-right: 1em;
