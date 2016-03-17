@@ -46,10 +46,6 @@ gulp.task('docs', function() {
     }
   }
 
-  console.log('icons: ' + icons);
-
-  console.log('social icons: ' + socialIcons);
-
   Metalsmith('./')
   .source('./app/site')
   .destination('./.tmp/site')

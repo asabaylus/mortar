@@ -1,10 +1,32 @@
+<fieldset class="mt_subh4 examplepadding fieldset">
+  <div class="mt_row-gut-1">
+    <input class="mt_radio" type="radio" value="small" name="icon-size" id="small">
+    <label for="small">Small</label>
+  </div>
+  <div>
+    <input class="mt_radio" type="radio" value="large" name="icon-size" id="large" checked>
+    <label for="large">Large</label>
+  </div>
+</fieldset>
+
+<fieldset class="mt_subh4 examplepadding fieldset">
+  <div class="mt_row-gut-1">
+    <input class="mt_radio" type="radio" value="default" name="icon-color" id="default" checked>
+    <label for="default">Default Colors</label>
+  </div>
+  <div>
+    <input class="mt_radio" type="radio" value="inverse" name="icon-color" id="inverse">
+    <label for="inverse">Inverse Colors</label>
+  </div>
+</fieldset>
+
 <h4>Icons</h4>
 
 {% for icon in icons %}
   {% if loop.first %}<ul>{% endif %}
-  <li>
+  <li class="JS_icon-container">
     <h3><code>{{ icon }}</code></h3>
-    <svg class="mt_icon">
+    <svg class="JS_icon mt_icon mt_icon--large">
       <use xlink:href="/symbol/svg/sprite.symbol.svg#{{ icon }}"></use>
     </svg>
   </li>
@@ -15,11 +37,37 @@
 
 {% for icon in socialIcons %}
   {% if loop.first %}<ul>{% endif %}
-  <li>
+  <li class="JS_icon-container">
     <h3><code>{{ icon }}</code></h3>
-    <svg class="mt_icon">
+    <svg class="JS_icon mt_icon mt_icon--large">
       <use xlink:href="/symbol/svg/sprite.symbol.svg#{{ icon }}"></use>
     </svg>
   </li>
   {% if loop.last %}</ul>{% endif %}
 {% endfor %}
+
+<script>
+  $(document).ready(function() {
+    $('input[type=radio][name=icon-size]').change(function() {
+      if (this.value === 'small') {
+        $('.JS_icon').removeClass('mt_icon--large');
+      }
+      else if (this.value === 'large') {
+        $('.JS_icon').addClass('mt_icon--large');
+      }
+    });
+
+    $('input[type=radio][name=icon-color]').change(function() {
+      if (this.value === 'default') {
+        $('.JS_icon-container')
+        .removeClass('mt_bgcolor--neutral--dark')
+        .removeClass('mt_color--neutral--lightest');
+      }
+      else if (this.value === 'inverse') {
+        $('.JS_icon-container')
+        .addClass('mt_bgcolor--neutral--dark')
+        .addClass('mt_color--neutral--lightest');
+      }
+    });
+  });
+</script>

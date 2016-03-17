@@ -1,3 +1,3 @@
 'use strict';
 
-require('../modules/modals/scripts.js');
+// require('../modules/modals/scripts.js');
