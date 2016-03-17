@@ -147,3 +147,20 @@ td, th {
   padding: 0.5rem;
   text-align: left;
 }
+
+// ====================
+// ====================
+// Table default
+// ====================
+// ====================
+
+.iconexample-container {
+  position: relative;
+}
+
+.iconexample-icon {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
