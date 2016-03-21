@@ -227,3 +227,34 @@ td, th {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+
+// ====================
+// ====================
+// Layout page
+// ====================
+// ====================
+
+.illustratedexamples table {
+  width: 100%;
+}
+
+.gridexample {
+  clear: both;
+  @media #{$mt_mq-lg} {
+    min-height: 200px;
+  }
+}
+
+.gridexample-container {
+  background-image: -webkit-linear-gradient(top,$mt_color-primary 50%,rgba(255,255,255,0) 0);
+  background-image: linear-gradient(to bottom,$mt_color-primary 50%,rgba(255,255,255,0) 0);
+  background-size: 1.5px 18px;
+  background-repeat: repeat-y;
+}
+
+.gridexample-item {
+  @media #{$mt_mq-lg} {
+    min-height: 200px;
+  }
+}
