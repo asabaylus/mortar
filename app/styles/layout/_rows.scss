@@ -34,23 +34,14 @@
   }
 }
 
-// Update td, th declarations in default.html and remove important
-
-table {
- border: 1px solid $mt_color-neutral-lighter-even;
- width: 100%;
- tr {
-   border-color: $mt_color-neutral-lighter-even
- }
-}
-
-td, th {
-  border: 1px solid $mt_color-neutral-lighter-even !important;
-}
 
 // Eventually move this section to _shame.scss or another file
 
 .rectangle {
   height: 9em;
   border: 2px solid black;
+}
+
+.illustratedexamples table {
+  width: 100%;
 }
