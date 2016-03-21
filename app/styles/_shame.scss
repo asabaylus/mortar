@@ -91,7 +91,7 @@ body {
 .illustratedexamples {
   // Remove this declaration block once we have responsive classnames for .col-offset
   @media #{$mt_mq-lg} {
-    margin-left: 8em;
+    margin-left: 11.6em;
   }
 }
 
@@ -141,7 +141,7 @@ body {
 .typographyexamples {
   // Remove this declaration block once we have responsive classnames for .col-offset
   @media #{$mt_mq-lg} {
-    margin-left: 8em;
+    margin-left: 11.6em;
   }
 }
 
@@ -247,9 +247,9 @@ td, th {
 }
 
 .gridexample-container {
-  background-image: -webkit-linear-gradient(top,$mt_color-primary 50%,rgba(255,255,255,0) 0);
-  background-image: linear-gradient(to bottom,$mt_color-primary 50%,rgba(255,255,255,0) 0);
-  background-size: 1.5px 18px;
+  background-image: -webkit-linear-gradient(top,$mt_color-primary 50%,transparent 0);
+  background-image: linear-gradient(to bottom,$mt_color-primary 50%,transparent 0);
+  background-size: 0.09375em 1.125em;
   background-repeat: repeat-y;
 }
 
