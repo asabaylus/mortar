@@ -53,6 +53,8 @@ body {
 // ====================
 
 .pagewrapper {
+  position: relative;
+
   @media #{$mt_mq-lg} {
     margin: 0 auto;
     max-width: 70em;
@@ -240,47 +242,41 @@ td, th {
 }
 
 .gridexample {
-  clear: both;
-  min-height: 23.5rem;
-  position: relative;
+  bottom: 12%;
+  left: 0;
+  position: absolute;
+  right: 0;
 
   @media #{$mt_mq-lg} {
-    min-height: 12.5rem;
+    bottom: 7%;
   }
 }
 
 .gridexample-container {
-  background-image: -webkit-linear-gradient(top,$mt_color-primary 50%,transparent 0);
-  background-image: linear-gradient(to bottom,$mt_color-primary 50%,transparent 0);
-  background-repeat: repeat-y;
-  background-size: 0.09375em 1.125em;
   padding-left: 1.25rem;
   padding-right:  1.25rem;
-  margin-top: 1.0625rem;
-  @media #{$mt_mq-lg} {
-    margin-top: 0;
+
+  &--hidden {
+    visibility: hidden;
+
+    @media #{$mt_mq-md} {
+      visibility: visible;
+    }
   }
 }
 
 .gridexample-item {
-  min-height: 10.5rem;
-  @media #{$mt_mq-lg} {
-    min-height: 12.5rem;
-  }
+  min-height: 10.85rem;
 }
 
-.gridexample-elements {
-  position: absolute;
-  top: 15px;
-}
-
-.gridexamplecontainer-last {
-  @media #{$mt_mq-lg} {
-    margin-left: 8.33333%;
-  }
+.dashed-border {
+  background-image: -webkit-linear-gradient(top,$mt_color-primary 50%,transparent 0);
+  background-image: linear-gradient(to bottom,$mt_color-primary 50%,transparent 0);
+  background-repeat: repeat-y;
+  background-size: 0.09375em 1.125em;
 }
 
 .rectangle {
-  height: 9rem;
+  height: 8rem;
   border: 2px solid $mt_color-neutral-darkest;
 }
