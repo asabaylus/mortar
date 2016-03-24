@@ -6,6 +6,6 @@
 //
 // Source: https://css-tricks.com/snippets/sass/tint-shade-functions/
 
-@function shade($mt_color, $mt_percentage) {
+@function mt_shade($mt_color, $mt_percentage) {
   @return mix(black, $mt_color, $mt_percentage);
 }
