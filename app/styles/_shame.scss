@@ -242,9 +242,10 @@ td, th {
   left: 0;
   position: absolute;
   right: 0;
+  z-index: -5;
 
   @media #{$mt_mq-lg} {
-    bottom: 8%;
+    //bottom: 78%;
   }
 }
 
@@ -259,10 +260,10 @@ td, th {
 }
 
 .gridexample-item {
-  min-height: 40.85rem;
+  min-height: 17.85rem;
 
   @media #{$mt_mq-sm} {
-    min-height: 10.85rem;
+    min-height: 14.85rem;
   }
 }
 
@@ -273,6 +274,9 @@ td, th {
   background-size: 0.09375em 1.125em;
 }
 
+.exampleborder {
+  border: 2px solid $mt_color-neutral-darkest;
+}
 .rectangle {
   height: 8rem;
   border: 2px solid $mt_color-neutral-darkest;
