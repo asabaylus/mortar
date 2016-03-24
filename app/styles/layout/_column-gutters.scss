@@ -3,6 +3,11 @@
   padding-right: $mt_unit / 2;
 }
 
+.mt_col-gut-norm {
+  padding-left: $mt_fs-med-lrg / 2;
+  padding-right: $mt_fs-med-lrg / 2;
+}
+
 @for $mt_i from 1 through 4 {
   .mt_col-gut-#{$mt_i} {
     padding-left: $mt_unit * $mt_i;

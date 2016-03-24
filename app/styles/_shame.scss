@@ -237,10 +237,6 @@ td, th {
 // ====================
 // ====================
 
-.illustratedexamples table {
-  width: 100%;
-}
-
 .gridexample {
   bottom: 12%;
   left: 0;
@@ -253,10 +249,6 @@ td, th {
 }
 
 .gridexample-container {
-  // * Eventually substitute this with mt_col-gut-*
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-
   &--hidden {
     display: none;
 
