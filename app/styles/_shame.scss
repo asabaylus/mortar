@@ -238,7 +238,7 @@ td, th {
 // ====================
 
 .gridexample {
-  bottom: 12%;
+  bottom: -2%;
   left: 0;
   position: absolute;
   right: 0;
@@ -263,7 +263,7 @@ td, th {
   min-height: 17.85rem;
 
   @media #{$mt_mq-sm} {
-    min-height: 14.85rem;
+    min-height: 16.85rem;;
   }
 }
 
@@ -275,9 +275,5 @@ td, th {
 }
 
 .exampleborder {
-  border: 2px solid $mt_color-neutral-darkest;
-}
-.rectangle {
-  height: 8rem;
   border: 2px solid $mt_color-neutral-darkest;
 }
