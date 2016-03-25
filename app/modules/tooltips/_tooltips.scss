@@ -7,9 +7,9 @@
 .mt_tooltip-content {
   $mt_arrowheight: .625rem;
 
-  bottom: calc(100% + .01rem);
+  bottom: calc(100% + #{$mt_arrowheight});
   padding: 1em;
-  position: absolute;
+  position: relative;
   text-align: center;
   visibility: hidden;
 
@@ -23,6 +23,7 @@
     top: 100%;
     transform: translateX(-50%);
     width: 0;
+    z-index: auto;
   }
 
   .mt_tooltip-container:hover & {
