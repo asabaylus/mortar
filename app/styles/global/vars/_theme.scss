@@ -21,11 +21,11 @@ $mt_color-neutral-lightest: lighten($mt_color-neutral, 50);
 
 // Affirmation
 
-$mt_color-affirmation-light: lighten($mt_color-affirmation, 20);
+$mt_color-affirmation-light: mt_tint($mt_color-affirmation, 25);
 
 // Danger
 
-$mt_color-danger-light: lighten($mt_color-danger, 20);
+$mt_color-danger-light: mt_tint($mt_color-danger, 25);
 
 // Borders
 
