@@ -1,3 +1,8 @@
+@import 'global/functions/shade';
+@import 'global/functions/tint';
+
+@import 'global/vars/theme';
+
 @import 'reset';
 
 @import 'layout/columns';
@@ -8,7 +13,6 @@
 @import 'utils/intratios';
 @import 'utils/round';
 @import 'utils/visibility';
-
 
 @import 'theme/colors';
 @import 'theme/fonts';
