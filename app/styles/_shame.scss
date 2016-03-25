@@ -2,6 +2,10 @@ body {
   margin: 0;
 }
 
+table {
+  border-collapse: collapse;
+}
+
 .mt_modal-button {
   position: absolute;
   right: 1em;
@@ -58,7 +62,7 @@ body {
   @media #{$mt_mq-lg} {
     margin: 0 auto;
     max-width: 70em;
-    padding: 0;
+    //padding: 0;
   }
 }
 
@@ -140,13 +144,6 @@ body {
 // ====================
 // ====================
 
-.typographyexamples {
-  // Remove this declaration block once we have responsive classnames for .col-offset
-  @media #{$mt_mq-lg} {
-    margin-left: 11.6em;
-  }
-}
-
 .typographyexamples-item {
   border: 1px solid $mt_color-neutral-lighter-even;
   padding: 1em;
@@ -215,7 +212,7 @@ td, th {
   margin: 0 auto;
   position: relative;
   border: 1px solid $mt_color-neutral-lighter-even;
-  border-radius: 50%;  
+  border-radius: 50%;
 
   // @media #{$mt_mq-lg} {
   //   height: 8em;
@@ -238,18 +235,16 @@ td, th {
 // ====================
 
 .gridexample {
+  position: relative;
+}
+
+.gridexample-container {
   bottom: -2%;
   left: 0;
   position: absolute;
   right: 0;
   z-index: -5;
 
-  @media #{$mt_mq-lg} {
-    //bottom: 78%;
-  }
-}
-
-.gridexample-container {
   &--hidden {
     display: none;
 
