@@ -60,9 +60,8 @@ table {
   position: relative;
 
   @media #{$mt_mq-lg} {
-    margin: 0 auto;
+    margin: auto;
     max-width: 70em;
-    //padding: 0;
   }
 }
 
@@ -106,13 +105,13 @@ table {
   display: inline-flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-right: 1.49em;
+  margin-right: .75em;
   max-width: 9em;
   text-align: center;
   border: 0;
 
   @media #{$mt_mq-lg} {
-    margin-right: 1em;
+    margin-right: .65em;
   }
 
   svg {
