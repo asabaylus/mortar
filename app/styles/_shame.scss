@@ -1,3 +1,11 @@
+body {
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
 .mt_modal-button {
   position: absolute;
   right: 1em;
@@ -11,11 +19,37 @@
   width: 3em;
 }
 
+
 // ====================
 // ====================
-// Color page
+// Homepage
 // ====================
 // ====================
+
+.herocontainer {
+  padding-top: 2em;
+  text-align: center;
+
+  @media #{$mt_mq-lg} {
+    padding-top: 3em;
+    text-align: left;
+  }
+}
+
+.examplelink {
+  &:link,
+  &:visited {
+    color: $mt_color-neutral-darkest;
+    text-decoration: none;
+  }
+}
+
+.codemarkup {
+  border: 1px solid $mt_color-neutral-lighter-even;
+  display: block;
+  padding: 1.5em;
+  word-wrap: break-word;
+}
 
 
 // ====================
@@ -23,12 +57,14 @@
 // ====================
 
 .pagewrapper {
+  position: relative;
+
   @media #{$mt_mq-lg} {
-    margin: 0 auto;
+    margin: auto;
     max-width: 70em;
-    padding: 0;
   }
 }
+
 
 // ====================
 // Page Divider
@@ -40,14 +76,27 @@
   height: 1em;
 }
 
+
+// ====================
+// ====================
+// Color page
+// ====================
+// ====================
+
+
 // ====================
 // Illustrated Examples Block
 // ====================
 
+.illustratedexamples-container {
+  margin: 0;
+  padding: 0;
+}
+
 .illustratedexamples {
   // Remove this declaration block once we have responsive classnames for .col-offset
   @media #{$mt_mq-lg} {
-    margin-left: 8em;
+    margin-left: 11.6em;
   }
 }
 
@@ -56,13 +105,23 @@
   display: inline-flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-right: 1.59em;
+  margin-right: .75em;
   max-width: 9em;
   text-align: center;
+  border: 0;
 
   @media #{$mt_mq-lg} {
-    margin-right: 1em;
+    margin-right: .65em;
   }
+
+  svg {
+    width: 9em;
+  }
+}
+
+.illustratedexamples-item--nonflex {
+  list-style-type: none;
+  text-align: center;
 }
 
 .circle {
@@ -77,18 +136,12 @@
   }
 }
 
+
 // ====================
 // ====================
 // Typography page
 // ====================
 // ====================
-
-.typographyexamples {
-  // Remove this declaration block once we have responsive classnames for .col-offset
-  @media #{$mt_mq-lg} {
-    margin-left: 8em;
-  }
-}
 
 .typographyexamples-item {
   border: 1px solid $mt_color-neutral-lighter-even;
@@ -129,5 +182,89 @@
 // ====================
 
 .photocaption {
-  margin-bottom: 0.4em;
+  margin-bottom: .4em;
+}
+
+// ====================
+// ====================
+// Table default
+// ====================
+// ====================
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+// ====================
+// ====================
+// Table default
+// ====================
+// ====================
+
+.iconexample-container {
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid $mt_color-neutral-lighter-even;
+  border-radius: 50%;
+
+  // @media #{$mt_mq-lg} {
+  //   height: 8em;
+  //   width: 8em;
+  // }
+}
+
+.iconexample-icon {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+// ====================
+// ====================
+// Layout page
+// ====================
+// ====================
+
+.gridexample {
+  position: relative;
+  overflow: hidden;
+}
+
+.gridexample-container {
+  top: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -5;
+
+  &--hidden {
+    display: none;
+
+    @media #{$mt_mq-sm} {
+      display: block;
+    }
+  }
+}
+
+.gridexample-item {
+  height: 1000vh;
+}
+
+.dashed-border {
+  background-image: -webkit-linear-gradient(top,$mt_color-primary 50%,transparent 0);
+  background-image: linear-gradient(to bottom,$mt_color-primary 50%,transparent 0);
+  background-repeat: repeat-y;
+  background-size: 0.09375em 1.125em;
+}
+
+.exampleborder {
+  border: 2px solid $mt_color-neutral-darkest;
 }

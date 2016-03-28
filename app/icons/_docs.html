@@ -1,22 +1,65 @@
-{% for icon in icons %}
-  {% if loop.first %}<ul>{% endif %}
-  <li>
-    <h3><code>{{ icon }}</code></h3>
-    <svg class="mt_icon">
-      <use xlink:href="/symbol/svg/sprite.symbol.svg#{{ icon }}"></use>
-    </svg>
-    <svg class="mt_icon--large">
-      <use xlink:href="/symbol/svg/sprite.symbol.svg#{{ icon }}"></use>
-    </svg>
+<article class="pagewrapper">
+  <section class="mt_row mt_row-gut-2 mt_col-gut-small">
+    <div class="mt_h3">General Icons</div>
+  </section>
 
-    <span style="display:inline-block;padding:1em" class="mt_bgcolor--neutral--darkest mt_color--neutral--lightest">
-      <svg class="mt_icon">
+  {% for icon in icons %}
+  {% if loop.first %}<ul class="mt_row illustratedexamples-container">{% endif %}
+  <li class="JS_icon-container mt_row-gut-2 mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2 mt_col-gut-small illustratedexamples-item--nonflex">
+    <div class="iconexample-container mt_intratio--square">
+      <svg class="JS_icon mt_icon mt_icon--large iconexample-icon">
         <use xlink:href="/symbol/svg/sprite.symbol.svg#{{ icon }}"></use>
       </svg>
-      <svg class="mt_icon--large">
-        <use xlink:href="/symbol/svg/sprite.symbol.svg#{{ icon }}"></use>
-      </svg>
-    </span>
+    </div>
+    <p class="mt_h5">#{{ icon }}</p>
   </li>
   {% if loop.last %}</ul>{% endif %}
-{% endfor %}
+  {% endfor %}
+</article>
+
+<div class="mt_bgcolor--neutral--lighter-even-even mt_row-gut-4 divider">&nbsp;</div>
+
+<article class="pagewrapper">
+  <section class="mt_row mt_row-gut-2 mt_col-gut-small">
+    <div class="mt_h3">Social Icons</div>
+  </section>
+
+  {% for icon in socialIcons %}
+  {% if loop.first %}<ul class="mt_row illustratedexamples-container">{% endif %}
+  <li class="JS_icon-container mt_row-gut-2 mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2 mt_col-gut-small illustratedexamples-item--nonflex">
+    <div class="iconexample-container mt_intratio--square">
+      <svg class="JS_icon mt_icon mt_icon--large iconexample-icon">
+        <use xlink:href="/symbol/svg/sprite.symbol.svg#{{ icon }}"></use>
+      </svg>
+    </div>
+    <p class="mt_h5">#{{ icon }}</p>
+  </li>
+  {% if loop.last %}</ul>{% endif %}
+  {% endfor %}
+</article>
+
+<script>
+  $(document).ready(function() {
+    $('input[type=radio][name=icon-size]').change(function() {
+      if (this.value === 'small') {
+        $('.JS_icon').removeClass('mt_icon--large');
+      }
+      else if (this.value === 'large') {
+        $('.JS_icon').addClass('mt_icon--large');
+      }
+    });
+
+    $('input[type=radio][name=icon-color]').change(function() {
+      if (this.value === 'default') {
+        $('.JS_icon-container')
+        .removeClass('mt_bgcolor--neutral--dark')
+        .removeClass('mt_color--neutral--lightest');
+      }
+      else if (this.value === 'inverse') {
+        $('.JS_icon-container')
+        .addClass('mt_bgcolor--neutral--dark')
+        .addClass('mt_color--neutral--lightest');
+      }
+    });
+  });
+</script>
