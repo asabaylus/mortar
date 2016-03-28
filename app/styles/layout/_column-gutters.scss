@@ -1,32 +1,38 @@
-.mt_col-gut-half {
+$mt_gutters: (
+  sm: $mt_unit / 2,
+  md: $mt_unit,
+  lg: $mt_fs-med-lrg / 2
+);
+
+.mt_col-gut-small {
   padding-left: $mt_unit / 2;
   padding-right: $mt_unit / 2;
 }
 
-@for $mt_i from 1 through 4 {
-  .mt_col-gut-#{$mt_i} {
-    padding-left: $mt_unit * $mt_i;
-    padding-right: $mt_unit * $mt_i;
+@each $mt_size, $mt_value in $mt_gutters {
+  .mt_col-gut-#{$mt_size} {
+    padding-left: $mt_value;
+    padding-right: $mt_value;
   }
 }
 
 @each $mt_bp, $mt_width in $mt_layout-bps { // loop through breakpoints
   @media #{$mt_width} {
-    .mt_col-#{$mt_bp}-gut-half {
+    .mt_col-#{$mt_bp}-gut-small {
       padding-left: $mt_unit / 2;
       padding-right: $mt_unit / 2;
     }
 
-    @for $mt_i from 0 through 4 {
-      .mt_col-#{$mt_bp}-gut-#{$mt_i} {
-        @if $mt_i < 1 {
-          padding-left: 0;
-          padding-right: 0;
-        } @else {
-          padding-left: $mt_unit * $mt_i;
-          padding-right: $mt_unit * $mt_i;
-        }
+    @each $mt_size, $mt_value in $mt_gutters {
+      .mt_col-#{$mt_bp}-gut-#{$mt_size} {
+        padding-left: $mt_value;
+        padding-right: $mt_value;
       }
+    }
+
+    .mt_col-#{$mt_bp}-gut-none {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }
