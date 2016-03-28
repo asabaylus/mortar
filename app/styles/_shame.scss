@@ -83,6 +83,11 @@ body {
 // Illustrated Examples Block
 // ====================
 
+.illustratedexamples-container {
+  margin: 0;
+  padding: 0;
+}
+
 .illustratedexamples {
   // Remove this declaration block once we have responsive classnames for .col-offset
   @media #{$mt_mq-lg} {
@@ -107,6 +112,11 @@ body {
   svg {
     width: 9em;
   }
+}
+
+.illustratedexamples-item--nonflex {
+  list-style-type: none;
+  text-align: center;
 }
 
 .circle {
@@ -175,4 +185,45 @@ body {
 
 .photocaption {
   margin-bottom: .4em;
+}
+
+// ====================
+// ====================
+// Table default
+// ====================
+// ====================
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+// ====================
+// ====================
+// Table default
+// ====================
+// ====================
+
+.iconexample-container {
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid $mt_color-neutral-lighter-even;
+  border-radius: 50%;  
+
+  // @media #{$mt_mq-lg} {
+  //   height: 8em;
+  //   width: 8em;
+  // }
+}
+
+.iconexample-icon {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
