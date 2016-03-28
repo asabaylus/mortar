@@ -235,10 +235,11 @@ td, th {
 
 .gridexample {
   position: relative;
+  overflow: hidden;
 }
 
 .gridexample-container {
-  bottom: -2%;
+  top: 0;
   left: 0;
   position: absolute;
   right: 0;
@@ -254,11 +255,7 @@ td, th {
 }
 
 .gridexample-item {
-  min-height: 17.85rem;
-
-  @media #{$mt_mq-sm} {
-    min-height: 16.85rem;;
-  }
+  height: 1000vh;
 }
 
 .dashed-border {
