@@ -6,6 +6,6 @@
 //
 // Source: https://css-tricks.com/snippets/sass/tint-shade-functions/
 
-@function tint($mt_color, $mt_percentage) {
+@function mt_tint($mt_color, $mt_percentage) {
   @return mix(white, $mt_color, $mt_percentage);
 }
