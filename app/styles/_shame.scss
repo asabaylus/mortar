@@ -2,6 +2,10 @@ body {
   margin: 0;
 }
 
+table {
+  border-collapse: collapse;
+}
+
 .mt_modal-button {
   position: absolute;
   right: 1em;
@@ -53,10 +57,11 @@ body {
 // ====================
 
 .pagewrapper {
+  position: relative;
+
   @media #{$mt_mq-lg} {
-    margin: 0 auto;
+    margin: auto;
     max-width: 70em;
-    padding: 0;
   }
 }
 
@@ -91,7 +96,7 @@ body {
 .illustratedexamples {
   // Remove this declaration block once we have responsive classnames for .col-offset
   @media #{$mt_mq-lg} {
-    margin-left: 8em;
+    margin-left: 11.6em;
   }
 }
 
@@ -100,13 +105,13 @@ body {
   display: inline-flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-right: 1.59em;
+  margin-right: .75em;
   max-width: 9em;
   text-align: center;
   border: 0;
 
   @media #{$mt_mq-lg} {
-    margin-right: 1em;
+    margin-right: .65em;
   }
 
   svg {
@@ -137,13 +142,6 @@ body {
 // Typography page
 // ====================
 // ====================
-
-.typographyexamples {
-  // Remove this declaration block once we have responsive classnames for .col-offset
-  @media #{$mt_mq-lg} {
-    margin-left: 8em;
-  }
-}
 
 .typographyexamples-item {
   border: 1px solid $mt_color-neutral-lighter-even;
@@ -213,7 +211,7 @@ td, th {
   margin: 0 auto;
   position: relative;
   border: 1px solid $mt_color-neutral-lighter-even;
-  border-radius: 50%;  
+  border-radius: 50%;
 
   // @media #{$mt_mq-lg} {
   //   height: 8em;
@@ -226,4 +224,47 @@ td, th {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+
+// ====================
+// ====================
+// Layout page
+// ====================
+// ====================
+
+.gridexample {
+  position: relative;
+  overflow: hidden;
+}
+
+.gridexample-container {
+  top: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -5;
+
+  &--hidden {
+    display: none;
+
+    @media #{$mt_mq-sm} {
+      display: block;
+    }
+  }
+}
+
+.gridexample-item {
+  height: 1000vh;
+}
+
+.dashed-border {
+  background-image: -webkit-linear-gradient(top,$mt_color-primary 50%,transparent 0);
+  background-image: linear-gradient(to bottom,$mt_color-primary 50%,transparent 0);
+  background-repeat: repeat-y;
+  background-size: 0.09375em 1.125em;
+}
+
+.exampleborder {
+  border: 2px solid $mt_color-neutral-darkest;
 }
