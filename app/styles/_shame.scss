@@ -131,3 +131,47 @@
 .photocaption {
   margin-bottom: 0.4em;
 }
+
+
+
+// ====================
+// ====================
+// Typography page
+// ====================
+// ====================
+
+.header{
+  // position: fixed;
+}
+
+.nav-container {
+  margin-left: 0;
+}
+
+.nav-item {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0;
+}
+
+.nav-link {
+  &,
+  &:link,
+  &:visited {
+    color: $mt_color-neutral;
+    text-decoration: none;
+  }
+
+  &:hover {
+    border-bottom: 1px solid $mt_color-primary;
+    color: $mt_color-neutral;
+  }
+}
+
+.nav-dropdown {
+  width: 100%;
+
+  @media #{$mt_mq-lg} {
+    max-width: 100%;
+  }
+}
