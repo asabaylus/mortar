@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 .mt_modal-button {
   position: absolute;
   right: 1em;
@@ -11,11 +15,37 @@
   width: 3em;
 }
 
+
 // ====================
 // ====================
-// Color page
+// Homepage
 // ====================
 // ====================
+
+.herocontainer {
+  padding-top: 2em;
+  text-align: center;
+
+  @media #{$mt_mq-lg} {
+    padding-top: 3em;
+    text-align: left;
+  }
+}
+
+.examplelink {
+  &:link,
+  &:visited {
+    color: $mt_color-neutral-darkest;
+    text-decoration: none;
+  }
+}
+
+.codemarkup {
+  border: 1px solid $mt_color-neutral-lighter-even;
+  display: block;
+  padding: 1.5em;
+  word-wrap: break-word;
+}
 
 
 // ====================
@@ -30,6 +60,7 @@
   }
 }
 
+
 // ====================
 // Page Divider
 // ====================
@@ -39,6 +70,14 @@
   border-top: 1px solid $mt_color-neutral-lighter-even;
   height: 1em;
 }
+
+
+// ====================
+// ====================
+// Color page
+// ====================
+// ====================
+
 
 // ====================
 // Illustrated Examples Block
@@ -59,9 +98,14 @@
   margin-right: 1.59em;
   max-width: 9em;
   text-align: center;
+  border: 0;
 
   @media #{$mt_mq-lg} {
     margin-right: 1em;
+  }
+
+  svg {
+    width: 9em;
   }
 }
 
@@ -76,6 +120,7 @@
     width: 8em;
   }
 }
+
 
 // ====================
 // ====================
@@ -129,5 +174,5 @@
 // ====================
 
 .photocaption {
-  margin-bottom: 0.4em;
+  margin-bottom: .4em;
 }
