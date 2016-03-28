@@ -140,6 +140,17 @@
 // ====================
 // ====================
 
+.headerwrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 30;
+}
+
+.headerwrapper
++ .clearfix {
+  margin-top: 3em;
+}
 
 .header {
   border-bottom: 1px solid $mt_color-neutral-lighter-even;
@@ -151,7 +162,7 @@
   }
 
   h3 {
-    margin-top:  0.625em;
+    margin-top:  12px;
   }
 
   @media #{$mt_mq-lg} {
@@ -163,7 +174,8 @@
 
 .logo {
   height: 1.5em;
-  border-right: 2px solid $mt_color-neutral-lighter-even;
+  float: left;
+  margin-right: .5em;
 }
 
 .nav-itemcontainer {
@@ -180,10 +192,14 @@
 }
 
 .nav-item {
-  display: inline-block;
-  vertical-align: top;
-  padding: 0;
-  margin-right: 1.875em;
+  display: block;
+
+  @media #{$mt_mq-lg} {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0;
+    margin-right: 1.875em;
+  }
 }
 
 .nav-link {
@@ -200,6 +216,25 @@
   }
 }
 
+.styleguide-link {
+  margin-top: 12px;
+  padding-left: .5em;
+  border-left: 2px solid $mt_color-neutral-lighter-even;
+
+  &,
+  &:link,
+  &:visited {
+    color: $mt_color-neutral-darkest;
+    text-decoration: none;
+  }
+}
+
 .nav-dropdown {
   width: 100%;
+  background: white;
+}
+
+.dropdown-icon {
+  color: $mt_color-neutral;
+  width: 1em;
 }

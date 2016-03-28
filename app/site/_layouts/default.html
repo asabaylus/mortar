@@ -7,24 +7,29 @@
   <link rel="stylesheet" href="https://fonts.ngeo.com/hoefler/1-0-1/hco_fonts.css">
 </head>
 <body>
-  <div class="headerwrapper">
+  <div class="headerwrapper ">
     <header class="header mt_row-gut-4">
       <div class="pagewrapper">
-        <h1 class="mt_col-1">
-          <a href="/">
-            <svg class="logo" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 226.35 41.08">
-              <title>ng-1fl-rev</title>
-              <g>
-                <path d="M198.33,421.47V380.39H227v41.08H198.33Zm24.52-4.14v-32.8H202.46v32.8h20.39Z" transform="translate(-198.33 -380.39)" style="fill: #ffcd05"/>
-              </g>
+        <h1>
+          <a href="http://nationalgeographic.com">
+            <svg width="29px" height="41px" viewBox="0 0 29 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="logo">
+                <title>ng-2fl-rev</title>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="ng-2fl-rev" fill="#FFCD05">
+                      <path d="M0,41 L0,0 L28.61,0 L28.61,41 L0,41 L0,41 Z M24.47,36.87 L24.47,4.13 L4.12,4.13 L4.12,36.87 L24.47,36.87 L24.47,36.87 Z" id="Shape"></path>
+                  </g>
+                </g>
             </svg>
           </a>
         </h1>
 
-        <h3 class="mt_h3 mt_col-2">Styleguide</h3>
+        <a href="/" class="mt_h3 mt_col-3 mt_col-lg-2 styleguide-link">
+          Style Guide
+        </a>
 
-        <span class="mt_col-1 chevron-down mt_icon icon-hidden mt_color-neutral-lighter-even">
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <span class="mt_icon icon-hidden">
+          <svg class="dropdown-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           	 width="37.4px" height="37.6px" viewBox="0 0 37.4 37.6" style="enable-background:new 0 0 37.4 37.6;" xml:space="preserve">
             <title>chevron-up</title>
             <polyline style="fill:none;stroke:currentColor;stroke-width:2;stroke-miterlimit:10;vector-effect:non-scaling-stroke" class="st0" points="36.7,10.2 18.7,28.2 0.7,10.2 "/>
@@ -37,7 +42,7 @@
             <li class="nav-item"><a href="/theme" class="nav-link">Typography</a></li>
             <li class="nav-item"><a href="/icons" class="nav-link">Icons</a></li>
             <li class="nav-item"><a href="/patterns" class="nav-link">UI Patterns</a></li>
-            <!-- <li class="nav-item"><a href="/utilities" class="nav-link">Utilities</a></li> -->
+            <li class="nav-item"><a href="/utilities" class="nav-link">Utilities</a></li>
             <li class="nav-item"><a href="/elements" class="nav-link">Elements</a></li>
             <li class="nav-item"><a href="/layout" class="nav-link">Layout</a></li>
             <li class="nav-item"><a href="/components" class="nav-link">Components</a></li>
@@ -46,6 +51,9 @@
       </div>
     </header>
   </div>
+
+  <div class="clearfix mt_row mt_row-gut-4"></div>
+
 
   {{contents | safe}}
   <footer class="mt_row mt_bgcolor--neutral--lighter-even-even footer">
