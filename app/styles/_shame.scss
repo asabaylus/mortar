@@ -44,6 +44,11 @@
 // Illustrated Examples Block
 // ====================
 
+.illustratedexamples-container {
+  margin: 0;
+  padding: 0;
+}
+
 .illustratedexamples {
   // Remove this declaration block once we have responsive classnames for .col-offset
   @media #{$mt_mq-lg} {
@@ -63,6 +68,11 @@
   @media #{$mt_mq-lg} {
     margin-right: 1em;
   }
+}
+
+.illustratedexamples-item--nonflex {
+  list-style-type: none;
+  text-align: center;
 }
 
 .circle {
@@ -155,7 +165,15 @@ td, th {
 // ====================
 
 .iconexample-container {
+  margin: 0 auto;
   position: relative;
+  border: 1px solid $mt_color-neutral-lighter-even;
+  border-radius: 50%;  
+
+  // @media #{$mt_mq-lg} {
+  //   height: 8em;
+  //   width: 8em;
+  // }
 }
 
 .iconexample-icon {

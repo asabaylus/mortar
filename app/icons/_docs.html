@@ -1,39 +1,41 @@
-<article class="pagewrapper mt_col-gut-half">
-  <section class="mt_row mt_row-gut-2">
-    <div class="mt_col-lg-2">
-      <div class="mt_h3">General Icons</div>
-    </div>
+<article class="pagewrapper">
+  <section class="mt_row mt_row-gut-2 mt_col-gut-half">
+    <div class="mt_h3">General Icons</div>
+  </section>
 
-    {% for icon in icons %}
-    {% if loop.first %}<ul class="mt_col-lg-10 illustratedexamples-container">{% endif %}
-    <li class="JS_icon-container illustratedexamples-item iconexample-container circle mt_row-gut-2 mt_row-gut-1">
+  {% for icon in icons %}
+  {% if loop.first %}<ul class="mt_row illustratedexamples-container">{% endif %}
+  <li class="JS_icon-container mt_row-gut-2 mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2 mt_col-gut-half illustratedexamples-item--nonflex">
+    <div class="iconexample-container mt_intratio--square">
       <svg class="JS_icon mt_icon mt_icon--large iconexample-icon">
         <use xlink:href="/symbol/svg/sprite.symbol.svg#{{ icon }}"></use>
       </svg>
-    </li>
-    {% if loop.last %}</ul>{% endif %}
-    {% endfor %}
-  </section>
+    </div>
+    <p class="mt_h5">#{{ icon }}</p>
+  </li>
+  {% if loop.last %}</ul>{% endif %}
+  {% endfor %}
 </article>
 
 <div class="mt_bgcolor--neutral--lighter-even-even mt_row-gut-4 divider">&nbsp;</div>
 
-<article class="pagewrapper mt_col-gut-half">
-  <section class="mt_row mt_row-gut-2">
-    <div class="mt_col-lg-2">
-      <div class="mt_h3">Social Icons</div>
-    </div>
+<article class="pagewrapper">
+  <section class="mt_row mt_row-gut-2 mt_col-gut-half">
+    <div class="mt_h3">Social Icons</div>
+  </section>
 
-    {% for icon in socialIcons %}
-    {% if loop.first %}<ul class="mt_col-lg-10 mt_col-sm-12 illustratedexamples-container">{% endif %}
-    <li class="JS_icon-container illustratedexamples-item iconexample-container circle mt_row-gut-2 mt_row-gut-1">
+  {% for icon in socialIcons %}
+  {% if loop.first %}<ul class="mt_row illustratedexamples-container">{% endif %}
+  <li class="JS_icon-container mt_row-gut-2 mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2 mt_col-gut-half illustratedexamples-item--nonflex">
+    <div class="iconexample-container mt_intratio--square">
       <svg class="JS_icon mt_icon mt_icon--large iconexample-icon">
         <use xlink:href="/symbol/svg/sprite.symbol.svg#{{ icon }}"></use>
       </svg>
-    </li>
-    {% if loop.last %}</ul>{% endif %}
-    {% endfor %}
-  </section>
+    </div>
+    <p class="mt_h5">#{{ icon }}</p>
+  </li>
+  {% if loop.last %}</ul>{% endif %}
+  {% endfor %}
 </article>
 
 <script>
