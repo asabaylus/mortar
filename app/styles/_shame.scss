@@ -277,9 +277,9 @@ td, th {
 }
 
 .header {
-  height: 4em;
-
   @media #{$mt_mq-lg} {
+    height: 4em;
+
     .icon-hidden {
       display: none;
     }
@@ -299,11 +299,11 @@ td, th {
 .nav-itemcontainer {
   padding-left: 0;
   max-width: 100%;
-  //opacity: 0;
+  display: none;
 
   @media #{$mt_mq-lg} {
     padding-left: 0;
-    //opacity: 1;
+    display: block;
     margin-top: 0.875em;
   }
 }
@@ -314,8 +314,8 @@ td, th {
   @media #{$mt_mq-lg} {
     display: inline-block;
     vertical-align: top;
-    padding: 0;
     margin-right: 1.675em;
+    padding: 0;
   }
 }
 
@@ -334,9 +334,9 @@ td, th {
 }
 
 .styleguide-link {
+  border-left: 2px solid $mt_color-neutral-lighter-even;
   margin-top: 0.5125em;
   padding-left: .5em;
-  border-left: 2px solid $mt_color-neutral-lighter-even;
 
   &,
   &:link,
