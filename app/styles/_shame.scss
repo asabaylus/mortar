@@ -93,13 +93,6 @@ table {
   padding: 0;
 }
 
-.illustratedexamples {
-  // Remove this declaration block once we have responsive classnames for .col-offset
-  @media #{$mt_mq-lg} {
-    margin-left: 11.6em;
-  }
-}
-
 .illustratedexamples-item {
   align-items: center;
   display: inline-flex;
@@ -267,4 +260,16 @@ td, th {
 
 .exampleborder {
   border: 2px solid $mt_color-neutral-darkest;
+}
+
+
+// ====================
+// ====================
+// Components page
+// ====================
+// ====================
+
+
+.illustratedexample-border {
+  border: 1px solid $mt_color-neutral-lighter-even;
 }
