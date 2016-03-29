@@ -19,7 +19,7 @@ gulp.task('serve', ['build'], function() {
 
   gulp.watch('app/icons/*.svg', ['icons']);
   gulp.watch('app/{styles,modules,icons}/**/*.scss', ['styles']);
-  gulp.watch('app/{styles,modules}/**/*.js', ['scripts']);
+  gulp.watch('app/{scripts,modules}/**/*.js', ['scripts']);
   gulp.watch('app/**/*.{md,html}', ['docs']);
   gulp.watch('.tmp/assets/symbol/svg/*.svg', ['docs']);
 
