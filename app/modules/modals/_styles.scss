@@ -1,3 +1,12 @@
+.mt_modal-button {
+  background-color: transparent;
+  border: none;
+  color: $mt_color-neutral-lightest;
+  position: absolute;
+  right: $mt_unit-double;
+  top: $mt_unit;
+}
+
 .mt_modal-container {
   background-color: transparentize($mt_color-neutral-darkest, .15);
   height: 85vh;
