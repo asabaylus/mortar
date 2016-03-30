@@ -91,13 +91,13 @@ body {
 
 .illustratedexamples-item {
   align-items: center;
+  border: 0;
   display: inline-flex;
   flex-direction: column;
   flex-wrap: wrap;
   margin-right: .75em;
   max-width: 9em;
   text-align: center;
-  border: 0;
 
   @media #{$mt_mq-lg} {
     margin-right: .65em;
@@ -146,8 +146,8 @@ body {
 // ====================
 
 .footer {
-  padding-top: 2.5em;
   padding-bottom: 2.5em;
+  padding-top: 2.5em;
 }
 
 .copyright {
@@ -266,7 +266,7 @@ td, th {
 }
 
 .header {
-  height: 4.2rem;
+  height: 3.75rem;
   position: relative;
 }
 
@@ -281,7 +281,6 @@ td, th {
     padding-left: 1rem;
     color: $mt_color-neutral-darkest;
     text-decoration: none;
-    border-left: 2px solid $mt_color-neutral-lighter-even;
   }
 }
 
@@ -318,13 +317,14 @@ td, th {
 .navcontainer {
   &--active {
     background-color: $mt_color-neutral-lightest;
-    display: block;
     border: 1px solid $mt_color-neutral-lighter-even;
     border-bottom: 6px solid $mt_color-primary;
+    display: block;
+    margin-left: 5rem;
     position: absolute;
     top: 100%;
     transition: 400ms;
-    width: 100%;
+    width: 200px;
     z-index: 1;
 
     @media #{$mt_mq-lg} {
@@ -335,8 +335,31 @@ td, th {
   }
 }
 
+.branding-grey-border {
+  background-color: $mt_color-neutral-lighter-even;
+  height: 2rem;
+  width: 0.0625rem;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.navcontainer-yellow-border {
+  background-color: $mt_color-primary;
+  display: block;
+  height: 0.375rem;
+  position: absolute;
+  top: -3%;
+  width: 10.5rem;
+
+
+  @media #{$mt_mq-lg} {
+    display: none;
+  }
+}
+
 .nav-item {
   display: block;
+  font-size: 1rem;
 
   @media #{$mt_mq-lg} {
     display: inline-block;
@@ -354,7 +377,7 @@ td, th {
   }
 
   &:hover {
-    border-bottom: 1px solid $mt_color-primary;
+    text-decoration: underline;
     color: $mt_color-neutral;
   }
 }
