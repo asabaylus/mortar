@@ -9,55 +9,43 @@
 </head>
 <body>
   <div class="headerwrapper">
-    <header class="header pagewrapper mt_col-gut-lg">
-        <h1 class="logo-container">
-          <a href="http://nationalgeographic.com">
-            <svg width="29px" height="41px" viewBox="0 0 29 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="logo">
-                <title>ng-2fl-rev</title>
-                <defs></defs>
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <g id="ng-2fl-rev" fill="#FFCD05">
-                      <path d="M0,41 L0,0 L28.61,0 L28.61,41 L0,41 L0,41 Z M24.47,36.87 L24.47,4.13 L4.12,4.13 L4.12,36.87 L24.47,36.87 L24.47,36.87 Z" id="Shape"></path>
-                  </g>
-                </g>
-            </svg>
-          </a>
-        </h1>
-
-        <a href="/" class="mt_h3 mt_col-5 mt_col-md-2 styleguide-link">
-          Style Guide
+    <header class="header pagewrapper ">
+      <!--Grouped for better handling on mobile -->
+      <div class="mt_col-md-4 mt_col-lg-3 branding mt_col-gut-lg">
+        <a href="http://nationalgeographic.com" class="site-logo">
+          <svg class="mt_icon--large">
+            <use xlink:href="/symbol/svg/sprite.symbol.svg#ng-border"></use>
+          </svg>
         </a>
 
-        <span class="mt_icon icon-hidden">
-          <svg class="dropdown-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          	 width="37.4px" height="37.6px" viewBox="0 0 37.4 37.6" style="enable-background:new 0 0 37.4 37.6;" xml:space="preserve">
-            <title>chevron-up</title>
-            <polyline style="fill:none;stroke:currentColor;stroke-width:2;stroke-miterlimit:10;vector-effect:non-scaling-stroke" class="st0" points="36.7,10.2 18.7,28.2 0.7,10.2 "/>
+        <button class="JS_navbutton navbutton mt_h3 mt_col-gut-md">Style Guide
+          <svg class="mt_icon JS_navicon navicon mt_color--neutral">
+            <use xlink:href="/symbol/svg/sprite.symbol.svg#chevron-down"></use>
           </svg>
-        </span>
+        </button>
+      </div>
 
-        <nav class="mt_subh1 nav_container mt_col-9">
-          <ul class="nav-itemcontainer nav-dropdown">
-            <li class="nav-item"><a href="/colors" class="nav-link">Colors</a></li>
-            <li class="nav-item"><a href="/theme" class="nav-link">Typography</a></li>
-            <li class="nav-item"><a href="/icons" class="nav-link">Icons</a></li>
-            <li class="nav-item"><a href="/patterns" class="nav-link">UI Patterns</a></li>
-            <!-- <li class="nav-item"><a href="/utilities" class="nav-link">Utilities</a></li> -->
-            <li class="nav-item"><a href="/elements" class="nav-link">Elements</a></li>
-            <li class="nav-item"><a href="/layout" class="nav-link">Layout</a></li>
-            <li class="nav-item"><a href="/components" class="nav-link">Components</a></li>
-          </ul>
-        </nav>
+      <nav class="JS_navcontainer navcontainer mt_subh1 mt_col-9">
+        <ul class="mt_col-gut-lg">
+          <li class="nav-item mt_row-gut-half"><a href="/colors" class="nav-link">Colors</a></li>
+          <li class="nav-item mt_row-gut-half"><a href="/theme" class="nav-link">Typography</a></li>
+          <li class="nav-item mt_row-gut-half"><a href="/icons" class="nav-link">Icons</a></li>
+          <li class="nav-item mt_row-gut-half"><a href="/patterns" class="nav-link">UI Patterns</a></li>
+          <li class="nav-item mt_row-gut-half"><a href="/elements" class="nav-link">Elements</a></li>
+          <li class="nav-item mt_row-gut-half"><a href="/layout" class="nav-link">Layout</a></li>
+          <li class="nav-item mt_row-gut-half"><a href="/components" class="nav-link">Components</a></li>
+        </ul>
+      </nav>
     </header>
   </div>
 
-  <div class="mt_row mt_row-gut-3"></div>
+  <div class="mt_row mt_row-gut-4"></div>
 
   {{contents | safe}}
 
   <footer class="mt_row mt_bgcolor--neutral--lighter-even-even footer">
-    <div class="pagewrapper">
-      <div class="mt_subh4 mt_col-lg-9 mt_row-gut-2 copyright">
+    <div class="pagewrapper mt_col-gut-lg">
+      <div class="mt_subh4 mt_col-lg-8 mt_row-gut-2 copyright">
         <div>
           &copy; 2016 National Geographic Partners, LLC. All rights reserved
         </div>
@@ -70,13 +58,18 @@
 
       <div class="mt_col-lg-3 mt_subh4">
         <svg class="mt_icon--large">
-          <use xlink:href="/symbol/svg/sprite.symbol.svg#github"></use>
+          <use xlink:href="/symbol/svg/sprite.symbol.svg#social-github"></use>
         </svg>
          View this project on <a href="https://github.com/natgeo/mortar" target="_blank" class="mt_link">Github</a>
       </div>
     </div>
-
   </footer>
+  <script>
+    $('.JS_navbutton').click(function(){
+      $('.JS_navcontainer').toggleClass('navcontainer--active');
+      $('.JS_navicon').toggleClass('navicon--flipped');
+    });
+  </script>
   <script>
   (function(d) {
     var config = {
