@@ -266,39 +266,41 @@ td, th {
 }
 
 .header {
-  height: 4rem;
+  height: 4.2rem;
   position: relative;
 }
 
 .branding {
-  margin-top: 0.53125rem;
+  margin-top: 0.83125rem;
+}
 
-  @media #{$mt_mq-lg} {
-    margin-top: 0;
+.branding-link {
+  &,
+  &:link,
+  &:visited {
+    padding-left: 1rem;
+    color: $mt_color-neutral-darkest;
+    text-decoration: none;
+    border-left: 2px solid $mt_color-neutral-lighter-even;
   }
 }
 
 .site-logo {
-  padding-right: .5em;
+  padding-right: .5rem;
   text-decoration: none;
+  vertical-align: sub;
 }
 
 .navbutton {
   background: transparent;
   border: 0;
-  border-left: 2px solid $mt_color-neutral-lighter-even;
-  margin-top: 0.5125em;
 }
 
 .navicon {
-  vertical-align: middle;
-
   @media #{$mt_mq-lg} {
     display: none;
   }
-}
 
-.navicon {
   &--flipped {
     transform: rotate(180deg);
     transition: 400ms;
@@ -320,13 +322,13 @@ td, th {
     border: 1px solid $mt_color-neutral-lighter-even;
     border-bottom: 6px solid $mt_color-primary;
     position: absolute;
-    top:100%;
+    top: 100%;
     transition: 400ms;
     width: 100%;
     z-index: 1;
 
     @media #{$mt_mq-lg} {
-      position:static;
+      position: static;
       border: 0;
       width: initial;
     }
