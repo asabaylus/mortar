@@ -1,37 +1,98 @@
-<h3 class="mt_h3">Text Inputs</h3>
+<div class="pagewrapper mt_row mt_col-gut-lg">
+  <div class="mt_col-lg-3">
+    <h3 class="mt_h3">Form Inputs</h3>
+    <p class="mt_subh4">
+      Text inputs, password inputs, text areas, selection menus, check box selections, and radio button selections are common form elements.
+    </p>
 
-<form class="examplepadding">
-  <p>
-    <input type="text" class="mt_input mt_subh4" placeholder="Text Input Field">
-  </p>
-  <p>
-    <input type="password" class="mt_input mt_subh4" placeholder="Enter Password">
-  </p>
-  <p>
-    <input type="text" class="mt_input mt_input--error mt_subh4" placeholder="Error Message">
-  </p>
-  <p class="mt_h5 mt_color--danger"> You did something wrong.</p>
-  <p>
-    <input type="text" class="mt_input mt_subh4" placeholder="Inactive Field" disabled>
-  </p>
-  <textarea class="mt_input mt_textarea mt_subh4" placeholder="I am a text area"></textarea>
-</form>
+    <div class="mt_row mt_row-gut-2">
+      <fieldset class="mt_subh4 fieldset mt_row-gut-2">
+        <div class="mt_row-gut-1">
+          <input class="mt_radio" type="radio" value="default" name="background-color" id="default" checked>
+          <label for="default"> Light background </label>
+        </div>
 
-<div class="mt_bgcolor--neutral--dark examplepadding">
-  <form>
-    <p>
-      <input type="text" class="mt_input mt_subh4" placeholder="Text Input Field">
-    </p>
-    <p>
-      <input type="password" class="mt_input mt_subh4" placeholder="Enter Password">
-    </p>
-    <p>
-      <input type="text" class="mt_input mt_input--error mt_subh4" placeholder="Error Message">
-    </p>
-    <p class="mt_h5 mt_color--danger">You did something wrong.</p>
-    <p>
-      <input type="text" class="mt_input mt_subh4" placeholder="Inactive Field" disabled>
-    </p>
-    <textarea class="mt_input mt_textarea mt_subh4" placeholder="Enter your message here"></textarea>
-  </form>
+        <div>
+          <input class="mt_radio" type="radio" value="inverse" name="background-color" id="inverse">
+          <label for="inverse"> Dark background </label>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+
+  <div class="mt_col-lg-8 mt_col-sm-12 mt_col-lg-offset-1">
+    <form class="mt_col-lg-6 mt_col-gut-lg">
+      <p>
+        <input type="text" class="mt_input mt_subh4" placeholder="Text Input Field">
+      </p>
+      <p>
+        <input type="password" class="mt_input mt_subh4" placeholder="Enter Password">
+      </p>
+      <p>
+        <input type="text" class="mt_input mt_input--error mt_subh4" placeholder="Error Message">
+      </p>
+      <p class="mt_h5 mt_color--danger">You did something wrong.</p>
+      <p>
+        <input type="text" class="mt_input mt_subh4" placeholder="Inactive Field" disabled>
+      </p>
+    </form>
+
+    <form class="mt_col-lg-6">
+      <textarea class="mt_input mt_textarea mt_subh4 mt_row-gut-1" placeholder="I am a text area"></textarea>
+
+      <!--Checkbox -->
+      <div class="mt_col-lg-6 mt_row">
+        <div class="mt_row-gut-1 mt_subh4">
+          <input type="checkbox" class="mt_checkbox" id="c1" checked/>
+          <label for="c1">Option 1</label>
+        </div>
+        <div class="mt_row-gut-1 mt_subh4">
+          <input type="checkbox" class="mt_checkbox" id="c2"/>
+          <label for="c2">Option 2</label>
+        </div>
+        <div class="mt_subh4">
+          <input type="checkbox" class="mt_checkbox mt_checkbox--disabled" id="c3"/>
+          <label for="c3">Option 3</label>
+        </div>
+      </div>
+
+      <!--Radio-->
+
+      <div class="mt_col-lg-6 mt_row">
+        <fieldset class="mt_row-gut-2 mt_subh4 fieldset">
+          <div class="mt_row-gut-1">
+            <input class="mt_radio" type="radio" value="r1" name="thing1" id="r1" checked>
+            <label for="r1">Option 1</label>
+          </div>
+          <div class="mt_row-gut-1">
+            <input class="mt_radio" type="radio" value="r2" name="thing1" id="r2">
+            <label for="r2">Option 2</label>
+          </div>
+          <div>
+            <input class="mt_radio mt_radio--disabled" type="radio" value="r3"  name="thing1">
+            <label>Option 3</label>
+          </div>
+        </fieldset>
+      </div>
+    </form>
+
+    <form class="mt_bgcolor--neutral--dark examplepadding" style="display: none">
+      <p>
+        <input type="text" class="mt_input mt_subh4" placeholder="Text Input Field">
+      </p>
+      <p>
+        <input type="password" class="mt_input mt_subh4" placeholder="Enter Password">
+      </p>
+      <p>
+        <input type="text" class="mt_input mt_input--error mt_subh4" placeholder="Error Message">
+      </p>
+      <p class="mt_h5 mt_color--danger">You did something wrong.</p>
+      <p>
+        <input type="text" class="mt_input mt_subh4" placeholder="Inactive Field" disabled>
+      </p>
+      <textarea class="mt_input mt_textarea mt_subh4" placeholder="Enter your message here"></textarea>
+    </form>
+  </div>
 </div>
+
+<div class="mt_bgcolor--neutral--lighter-even-even mt_row-gut-2 divider">&nbsp;</div>
