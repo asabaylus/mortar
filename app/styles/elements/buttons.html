@@ -1,78 +1,94 @@
-<div class="pagewrapper mt_row-gut-2 mt_col-gut-lg">
-  <div class="mt_row">
+<div class="JS_buttonexample-container button-examplepadding">
+  <div class="pagewrapper mt_row-gut-2 mt_col-gut-lg">
     <h3 class="mt_h3"> Buttons </h3>
-
-    <p class="mt_subh4 mt_row-gut-2 mt_col-lg-7 mt_col-sm-12">
+    <p class="mt_subh4 mt_row-gut-2 mt_row mt_col-lg-7 mt_col-12">
       The primary button should be used for the main call to action. It can be paired with a secondary or naked button. Affirmation and warning buttons should mainly be used for
       transactional and form completion tasks.
     </p>
 
-  </div>
+    <div class="mt_row"></div>
 
-  <!-- Background color switch -->
+    <div class="mt_row">
+      <!-- Background toggle option -->
+      <fieldset class="mt_subh4 fieldset mt_col-md-3">
+        <div class="mt_row-gut-1">
+          <input class="mt_radio" type="radio" value="default" name="button-bgcolor" id="default" checked>
+          <label for="default">Light background</label>
+        </div>
+      </fieldset>
 
-  <div class="mt_row mt_row-gut-2">
-    <fieldset class="mt_subh4 fieldset">
-      <div class="mt_row-gut-1">
-        <input class="mt_radio" type="radio" value="default" name="background-color" id="default" checked>
-        <label for="default">Light background </label>
+      <fieldset class="mt_subh4 fieldset mt_row-gut-2 mt_col-md-3">
+        <div>
+          <input class="mt_radio" type="radio" value="inverse" name="button-bgcolor" id="inverse">
+          <label for="inverse">Dark background</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="mt_row mt_row-gut-4">
+      <div class="mt_col-12 mt_col-lg-3 mt_col-gut-sm">
+        <p class="mt_h5">.mt_btn mt_btn-default</p>
+        <button class="mt_btn mt_btn--fullwidth mt_btn-default"> Default </button>
       </div>
-    </fieldset>
-
-    <fieldset class="mt_subh4 fieldset mt_row-gut-1">
-      <div>
-        <input class="mt_radio" type="radio" value="inverse" name="background-color" id="inverse">
-        <label for="inverse">Dark background </label>
+      <div class="mt_col-12 mt_col-lg-3 mt_col-gut-sm">
+        <p class="mt_h5">.mt_btn mt_btn-secondary</p>
+        <button class="JS_button-reverse mt_btn mt_btn--fullwidth mt_btn-secondary">Secondary</button>
       </div>
-    </fieldset>
-  </div>
-
-  <div class="mt_row mt_row-gut-4">
-    <div class="mt_col-lg-3">
-      <p class="mt_h5">.mt_btn mt_btn-default</p>
-      <button class="mt_btn mt_btn-default"> Default </button>
+      <div class="mt_col-12 mt_col-lg-3 mt_col-gut-sm">
+        <p class="mt_h5">.mt_btn mt_btn-naked</p>
+        <button class="JS_button-nakedreverse mt_btn mt_btn--fullwidth mt_btn-naked"> <span> Naked </span> </button>
+      </div>
+      <div class="mt_col-12 mt_col-lg-3 mt_col-gut-sm">
+        <p class="mt_h5">.mt_btn mt_btn--success</p>
+        <button class="mt_btn mt_btn--fullwidth mt_btn--success">Success</button>
+      </div>
+      <div class="mt_col-12 mt_col-lg-3 mt_col-gut-sm">
+        <p class="mt_h5">.mt_btn mt_btn--error</p>
+        <button class="mt_btn mt_btn--fullwidth mt_btn--error">Error</button>
+      </div>
+      <div class="mt_col-12 mt_col-lg-3 mt_col-gut-sm">
+        <p class="mt_h5">.mt_btn mt_btn-default--inactive</p>
+        <button class="mt_btn mt_btn--fullwidth mt_btn-default--inactive"> Default Inactive </button>
+      </div>
+      <div class="mt_col-12 mt_col-lg-3 mt_col-gut-sm">
+        <p class="mt_h5">.mt_btn mt_btn-secondary--inactive</p>
+        <button class="mt_btn mt_btn--fullwidth mt_btn-secondary--inactive"> Secondary Inactive </button>
+      </div>
+      <div class="mt_col-12 mt_col-lg-4">
+        <p class="mt_h5">.mt_btn mt_btn-naked mt_btn-naked--inactive</p>
+        <button class="mt_btn mt_btn--fullwidth mt_btn-naked mt_btn-naked--inactive"> Naked Inactive </button>
+      </div>
     </div>
-    <div class="mt_col-lg-3">
-      <p class="mt_h5">.mt_btn mt_btn-secondary</p>
-      <button class="mt_btn mt_btn-secondary">Secondary</button>
-    </div>
-    <div class="mt_col-lg-3">
-      <p class="mt_h5">.mt_btn mt_btn-naked</p>
-      <button class="mt_btn mt_btn-naked"> <span> Naked </span> </button>
-    </div>
-    <div class="mt_col-lg-3">
-      <p class="mt_h5">.mt_btn mt_btn--success</p>
-      <button class="mt_btn mt_btn--success"> Success </button>
-    </div>
-    <div class="mt_col-lg-3">
-      <p class="mt_h5">.mt_btn mt_btn--error</p>
-      <button class="mt_btn mt_btn--error"> Error </button>
-    </div>
-    <div class="mt_col-lg-3">
-      <p class="mt_h5">.mt_btn mt_btn-default--inactive</p>
-      <button class="mt_btn mt_btn-default--inactive"> Default Inactive </button>
-    </div>
-    <div class="mt_col-lg-3">
-      <p class="mt_h5">.mt_btn mt_btn-secondary--inactive</p>
-      <button class="mt_btn mt_btn-secondary--inactive"> Secondary Inactive </button>
-    </div>
-    <div class="mt_col-lg-3">
-      <p class="mt_h5">.mt_btn mt_btn-naked mt_btn-naked--inactive</p>
-      <button class="mt_btn mt_btn-naked mt_btn-naked--inactive"> Naked Inactive </button>
-    </div>
-
-  </div>
-
-  <div style="display:none" class="examplepadding mt_bgcolor--neutral--darker mt_row-gut-4">
-    <button class="mt_btn mt_btn-default"> Default </button>
-    <button class="mt_btn mt_btn-secondary--reversed"> Secondary Reversed </button>
-    <button class="mt_btn mt_btn-naked mt_btn-naked--reversed"> <span> Naked Reversed </span></button>
-    <button class="mt_btn mt_btn--success"> Success </button>
-    <button class="mt_btn mt_btn--error"> Error </button>
-    <button class="mt_btn mt_btn-default--inactive"> Default Inactive </button>
-    <button class="mt_btn mt_btn-secondary--inactive"> Secondary Inactive </button>
-    <button class="mt_btn mt_btn-naked mt_btn-naked--inactive"> Naked Inactive </button>
   </div>
 </div>
 
 <div class="mt_bgcolor--neutral--lighter-even-even mt_row-gut-4 divider">&nbsp;</div>
+
+<script>
+  $(document).ready(function() {
+    $('input[type=radio][name=button-bgcolor]').change(function() {
+      if (this.value === 'default') {
+        $('.JS_buttonexample-container')
+        .removeClass('mt_bgcolor--neutral--dark')
+        .removeClass('mt_color--neutral--lightest');
+
+        $('.JS_button-reverse')
+        .removeClass('mt_btn-secondary--reversed');
+
+        $('.JS_button-nakedreverse')
+        .removeClass('mt_btn-naked--reversed');
+      }
+      else if (this.value === 'inverse') {
+        $('.JS_buttonexample-container')
+        .addClass('mt_bgcolor--neutral--dark')
+        .addClass('mt_color--neutral--lightest');
+
+        $('.JS_button-reverse')
+        .addClass('mt_btn-secondary--reversed');
+
+        $('.JS_button-nakedreverse')
+        .addClass('mt_btn-naked--reversed');
+      }
+    });
+  });
+</script>
