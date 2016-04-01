@@ -191,7 +191,6 @@ td, th {
   text-align: left;
 }
 
-
 .iconexample-container {
   margin: 0 auto;
   position: relative;
@@ -274,35 +273,31 @@ td, th {
   margin-top: 0.83125rem;
 }
 
-.branding-link {
-  &,
-  &:link,
-  &:visited {
-    padding-left: 1rem;
-    color: $mt_color-neutral-darkest;
-    text-decoration: none;
-  }
-}
-
 .site-logo {
   padding-right: .5rem;
   text-decoration: none;
-  vertical-align: sub;
 }
 
 .navbutton {
   background: transparent;
   border: 0;
+  cursor: pointer;
+
+  @media #{$mt_mq-lg} {
+    cursor: default;
+  }
 }
 
 .navicon {
+  transition: 400ms;
+  vertical-align: middle;
+
   @media #{$mt_mq-lg} {
     display: none;
   }
 
   &--flipped {
     transform: rotate(180deg);
-    transition: 400ms;
   }
 }
 
@@ -312,9 +307,7 @@ td, th {
   @media #{$mt_mq-lg} {
     display: block;
   }
-}
 
-.navcontainer {
   &--active {
     background-color: $mt_color-neutral-lightest;
     border: 1px solid $mt_color-neutral-lighter-even;
@@ -328,8 +321,9 @@ td, th {
     z-index: 1;
 
     @media #{$mt_mq-lg} {
-      position: static;
       border: 0;
+      margin-left: 0;
+      position: static;
       width: initial;
     }
   }
@@ -349,8 +343,7 @@ td, th {
   height: 0.375rem;
   position: absolute;
   top: -3%;
-  width: 10.5rem;
-
+  width: 9.5rem;
 
   @media #{$mt_mq-lg} {
     display: none;
