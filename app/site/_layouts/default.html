@@ -5,35 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/styles/mortar-default.css">
   <link rel="stylesheet" href="https://fonts.ngeo.com/hoefler/1-0-1/hco_fonts.css">
-
   <script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1><a href="/">Mortar</a></h1>
-    <h2>The NGP Living Styleguide</h2>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/colors">Colors</a></li>
-        <li><a href="/layout">Layout</a></li>
-        <li><a href="/theme">Theme</a></li>
-        <li><a href="/utilities">Utilities</a></li>
-        <li><a href="/icons">Icons</a></li>
-        <li><a href="/elements">Elements</a></li>
-        <li><a href="/components">Components</a></li>
-        <li><a href="/patterns">UI Patterns</a></li>
-      </ul>
-    </nav>
-  </header>
-  <h2>{{title}}</h2>
+  <div class="headerwrapper">
+    <header class="header pagewrapper">
+      <!--Grouped for better handling on mobile -->
+      <div class="mt_col-md-4 mt_col-lg-3 branding mt_col-gut-lg">
+        <a href="http://nationalgeographic.com" class="site-logo">
+          <svg class="mt_icon--large">
+            <use xlink:href="/symbol/svg/sprite.symbol.svg#ng-border"></use>
+          </svg>
+        </a>
+
+        <span class="branding-grey-border"></span>
+
+        <button class="JS_navbutton navbutton mt_col-gut-md mt_h3">Style Guide
+          <svg class="mt_icon JS_navicon navicon mt_color--neutral">
+            <use xlink:href="/symbol/svg/sprite.symbol.svg#chevron-down"></use>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="JS_navcontainer navcontainer mt_subh1 mt_col-9">
+        <span class="navcontainer-yellow-border"></span>
+
+        <ul class="mt_col-gut-lg">
+          <li class="nav-item mt_row-gut-half"><a href="/" class="nav-link">Home</a></li>
+          <li class="nav-item mt_row-gut-half"><a href="/colors" class="nav-link">Colors</a></li>
+          <li class="nav-item mt_row-gut-half"><a href="/theme" class="nav-link">Typography</a></li>
+          <li class="nav-item mt_row-gut-half"><a href="/icons" class="nav-link">Icons</a></li>
+          <li class="nav-item mt_row-gut-half"><a href="/patterns" class="nav-link">UI Patterns</a></li>
+          <li class="nav-item mt_row-gut-half"><a href="/layout" class="nav-link">Layout</a></li>
+          <li class="nav-item mt_row-gut-half"><a href="/components" class="nav-link">Components</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <div class="mt_row mt_row-gut-3"></div>
+
   {{contents | safe}}
+
   <footer class="mt_row mt_bgcolor--neutral--lighter-even-even footer">
-    <div class="pagewrapper">
-      <div class="mt_subh4 mt_col-lg-9 mt_row-gut-2 copyright">
-        <div>
-          &copy; 2016 National Geographic Partners, LLC. All rights reserved
-        </div>
+    <div class="pagewrapper mt_col-gut-lg">
+      <div class="mt_subh4 mt_col-lg-8 mt_row-gut-2 copyright">
+        <span>&copy; 2016 National Geographic Partners, LLC. All rights reserved</span>
 
         <div>
           <a href="http://www.nationalgeographic.com/community/privacy/" target="_blank" class="mt_link">Privacy Policy</a> |
@@ -43,13 +60,18 @@
 
       <div class="mt_col-lg-3 mt_subh4">
         <svg class="mt_icon--large">
-          <use xlink:href="/symbol/svg/sprite.symbol.svg#github"></use>
+          <use xlink:href="/symbol/svg/sprite.symbol.svg#social-github"></use>
         </svg>
          View this project on <a href="https://github.com/natgeo/mortar" target="_blank" class="mt_link">Github</a>
       </div>
     </div>
-
   </footer>
+  <script>
+    $('.JS_navbutton').click(function(){
+      $('.JS_navcontainer').toggleClass('navcontainer--active');
+      $('.JS_navicon').toggleClass('navicon--flipped');
+    });
+  </script>
   <script>
   (function(d) {
     var config = {
