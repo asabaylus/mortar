@@ -1,0 +1,8 @@
+// While Mortar generally avoids the using CSS inheritance this pattern is
+// an exception. This class will be able to easily style generic WYSIWYG
+// output where we either can't or shouldn't have to put in the work to add
+// classes to every single element.
+
+.mt_bodytext {
+  @extend %mt_body;
+}
