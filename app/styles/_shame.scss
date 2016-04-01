@@ -289,14 +289,15 @@ td, th {
 }
 
 .navicon {
+  transition: 400ms;
   vertical-align: middle;
+
   @media #{$mt_mq-lg} {
     display: none;
   }
 
   &--flipped {
     transform: rotate(180deg);
-    transition: 400ms;
   }
 }
 
@@ -306,9 +307,7 @@ td, th {
   @media #{$mt_mq-lg} {
     display: block;
   }
-}
 
-.navcontainer {
   &--active {
     background-color: $mt_color-neutral-lightest;
     border: 1px solid $mt_color-neutral-lighter-even;
