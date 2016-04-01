@@ -191,7 +191,6 @@ td, th {
   text-align: left;
 }
 
-
 .iconexample-container {
   margin: 0 auto;
   position: relative;
@@ -282,6 +281,11 @@ td, th {
 .navbutton {
   background: transparent;
   border: 0;
+  cursor: pointer;
+
+  @media #{$mt_mq-lg} {
+    cursor: default;
+  }
 }
 
 .navicon {
@@ -341,7 +345,6 @@ td, th {
   position: absolute;
   top: -3%;
   width: 9.5rem;
-
 
   @media #{$mt_mq-lg} {
     display: none;
