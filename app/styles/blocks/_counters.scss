@@ -44,7 +44,6 @@
   }
 
   &--inverse {
-    background-color: $mt_color-neutral-lightest;
     box-shadow: 0 0 $mt_unit-quarter transparentize($mt_color-primary-lightest, .6);
     opacity: .3;
 
