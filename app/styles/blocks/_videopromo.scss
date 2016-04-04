@@ -10,15 +10,15 @@
   background-size: contain;
   background-image: $mt_video-promo-play-button;
   border: none;
+  content: $mt_unit;
   height: 40%;
   left: 50%;
-  opacity: .5;
-  position: absolute;
   max-height: $mt_unit * 15;
   max-width: $mt_unit * 15;
-  content: $mt_unit;
   min-height: $mt_unit-double;
   min-width: $mt_unit-double;
+  opacity: .5;
+  position: absolute;
   top: 50%;
   transition: 400ms;
   transform: translate(-50%, -50%);
