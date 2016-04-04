@@ -6,24 +6,23 @@
     </p>
 
     <!-- Background toggle option -->
-
     <div class="mt_row mt_row-gut-2">
-      <fieldset class="mt_subh4 fieldset mt_row-gut-2">
+      <fieldset class="mt_subh4 fieldset">
         <div class="mt_row-gut-1">
-          <input class="mt_radio" type="radio" value="default" name="background-color" id="default" checked>
-          <label for="default"> Light background </label>
+          <input class="mt_radio" type="radio" value="radio1" name="background-color" id="radio1" checked>
+          <label for="radio1">Light background </label>
         </div>
 
         <div>
-          <input class="mt_radio" type="radio" value="inverse" name="background-color" id="inverse">
-          <label for="inverse"> Dark background </label>
+          <input class="mt_radio" type="radio" value="radio2" name="background-color" id="radio2">
+          <label for="radio2"> Dark background </label>
         </div>
       </fieldset>
     </div>
   </div>
 
   <div class="mt_col-lg-8 mt_col-sm-12 mt_col-lg-offset-1 JS_input-container mt_row-gut-4">
-    <form class="mt_col-lg-6 mt_col-gut-lg">
+    <form class="mt_col-lg-6 mt_col-gut-sm">
       <p class="removemargin">
         <input type="text" class="mt_input mt_input--fullwidth mt_subh4" placeholder="Text Input Field">
       </p>
@@ -39,11 +38,10 @@
       </p>
     </form>
 
-    <form class="mt_col-lg-6">
+    <form class="mt_col-lg-6 mt_col-gut-sm">
       <textarea class="mt_input mt_textarea mt_textarea--fullwidth mt_subh4 mt_row-gut-1" placeholder="I am a text area"></textarea>
 
       <!--Checkbox -->
-
       <div class="mt_col-6 mt_row">
         <div class="mt_row-gut-1 mt_subh4">
           <input type="checkbox" class="mt_checkbox" id="c1" checked/>
@@ -59,8 +57,7 @@
         </div>
       </div>
 
-      <!--Radio-->
-
+      <!--Radio buttons-->
       <div class="mt_col-6 mt_row">
         <fieldset class="mt_row-gut-2 mt_subh4 fieldset">
           <div class="mt_row-gut-1">
@@ -87,11 +84,11 @@
 <script>
   $(document).ready(function() {
     $('input[type=radio][name=background-color]').change(function() {
-      if (this.value === 'default') {
+      if (this.value === 'radio1') {
         $('.JS_input-container')
         .removeClass('mt_bgcolor--neutral--dark');
       }
-      else if (this.value === 'inverse') {
+      else if (this.value === 'radio2') {
         $('.JS_input-container')
         .addClass('mt_bgcolor--neutral--dark');
       }
