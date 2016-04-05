@@ -239,8 +239,7 @@ th {
 }
 
 .dashed-border {
-  background-image: -webkit-linear-gradient(top, $mt_color-primary 50%,transparent 0);
-  background-image: linear-gradient(to bottom, $mt_color-primary 50%,transparent 0);
+  background-image: linear-gradient(to bottom, $mt_color-primary 50%, transparent 0);
   background-repeat: repeat-y;
   background-size: .09375em 1.125em;
 }
@@ -262,7 +261,7 @@ th {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 30;
+  z-index: $z-top;
 }
 
 .header {
@@ -399,13 +398,9 @@ th {
   margin: 0;
 }
 
-.button-examplepadding {
+.pattern-examplepadding {
   padding-bottom: 2rem;
   padding-top: 2rem;
-}
-
-.form-examplepadding {
-  padding-top: .5rem;
 }
 
 .counter-example {
