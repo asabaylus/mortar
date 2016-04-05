@@ -1,7 +1,7 @@
 .mt_modal-button {
   background-color: transparent;
   border: none;
-  color: $mt_color-neutral-lightest;
+  color: $mt_color-neutral-xxxl;
   cursor: pointer;
   position: absolute;
   right: $mt_unit;
@@ -9,7 +9,7 @@
 }
 
 .mt_modal-container {
-  background-color: transparentize($mt_color-neutral-darkest, .15);
+  background-color: transparentize($mt_color-neutral-xxd, .15);
   height: 85vh;
   left: 7.5vw;
   opacity: 0;

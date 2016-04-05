@@ -17,7 +17,7 @@
   {% endfor %}
 </article>
 
-<div class="mt_bgcolor--neutral--lighter-even-even mt_row-gut-4 divider">&nbsp;</div>
+<div class="mt_bgcolor--neutral--xxl mt_row-gut-4 divider">&nbsp;</div>
 
 <article class="pagewrapper">
   <section class="mt_row mt_row-gut-2 mt_col-gut-small">
@@ -52,12 +52,12 @@
     $('input[type=radio][name=icon-color]').change(function() {
       if (this.value === 'default') {
         $('.JS_icon-container')
-        .removeClass('mt_bgcolor--neutral--dark')
+        .removeClass('mt_bgcolor--neutral--d')
         .removeClass('mt_color--neutral--lightest');
       }
       else if (this.value === 'inverse') {
         $('.JS_icon-container')
-        .addClass('mt_bgcolor--neutral--dark')
+        .addClass('mt_bgcolor--neutral--d')
         .addClass('mt_color--neutral--lightest');
       }
     });
