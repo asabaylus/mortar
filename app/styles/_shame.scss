@@ -212,6 +212,13 @@ td, th {
 // ====================
 // ====================
 
+.sectionpadding {
+  padding-top: 1rem;
+
+  @media #{$mt_mq-lg} {
+    padding-top: 3rem;
+  }
+}
 .gridexample {
   position: relative;
   overflow: hidden;

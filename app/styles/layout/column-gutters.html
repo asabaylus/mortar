@@ -2,7 +2,10 @@
     <p class="mt_subh4 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
       <span class="mt_h5">Column Gutters:</span> The padding between columns is configurable and is available in the following classes: none, small, medium, and large. These can also be configured for each breakpoint.
     </p>
-    <div class="mt_row-gut-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg gridexample">
+
+    <!-- Zero gutter example -->
+
+    <div class="mt_row-gut-3 gridexample">
 
       <!-- Example -->
 
@@ -15,6 +18,12 @@
         </div>
       </div>
 
+      {% include "./_partials/gut-none.html" %}
+    </div>
+
+    <!--Small gutter example  -->
+
+    <div class="mt_row gridexample mt_row-gut-3">
       <div class="mt_row mt_row-gut-1">
         <div class="mt_col-6 mt_col-gut-sm">
           <div class="exampleborder">&nbsp;</div>
@@ -24,64 +33,37 @@
         </div>
       </div>
 
+      {% include "./_partials/gut-sm.html" %}
+    </div>
+
+    <!--Medium gutter example-->
+
+    <div class="mt_row gridexample mt_row-gut-3">
       <div class="mt_row mt_row-gut-1">
+        <div class="mt_col-6 mt_col-gut-md ">
+          <div class="exampleborder">&nbsp;</div>
+        </div>
         <div class="mt_col-6 mt_col-gut-md">
           <div class="exampleborder">&nbsp;</div>
         </div>
-        <div class="mt_col-6 mt_col-gut-md">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
       </div>
 
+      {% include "./_partials/gut-md.html" %}
+    </div>
+
+    <!--Large gutter example  -->
+
+    <div class="mt_row gridexample mt_row-gut-3">
       <div class="mt_row mt_row-gut-1">
-        <div class="mt_col-6 mt_col-gut-lg">
+        <div class="mt_col-6 mt_col-gut-lg ">
           <div class="exampleborder">&nbsp;</div>
         </div>
-        <div class="mt_col-6 mt_col-gut-lg">
+        <div class="mt_col-6 mt_col-gut-lg ">
           <div class="exampleborder">&nbsp;</div>
         </div>
       </div>
 
-      <!-- Grid design example -->
-
-      <div class="mt_bgcolor--primary--lighter gridexample-container">
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-      </div>
+      {% include "./_partials/gut-lg.html" %}
     </div>
 
     <p class="mt_subh4 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
@@ -105,44 +87,8 @@
 
       <!-- Grid design example -->
 
-      <div class="mt_bgcolor--primary--lighter gridexample-container">
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-        <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg dashed-border">
-          <div class="mt_bgcolor--primary gridexample-item">&nbsp;</div>
-        </div>
-      </div>
+      {% include "./_partials/grid.html" %}
+
     </div>
 </div>
 
