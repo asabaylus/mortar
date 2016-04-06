@@ -1,34 +1,51 @@
 // Primary colors
 
-$mt_color-primary-light: lighten($mt_color-primary, 20);
-$mt_color-primary-lighter: lighten($mt_color-primary, 30);
-$mt_color-primary-lighter-even: lighten($mt_color-primary, 40);
-$mt_color-primary-lightest: lighten($mt_color-primary, 45);
+$mt_color-primary-l: lighten($mt_color-primary, 20);
+$mt_color-primary-xl: lighten($mt_color-primary, 30);
+$mt_color-primary-xxl: lighten($mt_color-primary, 40);
+$mt_color-primary-xxxl: lighten($mt_color-primary, 45);
 
 // Neutrals -- Dark
 
-$mt_color-neutral-dark: darken($mt_color-neutral, 30);
-$mt_color-neutral-darker: darken($mt_color-neutral, 40);
-$mt_color-neutral-darkest: darken($mt_color-neutral, 50);
+$mt_color-neutral-d: darken($mt_color-neutral, 30);
+$mt_color-neutral-xd: darken($mt_color-neutral, 40);
+$mt_color-neutral-xxd: darken($mt_color-neutral, 50);
 
 // Neutrals -- Light
 
-$mt_color-neutral-light: lighten($mt_color-neutral, 20);
-$mt_color-neutral-lighter: lighten($mt_color-neutral, 30);
-$mt_color-neutral-lighter-even: lighten($mt_color-neutral, 40);
-$mt_color-neutral-lighter-even-even: lighten($mt_color-neutral, 45);
-$mt_color-neutral-lightest: lighten($mt_color-neutral, 50);
+$mt_color-neutral-l: lighten($mt_color-neutral, 20);
+$mt_color-neutral-xl: lighten($mt_color-neutral, 40);
+$mt_color-neutral-xxl: lighten($mt_color-neutral, 45);
+$mt_color-neutral-xxxl: lighten($mt_color-neutral, 50);
 
 // Affirmation
 
-$mt_color-affirmation-light: mt_tint($mt_color-affirmation, 25);
+$mt_color-affirmation-l: mt_tint($mt_color-affirmation, 25);
 
 // Danger
 
-$mt_color-danger-light: mt_tint($mt_color-danger, 25);
+$mt_color-danger-l: mt_tint($mt_color-danger, 25);
 
 // Borders
 
-$mt_border-default: 1px solid $mt_color-neutral-light;
+$mt_border-default: 1px solid $mt_color-neutral-l;
 $mt_border-default-hover: 1px solid $mt_color-neutral;
 $mt_border-danger: 1px solid $mt_color-danger;
+
+$mt_colors: (
+  primary: $mt_color-primary,
+  primary--l: $mt_color-primary-l,
+  primary--xl: $mt_color-primary-xl,
+  neutral--xxd: $mt_color-neutral-xxd,
+  neutral--xd: $mt_color-neutral-xd,
+  neutral--d: $mt_color-neutral-d,
+  neutral: $mt_color-neutral,
+  neutral--l: $mt_color-neutral-l,
+  neutral--xl: $mt_color-neutral-xl,
+  neutral--xxl: $mt_color-neutral-xxl,
+  neutral--xxxl: $mt_color-neutral-xxxl,
+  affirmation: $mt_color-affirmation,
+  affirmation--l: $mt_color-affirmation-l,
+  danger: $mt_color-danger,
+  danger--l: $mt_color-danger-l
+);

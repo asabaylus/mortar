@@ -9,7 +9,7 @@
   }
 
   &--disabled {
-    color: $mt_color-neutral-lighter-even;
+    color: $mt_color-neutral-xl;
   }
 }
 
@@ -24,7 +24,7 @@
 }
 
 .dotcounter-item {
-  background-color: $mt_color-neutral-lighter-even;
+  background-color: $mt_color-neutral-xl;
   border-radius: 50%;
   display: inline-block;
   height: $mt_unit-half;
@@ -33,11 +33,11 @@
 
   &--active,
   &:hover {
-    background-color: $mt_color-neutral-light;
+    background-color: $mt_color-neutral-l;
   }
 
   &--inverse {
-    box-shadow: 0 0 $mt_unit-quarter transparentize($mt_color-primary-lightest, .6);
+    box-shadow: 0 0 $mt_unit-quarter transparentize($mt_color-primary-xxxl, .6);
     opacity: .3;
 
     &--active,
