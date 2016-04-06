@@ -1,153 +1,23 @@
-.mt_bgcolor--primary {
-  background-color: $mt_color-primary;
-
-  &--light {
-    background-color: $mt_color-primary-light;
+@each $mt_color-name, $mt_color-value in $mt_colors {
+  .mt_color--#{$mt_color-name} {
+    color: $mt_color-value;
   }
 
-  &--lighter {
-    background-color: $mt_color-primary-lighter;
+  .mt_bgcolor--#{$mt_color-name} {
+    background-color: $mt_color-value;
   }
 
-  &--lighter-even {
-    background-color: $mt_color-primary-lighter-even;
-  }
-
-  &--lightest {
-    background-color: $mt_color-primary-lightest;
-  }
-}
-
-.mt_bgcolor--danger {
-  background-color: $mt_color-danger;
-
-  &--light {
-    background-color: $mt_color-danger-light;
-  }
-}
-
-.mt_bgcolor--affirmation {
-  background-color: $mt_color-affirmation;
-
-  &--light {
-    background-color: $mt_color-affirmation-light;
-  }
-}
-
-.mt_bgcolor--neutral {
-  background-color: $mt_color-neutral;
-
-  &--darkest {
-    background-color: $mt_color-neutral-darkest;
-  }
-
-  &--darker {
-    background-color: $mt_color-neutral-darker;
-  }
-
-  &--dark {
-    background-color: $mt_color-neutral-dark;
-  }
-
-  &--light {
-    background-color: $mt_color-neutral-light;
-  }
-
-  &--lighter {
-    background-color: $mt_color-neutral-lighter;
-  }
-
-  &--lighter-even {
-    background-color: $mt_color-neutral-lighter-even;
-  }
-
-  &--lighter-even-even {
-    background-color: $mt_color-neutral-lighter-even-even;
-  }
-
-  &--lightest {
-    background-color: $mt_color-neutral-lightest;
-  }
-}
-
-.mt_color--primary {
-  color: $mt_color-primary;
-
-  &--light {
-    color: $mt_color-primary-light;
-  }
-
-  &--lighter {
-    color: $mt_color-primary-lighter;
-  }
-
-  &--lighter-even {
-    color: $mt_color-primary-lighter-even;
-  }
-
-  &--lightest {
-    color: $mt_color-primary-lightest;
-  }
-}
-
-.mt_color--danger {
-  color: $mt_color-danger;
-
-  &--light {
-    color: $mt_color-danger-light;
-  }
-}
-
-.mt_color--affirmation {
-  color: $mt_color-affirmation;
-
-  &--light {
-    color: $mt_color-affirmation-light;
-  }
-}
-
-.mt_color--neutral {
-  color: $mt_color-neutral;
-
-  &--darkest {
-    color: $mt_color-neutral-darkest;
-  }
-
-  &--darker {
-    color: $mt_color-neutral-darker;
-  }
-
-  &--dark {
-    color: $mt_color-neutral-dark;
-  }
-
-  &--light {
-    color: $mt_color-neutral-light;
-  }
-
-  &--lighter {
-    color: $mt_color-neutral-lighter;
-  }
-
-  &--lighter-even {
-    color: $mt_color-neutral-lighter-even;
-  }
-
-  &--lighter-even-even {
-    color: $mt_color-neutral-lighter-even-even;
-  }
-
-  &--lightest {
-    color: $mt_color-neutral-lightest;
+  .mt_bordercolor--#{$mt_color-name} {
+    border: 1px solid $mt_color-value;
   }
 }
 
 @each $mt_social-color, $mt_social-bg-color in $mt_social-colors {
-  .mt_bgcolor-social--#{$mt_social-color} {
+  .mt_bgcolor--social--#{$mt_social-color} {
     background-color: $mt_social-bg-color;
   }
 
-  .mt_color-social--#{$mt_social-color} {
+  .mt_color--social--#{$mt_social-color} {
     color: $mt_social-bg-color;
   }
 }

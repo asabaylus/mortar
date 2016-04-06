@@ -35,13 +35,13 @@ body {
 .examplelink {
   &:link,
   &:visited {
-    color: $mt_color-neutral-darkest;
+    color: $mt_color-neutral-xxd;
     text-decoration: none;
   }
 }
 
 .codemarkup {
-  border: 1px solid $mt_color-neutral-lighter-even;
+  border: 1px solid $mt_color-neutral-xl;
   display: block;
   padding: 1.5em;
   word-wrap: break-word;
@@ -67,8 +67,8 @@ body {
 // ====================
 
 .divider {
-  border-bottom: 1px solid $mt_color-neutral-lighter-even;
-  border-top: 1px solid $mt_color-neutral-lighter-even;
+  border-bottom: 1px solid $mt_color-neutral-xl;
+  border-top: 1px solid $mt_color-neutral-xl;
   height: 1em;
 }
 
@@ -114,7 +114,7 @@ body {
 }
 
 .circle {
-  border: 1px solid $mt_color-neutral-lighter-even;
+  border: 1px solid $mt_color-neutral-xl;
   border-radius: 50%;
   height: 9em;
   width: 9em;
@@ -133,7 +133,7 @@ body {
 // ====================
 
 .typographyexamples-item {
-  border: 1px solid $mt_color-neutral-lighter-even;
+  border: 1px solid $mt_color-neutral-xl;
   padding: 1em;
 }
 
@@ -185,15 +185,15 @@ table {
   border-collapse: collapse;
 }
 
-td,
-th {
-  border: 1px solid $mt_color-neutral-lighter-even;
+
+td, th {
+  border: 1px solid $mt_color-neutral-xl;
   padding: .5rem;
   text-align: left;
 }
 
 .iconexample-container {
-  border: 1px solid $mt_color-neutral-lighter-even;
+  border: 1px solid $mt_color-neutral-xl;
   border-radius: 50%;
   margin: 0 auto;
   position: relative;
@@ -245,7 +245,7 @@ th {
 }
 
 .exampleborder {
-  border: 2px solid $mt_color-neutral-darkest;
+  border: 2px solid $mt_color-neutral-xxd;
 }
 
 
@@ -256,8 +256,8 @@ th {
 // ====================
 
 .headerwrapper {
-  background: $mt_color-neutral-lightest;
-  border-bottom: 1px solid $mt_color-neutral-lighter-even;
+  background: $mt_color-neutral-xxxl;
+  border-bottom: 1px solid $mt_color-neutral-xl;
   position: fixed;
   top: 0;
   width: 100%;
@@ -309,8 +309,8 @@ th {
   }
 
   &--active {
-    background-color: $mt_color-neutral-lightest;
-    border: 1px solid $mt_color-neutral-lighter-even;
+    background-color: $mt_color-neutral-xxxl;
+    border: 1px solid $mt_color-neutral-xl;
     border-bottom: 6px solid $mt_color-primary;
     display: block;
     margin-left: 5rem;
@@ -330,7 +330,7 @@ th {
 }
 
 .branding-grey-border {
-  background-color: $mt_color-neutral-lighter-even;
+  background-color: $mt_color-neutral-xl;
   display: inline-block;
   height: 2rem;
   vertical-align: bottom;
@@ -384,7 +384,7 @@ th {
 
 
 .illustratedexample-border {
-  border: 1px solid $mt_color-neutral-lighter-even;
+  border: 1px solid $mt_color-neutral-xl;
 }
 
 // ====================

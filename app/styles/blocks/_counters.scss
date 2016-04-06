@@ -1,15 +1,15 @@
-.numericcounter-button {
+.mt_numericcounter-button {
   border: none;
   background-color: transparent;
 }
 
-.numericcounter-arrow {
+.mt_numericcounter-arrow {
   &:not(.numericcounter-arrow--disabled):hover {
     color: $mt_color-neutral;
   }
 
   &--disabled {
-    color: $mt_color-neutral-lighter-even;
+    color: $mt_color-neutral-xl;
   }
 }
 
@@ -30,8 +30,8 @@
   }
 }
 
-.dotcounter-item {
-  background-color: $mt_color-neutral-lighter-even;
+.mt_dotcounter-item {
+  background-color: $mt_color-neutral-xl;
   border-radius: 50%;
   display: inline-block;
   height: $mt_unit-half;
@@ -40,11 +40,11 @@
 
   &--active,
   &:hover {
-    background-color: $mt_color-neutral-light;
+    background-color: $mt_color-neutral-l;
   }
 
   &--inverse {
-    box-shadow: 0 0 $mt_unit-quarter transparentize($mt_color-primary-lightest, .6);
+    box-shadow: 0 0 $mt_unit-quarter transparentize($mt_color-primary-xxxl, .6);
     opacity: .3;
 
     &--active,

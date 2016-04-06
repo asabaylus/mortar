@@ -14,22 +14,22 @@
   &--success {
     background-color: $mt_color-affirmation;
     border: 1px solid $mt_color-affirmation;
-    color: $mt_color-neutral-lightest;
+    color: $mt_color-neutral-xxxl;
 
     &:hover {
-      background-color: $mt_color-affirmation-light;
-      border: 1px solid $mt_color-affirmation-light;
+      background-color: $mt_color-affirmation-l;
+      border: 1px solid $mt_color-affirmation-l;
     }
   }
 
   &--error {
     background-color: $mt_color-danger;
     border: 1px solid $mt_color-danger;
-    color: $mt_color-neutral-lightest;
+    color: $mt_color-neutral-xxxl;
 
     &:hover {
-      background-color: $mt_color-danger-light;
-      border: 1px solid $mt_color-danger-light;
+      background-color: $mt_color-danger-l;
+      border: 1px solid $mt_color-danger-l;
     }
   }
 }
@@ -42,42 +42,42 @@
   background-color: $mt_color-primary;
 
   &:hover {
-    background-color: $mt_color-primary-light;
-    border: 1px solid $mt_color-primary-light;
+    background-color: $mt_color-primary-l;
+    border: 1px solid $mt_color-primary-l;
   }
 
   &--reversed {
-    color: $mt_color-neutral-lightest;
+    color: $mt_color-neutral-xxxl;
   }
 
   &--inactive {
     background: $mt_color-neutral;
-    color: $mt_color-neutral-darkest;
+    color: $mt_color-neutral-xxd;
     cursor: default;
     opacity: .3;
   }
 }
 
 .mt_btn-secondary {
-  border: 1px solid $mt_color-primary-light;
+  border: 1px solid $mt_color-primary-l;
 
   &:hover {
-    background: $mt_color-primary-light;
+    background: $mt_color-primary-l;
   }
 
   &--reversed {
-    border: 1px solid $mt_color-primary-light;
-    color: $mt_color-neutral-lightest;
+    border: 1px solid $mt_color-primary-l;
+    color: $mt_color-neutral-xxxl;
 
     &:hover {
-      background: $mt_color-primary-light;
-      color: $mt_color-neutral-darkest;
+      background: $mt_color-primary-l;
+      color: $mt_color-neutral-xxd;
     }
   }
 
   &--inactive {
-    border: 1px solid transparentize($mt_color-neutral-light, .6);
-    color: transparentize($mt_color-neutral-light, .6);
+    border: 1px solid transparentize($mt_color-neutral-l, .6);
+    color: transparentize($mt_color-neutral-l, .6);
     cursor: default;
   }
 }
@@ -95,16 +95,16 @@
   }
 
   &--reversed {
-    color: $mt_color-neutral-lightest;
+    color: $mt_color-neutral-xxxl;
   }
 
   &--inactive {
     border: 0;
-    color: transparentize($mt_color-neutral-light, .6);
+    color: transparentize($mt_color-neutral-l, .6);
     cursor: default;
 
     &:hover {
-      color: transparentize($mt_color-neutral-light, .6);
+      color: transparentize($mt_color-neutral-l, .6);
     }
   }
 }
