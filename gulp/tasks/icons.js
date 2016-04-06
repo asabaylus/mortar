@@ -4,7 +4,10 @@ var gulp  = require('gulp');
 var svgSprite = require('gulp-svg-sprite');
 var config = {
   mode: {
-    symbol: true,
+    symbol: {
+      dest: '.',
+      sprite: 'mortar-symbol-sprite.svg'
+    }
   },
   log                   : null,                     // Logging verbosity (default: no logging)
   shape                 : {

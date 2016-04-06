@@ -8,13 +8,16 @@
   <script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div class="mt_visuallyhidden">
+    {{iconSprite|safe}}
+  </div>
   <div class="headerwrapper">
     <header class="header pagewrapper">
       <!--Grouped for better handling on mobile -->
       <div class="mt_col-md-4 mt_col-lg-3 branding mt_col-gut-lg">
         <a href="http://nationalgeographic.com" class="site-logo">
           <svg class="mt_icon--large">
-            <use xlink:href="/symbol/svg/sprite.symbol.svg#ng-border"></use>
+            <use xlink:href="#ng-border"></use>
           </svg>
         </a>
 
@@ -22,7 +25,7 @@
 
         <button class="JS_navbutton navbutton mt_col-gut-md mt_h3">Style Guide
           <svg class="mt_icon JS_navicon navicon mt_color--neutral--l">
-            <use xlink:href="/symbol/svg/sprite.symbol.svg#chevron-down"></use>
+            <use xlink:href="#chevron-down"></use>
           </svg>
         </button>
       </div>
@@ -74,7 +77,7 @@
 
       <div class="mt_col-lg-3 mt_subh4">
         <svg class="mt_icon--large">
-          <use xlink:href="/symbol/svg/sprite.symbol.svg#social-github"></use>
+          <use xlink:href="#social-github"></use>
         </svg>
          View this project on <a href="https://github.com/natgeo/mortar" target="_blank" class="mt_link">Github</a>
       </div>
