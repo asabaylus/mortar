@@ -223,16 +223,6 @@ td, th {
   position: absolute;
   right: 0;
   z-index: -5;
-
-/*
-  &--hidden {
-    display: none;
-
-    @media #{$mt_mq-sm} {
-      display: block;
-    }
-  }
-*/
 }
 
 .gridexample-item {
