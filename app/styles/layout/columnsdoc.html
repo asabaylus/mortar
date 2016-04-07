@@ -9,45 +9,11 @@
 
   <div class="gridexample mt_row-gut-2">
     <div class="mt_row">
-      <div class="mt_col-12 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-        <div class="exampleborder mt_row-gut-1">&nbsp;</div>
-      </div>
-      <div class="mt_col-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-        <div class="exampleborder mt_row-gut-1">&nbsp;</div>
-      </div>
-      <div class="mt_col-11 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-        <div class="exampleborder mt_row-gut-1">&nbsp;</div>
-      </div>
-      <div class="mt_col-2 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-        <div class="exampleborder mt_row-gut-1">&nbsp;</div>
-      </div>
-      <div class="mt_col-10 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-        <div class="exampleborder mt_row-gut-1">&nbsp;</div>
-      </div>
-      <div class="mt_col-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-        <div class="exampleborder mt_row-gut-1">&nbsp;</div>
-      </div>
-      <div class="mt_col-9 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-        <div class="exampleborder mt_row-gut-1">&nbsp;</div>
-      </div>
-      <div class="mt_col-4 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-        <div class="exampleborder mt_row-gut-1">&nbsp;</div>
-      </div>
-      <div class="mt_col-8 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-        <div class="exampleborder mt_row-gut-1">&nbsp;</div>
-      </div>
-      <div class="mt_col-5 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-        <div class="exampleborder mt_row-gut-1">&nbsp;</div>
-      </div>
-      <div class="mt_col-7 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-        <div class="exampleborder mt_row-gut-1">&nbsp;</div>
-      </div>
-      <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-        <div class="exampleborder">&nbsp;</div>
-      </div>
-      <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-        <div class="exampleborder">&nbsp;</div>
-      </div>
+      {% for gutter in [12,1,11,2,10,3,9,4,8,5,7,6,6] %}
+        <div class="mt_col-{{gutter}} mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
+          <div class="exampleborder mt_row-gut-1">&nbsp;</div>
+        </div>
+      {% endfor %}
     </div>
 
     <!-- Grid design example -->
