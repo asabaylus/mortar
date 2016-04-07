@@ -3,11 +3,22 @@
 var bs = require('browser-sync').get('mortar');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var argv = require('yargs')
+            .usage('Usage: gulp serve [-s startPath]')
+            .option('s', {
+              alias: 'start',
+              describe: 'optional startPath that the browser will open at',
+              requiresArg: 's',
+              type: 'string'
+            })
+            .argv;
+var startPath = argv.s ? '/' + argv.s : null;
 
 // Static server
 gulp.task('serve', ['build'], function() {
   bs.init({
     open: 'external',
+    startPath: startPath,
     server: {
       baseDir: [
         '.tmp/site',
@@ -26,6 +37,6 @@ gulp.task('serve', ['build'], function() {
   // since the wintersmith files aren't created in a gulp stream it appears
   // gulp watch has trouble with them. thankfully browsersync's watch does not
   bs.watch('.tmp/site/**/*.html').on('change', bs.reload);
-  bs.watch('.tmp/assets/symbol/svg/*.svg').on('change', bs.reload);
+  bs.watch('.tmp/assets/*.svg').on('change', bs.reload);
   bs.watch('.tmp/assets/scripts/*.js').on('change', bs.reload);
 });

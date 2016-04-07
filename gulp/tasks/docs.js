@@ -9,7 +9,7 @@ var inPlace = require('metalsmith-in-place');
 var fs = require('fs');
 
 // Static server
-gulp.task('docs', function() {
+gulp.task('docs', ['icons'], function() {
   const fileList = fs.readdirSync('app/icons/');
   const icons = fileList
     .filter(isSVG)
@@ -51,7 +51,8 @@ gulp.task('docs', function() {
   .destination('./.tmp/site')
   .metadata({
     'title': 'Mortar',
-    'description': 'A living styleguide for National Geographic Partners'
+    'description': 'A living styleguide for National Geographic Partners',
+    'iconSprite': fs.readFileSync('.tmp/assets/mortar-symbol-sprite.svg', 'utf8')
   })
   .ignore('layouts')
   .use(markdown())
