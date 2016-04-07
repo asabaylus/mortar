@@ -3,7 +3,7 @@
 <head>
   <title>{{title}} | Mortar: The NGP Living Styleguide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href=".{% if title != home %}.{% endif %}/styles/mortar-default.css">
+  <link rel="stylesheet" href=".{% if title != 'Home' %}.{% endif %}/styles/mortar-default.css">
   <link rel="stylesheet" href="https://fonts.ngeo.com/hoefler/1-0-1/hco_fonts.css">
   <script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
 </head>
@@ -35,25 +35,25 @@
 
         <ul class="mt_col-gut-lg">
           <li class="nav-item mt_row-gut-half">
-            <a href=".{% if title != home %}.{% endif %}/" class="nav-link">Home</a>
+            <a href=".{% if title != 'Home' %}.{% endif %}/" class="nav-link">Home</a>
           </li>
           <li class="nav-item mt_row-gut-half">
-            <a href=".{% if title != home %}.{% endif %}/colors" class="nav-link">Color</a>
+            <a href=".{% if title != 'Home' %}.{% endif %}/colors" class="nav-link">Color</a>
           </li>
           <li class="nav-item mt_row-gut-half">
-            <a href=".{% if title != home %}.{% endif %}/typography" class="nav-link">Typography</a>
+            <a href=".{% if title != 'Home' %}.{% endif %}/typography" class="nav-link">Typography</a>
           </li>
           <li class="nav-item mt_row-gut-half">
-            <a href=".{% if title != home %}.{% endif %}/icons" class="nav-link">Icons</a>
+            <a href=".{% if title != 'Home' %}.{% endif %}/icons" class="nav-link">Icons</a>
           </li>
           <li class="nav-item mt_row-gut-half">
-            <a href=".{% if title != home %}.{% endif %}/patterns" class="nav-link">UI Patterns</a>
+            <a href=".{% if title != 'Home' %}.{% endif %}/patterns" class="nav-link">UI Patterns</a>
           </li>
           <li class="nav-item mt_row-gut-half">
-            <a href=".{% if title != home %}.{% endif %}/layout" class="nav-link">Layout</a>
+            <a href=".{% if title != 'Home' %}.{% endif %}/layout" class="nav-link">Layout</a>
           </li>
           <li class="nav-item mt_row-gut-half">
-            <a href=".{% if title != home %}.{% endif %}/components" class="nav-link">Components</a>
+            <a href=".{% if title != 'Home' %}.{% endif %}/components" class="nav-link">Components</a>
           </li>
         </ul>
       </nav>
@@ -98,6 +98,6 @@
     h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//fonts.ngeo.com/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
   })(document);
   </script>
-  <script src=".{% if title != home %}.{% endif %}/scripts/main.js"></script>
+  <script src=".{% if title != 'Home' %}.{% endif %}/scripts/main.js"></script>
 </body>
 </html>
