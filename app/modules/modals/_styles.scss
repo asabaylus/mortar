@@ -17,6 +17,7 @@
   top: 7.5vh;
   transition: .2s;
   width: 85vw;
+  z-index: $z-top;
 }
 
 .mt_module-container--active {

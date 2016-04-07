@@ -29,8 +29,16 @@
       box-shadow: none;
     }
   }
+
+  &--fullwidth {
+    width: 100%;
+  }
 }
 
 .mt_textarea {
   min-height: $mt_unit * 6;
+
+  &--fullwidth {
+    width: 100%;
+  }
 }

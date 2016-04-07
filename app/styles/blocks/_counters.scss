@@ -1,9 +1,9 @@
-.numericcounter-button {
+.mt_numericcounter-button {
   border: none;
   background-color: transparent;
 }
 
-.numericcounter-arrow {
+.mt_numericcounter-arrow {
   &:not(.numericcounter-arrow--disabled):hover {
     color: $mt_color-neutral;
   }
@@ -13,17 +13,24 @@
   }
 }
 
-.dotcounter-container {
+.mt_dotcounter-container {
+  left: 50%;
   list-style-type: none;
   margin: 0;
   padding: 0;
+  position: absolute;
+  transform: translateX(-50%);
 
   &:hover {
     color: $mt_color-neutral;
   }
+
+  &--inverse {
+    bottom: 0;
+  }
 }
 
-.dotcounter-item {
+.mt_dotcounter-item {
   background-color: $mt_color-neutral-xl;
   border-radius: 50%;
   display: inline-block;

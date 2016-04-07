@@ -185,17 +185,18 @@ table {
   border-collapse: collapse;
 }
 
+
 td, th {
   border: 1px solid $mt_color-neutral-xl;
-  padding: 0.5rem;
+  padding: .5rem;
   text-align: left;
 }
 
 .iconexample-container {
-  margin: 0 auto;
-  position: relative;
   border: 1px solid $mt_color-neutral-xl;
   border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
 }
 
 .iconexample-icon {
@@ -221,15 +222,15 @@ td, th {
 }
 
 .gridexample {
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
 .gridexample-container {
-  top: 0;
   left: 0;
   position: absolute;
   right: 0;
+  top: 0;
   z-index: -5;
 }
 
@@ -238,10 +239,9 @@ td, th {
 }
 
 .dashed-border {
-  background-image: -webkit-linear-gradient(top,$mt_color-primary 50%,transparent 0);
-  background-image: linear-gradient(to bottom,$mt_color-primary 50%,transparent 0);
+  background-image: linear-gradient(to bottom, $mt_color-primary 50%, transparent 0);
   background-repeat: repeat-y;
-  background-size: 0.09375em 1.125em;
+  background-size: .09375em 1.125em;
 }
 
 .exampleborder {
@@ -261,7 +261,7 @@ td, th {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 30;
+  z-index: $z-top;
 }
 
 .header {
@@ -331,10 +331,10 @@ td, th {
 
 .branding-grey-border {
   background-color: $mt_color-neutral-xl;
-  height: 2rem;
-  width: 0.0625rem;
   display: inline-block;
+  height: 2rem;
   vertical-align: bottom;
+  width: .0625rem;
 }
 
 .navcontainer-yellow-border {
@@ -370,8 +370,8 @@ td, th {
   }
 
   &:hover {
-    text-decoration: underline;
     color: $mt_color-neutral;
+    text-decoration: underline;
   }
 }
 
@@ -385,4 +385,25 @@ td, th {
 
 .illustratedexample-border {
   border: 1px solid $mt_color-neutral-xl;
+}
+
+// ====================
+// ====================
+// UI patterns page
+// ====================
+// ====================
+
+
+.removemargin {
+  margin: 0;
+}
+
+.pattern-examplepadding {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.counter-example {
+  height: 12rem;
+  position: relative;
 }
