@@ -213,6 +213,14 @@ td, th {
 // ====================
 // ====================
 
+.sectionpadding {
+  padding-top: 1rem;
+
+  @media #{$mt_mq-lg} {
+    padding-top: 3rem;
+  }
+}
+
 .gridexample {
   overflow: hidden;
   position: relative;
@@ -224,14 +232,6 @@ td, th {
   right: 0;
   top: 0;
   z-index: -5;
-
-  &--hidden {
-    display: none;
-
-    @media #{$mt_mq-sm} {
-      display: block;
-    }
-  }
 }
 
 .gridexample-item {
