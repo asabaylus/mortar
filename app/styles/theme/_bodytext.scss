@@ -15,15 +15,31 @@
   }
 
   h1 {
-    @extend %mt_h3;
+    @extend %mt_h4;
+
+    &:not(:first-child) {
+      margin-top: $mt_unit-double;
+    }
   }
 
   h2 {
-    @extend %mt_subh1;
+    @extend %mt_h4;
+
+    font-size: $mt_fs-med;
+
+    &:not(:first-child) {
+      margin-top: $mt_unit-double;
+    }
   }
 
   h3 {
-    @extend %mt_h5;
+    @extend %mt_h4;
+
+    font-size: $mt_fs-norm;
+
+    &:not(:first-child) {
+      margin-top: $mt_unit-double;
+    }
   }
 
   lh {
