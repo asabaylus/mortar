@@ -1,11 +1,11 @@
 <article class="pagewrapper">
-  <section class="mt_row mt_row-gut-2 mt_col-gut-small">
+  <div class="mt_row mt_row-gut-2 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
     <h3 class="mt_h3">General Icons</h3>
-  </section>
+  </div>
 
   {% for icon in icons %}
   {% if loop.first %}<ul class="mt_row illustratedexamples-container">{% endif %}
-  <li class="mt_row-gut-2 mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2 mt_col-gut-sm illustratedexamples-item--nonflex">
+  <li class="mt_row-gut-2 mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg illustratedexamples-item">
     <div class="JS_icon-container iconexample-container mt_intratio--square">
       <svg class="JS_icon mt_icon mt_icon--large iconexample-icon">
         <use xlink:href="#{{ icon }}"></use>
@@ -20,13 +20,13 @@
 <div class="mt_bgcolor--neutral--xxl mt_row-gut-4 divider">&nbsp;</div>
 
 <article class="pagewrapper">
-  <section class="mt_row mt_row-gut-2 mt_col-gut-small">
+  <div class="mt_row mt_row-gut-2 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
     <h3 class="mt_h3">Social Icons</h3>
-  </section>
+  </div>
 
   {% for icon in socialIcons %}
   {% if loop.first %}<ul class="mt_row illustratedexamples-container">{% endif %}
-  <li class="mt_row-gut-2 mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2 mt_col-gut-sm illustratedexamples-item--nonflex">
+  <li class="mt_row-gut-2 mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg illustratedexamples-item">
     <div class="JS_icon-container iconexample-container mt_intratio--square">
       <svg class="JS_icon mt_icon mt_icon--large iconexample-icon">
         <use xlink:href="#{{ icon }}"></use>
