@@ -5,4 +5,33 @@
 
 .mt_bodytext {
   @extend %mt_body;
+
+  a {
+    @extend %mt_link;
+  }
+
+  blockquote {
+    @extend %mt_blockquote;
+  }
+
+  h1 {
+    @extend %mt_h3;
+  }
+
+  h2 {
+    @extend %mt_subh1;
+  }
+
+  h3 {
+    @extend %mt_h5;
+  }
+
+  lh {
+    @extend %mt_list--header;
+  }
+
+  ol,
+  ul {
+    @extend %mt_list;
+  }
 }

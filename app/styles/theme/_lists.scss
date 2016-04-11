@@ -1,0 +1,15 @@
+%mt_list {
+  padding-inline-start: 2.5em;
+}
+
+.mt_list {
+  @extend %mt_list;
+}
+
+%mt_list--header {
+  font-weight: bold;
+}
+
+.mt_list--header {
+  @extend %mt_list--header;
+}
