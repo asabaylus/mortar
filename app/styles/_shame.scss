@@ -22,12 +22,11 @@ body {
 // ====================
 // ====================
 
-.herocontainer {
-  padding-top: 2em;
+
+.intro-txt {
   text-align: center;
 
   @media #{$mt_mq-lg} {
-    padding-top: 3em;
     text-align: left;
   }
 }
@@ -92,6 +91,7 @@ body {
 .illustratedexamples-item {
   text-align: center;
   list-style-type: none;
+  min-height: 215px;
 }
 
 .circle {
@@ -369,7 +369,7 @@ td, th {
 // ====================
 
 
-.removemargin {
+.nomargin {
   margin: 0;
 }
 
