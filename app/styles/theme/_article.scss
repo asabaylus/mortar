@@ -3,7 +3,7 @@
 // output where we either can't or shouldn't have to put in the work to add
 // classes to every single element.
 
-.mt_bodytext {
+.mt_article {
   @extend %mt_body;
 
   a {
@@ -40,10 +40,6 @@
     &:not(:first-child) {
       margin-top: $mt_unit-double;
     }
-  }
-
-  lh {
-    @extend %mt_list--header;
   }
 
   ol,
