@@ -1,10 +1,10 @@
 .mt_modal-button {
   background-color: transparent;
-  border: none;
+  border: 0;
   color: $mt_color-neutral-xxxl;
   cursor: pointer;
   position: absolute;
-  right: $mt_unit;
+  right: $mt_unit-double;
   top: $mt_unit;
 }
 
@@ -17,7 +17,7 @@
   top: 7.5vh;
   transition: .2s;
   width: 85vw;
-  z-index: $z-top;
+  z-index: $mt_z-top;
 }
 
 .mt_module-container--active {

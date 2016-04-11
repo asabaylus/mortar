@@ -1,8 +1,8 @@
 'use strict';
 
-var gulp = require('gulp');
-var sassLint = require('gulp-sass-lint')
-var eslint = require('gulp-eslint');
+const gulp = require('gulp');
+const sassLint = require('gulp-sass-lint')
+const eslint = require('gulp-eslint');
 
 gulp.task('test', [
   'eslint',
@@ -22,3 +22,6 @@ gulp.task('sasslint', function(){
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError());
 });
+
+// NOTE: keep an eye on https://github.com/sasstools/sass-lint/issues/70
+// This way we can get rid of all the warnings in the test output

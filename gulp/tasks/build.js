@@ -1,7 +1,7 @@
 'use strict';
 
-var gulp = require('gulp');
-var argv = require('yargs')
+const gulp = require('gulp');
+const argv = require('yargs')
             .alias('p', 'production')
             .argv;
 
