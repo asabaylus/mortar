@@ -1,4 +1,4 @@
-.mt_link {
+%mt_link {
   &,
   &:link,
   &:visited {
@@ -11,4 +11,8 @@
     border-bottom: 1px solid $mt_color-neutral;
     color: $mt_color-neutral;
   }
+}
+
+.mt_link {
+  @extend %mt_link;
 }

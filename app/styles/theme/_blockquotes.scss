@@ -1,0 +1,21 @@
+%mt_blockquote {
+  p {
+    @extend %mt_body--emphasis;
+
+    font-size: .9em;
+  }
+
+  border-left: ($mt_fs-med-lrg / 2) solid $mt_color-neutral-xxl;
+  color: $mt_color-neutral-xd;
+  padding-left: $mt_fs-med-lrg;
+  padding-right: $mt_fs-med-lrg;
+  margin: ($mt_fs-med-lrg * 2) 0;
+}
+
+.mt_blockquote {
+  @extend %mt_blockquote;
+}
+
+.mt_blockquote--footer {
+  text-align: right;
+}

@@ -15,11 +15,14 @@
 @import 'utils/round';
 @import 'utils/visibility';
 
+@import 'theme/article';
+@import 'theme/blockquotes';
 @import 'theme/colors';
 @import 'theme/fonts';
+@import 'theme/links';
+@import 'theme/lists';
 
 @import 'elements/buttons';
-@import 'elements/links';
 @import 'elements/checkbox';
 @import 'elements/inputs';
 @import 'elements/radio';
