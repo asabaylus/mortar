@@ -1,8 +1,8 @@
 'use strict';
 
-var gulp  = require('gulp');
-var svgSprite = require('gulp-svg-sprite');
-var config = {
+const gulp  = require('gulp');
+const svgSprite = require('gulp-svg-sprite');
+const config = {
   mode: {
     symbol: {
       dest: '.',
