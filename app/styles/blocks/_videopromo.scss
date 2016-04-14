@@ -1,14 +1,14 @@
 .videopromo-container {
-  position: relative;
   margin: 0;
+  position: relative;
 }
 
 .videopromo-button {
   background-color: transparent;
+  background-image: $mt_video-promo-play-button;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: $mt_video-promo-play-button;
   border: none;
   height: 40%;
   left: 50%;
