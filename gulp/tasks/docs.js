@@ -1,12 +1,12 @@
 'use strict';
 
-var gulp = require('gulp');
-var Metalsmith = require('metalsmith');
-var markdown = require('metalsmith-markdown');
-var fileMetadata = require('metalsmith-filemetadata');
-var layouts = require('metalsmith-layouts');
-var inPlace = require('metalsmith-in-place');
-var fs = require('fs');
+const gulp = require('gulp');
+const Metalsmith = require('metalsmith');
+const markdown = require('metalsmith-markdown');
+const fileMetadata = require('metalsmith-filemetadata');
+const layouts = require('metalsmith-layouts');
+const inPlace = require('metalsmith-in-place');
+const fs = require('fs');
 
 // Static server
 gulp.task('docs', ['icons'], function() {
@@ -54,7 +54,11 @@ gulp.task('docs', ['icons'], function() {
     'description': 'A living styleguide for National Geographic Partners',
     'iconSprite': fs.readFileSync('.tmp/assets/mortar-symbol-sprite.svg', 'utf8')
   })
-  .ignore('layouts')
+  .ignore([
+    '_layouts',
+    '_partials',
+    '_styles'
+  ])
   .use(markdown())
   .use(layouts({
     'engine': 'swig',

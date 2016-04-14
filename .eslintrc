@@ -10,6 +10,8 @@ rules:
     - 2
     - single
     - avoid-escape
+  no-var:
+    - 2
   space-in-parens:
     - 2
     - never

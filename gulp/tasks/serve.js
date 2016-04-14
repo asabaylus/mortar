@@ -1,9 +1,9 @@
 'use strict';
 
-var bs = require('browser-sync').get('mortar');
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var argv = require('yargs')
+const bs = require('browser-sync').get('mortar');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const argv = require('yargs')
             .usage('Usage: gulp serve [-s startPath]')
             .option('s', {
               alias: 'start',
@@ -12,7 +12,7 @@ var argv = require('yargs')
               type: 'string'
             })
             .argv;
-var startPath = argv.s ? '/' + argv.s : null;
+const startPath = argv.s ? '/' + argv.s : null;
 
 // Static server
 gulp.task('serve', ['build'], function() {

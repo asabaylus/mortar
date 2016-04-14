@@ -3,13 +3,13 @@
   visibility: hidden;
 
   & + * {
-    margin-left: -#{$mt_unit * 1.25};
+    margin-left: $mt_unit * -1.25;
 
     &::before {
-      background-size: contain;
       background-image: $mt_radio-bg-unchecked;
       background-position: center;
       background-repeat: no-repeat;
+      background-size: contain;
       content: '';
       display: inline-block;
       height: $mt_radio-height;
