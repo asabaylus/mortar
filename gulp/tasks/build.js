@@ -6,6 +6,7 @@ const argv = require('yargs')
             .argv;
 
 gulp.task('build', [
+  'clean',
   'scripts',
   'styles',
   'docs'
