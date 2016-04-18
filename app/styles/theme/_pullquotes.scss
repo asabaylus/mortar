@@ -1,0 +1,33 @@
+%mt_pullquote {
+  p {
+    @extend %mt_h3;
+
+    &:before {
+      content: '\201C';
+
+      @media #{$mt_mq-md} {
+        margin-left: -$mt_fs-sm;
+      }
+    }
+
+    &:after {
+      content: '\201D';
+    }
+  }
+
+  color: $mt_color-neutral-xd;
+  margin: 0;
+
+  @media #{$mt_mq-md} {
+    padding-left: $mt_fs-med-lrg;
+    padding-right: $mt_fs-med-lrg;
+  }
+}
+
+.mt_pullquote {
+  @extend %mt_pullquote;
+}
+
+.mt_pullquote--footer {
+  text-align: left;
+}
