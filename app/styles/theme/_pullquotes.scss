@@ -5,7 +5,7 @@
     &:before {
       content: '\201C';
 
-      @media #{$mt_mq-md} {
+      @media #{$mt_mq-lg} {
         margin-left: -$mt_fs-sm;
       }
     }
@@ -15,12 +15,14 @@
     }
   }
 
+  border-bottom: 1px solid $mt_color-neutral-xl;
+  border-top: 1px solid $mt_color-neutral-xl;
   color: $mt_color-neutral-xd;
   margin: 0;
+  padding: ($mt_fs-xxxlrg / 2) 0;
 
-  @media #{$mt_mq-md} {
-    padding-left: $mt_fs-med-lrg;
-    padding-right: $mt_fs-med-lrg;
+  @media #{$mt_mq-lg} {
+    padding: $mt_fs-xxxlrg / 2;
   }
 }
 
