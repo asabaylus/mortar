@@ -1,6 +1,7 @@
 %mt_pullquote {
   p {
     @extend %mt_h3;
+    margin-top: 0;
 
     &:before {
       content: '\201C';
@@ -18,7 +19,7 @@
   border-bottom: 1px solid $mt_color-neutral-xl;
   border-top: 1px solid $mt_color-neutral-xl;
   color: $mt_color-neutral-xd;
-  margin: 0;
+  margin: ($mt_fs-xxxlrg / 2) 0;
   padding: ($mt_fs-xxxlrg / 2) 0;
 
   @media #{$mt_mq-lg} {
