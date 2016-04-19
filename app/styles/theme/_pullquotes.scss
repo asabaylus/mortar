@@ -1,19 +1,6 @@
 %mt_pullquote {
   p {
-    @extend %mt_h3;
     margin-top: 0;
-
-    &:before {
-      content: '\201C';
-
-      @media #{$mt_mq-lg} {
-        margin-left: -$mt_fs-sm;
-      }
-    }
-
-    &:after {
-      content: '\201D';
-    }
   }
 
   border-bottom: 1px solid $mt_color-neutral-xl;
@@ -31,6 +18,8 @@
   @extend %mt_pullquote;
 }
 
-.mt_pullquote--footer {
-  text-align: left;
+.mt_pullquote-q {
+  @media #{$mt_mq-lg} {
+    margin-left: -$mt_fs-sm;
+  }
 }
