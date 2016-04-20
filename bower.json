@@ -1,6 +1,6 @@
 {
   "name": "Mortar",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "homepage": "https://github.com/natgeo/icongs",
   "authors": [
     "Welch Canavan <welch.canavan@gmail.com>"
@@ -11,7 +11,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "icongs": "git://github.com/natgeo/icongs.git#0.11.1"
+    "icongs": "git://github.com/natgeo/icongs.git#0.13.0"
   },
   "devDependencies": {
     "pygments": "~1.6.0"
