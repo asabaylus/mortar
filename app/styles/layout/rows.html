@@ -7,69 +7,14 @@
       The `.mt_row` class is really just a semantic extension of a clearfix to make sure a row clears floated columns. The bottom margin of rows is configurable and is available in the following classes: none, half, 1, 2, 3, and 4.
     </p>
 
-    <div class="gridexample">
-      <div class="mt_row mt_row-gut-none">
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-      </div>
-
-      <div class="mt_row mt_row-gut-half">
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
+    <div class="gridexample mt_row-gut-2">
+      {% for row in ['none','half',1,2,3,4,'none'] %}
+      <div class="mt_row mt_row-gut-{{row}}">
+        <div class="mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
           <div class="exampleborder">&nbsp;</div>
         </div>
       </div>
-
-      <div class="mt_row mt_row-gut-1">
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-      </div>
-
-      <div class="mt_row mt_row-gut-2">
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-      </div>
-
-      <div class="mt_row mt_row-gut-3">
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-      </div>
-
-      <div class="mt_row mt_row-gut-4">
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-      </div>
-
-      <div class="mt_row">
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-      </div>
+      {% endfor %}
 
       <!-- Grid design example -->
 
@@ -88,19 +33,13 @@
 
     <div class="gridexample">
       <div class="mt_row mt_row-gut-1 mt_row-md-gut-2 mt_row-lg-gut-4">
-        <div class="mt_col-6 mt_col-md-gut-md mt_col-gut-sm mt_col-lg-gut-lg ">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg ">
+        <div class="mt_col-md-gut-md mt_col-gut-sm mt_col-lg-gut-lg">
           <div class="exampleborder">&nbsp;</div>
         </div>
       </div>
 
       <div class="mt_row">
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg ">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-        <div class="mt_col-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg ">
+        <div class="mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
           <div class="exampleborder">&nbsp;</div>
         </div>
       </div>
