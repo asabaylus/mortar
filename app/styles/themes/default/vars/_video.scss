@@ -1,3 +1,10 @@
-$mt_video-promo-play-button: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22%23918f90%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M36.47%2029.18l36.06%2020.83-36.06%2020.81V29.18%22%2F%3E%3C%2Fsvg%3E');
+// 1. don't base64 (https://css-tricks.com/probably-dont-base64-svg/)
+// 2. run it through SVGO (https://jakearchibald.github.io/svgomg/)
+// 3. run it through a URL encoder and don't specify the encoding type
+//  - https://stackoverflow.com/questions/30676125/svg-as-data-uri-triggers-xml-parsing-error-in-firefox/30676203#30676203
+//  - http://codepen.io/chriscoyier/pen/ZQgvyG/
 
-// <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#918f90"/><path fill="#fff" d="M36.47 29.18l36.06 20.83-36.06 20.81V29.18"/></svg>
+
+$mt_video-promo-play-button: url('data:image/svg+xml,%3Csvg%20width%3D%22108px%22%20height%3D%22107px%22%20viewBox%3D%22156%20365%20108%20107%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate(156%20365)%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23918F90%22%20cx%3D%2253%22%20cy%3D%2253%22%20r%3D%2250%22%2F%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M39.47%2032.18l36.06%2020.83-36.06%2020.81V32.18%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h107v107H0z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A');
+
+//<svg width="108px" height="107px" viewBox="156 365 108 107" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(156 365)"><circle fill="#918F90" cx="53" cy="53" r="50"/><path fill="#FFF" d="M39.47 32.18l36.06 20.83-36.06 20.81V32.18"/><path d="M0 0h107v107H0z"/></g></svg>

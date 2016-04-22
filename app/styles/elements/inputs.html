@@ -40,26 +40,32 @@
       </form>
 
       <form class="mt_col-lg-6 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-        <textarea class="mt_input mt_textarea mt_textarea--fullwidth mt_subh4 mt_row-gut-1" placeholder="I am a text area"></textarea>
+        <textarea class="mt_input mt_textarea mt_textarea--fullwidth mt_subh4" placeholder="I am a text area"></textarea>
 
         <!--Checkbox -->
         <div class="mt_col-6 mt_row">
-          <div class="mt_row-gut-1 mt_subh4">
-            <input type="checkbox" class="mt_checkbox" id="c1" checked/>
-            <label for="c1">Option 1</label>
-          </div>
-          <div class="mt_row-gut-1 mt_subh4">
-            <input type="checkbox" class="mt_checkbox" id="c2"/>
-            <label for="c2">Option 2</label>
-          </div>
-          <div class="mt_subh4">
-            <input type="checkbox" class="mt_checkbox mt_checkbox--disabled" id="c3"/>
-            <label for="c3">Option 3</label>
-          </div>
+          <h5 class="mt_h5">Multi-Select List</h5>
+
+          <fieldset class="fieldset">
+            <div class="mt_row-gut-1 mt_subh4">
+              <input type="checkbox" class="mt_checkbox" id="c1" checked/>
+              <label for="c1">Option 1</label>
+            </div>
+            <div class="mt_row-gut-1 mt_subh4">
+              <input type="checkbox" class="mt_checkbox" id="c2"/>
+              <label for="c2">Option 2</label>
+            </div>
+            <div class="mt_subh4">
+              <input type="checkbox" class="mt_checkbox mt_checkbox--disabled" id="c3"/>
+              <label for="c3">Disabled Option</label>
+            </div>
+          </fieldset>
         </div>
 
         <!--Radio buttons-->
         <div class="mt_col-6 mt_row">
+          <h5 class="mt_h5">Single-Select List</h5>
+
           <fieldset class="mt_row-gut-2 mt_subh4 fieldset">
             <div class="mt_row-gut-1">
               <input class="mt_radio" type="radio" value="r1" name="thing1" id="r1" checked>
@@ -71,7 +77,7 @@
             </div>
             <div>
               <input class="mt_radio mt_radio--disabled" type="radio" value="r3"  name="thing1">
-              <label>Option 3</label>
+              <label>Disabled Option</label>
             </div>
           </fieldset>
         </div>
