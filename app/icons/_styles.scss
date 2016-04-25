@@ -1,11 +1,61 @@
 .mt_icon {
   height: $mt_unit;
   width: $mt_unit;
-  vertical-align: text-bottom;
+
+  &--left {
+    margin-right: 10px;
+  }
+
+  &--right {
+    margin-left: 10px;
+  }
+
+  &--top {
+    margin-bottom: 10px;
+  }
+
+  &--bottom {
+    margin-top: 10px;
+  }
 }
 
 .mt_icon--large {
   height: $mt_unit-double;
   width: $mt_unit-double;
-  vertical-align: bottom;
+
+  &--left {
+    margin-right: 16px;
+  }
+
+  &--right {
+    margin-left: 16px;
+  }
+
+  &--top {
+    margin-bottom: 16px;
+  }
+
+  &--bottom {
+    margin-top: 16px;
+  }
+}
+
+.mt_iconandlabel--vertical {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  * {
+    display: block;
+  }
+}
+
+.mt_iconandlabel--horizontal {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+
+  * {
+    display: block;
+  }
 }
