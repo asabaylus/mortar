@@ -1,6 +1,18 @@
 %mt_pullquote {
   p {
     margin-top: 0;
+
+    &:first-child::before {
+      content: '\201C';
+
+      @media #{$mt_mq-lg} {
+        margin-left: -$mt_fs-sm;
+      }
+    }
+
+    &:last-of-type::after {
+      content: '\201D';
+    }
   }
 
   border-bottom: 1px solid $mt_color-neutral-xl;
@@ -16,10 +28,4 @@
 
 .mt_pullquote {
   @extend %mt_pullquote;
-}
-
-.mt_pullquote-q {
-  @media #{$mt_mq-lg} {
-    margin-left: -$mt_fs-sm;
-  }
 }
