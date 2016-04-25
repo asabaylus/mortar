@@ -37,4 +37,34 @@ title: Icons
 
 <div class="mt_bgcolor--neutral--xxl mt_row-gut-4 divider">&nbsp;</div>
 
-{% include "app/icons/_docs.html" %}
+{% include "app/icons/_icons.html" %}
+
+<div class="mt_bgcolor--neutral--xxl mt_row-gut-3 divider">&nbsp;</div>
+
+{% include "app/icons/_icon-examples.html" %}
+
+<script>
+  $(document).ready(function() {
+    $('input[type=radio][name=icon-size]').change(function() {
+      if (this.value === 'small') {
+        $('.JS_icon').removeClass('mt_icon--large');
+      }
+      else if (this.value === 'large') {
+        $('.JS_icon').addClass('mt_icon--large');
+      }
+    });
+
+    $('input[type=radio][name=icon-color]').change(function() {
+      if (this.value === 'default') {
+        $('.JS_icon-container')
+        .removeClass('mt_bgcolor--neutral--d')
+        .removeClass('mt_color--neutral--xxxl');
+      }
+      else if (this.value === 'inverse') {
+        $('.JS_icon-container')
+        .addClass('mt_bgcolor--neutral--d')
+        .addClass('mt_color--neutral--xxxl');
+      }
+    });
+  });
+</script>
