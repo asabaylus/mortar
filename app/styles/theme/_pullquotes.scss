@@ -2,7 +2,7 @@
   p {
     margin-top: 0;
 
-    &:first-child::before {
+    &:first-of-type::before {
       content: '\201C';
 
       @media #{$mt_mq-lg} {
