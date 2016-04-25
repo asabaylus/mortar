@@ -1,0 +1,31 @@
+%mt_pullquote {
+  p {
+    margin-top: 0;
+
+    &:first-of-type::before {
+      content: '\201C';
+
+      @media #{$mt_mq-lg} {
+        margin-left: -$mt_fs-sm;
+      }
+    }
+
+    &:last-of-type::after {
+      content: '\201D';
+    }
+  }
+
+  border-bottom: 1px solid $mt_color-neutral-xl;
+  border-top: 1px solid $mt_color-neutral-xl;
+  color: $mt_color-neutral-xd;
+  margin: ($mt_fs-xxxlrg / 2) 0;
+  padding: ($mt_fs-xxxlrg / 2) 0;
+
+  @media #{$mt_mq-lg} {
+    padding: $mt_fs-xxxlrg / 2;
+  }
+}
+
+.mt_pullquote {
+  @extend %mt_pullquote;
+}
