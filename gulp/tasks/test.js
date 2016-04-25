@@ -17,7 +17,10 @@ gulp.task('eslint', function(){
 });
 
 gulp.task('sasslint', function(){
-  return gulp.src('app/{styles,modules}/**/*.scss')
+  return gulp.src([
+    'app/{styles,modules}/**/*.scss',
+    '!app/styles/layout/_columns.scss'
+  ])
     .pipe(sassLint())
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError());
