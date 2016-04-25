@@ -1,6 +1,6 @@
 .mt_icon {
-  height: $mt_unit;
-  width: $mt_unit;
+  height: 1.5rem;
+  width: 1.5rem;
 
   &--left {
     margin-right: 10px;
@@ -24,19 +24,19 @@
   width: $mt_unit-double;
 
   &--left {
-    margin-right: 16px;
+    margin-right: 10px;
   }
 
   &--right {
-    margin-left: 16px;
+    margin-left: 10px;
   }
 
   &--top {
-    margin-bottom: 16px;
+    margin-bottom: 10px;
   }
 
   &--bottom {
-    margin-top: 16px;
+    margin-top: 10px;
   }
 }
 
