@@ -8,7 +8,7 @@ $mt_fs-lrg:    1.375rem;    // 22px
 $mt_fs-xlrg:   1.6875rem;   // 27px
 
 $mt_fs-med-lrg:  2.5rem;    // 40px
-$mt_fs-med-xlrg: 2.8125rem; // 45px
+$mt_fs-med-xlrg: 2.875rem; // 46px
 
 $mt_fs-xxlrg:  3.375rem;    // 54px
 $mt_fs-xxxlrg: 4.0625rem;   // 65px
@@ -50,7 +50,7 @@ $mt_unit-quadruple: $mt_unit * 4;
   }
 
   @media #{$mt_mq-lg} {
-    font-size: $mt_fs-xxlrg;
+    font-size: $mt_fs-med-xlrg;
   }
 }
 
