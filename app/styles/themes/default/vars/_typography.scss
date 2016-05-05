@@ -8,7 +8,7 @@ $mt_fs-lrg:    1.375rem;    // 22px
 $mt_fs-xlrg:   1.6875rem;   // 27px
 
 $mt_fs-med-lrg:  2.5rem;    // 40px
-$mt_fs-med-xlrg: 2.8125rem; // 45px
+$mt_fs-med-xlrg: 2.875rem; // 46px
 
 $mt_fs-xxlrg:  3.375rem;    // 54px
 $mt_fs-xxxlrg: 4.0625rem;   // 65px
@@ -21,7 +21,7 @@ $mt_unit-triple:    $mt_unit * 3;
 $mt_unit-quadruple: $mt_unit * 4;
 
 %mt_h1 {
-  font-family: 'Chronicle Display 3r';
+  font-family: 'Chronicle Display 3r', Georgia, serif;
   font-size: $mt_fs-med-xlrg;
   font-weight: 300;
   letter-spacing: .005em;
@@ -38,7 +38,7 @@ $mt_unit-quadruple: $mt_unit * 4;
 }
 
 %mt_h2 {
-  font-family: 'Chronicle Deck 6r';
+  font-family: 'Chronicle Deck 6r', Georgia, serif;
   font-size: $mt_fs-xlrg;
   font-weight: 600;
   letter-spacing: .005em;
@@ -50,12 +50,12 @@ $mt_unit-quadruple: $mt_unit * 4;
   }
 
   @media #{$mt_mq-lg} {
-    font-size: $mt_fs-xxlrg;
+    font-size: $mt_fs-med-xlrg;
   }
 }
 
 %mt_h3 {
-  font-family: 'Pragmatica-web';
+  font-family: 'Pragmatica-web', sans-serif;
   font-size: $mt_fs-lrg;
   font-weight: 600;
   letter-spacing: -.01em;
@@ -67,7 +67,7 @@ $mt_unit-quadruple: $mt_unit * 4;
 }
 
 %mt_h4 {
-  font-family: 'Georgia';
+  font-family: 'Georgia', serif;
   font-size: $mt_fs-lrg;
   font-weight: 600;
   letter-spacing: .003em;
@@ -75,20 +75,20 @@ $mt_unit-quadruple: $mt_unit * 4;
 }
 
 %mt_h5 {
-  font-family: 'Pragmatica-web';
+  font-family: 'Pragmatica-web', sans-serif;
   font-size: $mt_fs-sm;
   font-weight: 600;
 }
 
 %mt_subh1 {
-  font-family: 'Pragmatica-web';
+  font-family: 'Pragmatica-web', sans-serif;
   font-size: $mt_fs-med;
   font-weight: 300;
   line-height: 1.37;
 }
 
 %mt_subh2 {
-  font-family: 'Pragmatica-web';
+  font-family: 'Pragmatica-web', sans-serif;
   font-size: $mt_fs-sm;
   font-weight: 300;
   line-height: 1.57;
@@ -96,21 +96,21 @@ $mt_unit-quadruple: $mt_unit * 4;
 }
 
 %mt_subh3 {
-  font-family: 'Pragmatica-web';
+  font-family: 'Pragmatica-web', sans-serif;
   font-size: $mt_fs-xsm;
   font-weight: 300;
   text-transform: uppercase;
 }
 
 %mt_subh4 {
-  font-family: 'Pragmatica-web';
+  font-family: 'Pragmatica-web', sans-serif;
   font-size: $mt_fs-sm;
   font-weight: 300;
   line-height: 1.43;
 }
 
 %mt_body {
-  font-family: 'Georgia';
+  font-family: 'Georgia', serif;
   font-size: $mt_fs-norm;
   font-weight: 300;
   letter-spacing: .001em;
@@ -126,7 +126,7 @@ $mt_unit-quadruple: $mt_unit * 4;
 }
 
 %mt_body--emphasis {
-  font-family: 'Georgia';
+  font-family: 'Georgia', serif;
   font-size: $mt_fs-norm;
   font-style: italic;
   font-weight: 300;
@@ -135,7 +135,7 @@ $mt_unit-quadruple: $mt_unit * 4;
 }
 
 %mt_body--strong {
-  font-family: 'Georgia';
+  font-family: 'Georgia', serif;
   font-size: $mt_fs-norm;
   font-weight: 700;
   letter-spacing: .001em;
