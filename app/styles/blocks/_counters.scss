@@ -4,8 +4,10 @@
 }
 
 .mt_numericcounter-arrow {
-  &:not(.numericcounter-arrow--disabled):hover {
+
+  &:not(.mt_numericcounter-arrow--disabled):hover {
     color: $mt_color-neutral;
+    cursor: pointer;
   }
 
   &--disabled {
@@ -41,6 +43,7 @@
   &--active,
   &:hover {
     background-color: $mt_color-neutral-l;
+    cursor: pointer;
   }
 
   &--inverse {
