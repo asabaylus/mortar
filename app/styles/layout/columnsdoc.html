@@ -21,6 +21,20 @@
     {% include "./_partials/grid.html" %}
   </div>
 
+  <!-- Code snippet -->
+
+  <pre>
+    <code class="code-snippet language-markup">
+      &lt;div class="mt_row"&gt;
+        {% for gutter in [12,1,11,2,10,3,9,4,8,5,7,6,6] %}
+          &lt;div class="mt_col-{{gutter}} mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg"&gt;
+            &lt;div class="exampleborder mt_row-gut-1">&nbsp;&lt;/div&gt;
+          &lt;/div&gt;
+        {% endfor %}
+      &lt;/div&gt;
+    </code>
+  </pre>
+
   <p class="mt_subh4 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
     The following example uses the breakpoint classes to create an object that spans 6 columns on mobile, but 3 columns on desktop.
   </p>
@@ -30,15 +44,26 @@
   <!-- Example -->
 
   <div class="mt_cf">
-     <div class="mt_col-6 mt_col-sm-6 mt_col-md-3 mt_col-lg-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg ">
+     <div class="mt_col-6 mt_col-sm-6 mt_col-md-3 mt_col-lg-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
        <div class="exampleborder mt_row-gut-1">&nbsp;</div>
-   </div>
+     </div>
   </div>
 
   <!-- Grid design example -->
 
   {% include "./_partials/grid.html" %}
   </div>
+
+
+  <pre>
+    <code class="language-markup">
+      &lt;div class="mt_cf"&gt;
+         &lt;div class="mt_col-6 mt_col-sm-6 mt_col-md-3 mt_col-lg-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg"&gt;
+           &lt;div class="exampleborder mt_row-gut-1"&gt;&nbsp;&lt;/div&gt;
+         &lt;/div&gt;
+      &lt;/div&gt;
+    </code>
+  </pre>
 
   <p class="mt_subh4 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
     <span class="mt_h5">Offset:</span>
@@ -76,6 +101,33 @@
     {% include "./_partials/grid.html" %}
   </div>
 
+  <!-- Code snippet -->
+  <pre>
+    <code class="language-markup code-snippet">
+      &lt;div class="mt_row"&gt;
+        &lt;div class="mt_col-6 mt_col-offset-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg"&gt;
+          &lt;div class="exampleborder mt_row-gut-1"&gt;&nbsp;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="mt_row"&gt;
+        &lt;div class="mt_col-3 mt_col-offset-4 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg"&gt;
+          &lt;div class="exampleborder mt_row-gut-1"&gt;&nbsp;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="mt_col-3 mt_col-offset-2 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg"&gt;
+          &lt;div class="exampleborder mt_row-gut-1"&gt;&nbsp;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="mt_row"&gt;
+        &lt;div class="mt_col-4 mt_col-offset-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg"&gt;
+          &lt;div class="exampleborder mt_row-gut-1"&gt;&nbsp;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    </code>
+  </pre>
+
+
   <p class="mt_subh4 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
     <span class="mt_h5">Reorder:</span>
 
@@ -100,4 +152,21 @@
 
     {% include "./_partials/grid.html" %}
   </div>
+
+  <!-- Code snippet -->
+  <pre>
+    <code class="language-markup code-snippet">
+      &lt;div class="mt_cf"&gt;
+        &lt;div class="mt_col-3 mt_col-push-9 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg"&gt;
+          &lt;div class="exampleborder mt_row-gut-1"&gt;&nbsp;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="mt_col-9 mt_col-pull-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg"&gt;
+          &lt;div class="exampleborder mt_row-gut-1"&gt;&nbsp;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    </code>
+  </pre>
+
+
 </div>
