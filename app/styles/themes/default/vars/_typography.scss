@@ -55,7 +55,7 @@ $mt_unit-quadruple: $mt_unit * 4;
 }
 
 %mt_h3 {
-  font-family: 'Pragmatica-web', sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: $mt_fs-lrg;
   font-weight: 600;
   letter-spacing: -.01em;
@@ -67,7 +67,7 @@ $mt_unit-quadruple: $mt_unit * 4;
 }
 
 %mt_h4 {
-  font-family: 'Georgia', serif;
+  font-family: Georgia, serif;
   font-size: $mt_fs-lrg;
   font-weight: 600;
   letter-spacing: .003em;
@@ -75,20 +75,20 @@ $mt_unit-quadruple: $mt_unit * 4;
 }
 
 %mt_h5 {
-  font-family: 'Pragmatica-web', sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: $mt_fs-sm;
   font-weight: 600;
 }
 
 %mt_subh1 {
-  font-family: 'Pragmatica-web', sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: $mt_fs-med;
   font-weight: 300;
   line-height: 1.37;
 }
 
 %mt_subh2 {
-  font-family: 'Pragmatica-web', sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: $mt_fs-sm;
   font-weight: 300;
   line-height: 1.57;
@@ -96,21 +96,21 @@ $mt_unit-quadruple: $mt_unit * 4;
 }
 
 %mt_subh3 {
-  font-family: 'Pragmatica-web', sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: $mt_fs-xsm;
   font-weight: 300;
   text-transform: uppercase;
 }
 
 %mt_subh4 {
-  font-family: 'Pragmatica-web', sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: $mt_fs-sm;
   font-weight: 300;
   line-height: 1.43;
 }
 
 %mt_body {
-  font-family: 'Georgia', serif;
+  font-family: Georgia, serif;
   font-size: $mt_fs-norm;
   font-weight: 300;
   letter-spacing: .001em;
@@ -126,7 +126,7 @@ $mt_unit-quadruple: $mt_unit * 4;
 }
 
 %mt_body--emphasis {
-  font-family: 'Georgia', serif;
+  font-family: Georgia, serif;
   font-size: $mt_fs-norm;
   font-style: italic;
   font-weight: 300;
@@ -135,7 +135,7 @@ $mt_unit-quadruple: $mt_unit * 4;
 }
 
 %mt_body--strong {
-  font-family: 'Georgia', serif;
+  font-family: Georgia, serif;
   font-size: $mt_fs-norm;
   font-weight: 700;
   letter-spacing: .001em;
