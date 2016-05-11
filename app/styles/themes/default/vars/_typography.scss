@@ -55,7 +55,7 @@ $mt_unit-quadruple: $mt_unit * 4;
 }
 
 %mt_h3 {
-  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
   font-size: $mt_fs-lrg;
   font-weight: 600;
   letter-spacing: -.01em;
@@ -75,20 +75,20 @@ $mt_unit-quadruple: $mt_unit * 4;
 }
 
 %mt_h5 {
-  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
   font-size: $mt_fs-sm;
   font-weight: 600;
 }
 
 %mt_subh1 {
-  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
   font-size: $mt_fs-med;
   font-weight: 300;
   line-height: 1.37;
 }
 
 %mt_subh2 {
-  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
   font-size: $mt_fs-sm;
   font-weight: 300;
   line-height: 1.57;
@@ -96,14 +96,14 @@ $mt_unit-quadruple: $mt_unit * 4;
 }
 
 %mt_subh3 {
-  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
   font-size: $mt_fs-xsm;
   font-weight: 300;
   text-transform: uppercase;
 }
 
 %mt_subh4 {
-  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
   font-size: $mt_fs-sm;
   font-weight: 300;
   line-height: 1.43;
