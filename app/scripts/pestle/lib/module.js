@@ -1,3 +1,5 @@
+'use strict';
+
 class Module {
   constructor() {
     this.isLoaded = false;

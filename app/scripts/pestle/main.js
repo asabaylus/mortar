@@ -1,3 +1,5 @@
+'use strict';
+
 import Module from './lib/module';
 
 class Pestle {
