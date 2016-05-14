@@ -380,10 +380,24 @@ td, th {
 // ====================
 
 .code-snippet {
-  background-color: $mt_color-neutral-d;
+  background: $mt_color-neutral-d;
+  border: 1px solid $mt_color-neutral-xl;
   color: $mt_color-neutral-xxl;
   display: block;
   font-size: 1rem;
   max-height: 7.5rem;
   overflow-y: scroll;
+  margin-top: 1rem;
+  padding: 1rem 1.5em;
+}
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+    background: $mt_color-neutral-d;
+}
+
+pre[class*="language-"] {
+    padding: 1rem 1.5em;
+    margin-top: 1rem;
+    overflow-y: scroll;
+    border-radius: 0;
 }
