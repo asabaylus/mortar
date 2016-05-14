@@ -1,0 +1,18 @@
+.mt_relatedcontent-heading {
+  border-bottom: 1px solid $mt_color-neutral-xl;
+  padding: 1.5rem 1rem;
+}
+
+.mt_relatedcontent-list {
+  padding: 1rem;
+}
+
+.mt_relatedcontent-item {
+  list-style: none;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $mt_color-neutral-xl;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+}
