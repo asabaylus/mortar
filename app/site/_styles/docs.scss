@@ -379,27 +379,16 @@ td, th {
 // ====================
 // ====================
 
-.code-snippet {
-  background: $mt_color-neutral-d;
-  border: 1px solid $mt_color-neutral-xl;
-  color: $mt_color-neutral-xxl;
-  display: block;
-  font-size: 1rem;
-  margin-top: 1rem;
-  max-height: 7.5rem;
-  overflow-y: scroll;
-  padding: 1rem 1.5em;
-}
+pre {
+  &.codesnippet,
+  &.codesnippet[class*="language-"] {
+    background-color: $mt_color-neutral-xd;
+    border: 1px solid $mt_color-neutral-xl;
+    border-radius: 0;
+    padding-bottom: -1em;
 
-:not(pre) >
-code[class*="language-"],
-pre[class*="language-"] {
-  background: $mt_color-neutral-d;
-}
-
-pre[class*="language-"] {
-  border-radius: 0;
-  padding: 1rem 1.5em;
-  margin-top: 1rem;
-  overflow-y: scroll;
+    code {
+      margin: 0;
+    }
+  }
 }
