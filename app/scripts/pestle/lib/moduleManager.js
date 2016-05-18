@@ -1,7 +1,7 @@
 /*
- *  ModuleManager class is on charge of keep the list
- *  of every module registered. It's also responsable
- *  for create new instances of the registered modules.
+ *  The ModuleManager registers each initialized instance of
+ *  of a module, keeping a master list. It is also responsible
+ *  for creating and destroying instances of the registered modules.
  */
 
 'use strict';

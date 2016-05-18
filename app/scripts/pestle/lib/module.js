@@ -1,7 +1,7 @@
 /*
- *  Module class provides the basic functionality for
- *  pestle modules. It's the base for extending any new
- *  pestle modules.
+ *  The Module class provides the basic functionality for
+ *  pestle modules. It is the base for extending any new
+ *  pestle module.
  */
 'use strict';
 
