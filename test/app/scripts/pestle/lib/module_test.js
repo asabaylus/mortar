@@ -3,42 +3,7 @@
 import Module from '../../../../../app/scripts/pestle/lib/module'
 
 describe('Module', () => {
-  describe('static', () => {
-    it('should have module class', () => {
-      expect(Module).to.be.a('function');
-    });
-
-    it('should have a static method "add"', () => {
-      expect(Module.add).to.be.a('function');
-    });
-
-    it('should throw error when add if it is not a Module instance', () => {
-      // create a new object different to Module
-      var module = new Object();
-      expect(() => Module.add('Module1', module)).to.throw(Error);
-    });
-
-    it('should add the module to the list', () => {
-      var module = new Module();
-      Module.add("Module1", module);
-      expect(Module.list["Module1"]).to.exist;
-      expect(Module.list["Module1"]).to.equal(module);
-    });
-
-    it("should throw error if a module is using same name", () => {
-      var module = new Module();
-      expect(() => Module.add('Module1', module)).to.throw(Error);
-    });
-
-    it('should list all registered components', () => {
-      var module = new Module();
-      Module.add("Module2", module);
-      var modules = Module.getAll();
-      expect(modules).to.have.keys('Module1', 'Module2');
-    });
-  });
-
-  describe('inherit', () => {
+  describe('instance', () => {
     var Module1, Module2;
 
     before(() => {
@@ -62,6 +27,23 @@ describe('Module', () => {
     it('should not throw an error if init method is defined', () => {
       var module2 = new Module2();
       expect(() => module2.init()).to.not.throw(Error);
+    });
+
+    it('should have el property', () => {
+      var module = new Module2(document.body);
+      expect(module.el).to.equal(document.body);
+    });
+
+    it('should have options property', () => {
+      var module = new Module2(document.body, { prop: 'value' });
+      expect(module.options).to.deep.equal({ prop: 'value' });
+    });
+
+    it('should clean el and options properties when dispose', () => {
+      var module = new Module2(document.body, { prop: 'value' });
+      module.dispose();
+      expect(module.el).to.be.null;
+      expect(module.options).to.be.null;
     });
   });
 });

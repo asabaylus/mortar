@@ -1,8 +1,23 @@
+/*
+ *  Module class provides the basic functionality for
+ *  pestle modules. It's the base for extending any new
+ *  pestle modules.
+ */
 'use strict';
 
 class Module {
-  constructor() {
+  constructor(el, options) {
     this.isLoaded = false;
+    this.el = el;
+    this.options = options;
+  }
+
+  set isLoaded(value) {
+    this.loaded = value;
+  }
+
+  get isLoaded() {
+    return this.loaded || false;
   }
 
   init() {
@@ -11,23 +26,10 @@ class Module {
     throw new Error(msg);
   }
 
-  static add(name, module) {
-    if(!(module instanceof Module)) {
-      throw new Error('[Module.add] module should be an instance of Module')
-    }
-
-    if(this.list[name]) {
-      throw new Error("[Module.add] there's already a module called '${name}'");
-    }
-
-    this.list[name] = module;
-  }
-
-  static getAll() {
-    return this.list;
+  dispose() {
+    this.el = null;
+    this.options = null;
   }
 }
-
-Module.list = {};
 
 export default Module
