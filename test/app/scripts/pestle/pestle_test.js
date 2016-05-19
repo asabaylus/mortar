@@ -7,7 +7,7 @@ describe('Pestle', () => {
     expect(Pestle).to.be.a('function');
   });
 
-  describe('Pestle instance', () => {
+  describe('instance', () => {
     var pestle;
 
     before(() => {
@@ -19,8 +19,18 @@ describe('Pestle', () => {
         expect(pestle.init).to.be.a('function');
       });
 
-      it('should have Module property', () => {
-        expect(pestle.Module).to.be.a('function');
+      it('should have ModuleManager property', () => {
+        expect(pestle.ModuleManager).to.be.a('object');
+      });
+    });
+
+    describe('init()', () => {
+      it('calls modules initialization', () => {
+        var pestle = new Pestle();
+        var init = sinon.spy();
+        pestle.ModuleManager.init = init;
+        pestle.init();
+        expect(init.called).to.be.true;
       });
     });
   });

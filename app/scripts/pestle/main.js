@@ -1,16 +1,23 @@
+/*
+ * The pestle class is the core class. It serves to expose all of
+ * the registered modules, extensions, an utitilities as well as
+ * initializing all instances of modules on the page.
+ */
+
 'use strict';
 
 import Module from './lib/module';
+import ModuleManager from './lib/moduleManager';
 
 class Pestle {
   constructor() {
-    this.Module = Module;
+    this.ModuleManager = new ModuleManager();
   }
 
-  init() {
-
+  init(done) {
+    this.ModuleManager.init(done);
   }
 }
 
 export default Pestle
-export {Pestle, Module}
+export {Pestle, Module, ModuleManager}
