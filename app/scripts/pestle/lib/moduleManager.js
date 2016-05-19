@@ -13,6 +13,9 @@ const defaultModuleNameAttribute = 'data-pestle-module';
 const defaultModuleParamsAttribute = 'data-pestle-options';
 
 class ModuleManager {
+
+  // called when a new Pestle instance of a module
+  // var pestle = new Pestle();
   constructor() {
     this.modules = {
       registered: {},
@@ -20,6 +23,9 @@ class ModuleManager {
     };
   }
 
+  // registers a new module making sure that a new registered module inherits
+  // from the module class and that it does not already exist. if it satisfies
+  // those conditions it is registered
   register(name, module) {
     if(!(module.prototype instanceof Module)) {
       throw new Error('[Module.register] module should inherit from Module')
@@ -35,45 +41,56 @@ class ModuleManager {
     };
   }
 
+  // checks whether a module is registered
   isRegistered(name) {
     return this.modules.registered.hasOwnProperty(name);
   }
 
+  // returns the module objects that are registered and running
   getAll() {
     return this.modules;
   }
 
+  // returns only registered modules
   getAllModules() {
     return this.modules.registered;
   }
 
+  // get a specific module by name
   getModule(name) {
     return this.modules.registered[name];
   }
 
+  // returns only running modules
   getAllInstances() {
     return this.modules.runningInstances;
   }
 
+  // returns number of registered modules
   getModulesCount() {
     return Object.keys(this.getAllModules()).length;
   }
 
+  // returns number of running instances of all modules
   getInstancesCount() {
     return Object.keys(this.getAllInstances()).length;
   }
 
+  // returns a single instance of a module by ID
   getInstance(instanceId) {
     return this.modules.runningInstances[instanceId];
   }
 
+  // 1. Reads the entire DOM
+  // 2. finds instances of references to modules
+  // 3. creates an instance of each module in the order it is found
+  // 4. marks instances as 'running' after they have initialized
   init(callback) {
     let self = this;
     let totalModules,
       runningInstances,
       countModules;
 
-    // Find all elements defining a module
     const selector = `[${defaultModuleNameAttribute}]`;
     let modules = document.querySelectorAll(selector);
 
@@ -159,6 +176,7 @@ class ModuleManager {
     });
   }
 
+  // parses options passed as a paramater and returns JSON
   parseParams(options) {
     try {
       return options ? JSON.parse(options) : null;
@@ -167,6 +185,9 @@ class ModuleManager {
     }
   }
 
+  // for each reference found in the DOM this attempts to find an accompanying
+  // registered module, if one is found it uses that module to initialize.
+  // this also passes the data options to the module after parsing them.
   createInstance(moduleName, el) {
     let optionsAttribute,
       options,
@@ -176,7 +197,10 @@ class ModuleManager {
     let module = this.getModule(moduleName);
 
     if(!module) {
+      // =======================================================
+      // ATTN: Remove this once we have a proper logging utility
       // console.warn("Module:", moduleName, "no exists");
+      // =======================================================
       return;
     }
 
@@ -212,6 +236,7 @@ class ModuleManager {
     return instanceData;
   }
 
+  // destroy a single instance of a module by ID
   destroyInstance(instanceId) {
     let runningInstances = this.modules.runningInstances;
     if(!runningInstances.hasOwnProperty(instanceId)) {
@@ -222,6 +247,7 @@ class ModuleManager {
     delete runningInstances[instanceId];
   }
 
+  // destroy every single instance of every single module
   dispose() {
     let runningInstances = this.modules.runningInstances;
     Object.keys(runningInstances).forEach((instanceId) => {
