@@ -6,8 +6,17 @@ title: Icons
   <div class="mt_col-lg-10 mt_row-gut-2 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
     <h1 class="mt_h1">Icons</h1>
     <p class="mt_subh1">
-    Icons create a visual language for navigation and user interaction. Icons can be sized small or large, with their default colors or reversed on a colored background.
+    Icons create a visual language for navigation and user interaction.
     </p>
+
+    <section class="mt_article">
+      <h2>Usage</h2>
+      <p>Mortar uses <a href="https://css-tricks.com/svg-sprites-use-better-icon-fonts/">SVG sprites</a> along with the <a href="https://css-tricks.com/svg-sprites-use-better-icon-fonts/#article-header-id-2"><code>&lt;use&gt;</code></a> method to render icons. Icons can be sized small or large, with their default colors or reversed on a colored background. The SVG sprite will be embedded near the top of the body on any given page so if a camera icon is desired (e.g. <svg style="display: inline;
+    vertical-align: top" class="mt_icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#camera"></use></svg>) then one need only use the following code:</p>
+<pre class="codesnippet language-markup"><code>&lt;svg class="mt_icon"&gt;
+  &lt;use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#camera"&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre></code>
+    </section>
   </div>
 </div>
 
