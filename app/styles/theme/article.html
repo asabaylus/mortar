@@ -1,10 +1,13 @@
-<div class="pagewrapper mt_row mt_row-gut-4 mt_col-gut-lg">
+<div class="pagewrapper mt_row mt_col-gut-lg">
   <div class="mt_col-lg-8 mt_row-gut-3">
     <h3 class="mt_h3"> Articles and Inline Styles </h3>
-    <p class="mt_subh4">The following classes can be used inside an &lt;article&gt; tag.</p>
 
+    <p class="mt_subh4">
+      The following styles can be used either inside or outside of a wrapping element with the <code>.mt_article</code> class &lpar;e.g., <code>&lt;article class=&apos;mt_article&apos;&gt;</code>&rpar;.
+        Simply use the generic tag for any element below to inherit the desired styles. Outside of a wrapper, apply the class names listed below to create the same styles &lpar;for example, <code> &lt;p class=&apos;mt_body&apos;&gt;</code>&rpar;.
+    </p>
     <article class="mt_article">
-      <p class="mt_h5">&lt;p&gt;</p>
+      <p class="mt_h5">&lt;p&gt; or .mt_body</p>
 
       <div class="typographyexamples-item mt_bgcolor--neutral--xxl">
         <p>
@@ -16,7 +19,7 @@
       </div>
 
       <p class="mt_h5">
-        &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;
+        &lt;h1&gt; or .mt_h4, &lt;h2&gt;, &lt;h3&gt;
       </p>
 
       <div class="typographyexamples-item mt_bgcolor--neutral--xxl">
@@ -32,16 +35,16 @@
         <em>Italicized statement.</em>
       </div>
 
-      <p class="mt_h5">&lt;a&gt;</p>
+      <p class="mt_h5">&lt;a&gt; or .mt_link</p>
 
       <div class="typographyexamples-item mt_bgcolor--neutral--xxl">
         <p>
-          Pellentesque ac turpis egestas. <a class="mt_link">Inline text link</a>.
+          Pellentesque ac turpis egestas. <a class="mt_link" href="#">Inline text link</a>.
           Donec eu libero sit amet quam egestas semper.
         </p>
       </div>
 
-      <p class="mt_h5">&lt;ol&gt;, &lt;ul&gt;</p>
+      <p class="mt_h5">&lt;ol&gt;, &lt;ul&gt; or .mt_list</p>
 
       <div class="typographyexamples-item mt_row-gut-3 mt_bgcolor--neutral--xxl">
         <ol>
@@ -69,13 +72,21 @@
         Superscript<sup>[2]</sup> and Subscript<sub>2</sub>
       </div>
 
-      <h5 class="mt_h5">&lt;blockquote&gt;</h5>
+      <h5 class="mt_h5">&lt;blockquote&gt; or .mt_blockquote</h5>
 
       <div class="typographyexamples-item example-border">
         <blockquote>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+
+          <footer class="mt_blockquote--footer"><a href="#" class="mt_h5 mt_link">Attribution</a>, <span class="mt_subh4">Attribution 2</span></footer>
         </blockquote>
       </div>
+
+      <p class="mt_subh4">
+        Block quotes are used to offset text that has been quoted or excerpted from another source. It is typically used for longer blocks of text that are too long to display inline. The source of the quote should always be attributed when possible.
+      </p>
     </article>
   </div>
 </div>

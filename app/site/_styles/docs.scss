@@ -366,7 +366,6 @@ td, th {
 
 .counter-example {
   height: 12rem;
-  position: relative;
 }
 
 .iconlabelexample {
@@ -380,14 +379,16 @@ td, th {
 // ====================
 // ====================
 
-.code-snippet {
-  background-color: $mt_color-neutral-d;
-  border: 1px solid $mt_color-neutral-xl;
-  color: $mt_color-neutral-xxl;
-  display: block;
-  font-size: 1rem;
-  margin-top: 1rem;
-  max-height: 7.5rem;
-  overflow-y: scroll;
-  padding: 1rem 1.5rem;
+pre {
+  &.codesnippet,
+  &.codesnippet[class*="language-"] {
+    background-color: $mt_color-neutral-xd;
+    border: 1px solid $mt_color-neutral-xl;
+    border-radius: 0;
+    padding-bottom: -1em;
+
+    code {
+      margin: 0;
+    }
+  }
 }

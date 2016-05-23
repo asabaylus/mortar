@@ -1,11 +1,20 @@
+.mt_numericcounter {
+  * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
 .mt_numericcounter-button {
   background-color: transparent;
   border: 0;
 }
 
 .mt_numericcounter-arrow {
-  &:not(.numericcounter-arrow--disabled):hover {
+
+  &:not(.mt_numericcounter-arrow--disabled):hover {
     color: $mt_color-neutral;
+    cursor: pointer;
   }
 
   &--disabled {
@@ -34,13 +43,14 @@
   background-color: $mt_color-neutral-xl;
   border-radius: 50%;
   display: inline-block;
-  height: $mt_unit-half;
+  height: .5rem;
   margin: $mt_unit-quarter;
-  width: $mt_unit-half;
+  width: .5rem;
 
   &--active,
   &:hover {
     background-color: $mt_color-neutral-l;
+    cursor: pointer;
   }
 
   &--inverse {
