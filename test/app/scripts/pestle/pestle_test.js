@@ -3,34 +3,38 @@
 import Pestle from '../../../../app/scripts/pestle/main'
 
 describe('Pestle', () => {
-  it('should be a class', () => {
-    expect(Pestle).to.be.a('function');
+  it('should be a object', () => {
+    expect(Pestle).to.be.a('object');
   });
 
   describe('instance', () => {
-    var pestle;
-
-    before(() => {
-      pestle = new Pestle();
-    });
 
     describe('structure', () => {
       it('should have init method', () => {
-        expect(pestle.init).to.be.a('function');
+        expect(Pestle.init).to.be.a('function');
       });
 
       it('should have ModuleManager property', () => {
-        expect(pestle.ModuleManager).to.be.a('object');
+        expect(Pestle.ModuleManager).to.be.a('object');
       });
     });
 
     describe('init()', () => {
+      var init, initReference;
+      before(() => {
+        initReference = Pestle.ModuleManager.init;
+
+        init = sinon.spy();
+        Pestle.ModuleManager.init = init;
+      });
+
       it('calls modules initialization', () => {
-        var pestle = new Pestle();
-        var init = sinon.spy();
-        pestle.ModuleManager.init = init;
-        pestle.init();
+        Pestle.init();
         expect(init.called).to.be.true;
+      });
+
+      after(() => {
+        Pestle.ModuleManager.init = initReference;
       });
     });
   });

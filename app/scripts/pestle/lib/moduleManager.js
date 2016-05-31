@@ -66,6 +66,18 @@ class ModuleManager {
     return this.modules.runningInstances;
   }
 
+  getInstancesByName(name) {
+    const instanceArray = this.getAllInstances();
+    return Object
+            .keys(instanceArray)
+            .map((instanceId) => {
+              return instanceArray[instanceId];
+            })
+            .filter((instance) => {
+              return instance.name === name;
+            })
+  }
+
   // returns number of registered modules
   getModulesCount() {
     return Object.keys(this.getAllModules()).length;
@@ -115,8 +127,18 @@ class ModuleManager {
       let modulesWorking,
         modulesFailing;
 
-      instanceData.error = err;
-      if(!err) {
+      if(err) {
+        instanceData.error = err;
+        console.error(
+          'Error on Module:',
+          instanceData.name,
+          '\n Instance Id:',
+          instanceData.id,
+          '\n',
+          (instanceData.error.stack) ? instanceData.error.stack : instanceData.error
+        );
+      }
+      else {
         instanceData.instance.isLoaded = true;
       }
 
@@ -216,7 +238,7 @@ class ModuleManager {
       options = this.parseParams(optionsAttribute);
 
       // Initialize the module
-      instance = new module.fn(el, options);
+      instance = new module.fn(id, el, options);
 
       instanceData = {
         id,
@@ -231,6 +253,14 @@ class ModuleManager {
         error: e,
         instance
       };
+      console.error(
+        'Error on Module:',
+        moduleName,
+        '\n Instance Id:',
+        id,
+        '\n',
+        (e.stack) ? e.stack : e
+      );
     }
 
     return instanceData;

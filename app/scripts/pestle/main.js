@@ -19,5 +19,7 @@ class Pestle {
   }
 }
 
-export default Pestle
-export {Pestle, Module, ModuleManager}
+const instance = new Pestle();
+
+export default instance
+export {instance as Pestle, Module, ModuleManager}
