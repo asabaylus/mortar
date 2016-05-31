@@ -8,7 +8,7 @@ const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('scripts', function(){
   browserify('./app/scripts/main.js')
-    .transform('babelify', {presets: 'es2015'})
+    .transform('babelify', {presets: ['es2015', 'react']})
     .bundle()
     .pipe(source('main.js'))
     .pipe(buffer())
@@ -17,7 +17,7 @@ gulp.task('scripts', function(){
     .pipe(gulp.dest('./.tmp/assets/scripts'))
 
   browserify('./app/scripts/pestle/main.js')
-    .transform('babelify', {presets: 'es2015'})
+    .transform('babelify', {presets: ['es2015', 'react']})
     .bundle()
     .pipe(source('main.js'))
     .pipe(buffer())

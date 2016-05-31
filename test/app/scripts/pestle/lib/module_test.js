@@ -30,17 +30,20 @@ describe('Module', () => {
     });
 
     it('should have el property', () => {
-      var module = new Module2(document.body);
+      var id = '0b0e729c-a478-c979-4aa9-7383b2f9531b';
+      var module = new Module2(id, document.body);
       expect(module.el).to.equal(document.body);
     });
 
     it('should have options property', () => {
-      var module = new Module2(document.body, { prop: 'value' });
+      var id = '0b0e729c-a478-c979-4aa9-7383b2f9531b';
+      var module = new Module2(id, document.body, { prop: 'value' });
       expect(module.options).to.deep.equal({ prop: 'value' });
     });
 
     it('should clean el and options properties when dispose', () => {
-      var module = new Module2(document.body, { prop: 'value' });
+      var id = '0b0e729c-a478-c979-4aa9-7383b2f9531b';
+      var module = new Module2(id, document.body, { prop: 'value' });
       module.dispose();
       expect(module.el).to.be.null;
       expect(module.options).to.be.null;

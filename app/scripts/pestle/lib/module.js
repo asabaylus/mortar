@@ -7,7 +7,11 @@
 
 class Module {
   // called upon initialization of an instance
-  constructor(el, options) {
+  constructor(id, el, options) {
+    this.init = this.init.bind(this);
+    this.dispose = this.dispose.bind(this);
+
+    this.id = id;
     this.isLoaded = false;
     this.el = el;
     this.options = options;
