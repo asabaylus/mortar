@@ -90,6 +90,22 @@ td, th {
 
 
 // ====================
+// Color Examples Block
+// ====================
+
+.colorexamplepadding {
+  padding: .625rem;
+}
+
+hr {
+  background: $mt_color-neutral-xl;
+  border: 0;
+  display: block;
+  height: 1px;
+  margin: 2.5rem 0 2.5rem 0;
+}
+
+// ====================
 // Illustrated Examples Block
 // ====================
 
