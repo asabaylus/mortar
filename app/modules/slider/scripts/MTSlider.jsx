@@ -15,7 +15,14 @@ export default class MTSlider extends Component {
     };
 
     return (
-      <div><h1>slider</h1></div>
+      <div>
+        <h1>slider</h1>
+        <ul>
+          <li>transition speed: {this.props.transitionSpeed}</li>
+          <li>transition type: {this.props.transitionType}</li>
+          <li>initialSlide: {this.props.initialSlide}</li>
+        </ul>
+      </div>
     );
   }
 }
