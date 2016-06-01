@@ -1,7 +1,9 @@
 @import '../../styles/themes/default/vars/mqs';
 @import '../../styles/themes/default/vars/colors';
+@import '../../styles/themes/default/vars/typography';
 @import '../../styles/global/vars/theme';
 @import '../../styles/global/vars/z';
+
 
 // ====================
 // ====================
@@ -405,6 +407,11 @@ pre {
 
     code {
       margin: 0;
+      font-size: .9375rem;
     }
   }
+}
+
+code {
+  font-size: 14px;
 }
