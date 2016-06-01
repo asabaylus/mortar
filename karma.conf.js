@@ -15,7 +15,8 @@ module.exports = function(config) {
 
         files: [
             // all files ending in "_test"
-            'test/**/*_test.js'
+            'test/**/*_test.js',
+            'test/DOMUtils.js'
         ],
 
         preprocessors: {

@@ -47,15 +47,6 @@ describe('Module Manager', () => {
     }
   }
 
-  function insertFixture(fixture) {
-    // Add fixture as first child of the body element
-    document.body.insertAdjacentHTML('afterbegin', fixture);
-  }
-
-  function removeFixture() {
-    document.body.removeChild(document.getElementById('fixture'));
-  }
-
   function registerModules() {
     moduleManager.register("Module1", Module1);
     moduleManager.register("Module2", Module2);
@@ -117,11 +108,9 @@ describe('Module Manager', () => {
       registerModules();
 
       var fixture = `
-        <div id="fixture">
-          <div data-pestle-module="Module1"></div>
-          <div data-pestle-module="Module2"
-               data-pestle-options='{"prop": "value"}'>
-          </div>
+        <div data-pestle-module="Module1"></div>
+        <div data-pestle-module="Module2"
+             data-pestle-options='{"prop": "value"}'>
         </div>
       `;
 
@@ -156,11 +145,9 @@ describe('Module Manager', () => {
       registerModules();
 
       var fixture = `
-        <div id="fixture">
-          <div data-pestle-module="Module1"></div>
-          <div data-pestle-module="Module2"
-               data-pestle-options='{"prop value"}'>
-          </div>
+        <div data-pestle-module="Module1"></div>
+        <div data-pestle-module="Module2"
+             data-pestle-options='{"prop value"}'>
         </div>
       `;
 
@@ -206,11 +193,9 @@ describe('Module Manager', () => {
       registerModules();
 
       var fixture = `
-        <div id="fixture">
-          <div data-pestle-module="Module1"></div>
-          <div data-pestle-module="Module2"
-               data-pestle-options='{"prop": "value"}'>
-          </div>
+        <div data-pestle-module="Module1"></div>
+        <div data-pestle-module="Module2"
+             data-pestle-options='{"prop": "value"}'>
         </div>
       `;
 
@@ -254,11 +239,9 @@ describe('Module Manager', () => {
       registerModules();
 
       var fixture = `
-        <div id="fixture">
-          <div data-pestle-module="Module3"></div>
-          <div data-pestle-module="Module2"
-               data-pestle-options='{"prop": "value"}'>
-          </div>
+        <div data-pestle-module="Module3"></div>
+        <div data-pestle-module="Module2"
+             data-pestle-options='{"prop": "value"}'>
         </div>
       `;
 
