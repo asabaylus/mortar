@@ -1,19 +1,10 @@
 'use strict';
 
-import React, { Component }  from 'react';
+import React, { Component, PropTypes }  from 'react';
 // import * as Slider from "SimpleSlider";
 
-export default class MTSlider extends Component {
+class MTSlider extends Component {
   render() {
-
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    };
-
     return (
       <div>
         <h1>slider</h1>
@@ -26,3 +17,17 @@ export default class MTSlider extends Component {
     );
   }
 }
+
+MTSlider.defaultProps = {
+  transitionSpeed: 100,
+  transitionType: 'fade',
+  initialSlide: 1
+}
+
+MTSlider.propTypes = {
+  transitionSpeed: PropTypes.number,
+  transitionType: PropTypes.oneOf(['fade']),
+  initialSlide: PropTypes.number
+}
+
+export default MTSlider
