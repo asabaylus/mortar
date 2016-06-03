@@ -412,3 +412,14 @@ pre {
 code {
   font-size: 14px;
 }
+
+pre,
+code {
+  &[class*="language"] {
+    white-space: pre-wrap;
+
+    @media #{$mt_mq-lg} {
+      white-space: pre;
+    }
+  }
+}
