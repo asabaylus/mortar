@@ -33,7 +33,14 @@ module.exports = function(config) {
             transform: [
                 ['babelify', {presets: ["es2015", "react"]}]
             ],
-            extensions: ['.js', '.jsx']
+            extensions: ['.js', '.jsx'],
+            configure: function(bundle) {
+              bundle.on('prebundle', function() {
+                bundle.external('react/addons');
+                bundle.external('react/lib/ReactContext');
+                bundle.external('react/lib/ExecutionEnvironment');
+              });
+            }
         },
 
         // web server port
