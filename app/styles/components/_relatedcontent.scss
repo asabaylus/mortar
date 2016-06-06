@@ -12,3 +12,22 @@
     padding-bottom: 1rem;
   }
 }
+
+%mt_relatedcontent-link {
+  &,
+  &:link,
+  &:visited {
+    color: $mt_color-neutral-xd;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.mt_relatedcontent-link {
+  @extend %mt_relatedcontent-link;
+}
