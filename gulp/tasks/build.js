@@ -11,8 +11,7 @@ gulp.task('build', [
   'docs'
 ], function() {
   if (argv.p) {
-    console.log(argv.p);
-    return gulp.src('.tmp/assets/{scripts,styles}/**/*')
+    return gulp.src('.tmp/assets/**/*')
       .pipe(gulp.dest('.tmp/site'));
   }
 });

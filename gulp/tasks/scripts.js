@@ -7,7 +7,7 @@ const buffer = require('vinyl-buffer');
 const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('scripts', function(){
-  browserify('./app/scripts/main.js')
+  return browserify('./app/scripts/main.js')
     .transform('babelify', {presets: ['es2015', 'react']})
     .bundle()
     .pipe(source('main.js'))
@@ -15,13 +15,4 @@ gulp.task('scripts', function(){
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./.tmp/assets/scripts'))
-
-  browserify('./app/scripts/pestle/main.js')
-    .transform('babelify', {presets: ['es2015', 'react']})
-    .bundle()
-    .pipe(source('main.js'))
-    .pipe(buffer())
-    .pipe(sourcemaps.init())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./.tmp/assets/scripts/pestle'))
 });
