@@ -1,4 +1,4 @@
-.mt_selectwrapper {
+.mt_select-wrapper {
   position: relative;
 
   // Dropdown icon
@@ -9,24 +9,24 @@
     background-size: contain;
     content: '';
     height: $mt_dropdown-height;
-    margin-right: $mt_unit;
+    margin-right: .5rem;
     opacity: .3;
     pointer-events: none;
     position: absolute;
     right: 10px;
-    top: 15px;
+    top: 17px;
     width: $mt_dropdown-width;
   }
 }
 
 // Default state
-.mt_select {
+.mt_select-input {
   appearance: none;
   background: $mt_color-neutral-xxxl;
   border: $mt_border-default;
   border-radius: 0;
-  color: $mt_color-neutral-l;
-  padding: $mt_fs-sm $mt_fs-sm;
+  cursor: pointer;
+  padding: $mt_fs-sm $mt_fs-med-xlrg $mt_fs-sm $mt_fs-sm;
   width: 100%;
 
   // Selected state
@@ -46,6 +46,6 @@
 }
 
 // For firefox
-.mt_selectoption {
+.mt_select-option {
   color: $mt_color-neutral-xd;
 }
