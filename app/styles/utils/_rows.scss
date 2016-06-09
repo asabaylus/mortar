@@ -1,6 +1,6 @@
 // Extends
 
-%mt_cf {
+%mt_row {
   &:before,
   &:after {
     content: ' ';
@@ -14,6 +14,6 @@
 
 // Classes
 
-.mt_cf {
-  @extend %mt_cf;
+.mt_row {
+  @extend %mt_row;
 }
