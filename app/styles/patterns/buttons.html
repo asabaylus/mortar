@@ -1,62 +1,59 @@
 <div class="JS_buttonexample-container pattern-examplepadding">
-  <div class="pagewrapper mt_row mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-    <div class="mt_row-gut-1 mt_row mt_col-lg-7">
+  <div class="pagewrapper mt_row">
+    <div class="mt_col-lg-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
       <h3 class="mt_h3">Buttons</h3>
+
       <p class="mt_subh4">
         For a prominent call to action button, use the default button class. If there are multiple calls to action, use only one default button paired with secondary or naked buttons. Success and error buttons are useful for transactional or form completion tasks.
       </p>
-    </div>
-  </div>
 
-  <div class="mt_row pagewrapper">
-    <!-- Background toggle option -->
-    <fieldset class="mt_subh4 fieldset mt_col-md-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-      <div class="mt_row-gut-1">
-        <input class="mt_radio" type="radio" value="default" name="button-bgcolor" id="default" checked>
-        <label for="default">Light background</label>
+      <!-- Background toggle option -->
+      <h3 class="mt_h5"> Toggle background color:</h3>
+
+      <fieldset class="mt_subh4 fieldset">
+        <div class="mt_row-gut-1">
+          <input class="mt_radio" type="radio" value="default" name="button-bgcolor" id="default" checked>
+          <label for="default">Light background</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mt_subh4 fieldset mt_row-gut-2">
+        <div>
+          <input class="mt_radio" type="radio" value="inverse" name="button-bgcolor" id="inverse">
+          <label for="inverse">Dark background</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="mt_col-lg-8 mt_col-lg-offset-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
+      <div class="mt_row-gut-2">
+        <button class="mt_btn mt_btn--fullwidth mt_btn-default">Default</button>
       </div>
-    </fieldset>
-
-    <fieldset class="mt_subh4 fieldset mt_row-gut-2 mt_col-md-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-      <div>
-        <input class="mt_radio" type="radio" value="inverse" name="button-bgcolor" id="inverse">
-        <label for="inverse">Dark background</label>
+      <div class="mt_row-gut-2">
+        <button class="JS_button-reverse mt_btn mt_btn--fullwidth mt_btn-secondary">Secondary</button>
       </div>
-    </fieldset>
-  </div>
+      <div class="mt_row-gut-2">
+        <button class="JS_button-nakedreverse mt_btn mt_btn--fullwidth mt_btn-naked"> <span> Naked </span> </button>
+      </div>
+      <div class="mt_row-gut-2">
+        <button class="mt_btn mt_btn--fullwidth mt_btn--success">Success</button>
+      </div>
+      <div class="mt_row-gut-2">
+        <button class="mt_btn mt_btn--fullwidth mt_btn--error">Error</button>
+      </div>
+      <div class="mt_row-gut-2">
+        <button class="mt_btn mt_btn--fullwidth mt_btn-default--inactive">Default Inactive</button>
+      </div>
+      <div class="mt_row-gut-2">
+        <button class="mt_btn mt_btn--fullwidth mt_btn-secondary--inactive">Secondary Inactive</button>
+      </div>
+      <div class="mt_row-gut-2">
+        <button class="mt_btn mt_btn--fullwidth mt_btn-naked mt_btn-naked--inactive">Naked Inactive</button>
+      </div>
 
-  <div class="mt_row pagewrapper">
-    <div class="mt_col-lg-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg mt_row-gut-2">
-      <button class="mt_btn mt_btn--fullwidth mt_btn-default">Default</button>
-      <p class="mt_h5">.mt_btn mt_btn-default</p>
-    </div>
-    <div class="mt_col-lg-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg mt_row-gut-2">
-      <button class="JS_button-reverse mt_btn mt_btn--fullwidth mt_btn-secondary">Secondary</button>
-      <p class="mt_h5">.mt_btn mt_btn-secondary</p>
-    </div>
-    <div class="mt_col-lg-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg mt_row-gut-2">
-      <button class="JS_button-nakedreverse mt_btn mt_btn--fullwidth mt_btn-naked"> <span> Naked </span> </button>
-      <p class="mt_h5">.mt_btn mt_btn-naked</p>
-    </div>
-    <div class="mt_col-lg-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg mt_row-gut-2">
-      <button class="mt_btn mt_btn--fullwidth mt_btn--success">Success</button>
-      <p class="mt_h5">.mt_btn mt_btn--success</p>
-    </div>
-    <div class="mt_col-lg-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg mt_row-gut-2">
-      <button class="mt_btn mt_btn--fullwidth mt_btn--error">Error</button>
-      <p class="mt_h5">.mt_btn mt_btn--error</p>
-    </div>
-    <div class="mt_col-lg-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg mt_row-gut-2">
-      <button class="mt_btn mt_btn--fullwidth mt_btn-default--inactive">Default Inactive</button>
-      <p class="mt_h5">.mt_btn mt_btn-default--inactive</p>
-    </div>
-    <div class="mt_col-lg-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg mt_row-gut-2">
-      <button class="mt_btn mt_btn--fullwidth mt_btn-secondary--inactive">Secondary Inactive</button>
-      <p class="mt_h5">.mt_btn mt_btn-secondary--inactive</p>
-    </div>
-    <div class="mt_col-lg-3 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg mt_row-gut-2">
-      <button class="mt_btn mt_btn--fullwidth mt_btn-naked mt_btn-naked--inactive">Naked Inactive</button>
-      <p class="mt_h5">.mt_btn mt_btn-naked mt_btn-naked--inactive</p>
+      <!-- Code snippet -->
+
+      {% include "./_partials/buttons-snippets.html" %}
     </div>
   </div>
 </div>
