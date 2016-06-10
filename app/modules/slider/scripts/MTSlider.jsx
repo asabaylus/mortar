@@ -1,10 +1,14 @@
 'use strict';
 
 import React, { Component, PropTypes }  from 'react';
+import Slick from 'react-slick';
 // import * as Slider from "SimpleSlider";
 
 class MTSlider extends Component {
   render() {
+    const settings = {
+      dots: true
+    };
     return (
       <div>
         <h1>slider</h1>
@@ -13,6 +17,11 @@ class MTSlider extends Component {
           <li>transition type: {this.props.transitionType}</li>
           <li>initialSlide: {this.props.initialSlide}</li>
         </ul>
+        <Slick {...settings}>
+          {this.props.slides.map(function(item, i) {
+            return <div key={i}><img src={item} /></div>;
+          })}
+        </Slick>
       </div>
     );
   }
