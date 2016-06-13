@@ -24,3 +24,13 @@ gulp.task('icons', function() {
     .pipe(svgSprite(config))
     .pipe(gulp.dest('.tmp/assets'));
 });
+
+gulp.task('iconFolder', function() {
+  return gulp.src('app/icons/natgeo-icons.zip')
+    .pipe(gulp.dest('.tmp/assets'));
+});
+
+gulp.task('prodIconFolder', function() {
+  return gulp.src('app/icons/natgeo-icons.zip')
+    .pipe(gulp.dest('.tmp/assets'));
+});
