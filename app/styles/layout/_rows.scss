@@ -1,3 +1,17 @@
+// Extends
+
+%mt_row {
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
 .mt_row {
   @extend %mt_row;
 }
