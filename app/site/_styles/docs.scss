@@ -170,7 +170,6 @@ hr {
 .iconexample-container {
   border: 1px solid $mt_color-neutral-xl;
   border-radius: 50%;
-  margin: 0 auto;
   position: relative;
 }
 
@@ -181,6 +180,15 @@ hr {
   transform: translate(-50%, -50%);
 }
 
+.downloadicon-btn {
+  &:link,
+  &:visited,
+  &:hover {
+    color: $mt_color-neutral-xd;
+    text-decoration: none;
+    display: block;
+  }
+}
 
 // ====================
 // ====================

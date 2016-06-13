@@ -6,12 +6,12 @@
   {% for icon in icons %}
   {% if loop.first %}<ul class="mt_row illustratedexamples-container">{% endif %}
   <li class="mt_row-gut-2 mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg illustratedexamples-item">
-    <div class="JS_icon-container iconexample-container mt_intratio--square">
+    <div class="JS_icon-container iconexample-container mt_intratio--square mt_row-gut-1">
       <svg class="JS_icon mt_icon mt_icon--large iconexample-icon">
         <use xlink:href="#{{ icon }}"></use>
       </svg>
     </div>
-    <p class="mt_h5">#{{ icon }}</p>
+    <p class="mt_h5"><code>#{{ icon }}</code></p>
   </li>
   {% if loop.last %}</ul>{% endif %}
   {% endfor %}
@@ -32,7 +32,7 @@
         <use xlink:href="#{{ icon }}"></use>
       </svg>
     </div>
-    <p class="mt_h5">#{{ icon }}</p>
+    <p class="mt_h5"><code>#{{ icon }}</code></p>
   </li>
   {% if loop.last %}</ul>{% endif %}
   {% endfor %}
