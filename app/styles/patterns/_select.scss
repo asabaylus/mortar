@@ -11,11 +11,11 @@
     height: $mt_dropdown-height;
     margin-right: $mt_unit;
     opacity: .3;
-    width: $mt_dropdown-width;
-    position: absolute;
     pointer-events: none;
+    position: absolute;
     right: 10px;
     top: 15px;
+    width: $mt_dropdown-width;
   }
 }
 
