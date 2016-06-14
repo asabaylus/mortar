@@ -4,12 +4,20 @@ const gulp = require('gulp');
 const argv = require('yargs')
             .alias('p', 'production')
             .argv;
-
-gulp.task('build', [
+const devBuildTasks = [
   'scripts',
   'styles',
   'docs'
-], function() {
+];
+const prodBuildTasks = [
+  'prodScripts',
+  'prodStyles',
+  'moveIconZip',
+  'docs'
+]
+const buildTasks = argv.p ? prodBuildTasks : devBuildTasks;
+
+gulp.task('build', buildTasks, function() {
   if (argv.p) {
     return gulp.src('.tmp/assets/**/*')
       .pipe(gulp.dest('.tmp/site'));

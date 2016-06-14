@@ -24,3 +24,8 @@ gulp.task('icons', function() {
     .pipe(svgSprite(config))
     .pipe(gulp.dest('.tmp/assets'));
 });
+
+gulp.task('moveIconZip', function() {
+  return gulp.src('app/icons/natgeo-icons.zip')
+    .pipe(gulp.dest('.tmp/assets'));
+});
