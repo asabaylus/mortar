@@ -12,6 +12,7 @@ const devBuildTasks = [
 const prodBuildTasks = [
   'prodScripts',
   'prodStyles',
+  'moveIconZip',
   'docs'
 ]
 const buildTasks = argv.p ? prodBuildTasks : devBuildTasks;
