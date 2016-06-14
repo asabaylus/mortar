@@ -1,26 +1,24 @@
 'use strict';
 
 const gulp = require('gulp');
-// const argv = require('yargs')
-//             .alias('p', 'production')
-//             .argv;
-
-gulp.task('build', [
+const argv = require('yargs')
+            .alias('p', 'production')
+            .argv;
+const devBuildTasks = [
   'scripts',
   'styles',
   'docs'
-], function() {
-  // if (argv.p) {
-  //   return gulp.src('.tmp/assets/**/*')
-  //     .pipe(gulp.dest('.tmp/site'));
-  // }
-});
-
-gulp.task('prodBuild', [
+];
+const prodBuildTasks = [
   'prodScripts',
   'prodStyles',
   'docs'
-], function() {
-  return gulp.src('.tmp/assets/**/*')
-    .pipe(gulp.dest('.tmp/site'));
+]
+const buildTasks = argv.p ? prodBuildTasks : devBuildTasks;
+
+gulp.task('build', buildTasks, function() {
+  if (argv.p) {
+    return gulp.src('.tmp/assets/**/*')
+      .pipe(gulp.dest('.tmp/site'));
+  }
 });
