@@ -49,7 +49,23 @@ Pestle.init();
 
 ## Documentation
 
-Pestle is composed of a Module Manager and Event Manager (currently on development it). It also provides a base class to create new modules.
+### Pestle Object
+
+This is core of pestle. It provides access to Module Manager and Event Manager (currently on development it).
+
+You can expose this object if required.
+
+#### Methods
+
+**init(callback)**: initialize pestle.
+
+*params*:
+* callback(instancesFailing, instancesRunning): Optional function. If it's defined, pestle call it when all modules instances have been initialized.
+
+  *params*:
+  * instancesFailing: array of instances failing.
+  * instancesRunning: array of instances running fine.
+
 
 ### Class Module
 
@@ -58,7 +74,7 @@ It's the base class for creating new modules. It must be treated as an abstract 
 #### Properties
 
 * id: is a *guid* value created automatically when an instance of the module is created.
-* isLoaded: indicates if the `init()` method already finish its execution. Note: *look async*
+* isLoaded: indicates if the `init()` method of this instance already finish its execution. Note: *look async*
 * el: is the DOM Element where the module definition is.
 * options: is the configuration values passed to a specific instance of a module.
 
@@ -207,3 +223,10 @@ It has some useful methods and properties for developing and debugging.
 **getInstancesCount()**: returns the count of running instances.
 
 *returns*: number.
+
+
+## Examples
+
+There're few [examples](examples) in its source doe.
+
+Run `gulp runExamples` to see them working.
