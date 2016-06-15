@@ -18,9 +18,7 @@ class MTSlider extends Component {
           <li>initialSlide: {this.props.initialSlide}</li>
         </ul>
         <Slick {...settings}>
-          {this.props.slides.map(function(item, i) {
-            return <div key={i}><img src={item} /></div>;
-          })}
+          {this.props.children}
         </Slick>
       </div>
     );

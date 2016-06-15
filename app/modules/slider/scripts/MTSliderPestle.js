@@ -10,9 +10,11 @@ class Slider extends Module {
     ReactDOM.render(<SliderComponent
       transitionSpeed={this.options.transitionSpeed}
       transitionType={this.options.transitionType}
-      initialSlide={this.options.initialSlide}
-      slides={this.options.slides}
-    />, this.el);
+      initialSlide={this.options.initialSlide}>
+      {this.options.slides.map(function(item, i) {
+        return <div key={i}><img src={item} /></div>;
+      })}
+    </SliderComponent>, this.el);
     console.log('Slider initialized.');
   }
 }
