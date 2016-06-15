@@ -9,14 +9,13 @@ A pestle module is composed of 2 parts:
 * Javascript module
 
 ### HTML markup
-Add the next markup on the HTML where you want the module to be loaded:
+Add the following markup to the HTML where you want the module to be loaded. This is the most basic HTML markup for loading a module (the `data-pestle-options` attribute is optional):
 ```html
 <div
   data-pestle-module="ExampleModule"
   data-pestle-options='{"option1":"value1"}'>
 </div>
 ```
-This is the most basic HTML markup for loading a module. `data-pestle-options` attribute is optional.
 
 ### Javascript module
 Let's define the javascript module:
@@ -51,16 +50,14 @@ Pestle.init();
 
 ### Pestle Object
 
-This is core of pestle. It provides access to Module Manager and Event Manager (currently on development it).
-
-You can expose this object if required.
+This is the core of pestle and can be exposed if required. It provides access to the Module Manager and Event Manager (currently in development).
 
 #### Methods
 
 **init(callback)**: initialize pestle.
 
 *params*:
-* callback(instancesFailing, instancesRunning): Optional function. If it's defined, pestle call it when all modules instances have been initialized.
+* callback(instancesFailing, instancesRunning): Optional function. If it is defined, pestle will call it when all module instances have been initialized.
 
   *params*:
   * instancesFailing: array of instances failing.
@@ -69,14 +66,14 @@ You can expose this object if required.
 
 ### Class Module
 
-It's the base class for creating new modules. It must be treated as an abstract class, so you mustn't create any instance directly from it.
+This is the base class for creating new modules. It must be treated as an abstract class, no instance should be created directly from it.
 
 #### Properties
 
-* id: is a *guid* value created automatically when an instance of the module is created.
-* isLoaded: indicates if the `init()` method of this instance already finish its execution. Note: *look async*
-* el: is the DOM Element where the module definition is.
-* options: is the configuration values passed to a specific instance of a module.
+* id: a *guid* value created automatically when an instance of the module is created.
+* isLoaded: indicates if the `init()` method of this instance is already executed. Note: *look at async*
+* el: the DOM Element where the module definition is.
+* options: the configuration values passed to a specific instance of a module.
 
 Example:
 
@@ -93,14 +90,14 @@ export default Module1;
 
 #### Methods
 
-**isLoaded()**: returns true if init execution already finish. *see init()*
+**isLoaded()**: returns true if init execution is finished. *see init()*
 
-**init(done)**: is called by pestle internally when `Pestle.init()` is executed and a module definition in the DOM match the name of the registered module. It must be overrided when `Module` is extended and should contain the necessary code to initilize the component.
+**init(done)**: is called by pestle internally when `Pestle.init()` is executed and a module definition in the DOM matches the name of the registered module. It must be overriden when `Module` is extended and should contain the necessary code to initilize the component.
 
-After init execution has finished or after done was called, `isLoaded` property is changed to true.
+After init has executed or after done has been called, `isLoaded` property is changed to true.
 
 *params*:
-* done: Optional. If done is defined, pestle is going to treat the init method like it was an async method, so you should call `done` function when execution has finished.
+* done: Optional. If done is defined, pestle is going to treat the init method like it was an async method, the `done` method should be called when init has been successfully executed.
 
 Example using sync definition:
 
@@ -139,9 +136,7 @@ export default Module1;
 
 ### Class Module Manager
 
-It's on charge of register modules and search on the DOM to create and track each module instance.
-
-It has some useful methods and properties for developing and debugging.
+The Modeule Manager class is in charge of registering modules and searching the DOM to create and track each module instance. It has some useful methods and properties for developing and debugging.
 
 #### Methods
 
@@ -227,6 +222,6 @@ It has some useful methods and properties for developing and debugging.
 
 ## Examples
 
-There're few [examples](examples) in its source doe.
+There are a  few [examples](examples) in its source codee.
 
 Run `gulp runExamples` to see them working.
