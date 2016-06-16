@@ -2,13 +2,29 @@
 
 import React, { Component, PropTypes }  from 'react';
 import Slick from 'react-slick';
-// import * as Slider from "SimpleSlider";
+
+import SlideImage from './slides/Image.jsx';
 
 class MTSlider extends Component {
+  getComponent(type, data) {
+    switch(type) {
+      case 'image':
+        return <SlideImage src={data.url} />
+      default:
+        return;
+    }
+  }
   render() {
     const settings = {
       dots: true
     };
+
+    const slides = this.props.slides.map((slide, i) => {
+      const {type, ...data} = slide;
+      const component = this.getComponent(type, data);
+      return <div key={i}>{component}</div>;
+    });
+
     return (
       <div>
         <h1>slider</h1>
@@ -18,7 +34,7 @@ class MTSlider extends Component {
           <li>initialSlide: {this.props.initialSlide}</li>
         </ul>
         <Slick {...settings}>
-          {this.props.children}
+          {slides}
         </Slick>
       </div>
     );
