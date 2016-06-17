@@ -20,7 +20,7 @@ gulp.task('scripts', function(){
 
 gulp.task('prodScripts', function(){
   return browserify('./app/scripts/main.js')
-    .transform('babelify', {presets: ['es2015', 'react']})
+    .transform('babelify', {presets: ['es2015', 'stage-0', 'react']})
     .bundle()
     .pipe(source('main.js'))
     .pipe(buffer())
