@@ -37,6 +37,7 @@
     "enzyme": "^2.3.0",
     "eslint": "^1.10.3",
     "fs": "0.0.2",
+    "glob": "^7.0.3",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-clean-css": "^2.0.10",
