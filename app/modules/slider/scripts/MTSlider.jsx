@@ -50,7 +50,10 @@ MTSlider.defaultProps = {
 MTSlider.propTypes = {
   transitionSpeed: PropTypes.number,
   transitionType: PropTypes.oneOf(['fade']),
-  initialSlide: PropTypes.number
+  initialSlide: PropTypes.number,
+  slides: PropTypes.arrayOf(PropTypes.shape({
+    type: PropTypes.string.isRequired
+  }))
 }
 
 export default MTSlider

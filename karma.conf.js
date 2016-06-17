@@ -31,7 +31,7 @@ module.exports = function(config) {
         browserify: {
             debug: true,
             transform: [
-                ['babelify', {presets: ["es2015", "react"]}]
+                ['babelify', {presets: ["es2015", "stage-0", "react"]}]
             ],
             extensions: ['.js', '.jsx'],
             configure: function(bundle) {

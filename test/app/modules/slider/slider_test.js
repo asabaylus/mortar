@@ -42,7 +42,12 @@ describe('Slider', () => {
     let wrapper;
 
     before(() => {
-      wrapper = mount(<SliderComponent />);
+      const slides = [
+        {type: "image", src: "http://www.fillmurray.com/g/600/400"},
+        {type: "image", src: "http://www.placecage.com/600/400"}
+      ];
+
+      wrapper = mount(<SliderComponent slides={slides} />);
     });
 
     it('should have default prop transitionSpeed', () => {
