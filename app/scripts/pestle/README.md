@@ -5,11 +5,11 @@ Pestle is a lightweight module initializer implemented using javascript (es6).
 ## Getting Started
 
 A pestle module is composed of 2 parts:
-* An HTML markup
-* Javascript module
+* HTML markup
+* A Javascript module
 
 ### HTML markup
-Add the following markup to the HTML where you want the module to be loaded. This is the most basic HTML markup for loading a module (the `data-pestle-options` attribute is optional):
+Add the following markup to your template or HTML file where you want the module to be loaded. This is the most basic markup for loading a module (the `data-pestle-options` attribute is optional):
 ```html
 <div
   data-pestle-module="ExampleModule"
@@ -34,7 +34,7 @@ class ExampleModule extends Module {
 export default ExampleModule
 ```
 
-Now we need to register the module we've created so Pestle is aware of this new module. Finally we intialize Pestle.
+Now we need to register the module we've created so Pestle is aware of it. Lastly we intialize Pestle.
 
 ```javascript
 import {Pestle} from '../../../scripts/pestle/main.js'; // Relative path to the pestle main file.
@@ -50,7 +50,7 @@ Pestle.init();
 
 ### Pestle Object
 
-This is the core of pestle and can be exposed if required. It provides access to the Module Manager and Event Manager (currently in development).
+This is the core of Pestle and can be exposed if required. It provides access to the Module Manager and Event Manager (currently in development).
 
 #### Methods
 
@@ -61,7 +61,7 @@ This is the core of pestle and can be exposed if required. It provides access to
 
   *params*:
   * instancesFailing: array of instances failing.
-  * instancesRunning: array of instances running fine.
+  * instancesRunning: array of instances currently running.
 
 
 ### Class Module
@@ -94,7 +94,7 @@ export default Module1;
 
 **init(done)**: is called by pestle internally when `Pestle.init()` is executed and a module definition in the DOM matches the name of the registered module. It must be overriden when `Module` is extended and should contain the necessary code to initilize the component.
 
-After init has executed or after done has been called, `isLoaded` property is changed to true.
+After init has executed or after done has been called the `isLoaded` property is changed to true.
 
 *params*:
 * done: Optional. If done is defined, pestle is going to treat the init method like it was an async method, the `done` method should be called when init has been successfully executed.
