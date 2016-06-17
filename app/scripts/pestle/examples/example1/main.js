@@ -1,3 +1,5 @@
+'use strict';
+
 import {Pestle} from '../../main.js';
 import MyModule from './MyModule';
 
