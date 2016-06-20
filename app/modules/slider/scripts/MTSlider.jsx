@@ -2,6 +2,30 @@
 
 import React, { Component, PropTypes }  from 'react';
 import Slick from 'react-slick';
+import 'babel-polyfill';
+import ElementQuery from 'react-element-query';
+
+class PrevButton extends React.Component {
+  render() {
+    return <button {...this.props} className='mt_slider-button--prev'>
+      <span className='mt_visuallyhidden'>Previous</span>
+      <svg className='mt_icon'>
+        <use xmlnsXlink='http://www.w3.org/1999/xlink' xlinkHref='#chevron-left'></use>
+      </svg>
+    </button>
+  }
+}
+
+class NextButton extends React.Component {
+  render() {
+    return <button {...this.props} className='mt_slider-button--next'>
+      <span className='mt_visuallyhidden'>Next</span>
+      <svg className='mt_icon'>
+        <use xmlnsXlink='http://www.w3.org/1999/xlink' xlinkHref='#chevron-right'></use>
+      </svg>
+    </button>
+  }
+}
 
 class MTSlider extends Component {
   findSlideType(type, data) {
@@ -15,8 +39,17 @@ class MTSlider extends Component {
 
   render() {
     const settings = {
-      dots: true
+      className: 'mt_slider-container mt_intratio--photo mt_bgcolor-neutral-xxd',
+      nextArrow: <NextButton />,
+      prevArrow: <PrevButton />
     };
+
+    const elementQueries = [
+      {
+        name: 'mt_slider-container--large',
+        width: 800
+      }
+    ];
 
     const slides = this.props.slides.map((slide, i) => {
       const {type, ...data} = slide;
@@ -26,17 +59,11 @@ class MTSlider extends Component {
     });
 
     return (
-      <div>
-        <h1>slider</h1>
-        <ul>
-          <li>transition speed: {this.props.transitionSpeed}</li>
-          <li>transition type: {this.props.transitionType}</li>
-          <li>initialSlide: {this.props.initialSlide}</li>
-        </ul>
+      <ElementQuery sizes={elementQueries}>
         <Slick {...settings}>
           {slides}
         </Slick>
-      </div>
+      </ElementQuery>
     );
   }
 }
