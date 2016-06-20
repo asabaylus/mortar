@@ -1,5 +1,7 @@
 'use strict';
 
+import 'babel-polyfill';
+
 import {Pestle} from './pestle/main.js';
 
 require('../modules/modals/scripts.js');
