@@ -2,7 +2,6 @@
 
 import React, { Component, PropTypes }  from 'react';
 import Slick from 'react-slick';
-import 'babel-polyfill';
 import ElementQuery from 'react-element-query';
 
 class PrevButton extends React.Component {
