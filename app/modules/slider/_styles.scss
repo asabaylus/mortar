@@ -1,4 +1,6 @@
 .mt_slider-container {
+  z-index: $mt_z-middle;
+    
   img { // this probably needs to go away once the component exists
     height: auto;
     width: 100%;
@@ -15,6 +17,7 @@
   top: 50%;
   transform: translateY(-50%) scale(1.0, 1.0);
   width: $mt-unit * 2.5;
+  z-index: $mt_z-top;
 
   .mt_slider-container--large & {
     height: $mt-unit * 5;
