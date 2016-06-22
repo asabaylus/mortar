@@ -13,7 +13,6 @@ class Slider extends Module {
       initialSlide={this.options.initialSlide}
       slides={this.options.slides}
     />, this.el);
-    console.log('Slider initialized.');
   }
 }
 

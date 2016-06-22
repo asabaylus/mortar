@@ -65,7 +65,6 @@
     "mocha": "^2.4.5",
     "phantomjs-prebuilt": "^2.1.7",
     "react-addons-test-utils": "^15.1.0",
-    "react-element-query": "^2.0.2",
     "require-dir": "^0.3.0",
     "sinon": "^1.17.4",
     "swig": "^1.4.2",

@@ -1,6 +1,6 @@
 .mt_slider-container {
   z-index: $mt_z-middle;
-    
+
   img { // this probably needs to go away once the component exists
     height: auto;
     width: 100%;
@@ -8,26 +8,16 @@
 }
 
 %mt_slider-button {
-  background-color: $mt_color-neutral-xd;
+  background-color: $mt_color-neutral-xxd;
   border: none;
   color: $mt_color-neutral-xxxl;
-  height: $mt-unit * 2.5;
-  padding: 0;
+  cursor: pointer;
+  opacity: 0.65;
+  padding: 1em 0.5em;
   position: absolute;
   top: 50%;
   transform: translateY(-50%) scale(1.0, 1.0);
-  width: $mt-unit * 2.5;
   z-index: $mt_z-top;
-
-  .mt_slider-container--large & {
-    height: $mt-unit * 5;
-    width: $mt-unit * 5;
-
-    .mt_icon {
-      height: $mt-unit * 2.5;
-      width: $mt-unit * 2.5;
-    }
-  }
 }
 
 .mt_slider-button--next {

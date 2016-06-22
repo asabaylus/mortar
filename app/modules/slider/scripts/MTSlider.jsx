@@ -2,7 +2,6 @@
 
 import React, { Component, PropTypes }  from 'react';
 import Slick from 'react-slick';
-import ElementQuery from 'react-element-query';
 
 class PrevButton extends React.Component {
   render() {
@@ -43,13 +42,6 @@ class MTSlider extends Component {
       prevArrow: <PrevButton />
     };
 
-    const elementQueries = [
-      {
-        name: 'mt_slider-container--large',
-        width: 800
-      }
-    ];
-
     const slides = this.props.slides.map((slide, i) => {
       const {type, ...data} = slide;
       const slideMarkup = this.findSlideType(type, data);
@@ -58,11 +50,9 @@ class MTSlider extends Component {
     });
 
     return (
-      <ElementQuery sizes={elementQueries}>
-        <Slick {...settings}>
-          {slides}
-        </Slick>
-      </ElementQuery>
+      <Slick {...settings}>
+        {slides}
+      </Slick>
     );
   }
 }
