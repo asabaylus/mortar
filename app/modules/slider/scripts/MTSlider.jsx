@@ -2,6 +2,8 @@
 
 import React, { Component, PropTypes }  from 'react';
 import Slick from 'react-slick';
+import PubSub from 'pubsub-js';
+import events from '../../../scripts/events';
 
 class PrevButton extends React.Component {
   render() {
@@ -35,8 +37,17 @@ class MTSlider extends Component {
     }
   }
 
+  onChangeSlide(data) {
+    const slideData = {
+      currentSlideIndex: data
+    }
+
+    PubSub.publish('MTSlider', slideData);
+  }
+
   render() {
     const settings = {
+      afterChange: this.onChangeSlide,
       className: 'mt_slider-container mt_intratio--photo mt_bgcolor-neutral-xxd',
       nextArrow: <NextButton />,
       prevArrow: <PrevButton />
