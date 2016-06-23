@@ -12,7 +12,6 @@ NGP foundational framework
 - Install Gulp globally: `npm install --global gulp`
 - Clone Repo: `git clone git@github.com:natgeo/mortar.git`
 - Change directory to the repository: `cd ~/code/mortar`
-- Checkout "release/2.0" branch: `git checkout release/2.0`
 - Set Node version (it will respect the .nvmrc file in the repo): `nvm use`
 - Install packages: `npm install`
 - Run project: `gulp serve`
