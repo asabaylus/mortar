@@ -20,6 +20,11 @@
   z-index: $mt_z-top;
 }
 
+.mt_slider-button--inactive {
+  cursor: default;
+  opacity: 0.25;
+}
+
 .mt_slider-button--next {
   @extend %mt_slider-button;
 
