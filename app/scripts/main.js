@@ -6,7 +6,7 @@ import {Pestle} from './pestle/main.js';
 
 require('../modules/modals/scripts.js');
 require('../modules/slider/scripts/MTSliderPestle.js');
-require('../modules/slider/scripts/Icon.js');
+require('../modules/icon/scripts/IconPestle.js');
 
 Pestle.init();
 
