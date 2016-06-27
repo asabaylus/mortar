@@ -18,7 +18,13 @@ gulp.task('runExamples', function(done) {
       const folderName = extractFolderName(folder);
 
       browserify('./app/scripts/pestle/examples/' + folderName + '/main.js')
-      .transform('babelify', {presets: ['es2015', 'react']})
+      .transform('babelify', {presets: ['es2015', 'stage-0', 'react']})
+      .transform('aliasify', {
+        'replacements': {
+          '@natgeo/mortar-pestle': './app/scripts/pestle/src/main.js',
+          '@natgeo\/mortar-pestle\/(.*?(?:(?!\.js$).)*)' : './app/scripts/pestle/$1.js'
+        }
+      })
       .bundle()
       .pipe(source('bundle.js'))
       .pipe(buffer())

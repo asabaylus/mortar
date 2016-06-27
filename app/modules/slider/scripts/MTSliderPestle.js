@@ -2,7 +2,8 @@
 
 import React from 'react';
 import * as ReactDOM from 'react-dom';
-import {Pestle, Module} from '../../../scripts/pestle/main.js';
+import {Pestle} from '@natgeo/mortar-pestle';
+import Module from '@natgeo/mortar-pestle/module';
 import SliderComponent from './MTSlider.jsx';
 
 class Slider extends Module {

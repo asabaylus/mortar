@@ -7,7 +7,7 @@
 'use strict';
 
 import Module from './module';
-import {guid} from '../util/guid';
+import {guid} from './util/guid';
 
 const defaultModuleNameAttribute = 'data-pestle-module';
 const defaultModuleParamsAttribute = 'data-pestle-options';
