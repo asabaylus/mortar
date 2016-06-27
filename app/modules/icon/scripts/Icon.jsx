@@ -27,7 +27,7 @@ class Icon extends Component {
 
 Icon.propTypes = {
   name: PropTypes.string,
-  alignment: PropTypes.string,
+  align: PropTypes.string,
   size: PropTypes.string,
   color: PropTypes.string,
   alt: PropTypes.string

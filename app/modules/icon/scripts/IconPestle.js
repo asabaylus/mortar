@@ -9,7 +9,7 @@ class Icon extends Module {
   init() {
     ReactDOM.render(<IconComponent
       name={this.options.name}
-      alignment={this.options.alignment}
+      align={this.options.alignment}
       size={this.options.size}
       color={this.options.color}
       alt={this.options.alt}
