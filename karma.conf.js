@@ -6,7 +6,8 @@ module.exports = function(config) {
             'browserify',
             'mocha',
             'chai',
-            'sinon'
+            'sinon',
+            'sinon-chai'
         ],
 
         basePath: '',
