@@ -32,7 +32,11 @@ module.exports = function(config) {
     browserify: {
       debug: true,
       transform: [
-        ['babelify', {presets: ["es2015", "stage-0", "react"]}]
+        ['babelify', {presets: ["es2015", "stage-0", "react"]}],
+        ['aliasify', { replacements: {
+          '^@natgeo/mortar-pestle$': './app/scripts/pestle/src/main.js',
+          '@natgeo\/mortar-pestle\/(.+)' : './app/scripts/pestle/src/$1.js'
+        }}]
       ],
       extensions: ['.js', '.jsx'],
       configure: function(bundle) {

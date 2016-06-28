@@ -1,6 +1,6 @@
 'use strict';
 
-import Pestle from '../../../../app/scripts/pestle/main';
+import Pestle from '@natgeo/mortar-pestle';
 import Slider from '../../../../app/modules/slider/scripts/MTSliderPestle.js';
 import SliderComponent from '../../../../app/modules/slider/scripts/MTSlider.jsx';
 import SliderEvents from '../../../../app/modules/slider/scripts/events';

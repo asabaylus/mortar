@@ -1,7 +1,7 @@
 'use strict';
 
-import Module from '../../../../../app/scripts/pestle/lib/module'
-import ModuleManager from '../../../../../app/scripts/pestle/lib/moduleManager'
+import Module from '../../../../../app/scripts/pestle/src/module'
+import ModuleManager from '../../../../../app/scripts/pestle/src/moduleManager'
 
 describe('Module Manager', () => {
   var moduleManager,

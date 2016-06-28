@@ -1,6 +1,6 @@
 'use strict';
 
-import Pestle from '../../../../app/scripts/pestle/main'
+import Pestle from '../../../../../app/scripts/pestle/src/main'
 
 describe('Pestle', () => {
   it('should be a object', () => {

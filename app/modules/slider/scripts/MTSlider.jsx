@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes }  from 'react';
-import {Pestle} from '../../../scripts/pestle/main.js';
+import {Pestle} from '@natgeo/mortar-pestle';
 import Slick from 'react-slick';
 import events from './events';
 import classNames from 'classnames';
