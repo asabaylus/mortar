@@ -49,6 +49,10 @@ class MTSlider extends Component {
   }
 
   onSlideChange(currentSlide) {
+    this.setState({
+      currentSlideIndex: currentSlide
+    });
+
     const slideData = {
       currentSlideIndex: currentSlide
     };
@@ -61,20 +65,28 @@ class MTSlider extends Component {
     this.onSlideChange = this.onSlideChange.bind(this);
 
     this.state = {
-      currentSlide: 0
+      currentSlideIndex: 0
     };
   }
 
   render() {
+    const props = this.props;
+    const state = this.state;
     const settings = {
       afterChange: this.onSlideChange,
       className: 'mt_slider-container mt_intratio--photo mt_bgcolor-neutral-xxd',
-      nextArrow: <NextButton />,
-      prevArrow: <PrevButton />,
-      useCSS: this.props.animations
+      nextArrow: <NextButton
+        infinite={props.infinite}
+        currentSlide={state.currentSlideIndex}
+        slideCount={props.slides.length} />,
+      prevArrow: <PrevButton
+        infinite={props.infinite}
+        currentSlide={state.currentSlideIndex} />,
+      useCSS: props.animations,
+      infinite: props.infinite
     };
 
-    const slides = this.props.slides.map((slide, i) => {
+    const slides = props.slides.map((slide, i) => {
       const {type, ...data} = slide;
       const slideMarkup = this.findSlideType(type, data);
 
