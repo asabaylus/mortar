@@ -2,8 +2,8 @@
 
 import React, { Component, PropTypes }  from 'react';
 import Slick from 'react-slick';
-import PubSub from 'pubsub-js';
-import events from '../../../scripts/events';
+import {Pestle} from '../../../scripts/pestle/main.js';
+import events from './events';
 
 class PrevButton extends React.Component {
   render() {
@@ -37,12 +37,12 @@ class MTSlider extends Component {
     }
   }
 
-  onChangeSlide(data) {
+  onChangeSlide(currentSlide) {
     const slideData = {
-      currentSlideIndex: data
-    }
+      currentSlideIndex: currentSlide
+    };
 
-    PubSub.publish('MTSlider', slideData);
+    Pestle.PubSub.publish(events.slideChange, slideData);
   }
 
   render() {
@@ -50,7 +50,8 @@ class MTSlider extends Component {
       afterChange: this.onChangeSlide,
       className: 'mt_slider-container mt_intratio--photo mt_bgcolor-neutral-xxd',
       nextArrow: <NextButton />,
-      prevArrow: <PrevButton />
+      prevArrow: <PrevButton />,
+      useCSS: this.props.useCSS
     };
 
     const slides = this.props.slides.map((slide, i) => {
@@ -69,15 +70,10 @@ class MTSlider extends Component {
 }
 
 MTSlider.defaultProps = {
-  transitionSpeed: 100,
-  transitionType: 'fade',
-  initialSlide: 1
+  useCSS: true
 }
 
 MTSlider.propTypes = {
-  transitionSpeed: PropTypes.number,
-  transitionType: PropTypes.oneOf(['fade']),
-  initialSlide: PropTypes.number,
   slides: PropTypes.arrayOf(PropTypes.shape({
     type: PropTypes.string.isRequired
   }))
