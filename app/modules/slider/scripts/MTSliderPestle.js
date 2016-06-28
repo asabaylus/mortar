@@ -8,10 +8,9 @@ import SliderComponent from './MTSlider.jsx';
 class Slider extends Module {
   init() {
     ReactDOM.render(<SliderComponent
-      transitionSpeed={this.options.transitionSpeed}
-      transitionType={this.options.transitionType}
-      initialSlide={this.options.initialSlide}
+      infinite={this.options.infinite}
       slides={this.options.slides}
+      animations={this.options.animations}
     />, this.el);
   }
 }
