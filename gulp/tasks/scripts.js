@@ -18,6 +18,9 @@ const packagesSrc = './app/scripts/pestle/src/**/*.js'
 const packagesDest = 'packages/pestle';
 
 gulp.task('packages', function() {
+  gulp.src('./app/scripts/pestle/README.md')
+    .pipe(gulp.dest(packagesDest));
+
   return gulp.src(packagesSrc)
     .pipe(plumber({
       errorHandler: function (err) {
