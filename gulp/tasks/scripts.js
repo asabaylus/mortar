@@ -35,7 +35,7 @@ gulp.task('packages', function() {
     .pipe(gulp.dest(packagesDest));
 });
 
-gulp.task('scripts', function(){
+gulp.task('scripts', ['packages'], function(){
   return browserify('./app/scripts/main.js')
     .transform('babelify', {presets: ['es2015', 'stage-0', 'react']})
     .transform('aliasify', { replacements: {
