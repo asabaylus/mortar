@@ -29,3 +29,7 @@ This task will build a *development* version of documentation site with no watch
 ### `gulp build -p` or `gulp build --production`
 
 This task will build a *production* version of documentation site with no watch task.
+
+### Test URL's
+
+http://assets-qa.int.ngeo.com/mortar2/latest/site/
