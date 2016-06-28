@@ -67,7 +67,7 @@ class MTSlider extends Component {
 
   render() {
     const settings = {
-      afterChange: this.onChangeSlide,
+      afterChange: this.onSlideChange,
       className: 'mt_slider-container mt_intratio--photo mt_bgcolor-neutral-xxd',
       nextArrow: <NextButton />,
       prevArrow: <PrevButton />,
