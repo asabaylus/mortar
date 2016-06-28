@@ -1,52 +1,106 @@
-<div class="pagewrapper mt_row mt_col-gut-lg">
-  <div class="mt_col-lg-8 mt_row-gut-3">
-    <h3 class="mt_h3"> Articles and In-line Styles </h3>
+<div class="pagewrapper mt_row mt_row-gut-4 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
 
-    <p class="mt_subh4">
-      The following styles can be used either inside or outside of a wrapping element with the <code>.mt_article</code> class &lpar;e.g., <code>&lt;article class=&apos;mt_article&apos;&gt;</code>&rpar;.
-        Simply use the generic tag for any element below to inherit the desired styles. Outside of a wrapper, apply the class names listed below to create the same styles &lpar;for example, <code> &lt;p class=&apos;mt_body&apos;&gt;</code>&rpar;.
-    </p>
-    <article class="mt_article">
-      <p class="mt_h5">&lt;p&gt; or .mt_body</p>
+  <h3 class="mt_h3">Captions and Labels</h3>
 
-      <div class="typographyexamples-item mt_bgcolor--neutral--xxl">
-        <p>
-          Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-          turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit
-          amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi
-          vitae est. Mauris placerat eleifend leo.
-        </p>
+  <div class="mt_row">
+    <div class="mt_col-lg-3">
+      <p class="mt_h5">Body Copy</p>
+      <p class="mt_subh4 mt_row-gut-3">These paragraph styles can be used either inside or outside a wrapping element, such as an <code>&lt;article&gt;</code> tag.</p>
+    </div>
+
+    <div class="mt_col-lg-8 mt_col-lg-offset-1">
+      <div class="typographyexamples-item mt_bgcolor--neutral--xxl mt_body">
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
       </div>
 
-      <p class="mt_h5">
-        &lt;h1&gt; or .mt_h4, &lt;h2&gt;, &lt;h3&gt;
-      </p>
+      <!-- Code snippet -->
+      <pre class="codesnippet"><code class="language-markup">&lt;p class="mt_body"&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/p&gt;</code></pre>
 
-      <div class="typographyexamples-item mt_bgcolor--neutral--xxl">
+      <p class="mt_subh4">or, inside an article container...</p>
+
+      <!-- Code snippet -->
+<pre class="codesnippet"><code class="language-markup">&lt;div class="mt_article"&gt;
+  &lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="mt_row">
+    <div class="mt_col-lg-3">
+      <p class="mt_h5">Subheadings</p>
+      <p class="mt_subh4 mt_row-gut-3">Use the heading tags inside an article container to denote structured sections of content. The <code>&lt;h3&gt;    –    &lt;h6&gt;</code> tags are identical in appearance to discourage excessive levels of hierarchy.</p>
+    </div>
+
+    <div class="mt_col-lg-8 mt_col-lg-offset-1">
+      <div class="typographyexamples-item mt_bgcolor--neutral--xxl mt_article">
         <h1>Subheading 1</h1>
-        <h2>Subheading 2</h1>
-        <h3>Subheading 3</h1>
+        <h2>Subheading 2</h2>
+        <h3>Subheading 3</h3>
+        <h4>Subheading 4</h4>
+        <h5>Subheading 5</h5>
+        <h6>Subheading 6</h6>
       </div>
 
-      <p class="mt_h5">&lt;strong&gt;, &lt;em&gt;</p>
+      <!-- Code snippet -->
+<pre class="codesnippet"><code class="language-markup">&lt;p class="mt_h4"&gt;Subheading 1&lt;/p&gt;</code></pre>
 
-      <div class="typographyexamples-item mt_bgcolor--neutral--xxl">
-        <strong>Bolded statement.</strong>
-        <em>Italicized statement.</em>
+<pre class="codesnippet"><code class="language-markup">&lt;div class="mt_article"&gt;
+  &lt;h1&gt;Subheading 1&lt;/h1&gt;
+  &lt;h2&gt;Subheading 2&lt;/h2&gt;
+  &lt;h3&gt;Subheading 3&lt;/h3&gt;
+  &lt;h4&gt;Subheading 4&lt;/h4&gt;
+  &lt;h5&gt;Subheading 5&lt;/h5&gt;
+  &lt;h6&gt;Subheading 6&lt;/h6&gt;
+&lt;/div&gt;</code></pre>
+
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="mt_row">
+    <div class="mt_col-lg-3">
+      <p class="mt_h5">In-Line Text Styles</p>
+      <p class="mt_subh4 mt_row-gut-3">The following classes can be used within the context of body copy.</p>
+    </div>
+
+    <div class="mt_col-lg-8 mt_col-lg-offset-1">
+      <div class="typographyexamples-item mt_bgcolor--neutral--xxl mt_article">
+        <p><strong>Bolded Statement.</strong> <em>Italicized statement. </em></p>
+        <p><u>Underlined statement</u> <s>Struckthrough statement</s></p>
+        <p>Superscript <sup>2</sup> and Subscript <sub>2</sub></p>
+        <p>Pellentesque ac turpis egestas. <a href="">Inline text link.</a> Donec eu libero sit amet quam egestas semper.</p>
       </div>
 
-      <p class="mt_h5">&lt;a&gt; or .mt_link</p>
+      <!-- Code snippet -->
 
-      <div class="typographyexamples-item mt_bgcolor--neutral--xxl">
-        <p>
-          Pellentesque ac turpis egestas. <a class="mt_link" href="#">In-line text link</a>.
-          Donec eu libero sit amet quam egestas semper.
-        </p>
-      </div>
+<pre class="codesnippet"><code class="language-markup">&lt;p class="mt_body"&gt;&lt;strong&gt;Bolded Statement.&lt;/strong&gt;&lt;em&gt;Italicized statement. &lt;/em&gt;&lt;/p&gt;
+&lt;p class="mt_body"&gt;&lt;u&gt;Underlined statement&lt;/u&gt; &lt;s&gt;Struckthrough statement&lt;/s&gt;&lt;/p&gt;
+&lt;p class="mt_body"&gt;Superscript &lt;sup&gt;2&lt;/sup&gt; and Subscript &lt;sub&gt;2&lt;/sub&gt;&lt;/p&gt;
+&lt;p class="mt_body"&gt;Pellentesque ac turpis egestas. &lt;a href=""&gt;Inline text link.&lt;/a&gt; Donec eu libero sit amet quam egestas semper.&lt;/p&gt;
+</code></pre>
 
-      <p class="mt_h5">&lt;ol&gt;, &lt;ul&gt; or .mt_list</p>
+<pre class="codesnippet"><code class="language-markup">&lt;div class="mt_article"&gt;
+  &lt;p&gt;&lt;strong&gt;Bolded Statement.&lt;/strong&gt; &lt;em&gt;Italicized statement.&lt;/em&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;u&gt;Underlined statement&lt;/u&gt; &lt;s&gt;Struckthrough statement&lt;/s&gt;&lt;/p&gt;
+  &lt;p&gt;Superscript &lt;sup&gt;2&lt;/sup&gt; and Subscript &lt;sub&gt;2&lt;/sub&gt;&lt;/p&gt;
+  &lt;p&gt;Pellentesque ac turpis egestas. &lt;a href=""&gt;Inline text link.&lt;/a&gt; Donec eu libero sit amet quam egestas semper.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
 
-      <div class="typographyexamples-item mt_row-gut-3 mt_bgcolor--neutral--xxl">
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="mt_row">
+    <div class="mt_col-lg-3">
+      <p class="mt_h5">Ordered and Unordered Lists</p>
+    </div>
+
+    <div class="mt_col-lg-8 mt_col-lg-offset-1">
+      <div class="typographyexamples-item mt_bgcolor--neutral--xxl mt_article">
         <ol>
           <li>Item One</li>
           <li>Item Two</li>
@@ -60,21 +114,47 @@
         </ul>
       </div>
 
-      <h5 class="mt_h5">&lt;u&gt;, &lt;s&gt;</h5>
+      <!-- Code snippet -->
 
-      <div class="typographyexamples-item mt_bgcolor--neutral--xxl">
-        <u>Underlined statement.</u> <s> Struckthrough statement.</s>
-      </div>
+<pre class="codesnippet"><code class="language-markup">&lt;ol class="mt_list"&gt;
+  &lt;li&gt;Item One&lt;/li&gt;
+  &lt;li&gt;Item Two&lt;/li&gt;
+  &lt;li&gt;Item Three&lt;/li&gt;
+&lt;/ol&gt;
 
-      <h5 class="mt_h5">&lt;sup&gt;, &lt;sub&gt;</h5>
+&lt;ul class="mt_list"&gt;
+  &lt;li&gt;Item One&lt;/li&gt;
+  &lt;li&gt;Item Two&lt;/li&gt;
+  &lt;li&gt;Item Three&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 
-      <div class="typographyexamples-item mt_bgcolor--neutral--xxl">
-        Superscript<sup>[2]</sup> and Subscript<sub>2</sub>
-      </div>
+<pre class="codesnippet"><code class="language-markup">&lt;div class="mt_article"&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Item One&lt;/li&gt;
+    &lt;li&gt;Item Two&lt;/li&gt;
+    &lt;li&gt;Item Three&lt;/li&gt;
+  &lt;/ol&gt;
 
-      <h5 class="mt_h5">&lt;blockquote&gt; or .mt_blockquote</h5>
+  &lt;ul&gt;
+    &lt;li&gt;Item One&lt;/li&gt;
+    &lt;li&gt;Item Two&lt;/li&gt;
+    &lt;li&gt;Item Three&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
 
-      <div class="typographyexamples-item example-border">
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="mt_row">
+    <div class="mt_col-lg-3">
+      <p class="mt_h5">Block Quotes</p>
+      <p class="mt_subh4 mt_row-gut-3">Block quotes are used to offset text that has been quoted or excerpted from another source. It is typically used for longer blocks of text that are too long to display inline. The source of the quote should always be attributed when possible.</p>
+    </div>
+
+    <div class="mt_col-lg-8 mt_col-lg-offset-1">
+      <div class="typographyexamples-item example-border mt_article">
         <blockquote>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
 
@@ -84,9 +164,22 @@
         </blockquote>
       </div>
 
-      <p class="mt_subh4">
-        Block quotes are used to offset text that has been quoted or excerpted from another source. It is typically used for longer blocks of text that are too long to display in-line. The source of the quote should always be attributed when possible.
-      </p>
-    </article>
+      <!-- Code snippet -->
+<pre class="codesnippet"><code class="language-markup">&lt;blockquote class="mt_blockquote"&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.&lt;/p&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.&lt;/p&gt;
+  &lt;footer class="mt_blockquote--footer"&gt;&lt;a href="#" class="mt_h5 mt_link"&gt;Attribution&lt;/a&gt;, &lt;span class="mt_subh4"&gt;Attribution 2&lt;/span&gt;&lt;/footer&gt;
+&lt;/blockquote&gt;</code></pre>
+
+<pre class="codesnippet"><code class="language-markup">&lt;div class="mt_article"&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.&lt;/p&gt;
+    &lt;footer class="mt_blockquote--footer"&gt;&lt;a href="#" class="mt_h5 mt_link"&gt;Attribution&lt;/a&gt;, &lt;span class="mt_subh4"&gt;Attribution 2&lt;/span&gt;&lt;/footer&gt;
+  &lt;/blockquote&gt;
+&lt;div&gt;</code></pre>
+
+    </div>
   </div>
+
 </div>
