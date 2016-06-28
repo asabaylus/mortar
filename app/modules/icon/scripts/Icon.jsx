@@ -5,8 +5,16 @@ import React, { Component, PropTypes }  from 'react';
 class Icon extends Component {
 
   render(){
-    let sizeClass = "mt_icon ";
-    this.props.size ? sizeClass += "mt_icon--large" : null;
+    let iconClasses = "mt_icon ";
+    if(this.props.size){
+      iconClasses += "mt_icon--large ";
+    }
+    if(this.props.align){
+      iconClasses += "mt_icon--" + this.props.align;
+    }
+    if(this.props.color){
+      iconClasses += " mt_color--" + this.props.color;
+    }
 
     /***
      * removing namespace attribute as it is passed to the DOM node through setAttributeNS method by default:
@@ -17,7 +25,7 @@ class Icon extends Component {
      * https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xlink:title
      ***/
 
-    return <svg className={sizeClass + " mt_color--" + this.props.color} >
+    return <svg className={iconClasses} >
       <title>{this.props.alt}</title>
       <use xlinkHref={this.props.name}></use>
     </svg>
