@@ -6,6 +6,7 @@ const del = require('del');
 gulp.task('clean', function () {
   return del([
     '.tmp',
-    'packages/pestle/**/*.js'
+    'packages/pestle/**/*.js',
+    'packages/pestle/README.md'
   ]);
 });
