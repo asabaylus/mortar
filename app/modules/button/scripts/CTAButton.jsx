@@ -11,10 +11,7 @@ class CTAButton extends Component {
     this.isReset = this.props.type === 'reset';
 
     let attrs = {
-      title: this.props.link.title,
-      href: this.props.link.url,
-      target: this.props.link.target,
-      className: 'mt_btn mt_fullwidth ' + 'mt_btn-' + this.props.style,
+      className: 'mt_btn mt_fullwidth ' + 'mt_btn-' + ((this.isTextLink) ? 'naked' : this.props.style),
       // handle all events even if those are not defined by user.
       // so that we can stop propagations when button is disabled
       onClick: this.handleEvent,
@@ -22,8 +19,24 @@ class CTAButton extends Component {
       onBlur: this.handleEvent
     };
 
+    if (this.props.type && this.props.type !== "link"){
+      if (this.isSubmit){
+        attrs.type = 'submit';
+      }else if (this.isReset){
+        attrs.type = 'reset';
+      }else{
+        attrs.type = 'button';
+      }
+    }
+
+    if(this.props.type === "link"){
+      attrs.href = this.props.link.url;
+      attrs.target = this.props.link.target;
+      attrs.title = this.props.link.title;
+    }
+
     if (this.props.inactive) {
-      attrs.className += '--disabled ';
+      attrs.className += '--inactive ';
     }
 
     // We disable CTA buttons and linksText in author mode to prevent opening external links.
@@ -34,19 +47,8 @@ class CTAButton extends Component {
       };
     }
 
-    // If the user didn't customize className,
-    // then we should handle the status and apply
-    // the proper default classes using Mortar's styles
-    if (!this.props.className) {
-      if (this.isTextLink) {
-        attrs.className += 'mt_btn mt_fullwidth mt_btn-naked ';
-      } else {
-        attrs.className += 'mt_btn mt_fullwidth ' + this.props.style;
-      }
-    }
-
     let label;
-    if(this.props.icon) {
+    if(this.props.icon.name) {
       switch (this.props.icon.align) {
         case "left":
           label = <div className="mt_iconandlabel--horizontal">
@@ -92,9 +94,9 @@ class CTAButton extends Component {
     if(this.isTextLink){
       button = <a {...attrs}>{ label }</a>
     }else if (this.isSubmit) {
-      button = <input {...attrs}>{ label }</input>
+      button = <button {...attrs}>{ label }</button>
     } else if (this.isReset) {
-      button = <input {...attrs}>{ label }</input>
+      button = <button {...attrs}>{ label }</button>
     } else {
       button = <button {...attrs}>{ label }</button>
     }
@@ -131,7 +133,6 @@ class CTAButton extends Component {
 
 CTAButton.propTypes = {
   authorMode: PropTypes.bool,
-  className: PropTypes.string,
   icon: PropTypes.shape({
     name: PropTypes.string,
     align: PropTypes.string,
@@ -161,7 +162,7 @@ CTAButton.propTypes = {
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   style: PropTypes.string,
-  type: PropTypes.string
+  type: PropTypes.oneOf(['default', 'submit', 'reset', 'link'])
 }
 
 export default CTAButton

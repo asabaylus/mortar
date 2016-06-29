@@ -1,0 +1,24 @@
+div[data-pestle-module="CTAButton"]{
+  //Override for user-agent defaults link button text/icon
+  a.mt_btn {
+    color: inherit;
+    text-decoration: none;
+  }
+  .mt_btn{
+    height: 4.1em;
+  }
+  //Center icon and text within button
+  .mt_iconandlabel--horizontal, .mt_iconandlabel--vertical {
+    position: absolute;
+    // correct flexbox centering being thrown off by bottom margin of button
+    top: 44%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+}

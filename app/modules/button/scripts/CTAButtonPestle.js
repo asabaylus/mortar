@@ -9,7 +9,6 @@ class CTAButton extends Module {
   init() {
     ReactDOM.render(<CTAButtonComponent
       authorMode={this.options.authorMode}
-      className={this.options.className}
       icon={this.options.icon}
       label={this.options.label}
       link={this.options.link}
