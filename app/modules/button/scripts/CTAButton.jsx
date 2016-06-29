@@ -10,29 +10,25 @@ class CTAButton extends Component {
     this.isSubmit = this.props.type === 'submit';
     this.isReset = this.props.type === 'reset';
 
-    var attrs = {
+    let attrs = {
       title: this.props.link.title,
-      href: this.props.path,
-      target: this.props.target,
-      className: this.props.className + ' cta ' + ((this.isTextLink) ? 'cta-textLink ' : 'cta-button '),
+      href: this.props.link.url,
+      target: this.props.link.target,
+      className: 'mt_btn mt_fullwidth ' + 'mt_btn-' + this.props.style,
       // handle all events even if those are not defined by user.
       // so that we can stop propagations when button is disabled
       onClick: this.handleEvent,
       onFocus: this.handleEvent,
-      onBlur: this.handleEvent,
-      ngsIsEdit: NGS.core_site.sandbox.aem.isEditMode()
+      onBlur: this.handleEvent
     };
 
-    if (!this.props.enabled) {
-      attrs.className += ' cta--disabled ';
+    if (this.props.inactive) {
+      attrs.className += '--disabled ';
     }
 
-    // We disable CTA buttons and linksText on edit mode due to prevent opening external links.
-    // Otherwise CORS errors are shown and CQ is no longer functional.
-    if (attrs.ngsIsEdit && this.props.path && this.props.path[0] !== '#') {
-      attrs.className += ' cta--ngs-is-edit ';
+    // We disable CTA buttons and linksText in author mode to prevent opening external links.
+    if (this.props.authorMode) {
       attrs.onClick = function(e) {
-        NGS.core_site.sandbox.log.info('Prevented CTA from addressing the link ' + attrs.href);
         e.stopPropagation();
         e.preventDefault();
       };
@@ -43,47 +39,53 @@ class CTAButton extends Component {
     // the proper default classes using Mortar's styles
     if (!this.props.className) {
       if (this.isTextLink) {
-        attrs.className += 'mt_btn mt_btn--naked ';
+        attrs.className += 'mt_btn mt_fullwidth mt_btn-naked ';
       } else {
-        attrs.className += 'mt_btn ' + ((this.props.enabled) ? 'mt_btn--primary ' : 'mt_btn--disabled ');
+        attrs.className += 'mt_btn mt_fullwidth ' + this.props.style;
       }
     }
 
     let label;
     if(this.props.icon) {
       switch (this.props.icon.align) {
-        case "left" || "":
+        case "left":
           label = <div className="mt_iconandlabel--horizontal">
-            <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
-                  alt={ this.props.icon.alt }/>
-            <span class="mt_subh4">{this.props.label}</span>
-          </div>;
+                    <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
+                          alt={ this.props.icon.alt }/>
+                    <span class="mt_subh4">{this.props.label}</span>
+                  </div>;
           break;
         case "right":
           label = <div className="mt_iconandlabel--horizontal">
-            <span class="mt_subh4">{this.props.label}</span>
-            <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
-                  alt={ this.props.icon.alt }/>
-          </div>;
+                    <span class="mt_subh4">{this.props.label}</span>
+                    <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
+                          alt={ this.props.icon.alt }/>
+                  </div>;
           break;
         case "top":
-          label = <div className="mt_iconandlabel--horizontal">
-            <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
-                  alt={ this.props.icon.alt }/>
-            <span class="mt_subh4">{this.props.label}</span>
-          </div>;
+          label = <div className="mt_iconandlabel--vertical">
+                    <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
+                          alt={ this.props.icon.alt }/>
+                    <span class="mt_subh4">{this.props.label}</span>
+                  </div>;
           break;
         case "bottom":
-          label = <div className="mt_iconandlabel--horizontal">
-            <span class="mt_subh4">{this.props.label}</span>
-            <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
-                  alt={ this.props.icon.alt }/>
-          </div>;
+          label = <div className="mt_iconandlabel--vertical">
+                    <span class="mt_subh4">{this.props.label}</span>
+                    <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
+                          alt={ this.props.icon.alt }/>
+                  </div>;
           break;
         default:
-          label = this.props.label;
+          label = <div className="mt_iconandlabel--horizontal">
+                    <Icon name={this.props.icon.name} align="left" size={this.props.icon.size}
+                          alt={ this.props.icon.alt }/>
+                    <span class="mt_subh4">{this.props.label}</span>
+                  </div>;
           break;
       }
+    }else{
+      label = this.props.label;
     }
 
     let button;
@@ -97,9 +99,7 @@ class CTAButton extends Component {
       button = <button {...attrs}>{ label }</button>
     }
 
-    return (
-      {button}
-    )
+    return button
   }
 
   /*  Private Methods */
@@ -111,7 +111,7 @@ class CTAButton extends Component {
    otherwise nothing happens
    */
   handleEvent(event) {
-    if (event.type === 'click' && this.props.enabled && !this.isTextLink && this.props.path) {
+    if (event.type === 'click' && !this.props.inactive && !this.isTextLink && this.props.path) {
       // If this is a button with a path specified
       // the CTA button will navigate the user to the specified path url
       window.open(this.props.path, this.props.target);
@@ -139,10 +139,11 @@ CTAButton.propTypes = {
     color: PropTypes.string,
     alt: PropTypes.string
   }),
+  label: PropTypes.string,
   link: PropTypes.shape({
     title: PropTypes.string,
     url: PropTypes.string.isRequired,
-    target: PropTypes.oneOf(['_self, _parent, _blank, _top']).isRequired,
+    target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
     //https://support.google.com/analytics/answer/1033867?hl=en#more_information_and_examples_for_each_parameter
     trackingCodes: PropTypes.shape({
       utmSource: PropTypes.string,
