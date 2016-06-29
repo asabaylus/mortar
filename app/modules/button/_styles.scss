@@ -5,12 +5,11 @@ div[data-pestle-module="CTAButton"]{
     text-decoration: none;
   }
   .mt_btn{
-    height: 4.1em;
+    height: 55px;
   }
   //Center icon and text within button
   .mt_iconandlabel--horizontal, .mt_iconandlabel--vertical {
     position: absolute;
-    // correct flexbox centering being thrown off by bottom margin of button
     top: 44%;
     left: 50%;
     width: auto;

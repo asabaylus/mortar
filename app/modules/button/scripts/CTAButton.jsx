@@ -29,17 +29,21 @@ class CTAButton extends Component {
       }
     }
 
-    if(this.props.type === "link"){
+    if (this.props.type === "link"){
       attrs.href = this.props.link.url;
       attrs.target = this.props.link.target;
       attrs.title = this.props.link.title;
     }
 
     if (this.props.inactive) {
-      attrs.className += '--inactive ';
+      attrs.className += "--inactive";
     }
 
-    // We disable CTA buttons and linksText in author mode to prevent opening external links.
+    if (this.props.inverse && (this.props.style === "secondary" || this.props.style === "naked") && !this.props.inactive){
+      attrs.className += "--reversed";
+    }
+
+    // Disable CTA buttons and linksText in author mode to prevent opening external links.
     if (this.props.authorMode) {
       attrs.onClick = function(e) {
         e.stopPropagation();
@@ -48,7 +52,7 @@ class CTAButton extends Component {
     }
 
     let label;
-    if(this.props.icon.name) {
+    if (this.props.icon.name) {
       switch (this.props.icon.align) {
         case "left":
           label = <div className="mt_iconandlabel--horizontal">
@@ -140,11 +144,12 @@ CTAButton.propTypes = {
     color: PropTypes.string,
     alt: PropTypes.string
   }),
+  inactive: PropTypes.bool,
+  inverse: PropTypes.bool,
   label: PropTypes.string,
   link: PropTypes.shape({
-    title: PropTypes.string,
-    url: PropTypes.string.isRequired,
     target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
+    title: PropTypes.string,
     //https://support.google.com/analytics/answer/1033867?hl=en#more_information_and_examples_for_each_parameter
     trackingCodes: PropTypes.shape({
       utmSource: PropTypes.string,
@@ -152,10 +157,9 @@ CTAButton.propTypes = {
       utmTerm: PropTypes.array, // can be multiple keywords - will need to be separated and concatenated in url
       utmContent: PropTypes.string,
       utmCampaign: PropTypes.string
-    })
+    }),
+    url: PropTypes.string.isRequired
   }),
-  inactive: PropTypes.bool,
-  inverse: PropTypes.bool,
   // handle all events even if those are not defined by user.
   // so that we can stop propagations when button is disabled
   onClick: PropTypes.func,
