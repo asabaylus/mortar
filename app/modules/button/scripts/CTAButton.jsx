@@ -14,9 +14,9 @@ class CTAButton extends Component {
       className: 'mt_btn mt_fullwidth ' + 'mt_btn-' + ((this.isTextLink) ? 'naked' : this.props.style),
       // handle all events even if those are not defined by user.
       // so that we can stop propagations when button is disabled
-      onClick: this.handleEvent,
-      onFocus: this.handleEvent,
-      onBlur: this.handleEvent
+      onClick: this.props.onClick,
+      onFocus: this.props.onFocus,
+      onBlur: this.props.onBlur
     };
 
     if (this.props.type && this.props.type !== "link"){
@@ -33,6 +33,19 @@ class CTAButton extends Component {
       attrs.href = this.props.link.url;
       attrs.target = this.props.link.target;
       attrs.title = this.props.link.title;
+    }
+
+    // if tracking codes are present, concat terms to be used in query string
+    // https://support.google.com/analytics/answer/1033867?hl=en#more_information_and_examples_for_each_parameter
+    let terms;
+    if (this.props.link.trackingCodes){
+      function concatTerms(element){
+        terms += element + "+";
+      }
+      let termsArr = this.props.link.trackingCodes.utmTerm;
+      termsArr.forEach(concatTerms);
+      attrs.href = attrs.href + "?" + "utm_source=" + this.props.link.trackingCodes.utmSource + "&utm_medium=" + this.props.link.trackingCodes.utmMedium +
+        "&utm_term=" + this.terms + "&utm_content=" + this.props.link.trackingCodes.utmContent + "&utm_campaign=" + this.props.link.trackingCodes.utmCampaign;
     }
 
     if (this.props.inactive) {
@@ -107,32 +120,6 @@ class CTAButton extends Component {
 
     return button
   }
-
-  /*  Private Methods */
-
-  /*
-   Proxy for dispatching CTA events only when
-   this is a button and must be enabled
-   or this is a textLink (however enabled/disabled)
-   otherwise nothing happens
-   */
-  handleEvent(event) {
-    if (event.type === 'click' && !this.props.inactive && !this.isTextLink && this.props.path) {
-      // If this is a button with a path specified
-      // the CTA button will navigate the user to the specified path url
-      window.open(this.props.path, this.props.target);
-    }
-    if (this.props.enabled || this.isTextLink) {
-      var ctaEvent = _get( this.props, 'on' + _capitalize(event.type) );
-
-      if (typeof ctaEvent === 'function') {
-        ctaEvent.apply(this, arguments);
-      }
-    } else {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-  }
 }
 
 CTAButton.propTypes = {
@@ -150,7 +137,6 @@ CTAButton.propTypes = {
   link: PropTypes.shape({
     target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
     title: PropTypes.string,
-    //https://support.google.com/analytics/answer/1033867?hl=en#more_information_and_examples_for_each_parameter
     trackingCodes: PropTypes.shape({
       utmSource: PropTypes.string,
       utmMedium: PropTypes.string,
