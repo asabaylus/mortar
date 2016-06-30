@@ -41,6 +41,27 @@ class MTTwitter extends Component {
   }
 }
 
+class MTFacebook extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const url = "https://www.facebook.com/share.php?u=" + this.props.url;
+    openShareWindow(url, "Facebook", 575, 279);
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        Facebook
+      </button>
+    )
+  }
+}
+
+
 class MTSharing extends Component {
   render() {
     return (
@@ -48,6 +69,9 @@ class MTSharing extends Component {
         <MTTwitter
           url={this.props.docURL}
           title={this.props.docTitle}
+        />
+        <MTFacebook
+          url={this.props.docURL}
         />
       </div>
     );
