@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Module} from '../../main.js';
+import {Module} from '@natgeo/mortar-pestle';
 
 import Component from './Component.jsx';
 

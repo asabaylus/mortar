@@ -2,7 +2,7 @@
 
 import 'babel-polyfill';
 
-import {Pestle} from './pestle/main.js';
+import {Pestle} from '@natgeo/mortar-pestle';
 
 require('../modules/modals/scripts.js');
 require('../modules/slider/scripts/MTSliderPestle.js');

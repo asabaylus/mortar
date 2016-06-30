@@ -8,8 +8,8 @@
 
 import PubSub from 'pubsub-js';
 
-import Module from './lib/module';
-import ModuleManager from './lib/moduleManager';
+import Module from './module';
+import ModuleManager from './moduleManager';
 
 class Pestle {
   constructor() {

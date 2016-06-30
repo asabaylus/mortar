@@ -1,6 +1,6 @@
 'use strict';
 
-import Module from '../../../../../app/scripts/pestle/lib/module'
+import Module from '../../../../../app/scripts/pestle/src/module'
 
 describe('Module', () => {
   describe('instance', () => {

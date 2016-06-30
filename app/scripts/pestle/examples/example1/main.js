@@ -1,6 +1,6 @@
 'use strict';
 
-import {Pestle} from '../../main.js';
+import {Pestle} from '@natgeo/mortar-pestle';
 import MyModule from './MyModule';
 
 Pestle.ModuleManager.register('MyModule', MyModule);
