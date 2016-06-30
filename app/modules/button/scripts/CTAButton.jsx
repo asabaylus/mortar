@@ -33,19 +33,20 @@ class CTAButton extends Component {
       attrs.href = this.props.link.url;
       attrs.target = this.props.link.target;
       attrs.title = this.props.link.title;
-    }
 
-    // if tracking codes are present, concat terms to be used in query string
-    // https://support.google.com/analytics/answer/1033867?hl=en#more_information_and_examples_for_each_parameter
-    let terms;
-    if (this.props.link.trackingCodes){
-      function concatTerms(element){
-        terms += element + "+";
+      // if tracking codes are present, build query string with utm_terms concatenated, separated by plus sign
+      // https://support.google.com/analytics/answer/1033867?hl=en#more_information_and_examples_for_each_parameter
+      if (this.props.link.trackingCodes){
+        let terms = "";
+        let termsArr = this.props.link.trackingCodes.utmTerm;
+        function concatTerms(element, index, array){
+          let lastEl = index < array.length - 1;
+          terms += lastEl ? element + "+" : element;
+        }
+        termsArr.forEach(concatTerms);
+        attrs.href = attrs.href + "?" + "utm_source=" + this.props.link.trackingCodes.utmSource + "&utm_medium=" + this.props.link.trackingCodes.utmMedium +
+          "&utm_term=" + terms + "&utm_content=" + this.props.link.trackingCodes.utmContent + "&utm_campaign=" + this.props.link.trackingCodes.utmCampaign;
       }
-      let termsArr = this.props.link.trackingCodes.utmTerm;
-      termsArr.forEach(concatTerms);
-      attrs.href = attrs.href + "?" + "utm_source=" + this.props.link.trackingCodes.utmSource + "&utm_medium=" + this.props.link.trackingCodes.utmMedium +
-        "&utm_term=" + this.terms + "&utm_content=" + this.props.link.trackingCodes.utmContent + "&utm_campaign=" + this.props.link.trackingCodes.utmCampaign;
     }
 
     if (this.props.inactive) {
@@ -69,38 +70,38 @@ class CTAButton extends Component {
       switch (this.props.icon.align) {
         case "left":
           label = <div className="mt_iconandlabel--horizontal">
-                    <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
-                          alt={ this.props.icon.alt }/>
-                    <span class="mt_subh4">{this.props.label}</span>
-                  </div>;
+            <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
+                  alt={ this.props.icon.alt }/>
+            <span>{this.props.label}</span>
+          </div>;
           break;
         case "right":
           label = <div className="mt_iconandlabel--horizontal">
-                    <span class="mt_subh4">{this.props.label}</span>
-                    <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
-                          alt={ this.props.icon.alt }/>
-                  </div>;
+            <span>{this.props.label}</span>
+            <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
+                  alt={ this.props.icon.alt }/>
+          </div>;
           break;
         case "top":
           label = <div className="mt_iconandlabel--vertical">
-                    <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
-                          alt={ this.props.icon.alt }/>
-                    <span class="mt_subh4">{this.props.label}</span>
-                  </div>;
+            <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
+                  alt={ this.props.icon.alt }/>
+            <span>{this.props.label}</span>
+          </div>;
           break;
         case "bottom":
           label = <div className="mt_iconandlabel--vertical">
-                    <span class="mt_subh4">{this.props.label}</span>
-                    <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
-                          alt={ this.props.icon.alt }/>
-                  </div>;
+            <span>{this.props.label}</span>
+            <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
+                  alt={ this.props.icon.alt }/>
+          </div>;
           break;
         default:
           label = <div className="mt_iconandlabel--horizontal">
-                    <Icon name={this.props.icon.name} align="left" size={this.props.icon.size}
-                          alt={ this.props.icon.alt }/>
-                    <span class="mt_subh4">{this.props.label}</span>
-                  </div>;
+            <Icon name={this.props.icon.name} align="left" size={this.props.icon.size}
+                  alt={ this.props.icon.alt }/>
+            <span>{this.props.label}</span>
+          </div>;
           break;
       }
     }else{
