@@ -12,8 +12,6 @@ class CTAButton extends Component {
 
     let attrs = {
       className: 'mt_btn mt_fullwidth ' + 'mt_btn-' + ((this.isTextLink) ? 'naked' : this.props.style),
-      // handle all events even if those are not defined by user.
-      // so that we can stop propagations when button is disabled
       onClick: this.props.onClick,
       onFocus: this.props.onFocus,
       onBlur: this.props.onBlur
@@ -105,7 +103,9 @@ class CTAButton extends Component {
           break;
       }
     }else{
-      label = this.props.label;
+      label = <div className="mt_iconandlabel--horizontal">
+                <span>{this.props.label}</span>
+              </div>
     }
 
     let button;
@@ -141,14 +141,12 @@ CTAButton.propTypes = {
     trackingCodes: PropTypes.shape({
       utmSource: PropTypes.string,
       utmMedium: PropTypes.string,
-      utmTerm: PropTypes.array, // can be multiple keywords - will need to be separated and concatenated in url
+      utmTerm: PropTypes.array, // can be multiple keywords
       utmContent: PropTypes.string,
       utmCampaign: PropTypes.string
     }),
     url: PropTypes.string.isRequired
   }),
-  // handle all events even if those are not defined by user.
-  // so that we can stop propagations when button is disabled
   onClick: PropTypes.func,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,

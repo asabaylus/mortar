@@ -7,7 +7,7 @@ div[data-pestle-module="CTAButton"]{
   .mt_btn{
     height: 55px;
   }
-  //Center icon and text within button
+  //Center icon and text within button, or center link if no icon
   .mt_iconandlabel--horizontal, .mt_iconandlabel--vertical {
     position: absolute;
     top: 44%;
