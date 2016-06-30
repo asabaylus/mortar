@@ -12,9 +12,9 @@ class CTAButton extends Component {
 
     let attrs = {
       className: 'mt_btn mt_fullwidth ' + 'mt_btn-' + ((this.isTextLink) ? 'naked' : this.props.style),
-      onClick: this.props.onClick,
-      onFocus: this.props.onFocus,
-      onBlur: this.props.onBlur
+      onClick: (this.props.authorMode || this.props.inactive) ? null : this.props.onClick,
+      onFocus: (this.props.authorMode || this.props.inactive) ? null : this.props.onFocus,
+      onBlur: (this.props.authorMode || this.props.inactive) ? null : this.props.onBlur
     };
 
     if (this.props.type && this.props.type !== "link"){
