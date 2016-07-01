@@ -69,16 +69,21 @@ class MTSharing extends Component {
   render() {
     return (
       <div>
-        <MTTwitter
-          url={this.props.docURL}
-          title={this.props.docTitle}
+        <MTSocialButton
+          url={this.props.url}
+          title={this.props.title}
         />
-        <MTFacebook
-          url={this.props.docURL}
+        <MTSocialButton
+          url={this.props.url}
         />
       </div>
     );
   }
+}
+
+MTSharing.propTypes = {
+  url: PropTypes.string,
+  title: PropTypes.string
 }
 
 export default MTSharing

@@ -9,8 +9,8 @@ import SharingComponent from './MTSharing.jsx';
 class Sharing extends Module {
   init() {
     ReactDOM.render(<SharingComponent
-      docURL={document.location.href}
-      docTitle={document.title}      
+      url={this.options ? this.options.url : document.location.href}
+      title={this.options ? this.options.title : document.title}
     />, this.el);
   }
 }
