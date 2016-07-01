@@ -10,12 +10,20 @@ class CTAButton extends Component {
     this.isSubmit = this.props.type === 'submit';
     this.isReset = this.props.type === 'reset';
 
-    let attrs = {
-      className: 'mt_btn mt_fullwidth ' + 'mt_btn-' + ((this.isTextLink) ? 'naked' : this.props.style),
+    const attrs = {
+      className: 'mt_btn mt_fullwidth ' + 'mt_btn-' + ((this.isTextLink || this.props.style === "naked") ? 'naked' : this.props.style),
       onClick: (this.props.authorMode || this.props.inactive) ? null : this.props.onClick,
       onFocus: (this.props.authorMode || this.props.inactive) ? null : this.props.onFocus,
       onBlur: (this.props.authorMode || this.props.inactive) ? null : this.props.onBlur
     };
+
+    if (this.props.inactive) {
+      attrs.className += "--inactive";
+    }
+
+    if (this.props.inverse && (this.props.style === "secondary" || this.props.style === "naked") && !this.props.inactive){
+      attrs.className += " " + attrs.className + "--reversed";
+    }
 
     if (this.props.type && this.props.type !== "link"){
       if (this.isSubmit){
@@ -36,31 +44,15 @@ class CTAButton extends Component {
       // https://support.google.com/analytics/answer/1033867?hl=en#more_information_and_examples_for_each_parameter
       if (this.props.link.trackingCodes){
         let terms = "";
-        let termsArr = this.props.link.trackingCodes.utmTerm;
+        const termsArr = this.props.link.trackingCodes.utmTerm;
         function concatTerms(element, index, array){
-          let lastEl = index < array.length - 1;
+          const lastEl = index < array.length - 1;
           terms += lastEl ? element + "+" : element;
         }
         termsArr.forEach(concatTerms);
         attrs.href = attrs.href + "?" + "utm_source=" + this.props.link.trackingCodes.utmSource + "&utm_medium=" + this.props.link.trackingCodes.utmMedium +
           "&utm_term=" + terms + "&utm_content=" + this.props.link.trackingCodes.utmContent + "&utm_campaign=" + this.props.link.trackingCodes.utmCampaign;
       }
-    }
-
-    if (this.props.inactive) {
-      attrs.className += "--inactive";
-    }
-
-    if (this.props.inverse && (this.props.style === "secondary" || this.props.style === "naked") && !this.props.inactive){
-      attrs.className += "--reversed";
-    }
-
-    // Disable CTA buttons and linksText in author mode to prevent opening external links.
-    if (this.props.authorMode) {
-      attrs.onClick = function(e) {
-        e.stopPropagation();
-        e.preventDefault();
-      };
     }
 
     let label;

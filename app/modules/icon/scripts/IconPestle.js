@@ -2,7 +2,7 @@
 
 import React from 'react';
 import * as ReactDOM from 'react-dom';
-import {Pestle, Module} from '../../../scripts/pestle/main.js';
+import {Pestle, Module} from '@natgeo/mortar-pestle';
 import {default as IconComponent} from './Icon.jsx';
 
 class Icon extends Module {
