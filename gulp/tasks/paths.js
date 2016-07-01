@@ -5,7 +5,7 @@ module.exports = {
     siteSrc: 'app/site/',
     siteDest: '.tmp/site/',
 
-    mortarStylesSrc: 'app/{styles,icons}/*.scss',
+    mortarStylesSrc: 'app/{styles,icons}/**/*.scss',
     mortarStylesDest: 'lib/',
 
     mortarIconDir: 'app/icons/',
