@@ -69,11 +69,11 @@ class MTSharing extends Component {
   render() {
     return (
       <div>
-        <MTSocialButton
+        <MTTwitter
           url={this.props.url}
           title={this.props.title}
         />
-        <MTSocialButton
+        <MTFacebook
           url={this.props.url}
         />
       </div>
