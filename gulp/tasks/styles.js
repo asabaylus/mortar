@@ -7,10 +7,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const cleanCSS = require('gulp-clean-css');
 
-const docStylesSrc = 'app/site/_styles/*.scss';
-const docStylesDest = '.tmp/site/styles/';
-const stylesSrc = 'app/styles/*.scss';
-const stylesDest = 'lib/styles/';
+const paths = require('./paths');
 
 gulp.task('styles', [
   'stylesMortar',
@@ -23,37 +20,37 @@ gulp.task('prodStyles', [
 ]);
 
 gulp.task('stylesMortar', function() {
-  return gulp.src(stylesSrc)
+  return gulp.src(paths.mortarStylesSrc)
     .pipe(sourcemaps.init())
       .pipe(sass())
       .pipe(autoprefixer())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(stylesDest))
+    .pipe(gulp.dest(paths.mortarStylesDest))
     .pipe(bs.stream({once: true}));
 });
 
 gulp.task('stylesDocs', function() {
-  return gulp.src(docStylesSrc)
+  return gulp.src(paths.siteStylesSrc)
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(gulp.dest(docStylesDest))
+    .pipe(gulp.dest(paths.siteStylesDest))
     .pipe(bs.stream({once: true}));
 });
 
 gulp.task('prodStylesMortar', function() {
-  return gulp.src(stylesSrc)
+  return gulp.src(paths.mortarStylesSrc)
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(cleanCSS())
-    .pipe(gulp.dest(stylesDest))
+    .pipe(gulp.dest(paths.mortarStylesDest))
     .pipe(bs.stream({once: true}));
 });
 
 gulp.task('prodStylesDocs', function() {
-  return gulp.src(docStylesSrc)
+  return gulp.src(paths.siteStylesSrc)
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(cleanCSS())
-    .pipe(gulp.dest(docStylesDest))
+    .pipe(gulp.dest(paths.siteStylesDest))
     .pipe(bs.stream({once: true}));
 });

@@ -12,17 +12,19 @@ function extractFolderName(path) {
   return path.match(/([^\/]*)\/*$/)[1];
 };
 
+const paths = require('./paths');
+
 gulp.task('runExamples', function(done) {
-  glob('./app/scripts/pestle/examples/*/', function(err, folders) {
+  glob(paths.pestleSrc + 'examples/*/', function(err, folders) {
     folders.map(function(folder) {
       const folderName = extractFolderName(folder);
 
-      browserify('./app/scripts/pestle/examples/' + folderName + '/main.js')
+      browserify(paths.pestleSrc + 'examples/' + folderName + '/main.js')
       .transform('babelify', {presets: ['es2015', 'stage-0', 'react']})
       .transform('aliasify', {
         'replacements': {
-          '@natgeo/mortar-pestle': './app/scripts/pestle/src/main.js',
-          '@natgeo\/mortar-pestle\/(.*?(?:(?!\.js$).)*)' : './app/scripts/pestle/$1.js'
+          '@natgeo/mortar-pestle': paths.pestleSrc + 'src/main.js',
+          '@natgeo\/mortar-pestle\/(.*?(?:(?!\.js$).)*)' : paths.pestleSrc + '$1.js'
         }
       })
       .bundle()
@@ -40,7 +42,7 @@ gulp.task('runExamples', function(done) {
       server: {
         baseDir: [
           '.tmp/pestle/examples',
-          'app/scripts/pestle/examples'
+          paths.pestleSrc + 'examples'
         ]
       },
       xip: true

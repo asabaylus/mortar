@@ -19,9 +19,11 @@ const prodBuildTasks = [
 ]
 const buildTasks = argv.p ? prodBuildTasks : devBuildTasks;
 
+const paths = require('./paths');
+
 gulp.task('build', buildTasks, function() {
   if (argv.p) {
-    return gulp.src('lib/**/*')
-      .pipe(gulp.dest('.tmp/site'));
+    return gulp.src(paths.mortarDest +'**/*')
+      .pipe(gulp.dest(paths.siteDest));
   }
 });

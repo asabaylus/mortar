@@ -2,12 +2,14 @@
 
 const gulp = require('gulp');
 
+const paths = require('./paths');
+
 gulp.task('copy', function() {
   // styles
-  gulp.src(['app/styles/**/*.scss', 'app/icons/**/*.scss'], {base: './app/'})
-    .pipe(gulp.dest('lib/'));
+  gulp.src(paths.mortarStylesSrc, {base: './app/'})
+    .pipe(gulp.dest(paths.mortarDest));
 
   // modules
-  gulp.src(['app/modules/**/*.{js,jsx,scss,css}', '!app/modules/**/*Pestle.js'])
-    .pipe(gulp.dest('lib/modules'));
+  gulp.src(paths.mortarModulesSrc)
+    .pipe(gulp.dest(paths.mortarModulesDest));
 });

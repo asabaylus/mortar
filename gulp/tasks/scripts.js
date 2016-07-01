@@ -14,11 +14,13 @@ const buffer = require('vinyl-buffer');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 
-const packagesSrc = './app/scripts/pestle/src/**/*.js'
-const packagesDest = 'packages/pestle';
+const paths = require('./paths');
+
+const packagesSrc = paths.pestleSrc + 'src/**/*.js'
+const packagesDest = paths.pestleDest;
 
 gulp.task('packages', function() {
-  gulp.src('./app/scripts/pestle/README.md')
+  gulp.src(paths.pestleSrc + 'README.md')
     .pipe(gulp.dest(packagesDest));
 
   return gulp.src(packagesSrc)
@@ -42,27 +44,27 @@ gulp.task('scripts', ['packages'], function(){
   return browserify('./app/scripts/main.js')
     .transform('babelify', {presets: ['es2015', 'stage-0', 'react']})
     .transform('aliasify', { replacements: {
-      '^@natgeo/mortar-pestle$': './app/scripts/pestle/src/main.js',
-      '@natgeo\/mortar-pestle\/(.+)' : './app/scripts/pestle/src/$1.js'
+      '^@natgeo/mortar-pestle$': paths.pestleSrc + 'src/main.js',
+      '@natgeo\/mortar-pestle\/(.+)' : paths.pestleSrc + 'src/$1.js'
     }})
     .bundle()
     .pipe(source('main.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./.tmp/site/scripts'))
+    .pipe(gulp.dest('./' + paths.siteDest + 'scripts'))
 });
 
 gulp.task('prodScripts', ['packages'], function(){
   return browserify('./app/scripts/main.js')
     .transform('babelify', {presets: ['es2015', 'stage-0', 'react']})
     .transform('aliasify', { replacements: {
-      '^@natgeo/mortar-pestle$': './app/scripts/pestle/src/main.js',
-      '@natgeo\/mortar-pestle\/(.+)' : './app/scripts/pestle/src/$1.js'
+      '^@natgeo/mortar-pestle$': paths.pestleSrc + 'src/main.js',
+      '@natgeo\/mortar-pestle\/(.+)' : paths.pestleSrc + 'src/$1.js'
     }})
     .bundle()
     .pipe(source('main.js'))
     .pipe(buffer())
     .pipe(uglify())
-    .pipe(gulp.dest('./.tmp/site/scripts'))
+    .pipe(gulp.dest('./' + paths.siteDest + 'scripts'))
 });

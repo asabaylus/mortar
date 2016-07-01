@@ -14,6 +14,8 @@ const argv = require('yargs')
             .argv;
 const startPath = argv.s ? '/' + argv.s : null;
 
+const paths = require('./paths');
+
 // Static server
 gulp.task('serve', ['build'], function() {
   bs.init({
@@ -21,22 +23,22 @@ gulp.task('serve', ['build'], function() {
     startPath: startPath,
     server: {
       baseDir: [
-        '.tmp/site',
-        'lib'
+        paths.siteDest,
+        paths.mortarDest
       ]
     },
     xip: true
   });
 
-  gulp.watch('app/icons/*.svg', ['icons']);
-  gulp.watch('app/{styles,modules,icons}/**/*.scss', ['styles']);
-  gulp.watch('app/{scripts,modules}/**/*.{js,jsx}', ['scripts']);
-  gulp.watch('app/**/*.{md,html}', ['docs']);
-  gulp.watch('lib/symbol/svg/*.svg', ['docs']);
+  gulp.watch(paths.mortarIconsSrc, ['icons']);
+  gulp.watch(paths.mortarSrc + '{styles,modules,icons}/**/*.scss', ['styles']);
+  gulp.watch(paths.mortarSrc + '{scripts,modules}/**/*.{js,jsx}', ['scripts']);
+  gulp.watch(paths.mortarSrc + '**/*.{md,html}', ['docs']);
+  gulp.watch(paths.mortarDest + 'lib/symbol/svg/*.svg', ['docs']);
 
   // since the wintersmith files aren't created in a gulp stream it appears
   // gulp watch has trouble with them. thankfully browsersync's watch does not
-  bs.watch('.tmp/site/**/*.html').on('change', bs.reload);
-  bs.watch('lib/*.svg').on('change', bs.reload);
-  bs.watch('lib/scripts/*.js').on('change', bs.reload);
+  bs.watch(paths.siteDest + '**/*.html').on('change', bs.reload);
+  bs.watch(paths.mortarDest + '*.svg').on('change', bs.reload);
+  bs.watch(paths.mortarDest + 'scripts/*.js').on('change', bs.reload);
 });
