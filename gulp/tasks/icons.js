@@ -19,13 +19,15 @@ const config = {
   }
 };
 
+const paths = require('./paths');
+
 gulp.task('icons', function() {
-  return gulp.src('app/icons/*.svg')
+  return gulp.src(paths.mortarIconsSrc)
     .pipe(svgSprite(config))
-    .pipe(gulp.dest('.tmp/assets'));
+    .pipe(gulp.dest(paths.mortarIconsDest));
 });
 
 gulp.task('moveIconZip', function() {
   return gulp.src('app/icons/natgeo-icons.zip')
-    .pipe(gulp.dest('.tmp/assets'));
+    .pipe(gulp.dest(paths.siteDest));
 });
