@@ -50,7 +50,7 @@ gulp.task('scripts', ['packages'], function(){
     .pipe(buffer())
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./.tmp/assets/scripts'))
+    .pipe(gulp.dest('./.tmp/site/scripts'))
 });
 
 gulp.task('prodScripts', ['packages'], function(){
@@ -64,5 +64,5 @@ gulp.task('prodScripts', ['packages'], function(){
     .pipe(source('main.js'))
     .pipe(buffer())
     .pipe(uglify())
-    .pipe(gulp.dest('./.tmp/assets/scripts'))
+    .pipe(gulp.dest('./.tmp/site/scripts'))
 });

@@ -19,13 +19,16 @@ const config = {
   }
 };
 
+const iconsDest = 'lib/icons';
+const iconZipDest = '.tmp/site';
+
 gulp.task('icons', function() {
   return gulp.src('app/icons/*.svg')
     .pipe(svgSprite(config))
-    .pipe(gulp.dest('.tmp/assets'));
+    .pipe(gulp.dest(iconsDest));
 });
 
 gulp.task('moveIconZip', function() {
   return gulp.src('app/icons/natgeo-icons.zip')
-    .pipe(gulp.dest('.tmp/assets'));
+    .pipe(gulp.dest(iconZipDest));
 });

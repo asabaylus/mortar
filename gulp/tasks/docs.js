@@ -47,12 +47,13 @@ gulp.task('docs', ['icons'], function() {
   }
 
   Metalsmith('./')
+  .clean(false)
   .source('./app/site')
   .destination('./.tmp/site')
   .metadata({
     'title': 'Mortar',
     'description': 'A living styleguide for National Geographic Partners',
-    'iconSprite': fs.readFileSync('.tmp/assets/mortar-symbol-sprite.svg', 'utf8')
+    'iconSprite': fs.readFileSync('lib/icons/mortar-symbol-sprite.svg', 'utf8')
   })
   .ignore([
     '_layouts',

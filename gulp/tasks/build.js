@@ -7,19 +7,21 @@ const argv = require('yargs')
 const devBuildTasks = [
   'scripts',
   'styles',
-  'docs'
+  'docs',
+  'copy'
 ];
 const prodBuildTasks = [
   'prodScripts',
   'prodStyles',
   'moveIconZip',
-  'docs'
+  'docs',
+  'copy'
 ]
 const buildTasks = argv.p ? prodBuildTasks : devBuildTasks;
 
 gulp.task('build', buildTasks, function() {
   if (argv.p) {
-    return gulp.src('.tmp/assets/**/*')
+    return gulp.src('lib/**/*')
       .pipe(gulp.dest('.tmp/site'));
   }
 });
