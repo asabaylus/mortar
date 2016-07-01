@@ -34,8 +34,10 @@ class MTTwitter extends Component {
 
   render() {
     return (
-      <button onClick={this.handleClick}>
-        Twitter
+      <button onClick={this.handleClick} className="mt_btn">
+        <svg className="mt_icon mt_color--social--twitter mt_socialsharing">
+          <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#social-twitter"></use>
+        </svg>
       </button>
     )
   }
@@ -54,13 +56,14 @@ class MTFacebook extends Component {
 
   render() {
     return (
-      <button onClick={this.handleClick}>
-        Facebook
+      <button onClick={this.handleClick} className="mt_btn">
+        <svg className="mt_icon mt_color--social--facebook mt_socialsharing">
+          <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#social-facebook-f"></use>
+        </svg>
       </button>
     )
   }
 }
-
 
 class MTSharing extends Component {
   render() {
