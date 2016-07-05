@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes }  from 'react';
-import Icon from "../../icon/scripts/icon.jsx";
+import Icon from "../../icon/scripts/Icon.jsx";
 
 class CTAButton extends Component {
 
@@ -10,11 +10,21 @@ class CTAButton extends Component {
     this.isSubmit = this.props.type === 'submit';
     this.isReset = this.props.type === 'reset';
 
+    let buttonClasses = 'mt_btn mt_fullwidth ' + 'mt_btn-';
+    if(this.isTextLink || this.props.style === "naked"){
+      buttonClasses += "naked";
+    }else if(this.props.style === "success" || this.props.style === "error"){
+      console.log(this.props.style);
+      buttonClasses += "-" + this.props.style;
+    }else{
+      buttonClasses += this.props.style;
+    }
+
     const attrs = {
-      className: 'mt_btn mt_fullwidth ' + 'mt_btn-' + ((this.isTextLink || this.props.style === "naked") ? 'naked' : this.props.style),
-      onClick: (this.props.authorMode || this.props.inactive) ? null : this.props.onClick,
-      onFocus: (this.props.authorMode || this.props.inactive) ? null : this.props.onFocus,
-      onBlur: (this.props.authorMode || this.props.inactive) ? null : this.props.onBlur
+      className: buttonClasses,
+      onClick: (this.props.inactive) ? null : this.props.onClick,
+      onFocus: (this.props.inactive) ? null : this.props.onFocus,
+      onBlur: (this.props.inactive) ? null : this.props.onBlur
     };
 
     if (this.props.inactive) {
@@ -116,7 +126,6 @@ class CTAButton extends Component {
 }
 
 CTAButton.propTypes = {
-  authorMode: PropTypes.bool,
   icon: PropTypes.shape({
     name: PropTypes.string,
     align: PropTypes.string,
