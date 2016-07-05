@@ -34,7 +34,7 @@
   }
 }
 
-.mt_btn-default {
+.mt_btn--default {
   background-color: $mt_color-primary;
 
   &:hover {
@@ -42,7 +42,7 @@
     border: 1px solid $mt_color-primary-l;
   }
 
-  &--reversed {
+  &--inverse {
     color: $mt_color-neutral-xxxl;
   }
 
@@ -54,14 +54,14 @@
   }
 }
 
-.mt_btn-secondary {
+.mt_btn--secondary {
   border: 1px solid $mt_color-primary-l;
 
   &:hover {
     background: $mt_color-primary-l;
   }
 
-  &--reversed {
+  &--inverse {
     border: 1px solid $mt_color-primary-l;
     color: $mt_color-neutral-xxxl;
 
@@ -90,7 +90,7 @@
     color: $mt_color-primary;
   }
 
-  &--reversed {
+  &--inverse {
     color: $mt_color-neutral-xxxl;
   }
 
