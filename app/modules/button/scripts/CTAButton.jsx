@@ -12,9 +12,8 @@ class CTAButton extends Component {
 
     let buttonClasses = 'mt_btn mt_fullwidth ' + 'mt_btn-';
     if(this.isTextLink || this.props.style === "naked"){
-      buttonClasses += "naked";
+      buttonClasses += "-naked";
     }else if(this.props.style === "success" || this.props.style === "error"){
-      console.log(this.props.style);
       buttonClasses += "-" + this.props.style;
     }else{
       buttonClasses += this.props.style;
@@ -22,17 +21,17 @@ class CTAButton extends Component {
 
     const attrs = {
       className: buttonClasses,
-      onClick: (this.props.inactive) ? null : this.props.onClick,
-      onFocus: (this.props.inactive) ? null : this.props.onFocus,
-      onBlur: (this.props.inactive) ? null : this.props.onBlur
+      onClick: this.props.inactive ? null : this.props.onClick,
+      onFocus: this.props.inactive ? null : this.props.onFocus,
+      onBlur: this.props.inactive ? null : this.props.onBlur
     };
 
     if (this.props.inactive) {
-      attrs.className += ' mt_btn-' + ((this.isTextLink || this.props.style === "naked") ? 'naked' : this.props.style) +  "--inactive";
+      attrs.className += ' mt_btn-' + ((this.isTextLink || this.props.style === "naked") ? '-naked' : this.props.style) +  "--inactive";
     }
 
     if (this.props.inverse && (this.isTextLink || this.props.style === "secondary" || this.props.style === "naked") && !this.props.inactive){
-      attrs.className += " mt_btn-" + ((this.isTextLink || this.props.style === "naked") ? 'naked' : this.props.style) + "--reversed";
+      attrs.className += " mt_btn-" + ((this.isTextLink || this.props.style === "naked") ? '-naked' : this.props.style) + "--reversed";
     }
 
     if (this.props.type && this.props.type !== "link"){

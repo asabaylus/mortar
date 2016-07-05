@@ -2,14 +2,14 @@
 a.mt_btn {
   color: inherit;
   text-decoration: none;
-  &-naked--reversed{
+  &--naked--reversed{
     color: white;
   }
-  &-naked--inactive span,
-  &-naked--inactive svg,
-  &-naked--inactive:hover span,
-  &-naked--inactive:hover svg{
-    color: rgba(179,179,179,.4);
+  &--naked--inactive span,
+  &--naked--inactive svg,
+  &--naked--inactive:hover span,
+  &--naked--inactive:hover svg{
+    color: transparentize($mt_color-neutral-l, .6);
     text-decoration: none;
     border-bottom: none;
   }
