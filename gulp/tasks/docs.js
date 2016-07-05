@@ -8,9 +8,11 @@ const layouts = require('metalsmith-layouts');
 const inPlace = require('metalsmith-in-place');
 const fs = require('fs');
 
+const paths = require('./paths');
+
 // Static server
 gulp.task('docs', ['icons'], function() {
-  const fileList = fs.readdirSync('app/icons/');
+  const fileList = fs.readdirSync(paths.mortarIconDir);
   const icons = fileList
     .filter(isSVG)
     .filter(isNotSocial)
@@ -47,12 +49,13 @@ gulp.task('docs', ['icons'], function() {
   }
 
   Metalsmith('./')
-  .source('./app/site')
-  .destination('./.tmp/site')
+  .clean(false)
+  .source('./' + paths.siteSrc)
+  .destination('./' + paths.siteDest)
   .metadata({
     'title': 'Mortar',
     'description': 'A living styleguide for National Geographic Partners',
-    'iconSprite': fs.readFileSync('.tmp/assets/mortar-symbol-sprite.svg', 'utf8')
+    'iconSprite': fs.readFileSync(paths.mortarIconsDest + 'mortar-symbol-sprite.svg', 'utf8')
   })
   .ignore([
     '_layouts',
@@ -63,7 +66,7 @@ gulp.task('docs', ['icons'], function() {
   .use(layouts({
     'engine': 'swig',
     'default': 'default.html',
-    'directory': './app/site/_layouts/'
+    'directory': './' + paths.siteSrc + '_layouts/'
   }))
   .use(fileMetadata([
     // Pass list of icons to the icon page as metadata
