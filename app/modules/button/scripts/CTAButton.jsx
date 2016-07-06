@@ -41,10 +41,6 @@ class CTAButton extends Component {
       ...props
       } = this.props;
 
-    this.isTextLink = this.props.type === 'link';
-    this.isSubmit = this.props.type === 'submit';
-    this.isReset = this.props.type === 'reset';
-
     let classes;
     if(type === 'link') {
       classes = classNames({
@@ -69,22 +65,12 @@ class CTAButton extends Component {
       });
     }
 
-    const attrs = {
+    let attrs = {
       className: classes,
-      onClick: this.props.inactive ? null : this.props.onClick,
-      onFocus: this.props.inactive ? null : this.props.onFocus,
-      onBlur: this.props.inactive ? null : this.props.onBlur
+      onClick: inactive ? null : this.props.onClick,
+      onFocus: inactive ? null : this.props.onFocus,
+      onBlur: inactive ? null : this.props.onBlur
     };
-
-    if (this.props.type && this.props.type !== "link"){
-      if (this.isSubmit){
-        attrs.type = 'submit';
-      }else if (this.isReset){
-        attrs.type = 'reset';
-      }else{
-        attrs.type = 'button';
-      }
-    }
 
     if(type === 'link') {
       Object.assign(attrs, {
