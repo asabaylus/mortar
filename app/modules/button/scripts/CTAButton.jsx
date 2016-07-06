@@ -45,29 +45,36 @@ class CTAButton extends Component {
     this.isSubmit = this.props.type === 'submit';
     this.isReset = this.props.type === 'reset';
 
-    let buttonClasses = 'mt_btn mt_fullwidth ' + 'mt_btn-';
-    if(this.isTextLink || this.props.style === "naked"){
-      buttonClasses += "-naked";
-    }else if(this.props.style === "success" || this.props.style === "error"){
-      buttonClasses += "-" + this.props.style;
-    }else{
-      buttonClasses += this.props.style;
+    let classes;
+    if(type === 'link') {
+      classes = classNames({
+        'mt_btn': true,
+        'mt_fullwidth': true,
+        'mt_btn--naked': true,
+        'mt_btn--naked--reversed' : inverse,
+        'mt_btn--naked--inactive': inactive
+      });
+    } else {
+      classes = classNames({
+        'mt_btn': true,
+        'mt_fullwidth': true,
+        'mt_btn-default': props.style === 'default',
+        'mt_btn-secondary': props.style === 'secondary',
+        'mt_btn-secondary--reversed': inverse && props.style === 'secondary',
+        'mt_btn--naked': props.style === 'naked',
+        'mt_btn--naked--reversed' : inverse && props.style === 'naked',
+        'mt_btn--success': props.style === 'success',
+        'mt_btn--error': props.style === 'error',
+        'mt_btn--naked--inactive': inactive
+      });
     }
 
     const attrs = {
-      className: buttonClasses,
+      className: classes,
       onClick: this.props.inactive ? null : this.props.onClick,
       onFocus: this.props.inactive ? null : this.props.onFocus,
       onBlur: this.props.inactive ? null : this.props.onBlur
     };
-
-    if (this.props.inactive) {
-      attrs.className += ' mt_btn-' + ((this.isTextLink || this.props.style === "naked") ? '-naked' : this.props.style) +  "--inactive";
-    }
-
-    if (inverse && (this.isTextLink || this.props.style === "secondary" || this.props.style === "naked") && !inactive){
-      attrs.className += " mt_btn-" + ((this.isTextLink || this.props.style === "naked") ? '-naked' : this.props.style) + "--reversed";
-    }
 
     if (this.props.type && this.props.type !== "link"){
       if (this.isSubmit){
