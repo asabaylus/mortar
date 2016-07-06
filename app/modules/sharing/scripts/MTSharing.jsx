@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes }  from 'react';
 import {Pestle} from '@natgeo/mortar-pestle';
+import urlEncode from 'urlencode';
 
 class MTSocialButton extends Component {
   constructor(props) {
@@ -10,25 +11,38 @@ class MTSocialButton extends Component {
   }
 
   openShareWindow(site, url, title) {
+    const encodedUrl = urlEncode(url);
     const siteAttr = {
       facebook: {
         h: 279,
-        url: "http://www.facebook.com/share.php?u=" + url,
+        url: "http://www.facebook.com/share.php?u=" + encodedUrl,
         w: 575,
         windowTitle: 'Facebook'
       },
       'google-plus': {
         h: 647,
-        url: "https://plus.google.com/share?url=" + url,
+        url: "https://plus.google.com/share?url=" + encodedUrl,
         w: 500,
         windowTitle: 'Google Plus'
+      },
+      linkedin: {
+        h: 425,
+        url: "https://www.linkedin.com/shareArticle?mini=true&url=nationalgeographic.com" + encodedUrl,
+        w: 450,
+        windowTitle: 'LinkedIn'
+      },
+      pinterest: {
+        h: 575,
+        url: "http://pinterest.com/pin/create/button/?" + encodedUrl,
+        w: 750,
+        windowTitle: 'Pinterest'
       },
       twitter: {
         h: 420,
         url: "https://twitter.com/intent/tweet?url="
-              + url
+              + encodedUrl
               + "&text="
-              + title.replace(/[^a-zA-Z ]/g, "").split(' ').join('+')
+              + urlEncode(title)
               + "&via=NatGeo",
         w: 550,
         windowTitle: 'Twitter'
@@ -89,7 +103,9 @@ class MTSharing extends Component {
 const socialSites = [
   'facebook',
   'twitter',
-  'google-plus'
+  'google-plus',
+  'linkedin',
+  'pinterest'
 ]
 
 MTSharing.defaultProps = {
@@ -97,9 +113,9 @@ MTSharing.defaultProps = {
 }
 
 MTSharing.propTypes = {
-  url: PropTypes.string,
-  socialSites: PropTypes.arrayOf(PropTypes.oneOf(socialSites)),
-  title: PropTypes.string
+  url: PropTypes.string.isRequired,
+  socialSites: PropTypes.arrayOf(React.PropTypes.string),
+  title: PropTypes.string.isRequired
 }
 
 export default MTSharing
