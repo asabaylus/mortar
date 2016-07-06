@@ -1,126 +1,90 @@
 'use strict';
 
 import React, { Component, PropTypes }  from 'react';
-import Icon from "../../icon/scripts/Icon.jsx";
+import classNames from 'classnames';
+
+import Label from './Label.jsx';
 
 class CTAButton extends Component {
 
-  render() {
-    this.isTextLink = this.props.type === 'link';
-    this.isSubmit = this.props.type === 'submit';
-    this.isReset = this.props.type === 'reset';
+  generateHref(url, trackingCodes) {
+    let href = url;
 
-    let buttonClasses = 'mt_btn mt_fullwidth ' + 'mt_btn-';
-    if(this.isTextLink || this.props.style === "naked"){
-      buttonClasses += "naked";
-    }else if(this.props.style === "success" || this.props.style === "error"){
-      buttonClasses += "-" + this.props.style;
-    }else{
-      buttonClasses += this.props.style;
+    if(trackingCodes) {
+      let terms = "";
+      const termsArr = this.props.link.trackingCodes.utmTerm;
+      function concatTerms(element, index, array){
+        const lastEl = index < array.length - 1;
+        terms += lastEl ? element + "+" : element;
+      }
+      termsArr.forEach(concatTerms);
+      href = href
+        + "?"
+        + "utm_source=" + trackingCodes.utmSource
+        + "&utm_medium=" + trackingCodes.utmMedium
+        + "&utm_term=" + terms
+        + "&utm_content=" + trackingCodes.utmContent
+        + "&utm_campaign=" + trackingCodes.utmCampaign;
     }
 
-    const attrs = {
-      className: buttonClasses,
-      onClick: this.props.inactive ? null : this.props.onClick,
-      onFocus: this.props.inactive ? null : this.props.onFocus,
-      onBlur: this.props.inactive ? null : this.props.onBlur
+    return href;
+  }
+
+  render() {
+    const {
+      icon,
+      link,
+      type,
+      inverse,
+      inactive,
+      label,
+      ...props
+      } = this.props;
+
+    let classes;
+    if(type === 'link') {
+      classes = classNames({
+        'mt_btn': true,
+        'mt_fullwidth': true,
+        'mt_btn--naked': true,
+        'mt_btn--naked--reversed' : inverse,
+        'mt_btn--naked--inactive': inactive
+      });
+    } else {
+      classes = classNames({
+        'mt_btn': true,
+        'mt_fullwidth': true,
+        'mt_btn-default': props.style === 'default',
+        'mt_btn-secondary': props.style === 'secondary',
+        'mt_btn-secondary--reversed': inverse && props.style === 'secondary',
+        'mt_btn--naked': props.style === 'naked',
+        'mt_btn--naked--reversed' : inverse && props.style === 'naked',
+        'mt_btn--success': props.style === 'success',
+        'mt_btn--error': props.style === 'error',
+        'mt_btn--naked--inactive': inactive
+      });
+    }
+
+    let attrs = {
+      className: classes,
+      onClick: inactive ? null : this.props.onClick,
+      onFocus: inactive ? null : this.props.onFocus,
+      onBlur: inactive ? null : this.props.onBlur
     };
 
-    if (this.props.inactive) {
-      attrs.className += ' mt_btn-' + ((this.isTextLink || this.props.style === "naked") ? 'naked' : this.props.style) +  "--inactive";
-    }
-
-    if (this.props.inverse && (this.isTextLink || this.props.style === "secondary" || this.props.style === "naked") && !this.props.inactive){
-      attrs.className += " mt_btn-" + ((this.isTextLink || this.props.style === "naked") ? 'naked' : this.props.style) + "--reversed";
-    }
-
-    if (this.props.type && this.props.type !== "link"){
-      if (this.isSubmit){
-        attrs.type = 'submit';
-      }else if (this.isReset){
-        attrs.type = 'reset';
-      }else{
-        attrs.type = 'button';
-      }
-    }
-
-    if (this.props.type === "link"){
-      attrs.href = this.props.inactive ? null : this.props.link.url;
-      attrs.target = this.props.link.target;
-      attrs.title = this.props.link.title;
-
-      // if tracking codes are present, build query string with utm_terms concatenated, separated by plus sign
-      // https://support.google.com/analytics/answer/1033867?hl=en#more_information_and_examples_for_each_parameter
-      if (!this.props.inactive && this.props.link.trackingCodes){
-        let terms = "";
-        const termsArr = this.props.link.trackingCodes.utmTerm;
-        function concatTerms(element, index, array){
-          const lastEl = index < array.length - 1;
-          terms += lastEl ? element + "+" : element;
-        }
-        termsArr.forEach(concatTerms);
-        attrs.href = attrs.href + "?" + "utm_source=" + this.props.link.trackingCodes.utmSource + "&utm_medium=" + this.props.link.trackingCodes.utmMedium +
-          "&utm_term=" + terms + "&utm_content=" + this.props.link.trackingCodes.utmContent + "&utm_campaign=" + this.props.link.trackingCodes.utmCampaign;
-      }
-    }
-
-    let label;
-    if (this.props.icon.name) {
-      switch (this.props.icon.align) {
-        case "left":
-          label = <div className="mt_iconandlabel--horizontal">
-                    <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
-                          alt={ this.props.icon.alt }/>
-                    <span>{this.props.label}</span>
-                  </div>;
-          break;
-        case "right":
-          label = <div className="mt_iconandlabel--horizontal">
-                    <span>{this.props.label}</span>
-                    <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
-                          alt={ this.props.icon.alt }/>
-                  </div>;
-          break;
-        case "top":
-          label = <div className="mt_iconandlabel--vertical">
-                    <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
-                          alt={ this.props.icon.alt }/>
-                    <span>{this.props.label}</span>
-                  </div>;
-          break;
-        case "bottom":
-          label = <div className="mt_iconandlabel--vertical">
-                    <span>{this.props.label}</span>
-                    <Icon name={this.props.icon.name} align={this.props.icon.align} size={this.props.icon.size}
-                          alt={ this.props.icon.alt }/>
-                  </div>;
-          break;
-        default:
-          label = <div className="mt_iconandlabel--horizontal">
-                    <Icon name={this.props.icon.name} align="left" size={this.props.icon.size}
-                          alt={ this.props.icon.alt }/>
-                    <span>{this.props.label}</span>
-                  </div>;
-          break;
-      }
-    }else{
-      label = <div className="mt_iconandlabel--horizontal">
-                <span>{this.props.label}</span>
-              </div>
-    }
-
-    let button;
-    if(this.isTextLink){
-      button = <a {...attrs}>{ label }</a>
-    }else if (this.isSubmit) {
-      button = <button {...attrs}>{ label }</button>
-    } else if (this.isReset) {
-      button = <button {...attrs}>{ label }</button>
+    if(type === 'link') {
+      Object.assign(attrs, {
+        href: (inactive) ? null : this.generateHref(link.url, link.trackingCodes),
+        target: link.target,
+        title: link.title
+      });
+      return (<a {...attrs}><Label icon={icon} label={label} /></a>);
     } else {
-      button = <button {...attrs}>{ label }</button>
+      Object.assign(attrs, {
+        type
+      });
+      return (<button {...attrs}><Label icon={icon} label={label} /></button>);
     }
-
-    return button
   }
 }
 
@@ -150,8 +114,15 @@ CTAButton.propTypes = {
   onClick: PropTypes.func,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
-  style: PropTypes.string,
-  type: PropTypes.oneOf(['default', 'submit', 'reset', 'link'])
+  style: PropTypes.oneOf(['default', 'secondary','naked', 'success', 'error']),
+  type: PropTypes.oneOf(['button', 'submit', 'reset', 'link'])
 }
 
-export default CTAButton
+CTAButton.defaultProps = {
+  inactive: false,
+  inverse: false,
+  style: 'default',
+  type: 'button'
+}
+
+export default CTAButton;
