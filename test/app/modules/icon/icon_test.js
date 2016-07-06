@@ -50,10 +50,6 @@ describe('Icon', () => {
 
     });
 
-    it('logs to console', () => {
-      console.log(wrapper.debug());
-    });
-
     it('has svg element with appropriate classes', () => {
       expect(wrapper.find('svg').props().className).to.equal('mt_icon mt_icon--large mt_icon--left mt_color--neutral--xxd');
     });
