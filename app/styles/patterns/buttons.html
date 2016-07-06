@@ -27,10 +27,10 @@
 
     <div class="mt_col-lg-8 mt_col-lg-offset-1 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
       <div class="mt_row-gut-2">
-        <button class="mt_btn mt_fullwidth mt_btn-default">Default</button>
+        <button class="mt_btn mt_fullwidth mt_btn--default">Default</button>
       </div>
       <div class="mt_row-gut-2">
-        <button class="JS_button-reverse mt_btn mt_fullwidth mt_btn-secondary">Secondary</button>
+        <button class="JS_button-reverse mt_btn mt_fullwidth mt_btn--secondary">Secondary</button>
       </div>
       <div class="mt_row-gut-2">
         <button class="JS_button-nakedreverse mt_btn mt_fullwidth mt_btn--naked"> <span> Naked </span> </button>
@@ -42,10 +42,10 @@
         <button class="mt_btn mt_fullwidth mt_btn--error">Error</button>
       </div>
       <div class="mt_row-gut-2">
-        <button class="mt_btn mt_fullwidth mt_btn-default--inactive">Default Inactive</button>
+        <button class="mt_btn mt_fullwidth mt_btn--default--inactive">Default Inactive</button>
       </div>
       <div class="mt_row-gut-2">
-        <button class="mt_btn mt_fullwidth mt_btn-secondary--inactive">Secondary Inactive</button>
+        <button class="mt_btn mt_fullwidth mt_btn--secondary--inactive">Secondary Inactive</button>
       </div>
       <div class="mt_row-gut-2">
         <button class="mt_btn mt_fullwidth mt_btn--naked mt_btn--naked--inactive">Naked Inactive</button>
@@ -69,10 +69,10 @@
         .removeClass('mt_color--neutral--xxxl');
 
         $('.JS_button-reverse')
-        .removeClass('mt_btn-secondary--reversed');
+        .removeClass('mt_btn--secondary--inverse');
 
         $('.JS_button-nakedreverse')
-        .removeClass('mt_btn-naked--reversed');
+        .removeClass('mt_btn--naked--inverse');
       }
       else if (this.value === 'inverse') {
         $('.JS_buttonexample-container')
@@ -80,10 +80,10 @@
         .addClass('mt_color--neutral--xxxl');
 
         $('.JS_button-reverse')
-        .addClass('mt_btn-secondary--reversed');
+        .addClass('mt_btn--secondary--inverse');
 
         $('.JS_button-nakedreverse')
-        .addClass('mt_btn-naked--reversed');
+        .addClass('mt_btn--naked--inverse');
       }
     });
   });
