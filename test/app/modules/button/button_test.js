@@ -1,7 +1,7 @@
 'use strict';
 
 import Pestle from '@natgeo/mortar-pestle';
-import CTAButton from '../../../../app/modules/button/scripts/CTAButtonPestle';
+import CTAButton from '../../../../app/modules/button/scripts/CTAButtonPestle.js';
 import Icon from '../../../../app/modules/icon/scripts/Icon.jsx';
 import CTAButtonComponent from '../../../../app/modules/button/scripts/CTAButton.jsx';
 
@@ -70,13 +70,13 @@ describe('CTAButton', () => {
         onFocus={() => {}}
         onBlur={() => {}}
         style="default"
-        type="default"
+        type="button"
       />);
     });
 
     it('logs to console', () => {
       console.log(wrapper.debug());
-      console.log(wrapper.find('Icon').props());
+      console.log(wrapper.find('Label').props().icon);
     });
 
     it('should have button class', () => {
@@ -104,13 +104,13 @@ describe('CTAButton', () => {
     });
 
     it('should contain an icon container div with class', () => {
-      wrapper.find('div').hasClass('mt_iconandlabel--horizontal');
+      wrapper.find('button').childAt(1).hasClass('mt_iconandlabel--horizontal');
     });
 
-    it('Icon component should be called with expected props', () => {
-      expect(wrapper.find('Icon').props().name).to.equal("#share");
-      expect(wrapper.find('Icon').props().align).to.equal("left");
-      expect(wrapper.find('Icon').props().alt).to.equal("Sharing is Caring");
+    it('Label component should be called with expected props', () => {
+      expect(wrapper.find('Label').props().icon.name).to.equal("#share");
+      expect(wrapper.find('Label').props().icon.align).to.equal("left");
+      expect(wrapper.find('Label').props().icon.alt).to.equal("Sharing is Caring");
     });
 
     it('should have a span with text', () => {
