@@ -1,0 +1,22 @@
+//Override for user-agent defaults link button text/icon
+a.mt_btn {
+  color: inherit;
+  text-decoration: none;
+  &--naked--reversed{
+    color: white;
+  }
+  &--naked--inactive span,
+  &--naked--inactive svg,
+  &--naked--inactive:hover span,
+  &--naked--inactive:hover svg{
+    border-bottom: none;
+    color: transparentize($mt_color-neutral-l, .6);
+    text-decoration: none;
+  }
+}
+
+.mt_iconandlabel--horizontal,
+.mt_iconandlabel--vertical {
+  margin: 0 auto;
+  max-width: max-content;
+}
