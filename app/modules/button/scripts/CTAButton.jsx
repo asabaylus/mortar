@@ -55,13 +55,15 @@ class CTAButton extends Component {
         'mt_btn': true,
         'mt_fullwidth': true,
         'mt_btn-default': props.style === 'default',
+        'mt_btn-default--inactive': inactive && props.style === 'default',
         'mt_btn-secondary': props.style === 'secondary',
+        'mt_btn-secondary--inactive': inactive && props.style === 'secondary',
         'mt_btn-secondary--reversed': inverse && props.style === 'secondary',
         'mt_btn--naked': props.style === 'naked',
+        'mt_btn--naked--inactive': inactive && props.style === 'naked',
         'mt_btn--naked--reversed' : inverse && props.style === 'naked',
         'mt_btn--success': props.style === 'success',
         'mt_btn--error': props.style === 'error',
-        'mt_btn--naked--inactive': inactive
       });
     }
 

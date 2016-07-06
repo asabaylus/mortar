@@ -1,24 +1,88 @@
 <div class="pagewrapper mt_row mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
   <div class="mt_col-lg-3 mt_col-sm-12 mt_row mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-    <h3 class="mt_h3">Button</h3><p class="mt_subh4">
-    Button with optional icon and many display options. To disable icon, simply do not enter an icon name.
-  </p>
+    <h3 class="mt_h3">Button</h3>
+      <p class="mt_subh4">
+        Button with optional icon and many display options. To disable icon, simply do not enter an icon name or delete the object from Pestle options.
+      </p>
   </div>
 
   <div class="mt_col-lg-8 mt_col-sm-12 mt_col-lg-offset-1 mt_row-gut-4">
+    <p class="mt_subh4">To create the most basic button, all you need is these 6 properties. Use the 'align' property in the icon object to
+      position the icon around the label. All styles from the UI Patterns are available, as well as icon names from Icons.</p>
+    <div
+      data-pestle-module="CTAButton"
+      data-pestle-options='{
+        "icon": {
+          "name" : "#map-geolocator",
+          "align" : "left",
+          "alt" : "Map Pin Icon"
+        },
+        "label" : "Find My Location",
+        "style" : "default",
+        "type" : "button"
+      }'
+    ></div>
+<pre class="codesnippet"><code class="language-markup">&#x3C;div
+  data-pestle-module=&#x22;CTAButton&#x22;
+  data-pestle-options=&#x27;{
+    &#x22;icon&#x22;: {
+      &#x22;name&#x22;: &#x22;#map-geolocator&#x22;,
+      &#x22;align&#x22;: &#x22;left&#x22;,
+      &#x22;alt&#x22;: &#x22;Map Pin Icon&#x22;
+    },
+    &#x22;label&#x22;: &#x22;Find My Location&#x22;,
+    &#x22;style&#x22;: &#x22;default&#x22;,
+    &#x22;type&#x22;: &#x22;button&#x22;
+  }&#x27;
+&#x3E;&#x3C;/div&#x3E;</code></pre>
+
+    <p class="mt_subh4">Here is an example with the button disabled. Use the 'inactive' property
+      to disable the button, and the 'inverse' property to reverse the colors for dark backgrounds.</p>
+    <div
+      data-pestle-module="CTAButton"
+      data-pestle-options='{
+        "icon": {
+            "name" : "#map-geolocator",
+            "align" : "left",
+            "alt" : "Map Pin Icon"
+          },
+        "inactive" : true,
+        "inverse" : false,
+        "label" : "Find My Location",
+        "style" : "default",
+        "type" : "button"
+      }'
+    ></div>
+<pre class="codesnippet"><code class="language-markup">&#x3C;div
+  data-pestle-module=&#x22;CTAButton&#x22;
+  data-pestle-options=&#x27;{
+    &#x22;icon&#x22;: {
+      &#x22;name&#x22;: &#x22;#map-geolocator&#x22;,
+      &#x22;align&#x22;: &#x22;left&#x22;,
+      &#x22;alt&#x22;: &#x22;Map Pin Icon&#x22;
+    },
+    &#x22;inactive&#x22;: &#x22;true&#x22;,
+    &#x22;inverse&#x22;: &#x22;false&#x22;,
+    &#x22;label&#x22;: &#x22;Find My Location&#x22;,
+    &#x22;style&#x22;: &#x22;default&#x22;,
+    &#x22;type&#x22;: &#x22;button&#x22;
+  }&#x27;
+&#x3E;&#x3C;/div&#x3E;</code></pre>
+
+    <p class="mt_subh4">When 'type' is set to 'link', the style is overwritten as 'naked', despite the value entered
+      in the 'style' field. Options are available for URL, Target, and Title. Use the 'trackingCodes' object to enter
+      analytics tracking information.</p>
     <div
       data-pestle-module="CTAButton"
       data-pestle-options='{
         "icon": {
           "name" : "#share",
           "align" : "left",
-          "size" : "",
-          "color" : "",
-          "alt" : "Sharing is Caring"
+          "alt" : "Share Icon"
         },
         "inactive" : false,
         "inverse" : false,
-        "label" : "Share This Link",
+        "label" : "Share This Article",
         "link": {
           "target" : "_blank",
           "title" : "Link to external page",
@@ -32,37 +96,35 @@
           "url" : "http://www.example.com"
         },
         "style" : "default",
-        "type" : "default"
+        "type" : "link"
       }'
     ></div>
 <pre class="codesnippet"><code class="language-markup">&#x3C;div
   data-pestle-module=&#x22;CTAButton&#x22;
-  data-pestle-options=&#x22;{
-    &#x22;icon&#x22; : &#x27;{
-      &#x22;name&#x22; : &#x22;#share&#x22;,
-      &#x22;align&#x22; : &#x22;left&#x22;,
-      &#x22;size&#x22; : &#x22;&#x22;,
-      &#x22;color&#x22; : &#x22;&#x22;,
-      &#x22;alt&#x22; : &#x22;Sharing is Caring&#x22;
-    }&#x27;,
-    &#x22;inactive&#x22; : &#x22;false&#x22;,
-    &#x22;inverse&#x22; : &#x22;false&#x22;,
-    &#x22;label&#x22; : &#x22;Share This Link&#x22;,
-    &#x22;link&#x22; : &#x27;{
-      &#x22;target&#x22; : &#x22;_blank&#x22;,
-      &#x22;title&#x22; : &#x22;Link to External Page&#x22;,
-      &#x22;trackingCodes&#x22; : &#x27;{
-        &#x22;utmSource&#x22; : &#x22;google&#x22;,
-        &#x22;utmMedium&#x22; : &#x22;cpc&#x22;,
-        &#x22;utmTerm&#x22; : [&#x22;nature&#x22;, &#x22;reptile&#x22;, &#x22;animal&#x22;, &#x22;swamp&#x22;, &#x22;forest&#x22;],
-        &#x22;utmContent&#x22; : &#x22;textLink&#x22;,
-        &#x22;utmCampaign&#x22; : &#x22;nature_photos&#x22;
-      }&#x27;,
-      &#x22;url&#x22; : &#x22;http://www.example.com&#x22;
-    }&#x27;,
-    &#x22;style&#x22; : &#x22;default&#x22;,
-    &#x22;type&#x22; : &#x22;default&#x22;
-  }&#x22;
+  data-pestle-options=&#x27;{
+    &#x22;icon&#x22;: {
+      &#x22;name&#x22;: &#x22;#share&#x22;,
+      &#x22;align&#x22;: &#x22;left&#x22;,
+      &#x22;alt&#x22;: &#x22;Sharing is Caring&#x22;
+    },
+    &#x22;inactive&#x22;: &#x22;false&#x22;,
+    &#x22;inverse&#x22;: &#x22;false&#x22;,
+    &#x22;label&#x22;: &#x22;Share This Article&#x22;,
+    &#x22;link&#x22;: {
+      &#x22;target&#x22;: &#x22;_blank&#x22;,
+      &#x22;title&#x22;: &#x22;Link to External Page&#x22;,
+      &#x22;trackingCodes&#x22;: {
+      &#x22;utmSource&#x22;: &#x22;google&#x22;,
+      &#x22;utmMedium&#x22;: &#x22;cpc&#x22;,
+      &#x22;utmTerm&#x22;: [&#x22;nature&#x22;, &#x22;reptile&#x22;, &#x22;animal&#x22;, &#x22;swamp&#x22;, &#x22;forest&#x22;],
+      &#x22;utmContent&#x22;: &#x22;textLink&#x22;,
+      &#x22;utmCampaign&#x22;: &#x22;nature_photos&#x22;
+      },
+      &#x22;url&#x22;: &#x22;http://www.example.com&#x22;
+    },
+    &#x22;style&#x22;: &#x22;default&#x22;,
+    &#x22;type&#x22;: &#x22;link&#x22;
+  }&#x27;
 &#x3E;&#x3C;/div&#x3E;</code></pre>
   </div>
 </div>
