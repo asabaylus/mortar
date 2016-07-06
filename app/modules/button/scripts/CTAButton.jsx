@@ -14,7 +14,6 @@ class CTAButton extends Component {
     if(this.isTextLink || this.props.style === "naked"){
       buttonClasses += "naked";
     }else if(this.props.style === "success" || this.props.style === "error"){
-      console.log(this.props.style);
       buttonClasses += "-" + this.props.style;
     }else{
       buttonClasses += this.props.style;
@@ -22,9 +21,9 @@ class CTAButton extends Component {
 
     const attrs = {
       className: buttonClasses,
-      onClick: (this.props.inactive) ? null : this.props.onClick,
-      onFocus: (this.props.inactive) ? null : this.props.onFocus,
-      onBlur: (this.props.inactive) ? null : this.props.onBlur
+      onClick: this.props.inactive ? null : this.props.onClick,
+      onFocus: this.props.inactive ? null : this.props.onFocus,
+      onBlur: this.props.inactive ? null : this.props.onBlur
     };
 
     if (this.props.inactive) {
