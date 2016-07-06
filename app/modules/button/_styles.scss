@@ -9,14 +9,14 @@ a.mt_btn {
   &--naked--inactive svg,
   &--naked--inactive:hover span,
   &--naked--inactive:hover svg{
+    border-bottom: none;
     color: transparentize($mt_color-neutral-l, .6);
     text-decoration: none;
-    border-bottom: none;
   }
 }
 
 .mt_iconandlabel--horizontal,
 .mt_iconandlabel--vertical {
-  max-width: max-content;
   margin: 0 auto;
+  max-width: max-content;
 }
