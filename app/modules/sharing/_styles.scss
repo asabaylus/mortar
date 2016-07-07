@@ -1,5 +1,8 @@
-.mt2_socialsharing {
-  &:hover {
-    color: $mt2_color-neutral-l;
+.mt2_sharing-btn {
+  background-color: transparent;
+  border: 0;
+
+  & *:hover {
+    color: $mt_color-neutral-l;
   }
 }

@@ -70,8 +70,8 @@ class MTSocialButton extends Component {
 
   render() {
     return (
-      <button onClick={this.handleClick} className="mt2_btn">
-        <svg className={"mt2_icon mt2_socialsharing mt2_color--social--" + this.props.site}>
+      <button onClick={this.handleClick} className="mt2_sharing-btn">
+        <svg className={"mt2_icon mt2_color--social--" + this.props.site}>
           <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref={"#social-" + this.props.site}></use>
         </svg>
       </button>
@@ -81,40 +81,64 @@ class MTSocialButton extends Component {
 
 class MTSharing extends Component {
   render() {
-    let socialButtons = this.props.socialSites.map(site => {
-      return (
-        <MTSocialButton
-          key={site}
+    const emailFormat = 'mailto:?subject='
+      + urlEncode(this.props.title)
+      + '&body='
+      + urlEncode('<p>'
+        + this.props.title
+        + '<br /><a href="'
+        + this.props.url
+        + '">'
+        + this.props.url
+        + '</a></p><p><a href="http://www.nationalgeographic.com">http://www.nationalgeographic.com</a></p>'
+      )
+    ;
+
+    let socialButtons = this.props.sharingOptions.map(option => {
+      if(option !== 'email') {
+        return (
+          <MTSocialButton
+          key={option}
           url={this.props.url}
           title={this.props.title}
-          site={site}
-        />
+          site={option}
+          />
+        )
+      }
+
+      return (
+        <a key={option} href={emailFormat} className="mt2_sharing-btn">
+          <svg className="mt2_icon mt2_color--neutral--xxd">
+            <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#email"></use>
+          </svg>
+        </a>
       )
     })
 
     return (
-      <div>
+      <div className="mt2_sharing-container">
         {socialButtons}
       </div>
     );
   }
 }
 
-const socialSites = [
+const sharingOptions = [
   'facebook',
   'twitter',
   'google-plus',
   'linkedin',
-  'pinterest'
+  'pinterest',
+  'email'
 ]
 
 MTSharing.defaultProps = {
-  socialSites: socialSites
+  sharingOptions: sharingOptions
 }
 
 MTSharing.propTypes = {
   url: PropTypes.string.isRequired,
-  socialSites: PropTypes.arrayOf(React.PropTypes.string),
+  sharingOptions: PropTypes.arrayOf(React.PropTypes.string),
   title: PropTypes.string.isRequired
 }
 
