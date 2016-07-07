@@ -2,17 +2,20 @@
 a.mt_btn {
   color: inherit;
   text-decoration: none;
-  &--naked--reversed{
-    color: white;
+
+  &-naked--reversed {
+    color: #ffffff;
   }
-  &--naked--inactive span,
-  &--naked--inactive svg,
-  &--naked--inactive:hover span,
-  &--naked--inactive:hover svg{
-    border-bottom: none;
+
+  &-naked--inactive span,
+  &-naked--inactive svg,
+  &-naked--inactive:hover span,
+  &-naked--inactive:hover svg {
+    border-bottom: 0;
     color: transparentize($mt_color-neutral-l, .6);
     text-decoration: none;
   }
+
 }
 
 .mt_iconandlabel--horizontal,
