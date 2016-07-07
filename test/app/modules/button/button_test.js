@@ -74,11 +74,6 @@ describe('CTAButton', () => {
       />);
     });
 
-    it('logs to console', () => {
-      console.log(wrapper.debug());
-      console.log(wrapper.find('Label').props().icon);
-    });
-
     it('should have button class', () => {
       wrapper.find('button').hasClass('mt_btn');
     });
