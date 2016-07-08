@@ -109,8 +109,10 @@ describe('Module Manager', () => {
 
       var fixture = `
         <div data-pestle-module="Module1"></div>
-        <div data-pestle-module="Module2"
-             data-pestle-options='{"prop": "value"}'>
+        <div data-pestle-module="Module2">
+          <script type="text/json" data-pestle-options>
+            {"prop": "value"}
+          </script>
         </div>
       `;
 
@@ -146,8 +148,10 @@ describe('Module Manager', () => {
 
       var fixture = `
         <div data-pestle-module="Module1"></div>
-        <div data-pestle-module="Module2"
-             data-pestle-options='{"prop value"}'>
+        <div data-pestle-module="Module2">
+          <script type="text/json" data-pestle-options>
+            {"prop value"}
+          </script>
         </div>
       `;
 
@@ -194,8 +198,10 @@ describe('Module Manager', () => {
 
       var fixture = `
         <div data-pestle-module="Module1"></div>
-        <div data-pestle-module="Module2"
-             data-pestle-options='{"prop": "value"}'>
+        <div data-pestle-module="Module2">
+          <script type="text/json" data-pestle-options>
+            {"prop": "value"}
+          </script>
         </div>
       `;
 
@@ -240,8 +246,10 @@ describe('Module Manager', () => {
 
       var fixture = `
         <div data-pestle-module="Module3"></div>
-        <div data-pestle-module="Module2"
-             data-pestle-options='{"prop": "value"}'>
+        <div data-pestle-module="Module2">
+          <script type="text/json" data-pestle-options>
+            {"prop": "value"}
+          </script>
         </div>
       `;
 

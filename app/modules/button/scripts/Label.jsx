@@ -11,7 +11,7 @@ class Label extends Component {
       switch (icon.align) {
         case 'right':
           return <div className='mt_iconandlabel--horizontal'>
-            <span>{this.props.label}</span>
+            <span dangerouslySetInnerHTML={{__html:this.props.label}}></span>
             <Icon name={icon.name} align='right' size={icon.size}
                   alt={ icon.alt }/>
           </div>;
@@ -19,11 +19,11 @@ class Label extends Component {
           return <div className='mt_iconandlabel--vertical'>
             <Icon name={icon.name} align='top' size={icon.size}
                   alt={ icon.alt }/>
-            <span>{this.props.label}</span>
+            <span dangerouslySetInnerHTML={{__html:this.props.label}}></span>
           </div>;
         case 'bottom':
           return <div className='mt_iconandlabel--vertical'>
-            <span>{this.props.label}</span>
+            <span dangerouslySetInnerHTML={{__html:this.props.label}}></span>
             <Icon name={icon.name} align='bottom' size={icon.size}
                   alt={ icon.alt }/>
           </div>;
@@ -32,7 +32,7 @@ class Label extends Component {
           return <div className='mt_iconandlabel--horizontal'>
             <Icon name={icon.name} align='left' size={icon.size}
                   alt={ icon.alt }/>
-            <span>{this.props.label}</span>
+            <span dangerouslySetInnerHTML={{__html:this.props.label}}></span>
           </div>;
       }
     } else {
