@@ -220,7 +220,7 @@ The Modeule Manager class is in charge of registering modules and searching the 
 
 *returns*: number.
 
-# PubSub
+### PubSub
 
 Pestle wraps a PubSub library called [PubSubJS](https://github.com/mroderick/PubSubJS). To start using it, you just need to import it from Pestle.
 
