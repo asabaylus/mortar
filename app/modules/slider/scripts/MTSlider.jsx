@@ -72,13 +72,14 @@ class MTSlider extends Component {
   render() {
     const props = this.props;
     const state = this.state;
-    const settings = {
+    let settings = {
+      adaptiveHeight: props.slides ? false : true,
       afterChange: this.onSlideChange,
-      className: 'mt_slider-container mt_intratio--photo mt_bgcolor-neutral-xxd',
+      className: 'mt_slider-container mt_bgcolor-neutral-xxd',
       nextArrow: <NextButton
         infinite={props.infinite}
         currentSlide={state.currentSlideIndex}
-        slideCount={props.slides.length} />,
+        slideCount={props.slides ? props.slides.length : props.children.length} />,
       prevArrow: <PrevButton
         infinite={props.infinite}
         currentSlide={state.currentSlideIndex} />,
@@ -86,16 +87,28 @@ class MTSlider extends Component {
       infinite: props.infinite
     };
 
-    const slides = props.slides.map((slide, i) => {
-      const {type, ...data} = slide;
-      const slideMarkup = this.findSlideType(type, data);
+    let slides;
 
-      return <div key={i}>{slideMarkup}</div>;
-    });
+    /*
+     * if a "slides" prop is provided, a set of slides of a supported type will be rendered.
+     * Otherwise, the component will render any children passed to the component,
+     * arranging sibling elements as slides
+     */
+    if(props.slides) {
+      slides = props.slides.map((slide, i) => {
+        const {type, ...data} = slide;
+        const slideMarkup = this.findSlideType(type, data);
+
+        return <div key={i}>{slideMarkup}</div>;
+      });
+
+      //apply class that will hold aspect ratio of gallery constant
+      settings.className += " mt_intratio--photo";
+    }
 
     return (
       <Slick {...settings}>
-        {slides}
+        {slides || props.children}
       </Slick>
     );
   }
