@@ -25,9 +25,9 @@ title: Icons
       (e.g. <svg style="display: inline;vertical-align: top" class="mt2_icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#camera"></use></svg>) then one need only use the following code:
     </p>
 
-<pre class="codesnippet language-markup"><code>&lt;svg class="mt2_icon"&gt;
-  &lt;use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#camera"&gt;&lt;/use&gt;
-&lt;/svg&gt;</pre></code>
+    <!-- Code snippets -->
+
+    {% include "app/icons/_icon-snippets.html" %}
 
     <p class="mt2_h5">Toggle the icons on this page: </p>
 
@@ -65,7 +65,39 @@ title: Icons
 
 <script>
   $(document).ready(function() {
+
+    // Change icons snippets behavior
+    function displaySnippet(){
+      var iconSize = $('input[type=radio][name=icon-size]:checked').val();
+      var iconColor = $('input[type=radio][name=icon-color]:checked').val();
+
+      // Hide all the snippets
+      $('#iconsnippet-container').children().hide();
+
+      // Show appropriate snippet only
+      if (iconSize === 'small' && iconColor === 'default'){
+        $('.JS_smallicon--default').show();
+      }
+      else if (iconSize === 'small' && iconColor === 'inverse') {
+        $('.JS_smallicon--inverse').show();
+      }
+      else if (iconSize === 'large' && iconColor === 'default') {
+        $('.JS_largeicon--default').show();
+      }
+      else if (iconSize === 'large' && iconColor === 'inverse') {
+        $('.JS_largeicon--inverse').show();
+      }
+      else {
+        // We should never get here
+        debugger;
+      }
+    }
+
+    // Change icons styles on toggle
+    // and display the correct code snippet
     $('input[type=radio][name=icon-size]').change(function() {
+      displaySnippet();
+
       if (this.value === 'small') {
         $('.JS_icon').removeClass('mt2_icon--large');
       }
@@ -75,6 +107,8 @@ title: Icons
     });
 
     $('input[type=radio][name=icon-color]').change(function() {
+      displaySnippet();
+
       if (this.value === 'default') {
         $('.JS_icon-container')
         .removeClass('mt2_bgcolor--neutral--d')
@@ -86,5 +120,5 @@ title: Icons
         .addClass('mt2_color--neutral--xxxl');
       }
     });
-  });
+});
 </script>
