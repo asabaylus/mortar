@@ -1,82 +1,82 @@
-$mt_columns: 12;
+$mt2_columns: 12;
 
 // Object oriented grid classes in the style of bootstrap
 // Reference: http://getbootstrap.com/css/#grid
 
-%mt_col-padding {
+%mt2_col-padding {
   float: left;
   position: relative;
   width: 100%;
 }
 
-@for $mt_i from 1 through $mt_columns { // loop through grid spans
-  .mt_col-#{$mt_i} { // build the class name
-    @extend %mt_col-padding;
+@for $mt2_i from 1 through $mt2_columns { // loop through grid spans
+  .mt2_col-#{$mt2_i} { // build the class name
+    @extend %mt2_col-padding;
 
-    width: percentage($mt_i / $mt_columns);
+    width: percentage($mt2_i / $mt2_columns);
   }
 
-  .mt_col-offset-#{$mt_i} {
-    margin-left: percentage($mt_i / $mt_columns);
+  .mt2_col-offset-#{$mt2_i} {
+    margin-left: percentage($mt2_i / $mt2_columns);
   }
 
-  .mt_col-pull-#{$mt_i} {
-    right: percentage($mt_i / $mt_columns);
+  .mt2_col-pull-#{$mt2_i} {
+    right: percentage($mt2_i / $mt2_columns);
   }
 
-  .mt_col-push-#{$mt_i} {
-    left: percentage($mt_i / $mt_columns);
+  .mt2_col-push-#{$mt2_i} {
+    left: percentage($mt2_i / $mt2_columns);
   }
 }
 
-.mt_col-offset-0 {
+.mt2_col-offset-0 {
   margin-left: 0;
 }
 
-.mt_col-pull-0 {
+.mt2_col-pull-0 {
   right: auto;
 }
 
-.mt_col-push-0 {
+.mt2_col-push-0 {
   left: auto;
 }
 
-@each $mt_bp, $mt_width in $mt_layout-bps { // loop through breakpoints
+@each $mt2_bp, $mt2_width in $mt2_layout-bps { // loop through breakpoints
   // hack to get around inability to extend from within media queries
-  @for $mt_i from 1 through $mt_columns {
-    .mt_col-#{$mt_bp}-#{$mt_i} {
-      @extend %mt_col-padding;
+  @for $mt2_i from 1 through $mt2_columns {
+    .mt2_col-#{$mt2_bp}-#{$mt2_i} {
+      @extend %mt2_col-padding;
     }
   }
 
-  @media #{$mt_width} {
-    @for $mt_i from 1 through $mt_columns {
-      .mt_col-#{$mt_bp}-#{$mt_i} {
-        width: percentage($mt_i / $mt_columns);
+  @media #{$mt2_width} {
+    @for $mt2_i from 1 through $mt2_columns {
+      .mt2_col-#{$mt2_bp}-#{$mt2_i} {
+        width: percentage($mt2_i / $mt2_columns);
       }
 
-      .mt_col-#{$mt_bp}-offset-#{$mt_i} {
-        margin-left: percentage($mt_i / $mt_columns);
+      .mt2_col-#{$mt2_bp}-offset-#{$mt2_i} {
+        margin-left: percentage($mt2_i / $mt2_columns);
       }
 
-      .mt_col-#{$mt_bp}-pull-#{$mt_i} {
-        right: percentage($mt_i / $mt_columns);
+      .mt2_col-#{$mt2_bp}-pull-#{$mt2_i} {
+        right: percentage($mt2_i / $mt2_columns);
       }
 
-      .mt_col-#{$mt_bp}-push-#{$mt_i} {
-        left: percentage($mt_i / $mt_columns);
+      .mt2_col-#{$mt2_bp}-push-#{$mt2_i} {
+        left: percentage($mt2_i / $mt2_columns);
       }
     }
 
-    .mt_col-#{$mt_bp}-offset-0 {
+    .mt2_col-#{$mt2_bp}-offset-0 {
       margin-left: 0;
     }
 
-    .mt_col-#{$mt_bp}-pull-0 {
+    .mt2_col-#{$mt2_bp}-pull-0 {
       right: auto;
     }
 
-    .mt_col-#{$mt_bp}-push-0 {
+    .mt2_col-#{$mt2_bp}-push-0 {
       left: auto;
     }
   }

@@ -1,18 +1,18 @@
-%mt_link {
+%mt2_link {
   &,
   &:link,
   &:visited {
-    border-bottom: 1px solid $mt_color-primary;
-    color: $mt_color-neutral-xxd;
+    border-bottom: 1px solid $mt2_color-primary;
+    color: $mt2_color-neutral-xxd;
     text-decoration: none;
   }
 
   &:hover {
-    border-bottom: 1px solid $mt_color-neutral;
-    color: $mt_color-neutral;
+    border-bottom: 1px solid $mt2_color-neutral;
+    color: $mt2_color-neutral;
   }
 }
 
-.mt_link {
-  @extend %mt_link;
+.mt2_link {
+  @extend %mt2_link;
 }

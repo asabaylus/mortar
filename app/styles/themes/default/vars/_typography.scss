@@ -1,142 +1,142 @@
 // Font Size Variables
 
-$mt_fs-xsm:    .75rem;      // 12px
-$mt_fs-sm:     .875rem;     // 14px
-$mt_fs-norm:   1.0625rem;   // 17px
-$mt_fs-med:    1.1875rem;   // 19px
-$mt_fs-lrg:    1.375rem;    // 22px
-$mt_fs-xlrg:   1.6875rem;   // 27px
+$mt2_fs-xsm:    .75rem;      // 12px
+$mt2_fs-sm:     .875rem;     // 14px
+$mt2_fs-norm:   1.0625rem;   // 17px
+$mt2_fs-med:    1.1875rem;   // 19px
+$mt2_fs-lrg:    1.375rem;    // 22px
+$mt2_fs-xlrg:   1.6875rem;   // 27px
 
-$mt_fs-med-lrg:  2.5rem;    // 40px
-$mt_fs-med-xlrg: 2.875rem; // 46px
+$mt2_fs-med-lrg:  2.5rem;    // 40px
+$mt2_fs-med-xlrg: 2.875rem; // 46px
 
-$mt_fs-xxlrg:  3.375rem;    // 54px
-$mt_fs-xxxlrg: 4.0625rem;   // 65px
+$mt2_fs-xxlrg:  3.375rem;    // 54px
+$mt2_fs-xxxlrg: 4.0625rem;   // 65px
 
-$mt_unit:           $mt_fs-norm;
-$mt_unit-quarter:   $mt_unit / 4;
-$mt_unit-half:      $mt_unit / 2;
-$mt_unit-double:    $mt_unit * 2;
-$mt_unit-triple:    $mt_unit * 3;
-$mt_unit-quadruple: $mt_unit * 4;
+$mt2_unit:           $mt2_fs-norm;
+$mt2_unit-quarter:   $mt2_unit / 4;
+$mt2_unit-half:      $mt2_unit / 2;
+$mt2_unit-double:    $mt2_unit * 2;
+$mt2_unit-triple:    $mt2_unit * 3;
+$mt2_unit-quadruple: $mt2_unit * 4;
 
-%mt_h1 {
+%mt2_h1 {
   font-family: 'Chronicle Display 3r', Georgia, serif;
-  font-size: $mt_fs-med-xlrg;
+  font-size: $mt2_fs-med-xlrg;
   font-weight: 300;
   letter-spacing: .005em;
   line-height: .95;
   text-rendering: optimizeLegibility;
 
-  @media #{$mt_mq-md} {
-    font-size: $mt_fs-xxlrg;
+  @media #{$mt2_mq-md} {
+    font-size: $mt2_fs-xxlrg;
   }
 
-  @media #{$mt_mq-lg} {
-    font-size: $mt_fs-xxxlrg;
+  @media #{$mt2_mq-lg} {
+    font-size: $mt2_fs-xxxlrg;
   }
 }
 
-%mt_h2 {
+%mt2_h2 {
   font-family: 'Chronicle Deck 6r', Georgia, serif;
-  font-size: $mt_fs-xlrg;
+  font-size: $mt2_fs-xlrg;
   font-weight: 600;
   letter-spacing: .005em;
   line-height: 1.15;
   text-rendering: optimizeLegibility;
 
-  @media #{$mt_mq-md} {
-    font-size: $mt_fs-med-lrg;
+  @media #{$mt2_mq-md} {
+    font-size: $mt2_fs-med-lrg;
   }
 
-  @media #{$mt_mq-lg} {
-    font-size: $mt_fs-med-xlrg;
+  @media #{$mt2_mq-lg} {
+    font-size: $mt2_fs-med-xlrg;
   }
 }
 
-%mt_h3 {
+%mt2_h3 {
   font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
-  font-size: $mt_fs-lrg;
+  font-size: $mt2_fs-lrg;
   font-weight: 600;
   letter-spacing: -.01em;
   line-height: 1.185;
 
-  @media #{$mt_mq-lg} {
-    font-size: $mt_fs-xlrg;
+  @media #{$mt2_mq-lg} {
+    font-size: $mt2_fs-xlrg;
   }
 }
 
-%mt_h4 {
+%mt2_h4 {
   font-family: Georgia, serif;
-  font-size: $mt_fs-lrg;
+  font-size: $mt2_fs-lrg;
   font-weight: 600;
   letter-spacing: .003em;
   line-height: 1.36;
 }
 
-%mt_h5 {
+%mt2_h5 {
   font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
-  font-size: $mt_fs-sm;
+  font-size: $mt2_fs-sm;
   font-weight: 600;
 }
 
-%mt_subh1 {
+%mt2_subh1 {
   font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
-  font-size: $mt_fs-med;
+  font-size: $mt2_fs-med;
   font-weight: 300;
   line-height: 1.37;
 }
 
-%mt_subh2 {
+%mt2_subh2 {
   font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
-  font-size: $mt_fs-sm;
+  font-size: $mt2_fs-sm;
   font-weight: 300;
   line-height: 1.57;
   text-transform: uppercase;
 }
 
-%mt_subh3 {
+%mt2_subh3 {
   font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
-  font-size: $mt_fs-xsm;
+  font-size: $mt2_fs-xsm;
   font-weight: 300;
   text-transform: uppercase;
 }
 
-%mt_subh4 {
+%mt2_subh4 {
   font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
-  font-size: $mt_fs-sm;
+  font-size: $mt2_fs-sm;
   font-weight: 300;
   line-height: 1.43;
 }
 
-%mt_body {
+%mt2_body {
   font-family: Georgia, serif;
-  font-size: $mt_fs-norm;
+  font-size: $mt2_fs-norm;
   font-weight: 300;
   letter-spacing: .001em;
   line-height: 1.6875;
 
   em {
-    @extend %mt_body--emphasis;
+    @extend %mt2_body--emphasis;
   }
 
   strong {
-    @extend %mt_body--strong;
+    @extend %mt2_body--strong;
   }
 }
 
-%mt_body--emphasis {
+%mt2_body--emphasis {
   font-family: Georgia, serif;
-  font-size: $mt_fs-norm;
+  font-size: $mt2_fs-norm;
   font-style: italic;
   font-weight: 300;
   letter-spacing: .001em;
   line-height: 1.6875;
 }
 
-%mt_body--strong {
+%mt2_body--strong {
   font-family: Georgia, serif;
-  font-size: $mt_fs-norm;
+  font-size: $mt2_fs-norm;
   font-weight: 700;
   letter-spacing: .001em;
   line-height: 1.6875;

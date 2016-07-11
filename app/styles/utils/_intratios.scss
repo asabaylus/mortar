@@ -1,7 +1,7 @@
 // Variables
 // =========
 
-$mt_int-ratios: (
+$mt2_int-ratios: (
   broadcast: 56.25%, // (16:9)
   photo:     66.66%, // (3:2)
   tv:        75%,   // (4:3)
@@ -11,11 +11,11 @@ $mt_int-ratios: (
 // Style
 // =====
 
-.mt_intratio {
-  @each $mt_int-ratio, $mt_percentage in $mt_int-ratios {
-    &--#{$mt_int-ratio} {
+.mt2_intratio {
+  @each $mt2_int-ratio, $mt2_percentage in $mt2_int-ratios {
+    &--#{$mt2_int-ratio} {
       height: 0;
-      padding-bottom: $mt_percentage;
+      padding-bottom: $mt2_percentage;
     }
   }
 }
