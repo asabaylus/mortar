@@ -24,4 +24,8 @@ class MTPhotoGallery extends Component {
   }
 }
 
+MTPhotoGallery.propTypes = {
+  slides: PropTypes.array
+}
+
 export default MTPhotoGallery

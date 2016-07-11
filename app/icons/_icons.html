@@ -1,38 +1,38 @@
 <article class="pagewrapper">
-  <div class="mt_row mt_row-gut-2 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-    <h3 class="mt_h3">General Icons</h3>
+  <div class="mt2_row mt2_row-gut-2 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
+    <h3 class="mt2_h3">General Icons</h3>
   </div>
 
   {% for icon in icons %}
-  {% if loop.first %}<ul class="mt_row illustratedexamples-container">{% endif %}
-  <li class="mt_row-gut-2 mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg illustratedexamples-item">
-    <div class="JS_icon-container iconexample-container mt_intratio--square mt_row-gut-1">
-      <svg class="JS_icon mt_icon mt_icon--large iconexample-icon">
+  {% if loop.first %}<ul class="mt2_row illustratedexamples-container">{% endif %}
+  <li class="mt2_row-gut-2 mt2_col-6 mt2_col-sm-4 mt2_col-md-3 mt2_col-lg-2 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg illustratedexamples-item">
+    <div class="JS_icon-container iconexample-container mt2_intratio--square mt2_row-gut-1">
+      <svg class="JS_icon mt2_icon mt2_icon--large iconexample-icon">
         <use xlink:href="#{{ icon }}"></use>
       </svg>
     </div>
-    <p class="mt_h5"><code>#{{ icon }}</code></p>
+    <p class="mt2_h5"><code>#{{ icon }}</code></p>
   </li>
   {% if loop.last %}</ul>{% endif %}
   {% endfor %}
 </article>
 
-<div class="mt_bgcolor--neutral--xxl mt_row-gut-4 divider">&nbsp;</div>
+<div class="mt2_bgcolor--neutral--xxl mt2_row-gut-4 divider">&nbsp;</div>
 
 <article class="pagewrapper">
-  <div class="mt_row mt_row-gut-2 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg">
-    <h3 class="mt_h3">Social Icons</h3>
+  <div class="mt2_row mt2_row-gut-2 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
+    <h3 class="mt2_h3">Social Icons</h3>
   </div>
 
   {% for icon in socialIcons %}
-  {% if loop.first %}<ul class="mt_row illustratedexamples-container">{% endif %}
-  <li class="mt_row-gut-2 mt_col-6 mt_col-sm-4 mt_col-md-3 mt_col-lg-2 mt_col-gut-sm mt_col-md-gut-md mt_col-lg-gut-lg illustratedexamples-item">
-    <div class="JS_icon-container iconexample-container mt_intratio--square">
-      <svg class="JS_icon mt_icon mt_icon--large iconexample-icon">
+  {% if loop.first %}<ul class="mt2_row illustratedexamples-container">{% endif %}
+  <li class="mt2_row-gut-2 mt2_col-6 mt2_col-sm-4 mt2_col-md-3 mt2_col-lg-2 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg illustratedexamples-item">
+    <div class="JS_icon-container iconexample-container mt2_intratio--square">
+      <svg class="JS_icon mt2_icon mt2_icon--large iconexample-icon">
         <use xlink:href="#{{ icon }}"></use>
       </svg>
     </div>
-    <p class="mt_h5"><code>#{{ icon }}</code></p>
+    <p class="mt2_h5"><code>#{{ icon }}</code></p>
   </li>
   {% if loop.last %}</ul>{% endif %}
   {% endfor %}

@@ -1,12 +1,12 @@
-.mt_input {
-  border: $mt_border-default;
+.mt2_input {
+  border: $mt2_border-default;
   opacity: .9;
-  padding: $mt_fs-sm $mt_unit;
+  padding: $mt2_fs-sm $mt2_unit;
   transition: 400ms;
 
   &:focus,
   &:hover {
-    border: $mt_border-default-hover;
+    border: $mt2_border-default-hover;
     opacity: 1;
     outline: none;
   }
@@ -20,8 +20,8 @@
     &,
     &:focus,
     &:hover {
-      border: $mt_border-danger;
-      box-shadow: 0 0 $mt_unit-half $mt_color-danger;
+      border: $mt2_border-danger;
+      box-shadow: 0 0 $mt2_unit-half $mt2_color-danger;
       opacity: 1;
     }
 
@@ -31,6 +31,6 @@
   }
 }
 
-.mt_textarea {
-  min-height: $mt_unit * 6;
+.mt2_textarea {
+  min-height: $mt2_unit * 6;
 }

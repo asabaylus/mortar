@@ -1,5 +1,5 @@
-.mt_slider-container {
-  z-index: $mt_z-middle;
+.mt2_slider-container {
+  z-index: $mt2_z-middle;
 
   img { // this probably needs to go away once the component exists
     height: auto;
@@ -7,32 +7,32 @@
   }
 }
 
-%mt_slider-button {
-  background-color: $mt_color-neutral-xxd;
+%mt2_slider-button {
+  background-color: $mt2_color-neutral-xxd;
   border: none;
-  color: $mt_color-neutral-xxxl;
+  color: $mt2_color-neutral-xxxl;
   cursor: pointer;
   opacity: 0.65;
   padding: 1em 0.5em;
   position: absolute;
   top: 50%;
   transform: translateY(-50%) scale(1.0, 1.0);
-  z-index: $mt_z-top;
+  z-index: $mt2_z-top;
 }
 
-.mt_slider-button--inactive {
+.mt2_slider-button--inactive {
   cursor: default;
   opacity: 0.25;
 }
 
-.mt_slider-button--next {
-  @extend %mt_slider-button;
+.mt2_slider-button--next {
+  @extend %mt2_slider-button;
 
   right: 0;
 }
 
-.mt_slider-button--prev {
-  @extend %mt_slider-button;
+.mt2_slider-button--prev {
+  @extend %mt2_slider-button;
 
   left: 0;
 }

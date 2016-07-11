@@ -1,23 +1,23 @@
-@each $mt_color-name, $mt_color-value in $mt_colors {
-  .mt_color--#{$mt_color-name} {
-    color: $mt_color-value;
+@each $mt2_color-name, $mt2_color-value in $mt2_colors {
+  .mt2_color--#{$mt2_color-name} {
+    color: $mt2_color-value;
   }
 
-  .mt_bgcolor--#{$mt_color-name} {
-    background-color: $mt_color-value;
+  .mt2_bgcolor--#{$mt2_color-name} {
+    background-color: $mt2_color-value;
   }
 
-  .mt_bordercolor--#{$mt_color-name} {
-    border: 1px solid $mt_color-value;
+  .mt2_bordercolor--#{$mt2_color-name} {
+    border: 1px solid $mt2_color-value;
   }
 }
 
-@each $mt_social-color, $mt_social-bg-color in $mt_social-colors {
-  .mt_bgcolor--social--#{$mt_social-color} {
-    background-color: $mt_social-bg-color;
+@each $mt2_social-color, $mt2_social-bg-color in $mt2_social-colors {
+  .mt2_bgcolor--social--#{$mt2_social-color} {
+    background-color: $mt2_social-bg-color;
   }
 
-  .mt_color--social--#{$mt_social-color} {
-    color: $mt_social-bg-color;
+  .mt2_color--social--#{$mt2_social-color} {
+    color: $mt2_social-bg-color;
   }
 }

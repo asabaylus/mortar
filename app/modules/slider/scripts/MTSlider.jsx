@@ -9,13 +9,13 @@ import classNames from 'classnames';
 class PrevButton extends React.Component {
   render() {
     let btnClasses = classNames({
-      'mt_slider-button--prev': true,
-      'mt_slider-button--inactive': !this.props.infinite && this.props.currentSlide === 0
+      'mt2_slider-button--prev': true,
+      'mt2_slider-button--inactive': !this.props.infinite && this.props.currentSlide === 0
     });
 
     return <button {...this.props} className={btnClasses}>
-      <span className='mt_visuallyhidden'>Previous</span>
-      <svg className='mt_icon'>
+      <span className='mt2_visuallyhidden'>Previous</span>
+      <svg className='mt2_icon'>
         <use xmlnsXlink='http://www.w3.org/1999/xlink' xlinkHref='#chevron-left'></use>
       </svg>
     </button>
@@ -25,13 +25,13 @@ class PrevButton extends React.Component {
 class NextButton extends React.Component {
   render() {
     let btnClasses = classNames({
-      'mt_slider-button--next': true,
-      'mt_slider-button--inactive': !this.props.infinite && this.props.currentSlide === this.props.slideCount - 1
+      'mt2_slider-button--next': true,
+      'mt2_slider-button--inactive': !this.props.infinite && this.props.currentSlide === this.props.slideCount - 1
     });
 
     return <button {...this.props} className={btnClasses}>
-      <span className='mt_visuallyhidden'>Next</span>
-      <svg className='mt_icon'>
+      <span className='mt2_visuallyhidden'>Next</span>
+      <svg className='mt2_icon'>
         <use xmlnsXlink='http://www.w3.org/1999/xlink' xlinkHref='#chevron-right'></use>
       </svg>
     </button>
@@ -75,7 +75,7 @@ class MTSlider extends Component {
     let settings = {
       adaptiveHeight: props.slides ? false : true,
       afterChange: this.onSlideChange,
-      className: 'mt_slider-container mt_bgcolor-neutral-xxd',
+      className: 'mt2_slider-container mt2_intratio--photo mt2_bgcolor-neutral-xxd',
       nextArrow: <NextButton
         infinite={props.infinite}
         currentSlide={state.currentSlideIndex}
