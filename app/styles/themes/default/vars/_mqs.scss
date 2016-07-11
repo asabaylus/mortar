@@ -1,21 +1,21 @@
-$mt_mq-sm: 'screen and (min-width: 30em)';
-$mt_mq-md: 'screen and (min-width: 50em)';
-$mt_mq-lg: 'screen and (min-width: 70em)';
+$mt2_mq-sm: 'screen and (min-width: 30em)';
+$mt2_mq-md: 'screen and (min-width: 50em)';
+$mt2_mq-lg: 'screen and (min-width: 70em)';
 
 // Example Use
 // ===========
 //
 // mq variables will need to be interpolated like so:
 //
-// @media #{$mt_mq-sm} {
+// @media #{$mt2_mq-sm} {
 //     div {
 //         color: red;
 //     }
 // }
 
 
-$mt_layout-bps: (
-  sm: $mt_mq-sm,
-  md: $mt_mq-md,
-  lg: $mt_mq-lg
+$mt2_layout-bps: (
+  sm: $mt2_mq-sm,
+  md: $mt2_mq-md,
+  lg: $mt2_mq-lg
 );

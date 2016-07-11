@@ -1,15 +1,15 @@
-.mt_modal-button {
+.mt2_modal-button {
   background-color: transparent;
   border: 0;
-  color: $mt_color-neutral-xxxl;
+  color: $mt2_color-neutral-xxxl;
   cursor: pointer;
   position: absolute;
-  right: $mt_unit-double;
-  top: $mt_unit;
+  right: $mt2_unit-double;
+  top: $mt2_unit;
 }
 
-.mt_modal-container {
-  background-color: transparentize($mt_color-neutral-xxd, .15);
+.mt2_modal-container {
+  background-color: transparentize($mt2_color-neutral-xxd, .15);
   height: 85vh;
   left: 7.5vw;
   opacity: 0;
@@ -17,10 +17,10 @@
   top: 7.5vh;
   transition: .2s;
   width: 85vw;
-  z-index: $mt_z-top;
+  z-index: $mt2_z-top;
 }
 
-.mt_module-container--active {
+.mt2_module-container--active {
   height: 100vh;
   left: 0;
   opacity: 100;

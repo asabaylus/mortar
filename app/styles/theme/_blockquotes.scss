@@ -1,21 +1,21 @@
-%mt_blockquote {
+%mt2_blockquote {
   p {
-    @extend %mt_body--emphasis;
+    @extend %mt2_body--emphasis;
 
     font-size: 1rem;
   }
 
-  border-left: ($mt_fs-med-lrg / 2) solid $mt_color-neutral-xxl;
-  color: $mt_color-neutral-xd;
-  margin: ($mt_fs-med-lrg * 2) 0;
-  padding-left: $mt_fs-med-lrg;
-  padding-right: $mt_fs-med-lrg;
+  border-left: ($mt2_fs-med-lrg / 2) solid $mt2_color-neutral-xxl;
+  color: $mt2_color-neutral-xd;
+  margin: ($mt2_fs-med-lrg * 2) 0;
+  padding-left: $mt2_fs-med-lrg;
+  padding-right: $mt2_fs-med-lrg;
 }
 
-.mt_blockquote {
-  @extend %mt_blockquote;
+.mt2_blockquote {
+  @extend %mt2_blockquote;
 }
 
-.mt_blockquote--footer {
+.mt2_blockquote--footer {
   text-align: right;
 }

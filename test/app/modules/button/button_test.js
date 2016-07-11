@@ -75,15 +75,15 @@ describe('CTAButton', () => {
     });
 
     it('should have button class', () => {
-      wrapper.find('button').hasClass('mt_btn');
+      wrapper.find('button').hasClass('mt2_btn');
     });
 
     it('should have fullwidth class', () => {
-      wrapper.find('button').hasClass('mt_fullwidth');
+      wrapper.find('button').hasClass('mt2_fullwidth');
     });
 
     it('should have default style class', () => {
-      wrapper.find('button').hasClass('mt_btn-default');
+      wrapper.find('button').hasClass('mt2_btn-default');
     });
 
     it('should take a callback function for the click event', () => {
@@ -99,7 +99,7 @@ describe('CTAButton', () => {
     });
 
     it('should contain an icon container div with class', () => {
-      wrapper.find('button').childAt(1).hasClass('mt_iconandlabel--horizontal');
+      wrapper.find('button').childAt(1).hasClass('mt2_iconandlabel--horizontal');
     });
 
     it('Label component should be called with expected props', () => {

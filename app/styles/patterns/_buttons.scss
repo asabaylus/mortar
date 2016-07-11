@@ -1,5 +1,5 @@
-.mt_btn {
-  @extend %mt_h5;
+.mt2_btn {
+  @extend %mt2_h5;
 
   background-color: transparent;
   border: 1px solid transparent;
@@ -7,100 +7,100 @@
   cursor: pointer;
   margin-bottom: .675em;
   margin-right: .675em;
-  padding: $mt_unit $mt_unit-double;
+  padding: $mt2_unit $mt2_unit-double;
   text-align: center;
   transition: 400ms;
 
   &--success {
-    background-color: $mt_color-affirmation;
-    border: 1px solid $mt_color-affirmation;
-    color: $mt_color-neutral-xxxl;
+    background-color: $mt2_color-affirmation;
+    border: 1px solid $mt2_color-affirmation;
+    color: $mt2_color-neutral-xxxl;
 
     &:hover {
-      background-color: $mt_color-affirmation-l;
-      border: 1px solid $mt_color-affirmation-l;
+      background-color: $mt2_color-affirmation-l;
+      border: 1px solid $mt2_color-affirmation-l;
     }
   }
 
   &--error {
-    background-color: $mt_color-danger;
-    border: 1px solid $mt_color-danger;
-    color: $mt_color-neutral-xxxl;
+    background-color: $mt2_color-danger;
+    border: 1px solid $mt2_color-danger;
+    color: $mt2_color-neutral-xxxl;
 
     &:hover {
-      background-color: $mt_color-danger-l;
-      border: 1px solid $mt_color-danger-l;
+      background-color: $mt2_color-danger-l;
+      border: 1px solid $mt2_color-danger-l;
     }
   }
 }
 
-.mt_btn--default {
-  background-color: $mt_color-primary;
+.mt2_btn--default {
+  background-color: $mt2_color-primary;
 
   &:hover {
-    background-color: $mt_color-primary-l;
-    border: 1px solid $mt_color-primary-l;
+    background-color: $mt2_color-primary-l;
+    border: 1px solid $mt2_color-primary-l;
   }
 
   &--inverse {
-    color: $mt_color-neutral-xxxl;
+    color: $mt2_color-neutral-xxxl;
   }
 
   &--inactive {
-    background: $mt_color-neutral;
-    color: $mt_color-neutral-xxd;
+    background: $mt2_color-neutral;
+    color: $mt2_color-neutral-xxd;
     cursor: default;
     opacity: .3;
   }
 }
 
-.mt_btn--secondary {
-  border: 1px solid $mt_color-primary-l;
+.mt2_btn--secondary {
+  border: 1px solid $mt2_color-primary-l;
 
   &:hover {
-    background: $mt_color-primary-l;
+    background: $mt2_color-primary-l;
   }
 
   &--inverse {
-    border: 1px solid $mt_color-primary-l;
-    color: $mt_color-neutral-xxxl;
+    border: 1px solid $mt2_color-primary-l;
+    color: $mt2_color-neutral-xxxl;
 
     &:hover {
-      background: $mt_color-primary-l;
-      color: $mt_color-neutral-xxd;
+      background: $mt2_color-primary-l;
+      color: $mt2_color-neutral-xxd;
     }
   }
 
   &--inactive {
-    border: 1px solid transparentize($mt_color-neutral-l, .6);
-    color: transparentize($mt_color-neutral-l, .6);
+    border: 1px solid transparentize($mt2_color-neutral-l, .6);
+    color: transparentize($mt2_color-neutral-l, .6);
     cursor: default;
   }
 }
 
-.mt_btn--naked {
+.mt2_btn--naked {
   background: none;
 
   span {
-    border-bottom: 2px solid $mt_color-primary;
+    border-bottom: 2px solid $mt2_color-primary;
   }
 
   &:hover {
     background-color: transparent;
-    color: $mt_color-primary;
+    color: $mt2_color-primary;
   }
 
   &--inverse {
-    color: $mt_color-neutral-xxxl;
+    color: $mt2_color-neutral-xxxl;
   }
 
   &--inactive {
     border: 0;
-    color: transparentize($mt_color-neutral-l, .6);
+    color: transparentize($mt2_color-neutral-l, .6);
     cursor: default;
 
     &:hover {
-      color: transparentize($mt_color-neutral-l, .6);
+      color: transparentize($mt2_color-neutral-l, .6);
     }
   }
 }
