@@ -19,7 +19,7 @@ class Label extends Component {
           return <div className='mt2_iconandlabel--vertical'>
             <Icon name={icon.name} align='top' size={icon.size}
                   alt={ icon.alt }/>
-            <span dangerouslySetInnerHTML={{__html:this.props.label}}></span>
+            <span>{this.props.label}</span>
           </div>;
         case 'bottom':
           return <div className='mt2_iconandlabel--vertical'>
