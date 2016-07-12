@@ -78,8 +78,8 @@ class MTSocialButton extends Component {
   render() {
     return (
       <button onClick={this.handleClick} className="mt2_sharing-btn">
-        <svg className={"mt2_icon mt2_color--social--" + this.props.site}>
-          <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref={"#social-" + this.props.site}></use>
+        <svg className={"mt2_icon--large mt2_color--social--" + this.props.site}>
+          <use xlinkHref={"#social-" + this.props.site}></use>
         </svg>
       </button>
     )

@@ -2,26 +2,17 @@
 
 import React, { Component, PropTypes }  from 'react';
 import {Pestle} from '@natgeo/mortar-pestle';
-import urlEncode from 'urlencode';
 import MTSocialButton from './MTSocialButton.jsx'
+import MTEmailButton from './MTEmailButton.jsx'
+import classNames from 'classnames';
 
 class MTSharing extends Component {
   render() {
-    // this looks wacky, but the strings need to be URL encoded
-    // while the API remains unencoded
-    const emailFormat = 'mailto:?subject='
-      + urlEncode(this.props.title)
-      + '&body='
-      + urlEncode('<p>'
-        + this.props.title
-        + '<br /><a href="'
-        + this.props.url
-        + '">'
-        + this.props.url
-        + '</a></p><p><a href="http://www.nationalgeographic.com">http://www.nationalgeographic.com</a></p>'
-      )
-    ;
-
+    const containerClasses = classNames({
+      'mt2_sharing-container': true,
+      'mt2_bordercolor--neutral--xl': true,
+      'mt2_sharing-container--vertical': this.props.display === 'vertical'
+    });
     const socialButtons = this.props.buttons.map(option => {
       if(option !== 'email') {
         return (
@@ -35,16 +26,16 @@ class MTSharing extends Component {
       }
 
       return (
-        <a key={option} href={emailFormat} className="mt2_sharing-btn">
-          <svg className="mt2_icon mt2_color--neutral--xxd">
-            <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#email"></use>
-          </svg>
-        </a>
+        <MTEmailButton
+          key={option}
+          url={this.props.url}
+          title={this.props.title}
+        />
       )
     })
 
     return (
-      <div className="mt2_sharing-container">
+      <div className={containerClasses}>
         {socialButtons}
       </div>
     );
@@ -61,13 +52,15 @@ const buttonDefaults = [
 ]
 
 MTSharing.defaultProps = {
-  buttons: buttonDefaults
+  buttons: buttonDefaults,
+  display: 'horizontal'
 }
 
 MTSharing.propTypes = {
-  url: PropTypes.string.isRequired,
   buttons: PropTypes.arrayOf(React.PropTypes.string),
-  title: PropTypes.string.isRequired
+  display: PropTypes.oneOf(['horizontal', 'vertical']),
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
 }
 
 export default MTSharing

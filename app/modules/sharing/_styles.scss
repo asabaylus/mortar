@@ -1,6 +1,16 @@
+.mt2_sharing-container {
+  display: inline-flex;
+  border: 2px solid $mt2_color-neutral-xl;
+
+  &--vertical {
+    flex-direction: column;
+  }
+}
+
 .mt2_sharing-btn {
   background-color: transparent;
   border: 0;
+  padding: 0.75rem;
 
   & *:hover {
     color: $mt2_color-neutral-l;
