@@ -4,6 +4,7 @@ import React, { Component, PropTypes }  from 'react';
 import {Pestle} from '@natgeo/mortar-pestle';
 import Slick from 'react-slick';
 import events from './events';
+import ImageSlide from './imageSlide.jsx';
 import classNames from 'classnames';
 
 class PrevButton extends React.Component {
@@ -42,7 +43,7 @@ class MTSlider extends Component {
   findSlideType(type, data) {
     switch(type) {
     case 'image':
-      return <img src={data.src} />
+      return <ImageSlide src={data.src} />
     default:
       return;
     }
@@ -72,14 +73,13 @@ class MTSlider extends Component {
   render() {
     const props = this.props;
     const state = this.state;
-    let settings = {
-      adaptiveHeight: props.slides ? false : true,
+    const settings = {
       afterChange: this.onSlideChange,
       className: 'mt2_slider-container mt2_intratio--photo mt2_bgcolor-neutral-xxd',
       nextArrow: <NextButton
         infinite={props.infinite}
         currentSlide={state.currentSlideIndex}
-        slideCount={props.slides ? props.slides.length : props.children.length} />,
+        slideCount={props.slides.length} />,
       prevArrow: <PrevButton
         infinite={props.infinite}
         currentSlide={state.currentSlideIndex} />,
@@ -87,28 +87,16 @@ class MTSlider extends Component {
       infinite: props.infinite
     };
 
-    let slides;
+    const slides = props.slides.map((slide, i) => {
+      const {type, ...data} = slide;
+      const slideMarkup = this.findSlideType(type, data);
 
-    /*
-     * if a "slides" prop is provided, a set of slides of a supported type will be rendered.
-     * Otherwise, the component will render any children passed to the component,
-     * arranging sibling elements as slides
-     */
-    if(props.slides) {
-      slides = props.slides.map((slide, i) => {
-        const {type, ...data} = slide;
-        const slideMarkup = this.findSlideType(type, data);
-
-        return <div key={i}>{slideMarkup}</div>;
-      });
-
-      //apply class that will hold aspect ratio of gallery constant
-      settings.className += " mt_intratio--photo";
-    }
+      return <div key={i}>{slideMarkup}</div>;
+    });
 
     return (
       <Slick {...settings}>
-        {slides || props.children}
+        {slides}
       </Slick>
     );
   }
