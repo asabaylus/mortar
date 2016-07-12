@@ -69,8 +69,8 @@ describe('Slider', () => {
         }
       });
 
-      wrapper.find('button.mt_slider-button--next').simulate('click');
-      wrapper.find('button.mt_slider-button--prev').simulate('click');
+      wrapper.find('button.mt2_slider-button--next').simulate('click');
+      wrapper.find('button.mt2_slider-button--prev').simulate('click');
     });
 
     it('should return current slide index when publish a slide change', (done) => {
@@ -80,7 +80,7 @@ describe('Slider', () => {
         done();
       });
 
-      wrapper.find('button.mt_slider-button--next').simulate('click');
+      wrapper.find('button.mt2_slider-button--next').simulate('click');
     });
   });
 });

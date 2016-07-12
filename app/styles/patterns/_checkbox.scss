@@ -1,50 +1,50 @@
 // Default State
-.mt_checkbox {
+.mt2_checkbox {
   visibility: hidden;
 
   & + * {
-    margin-left: $mt_unit * -1.25;
+    margin-left: $mt2_unit * -1.25;
 
     &::before {
-      background-image: $mt_checkbox-bg-unchecked;
+      background-image: $mt2_checkbox-bg-unchecked;
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
       content: '';
       display: inline-block;
-      height: $mt_checkbox-height;
-      margin-right: $mt_unit * .75;
+      height: $mt2_checkbox-height;
+      margin-right: $mt2_unit * .75;
       opacity: .9;
       vertical-align: bottom;
-      width: $mt_checkbox-width;
+      width: $mt2_checkbox-width;
     }
   }
 
   // Hover State
-  &:not(.mt_checkbox--disabled):focus + *,
-  &:not(.mt_checkbox--disabled):hover + * {
+  &:not(.mt2_checkbox--disabled):focus + *,
+  &:not(.mt2_checkbox--disabled):hover + * {
     cursor: pointer;
     opacity: 1;
 
     &::before {
-      background-image: $mt_checkbox-bg-hover;
+      background-image: $mt2_checkbox-bg-hover;
       opacity: 1;
     }
   }
 
   // Checked State
-  &:not(.mt_checkbox--disabled):checked + * {
+  &:not(.mt2_checkbox--disabled):checked + * {
     cursor: pointer;
     opacity: 1;
 
     &::before {
-      background-image: $mt_checkbox-bg-checked;
+      background-image: $mt2_checkbox-bg-checked;
       opacity: 1;
     }
   }
 
   // Disabled State
-  &.mt_checkbox--disabled {
+  &.mt2_checkbox--disabled {
     opacity: .4;
 
     & + * {

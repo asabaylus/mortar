@@ -51,7 +51,7 @@ describe('Icon', () => {
     });
 
     it('has svg element with appropriate classes', () => {
-      expect(wrapper.find('svg').props().className).to.equal('mt_icon mt_icon--large mt_icon--left mt_color--neutral--xxd');
+      expect(wrapper.find('svg').props().className).to.equal('mt2_icon mt2_icon--large mt2_icon--left mt2_color--neutral--xxd');
     });
 
     it('has title element with alt text', () => {

@@ -3,32 +3,32 @@
 // output where we either can't or shouldn't have to put in the work to add
 // classes to every single element.
 
-.mt_article {
-  @extend %mt_body;
+.mt2_article {
+  @extend %mt2_body;
 
   a {
-    @extend %mt_link;
+    @extend %mt2_link;
   }
 
   blockquote {
-    @extend %mt_blockquote;
+    @extend %mt2_blockquote;
   }
 
   h1 {
-    @extend %mt_h4;
+    @extend %mt2_h4;
 
     &:not(:first-child) {
-      margin-top: $mt_unit-double;
+      margin-top: $mt2_unit-double;
     }
   }
 
   h2 {
-    @extend %mt_h4;
+    @extend %mt2_h4;
 
-    font-size: $mt_fs-med;
+    font-size: $mt2_fs-med;
 
     &:not(:first-child) {
-      margin-top: $mt_unit-double;
+      margin-top: $mt2_unit-double;
     }
   }
 
@@ -36,17 +36,17 @@
   h4,
   h5,
   h6 {
-    @extend %mt_h4;
+    @extend %mt2_h4;
 
-    font-size: $mt_fs-norm;
+    font-size: $mt2_fs-norm;
 
     &:not(:first-child) {
-      margin-top: $mt_unit-double;
+      margin-top: $mt2_unit-double;
     }
   }
 
   ol,
   ul {
-    @extend %mt_list;
+    @extend %mt2_list;
   }
 }

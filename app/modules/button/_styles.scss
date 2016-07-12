@@ -1,5 +1,5 @@
 //Override for user-agent defaults link button text/icon
-a.mt_btn {
+a.mt2_btn {
   color: inherit;
   text-decoration: none;
 
@@ -12,14 +12,14 @@ a.mt_btn {
   &-naked--inactive:hover span,
   &-naked--inactive:hover svg {
     border-bottom: 0;
-    color: transparentize($mt_color-neutral-l, .6);
+    color: transparentize($mt2_color-neutral-l, .6);
     text-decoration: none;
   }
 
 }
 
-.mt_iconandlabel--horizontal,
-.mt_iconandlabel--vertical {
+.mt2_iconandlabel--horizontal,
+.mt2_iconandlabel--vertical {
   margin: 0 auto;
   max-width: max-content;
 }
