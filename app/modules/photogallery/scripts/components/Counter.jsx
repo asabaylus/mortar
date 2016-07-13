@@ -18,20 +18,20 @@ class Counter extends Component {
   }
 
   render() {
-    let prevDimClass = this.props.firstSlideActive ? "mt_numericcounter-arrow--disabled" : " ",
-        nextDimClass = this.props.lastSlideActive ? "mt_numericcounter-arrow--disabled" : " ";
+    let prevDimClass = this.props.firstSlideActive ? "mt2_numericcounter-arrow--disabled" : " ",
+        nextDimClass = this.props.lastSlideActive ? "mt2_numericcounter-arrow--disabled" : " ";
 
-    return <div className="mt_numericcounter">
-      <button ref="previousButton" className="mt_numericcounter-button">
-        <svg className={"mt_icon mt_numericcounter-arrow" + prevDimClass}>
+    return <div className="mt2_numericcounter">
+      <button ref="previousButton" className="mt2_numericcounter-button">
+        <svg className={"mt2_icon mt2_numericcounter-arrow" + prevDimClass}>
           <use xlinkHref="#chevron-left"></use>
         </svg>
-        <span className="mt_h5">{this.props.currentSlide}</span>
+        <span className="mt2_h5">{this.props.currentSlide}</span>
       </button>
-      <span className="mt_h5">/</span>
-      <button ref="nextButton" className="mt_numericcounter-button">
-        <span className="mt_h5">{this.props.totalSlides}</span>
-        <svg className={"mt_icon mt_numericcounter-arrow" + nextDimClass}>
+      <span className="mt2_h5">/</span>
+      <button ref="nextButton" className="mt2_numericcounter-button">
+        <span className="mt2_h5">{this.props.totalSlides}</span>
+        <svg className={"mt2_icon mt2_numericcounter-arrow" + nextDimClass}>
           <use xlinkHref="#chevron-right"></use>
         </svg>
       </button>
@@ -40,12 +40,12 @@ class Counter extends Component {
 }
 
 Counter.propTypes = {
-  currentSlide: PropTypes.number,
+  currentSlide: PropTypes.string,
   firstSlideActive: PropTypes.bool,
   lastSlideActive: PropTypes.bool,
   slideNext: PropTypes.func,
   slidePrev: PropTypes.func,
-  totalSlides: PropTypes.number
+  totalSlides: PropTypes.string
 }
 
 export default Counter;
