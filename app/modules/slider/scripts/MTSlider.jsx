@@ -4,6 +4,7 @@ import React, { Component, PropTypes }  from 'react';
 import {Pestle} from '@natgeo/mortar-pestle';
 import Slick from 'react-slick';
 import events from './events';
+import ImageSlide from './imageSlide.jsx';
 import classNames from 'classnames';
 
 class PrevButton extends React.Component {
@@ -42,7 +43,7 @@ class MTSlider extends Component {
   findSlideType(type, data) {
     switch(type) {
     case 'image':
-      return <img src={data.src} />
+      return <ImageSlide src={data.src} />
     default:
       return;
     }
