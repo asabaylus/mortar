@@ -130,12 +130,11 @@ class ModuleManager {
       if(err) {
         instanceData.error = err;
         console.error(
-          'Error on Module:',
-          instanceData.name,
-          '\n Instance Id:',
-          instanceData.id,
-          '\n',
-          (instanceData.error.stack) ? instanceData.error.stack : instanceData.error
+          'Error on Module: ' + instanceData.name,
+          '\n Instance Id:' + instanceData.id,
+          '\n Message: ' + err.message,
+          (err.fileName) ? '\n File:' + err.fileName + ' (' + err.lineNumber + ',' + err.columnNumber + ')' : '',
+          '\n Stack:', (err.stack) ? err.stack : err
         );
       }
       else {
@@ -211,9 +210,7 @@ class ModuleManager {
   // registered module, if one is found it uses that module to initialize.
   // this also passes the data options to the module after parsing them.
   createInstance(moduleName, el) {
-    let optionsAttribute,
-      options,
-      instanceData,
+    let instanceData,
       instance,
       id;
     let module = this.getModule(moduleName);
@@ -234,8 +231,9 @@ class ModuleManager {
 
     try {
       // Reading options
-      optionsAttribute = el.getAttribute(defaultModuleParamsAttribute);
-      options = this.parseParams(optionsAttribute);
+      const selector = `[${defaultModuleParamsAttribute}]`;
+      const optionsElement = el.querySelector(selector);
+      const options = optionsElement ? this.parseParams(optionsElement.textContent) : null;
 
       // Initialize the module
       instance = new module.fn(id, el, options);
@@ -254,12 +252,11 @@ class ModuleManager {
         instance
       };
       console.error(
-        'Error on Module:',
-        moduleName,
-        '\n Instance Id:',
-        id,
-        '\n',
-        (e.stack) ? e.stack : e
+        'Error on Module: ' + moduleName,
+        '\n Instance Id:' + id,
+        '\n Message: ' + e.message,
+        (e.fileName) ? '\n File:' + e.fileName + ' (' + e.lineNumber + ',' + e.columnNumber + ')' : null,
+        '\n Stack:', (e.stack) ? e.stack : e
       );
     }
 
