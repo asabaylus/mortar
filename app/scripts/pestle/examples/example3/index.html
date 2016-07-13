@@ -9,23 +9,26 @@
 <p>This example shows how init's callback works<br/><br/>
 <i>Open javascript console</i>
 </p>
-<div
-  data-pestle-module="MyModule"
-  data-pestle-options='{
+<div data-pestle-module="MyModule">
+  <script type="text/json" data-pestle-options>
+  {
     "prop1": "value1"
-  }'>
+  }
+  </script>
 </div>
-<div
-  data-pestle-module="MyModule"
-  data-pestle-options='{
+<div data-pestle-module="MyModule">
+  <script type="text/json" data-pestle-options>
+  {
     "prop1": "value2"
-  }'>
+  }
+  </script>
 </div>
-<div
-  data-pestle-module="MyModule"
-  data-pestle-options='{
+<div data-pestle-module="MyModule">
+  <script type="text/json" data-pestle-options>
+  {
     "prop1": "value3"
-  }'>
+  }
+  </script>
 </div>
 <script src="bundle.js"></script>
 </body>

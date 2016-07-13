@@ -11,11 +11,14 @@ import React from 'react';
 describe('Slider', () => {
   describe('Pestle Module', () => {
     before(() => {
-      const html = `<div
-        data-pestle-module='Slider'
-        data-pestle-options='{
-          "animations": false
-        }'></div>`
+      const html = `
+        <div data-pestle-module='Slider'>
+          <script type="text/json" data-pestle-options>
+            {
+              "animations": false
+            }
+          </script>
+        </div>`
 
       insertFixture(html);
       Pestle.init();
