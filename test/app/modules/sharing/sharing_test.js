@@ -3,6 +3,7 @@
 import Pestle from '@natgeo/mortar-pestle';
 import Sharing from '../../../../app/modules/sharing/scripts/MTSharingPestle.js';
 import SharingComponent from '../../../../app/modules/sharing/scripts/MTSharing.jsx';
+import SocialButton from '../../../../app/modules/sharing/scripts/MTSocialButton.jsx';
 
 import {shallow, mount} from 'enzyme';
 import React from 'react';
@@ -31,5 +32,34 @@ describe('sharing', () => {
     it('should mount', () => {
       expect(Pestle.ModuleManager.getInstancesByName('Sharing')).to.have.length.of.at.least(1);
     });
+  });
+
+  describe('Sharing React Component', () => {
+    let wrapper;
+    const socialOptions = [
+      "facebook",
+      "email",
+      "twitter"
+    ];
+
+    before(() => {
+      wrapper = mount(<SharingComponent buttons={socialOptions} url="http://natgeo.com" title="title"/>);
+    });
+
+    it('has correct number of children', () => {
+      expect(wrapper.find(SharingComponent).children()).to.have.lengthOf(socialOptions.length);
+    })
+  });
+
+  describe('SocialButton React Component', () => {
+    let wrapper;
+
+    before(() => {
+      wrapper = mount(<SocialButton />);
+    });
+
+    it('should center the popup window on the screen', () => {
+      expect(wrapper.instance().centerPopup(1000, 1000, 300, 500)).to.eql({top: 350, left: 250});
+    })
   });
 });

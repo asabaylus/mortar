@@ -13,7 +13,7 @@ export default class MyModule extends Module {
 
     setTimeout(() => {
       ReactDOM.render(<Component prop={prop1} />, this.el);
-      console.log('Module1 initialized.');
+      console.log('Module4 initialized.');
 
       done();
     }, 1000);

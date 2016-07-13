@@ -25,4 +25,4 @@ class Pestle {
 const instance = new Pestle();
 
 export default instance
-export {instance as Pestle, Module, ModuleManager}
+export {instance as Pestle, Module, ModuleManager, PubSub}

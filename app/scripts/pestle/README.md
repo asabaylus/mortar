@@ -11,9 +11,10 @@ A pestle module is composed of 2 parts:
 ### HTML markup
 Add the following markup to your template or HTML file where you want the module to be loaded. This is the most basic markup for loading a module (the `data-pestle-options` attribute is optional):
 ```html
-<div
-  data-pestle-module="ExampleModule"
-  data-pestle-options='{"option1":"value1"}'>
+<div data-pestle-module="ExampleModule">
+  <script type="text/json" data-pestle-options>
+  {"option1":"value1"}
+  </script>
 </div>
 ```
 
@@ -21,7 +22,7 @@ Add the following markup to your template or HTML file where you want the module
 Let's define the javascript module:
 
 ```javascript
-import {Module} from '../../../scripts/pestle/main.js'; // Relative path to the pestle main file.
+import {Module} from '@natgeo/mortar-pestle';
 
 class ExampleModule extends Module {
   init() {
@@ -37,7 +38,7 @@ export default ExampleModule
 Now we need to register the module we've created so Pestle is aware of it. Lastly we intialize Pestle.
 
 ```javascript
-import {Pestle} from '../../../scripts/pestle/main.js'; // Relative path to the pestle main file.
+import {Pestle} from '@natgeo/mortar-pestle';
 
 // Registering modules
 Pestle.ModuleManager.register('Slider', Slider);
@@ -50,7 +51,7 @@ Pestle.init();
 
 ### Pestle Object
 
-This is the core of Pestle and can be exposed if required. It provides access to the Module Manager and Event Manager (currently in development).
+This is the core of Pestle and can be exposed if required. It provides access to the Module Manager and Pub Sub.
 
 #### Methods
 
@@ -78,7 +79,7 @@ This is the base class for creating new modules. It must be treated as an abstra
 Example:
 
 ```javascript
-import {Module} from 'pestle';
+import {Module} from '@natgeo/mortar-pestle';
 class Module1 extends Module {
   init() {
     // initilization component code goes here.
@@ -102,7 +103,7 @@ After init has executed or after done has been called the `isLoaded` property is
 Example using sync definition:
 
 ```javascript
-import {Module} from 'pestle';
+import {Module} from '@natgeo/mortar-pestle';
 class Module1 extends Module {
   // overriding init() method
   init() {
@@ -117,7 +118,7 @@ export default Module1;
 
 Example using async definition:
 ```javascript
-import {Module} from 'pestle';
+import {Module} from '@natgeo/mortar-pestle';
 class Module1 extends Module {
   // overriding init() method
   init(done) {
@@ -218,6 +219,22 @@ The Modeule Manager class is in charge of registering modules and searching the 
 **getInstancesCount()**: returns the count of running instances.
 
 *returns*: number.
+
+### PubSub
+
+Pestle wraps a PubSub library called [PubSubJS](https://github.com/mroderick/PubSubJS). To start using it, you just need to import it from Pestle.
+
+Example:
+
+```javascript
+import {PubSub} from '@natgeo/mortar-pestle';
+
+const mySubscriber => (msg, data) {
+    console.log(msg, data);
+};
+
+PubSub.suscribe('MY TOPIC', mySubscriber);
+```
 
 
 ## Examples
