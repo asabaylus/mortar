@@ -43,7 +43,7 @@ class MTSlider extends Component {
   findSlideType(type, data) {
     switch(type) {
     case 'image':
-      return <ImageSlide src={data.src} />
+      return <ImageSlide letterboxed={this.props.letterboxed} src={data.src} />
     default:
       return;
     }
@@ -73,9 +73,12 @@ class MTSlider extends Component {
   render() {
     const props = this.props;
     const state = this.state;
+    const aspectRatio = props.aspectRatio === "16:9" ? " mt2_intratio--broadcast " : props.aspectRatio === "4:3" ? " mt2_intratio--tv " : " mt2_intratio--photo ";
+    const backgroundColor = props.backgroundColor === "light" ? " mt2_bgcolor--neutral-xxl " : props.backgroundColor === "dark" ? " mt_bgcolor--neutral-xxd " : " ";
     const settings = {
       afterChange: this.onSlideChange,
-      className: 'mt2_slider-container mt2_intratio--photo mt2_bgcolor-neutral-xxd',
+      arrows: props.showArrows,
+      className: 'mt2_slider-container' + aspectRatio + backgroundColor,
       nextArrow: <NextButton
         infinite={props.infinite}
         currentSlide={state.currentSlideIndex}
@@ -104,12 +107,17 @@ class MTSlider extends Component {
 
 MTSlider.defaultProps = {
   animations: true,
+  aspectRatio: "3:2",
   infinite: true
 }
 
 MTSlider.propTypes = {
   animations: PropTypes.bool,
+  aspectRatio: PropTypes.string,
+  backgroundColor: PropTypes.string,
   infinite: PropTypes.bool,
+  letterboxed: PropTypes.bool,
+  showArrows: PropTypes.bool,
   slides: PropTypes.arrayOf(PropTypes.shape({
     type: PropTypes.string.isRequired
   }))

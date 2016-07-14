@@ -12,12 +12,12 @@ class PhotoGallery extends Module {
       aspectRatio={this.options.aspectRatio}
       backgroundColor={this.options.backgroundColor}
       description={this.options.description}
-      heading={this.options.heading}
-      image={this.options.image}
       infinite={this.options.infinite}
       letterboxed={this.options.letterboxed}
       showArrows={this.options.showArrows}
       showCounter={this.options.showCounter}
+      slides={this.options.slides}
+      title={this.options.title}
     />, this.el);
   }
 }
