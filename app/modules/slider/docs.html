@@ -8,19 +8,22 @@
 
   <div class="mt2_col-lg-8 mt2_col-sm-12 mt2_col-lg-offset-1 mt2_row-gut-4">
     <p class="mt2_subh4">The slider is built with Pestle, wrapping the <a href="https://github.com/akiran/react-slick">react slick</a> package. The slider will take different slide types, at the moment it only takes images in the following format:</p>
-<pre class="codesnippet"><code class="language-markup">
-  &#x3C;div data-pestle-module=&#x22;Slider&#x22;&#x3E;
-    &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
-      {
-        &#x22;slides&#x22;: [
-          {
-            &#x22;type&#x22;: &#x22;image&#x22;,
-            &#x22;src&#x22;: &#x22;http://www.fillmurray.com/g/600/400&#x22;
-          }
-        ]
-      }
-    &#x3C;/script&#x3E;
-  &#x3C;/div&#x3E;</code></pre>
+
+    <div class="codesnippet-wrapper">
+<pre class="codesnippet"><code class="language-markup">&#x3C;div data-pestle-module=&#x22;Slider&#x22;&#x3E;
+  &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
+    {
+      &#x22;slides&#x22;: [
+        {
+          &#x22;type&#x22;: &#x22;image&#x22;,
+          &#x22;src&#x22;: &#x22;http://www.fillmurray.com/g/600/400&#x22;
+        }
+      ]
+    }
+  &#x3C;/script&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+    </div>
+
     <p class="mt2_subh4">At the moment, the only option for the slider is infinite. The default is infinite which can be set to <code>false</code>. Following is an example of each:</p>
 
     <h2 class="mt2_h5">Infinite Slider</h2>
@@ -44,14 +47,16 @@
       }
       </script>
     </div>
-<pre class="codesnippet"><code class="language-markup">
-  &#x3C;div data-pestle-module=&#x22;Slider&#x22;&#x3E;
-    &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
-      {
-        &#x22;slides&#x22;: [...]
-      }
-    &#x3C;/script&#x3E;
-  &#x3C;/div&#x3E;</code></pre>
+
+    <div>
+<pre class="codesnippet"><code class="language-markup">&#x3C;div data-pestle-module=&#x22;Slider&#x22;&#x3E;
+  &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
+    {
+      &#x22;slides&#x22;: [...]
+    }
+  &#x3C;/script&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+    </div>
 
     <h2 class="mt2_h5">Non-Infinite Slider</h2>
     <div data-pestle-module="Slider">
@@ -75,6 +80,8 @@
         }
       </script>
     </div>
+
+    <div class="codesnippet-wrapper">
 <pre class="codesnippet"><code class="language-markup">
   &#x3C;div data-pestle-module=&#x22;Slider&#x22;&#x3E;
     &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
@@ -84,5 +91,6 @@
       }
     &#x3C;/script&#x3E;
   &#x3C;/div&#x3E;</code></pre>
+    </div>
   </div>
 </div>
