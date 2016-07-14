@@ -119,8 +119,11 @@ MTSlider.propTypes = {
   letterboxed: PropTypes.bool,
   showArrows: PropTypes.bool,
   slides: PropTypes.arrayOf(PropTypes.shape({
-    type: PropTypes.string.isRequired
-  }))
+    aspectRatio: PropTypes.string,
+    type: PropTypes.string.isRequired,
+    src: PropTypes.string,
+    srcSet: PropTypes.array
+  })),
 }
 
 export default MTSlider

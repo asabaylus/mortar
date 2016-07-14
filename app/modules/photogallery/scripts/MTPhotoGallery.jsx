@@ -19,7 +19,11 @@ class PhotoGallery extends Component {
                 showArrows={this.props.showArrows}
                 slides={this.props.slides}
         />
-        <Captions />
+        <Captions assetSource={this.props.slides.assetSource}
+                  caption={this.props.slides.caption}
+                  credit={this.props.slides.credit}
+                  title={this.props.slides.title}
+        />
       </div>
     );
   }
@@ -37,7 +41,16 @@ PhotoGallery.propTypes = {
   letterboxed: PropTypes.bool,
   showArrows: PropTypes.bool,
   showCounter: PropTypes.bool,
-  slides: PropTypes.array,
+  slides: PropTypes.arrayOf(PropTypes.shape({
+    aspectRatio: PropTypes.string,
+    assetSource: PropTypes.string,
+    caption: PropTypes.string,
+    credit: PropTypes.string,
+    title: PropTypes.string,
+    type: PropTypes.string.isRequired,
+    src: PropTypes.string,
+    srcSet: PropTypes.array
+  })),
   title: PropTypes.string
 }
 
