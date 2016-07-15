@@ -15,15 +15,12 @@ class PhotoGallery extends Component {
         <Slider aspectRatio={this.props.aspectRatio}
                 backgroundColor={this.props.backgroundColor}
                 infinite={this.props.infinite}
+                lazyLoad={true}
                 letterboxed={this.props.letterboxed}
                 showArrows={this.props.showArrows}
                 slides={this.props.slides}
         />
-        <Captions assetSource={this.props.slides.assetSource}
-                  caption={this.props.slides.caption}
-                  credit={this.props.slides.credit}
-                  title={this.props.slides.title}
-        />
+        <Captions slides={this.props.slides} />
       </div>
     );
   }

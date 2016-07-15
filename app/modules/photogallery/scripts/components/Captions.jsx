@@ -1,22 +1,58 @@
 'use strict';
 
 import React, { Component, PropTypes }  from 'react';
+import {Pestle} from '@natgeo/mortar-pestle';
+
+let i = 0;
 
 class Captions extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { currentSlide : 0 };
+  }
+
+  componentDidMount(){
+    Pestle.PubSub.subscribe('MTSlider.slideChange', this.updateCaption.bind(this));
+  }
+
+  componentWillUnmount(){
+    Pestle.PubSub.unsubscribe('MTSlider.slideChange');
+  }
+
+  updateCaption(msg, data){
+    console.log("updateCaption");
+    this.setState({
+      currentSlide: data.currentSlideIndex
+    });
+  }
 
   render(){
+    const props = this.props;
+    let captions = [];
+
+    if(props.slides.length){
+        let slide = props.slides[this.state.currentSlide];
+        if(slide.title || slide.caption){
+          captions.push(
+            <p key={i++} className="mt2_color--neutral--xd mt2_row-gut-half">
+              <span className="mt2_h5">{slide.title}</span>
+              <span className="mt2_subh4">{slide.caption}</span>
+            </p>
+          );
+        }
+        if(slide.credit || slide.assetSource){
+          captions.push(
+            <span key={i++} className="mt2_subh3 mt2_color--neutral--l">
+              Photograph by {slide.credit}<br />
+              Source: {slide.assetSource}
+            </span>
+          );
+        }
+    }
 
     return(
       <figcaption>
-        <p className="mt2_color--neutral--xd mt2_row-gut-half">
-          <span className="mt2_h5">{this.props.title}</span>
-          <span className="mt2_subh4">{this.props.caption}</span>
-        </p>
-
-        <span className="mt2_subh3 mt2_color--neutral--l">
-          Photograph by {this.props.credit}<br />
-          Source: {this.props.assetSource}
-        </span>
+        {captions}
       </figcaption>
     );
   }
@@ -24,10 +60,16 @@ class Captions extends Component {
 }
 
 Captions.propTypes = {
-  assetSource: PropTypes.string,
-  caption: PropTypes.string,
-  credit: PropTypes.string,
-  title: PropTypes.string
+  slides: PropTypes.arrayOf(PropTypes.shape({
+    aspectRatio: PropTypes.string,
+    assetSource: PropTypes.string,
+    caption: PropTypes.string,
+    credit: PropTypes.string,
+    title: PropTypes.string,
+    type: PropTypes.string.isRequired,
+    src: PropTypes.string,
+    srcSet: PropTypes.array
+  }))
 }
 
 export default Captions;

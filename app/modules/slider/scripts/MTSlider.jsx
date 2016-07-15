@@ -14,12 +14,14 @@ class PrevButton extends React.Component {
       'mt2_slider-button--inactive': !this.props.infinite && this.props.currentSlide === 0
     });
 
-    return <button {...this.props} className={btnClasses}>
-      <span className='mt2_visuallyhidden'>Previous</span>
-      <svg className='mt2_icon'>
-        <use xmlnsXlink='http://www.w3.org/1999/xlink' xlinkHref='#chevron-left'></use>
-      </svg>
-    </button>
+    return(
+      <button {...this.props} className={btnClasses}>
+        <span className='mt2_visuallyhidden'>Previous</span>
+        <svg className='mt2_icon'>
+          <use xlinkHref='#chevron-left'></use>
+        </svg>
+      </button>
+    );
   }
 }
 
@@ -30,12 +32,14 @@ class NextButton extends React.Component {
       'mt2_slider-button--inactive': !this.props.infinite && this.props.currentSlide === this.props.slideCount - 1
     });
 
-    return <button {...this.props} className={btnClasses}>
-      <span className='mt2_visuallyhidden'>Next</span>
-      <svg className='mt2_icon'>
-        <use xmlnsXlink='http://www.w3.org/1999/xlink' xlinkHref='#chevron-right'></use>
-      </svg>
-    </button>
+    return(
+      <button {...this.props} className={btnClasses}>
+        <span className='mt2_visuallyhidden'>Next</span>
+        <svg className='mt2_icon'>
+          <use xlinkHref='#chevron-right' />
+        </svg>
+      </button>
+    );
   }
 }
 
@@ -59,6 +63,7 @@ class MTSlider extends Component {
     };
 
     Pestle.PubSub.publish(events.slideChange, slideData);
+    console.log("slideChange event fired----- " + JSON.stringify(slideData) );
   }
 
   constructor(props) {
@@ -79,6 +84,8 @@ class MTSlider extends Component {
       afterChange: this.onSlideChange,
       arrows: props.showArrows,
       className: 'mt2_slider-container' + aspectRatio + backgroundColor,
+      infinite: props.infinite,
+      lazyLoad: props.lazyLoad,
       nextArrow: <NextButton
         infinite={props.infinite}
         currentSlide={state.currentSlideIndex}
@@ -86,8 +93,7 @@ class MTSlider extends Component {
       prevArrow: <PrevButton
         infinite={props.infinite}
         currentSlide={state.currentSlideIndex} />,
-      useCSS: props.animations,
-      infinite: props.infinite
+      useCSS: props.animations
     };
 
     const slides = props.slides.map((slide, i) => {
@@ -116,6 +122,7 @@ MTSlider.propTypes = {
   aspectRatio: PropTypes.string,
   backgroundColor: PropTypes.string,
   infinite: PropTypes.bool,
+  lazyLoad: PropTypes.bool,
   letterboxed: PropTypes.bool,
   showArrows: PropTypes.bool,
   slides: PropTypes.arrayOf(PropTypes.shape({
@@ -123,7 +130,7 @@ MTSlider.propTypes = {
     type: PropTypes.string.isRequired,
     src: PropTypes.string,
     srcSet: PropTypes.array
-  })),
+  }))
 }
 
 export default MTSlider
