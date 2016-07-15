@@ -11,7 +11,7 @@ class PhotoGallery extends Component {
     return(
       <div>
         <Heading title={this.props.title} description={this.props.description} />
-        {this.props.showCounter ? <Counter showCounter={this.props.showCounter} /> : null}
+        {this.props.showCounter ? <Counter showCounter={this.props.showCounter} slides={this.props.slides} /> : null}
         <Slider aspectRatio={this.props.aspectRatio}
                 backgroundColor={this.props.backgroundColor}
                 infinite={this.props.infinite}

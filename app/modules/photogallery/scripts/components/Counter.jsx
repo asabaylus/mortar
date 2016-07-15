@@ -1,25 +1,39 @@
 'use strict';
 
 import React, { Component, PropTypes }  from 'react';
+import {Pestle} from '@natgeo/mortar-pestle';
+import events from '../../../slider/scripts/events';
 
 class Counter extends Component {
-  componentDidMount () {
-    if(this.refs.previousButton) {
-      this.refs.previousButton.addEventListener('click', this.props.slidePrev);
-      this.refs.nextButton.addEventListener('click', this.props.slideNext);
-    }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentSlide : 1,
+      firstSlideActive: true,
+      lastSlideActive: false
+    };
   }
 
-  componentWillUnmount () {
-    if(this.refs.previousButton) {
-      this.refs.previousButton.removeEventListener('click', this.props.slidePrev);
-      this.refs.nextButton.removeEventListener('click', this.props.slideNext);
-    }
+  componentDidMount(){
+    Pestle.PubSub.subscribe(events.slideChange, this.updateCounter.bind(this));
+  }
+
+  componentWillUnmount(){
+    Pestle.PubSub.unsubscribe(events.slideChange);
+  }
+
+  updateCounter(msg, data){
+    this.setState({
+      currentSlide: data.currentSlideIndex + 1,
+      firstSlideActive: data.currentSlideIndex === 0,
+      lastSlideActive: data.currentSlideIndex + 1 === this.props.slides.length
+    });
   }
 
   render() {
-    let prevDimClass = this.props.firstSlideActive ? "mt2_numericcounter-arrow--disabled" : " ",
-        nextDimClass = this.props.lastSlideActive ? "mt2_numericcounter-arrow--disabled" : " ";
+    let prevDimClass = this.state.firstSlideActive ? " mt2_numericcounter-arrow--disabled" : " ",
+        nextDimClass = this.state.lastSlideActive ? " mt2_numericcounter-arrow--disabled" : " ";
 
     return (
       <div className="mt2_numericcounter">
@@ -27,11 +41,11 @@ class Counter extends Component {
           <svg className={"mt2_icon mt2_numericcounter-arrow" + prevDimClass}>
             <use xlinkHref="#chevron-left"></use>
           </svg>
-          <span className="mt2_h5">{this.props.currentSlide}</span>
+          <span className="mt2_h5">{this.state.currentSlide}</span>
         </button>
         <span className="mt2_h5">/</span>
         <button ref="nextButton" className="mt2_numericcounter-button">
-          <span className="mt2_h5">{this.props.totalSlides}</span>
+          <span className="mt2_h5">{this.props.slides.length}</span>
           <svg className={"mt2_icon mt2_numericcounter-arrow" + nextDimClass}>
             <use xlinkHref="#chevron-right"></use>
           </svg>
@@ -42,12 +56,8 @@ class Counter extends Component {
 }
 
 Counter.propTypes = {
-  currentSlide: PropTypes.string,
-  firstSlideActive: PropTypes.bool,
-  lastSlideActive: PropTypes.bool,
-  slideNext: PropTypes.func,
-  slidePrev: PropTypes.func,
-  totalSlides: PropTypes.string
+  showCounter: PropTypes.bool,
+  slides: PropTypes.array
 }
 
 export default Counter;

@@ -63,7 +63,6 @@ class MTSlider extends Component {
     };
 
     Pestle.PubSub.publish(events.slideChange, slideData);
-    console.log("slideChange event fired----- " + JSON.stringify(slideData) );
   }
 
   constructor(props) {
@@ -127,6 +126,10 @@ MTSlider.propTypes = {
   showArrows: PropTypes.bool,
   slides: PropTypes.arrayOf(PropTypes.shape({
     aspectRatio: PropTypes.string,
+    assetSource: PropTypes.string,
+    caption: PropTypes.string,
+    credit: PropTypes.string,
+    title: PropTypes.string,
     type: PropTypes.string.isRequired,
     src: PropTypes.string,
     srcSet: PropTypes.array
