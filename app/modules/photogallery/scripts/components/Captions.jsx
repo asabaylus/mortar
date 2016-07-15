@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes }  from 'react';
 import {Pestle} from '@natgeo/mortar-pestle';
+import events from '../../../slider/scripts/events';
 
 let i = 0;
 
@@ -12,15 +13,14 @@ class Captions extends Component {
   }
 
   componentDidMount(){
-    Pestle.PubSub.subscribe('MTSlider.slideChange', this.updateCaption.bind(this));
+    Pestle.PubSub.subscribe(events.slideChange, this.updateCaption.bind(this));
   }
 
   componentWillUnmount(){
-    Pestle.PubSub.unsubscribe('MTSlider.slideChange');
+    Pestle.PubSub.unsubscribe(events.slideChange);
   }
 
   updateCaption(msg, data){
-    console.log("updateCaption");
     this.setState({
       currentSlide: data.currentSlideIndex
     });
