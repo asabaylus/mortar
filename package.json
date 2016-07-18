@@ -17,7 +17,14 @@
   },
   "homepage": "https://github.com/natgeo/mortar#readme",
   "dependencies": {
-    "react-slick": "krlospelaez/react-slick#fix-npm"
+    "@natgeo/modules-images": "^1.0.1",
+    "react-slick": "krlospelaez/react-slick#fix-npm",
+    "lodash": "3.x",
+    "react": "0.14.x",
+    "react-dom": "0.14.x",
+    "react-pure-render": "1.x",
+    "react-lazy-load": "2.x",
+    "picturefill": "3.x"
   },
   "peerDependencies": {
     "@natgeo/mortar-pestle": "2.x",
@@ -73,7 +80,6 @@
     "metalsmith-layouts": "^1.4.2",
     "metalsmith-markdown": "^0.2.1",
     "mocha": "^2.4.5",
-    "modules-images": "natgeo/modules-images#f634959",
     "phantomjs-prebuilt": "^2.1.7",
     "pubsub-js": "^1.5.3",
     "react": "^15.1.0",
