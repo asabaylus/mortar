@@ -5,9 +5,15 @@
       This is Mortar's sharing component.
     </p>
   </div>
-
   <div class="mt2_col-lg-8 mt2_col-sm-12 mt2_col-lg-offset-1 mt2_row-gut-4">
-    <div data-pestle-module="Sharing"></div>
+    <p class="mt2_subh4">The sharing component comes in both horizontal and vertical display variations.</p>
+    <div class="mt2_row-gut-2">
+      <div data-pestle-module="Sharing"></div>
+    </div>
+    <div class="codesnippet-wrapper">
+<pre class="codesnippet mt2_row-gut-2"><code class="language-markup">&#x3C;div data-pestle-module=&#x22;Sharing&#x22;&#x3E;&#x3C;/div&#x3E;
+</code></pre>
+    </div>
     <div data-pestle-module="Sharing">
       <script type="text/json" data-pestle-options>
       {
@@ -15,5 +21,50 @@
       }
       </script>
     </div>
+<pre class="codesnippet mt2_row-gut-2"><code class="language-markup">&#x3C;div data-pestle-module=&#x22;Sharing&#x22;&#x3E;
+  &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
+  {
+    &#x22;display&#x22;: &#x22;vertical&#x22;
+  }
+  &#x3C;/script&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+		<p class="mt2_subh4">The sharing component does not handle the display of the preview, it simply passes the current URL to the corresponding social network. </p>
+    <table class="mt2_subh4 mt2_row-gut-2">
+      <tr class="mt2_h5">
+        <td>Property</td>
+        <td>Description</td>
+        <td>Status</td>
+      </tr>
+      <tr>
+        <td>og:type</td>
+        <td>Must take the value of "article" or "blog".</td>
+        <td>Required</td>
+      </tr>
+      <tr>
+        <td>og:title</td>
+        <td>The article title. This title may be truncated, depending on length. All formatting and HTML tags will be removed.</td>
+        <td>Required</td>
+      </tr>
+      <tr>
+        <td>og:description</td>
+        <td>The article description or summary. This may be truncated, depending on length. All formatting, line breaks and HTML tags will be removed.</td>
+        <td>Required</td>
+      </tr>
+      <tr>
+        <td>og:site_name</td>
+        <td>The site name (e.g., "the Guardian"). Using this field is strongly suggested.</td>
+        <td>Optional</td>
+      </tr>
+      <tr>
+        <td>og:url</td>
+        <td>The canonical URL for the page. For example, "http://www.theguardian.com/travel/2013/sep/17/top-10-national-parks-california" (You can also specify canonical with standard HTML markup: <link rel="canonical" href="..."/>)</td>
+        <td>Optional</td>
+      </tr>
+      <tr>
+        <td>article:published_time</td>
+        <td>The date the article was first published. The time should be in ISO 8601 date format.</td>
+        <td>Optional</td>
+      </tr>
+    </table>
   </div>
 </div>
