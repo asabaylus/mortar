@@ -1,8 +1,8 @@
 @import '../../styles/themes/default/vars/mqs';
 @import '../../styles/themes/default/vars/colors';
+@import '../../styles/themes/default/vars/inputs';
 @import '../../styles/global/vars/theme';
 @import '../../styles/global/vars/z';
-
 
 // ====================
 // ====================
@@ -407,12 +407,11 @@ pre {
     border: 1px solid $mt2_color-neutral-xl;
     border-radius: 0;
     padding-bottom: -1em;
-    margin-bottom: 2.5rem;
     margin-top: 1.25rem;
 
     code {
-      margin: 0;
       font-size: .9375rem;
+      margin: 0;
     }
   }
 }
@@ -421,4 +420,91 @@ pre {
 
 code {
   font-size: 14px;
+}
+
+
+// Hide code snippet
+
+.hidesnippet {
+  display: none;
+}
+
+// Code snippet button
+
+.codesnippet-wrapper {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.codesnippet-button {
+  background-color: $mt2_color-neutral-xxxl;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 1rem;
+
+  .constrainheight & {
+    bottom: 0;
+    position: absolute;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $mt2_color-neutral;
+  }
+}
+
+
+// Chevron up Icon
+$snippet-chevron-up: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2037.4%2037.6%22%3E%0A%20%20%3Cpath%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20vector-effect%3D%22non-scaling-stroke%22%20d%3D%22M.7%2028.2l18-18%2018%2018%22%2F%3E%0A%3C%2Fsvg%3E');
+//  Pre URL-encoded chevron up SVG:<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.4 37.6"><path fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" vector-effect="non-scaling-stroke" d="M.7 28.2l18-18 18 18"/></svg>
+
+
+.codesnippet-icon {
+  &:after {
+    background-repeat: no-repeat;
+    background-size: 1.5rem;
+    content: '';
+    display: inline-block;
+    margin-left: 1rem;
+    padding: 1rem;
+    vertical-align: middle;
+  }
+
+  &--collapse {
+    &:after {
+      background-image: $snippet-chevron-up;
+    }
+  }
+
+  &--expand {
+    &:after {
+      background-image: $mt2_dropdown-icon;
+    }
+  }
+}
+
+.codesnippet-icon {
+  &:hover,
+  &:focus,
+  &:active {
+    &:after {
+      opacity: .4;
+    }
+  }
+}
+
+.expandheight {
+  height: auto;
+}
+
+.constrainheight {
+  height: 320px;
+  overflow: hidden;
+}
+
+.constrainheight-mobile {
+  height: 240px;
+  overflow: hidden;
 }

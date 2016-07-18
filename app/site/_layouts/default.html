@@ -98,12 +98,71 @@
       </div>
     </div>
   </footer>
+
   <script>
+    // Site nav
     $('.JS_navbutton').click(function(){
       $('.JS_navcontainer').toggleClass('navcontainer--active');
       $('.JS_navicon').toggleClass('navicon--flipped');
     });
+
+    // Globals
+    var expButton = '<button class="codesnippet-button codesnippet-icon codesnippet-icon--expand mt2_col-12 mt2_h5">Expand</button>';
+
+    $('.codesnippet-wrapper').each(function(index, value) {
+      var container = $(value);
+      var isMobile = $(window).width() <= 500;
+      var showExpandButton = false;
+      var constrainClass = '';
+
+      // On large screens, truncate snippet when container > 320px & display expand button
+      if (!isMobile && container.height() >= 320){
+        showExpandButton = true;
+        constrainClass = 'constrainheight';
+      }
+
+      // On small screens, truncate snippet when container > 240px & display expand button
+      if (isMobile && container.height() >= 240){
+        showExpandButton = true;
+        constrainClass = 'constrainheight-mobile';
+      }
+
+      if (showExpandButton) {
+        container.addClass(constrainClass)
+          .removeClass('expandheight')
+          .data('expanded', false)
+          .append(expButton);
+      }
+    });
+
+    // Expand the div when the button is clicked
+    $('.codesnippet-button').click(function(e){
+      var btn = $(e.target);
+      var snippetContainer = btn.parent('.codesnippet-wrapper');
+
+      var isMobile = $(window).width() <= 500;
+      var constrainClass = isMobile ? 'constrainheight-mobile' : 'constrainheight';
+
+      // Update styles
+      if (snippetContainer.data('expanded') == true) {
+          snippetContainer.addClass(constrainClass)
+            .removeClass('expandheight')
+            .data('expanded', false);
+          $(this).text('Expand')
+            .addClass('codesnippet-icon--expand')
+            .removeClass('codesnippet-icon--collapse');
+       }
+       else {
+          snippetContainer.removeClass(constrainClass)
+            .addClass('expandheight')
+            .data('expanded', true);
+          $(this).text('Collapse')
+            .addClass('codesnippet-icon--collapse')
+            .removeClass('codesnippet-icon--expand');
+       }
+    });
   </script>
+
   <script>
   (function(d) {
     var config = {
