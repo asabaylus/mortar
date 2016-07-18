@@ -18,7 +18,7 @@ class Heading extends Component {
     }
 
     return (
-      <div>
+      <div className="heading">
         { title }
       </div>
     );

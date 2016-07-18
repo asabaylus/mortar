@@ -78,7 +78,7 @@ class MTSlider extends Component {
     const props = this.props;
     const state = this.state;
     const aspectRatio = props.aspectRatio === "16:9" ? " mt2_intratio--broadcast " : props.aspectRatio === "4:3" ? " mt2_intratio--tv " : " mt2_intratio--photo ";
-    const backgroundColor = props.backgroundColor === "light" ? " mt2_bgcolor--neutral-xxl " : props.backgroundColor === "dark" ? " mt_bgcolor--neutral-xxd " : " ";
+    const backgroundColor = props.backgroundColor === "light" ? " mt2_bgcolor--neutral--xxl " : props.backgroundColor === "dark" ? " mt2_bgcolor--neutral--xxd " : " ";
     const settings = {
       afterChange: this.onSlideChange,
       arrows: props.showArrows,
@@ -103,7 +103,7 @@ class MTSlider extends Component {
     });
 
     return (
-      <Slick {...settings}>
+      <Slick {...settings} >
         {slides}
       </Slick>
     );
