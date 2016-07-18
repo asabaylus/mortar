@@ -1,3 +1,5 @@
+'use strict'
+
 import React, { PropTypes } from 'react'
 
 const TodoItem = ({ onClick, onRemove, done, text }) => (

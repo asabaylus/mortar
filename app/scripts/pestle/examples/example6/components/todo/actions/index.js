@@ -1,3 +1,5 @@
+'use strict'
+
 let nextTodoId = 0
 export const addTodo = (text) => {
   return {

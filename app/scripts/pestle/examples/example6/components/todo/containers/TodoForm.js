@@ -1,3 +1,5 @@
+'use strict'
+
 import { connect } from 'react-redux';
 import Todo from '../components/Todo';
 
