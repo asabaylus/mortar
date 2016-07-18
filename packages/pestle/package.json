@@ -1,8 +1,11 @@
 {
-  "name": "@natgeo/mortar-pestle",
-  "version": "2.0.3",
+  "name": "@natgeo/pestle",
+  "version": "2.1.0",
   "description": "Pestle is a lightweight module initializer implemented using javascript (es6).",
   "main": "./main.js",
+  "scripts": {
+    "prepublish": "../../node_modules/.bin/gulp clean && ../../node_modules/.bin/gulp build -p"
+  },
   "repository": "https://github.com/natgeo/mortar/tree/master/packages/pestle",
   "keywords": [
     "pestle"
