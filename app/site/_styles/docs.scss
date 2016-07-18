@@ -443,7 +443,8 @@ code {
   margin: 0;
   padding: 1rem;
 
-  .constrainheight & {
+  .constrainheight &,
+  .constrainheight-mobile & {
     bottom: 0;
     position: absolute;
   }
