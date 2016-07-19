@@ -6,7 +6,6 @@ import Slick from 'react-slick';
 import events from './events';
 import ImageSlide from './imageSlide.jsx';
 import classNames from 'classnames';
-import Image from '@natgeo/modules-images';
 
 class PrevButton extends React.Component {
   render() {
@@ -48,7 +47,7 @@ class MTSlider extends Component {
   findSlideType(type, data) {
     switch(type) {
     case 'image':
-      return <ImageSlide letterboxed={this.props.letterboxed} src={data.src} />
+      return <ImageSlide letterboxed={this.props.letterboxed} src={data.src} srcset={data.srcSet}/>
     default:
       return;
     }
