@@ -32,24 +32,12 @@ class Counter extends Component {
   }
 
   render() {
-    let prevDimClass = this.state.firstSlideActive ? " mt2_numericcounter-arrow--disabled" : " ",
-        nextDimClass = this.state.lastSlideActive ? " mt2_numericcounter-arrow--disabled" : " ";
 
     return (
       <div className="mt2_numericcounter">
-        <button ref="previousButton" className="mt2_numericcounter-button">
-          <svg className={"mt2_icon mt2_numericcounter-arrow" + prevDimClass}>
-            <use xlinkHref="#chevron-left"></use>
-          </svg>
-          <span className="mt2_h5">{this.state.currentSlide}</span>
-        </button>
+        <button className="mt2_h5 mt2_numericcounter-button">{this.state.currentSlide}</button>
         <span className="mt2_h5">/</span>
-        <button ref="nextButton" className="mt2_numericcounter-button">
-          <span className="mt2_h5">{this.props.slides.length}</span>
-          <svg className={"mt2_icon mt2_numericcounter-arrow" + nextDimClass}>
-            <use xlinkHref="#chevron-right"></use>
-          </svg>
-        </button>
+        <button className="mt2_h5 mt2_numericcounter-button">{this.props.slides.length}</button>
       </div>
     );
   }
