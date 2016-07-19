@@ -13,11 +13,11 @@ class PhotoGallery extends Component {
         <Heading title={this.props.title} description={this.props.description} /> <div className="clear"></div>
         {this.props.showCounter ? <Counter showCounter={this.props.showCounter} slides={this.props.slides} /> : null}
         <div className="clear"></div>
-        <Slider aspectRatio={this.props.aspectRatio}
-                backgroundColor={this.props.backgroundColor}
+        <Slider frameAspectRatio={this.props.frameAspectRatio}
                 infinite={this.props.infinite}
                 lazyLoad={true}
-                letterboxed={this.props.letterboxed}
+                letterbox={this.props.letterbox}
+                letterboxBackgroundColor={this.props.letterboxBackgroundColor}
                 showArrows={this.props.showArrows}
                 slides={this.props.slides}
         />
@@ -32,11 +32,11 @@ PhotoGallery.defaultProps = {
 }
 
 PhotoGallery.propTypes = {
-  aspectRatio: PropTypes.string,
-  backgroundColor: PropTypes.string,
+  frameAspectRatio: PropTypes.string,
+  letterboxBackgroundColor: PropTypes.string,
   description: PropTypes.string,
   infinite: PropTypes.bool,
-  letterboxed: PropTypes.bool,
+  letterbox: PropTypes.bool,
   showArrows: PropTypes.bool,
   showCounter: PropTypes.bool,
   slides: PropTypes.arrayOf(PropTypes.shape({

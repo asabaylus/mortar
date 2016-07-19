@@ -1,10 +1,16 @@
 .photoGallery{
   .heading{
     width: 85%;
+    @media(max-width: 480px){
+      width: 100%;
+    }
   }
   .mt2_numericcounter{
     float:right;
     margin: -15px 0 10px 0;
+    @media(max-width: 480px){
+      margin: 0 0 10px 0;
+    }
   }
   .clear{
     clear: both;

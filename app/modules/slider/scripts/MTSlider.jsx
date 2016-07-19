@@ -45,9 +45,15 @@ class NextButton extends React.Component {
 
 class MTSlider extends Component {
   findSlideType(type, data) {
+    const backgroundColor = this.props.letterboxBackgroundColor === "light" ? "#F2F2F2" : this.props.letterboxBackgroundColor === "dark" ? "#000000" : " ";
     switch(type) {
     case 'image':
-      return <ImageSlide letterboxed={this.props.letterboxed} src={data.src} srcset={data.srcSet}/>
+      return <ImageSlide aspectRatio={data.aspectRatio}
+                         frameAspectRatio={this.props.frameAspectRatio}
+                         letterbox={this.props.letterbox}
+                         letterboxBackgroundColor={backgroundColor}
+                         src={data.src}
+                         srcset={data.srcSet}/>
     default:
       return;
     }
@@ -77,12 +83,10 @@ class MTSlider extends Component {
   render() {
     const props = this.props;
     const state = this.state;
-    const aspectRatio = props.aspectRatio === "16:9" ? " mt2_intratio--broadcast " : props.aspectRatio === "4:3" ? " mt2_intratio--tv " : " mt2_intratio--photo ";
-    const backgroundColor = props.backgroundColor === "light" ? " mt2_bgcolor--neutral--xxl " : props.backgroundColor === "dark" ? " mt2_bgcolor--neutral--xxd " : " ";
     const settings = {
       afterChange: this.onSlideChange,
       arrows: props.showArrows,
-      className: 'mt2_slider-container' + aspectRatio + backgroundColor,
+      className: 'mt2_slider-container',
       infinite: props.infinite,
       lazyLoad: props.lazyLoad,
       nextArrow: <NextButton
@@ -112,17 +116,17 @@ class MTSlider extends Component {
 
 MTSlider.defaultProps = {
   animations: true,
-  aspectRatio: "3:2",
+  frameAspectRatio: "3:2",
   infinite: true
 }
 
 MTSlider.propTypes = {
   animations: PropTypes.bool,
-  aspectRatio: PropTypes.string,
-  backgroundColor: PropTypes.string,
+  frameAspectRatio: PropTypes.string,
+  letterboxBackgroundColor: PropTypes.string,
   infinite: PropTypes.bool,
   lazyLoad: PropTypes.bool,
-  letterboxed: PropTypes.bool,
+  letterbox: PropTypes.bool,
   showArrows: PropTypes.bool,
   slides: PropTypes.arrayOf(PropTypes.shape({
     aspectRatio: PropTypes.string,

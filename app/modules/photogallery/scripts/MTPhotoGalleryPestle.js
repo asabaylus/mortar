@@ -9,11 +9,11 @@ class PhotoGallery extends Module {
 
   init() {
     ReactDOM.render(<MTPhotoGalleryComponent
-      aspectRatio={this.options.aspectRatio}
-      backgroundColor={this.options.backgroundColor}
+      frameAspectRatio={this.options.frameAspectRatio}
+      letterboxBackgroundColor={this.options.letterboxBackgroundColor}
       description={this.options.description}
       infinite={this.options.infinite}
-      letterboxed={this.options.letterboxed}
+      letterbox={this.options.letterbox}
       showArrows={this.options.showArrows}
       showCounter={this.options.showCounter}
       slides={this.options.slides}
