@@ -8,13 +8,13 @@ class MTEmailButton extends Component {
     const emailFormat = 'mailto:?subject='
       + urlEncode(this.props.title)
       + '&body='
-      + urlEncode('<p>'
+      + urlEncode('Check this out!'
+        + ' \n \n '
         + this.props.title
-        + '<br /><a href="'
+        + ' — '
         + this.props.url
-        + '">'
-        + this.props.url
-        + '</a></p><p><a href="http://www.nationalgeographic.com">http://www.nationalgeographic.com</a></p>'
+        + ' \n \n '
+        + 'http://www.nationalgeographic.com'
       )
     ;
 
