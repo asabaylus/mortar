@@ -20,7 +20,7 @@ class MTEmailButton extends Component {
 
     return (
       <a href={emailFormat} className="mt2_sharing-btn">
-        <svg className="mt2_icon--large mt2_color--neutral--xxd">
+        <svg className="mt2_icon mt2_color--neutral--xxd">
           <use xlinkHref="#email"></use>
         </svg>
       </a>
