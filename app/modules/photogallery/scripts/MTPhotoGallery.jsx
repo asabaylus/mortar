@@ -9,7 +9,7 @@ import Captions from './components/Captions.jsx';
 class PhotoGallery extends Component {
   render() {
     return(
-      <div className="photoGallery">
+      <div className="mt2_photo-gallery-container">
         <Heading title={this.props.title} description={this.props.description} /> <div className="clear"></div>
         {this.props.showCounter ? <Counter showCounter={this.props.showCounter} slides={this.props.slides} /> : null}
         <div className="clear"></div>
