@@ -9,20 +9,20 @@
 
 %mt2_slider-button {
   background-color: $mt2_color-neutral-xxd;
-  border: none;
+  border: 0;
   color: $mt2_color-neutral-xxxl;
   cursor: pointer;
-  opacity: 0.65;
-  padding: 1em 0.5em;
+  opacity: .65;
+  padding: 1em .5em;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%) scale(1.0, 1.0);
+  transform: translateY(-50%) scale(1, 1);
   z-index: $mt2_z-top;
 }
 
 .mt2_slider-button--inactive {
   cursor: default;
-  opacity: 0.25;
+  opacity: .25;
 }
 
 .mt2_slider-button--next {

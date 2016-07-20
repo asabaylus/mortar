@@ -4,18 +4,18 @@ a.mt2_btn {
   text-decoration: none;
 
   &-naked--reversed {
-    color: #ffffff;
+    color: $mt2_color-neutral-xxxl;
   }
 
-  &-naked--inactive span,
-  &-naked--inactive svg,
-  &-naked--inactive:hover span,
-  &-naked--inactive:hover svg {
-    border-bottom: 0;
-    color: transparentize($mt2_color-neutral-l, .6);
-    text-decoration: none;
+  &-naked--inactive
+  &-naked--inactive:hover {
+    span,
+    svg {
+      border-bottom: 0;
+      color: transparentize($mt2_color-neutral-l, .6);
+      text-decoration: none;
+    }
   }
-
 }
 
 .mt2_iconandlabel--horizontal,
