@@ -11,9 +11,20 @@ import React from 'react';
 describe('CTAButton', () => {
   describe('Pestle Module', () => {
     before(() => {
-      const html = `<div
-        data-pestle-module='CTAButton'
-        ></div>`
+      const html = `<div data-pestle-module='CTAButton'>
+          <script type="text/json" data-pestle-options>
+          {
+            "icon": {
+              "name" : "#map-geolocator",
+              "align" : "left",
+              "alt" : "Map Pin Icon"
+            },
+            "label" : "Find My Location",
+            "style" : "default",
+            "type" : "button"
+          }
+          </script>
+        </div>`
 
       insertFixture(html);
       Pestle.init();

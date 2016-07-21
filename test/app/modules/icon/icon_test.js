@@ -10,9 +10,17 @@ import React from 'react';
 describe('Icon', () => {
   describe('Pestle Module', () => {
     before(() => {
-      const html = `<div
-        data-pestle-module='Icon'
-        ></div>`
+      const html = `<div data-pestle-module='Icon'>
+        <script type="text/json" data-pestle-options>
+        {
+          "name" : "#camera",
+          "align" : "right",
+          "size" : "large",
+          "color" : "neutral--xxd",
+          "alt" : "Camera Icon"
+        }
+        </script>
+      </div>`
 
       insertFixture(html);
       Pestle.init();
