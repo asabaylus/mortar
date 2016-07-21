@@ -5,18 +5,18 @@ import Heading from './components/Heading.jsx';
 import Counter from './components/Counter.jsx';
 import Slider from '../../slider/scripts/MTSlider.jsx';
 import Captions from './components/Captions.jsx';
-import ElementQuery from 'react-element-query'
+import ElementQuery from 'react-element-query';
 
 class PhotoGallery extends Component {
   render() {
     return(
       <div>
-        <div className="mt2_row">
+        <ElementQuery className="mt2_row" sizes={[{name: "mt2_photogallery-heading--large", width: 480}]}>
           <Heading title={this.props.title} description={this.props.description} />
-        </div>
-        <div className="mt2_row">
+        </ElementQuery>
+        <ElementQuery className="mt2_row" sizes={[{name: "mt2_numericcounter--large", width: 480}]}>
           {this.props.showCounter ? <Counter showCounter={this.props.showCounter} slides={this.props.slides} /> : null}
-        </div>
+        </ElementQuery>
         <Slider frameAspectRatio={this.props.frameAspectRatio}
                 infinite={this.props.infinite}
                 lazyLoad={true}

@@ -17,23 +17,20 @@
   },
   "homepage": "https://github.com/natgeo/mortar#readme",
   "dependencies": {
+    "react-slick": "krlospelaez/react-slick#fix-npm"
+  },
+  "peerDependencies": {
     "@natgeo/modules-images": "^1.0.2",
-    "@natgeo/pestle": "2.x",
-    "react-slick": "krlospelaez/react-slick#fix-npm",
+    "@natgeo/mortar-pestle": "2.x",
+    "classnames": "2.2.x",
+    "jquery": "2.x",
     "lodash": "4.x",
-    "react": "^0.14.8",
-    "react-dom": "^0.14.8",
+    "react": "^0.14.8 || ^15.1.0",
+    "react-dom": "^0.14.8 || ^15.1.0",
     "react-element-query": "^2.0.2",
     "react-pure-render": "1.x",
     "react-lazy-load": "3.x",
     "picturefill": "3.x"
-  },
-  "peerDependencies": {
-    "@natgeo/pestle": "2.x",
-    "classnames": "2.2.x",
-    "jquery": "2.x",
-    "react": "^0.14.8 || ^15.1.0",
-    "react-dom": "^0.14.8 || ^15.1.0"
   },
   "devDependencies": {
     "aliasify": "^2.0.0",
