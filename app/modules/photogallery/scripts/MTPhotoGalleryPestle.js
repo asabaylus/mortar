@@ -2,7 +2,7 @@
 
 import React from 'react';
 import * as ReactDOM from 'react-dom';
-import {Pestle, Module} from '@natgeo/mortar-pestle';
+import {Pestle, Module} from '@natgeo/pestle';
 import {default as MTPhotoGalleryComponent} from './MTPhotoGallery.jsx';
 
 class PhotoGallery extends Module {

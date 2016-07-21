@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes }  from 'react';
-import {Pestle} from '@natgeo/mortar-pestle';
+import {Pestle} from '@natgeo/pestle';
 import events from '../../../slider/scripts/events';
 
 class Counter extends Component {
@@ -35,9 +35,11 @@ class Counter extends Component {
 
     return (
       <div className="mt2_numericcounter">
-        <button className="mt2_h5 mt2_numericcounter-button">{this.state.currentSlide}</button>
-        <span className="mt2_h5">/</span>
-        <button className="mt2_h5 mt2_numericcounter-button">{this.props.slides.length}</button>
+        <ElementQuery sizes={[{name: "mt2_numericcounter--large", width: 480}]}>
+          <button className="mt2_h5 mt2_numericcounter-button">{this.state.currentSlide}</button>
+          <span className="mt2_h5">/</span>
+          <button className="mt2_h5 mt2_numericcounter-button">{this.props.slides.length}</button>
+        </ElementQuery>
       </div>
     );
   }

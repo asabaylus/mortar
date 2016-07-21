@@ -18,8 +18,10 @@ class Heading extends Component {
     }
 
     return (
-      <div className="heading">
-        { title }
+      <div className="mt2_photogallery-heading">
+        <ElementQuery sizes={[{name: "mt2_photogallery-heading--large", width: 480}]}>
+          { title }
+        </ElementQuery>
       </div>
     );
   }

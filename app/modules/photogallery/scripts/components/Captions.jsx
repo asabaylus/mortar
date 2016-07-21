@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes }  from 'react';
-import {Pestle} from '@natgeo/mortar-pestle';
+import {Pestle} from '@natgeo/pestle';
 import events from '../../../slider/scripts/events';
 
 let i = 0;
