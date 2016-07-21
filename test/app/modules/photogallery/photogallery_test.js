@@ -11,7 +11,7 @@ import MTPhotoGalleryComponent from '../../../../app/modules/photogallery/script
 import {shallow, mount} from 'enzyme';
 import React from 'react';
 
-describe('MTPhotoGallery', () => {
+describe.only('MTPhotoGallery', () => {
   describe('Pestle Module', () => {
     before(() => {
       const html = `<div
@@ -42,51 +42,52 @@ describe('MTPhotoGallery', () => {
   describe('React Component', () => {
     let wrapper;
 
+    const slides = [
+      {
+        "aspectRatio": "broadcast",
+        "assetSource": "National Geographic",
+        "caption": "This is Caption One",
+        "credit": "Joel Sartore",
+        "src": "http://placehold.it/350x150.jpg",
+        "srcSet": [
+          "http://placehold.it/350x150.jpg 350w",
+          "http://placehold.it/700x300.jpg 700w",
+          "http://placehold.it/1400x600.jpg 1400w"
+        ],
+        "title": "This is Title One",
+        "type": "image"
+      },
+      {
+        "aspectRatio": "photo",
+        "assetSource": "National Geographic",
+        "caption": "This is Caption Two",
+        "credit": "Joel Sartore",
+        "src": "http://placehold.it/350x150.jpg",
+        "srcSet": [
+          "http://placehold.it/350x150.jpg 350w",
+          "http://placehold.it/700x300.jpg 700w",
+          "http://placehold.it/1400x600.jpg 1400w"
+        ],
+        "title": "This is Title Two",
+        "type": "image"
+      },
+      {
+        "aspectRatio": "tv",
+        "assetSource": "National Geographic",
+        "caption": "This is Caption Three",
+        "credit": "Joel Sartore",
+        "src": "http://placehold.it/300x200.jpg",
+        "srcSet": [
+          "http://placehold.it/300x200.jpg 300w",
+          "http://placehold.it/600x400.jpg 600w",
+          "http://placehold.it/1200x800.jpg 1200w"
+        ],
+        "title": "This is Title Three",
+        "type": "image"
+      }
+    ];
+
     before(() => {
-      const slides = [
-        {
-          "aspectRatio": "broadcast",
-          "assetSource": "National Geographic",
-          "caption": "This is Caption One",
-          "credit": "Joel Sartore",
-          "src": "http://placehold.it/350x150.jpg",
-          "srcSet": [
-            "http://placehold.it/350x150.jpg 350w",
-            "http://placehold.it/700x300.jpg 700w",
-            "http://placehold.it/1400x600.jpg 1400w"
-          ],
-          "title": "This is Title One",
-          "type": "image"
-        },
-        {
-          "aspectRatio": "photo",
-          "assetSource": "National Geographic",
-          "caption": "This is Caption Two",
-          "credit": "Joel Sartore",
-          "src": "http://placehold.it/350x150.jpg",
-          "srcSet": [
-            "http://placehold.it/350x150.jpg 350w",
-            "http://placehold.it/700x300.jpg 700w",
-            "http://placehold.it/1400x600.jpg 1400w"
-        ],
-          "title": "This is Title Two",
-          "type": "image"
-        },
-        {
-          "aspectRatio": "tv",
-          "assetSource": "National Geographic",
-          "caption": "This is Caption Three",
-          "credit": "Joel Sartore",
-          "src": "http://placehold.it/300x200.jpg",
-          "srcSet": [
-            "http://placehold.it/300x200.jpg 300w",
-            "http://placehold.it/600x400.jpg 600w",
-            "http://placehold.it/1200x800.jpg 1200w"
-        ],
-          "title": "This is Title Three",
-          "type": "image"
-        }
-      ];
 
       wrapper = shallow(<MTPhotoGalleryComponent
         frameAspectRatio="photo"
@@ -101,42 +102,69 @@ describe('MTPhotoGallery', () => {
       />);
     });
 
-    it('should have button class', () => {
-      wrapper.find('button').hasClass('mt2_btn');
+    it('logs to console', () => {
+      console.log(wrapper.debug());
     });
 
-    it('should have fullwidth class', () => {
-      wrapper.find('button').hasClass('mt2_fullwidth');
+    it('Should have container class', () => {
+      wrapper.first().hasClass('mt2_photo-gallery-container');
     });
 
-    it('should have default style class', () => {
-      wrapper.find('button').hasClass('mt2_btn-default');
+    it('First child should be Heading component', () => {
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(0).type()).to.equal(Heading);
     });
 
-    it('should take a callback function for the click event', () => {
-      expect(wrapper.find('button').props().onClick).to.be.a('function');
+    it('Heading component has props', () => {
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(0).props().title).to.equal("This is the title");
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(0).props().description).to.equal("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.");
     });
 
-    it('should take a callback function for the focus event', () => {
-      expect(wrapper.find('button').props().onFocus).to.be.a('function');
+    it('Second child should be div', () => {
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(1).type()).to.equal('div');
     });
 
-    it('should take a callback function for the blur event', () => {
-      expect(wrapper.find('button').props().onBlur).to.be.a('function');
+    it('Div should have clear class', () => {
+      wrapper.find('.mt2_photo-gallery-container').childAt(1).hasClass('clear');
     });
 
-    it('should contain an icon container div with class', () => {
-      wrapper.find('button').childAt(1).hasClass('mt2_iconandlabel--horizontal');
+    it('Third child should be Counter component', () => {
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(2).type()).to.equal(Counter);
     });
 
-    it('Label component should be called with expected props', () => {
-      expect(wrapper.find('Label').props().icon.name).to.equal("#share");
-      expect(wrapper.find('Label').props().icon.align).to.equal("left");
-      expect(wrapper.find('Label').props().icon.alt).to.equal("Sharing is Caring");
+    it('Counter component should have props', () => {
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(2).props().showCounter).to.equal(true);
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(2).props().slides).to.equal(slides);
     });
 
-    it('should have a span with text', () => {
-      wrapper.find('span').contains('This is a button');
+    it('Fourth child should be div', () => {
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(3).type()).to.equal('div');
+    });
+
+    it('Div should have clear class', () => {
+      wrapper.find('.mt2_photo-gallery-container').childAt(3).hasClass('clear');
+    });
+
+    it('Fifth child should be Slider component', () => {
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).type()).to.equal(Slider);
+    });
+
+    it('Slider component should have props', () => {
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).props().frameAspectRatio).to.equal("photo");
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).props().infinite).to.equal(false);
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).props().lazyLoad).to.equal(true);
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).props().letterbox).to.equal(true);
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).props().letterboxBackgroundColor).to.equal("light");
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).props().showArrows).to.equal(true);
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).props().slides).to.equal(slides);
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).props().animations).to.equal(true);
+    });
+
+    it('Sixth child should be Captions component', () => {
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(5).type()).to.equal(Captions);
+    });
+
+    it('Captions component should have slides prop', () => {
+      expect(wrapper.find('.mt2_photo-gallery-container').childAt(5).props().slides).to.equal(slides);
     });
 
   });
