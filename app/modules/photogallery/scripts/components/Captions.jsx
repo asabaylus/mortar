@@ -30,24 +30,22 @@ class Captions extends Component {
     const props = this.props;
     let captions = [];
 
-    if(props.slides.length){
-        let slide = props.slides[this.state.currentSlide];
-        if(slide.title || slide.caption){
-          captions.push(
-            <p key={i++} className="mt2_color--neutral--xd mt2_row-gut-half">
-              <span className="mt2_h5">{slide.title}</span>
-              <span className="mt2_subh4">{slide.caption}</span>
-            </p>
-          );
-        }
-        if(slide.credit || slide.assetSource){
-          captions.push(
-            <span key={i++} className="mt2_subh3 mt2_color--neutral--l">
-              Photograph by {slide.credit}<br />
-              Source: {slide.assetSource}
-            </span>
-          );
-        }
+    let slide = props.slides[this.state.currentSlide];
+    if(slide.title || slide.caption){
+      captions.push(
+        <p key={i++} className="mt2_color--neutral--xd mt2_row-gut-half">
+          <span className="mt2_h5">{slide.title}</span>
+          <span className="mt2_subh4">{slide.caption}</span>
+        </p>
+      );
+    }
+    if(slide.credit || slide.assetSource){
+      captions.push(
+        <span key={i++} className="mt2_subh3 mt2_color--neutral--l">
+          Photograph by {slide.credit}<br />
+          Source: {slide.assetSource}
+        </span>
+      );
     }
 
     return(
@@ -69,7 +67,7 @@ Captions.propTypes = {
     type: PropTypes.string.isRequired,
     src: PropTypes.string,
     srcSet: PropTypes.array
-  }))
+  })).isRequired
 }
 
 export default Captions;

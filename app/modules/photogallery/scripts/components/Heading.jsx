@@ -18,7 +18,7 @@ class Heading extends Component {
     }
 
     return (
-      <div className="heading">
+      <div className="mt2_photogallery-heading">
         { title }
       </div>
     );

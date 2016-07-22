@@ -19,13 +19,13 @@
   "dependencies": {
     "@natgeo/modules-images": "^1.0.2",
     "@natgeo/mortar-pestle": "2.x",
-    "react-slick": "krlospelaez/react-slick#fix-npm",
     "lodash": "4.x",
+    "picturefill": "3.x",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
-    "react-pure-render": "1.x",
     "react-lazy-load": "3.x",
-    "picturefill": "3.x"
+    "react-pure-render": "1.x",
+    "react-slick": "krlospelaez/react-slick#fix-npm"
   },
   "peerDependencies": {
     "@natgeo/mortar-pestle": "2.x",
