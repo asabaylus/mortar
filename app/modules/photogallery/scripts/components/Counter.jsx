@@ -46,7 +46,7 @@ class Counter extends Component {
 
 Counter.propTypes = {
   showCounter: PropTypes.bool,
-  slides: PropTypes.array
+  slides: PropTypes.array.isRequired
 }
 
 export default Counter;

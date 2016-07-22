@@ -5,18 +5,17 @@ import Heading from './components/Heading.jsx';
 import Counter from './components/Counter.jsx';
 import Slider from '../../slider/scripts/MTSlider.jsx';
 import Captions from './components/Captions.jsx';
-import ElementQuery from 'react-element-query';
 
 class PhotoGallery extends Component {
   render() {
     return(
       <div>
-        <ElementQuery className="mt2_row" sizes={[{name: "mt2_photogallery-heading--large", width: 480}]}>
+        <div className="mt2_row">
           <Heading title={this.props.title} description={this.props.description} />
-        </ElementQuery>
-        <ElementQuery className="mt2_row" sizes={[{name: "mt2_numericcounter--large", width: 480}]}>
+        </div>
+        <div className="mt2_row">
           {this.props.showCounter ? <Counter showCounter={this.props.showCounter} slides={this.props.slides} /> : null}
-        </ElementQuery>
+        </div>
         <Slider frameAspectRatio={this.props.frameAspectRatio}
                 infinite={this.props.infinite}
                 lazyLoad={true}
@@ -52,7 +51,7 @@ PhotoGallery.propTypes = {
     type: PropTypes.string.isRequired,
     src: PropTypes.string,
     srcSet: PropTypes.array
-  })),
+  })).isRequired,
   title: PropTypes.string
 }
 

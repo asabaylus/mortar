@@ -67,7 +67,7 @@ Captions.propTypes = {
     type: PropTypes.string.isRequired,
     src: PropTypes.string,
     srcSet: PropTypes.array
-  }))
+  })).isRequired
 }
 
 export default Captions;
