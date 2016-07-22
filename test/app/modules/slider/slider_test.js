@@ -15,7 +15,21 @@ describe('Slider', () => {
         <div data-pestle-module='Slider'>
           <script type="text/json" data-pestle-options>
             {
-              "animations": false
+              "animations": false,
+              "slides": [
+                {
+                  "type": "image",
+                  "src": "http://news.nationalgeographic.com/content/dam/news/2016/07/19/spacex_johnk_launch/01_spacex_launch.adapt.1900.1.jpg"
+                },
+                {
+                  "type": "image",
+                  "src": "http://news.nationalgeographic.com/content/dam/news/2016/07/19/spacex_johnk_launch/01_spacex_launch.adapt.1900.1.jpg"
+                },
+                {
+                  "type": "image",
+                  "src": "http://news.nationalgeographic.com/content/dam/news/2016/07/19/spacex_johnk_launch/01_spacex_launch.adapt.1900.1.jpg"
+                }
+              ]
             }
           </script>
         </div>`

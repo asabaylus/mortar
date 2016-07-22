@@ -14,14 +14,12 @@ class PrevButton extends React.Component {
       'mt2_slider-button--inactive': !this.props.infinite && this.props.currentSlide === 0
     });
 
-    return(
-      <button {...this.props} className={btnClasses}>
-        <span className='mt2_visuallyhidden'>Previous</span>
-        <svg className='mt2_icon'>
-          <use xlinkHref='#chevron-left'></use>
-        </svg>
-      </button>
-    );
+    return <button onClick={this.props.onClick} className={btnClasses}>
+      <span className='mt2_visuallyhidden'>Previous</span>
+      <svg className='mt2_icon'>
+        <use xlinkHref='#chevron-left'></use>
+      </svg>
+    </button>
   }
 }
 
@@ -32,14 +30,12 @@ class NextButton extends React.Component {
       'mt2_slider-button--inactive': !this.props.infinite && this.props.currentSlide === this.props.slideCount - 1
     });
 
-    return(
-      <button {...this.props} className={btnClasses}>
-        <span className='mt2_visuallyhidden'>Next</span>
-        <svg className='mt2_icon'>
-          <use xlinkHref='#chevron-right' />
-        </svg>
-      </button>
-    );
+    return <button onClick={this.props.onClick} className={btnClasses}>
+      <span className='mt2_visuallyhidden'>Next</span>
+      <svg className='mt2_icon'>
+        <use xlinkHref='#chevron-right'></use>
+      </svg>
+    </button>
   }
 }
 
