@@ -2,7 +2,6 @@
 
 import React, { Component, PropTypes }  from 'react';
 import {Pestle} from '@natgeo/mortar-pestle';
-import ElementQuery from 'react-element-query';
 import events from '../../../slider/scripts/events';
 
 class Counter extends Component {
@@ -35,7 +34,7 @@ class Counter extends Component {
   render() {
 
     return (
-      <div className="mt2_numericcounter">
+      <div className="mt2_photo-gallery-numericcounter">
           <button className="mt2_h5 mt2_numericcounter-button">{this.state.currentSlide}</button>
           <span className="mt2_h5">/</span>
           <button className="mt2_h5 mt2_numericcounter-button">{this.props.slides.length}</button>

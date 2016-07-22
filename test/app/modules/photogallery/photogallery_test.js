@@ -106,65 +106,45 @@ describe.only('MTPhotoGallery', () => {
       console.log(wrapper.debug());
     });
 
-    it('Should have container class', () => {
-      wrapper.first().hasClass('mt2_photo-gallery-container');
-    });
-
-    it('First child should be Heading component', () => {
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(0).type()).to.equal(Heading);
+    it('Should have a Heading component', () => {
+      expect(wrapper.find('Heading').type()).to.equal(Heading);
     });
 
     it('Heading component has props', () => {
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(0).props().title).to.equal("This is the title");
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(0).props().description).to.equal("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.");
+      expect(wrapper.find('Heading').props().title).to.equal("This is the title");
+      expect(wrapper.find('Heading').props().description).to.equal("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.");
     });
 
-    it('Second child should be div', () => {
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(1).type()).to.equal('div');
-    });
-
-    it('Div should have clear class', () => {
-      wrapper.find('.mt2_photo-gallery-container').childAt(1).hasClass('clear');
-    });
-
-    it('Third child should be Counter component', () => {
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(2).type()).to.equal(Counter);
+    it('Should have a Counter component', () => {
+      expect(wrapper.find('Counter').type()).to.equal(Counter);
     });
 
     it('Counter component should have props', () => {
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(2).props().showCounter).to.equal(true);
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(2).props().slides).to.equal(slides);
+      expect(wrapper.find('Counter').props().showCounter).to.equal(true);
+      expect(wrapper.find('Counter').props().slides).to.equal(slides);
     });
 
-    it('Fourth child should be div', () => {
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(3).type()).to.equal('div');
-    });
-
-    it('Div should have clear class', () => {
-      wrapper.find('.mt2_photo-gallery-container').childAt(3).hasClass('clear');
-    });
-
-    it('Fifth child should be Slider component', () => {
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).type()).to.equal(Slider);
+    it('Should have a Slider component', () => {
+      expect(wrapper.find('MTSlider').type()).to.equal(Slider);
     });
 
     it('Slider component should have props', () => {
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).props().frameAspectRatio).to.equal("photo");
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).props().infinite).to.equal(false);
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).props().lazyLoad).to.equal(true);
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).props().letterbox).to.equal(true);
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).props().letterboxBackgroundColor).to.equal("light");
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).props().showArrows).to.equal(true);
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).props().slides).to.equal(slides);
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(4).props().animations).to.equal(true);
+      expect(wrapper.find('MTSlider').props().frameAspectRatio).to.equal("photo");
+      expect(wrapper.find('MTSlider').props().infinite).to.equal(false);
+      expect(wrapper.find('MTSlider').props().lazyLoad).to.equal(true);
+      expect(wrapper.find('MTSlider').props().letterbox).to.equal(true);
+      expect(wrapper.find('MTSlider').props().letterboxBackgroundColor).to.equal("light");
+      expect(wrapper.find('MTSlider').props().showArrows).to.equal(true);
+      expect(wrapper.find('MTSlider').props().slides).to.equal(slides);
+      expect(wrapper.find('MTSlider').props().animations).to.equal(true);
     });
 
-    it('Sixth child should be Captions component', () => {
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(5).type()).to.equal(Captions);
+    it('Should have a Captions component', () => {
+      expect(wrapper.find('Captions').type()).to.equal(Captions);
     });
 
     it('Captions component should have slides prop', () => {
-      expect(wrapper.find('.mt2_photo-gallery-container').childAt(5).props().slides).to.equal(slides);
+      expect(wrapper.find('Captions').props().slides).to.equal(slides);
     });
 
   });
