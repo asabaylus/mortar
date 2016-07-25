@@ -41,9 +41,15 @@ class NextButton extends React.Component {
 
 class MTSlider extends Component {
   findSlideType(type, data) {
+    const backgroundColor = this.props.letterboxBackgroundColor === "light" ? "#F2F2F2" : this.props.letterboxBackgroundColor === "dark" ? "#000000" : " ";
     switch(type) {
     case 'image':
-      return <ImageSlide src={data.src} />
+      return <ImageSlide aspectRatio={data.aspectRatio}
+                         frameAspectRatio={this.props.frameAspectRatio}
+                         letterbox={this.props.letterbox}
+                         letterboxBackgroundColor={backgroundColor}
+                         src={data.src}
+                         srcset={data.srcSet}/>
     default:
       return;
     }
@@ -75,7 +81,10 @@ class MTSlider extends Component {
     const state = this.state;
     const settings = {
       afterChange: this.onSlideChange,
-      className: 'mt2_slider-container mt2_intratio--photo mt2_bgcolor-neutral-xxd',
+      arrows: props.showArrows,
+      className: 'mt2_slider-container',
+      infinite: props.infinite,
+      lazyLoad: props.lazyLoad,
       nextArrow: <NextButton
         infinite={props.infinite}
         currentSlide={state.currentSlideIndex}
@@ -83,8 +92,7 @@ class MTSlider extends Component {
       prevArrow: <PrevButton
         infinite={props.infinite}
         currentSlide={state.currentSlideIndex} />,
-      useCSS: props.animations,
-      infinite: props.infinite
+      useCSS: props.animations
     };
 
     const slides = props.slides.map((slide, i) => {
@@ -95,7 +103,7 @@ class MTSlider extends Component {
     });
 
     return (
-      <Slick {...settings}>
+      <Slick {...settings} >
         {slides}
       </Slick>
     );
@@ -104,14 +112,27 @@ class MTSlider extends Component {
 
 MTSlider.defaultProps = {
   animations: true,
+  frameAspectRatio: "3:2",
   infinite: true
 }
 
 MTSlider.propTypes = {
   animations: PropTypes.bool,
+  frameAspectRatio: PropTypes.string,
+  letterboxBackgroundColor: PropTypes.string,
   infinite: PropTypes.bool,
+  lazyLoad: PropTypes.bool,
+  letterbox: PropTypes.bool,
+  showArrows: PropTypes.bool,
   slides: PropTypes.arrayOf(PropTypes.shape({
-    type: PropTypes.string.isRequired
+    aspectRatio: PropTypes.string,
+    assetSource: PropTypes.string,
+    caption: PropTypes.string,
+    credit: PropTypes.string,
+    title: PropTypes.string,
+    type: PropTypes.string.isRequired,
+    src: PropTypes.string,
+    srcSet: PropTypes.array
   }))
 }
 
