@@ -11,7 +11,7 @@ import MTPhotoGalleryComponent from '../../../../app/modules/photogallery/script
 import {shallow, mount} from 'enzyme';
 import React from 'react';
 
-describe.only('MTPhotoGallery', () => {
+describe('MTPhotoGallery', () => {
   describe('Pestle Module', () => {
     before(() => {
       const html = `<div
@@ -100,10 +100,6 @@ describe.only('MTPhotoGallery', () => {
         slides={slides}
         title="This is the title"
       />);
-    });
-
-    it('logs to console', () => {
-      console.log(wrapper.debug());
     });
 
     it('Should have a Heading component', () => {
