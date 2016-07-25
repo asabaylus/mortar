@@ -17,13 +17,15 @@
   top: 7.5vh;
   transition: .2s;
   width: 85vw;
+  visibility: hidden;
   z-index: $mt2_z-top;
-}
 
-.mt2_module-container--active {
-  height: 100vh;
-  left: 0;
-  opacity: 100;
-  top: 0;
-  width: 100vw;
+  &--active {
+    height: 100vh;
+    left: 0;
+    opacity: 100;
+    top: 0;
+    visibility: visible;
+    width: 100vw;
+  }
 }
