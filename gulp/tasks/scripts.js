@@ -58,9 +58,7 @@ gulp.task('scripts', ['packages'], function(){
 
 gulp.task('prodScripts', ['packages'], function(){
   return browserify('./app/scripts/main.js')
-    .transform(envify({
-      NODE_ENV: 'production'
-    }))
+    .transform('envify', {global: true, _: 'purge', NODE_ENV: 'production'})
     .transform('babelify', {presets: ['es2015', 'stage-0', 'react']})
     .transform('aliasify', { replacements: {
       '^@natgeo/mortar-pestle$': paths.pestleSrc + 'src/main.js',
