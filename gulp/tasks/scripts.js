@@ -1,14 +1,15 @@
 'use strict';
 
 const gulp  = require('gulp');
-const plumber = require("gulp-plumber");
-const newer   = require("gulp-newer");
-const through = require("through2");
-const chalk   = require("chalk");
-const babel   = require("gulp-babel");
-const gutil   = require("gulp-util");
+const plumber = require('gulp-plumber');
+const newer   = require('gulp-newer');
+const through = require('through2');
+const chalk   = require('chalk');
+const babel   = require('gulp-babel');
+const gutil   = require('gulp-util');
 
 const browserify = require('browserify');
+const envify = require('envify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const sourcemaps = require('gulp-sourcemaps');
@@ -31,7 +32,7 @@ gulp.task('packages', function() {
     }))
     .pipe(newer(packagesDest))
     .pipe(through.obj(function (file, enc, callback) {
-      gutil.log("Compiling", "'" + chalk.cyan(file.path) + "'...");
+      gutil.log('Compiling', '"' + chalk.cyan(file.path) + '"...');
       callback(null, file);
     }))
     .pipe(babel({
@@ -57,6 +58,9 @@ gulp.task('scripts', ['packages'], function(){
 
 gulp.task('prodScripts', ['packages'], function(){
   return browserify('./app/scripts/main.js')
+    .transform(envify({
+      NODE_ENV: 'production'
+    }))
     .transform('babelify', {presets: ['es2015', 'stage-0', 'react']})
     .transform('aliasify', { replacements: {
       '^@natgeo/mortar-pestle$': paths.pestleSrc + 'src/main.js',
