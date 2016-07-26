@@ -1,0 +1,33 @@
+.mt2_tooltip-container {
+  max-width: $mt2_unit * 18;
+  padding-top: .0625rem; // Padding Needed to prevent long text rendering issues & keep toolip open on hover
+  position: relative;
+  transition: 400ms;
+}
+
+.mt2_tooltip {
+  bottom: 100%;
+  padding: 1rem;
+  position: absolute;
+  text-align: center;
+  visibility: hidden;
+
+  &:after {
+    $mt2_arrowheight: .625rem;
+
+    border: $mt2_arrowheight solid transparent;
+    border-top: $mt2_arrowheight solid $mt2_color-neutral-xxl;
+    content: '';
+    display: block;
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 0;
+  }
+
+  .mt2_tooltip-container:hover & {
+    visibility: visible;
+  }
+}
