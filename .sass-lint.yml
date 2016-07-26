@@ -7,6 +7,8 @@ rules:
     -
       convention: 'mt2_([a-z0-9\-]+)'
       convention-explanation: 'All class names must be prefaced with "mt2_" and contain only lowercase letters and dashes afterward'
+  force-pseudo-nesting:
+    - 0
   function-name-format:
     - 1
     -
