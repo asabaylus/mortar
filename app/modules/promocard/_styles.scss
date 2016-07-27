@@ -1,53 +1,55 @@
-$button-width: 8em;
-$button-height: 8em;
+$mt2_button-width: 8em;
+$mt2_button-height: 8em;
 
-.mt2_promocard-container{
+.mt2_promocard-container {
   overflow: hidden;
 
-  figure{ // user-agent overrides
-    margin: 0 0 30px 0;
+  figure { // user-agent overrides
+    margin: 0 0 30px;
     position: relative;
   }
 
   //most of the styles below are just for displaying functionality for this ticket, will most likely be changed/overridden for styling ticket
 
-  .mt2_promocard-image{
+  .mt2_promocard-image {
     overflow: hidden;
     position: relative;
     width: 100%;
   }
 
-  .mt2_promocard-branding{
+  .mt2_promocard-branding {
     background-color: yellow;
-    padding: 0.5em 1em;
+    padding: .5em 1em;
     position: absolute;
     top: 2em;
     z-index: 1;
   }
 
-  .mt2_promocard-sponsor{
-    background-color: rgba(255,255,255,0.2);
+  .mt2_promocard-sponsor {
+    background-color: rgba(255, 255, 255, .2);
     bottom: 0;
     color: white;
-    padding: 0.5em 1em;
+    padding: .5em 1em;
     position: absolute;
     text-align: left;
     width: 100%;
     z-index: 1;
   }
 
-  .mt2_btn{
+  .mt2_btn {
     background-color: white;
     border-radius: 50%;
-    height: $button-width;
-    left: calc(50% - (#{$button-width} / 2));
+    height: $mt2_button-width;
+    left: calc(50% - (#{$mt2_button-width} / 2));
     padding: 0;
     position: absolute;
-    top: calc(50% - (#{$button-height} / 2));
-    width: $button-width;
+    top: calc(50% - (#{$mt2_button-height} / 2));
+    width: $mt2_button-width;
+
     .mt2_icon--left {
       margin: 0;
     }
+
     & svg.mt2_icon{
       height: 3em;
       width: 3em;
