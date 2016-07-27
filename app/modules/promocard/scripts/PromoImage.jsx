@@ -10,13 +10,22 @@ const PromoImage = ({image, brandingBadgeLabel, sponsorContent, sponsorContentLa
     "alt": "Play Button"
   };
 
+  const imageStyle = {
+    backgroundImage: 'url(' + image.url + ')',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    height: image.height
+  };
+
+  // Button takes onClick function prop to hook into for play functionality
   return(
-    <div className={"mt2_promocard-imagecontainer" + image.containerCSSClass} style={image.inlineStyle}>
-      <h1 className="mt2_promocard-branding">{brandingBadgeLabel}</h1>
-      <img src={image.url} />
-      <Button icon={icon} />
-      <span className="mt2_promocard-sponsor">{sponsorContentLabel}</span>
-    </div>
+    <figure className={image.containerCSSClass} style={image.inlineStyle}>
+      <figcaption className="mt2_promocard-branding">{brandingBadgeLabel}</figcaption>
+      <div className="mt2_promocard-imagebutton" style={imageStyle}>
+        <Button icon={icon} onClick={() => {}} />
+      </div>
+      <figcaption className="mt2_promocard-sponsor">{sponsorContentLabel}</figcaption>
+    </figure>
   );
 };
 
@@ -26,7 +35,8 @@ PromoImage.PropTypes = {
     url: PropTypes.string,
     position: PropTypes.oneOf(['above', 'below', 'left', 'right']),
     containerCSSClass: PropTypes.string,
-    inlineStyle: PropTypes.string
+    inlineStyle: PropTypes.string,
+    height: PropTypes.string
   }),
   sponsorContent: PropTypes.bool,
   sponsorContentLabel: PropTypes.string

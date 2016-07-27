@@ -4,7 +4,7 @@ import React, { PropTypes }  from 'react';
 
 const PromoText = ({series, title, dek, byline}) => {
   return(
-    <div>
+    <div className="mt2_promocard-textcontainer">
       {series}
       {title}
       {dek}

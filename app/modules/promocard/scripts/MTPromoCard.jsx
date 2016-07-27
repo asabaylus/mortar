@@ -20,22 +20,22 @@ const MTPromoCard = ({image, series, title, dek, byline, brandingBadgeLabel, spo
     switch(position){
       case 'above':
       case 'left':
-        return <div className="mt2_promocard-container">
-          <PromoImage image={image} brandingBadgeLabel={brandingBadgeLabel} sponsorContentLabel={sponsorContentLabel} />
+        return <div onClick={promoClicked.bind(this)} className="mt2_promocard-container">
+          {{image} ? <PromoImage image={image} brandingBadgeLabel={brandingBadgeLabel} sponsorContentLabel={sponsorContentLabel} /> : null}
           <PromoText series={series} title={title} dek={dek} byline={byline} />
         </div>;
         break;
       case 'below':
       case 'right':
-        return <div className="mt2_promocard-container">
+        return <div onClick={promoClicked.bind(this)} className="mt2_promocard-container">
           <PromoText series={series} title={title} dek={dek} byline={byline} />
-          <PromoImage image={image} brandingBadgeLabel={brandingBadgeLabel} sponsorContentLabel={sponsorContentLabel} />
+          {{image} ? <PromoImage image={image} brandingBadgeLabel={brandingBadgeLabel} sponsorContentLabel={sponsorContentLabel} /> : null}
         </div>;
         break;
       default:
-        return <div className="mt2_promocard-container">
+        return <div onClick={promoClicked.bind(this)} className="mt2_promocard-container">
           <PromoText series={series} title={title} dek={dek} byline={byline} />
-          <PromoImage image={image} brandingBadgeLabel={brandingBadgeLabel} sponsorContentLabel={sponsorContentLabel} />
+          {{image} ? <PromoImage image={image} brandingBadgeLabel={brandingBadgeLabel} sponsorContentLabel={sponsorContentLabel} /> : null}
         </div>;
         break;
     }
