@@ -1,13 +1,13 @@
 // Extends
 
 %mt2_row {
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: ' ';
     display: table;
   }
 
-  &:after {
+  &::after {
     clear: both;
   }
 }

@@ -7,6 +7,7 @@
   </div>
 
   <div class="mt2_col-lg-8 mt2_col-sm-12 mt2_col-lg-offset-1 mt2_row-gut-4">
+    <p class="mt2_subh4">The Photo Gallery has many different options to configure it. Here is an example with what could be considered mostly default values.</p>
     <div data-pestle-module="PhotoGallery">
       <script type="text/json" data-pestle-options>
         {
@@ -64,6 +65,307 @@
           "title": "This is the title"
         }
     </script>
+    </div>
+    <div class="codesnippet-wrapper">
+<pre class="codesnippet"><code class="language-markup">
+  &#x3C;div data-pestle-module=&#x22;PhotoGallery&#x22;&#x3E;
+  &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
+    {
+      &#x22;frameAspectRatio&#x22;: &#x22;photo&#x22;,
+      &#x22;letterboxBackgroundColor&#x22;: &#x22;light&#x22;,
+      &#x22;description&#x22;: &#x22;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.&#x22;,
+      &#x22;infinite&#x22;: false,
+      &#x22;letterbox&#x22;: true,
+      &#x22;showArrows&#x22;: true,
+      &#x22;showCounter&#x22;: true,
+      &#x22;slides&#x22;: [
+        {
+          &#x22;aspectRatio&#x22;: &#x22;broadcast&#x22;,
+          &#x22;assetSource&#x22;: &#x22;National Geographic&#x22;,
+          &#x22;caption&#x22;: &#x22;This is Caption One&#x22;,
+          &#x22;credit&#x22;: &#x22;Joel Sartore&#x22;,
+          &#x22;src&#x22;: &#x22;http://placehold.it/350x150.jpg&#x22;,
+          &#x22;srcSet&#x22;: [
+            &#x22;http://placehold.it/350x150.jpg 350w&#x22;,
+            &#x22;http://placehold.it/700x300.jpg 700w&#x22;,
+            &#x22;http://placehold.it/1400x600.jpg 1400w&#x22;
+          ],
+          &#x22;title&#x22;: &#x22;This is Title One&#x22;,
+          &#x22;type&#x22;: &#x22;image&#x22;
+        },
+        {
+          &#x22;aspectRatio&#x22;: &#x22;photo&#x22;,
+          &#x22;assetSource&#x22;: &#x22;National Geographic&#x22;,
+          &#x22;caption&#x22;: &#x22;This is Caption Two&#x22;,
+          &#x22;credit&#x22;: &#x22;Joel Sartore&#x22;,
+          &#x22;src&#x22;: &#x22;http://placehold.it/350x150.jpg&#x22;,
+          &#x22;srcSet&#x22;: [
+            &#x22;http://placehold.it/350x150.jpg 350w&#x22;,
+            &#x22;http://placehold.it/700x300.jpg 700w&#x22;,
+            &#x22;http://placehold.it/1400x600.jpg 1400w&#x22;
+          ],
+          &#x22;title&#x22;: &#x22;This is Title Two&#x22;,
+          &#x22;type&#x22;: &#x22;image&#x22;
+        },
+        {
+          &#x22;aspectRatio&#x22;: &#x22;tv&#x22;,
+          &#x22;assetSource&#x22;: &#x22;National Geographic&#x22;,
+          &#x22;caption&#x22;: &#x22;This is Caption Three&#x22;,
+          &#x22;credit&#x22;: &#x22;Joel Sartore&#x22;,
+          &#x22;src&#x22;: &#x22;http://placehold.it/300x200.jpg&#x22;,
+          &#x22;srcSet&#x22;: [
+            &#x22;http://placehold.it/300x200.jpg 300w&#x22;,
+            &#x22;http://placehold.it/600x400.jpg 600w&#x22;,
+            &#x22;http://placehold.it/1200x800.jpg 1200w&#x22;
+          ],
+          &#x22;title&#x22;: &#x22;This is Title Three&#x22;,
+          &#x22;type&#x22;: &#x22;image&#x22;
+        }
+      ],
+      &#x22;title&#x22;: &#x22;This is the title&#x22;
+      }
+  &#x3C;/script&#x3E;
+  &#x3C;/div&#x3E;</code></pre>
+    </div>
+
+    <p class="mt2_subh4">Here is an example of an infinite gallery, with arrows and counter hidden. The background has been changed to dark.</p>
+    <div data-pestle-module="PhotoGallery">
+      <script type="text/json" data-pestle-options>
+        {
+          "frameAspectRatio": "photo",
+          "letterboxBackgroundColor": "dark",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+          "infinite": true,
+          "letterbox": true,
+          "showArrows": false,
+          "showCounter": false,
+          "slides": [
+            {
+              "aspectRatio": "broadcast",
+              "assetSource": "National Geographic",
+              "caption": "This is Caption One",
+              "credit": "Joel Sartore",
+              "src": "http://placehold.it/350x150.jpg",
+              "srcSet": [
+                "http://placehold.it/350x150.jpg 350w",
+                "http://placehold.it/700x300.jpg 700w",
+                "http://placehold.it/1400x600.jpg 1400w"
+              ],
+              "title": "This is Title One",
+              "type": "image"
+            },
+            {
+              "aspectRatio": "photo",
+              "assetSource": "National Geographic",
+              "caption": "This is Caption Two",
+              "credit": "Joel Sartore",
+              "src": "http://placehold.it/350x150.jpg",
+              "srcSet": [
+                "http://placehold.it/350x150.jpg 350w",
+                "http://placehold.it/700x300.jpg 700w",
+                "http://placehold.it/1400x600.jpg 1400w"
+              ],
+              "title": "This is Title Two",
+              "type": "image"
+            },
+            {
+              "aspectRatio": "tv",
+              "assetSource": "National Geographic",
+              "caption": "This is Caption Three",
+              "credit": "Joel Sartore",
+              "src": "http://placehold.it/300x200.jpg",
+              "srcSet": [
+                "http://placehold.it/300x200.jpg 300w",
+                "http://placehold.it/600x400.jpg 600w",
+                "http://placehold.it/1200x800.jpg 1200w"
+              ],
+              "title": "This is Title Three",
+              "type": "image"
+            }
+          ],
+          "title": "This is the title"
+        }
+    </script>
+    </div>
+    <div class="codesnippet-wrapper">
+<pre class="codesnippet"><code class="language-markup">
+  &#x3C;div data-pestle-module=&#x22;PhotoGallery&#x22;&#x3E;
+  &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
+    {
+      &#x22;frameAspectRatio&#x22;: &#x22;photo&#x22;,
+      &#x22;letterboxBackgroundColor&#x22;: &#x22;dark&#x22;,
+      &#x22;description&#x22;: &#x22;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.&#x22;,
+      &#x22;infinite&#x22;: true,
+      &#x22;letterbox&#x22;: true,
+      &#x22;showArrows&#x22;: false,
+      &#x22;showCounter&#x22;: false,
+      &#x22;slides&#x22;: [
+        {
+          &#x22;aspectRatio&#x22;: &#x22;broadcast&#x22;,
+          &#x22;assetSource&#x22;: &#x22;National Geographic&#x22;,
+          &#x22;caption&#x22;: &#x22;This is Caption One&#x22;,
+          &#x22;credit&#x22;: &#x22;Joel Sartore&#x22;,
+          &#x22;src&#x22;: &#x22;http://placehold.it/350x150.jpg&#x22;,
+          &#x22;srcSet&#x22;: [
+            &#x22;http://placehold.it/350x150.jpg 350w&#x22;,
+            &#x22;http://placehold.it/700x300.jpg 700w&#x22;,
+            &#x22;http://placehold.it/1400x600.jpg 1400w&#x22;
+          ],
+          &#x22;title&#x22;: &#x22;This is Title One&#x22;,
+          &#x22;type&#x22;: &#x22;image&#x22;
+        },
+        {
+          &#x22;aspectRatio&#x22;: &#x22;photo&#x22;,
+          &#x22;assetSource&#x22;: &#x22;National Geographic&#x22;,
+          &#x22;caption&#x22;: &#x22;This is Caption Two&#x22;,
+          &#x22;credit&#x22;: &#x22;Joel Sartore&#x22;,
+          &#x22;src&#x22;: &#x22;http://placehold.it/350x150.jpg&#x22;,
+          &#x22;srcSet&#x22;: [
+            &#x22;http://placehold.it/350x150.jpg 350w&#x22;,
+            &#x22;http://placehold.it/700x300.jpg 700w&#x22;,
+            &#x22;http://placehold.it/1400x600.jpg 1400w&#x22;
+          ],
+          &#x22;title&#x22;: &#x22;This is Title Two&#x22;,
+          &#x22;type&#x22;: &#x22;image&#x22;
+        },
+        {
+          &#x22;aspectRatio&#x22;: &#x22;tv&#x22;,
+          &#x22;assetSource&#x22;: &#x22;National Geographic&#x22;,
+          &#x22;caption&#x22;: &#x22;This is Caption Three&#x22;,
+          &#x22;credit&#x22;: &#x22;Joel Sartore&#x22;,
+          &#x22;src&#x22;: &#x22;http://placehold.it/300x200.jpg&#x22;,
+          &#x22;srcSet&#x22;: [
+            &#x22;http://placehold.it/300x200.jpg 300w&#x22;,
+            &#x22;http://placehold.it/600x400.jpg 600w&#x22;,
+            &#x22;http://placehold.it/1200x800.jpg 1200w&#x22;
+          ],
+          &#x22;title&#x22;: &#x22;This is Title Three&#x22;,
+          &#x22;type&#x22;: &#x22;image&#x22;
+        }
+      ],
+      &#x22;title&#x22;: &#x22;This is the title&#x22;
+      }
+  &#x3C;/script&#x3E;
+  &#x3C;/div&#x3E;</code></pre>
+    </div><p class="mt2_subh4">Here is an example of an infinite gallery, with letterboxing turned off.</p>
+    <div data-pestle-module="PhotoGallery">
+      <script type="text/json" data-pestle-options>
+        {
+          "frameAspectRatio": "photo",
+          "letterboxBackgroundColor": "dark",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+          "infinite": true,
+          "letterbox": false,
+          "showArrows": true,
+          "showCounter": true,
+          "slides": [
+            {
+              "aspectRatio": "broadcast",
+              "assetSource": "National Geographic",
+              "caption": "This is Caption One",
+              "credit": "Joel Sartore",
+              "src": "http://placehold.it/350x150.jpg",
+              "srcSet": [
+                "http://placehold.it/350x150.jpg 350w",
+                "http://placehold.it/700x300.jpg 700w",
+                "http://placehold.it/1400x600.jpg 1400w"
+              ],
+              "title": "This is Title One",
+              "type": "image"
+            },
+            {
+              "aspectRatio": "photo",
+              "assetSource": "National Geographic",
+              "caption": "This is Caption Two",
+              "credit": "Joel Sartore",
+              "src": "http://placehold.it/350x150.jpg",
+              "srcSet": [
+                "http://placehold.it/350x150.jpg 350w",
+                "http://placehold.it/700x300.jpg 700w",
+                "http://placehold.it/1400x600.jpg 1400w"
+              ],
+              "title": "This is Title Two",
+              "type": "image"
+            },
+            {
+              "aspectRatio": "tv",
+              "assetSource": "National Geographic",
+              "caption": "This is Caption Three",
+              "credit": "Joel Sartore",
+              "src": "http://placehold.it/300x200.jpg",
+              "srcSet": [
+                "http://placehold.it/300x200.jpg 300w",
+                "http://placehold.it/600x400.jpg 600w",
+                "http://placehold.it/1200x800.jpg 1200w"
+              ],
+              "title": "This is Title Three",
+              "type": "image"
+            }
+          ],
+          "title": "This is the title"
+        }
+    </script>
+    </div>
+    <div class="codesnippet-wrapper">
+<pre class="codesnippet"><code class="language-markup">
+  &#x3C;div data-pestle-module=&#x22;PhotoGallery&#x22;&#x3E;
+  &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
+    {
+      &#x22;frameAspectRatio&#x22;: &#x22;photo&#x22;,
+      &#x22;letterboxBackgroundColor&#x22;: &#x22;dark&#x22;,
+      &#x22;description&#x22;: &#x22;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.&#x22;,
+      &#x22;infinite&#x22;: true,
+      &#x22;letterbox&#x22;: false,
+      &#x22;showArrows&#x22;: true,
+      &#x22;showCounter&#x22;: true,
+      &#x22;slides&#x22;: [
+        {
+          &#x22;aspectRatio&#x22;: &#x22;broadcast&#x22;,
+          &#x22;assetSource&#x22;: &#x22;National Geographic&#x22;,
+          &#x22;caption&#x22;: &#x22;This is Caption One&#x22;,
+          &#x22;credit&#x22;: &#x22;Joel Sartore&#x22;,
+          &#x22;src&#x22;: &#x22;http://placehold.it/350x150.jpg&#x22;,
+          &#x22;srcSet&#x22;: [
+            &#x22;http://placehold.it/350x150.jpg 350w&#x22;,
+            &#x22;http://placehold.it/700x300.jpg 700w&#x22;,
+            &#x22;http://placehold.it/1400x600.jpg 1400w&#x22;
+          ],
+          &#x22;title&#x22;: &#x22;This is Title One&#x22;,
+          &#x22;type&#x22;: &#x22;image&#x22;
+        },
+        {
+          &#x22;aspectRatio&#x22;: &#x22;photo&#x22;,
+          &#x22;assetSource&#x22;: &#x22;National Geographic&#x22;,
+          &#x22;caption&#x22;: &#x22;This is Caption Two&#x22;,
+          &#x22;credit&#x22;: &#x22;Joel Sartore&#x22;,
+          &#x22;src&#x22;: &#x22;http://placehold.it/350x150.jpg&#x22;,
+          &#x22;srcSet&#x22;: [
+            &#x22;http://placehold.it/350x150.jpg 350w&#x22;,
+            &#x22;http://placehold.it/700x300.jpg 700w&#x22;,
+            &#x22;http://placehold.it/1400x600.jpg 1400w&#x22;
+          ],
+          &#x22;title&#x22;: &#x22;This is Title Two&#x22;,
+          &#x22;type&#x22;: &#x22;image&#x22;
+        },
+        {
+          &#x22;aspectRatio&#x22;: &#x22;tv&#x22;,
+          &#x22;assetSource&#x22;: &#x22;National Geographic&#x22;,
+          &#x22;caption&#x22;: &#x22;This is Caption Three&#x22;,
+          &#x22;credit&#x22;: &#x22;Joel Sartore&#x22;,
+          &#x22;src&#x22;: &#x22;http://placehold.it/300x200.jpg&#x22;,
+          &#x22;srcSet&#x22;: [
+            &#x22;http://placehold.it/300x200.jpg 300w&#x22;,
+            &#x22;http://placehold.it/600x400.jpg 600w&#x22;,
+            &#x22;http://placehold.it/1200x800.jpg 1200w&#x22;
+          ],
+          &#x22;title&#x22;: &#x22;This is Title Three&#x22;,
+          &#x22;type&#x22;: &#x22;image&#x22;
+        }
+      ],
+      &#x22;title&#x22;: &#x22;This is the title&#x22;
+      }
+  &#x3C;/script&#x3E;
+  &#x3C;/div&#x3E;</code></pre>
     </div>
   </div>
 </div>
