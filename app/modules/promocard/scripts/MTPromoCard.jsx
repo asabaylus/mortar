@@ -3,6 +3,8 @@
 import React, { PropTypes }  from 'react';
 import {Pestle} from '@natgeo/mortar-pestle';
 import events from './events';
+import PromoImage from './PromoImage.jsx';
+import PromoText from './PromoText.jsx';
 
 const promoData = {
   // props to pass with the event
@@ -12,13 +14,34 @@ const promoClicked = () => {
   Pestle.PubSub.publish(events.promoClicked, promoData);
 };
 
-const MTPromoCard = () => {
+const MTPromoCard = ({image, series, title, dek, byline, brandingBadgeLabel, sponsorContentLabel}) => {
+  const position = image.position;
+  const layoutCard = () => {
+    switch(position){
+      case 'above':
+      case 'left':
+        return <div className="mt2_promocard-container">
+          <PromoImage image={image} brandingBadgeLabel={brandingBadgeLabel} sponsorContentLabel={sponsorContentLabel} />
+          <PromoText series={series} title={title} dek={dek} byline={byline} />
+        </div>;
+        break;
+      case 'below':
+      case 'right':
+        return <div className="mt2_promocard-container">
+          <PromoText series={series} title={title} dek={dek} byline={byline} />
+          <PromoImage image={image} brandingBadgeLabel={brandingBadgeLabel} sponsorContentLabel={sponsorContentLabel} />
+        </div>;
+        break;
+      default:
+        return <div className="mt2_promocard-container">
+          <PromoText series={series} title={title} dek={dek} byline={byline} />
+          <PromoImage image={image} brandingBadgeLabel={brandingBadgeLabel} sponsorContentLabel={sponsorContentLabel} />
+        </div>;
+        break;
+    }
+  };
   return(
-    <div className="mt2_promo-card-container">
-      <div onClick={promoClicked}>
-        <h1>I Render Well</h1>
-      </div>
-    </div>
+    layoutCard()
   );
 };
 
