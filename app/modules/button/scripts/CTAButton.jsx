@@ -54,16 +54,16 @@ class CTAButton extends Component {
       classes = classNames({
         'mt2_btn': true,
         'mt2_fullwidth': true,
-        'mt2_btn-default': props.style === 'default',
-        'mt2_btn-default--inactive': inactive && props.style === 'default',
-        'mt2_btn-secondary': props.style === 'secondary',
-        'mt2_btn-secondary--inactive': inactive && props.style === 'secondary',
-        'mt2_btn-secondary--reversed': inverse && props.style === 'secondary',
+        'mt2_btn--default': props.style === 'default',
+        'mt2_btn--default--inactive': inactive && props.style === 'default',
+        'mt2_btn--secondary': props.style === 'secondary',
+        'mt2_btn--secondary--inactive': inactive && props.style === 'secondary',
+        'mt2_btn--secondary--reversed': inverse && props.style === 'secondary',
         'mt2_btn--naked': props.style === 'naked',
         'mt2_btn--naked--inactive': inactive && props.style === 'naked',
         'mt2_btn--naked--reversed' : inverse && props.style === 'naked',
         'mt2_btn--success': props.style === 'success',
-        'mt2_btn--error': props.style === 'error',
+        'mt2_btn--error': props.style === 'error'
       });
     }
 
