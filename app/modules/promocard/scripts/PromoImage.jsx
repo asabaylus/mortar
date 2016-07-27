@@ -3,11 +3,11 @@
 import React, { PropTypes }  from 'react';
 import Button from '../../button/scripts/CTAButton.jsx';
 
-const PromoImage = ({image, brandingBadgeLabel, sponsorContent, sponsorContentLabel}) => {
+const PromoImage = ({brandingBadgeLabel, image, sponsorContent, sponsorContentLabel, video}) => {
   const icon = {
-    "name": "#play",
     "align": "left",
-    "alt": "Play Button"
+    "alt": "Play Button",
+    "name": "#play"
   };
 
   const imageStyle = {
@@ -22,7 +22,7 @@ const PromoImage = ({image, brandingBadgeLabel, sponsorContent, sponsorContentLa
     <figure className={image.containerCSSClass} style={image.inlineStyle}>
       {brandingBadgeLabel ? <figcaption className="mt2_promocard-branding">{brandingBadgeLabel}</figcaption> : null}
       <div className="mt2_promocard-image" style={imageStyle}>
-        <Button icon={icon} onClick={() => {}} />
+        {video ? <Button icon={icon} onClick={() => {}} /> : null}
       </div>
       {sponsorContent ? <figcaption className="mt2_promocard-sponsor">{sponsorContentLabel}</figcaption> : null}
     </figure>
@@ -39,7 +39,8 @@ PromoImage.PropTypes = {
     height: PropTypes.string
   }),
   sponsorContent: PropTypes.bool,
-  sponsorContentLabel: PropTypes.string
+  sponsorContentLabel: PropTypes.string,
+  video: PropTypes.bool
 }
 
 export default PromoImage;
