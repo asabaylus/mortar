@@ -2,13 +2,13 @@
 
 import React, { PropTypes }  from 'react';
 
-const PromoText = ({series, title, dek, byline}) => {
+const PromoText = ({series, hideSeries, title, hideTitle, dek, hideDek, byline, hideByline}) => {
   return(
-    <div className="mt2_promocard-textcontainer">
-      {series}
-      {title}
-      {dek}
-      {byline}
+    <div>
+      {hideSeries ? null : <div className="mt2_color--neutral--l mt_subh2">{series}</div>}
+      {hideTitle ? null : <div className="mt2_h4">{title}</div>}
+      {hideDek ? null : <div className="mt2_subh4">{dek}</div>}
+      {hideByline ? null : <div className="mt2_h5">{byline}</div>}
     </div>
   );
 };

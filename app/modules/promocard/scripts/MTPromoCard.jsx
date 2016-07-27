@@ -14,35 +14,43 @@ const promoClicked = () => {
   Pestle.PubSub.publish(events.promoClicked, promoData);
 };
 
-const MTPromoCard = ({image, series, title, dek, byline, brandingBadgeLabel, sponsorContentLabel}) => {
-  const position = image.position;
-  const layoutCard = () => {
-    switch(position){
-      case 'above':
-      case 'left':
-        return <div onClick={promoClicked.bind(this)} className="mt2_promocard-container">
-          {{image} ? <PromoImage image={image} brandingBadgeLabel={brandingBadgeLabel} sponsorContentLabel={sponsorContentLabel} /> : null}
-          <PromoText series={series} title={title} dek={dek} byline={byline} />
-        </div>;
-        break;
-      case 'below':
-      case 'right':
-        return <div onClick={promoClicked.bind(this)} className="mt2_promocard-container">
-          <PromoText series={series} title={title} dek={dek} byline={byline} />
-          {{image} ? <PromoImage image={image} brandingBadgeLabel={brandingBadgeLabel} sponsorContentLabel={sponsorContentLabel} /> : null}
-        </div>;
-        break;
-      default:
-        return <div onClick={promoClicked.bind(this)} className="mt2_promocard-container">
-          <PromoText series={series} title={title} dek={dek} byline={byline} />
-          {{image} ? <PromoImage image={image} brandingBadgeLabel={brandingBadgeLabel} sponsorContentLabel={sponsorContentLabel} /> : null}
-        </div>;
-        break;
-    }
-  };
-  return(
-    layoutCard()
-  );
+const MTPromoCard = ({image, series, hideSeries, title, hideTitle, dek, hideDek, byline, hideByline, brandingBadgeLabel, sponsorContent, sponsorContentLabel}) => {
+  if (image){
+    const position = image.position;
+    const layoutCard = () => {
+      switch(position){
+        case 'above':
+        case 'left':
+          return <div onClick={promoClicked.bind(this)} className="mt2_promocard-container">
+            {image ? <PromoImage image={image} brandingBadgeLabel={brandingBadgeLabel} sponsorContent={sponsorContent} sponsorContentLabel={sponsorContentLabel} /> : null}
+            <PromoText series={series} hideSeries={hideSeries} title={title} hideTitle={hideTitle} dek={dek} hideDek={hideDek} byline={byline} hideByline={hideByline}  />
+          </div>;
+          break;
+        case 'below':
+        case 'right':
+          return <div onClick={promoClicked.bind(this)} className="mt2_promocard-container">
+            <PromoText series={series} hideSeries={hideSeries} title={title} hideTitle={hideTitle} dek={dek} hideDek={hideDek} byline={byline} hideByline={hideByline}  />
+            {image ? <PromoImage image={image} brandingBadgeLabel={brandingBadgeLabel} sponsorContent={sponsorContent} sponsorContentLabel={sponsorContentLabel} /> : null}
+          </div>;
+          break;
+        default:
+          return <div onClick={promoClicked.bind(this)} className="mt2_promocard-container">
+            <PromoText series={series} hideSeries={hideSeries} title={title} hideTitle={hideTitle} dek={dek} hideDek={hideDek} byline={byline} hideByline={hideByline} />
+            {image ? <PromoImage image={image} brandingBadgeLabel={brandingBadgeLabel} sponsorContent={sponsorContent} sponsorContentLabel={sponsorContentLabel} /> : null}
+          </div>;
+          break;
+      }
+    };
+    return(
+      layoutCard()
+    );
+  }else{
+    return(
+      <div onClick={promoClicked.bind(this)} className="mt2_promocard-container">
+        <PromoText series={series} hideSeries={hideSeries} title={title} hideTitle={hideTitle} dek={dek} hideDek={hideDek} byline={byline} hideByline={hideByline}  />
+      </div>
+    );
+  }
 };
 
 MTPromoCard.PropTypes = {
