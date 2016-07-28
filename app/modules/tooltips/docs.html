@@ -1,0 +1,58 @@
+<div class="pagewrapper mt2_row">
+  <div class="mt2_col-lg-3 mt2_row mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg mt2_subh4">
+    <h3 class="mt2_h3">Tooltips </h3>
+  </div>
+
+  <div class="mt2_col-lg-8 mt2_col-lg-offset-1 mt2_row-gut-4 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
+    <p class="mt2_subh4"> The tooltip component has 4 configurations: <code>top</code>, <code>left</code>, <code>bottom</code>, <code>right</code>. The default is <code>top</code> as illustrated by the code snippet below. </p>
+
+    <div class="codesnipper-wrapper">
+<pre class="codesnippet"><code class="language-markup">&lt;div data-pestle-module="Tooltip"&gt;
+  &lt;script type="text/json" data-pestle-options&gt;
+    {
+      "tooltipContent": "Hello world!"
+    }
+  &lt;/script&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <h3 class="mt2_h5">Top</h3>
+    <div data-pestle-module="Tooltip">
+      <script type="text/json" data-pestle-options>
+        {
+          "tooltipContent": "Hello world!"
+        }
+      </script>
+    </div>
+
+    <h3 class="mt2_h5">Right</h3>
+    <div data-pestle-module="Tooltip">
+      <script type="text/json" data-pestle-options>
+        {
+          "tooltipContent": "Hello world!",
+          "right": true
+        }
+      </script>
+    </div>
+
+    <h3 class="mt2_h5">Bottom</h3>
+    <div data-pestle-module="Tooltip">
+      <script type="text/json" data-pestle-options>
+        {
+          "tooltipContent": "Hello world!",
+          "bottom": true
+        }
+      </script>
+    </div>
+
+    <h3 class="mt2_h5">Left</h3>
+    <div data-pestle-module="Tooltip">
+      <script type="text/json" data-pestle-options>
+        {
+          "tooltipContent": "Hello world!",
+          "left": true
+        }
+      </script>
+    </div>
+  </div>
+</div>
