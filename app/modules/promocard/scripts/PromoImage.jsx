@@ -35,7 +35,7 @@ PromoImage.PropTypes = {
     url: PropTypes.string,
     position: PropTypes.oneOf(['above', 'below', 'left', 'right']),
     containerCSSClass: PropTypes.string,
-    inlineStyle: PropTypes.string,
+    inlineStyle: PropTypes.object,
     height: PropTypes.string
   }),
   sponsorContent: PropTypes.bool,
