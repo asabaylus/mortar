@@ -7,10 +7,10 @@ import classNames from 'classnames';
 class Tooltip extends Component {
   render() {
     let tooltipPlacement = classNames({
-      'mt2_tooltip--top': this.props.top || this.props.placement === 'top',
-      'mt2_tooltip--bottom': this.props.bottom || this.props.placement === 'bottom',
-      'mt2_tooltip--left': this.props.left || this.props.placement === 'left',
-      'mt2_tooltip--right': this.props.right || this.props.placement === 'right'
+      'mt2_tooltip--top': this.props.placement === 'top',
+      'mt2_tooltip--bottom': this.props.placement === 'bottom',
+      'mt2_tooltip--left': this.props.placement === 'left',
+      'mt2_tooltip--right': this.props.placement === 'right'
     });
 
     if(tooltipPlacement === ''){
@@ -30,11 +30,7 @@ class Tooltip extends Component {
 
 Tooltip.propTypes = {
   tooltipContent: PropTypes.string,
-  placement: PropTypes.oneOf(['top', 'left', 'right', 'bottom']),
-  top: PropTypes.bool,
-  right: PropTypes.bool,
-  left: PropTypes.bool,
-  bottom: PropTypes.bool
+  placement: PropTypes.oneOf(['top', 'left', 'right', 'bottom'])
 }
 
 export default Tooltip;

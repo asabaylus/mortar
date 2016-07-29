@@ -11,10 +11,6 @@ class Tooltip extends Module {
       <TooltipComponent
       placement={this.options.placement}
       tooltipContent={this.options.tooltipContent}
-      top={this.options.top}
-      right={this.options.right}
-      left={this.options.left}
-      bottom={this.options.bottom}
     />, this.el);
   }
 }
