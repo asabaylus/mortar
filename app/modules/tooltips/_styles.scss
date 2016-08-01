@@ -2,7 +2,7 @@ $mt2_arrowheight: .625rem;
 
 .mt2_tooltip-container {
   max-width: $mt2_unit * 3;
-  padding: .5rem; // Padding Needed to prevent long text rendering issues & keep toolip open on hover
+  padding: .5rem;
   position: relative;
   transition: 400ms;
 }
@@ -22,7 +22,6 @@ $mt2_arrowheight: .625rem;
   padding: 1rem;
   position: absolute;
   text-align: center;
-  visibility: hidden;
   z-index: $mt2_z-top;
 
   &--top {
@@ -89,9 +88,5 @@ $mt2_arrowheight: .625rem;
       top: 50%;
       transform: translateY(-50%);
     }
-  }
-
-  .mt2_tooltip-container:hover & {
-    visibility: visible;
   }
 }
