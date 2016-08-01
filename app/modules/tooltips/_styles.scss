@@ -94,3 +94,18 @@ $mt2_arrowheight: .625rem;
     }
   }
 }
+
+
+// Tooltip Modal
+
+.mt2_tooltip-modal-btn {
+  cursor: pointer;
+  padding: 1px 6px 0;
+}
+
+.mt2_tooltip-modal-content {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -19,21 +19,13 @@ class Tooltip extends Component {
   }
 
   onMouseEnter(e) {
-<<<<<<< b351d6280a2bf7f948744c09d926efce8ef655d5
     if(this.state.sticky === false){
-=======
-    if(this.state.sticky == false){
->>>>>>> Tooltip hover
       this.setState({visible: true});
     }
   }
 
   onMouseLeave(e) {
-<<<<<<< b351d6280a2bf7f948744c09d926efce8ef655d5
     if(this.state.sticky === false){
-=======
-    if(this.state.sticky == false){
->>>>>>> Tooltip hover
       this.setState({visible: false});
     }
   }
