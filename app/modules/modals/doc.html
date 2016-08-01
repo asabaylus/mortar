@@ -5,37 +5,15 @@
       Modals are useful for displaying secondary content, either as a user-initiated interaction or as an auto-opening popup.
     </p>
 
-    <button class="mt2_JS_modal-open-button mt2_btn mt2_btn--secondary" data-modal-target="modal-1">
-      Launch Modal
-    </button>
-
-    <div class="mt2_JS_modal-container mt2_modal-container mt2_visuallyhidden" data-modal-id="modal-1">
-      <button class="mt2_JS_modal-close-button mt2_modal-button" data-modal-target="modal-1">
-        <span class="mt2_visuallyhidden">Close Modal</span>
-        <svg class="mt2_icon--large">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
-        </svg>
-      </button>
-
-      <p>Lorem Ipsum</p>
+    <div data-pestle-module="Modal">
+      <script type="text/json" data-pestle-options>
+      {
+        "targetId" : "thing"
+      }
+      </script>
     </div>
+    <div id="thing" class="mt2_visuallyhidden"><p>Example Text</p></div>
   </div>
-
-  <div class="mt2_row"></div>
-<div class="codesnippet-wrapper">
-<pre class="codesnippet"><code class="language-markup">
-&lt;div class="mt2_JS_modal-container mt2_modal-container mt2_visuallyhidden" data-modal-id="modal-1"&gt;
-  &lt;button class="mt2_JS_modal-close-button mt2_modal-button" data-modal-target="modal-1"&gt;
-    &lt;span class="mt2_visuallyhidden"&gt;Close Modal&lt;/span&gt;
-    &lt;svg class="mt2_icon--large"&gt;
-      &lt;use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"&gt;&lt;/use&gt;
-    &lt;/svg&gt;
-  &lt;/button&gt;
-
-  &lt;p&gt;Lorem Ipsum&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-</div>
-
 </div>
 
 <div class="mt2_row mt2_row-gut-3"></div>
