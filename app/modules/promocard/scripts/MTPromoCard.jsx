@@ -64,7 +64,7 @@ const MTPromoCard = ({brandingBadgeLabel, byline, dek, hideByline, hideDek, hide
     );
   }else{
     return(
-      <div onClick={promoClicked.bind(this)} className="mt2_promocard-container">
+      <div onClick={promoClicked.bind(this)} className="mt2_row mt2_promocard-container">
         <PromoText byline={byline} dek={dek} hideByline={hideByline} hideDek={hideDek} hideSeries={hideSeries} hideTitle={hideTitle} series={series} title={title} />
       </div>
     );
@@ -76,7 +76,7 @@ MTPromoCard.PropTypes = {
     url: PropTypes.string,
     position: PropTypes.oneOf(['above', 'below', 'left', 'right']),
     containerCSSClass: PropTypes.string,
-    inlineStyle: PropTypes.string
+    inlineStyle: PropTypes.object
   }),
   text: PropTypes.shape({
     containerCSSClass: PropTypes.string,

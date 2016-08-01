@@ -1,24 +1,25 @@
 <div class="pagewrapper mt2_row mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
-  <div class="mt2_col-lg-3 mt2_col-sm-12 mt2_row mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
+  <div class="mt2_col-lg-3 mt2_col-sm-12 mt2_row mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg mt2_subh4">
     <h3 class="mt2_h3">Promo Card</h3>
     <p class="mt2_subh4">
-      Promo Card Component goes here.
+      This is Mortar's Promo Card component.
     </p>
   </div>
 
   <div class="mt2_col-lg-8 mt2_col-sm-12 mt2_col-lg-offset-1 mt2_row-gut-4">
+    <p class="mt2_subh4">The Promo Card has many different options to configure it. Here is an example with what could be considered mostly default values.</p>
     <div data-pestle-module="PromoCard">
       <script type="text/json" data-pestle-options>
-      {
-        "image": {
+        {
+          "image": {
           "url": "http://placehold.it/800x600",
           "position": "above",
           "height": "500",
-          "containerCSSClass": null,
+          "containerCSSClass": "",
           "inlineStyle": null
         },
         "text": {
-          "containerCSSClass": null,
+          "containerCSSClass": "",
           "inlineStyle": null
         },
         "modal": false,
@@ -41,9 +42,214 @@
         "brandingBadgeLabel": "This is a cool branding badge label",
         "sponsorContent": true,
         "sponsorContentLabel": "This is the Sponsor Content Label",
+        "video": false
+      }
+    </script>
+    </div>
+    <div style="clear:both"></div>
+    <div class="codesnippet-wrapper">
+<pre class="codesnippet"><code class="language-markup">
+  &#x3C;div data-pestle-module=&#x22;PromoCard&#x22;&#x3E;
+    &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
+      {
+        &#x22;image&#x22;: {
+          &#x22;url&#x22;: &#x22;http://placehold.it/800x600&#x22;,
+          &#x22;position&#x22;: &#x22;above&#x22;,
+          &#x22;height&#x22;: &#x22;500&#x22;,
+          &#x22;containerCSSClass&#x22;: &#x22;&#x22;,
+          &#x22;inlineStyle&#x22;: null
+        },
+        &#x22;text&#x22;: {
+          &#x22;containerCSSClass&#x22;: &#x22;&#x22;,
+          &#x22;inlineStyle&#x22;: null
+        },
+        &#x22;modal&#x22;: false,
+        &#x22;target&#x22;: &#x22;_blank&#x22;,
+        &#x22;leadMedia&#x22;: {
+          &#x22;url&#x22;: &#x22;http://placehold.it/350x150&#x22;,
+          &#x22;aspectRatio&#x22;: 0.6667,
+          &#x22;height&#x22;: 150,
+          &#x22;width&#x22;: 350,
+          &#x22;internal&#x22;: false
+        },
+        &#x22;title&#x22;: &#x22;This is the title of the card&#x22;,
+        &#x22;hideTitle&#x22;: false,
+        &#x22;dek&#x22;: &#x22;This is a short dek for the card.&#x22;,
+        &#x22;hideDek&#x22;: false,
+        &#x22;series&#x22;: &#x22;Series&#x22;,
+        &#x22;hideSeries&#x22;: false,
+        &#x22;byline&#x22;: &#x22;This is a great byline&#x22;,
+        &#x22;hideByline&#x22;: false,
+        &#x22;brandingBadgeLabel&#x22;: &#x22;This is a cool branding badge label&#x22;,
+        &#x22;sponsorContent&#x22;: true,
+        &#x22;sponsorContentLabel&#x22;: &#x22;This is the Sponsor Content Label&#x22;,
+        &#x22;video&#x22;: false
+      }
+    &#x3C;/script&#x3E;
+  &#x3C;/div&#x3E;</code></pre>
+    </div>
+    <p class="mt2_subh4">Here is an example with a video, with the branding badge and sponsored content hidden.</p>
+    <div data-pestle-module="PromoCard">
+      <script type="text/json" data-pestle-options>
+        {
+          "image": {
+          "url": "http://placehold.it/800x600",
+          "position": "above",
+          "height": "500",
+          "containerCSSClass": "",
+          "inlineStyle": null
+        },
+        "text": {
+          "containerCSSClass": "",
+          "inlineStyle": null
+        },
+        "modal": false,
+        "target": "_blank",
+        "leadMedia": {
+          "url": "http://placehold.it/350x150",
+          "aspectRatio": 0.6667,
+          "height": 150,
+          "width": 350,
+          "internal": false
+        },
+        "title": "This is the title of the card",
+        "hideTitle": false,
+        "dek": "This is a short dek for the card.",
+        "hideDek": false,
+        "series": "Series",
+        "hideSeries": false,
+        "byline": "This is a great byline",
+        "hideByline": false,
+        "brandingBadgeLabel": "",
+        "sponsorContent": false,
+        "sponsorContentLabel": "This is the Sponsor Content Label",
         "video": true
       }
-      </script>
+    </script>
+    </div>
+    <div style="clear:both"></div>
+    <div class="codesnippet-wrapper">
+<pre class="codesnippet"><code class="language-markup">
+  &#x3C;div data-pestle-module=&#x22;PromoCard&#x22;&#x3E;
+    &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
+      {
+        &#x22;image&#x22;: {
+          &#x22;url&#x22;: &#x22;http://placehold.it/800x600&#x22;,
+          &#x22;position&#x22;: &#x22;above&#x22;,
+          &#x22;height&#x22;: &#x22;500&#x22;,
+          &#x22;containerCSSClass&#x22;: &#x22;&#x22;,
+          &#x22;inlineStyle&#x22;: null
+        },
+        &#x22;text&#x22;: {
+          &#x22;containerCSSClass&#x22;: &#x22;&#x22;,
+          &#x22;inlineStyle&#x22;: null
+        },
+        &#x22;modal&#x22;: false,
+        &#x22;target&#x22;: &#x22;_blank&#x22;,
+        &#x22;leadMedia&#x22;: {
+          &#x22;url&#x22;: &#x22;http://placehold.it/350x150&#x22;,
+          &#x22;aspectRatio&#x22;: 0.6667,
+          &#x22;height&#x22;: 150,
+          &#x22;width&#x22;: 350,
+          &#x22;internal&#x22;: false
+        },
+        &#x22;title&#x22;: &#x22;This is the title of the card&#x22;,
+        &#x22;hideTitle&#x22;: false,
+        &#x22;dek&#x22;: &#x22;This is a short dek for the card.&#x22;,
+        &#x22;hideDek&#x22;: false,
+        &#x22;series&#x22;: &#x22;Series&#x22;,
+        &#x22;hideSeries&#x22;: false,
+        &#x22;byline&#x22;: &#x22;This is a great byline&#x22;,
+        &#x22;hideByline&#x22;: false,
+        &#x22;brandingBadgeLabel&#x22;: &#x22;This is a cool branding badge label&#x22;,
+        &#x22;sponsorContent&#x22;: true,
+        &#x22;sponsorContentLabel&#x22;: &#x22;This is the Sponsor Content Label&#x22;,
+        &#x22;video&#x22;: false
+      }
+    &#x3C;/script&#x3E;
+  &#x3C;/div&#x3E;</code></pre>
+    </div>
+    <p class="mt2_subh4">In addition to multiple configuration options, there are 4 layout options as well. Those options
+    align the photo to the top, right, bottom or left. Here it is aligned to the left, with no video, branding badge or sponsor content.</p>
+    <div data-pestle-module="PromoCard">
+      <script type="text/json" data-pestle-options>
+        {
+          "image": {
+          "url": "http://placehold.it/800x600",
+          "position": "left",
+          "height": "500",
+          "containerCSSClass": "",
+          "inlineStyle": null
+        },
+        "text": {
+          "containerCSSClass": "",
+          "inlineStyle": null
+        },
+        "modal": false,
+        "target": "_blank",
+        "leadMedia": {
+          "url": "http://placehold.it/350x150",
+          "aspectRatio": 0.6667,
+          "height": 150,
+          "width": 350,
+          "internal": false
+        },
+        "title": "This is the title of the card",
+        "hideTitle": false,
+        "dek": "This is a short dek for the card.",
+        "hideDek": false,
+        "series": "Series",
+        "hideSeries": false,
+        "byline": "This is a great byline",
+        "hideByline": false,
+        "brandingBadgeLabel": "",
+        "sponsorContent": false,
+        "sponsorContentLabel": "This is the Sponsor Content Label",
+        "video": false
+      }
+    </script>
+    </div>
+    <div style="clear:both"></div>
+    <div class="codesnippet-wrapper">
+<pre class="codesnippet"><code class="language-markup">
+  &#x3C;div data-pestle-module=&#x22;PromoCard&#x22;&#x3E;
+    &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
+      {
+        &#x22;image&#x22;: {
+          &#x22;url&#x22;: &#x22;http://placehold.it/800x600&#x22;,
+          &#x22;position&#x22;: &#x22;above&#x22;,
+          &#x22;height&#x22;: &#x22;500&#x22;,
+          &#x22;containerCSSClass&#x22;: &#x22;&#x22;,
+          &#x22;inlineStyle&#x22;: null
+        },
+        &#x22;text&#x22;: {
+          &#x22;containerCSSClass&#x22;: &#x22;&#x22;,
+          &#x22;inlineStyle&#x22;: null
+        },
+        &#x22;modal&#x22;: false,
+        &#x22;target&#x22;: &#x22;_blank&#x22;,
+        &#x22;leadMedia&#x22;: {
+          &#x22;url&#x22;: &#x22;http://placehold.it/350x150&#x22;,
+          &#x22;aspectRatio&#x22;: 0.6667,
+          &#x22;height&#x22;: 150,
+          &#x22;width&#x22;: 350,
+          &#x22;internal&#x22;: false
+        },
+        &#x22;title&#x22;: &#x22;This is the title of the card&#x22;,
+        &#x22;hideTitle&#x22;: false,
+        &#x22;dek&#x22;: &#x22;This is a short dek for the card.&#x22;,
+        &#x22;hideDek&#x22;: false,
+        &#x22;series&#x22;: &#x22;Series&#x22;,
+        &#x22;hideSeries&#x22;: false,
+        &#x22;byline&#x22;: &#x22;This is a great byline&#x22;,
+        &#x22;hideByline&#x22;: false,
+        &#x22;brandingBadgeLabel&#x22;: &#x22;This is a cool branding badge label&#x22;,
+        &#x22;sponsorContent&#x22;: true,
+        &#x22;sponsorContentLabel&#x22;: &#x22;This is the Sponsor Content Label&#x22;,
+        &#x22;video&#x22;: false
+      }
+    &#x3C;/script&#x3E;
+  &#x3C;/div&#x3E;</code></pre>
     </div>
   </div>
 </div>
