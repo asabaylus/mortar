@@ -12,6 +12,7 @@ class ImageSlide extends Component {
         lazyLoad={true}
         letterbox={this.props.letterbox}
         letterboxBackgroundColor={this.props.letterboxBackgroundColor}
+        src={this.props.src}
         srcset={this.props.srcset}/>
     );
   }
@@ -22,7 +23,8 @@ ImageSlide.propTypes = {
   frameAspectRatio: PropTypes.string,
   letterbox: PropTypes.bool,
   letterboxBackgroundColor: PropTypes.string,
-  src: PropTypes.string
+  src: PropTypes.string,
+  srcset: PropTypes.array
 }
 
 export default ImageSlide;
