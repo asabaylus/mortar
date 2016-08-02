@@ -56,7 +56,7 @@ PhotoGallery.propTypes = {
     title: PropTypes.string,
     type: PropTypes.string.isRequired,
     src: PropTypes.string,
-    srcSet: PropTypes.array
+    srcset: PropTypes.array
   })).isRequired,
   title: PropTypes.string
 }

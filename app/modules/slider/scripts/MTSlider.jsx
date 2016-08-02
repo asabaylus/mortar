@@ -49,7 +49,7 @@ class MTSlider extends Component {
                          letterbox={this.props.letterbox}
                          letterboxBackgroundColor={backgroundColor}
                          src={data.src}
-                         srcset={data.srcSet}/>
+                         srcset={data.srcset}/>
     default:
       return;
     }
@@ -132,7 +132,7 @@ MTSlider.propTypes = {
     title: PropTypes.string,
     type: PropTypes.string.isRequired,
     src: PropTypes.string,
-    srcSet: PropTypes.array
+    srcset: PropTypes.array
   }))
 }
 
