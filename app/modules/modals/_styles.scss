@@ -16,8 +16,8 @@
   position: fixed;
   top: 7.5vh;
   transition: .2s;
-  width: 85vw;
   visibility: hidden;
+  width: 85vw;
   z-index: $mt2_z-top;
 
   &--active {
