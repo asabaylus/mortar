@@ -12,8 +12,6 @@ require('../modules/icon/scripts/IconPestle.js');
 require('../modules/button/scripts/CTAButtonPestle.js');
 require('../modules/promocard/scripts/MTPromoCardPestle.js');
 require('../modules/tooltips/scripts/MTTooltipPestle.js');
-require('../modules/tooltips/scripts/MTTooltipModalPestle.js');
-
 
 
 Pestle.init();
