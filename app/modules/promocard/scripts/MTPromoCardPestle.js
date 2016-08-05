@@ -14,11 +14,10 @@ class PromoCard extends Module {
 
   init() {
     ReactDOM.render(<PromoCardComponent
-      image={this.options.image}
+      leadImage={this.options.image}
       text={this.options.text}
       modal={this.options.modal}
       target={this.options.target}
-      leadMedia={this.options.leadMedia}
       title={this.options.title}
       hideTitle={this.options.hideTitle}
       dek={this.options.dek}

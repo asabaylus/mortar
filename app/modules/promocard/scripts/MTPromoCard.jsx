@@ -72,33 +72,44 @@ const MTPromoCard = ({brandingBadgeLabel, byline, dek, hideByline, hideDek, hide
 };
 
 MTPromoCard.PropTypes = {
-  image: PropTypes.shape({
-    url: PropTypes.string,
-    position: PropTypes.oneOf(['above', 'below', 'left', 'right']),
-    containerCSSClass: PropTypes.string,
-    inlineStyle: PropTypes.object
-  }),
-  text: PropTypes.shape({
-    containerCSSClass: PropTypes.string,
-    inlineStyle: PropTypes.string
-  }),
-  modal: PropTypes.bool,
-  target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
-  leadMedia: PropTypes.shape({
+  frameAspectRatio: PropTypes.number,
+  leadImage: PropTypes.shape({
     url: PropTypes.string,
     aspectRatio: PropTypes.number,
     height: PropTypes.number,
     width: PropTypes.number,
     internal: PropTypes.bool
+    position: PropTypes.oneOf(['above', 'below', 'left', 'right']),
+    containerCSSClass: PropTypes.string,
+    inlineStyle: PropTypes.object,
+    srcset: Proptypes.array
   }),
-  title: PropTypes.string,
-  hideTitle: PropTypes.bool,
-  dek: PropTypes.string,
-  hideDek: PropTypes.bool,
-  series: PropTypes.string,
-  hideSeries: PropTypes.bool,
-  byline: PropTypes.string,
-  hideByline: PropTypes.bool,
+  type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
+  text: PropTypes.shape({
+    containerCSSClass: PropTypes.string,
+    inlineStyle: PropTypes.string,
+    title: PropTypes.string,
+    hideTitle: PropTypes.bool,
+    dek: PropTypes.string,
+    hideDek: PropTypes.bool,
+    series: PropTypes.string,
+    hideSeries: PropTypes.bool,
+    byline: PropTypes.string,
+    hideByline: PropTypes.bool,
+  }),
+  link: PropTypes.shape({
+    target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
+    title: PropTypes.string,
+    trackingCodes: PropTypes.shape({
+      utmSource: PropTypes.string,
+      utmMedium: PropTypes.string,
+      utmTerm: PropTypes.array, // can be multiple keywords
+      utmContent: PropTypes.string,
+      utmCampaign: PropTypes.string
+    }),
+    url: PropTypes.string.isRequired
+  }),
+  modal: PropTypes.bool,
   brandingBadgeLabel: PropTypes.string,
   sponsorContent: PropTypes.bool,
   sponsorContentLabel: PropTypes.string,
