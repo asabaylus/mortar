@@ -10,13 +10,13 @@ const Article = (props) => {
     const layoutCard = () => {
       switch(position){
         case 'above':
-          return <div className="mt2_row mt2_col-12 mt2_promocard-container">
+          return <div className="mt2_row mt2_col-12">
             <PromoImage brandingBadgeLabel={props.brandingBadgeLabel} leadMedia={props.leadMedia} sponsorContent={props.sponsorContent} sponsorContentLabel={props.sponsorContentLabel} type={props.type} />
             <PromoText abstract={props.text.abstract} byline={props.text.byline} kicker={props.text.kicker} title={props.text.title} />
           </div>;
           break;
         case 'left':
-          return <div className="mt2_row mt2_col-12 mt2_promocard-container">
+          return <div className="mt2_row mt2_col-12">
             <div className="mt2_col-8 mt2_col-md-8 mt2_col-lg-8 mt2_col-sm-6 mt2_col-gut-sm">
               <PromoImage brandingBadgeLabel={props.brandingBadgeLabel} leadMedia={props.leadMedia} sponsorContent={props.sponsorContent} sponsorContentLabel={props.sponsorContentLabel} type={props.type} />}
             </div>
@@ -26,13 +26,13 @@ const Article = (props) => {
           </div>;
           break;
         case 'below':
-          return <div className="mt2_row mt2_col-12 mt2_promocard-container">
+          return <div className="mt2_row mt2_col-12">
             <PromoText abstract={props.text.abstract} byline={props.text.byline} kicker={props.text.kicker} title={props.text.title} />
             <PromoImage brandingBadgeLabel={props.brandingBadgeLabel} leadMedia={props.leadMedia} sponsorContent={props.sponsorContent} sponsorContentLabel={props.sponsorContentLabel} type={props.type} />
           </div>;
           break;
         case 'right':
-          return <div className="mt2_row mt2_col-12 mt2_promocard-container">
+          return <div className="mt2_row mt2_col-12">
             <div className="mt2_col-4 mt2_col-md-4 mt2_col-lg-4 mt2_col-sm-6 mt2_col-gut-sm">
               <PromoText abstract={props.text.abstract} byline={props.text.byline} kicker={props.text.kicker} title={props.text.title} />
             </div>
@@ -42,7 +42,7 @@ const Article = (props) => {
           </div>;
           break;
         default:
-          return <div className="mt2_row mt2_col-12 mt2_promocard-container">
+          return <div className="mt2_row mt2_col-12">
             <PromoText abstract={props.text.abstract} byline={props.text.byline} kicker={props.text.kicker} title={props.text.title} />
             <PromoImage brandingBadgeLabel={props.brandingBadgeLabel} leadMedia={props.leadMedia} sponsorContent={props.sponsorContent} sponsorContentLabel={props.sponsorContentLabel} type={props.type} />
           </div>;
@@ -54,7 +54,7 @@ const Article = (props) => {
     );
   }else{
     return(
-      <div className="mt2_row mt2_promocard-container">
+      <div className="mt2_row">
         <PromoText abstract={abstract} byline={byline} kicker={kicker} title={title} />
       </div>
     );

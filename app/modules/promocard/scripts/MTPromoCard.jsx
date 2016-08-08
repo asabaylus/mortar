@@ -39,6 +39,7 @@ const MTPromoCard = (props) => {
   };
 
   let attrs = {
+    className: "mt2_promocard-container",
     onClick: promoClicked(),
     href: generateHref(props.link.url, props.link.trackingCodes),
     target: props.link.target
