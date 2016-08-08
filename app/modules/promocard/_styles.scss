@@ -1,7 +1,7 @@
-$mt2_button-width: 8em;
-$mt2_button-height: 8em;
+$mt3_button-width: 8em;
+$mt3_button-height: 8em;
 
-.mt2_promocard-container {
+.mt3_promocard-container {
   overflow: hidden;
 
   figure { // user-agent overrides
@@ -11,13 +11,13 @@ $mt2_button-height: 8em;
 
   //most of the styles below are just for displaying functionality for this ticket, will most likely be changed/overridden for styling ticket
 
-  .mt2_promocard-image {
+  .mt3_promocard-image {
     overflow: hidden;
     position: relative;
     width: 100%;
   }
 
-  .mt2_promocard-branding {
+  .mt3_promocard-branding {
     background-color: yellow;
     padding: .5em 1em;
     position: absolute;
@@ -25,7 +25,7 @@ $mt2_button-height: 8em;
     z-index: 1;
   }
 
-  .mt2_promocard-sponsor {
+  .mt3_promocard-sponsor {
     background-color: rgba(255, 255, 255, .2);
     bottom: 0;
     color: white;
@@ -36,21 +36,21 @@ $mt2_button-height: 8em;
     z-index: 1;
   }
 
-  .mt2_btn {
+  .mt3_btn {
     background-color: white;
     border-radius: 50%;
-    height: $mt2_button-width;
-    left: calc(50% - (#{$mt2_button-width} / 2));
+    height: $mt3_button-width;
+    left: calc(50% - (#{$mt3_button-width} / 2));
     padding: 0;
     position: absolute;
-    top: calc(50% - (#{$mt2_button-height} / 2));
-    width: $mt2_button-width;
+    top: calc(50% - (#{$mt3_button-height} / 2));
+    width: $mt3_button-width;
 
-    .mt2_icon--left {
+    .mt3_icon--left {
       margin: 0;
     }
 
-    & svg.mt2_icon{
+    & svg.mt3_icon{
       height: 3em;
       width: 3em;
     }

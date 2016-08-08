@@ -1,28 +1,28 @@
-$mt2_arrowheight: .625rem;
+$mt3_arrowheight: .625rem;
 
-.mt2_tooltip-container {
-  max-width: $mt2_unit * 3;
+.mt3_tooltip-container {
+  max-width: $mt3_unit * 3;
   padding: .5rem;
   position: relative;
   transition: 400ms;
 }
 
-.mt2_tooltip-btn {
+.mt3_tooltip-btn {
   cursor: pointer;
   display: block;
   margin: 10px auto;
   padding: 1px 6px 0;
 
   &:hover {
-    color: $mt2_color-neutral-l;
+    color: $mt3_color-neutral-l;
   }
 }
 
-.mt2_tooltip {
+.mt3_tooltip {
   padding: 1rem;
   position: absolute;
   text-align: center;
-  z-index: $mt2_z-top;
+  z-index: $mt3_z-top;
 
   &--top {
     bottom: 100%;
@@ -30,8 +30,8 @@ $mt2_arrowheight: .625rem;
     transform: translateX(-50%);
 
     &::after {
-      border: $mt2_arrowheight solid transparent;
-      border-top: $mt2_arrowheight solid $mt2_color-neutral-xxl;
+      border: $mt3_arrowheight solid transparent;
+      border-top: $mt3_arrowheight solid $mt3_color-neutral-xxl;
       content: '';
       display: block;
       left: 50%;
@@ -47,8 +47,8 @@ $mt2_arrowheight: .625rem;
     transform: translateY(-50%);
 
     &::before {
-      border: $mt2_arrowheight solid transparent;
-      border-right: $mt2_arrowheight solid $mt2_color-neutral-xxl;
+      border: $mt3_arrowheight solid transparent;
+      border-right: $mt3_arrowheight solid $mt3_color-neutral-xxl;
       content: '';
       display: block;
       position: absolute;
@@ -64,8 +64,8 @@ $mt2_arrowheight: .625rem;
     transform: translateX(50%);
 
     &::after {
-      border: $mt2_arrowheight solid transparent;
-      border-bottom: $mt2_arrowheight solid $mt2_color-neutral-xxl;
+      border: $mt3_arrowheight solid transparent;
+      border-bottom: $mt3_arrowheight solid $mt3_color-neutral-xxl;
       bottom: 100%;
       content: '';
       position: absolute;
@@ -80,8 +80,8 @@ $mt2_arrowheight: .625rem;
     transform: translateY(-50%);
 
     &::before {
-      border: $mt2_arrowheight solid transparent;
-      border-left: $mt2_arrowheight solid $mt2_color-neutral-xxl;
+      border: $mt3_arrowheight solid transparent;
+      border-left: $mt3_arrowheight solid $mt3_color-neutral-xxl;
       content: '';
       left: 100%;
       position: absolute;

@@ -1,4 +1,4 @@
-.mt2_icon {
+.mt3_icon {
   height: 1.5rem;
   width: 1.5rem;
 
@@ -19,9 +19,9 @@
   }
 }
 
-.mt2_icon--large {
-  height: $mt2_unit-double;
-  width: $mt2_unit-double;
+.mt3_icon--large {
+  height: $mt3_unit-double;
+  width: $mt3_unit-double;
 
   &--left {
     margin-right: 10px;
@@ -40,7 +40,7 @@
   }
 }
 
-.mt2_iconandlabel--vertical {
+.mt3_iconandlabel--vertical {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -50,7 +50,7 @@
   }
 }
 
-.mt2_iconandlabel--horizontal {
+.mt3_iconandlabel--horizontal {
   align-items: center;
   display: flex;
   flex-direction: row;

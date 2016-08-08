@@ -40,18 +40,18 @@ class Tooltip extends Component {
 
   renderTooltip(){
     let tooltipPlacement = classNames({
-      'mt2_tooltip--top': this.props.placement === 'top',
-      'mt2_tooltip--bottom': this.props.placement === 'bottom',
-      'mt2_tooltip--left': this.props.placement === 'left',
-      'mt2_tooltip--right': this.props.placement === 'right'
+      'mt3_tooltip--top': this.props.placement === 'top',
+      'mt3_tooltip--bottom': this.props.placement === 'bottom',
+      'mt3_tooltip--left': this.props.placement === 'left',
+      'mt3_tooltip--right': this.props.placement === 'right'
     });
 
     if(tooltipPlacement === ''){
-      tooltipPlacement = 'mt2_tooltip--top';
+      tooltipPlacement = 'mt3_tooltip--top';
     }
 
     return(
-      <div className={`mt2_tooltip mt2_subh4 mt2_bgcolor--neutral--xxl ${tooltipPlacement}`}>
+      <div className={`mt3_tooltip mt3_subh4 mt3_bgcolor--neutral--xxl ${tooltipPlacement}`}>
         <p dangerouslySetInnerHTML={{__html: this.props.tooltipContent}} />
       </div>
     );
@@ -59,11 +59,11 @@ class Tooltip extends Component {
 
   render() {
     return(
-      <div className="mt2_tooltip-container"
+      <div className="mt3_tooltip-container"
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}>
         {this.state.visible ? this.renderTooltip() : ''}
-        <button onClick={this.onClick} className="mt2_h5 mt2_color--neutral--xd mt2_bordercolor--neutral--xl mt2_bgcolor--neutral--xxxl mt2_tooltip-btn">?</button>
+        <button onClick={this.onClick} className="mt3_h5 mt3_color--neutral--xd mt3_bordercolor--neutral--xl mt3_bgcolor--neutral--xxxl mt3_tooltip-btn">?</button>
       </div>
     );
   }

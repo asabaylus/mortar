@@ -100,7 +100,7 @@ describe('MTPromoCard', () => {
     });
 
     it('Should have a containing div with classes', () => {
-      expect(wrapper.first().props().className).to.equal("mt2_row mt2_col-12 mt2_promocard-container");
+      expect(wrapper.first().props().className).to.equal("mt3_row mt3_col-12 mt3_promocard-container");
     });
 
     it('Should have a PromoImage component', () => {

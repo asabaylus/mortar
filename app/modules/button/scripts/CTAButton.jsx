@@ -44,26 +44,26 @@ class CTAButton extends Component {
     let classes;
     if(type === 'link') {
       classes = classNames({
-        'mt2_btn': true,
-        'mt2_fullwidth': true,
-        'mt2_btn--naked': true,
-        'mt2_btn--naked--reversed' : inverse,
-        'mt2_btn--naked--inactive': inactive
+        'mt3_btn': true,
+        'mt3_fullwidth': true,
+        'mt3_btn--naked': true,
+        'mt3_btn--naked--reversed' : inverse,
+        'mt3_btn--naked--inactive': inactive
       });
     } else {
       classes = classNames({
-        'mt2_btn': true,
-        'mt2_fullwidth': true,
-        'mt2_btn--default': props.style === 'default',
-        'mt2_btn--default--inactive': inactive && props.style === 'default',
-        'mt2_btn--secondary': props.style === 'secondary',
-        'mt2_btn--secondary--inactive': inactive && props.style === 'secondary',
-        'mt2_btn--secondary--reversed': inverse && props.style === 'secondary',
-        'mt2_btn--naked': props.style === 'naked',
-        'mt2_btn--naked--inactive': inactive && props.style === 'naked',
-        'mt2_btn--naked--reversed' : inverse && props.style === 'naked',
-        'mt2_btn--success': props.style === 'success',
-        'mt2_btn--error': props.style === 'error'
+        'mt3_btn': true,
+        'mt3_fullwidth': true,
+        'mt3_btn--default': props.style === 'default',
+        'mt3_btn--default--inactive': inactive && props.style === 'default',
+        'mt3_btn--secondary': props.style === 'secondary',
+        'mt3_btn--secondary--inactive': inactive && props.style === 'secondary',
+        'mt3_btn--secondary--reversed': inverse && props.style === 'secondary',
+        'mt3_btn--naked': props.style === 'naked',
+        'mt3_btn--naked--inactive': inactive && props.style === 'naked',
+        'mt3_btn--naked--reversed' : inverse && props.style === 'naked',
+        'mt3_btn--success': props.style === 'success',
+        'mt3_btn--error': props.style === 'error'
       });
     }
 

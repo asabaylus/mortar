@@ -11,15 +11,15 @@ class PhotoGallery extends Component {
     let noCounter;
 
     if(!this.props.showCounter){
-      noCounter = " mt2_photogallery-heading--spacer";
+      noCounter = " mt3_photogallery-heading--spacer";
     }
 
     return(
       <div>
-        <div className={"mt2_row" + noCounter}>
+        <div className={"mt3_row" + noCounter}>
           <Heading title={this.props.title} description={this.props.description} />
         </div>
-        <div className="mt2_row">
+        <div className="mt3_row">
           {this.props.showCounter ? <Counter showCounter={this.props.showCounter} slides={this.props.slides} /> : null}
         </div>
         <Slider frameAspectRatio={this.props.frameAspectRatio}

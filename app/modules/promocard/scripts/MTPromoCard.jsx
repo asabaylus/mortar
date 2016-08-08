@@ -20,39 +20,39 @@ const MTPromoCard = ({brandingBadgeLabel, byline, dek, hideByline, hideDek, hide
     const layoutCard = () => {
       switch(position){
         case 'above':
-          return <div onClick={promoClicked.bind(this)} className="mt2_row mt2_col-12 mt2_promocard-container">
+          return <div onClick={promoClicked.bind(this)} className="mt3_row mt3_col-12 mt3_promocard-container">
             {image ? <PromoImage brandingBadgeLabel={brandingBadgeLabel} image={image} sponsorContent={sponsorContent} sponsorContentLabel={sponsorContentLabel} video={video} /> : null}
             <PromoText byline={byline} dek={dek} hideByline={hideByline} hideDek={hideDek} hideSeries={hideSeries} hideTitle={hideTitle} series={series} title={title} />
           </div>;
           break;
         case 'left':
-          return <div onClick={promoClicked.bind(this)} className="mt2_row mt2_col-12 mt2_promocard-container">
-            <div className="mt2_col-8 mt2_col-md-8 mt2_col-lg-8 mt2_col-sm-6 mt2_col-gut-sm">
+          return <div onClick={promoClicked.bind(this)} className="mt3_row mt3_col-12 mt3_promocard-container">
+            <div className="mt3_col-8 mt3_col-md-8 mt3_col-lg-8 mt3_col-sm-6 mt3_col-gut-sm">
               {image ? <PromoImage brandingBadgeLabel={brandingBadgeLabel} image={image} sponsorContent={sponsorContent} sponsorContentLabel={sponsorContentLabel} video={video} /> : null}
             </div>
-            <div className="mt2_col-4 mt2_col-md-4 mt2_col-lg-4 mt2_col-sm-6 mt2_col-gut-sm">
+            <div className="mt3_col-4 mt3_col-md-4 mt3_col-lg-4 mt3_col-sm-6 mt3_col-gut-sm">
               <PromoText byline={byline} dek={dek} hideByline={hideByline} hideDek={hideDek} hideSeries={hideSeries} hideTitle={hideTitle} series={series} title={title}  />
             </div>
           </div>;
           break;
         case 'below':
-          return <div onClick={promoClicked.bind(this)} className="mt2_row mt2_col-12 mt2_promocard-container">
+          return <div onClick={promoClicked.bind(this)} className="mt3_row mt3_col-12 mt3_promocard-container">
             <PromoText byline={byline} dek={dek} hideByline={hideByline} hideDek={hideDek} hideSeries={hideSeries} hideTitle={hideTitle} series={series} title={title} />
             {image ? <PromoImage brandingBadgeLabel={brandingBadgeLabel} image={image} sponsorContent={sponsorContent} sponsorContentLabel={sponsorContentLabel} video={video} /> : null}
           </div>;
           break;
         case 'right':
-          return <div onClick={promoClicked.bind(this)} className="mt2_row mt2_col-12 mt2_promocard-container">
-            <div className="mt2_col-4 mt2_col-md-4 mt2_col-lg-4 mt2_col-sm-6 mt2_col-gut-sm">
+          return <div onClick={promoClicked.bind(this)} className="mt3_row mt3_col-12 mt3_promocard-container">
+            <div className="mt3_col-4 mt3_col-md-4 mt3_col-lg-4 mt3_col-sm-6 mt3_col-gut-sm">
               <PromoText byline={byline} dek={dek} hideByline={hideByline} hideDek={hideDek} hideSeries={hideSeries} hideTitle={hideTitle} series={series} title={title} />
             </div>
-            <div className="mt2_col-8 mt2_col-md-8 mt2_col-lg-8 mt2_col-sm-6 mt2_col-gut-sm">
+            <div className="mt3_col-8 mt3_col-md-8 mt3_col-lg-8 mt3_col-sm-6 mt3_col-gut-sm">
               {image ? <PromoImage brandingBadgeLabel={brandingBadgeLabel} image={image} sponsorContent={sponsorContent} sponsorContentLabel={sponsorContentLabel} video={video} /> : null}
             </div>
           </div>;
           break;
         default:
-          return <div onClick={promoClicked.bind(this)} className="mt2_row mt2_col-12 mt2_promocard-container">
+          return <div onClick={promoClicked.bind(this)} className="mt3_row mt3_col-12 mt3_promocard-container">
             <PromoText byline={byline} dek={dek} hideByline={hideByline} hideDek={hideDek} hideSeries={hideSeries} hideTitle={hideTitle} series={series} title={title} />
             {image ? <PromoImage brandingBadgeLabel={brandingBadgeLabel} image={image} sponsorContent={sponsorContent} sponsorContentLabel={sponsorContentLabel} video={video} /> : null}
           </div>;
@@ -64,7 +64,7 @@ const MTPromoCard = ({brandingBadgeLabel, byline, dek, hideByline, hideDek, hide
     );
   }else{
     return(
-      <div onClick={promoClicked.bind(this)} className="mt2_row mt2_promocard-container">
+      <div onClick={promoClicked.bind(this)} className="mt3_row mt3_promocard-container">
         <PromoText byline={byline} dek={dek} hideByline={hideByline} hideDek={hideDek} hideSeries={hideSeries} hideTitle={hideTitle} series={series} title={title} />
       </div>
     );

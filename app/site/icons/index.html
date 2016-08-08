@@ -2,64 +2,64 @@
 title: Icons
 ---
 
-<div class="mt2_row pagewrapper sectionpadding">
-  <div class="mt2_col-lg-10 mt2_row-gut-2 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
-    <h1 class="mt2_h1">Icons</h1>
-    <p class="mt2_subh1 mt2_row-gut-3">Icons create a visual language for navigation and user interaction.</p>
+<div class="mt3_row pagewrapper sectionpadding">
+  <div class="mt3_col-lg-10 mt3_row-gut-2 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+    <h1 class="mt3_h1">Icons</h1>
+    <p class="mt3_subh1 mt3_row-gut-3">Icons create a visual language for navigation and user interaction.</p>
 
-    <div class="mt2_col-lg-3 mt2_row-gut-2">
-      <a href="../natgeo-icons.zip" class="mt2_btn mt2_btn--default downloadicon-btn" download="natgeo-icons">Download Icons</a>
+    <div class="mt3_col-lg-3 mt3_row-gut-2">
+      <a href="../natgeo-icons.zip" class="mt3_btn mt3_btn--default downloadicon-btn" download="natgeo-icons">Download Icons</a>
     </div>
   </div>
 </div>
 
-<div class="mt2_bgcolor--neutral--xxl mt2_row-gut-3 divider">&nbsp;</div>
+<div class="mt3_bgcolor--neutral--xxl mt3_row-gut-3 divider">&nbsp;</div>
 
-<div class="mt2_row pagewrapper mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg mt2_row-gut-2">
+<div class="mt3_row pagewrapper mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg mt3_row-gut-2">
 
-  <div class="mt2_col-lg-8">
-    <h3 class="mt2_h3">Usage</h3>
+  <div class="mt3_col-lg-8">
+    <h3 class="mt3_h3">Usage</h3>
 
-    <p class="mt2_subh4">Mortar uses <a href="https://css-tricks.com/svg-sprites-use-better-icon-fonts/" class="mt2_link">SVG sprites</a> along with the <a href="https://css-tricks.com/svg-sprites-use-better-icon-fonts/#article-header-id-2" class="mt2_link"><code>&lt;use&gt;</code></a>
+    <p class="mt3_subh4">Mortar uses <a href="https://css-tricks.com/svg-sprites-use-better-icon-fonts/" class="mt3_link">SVG sprites</a> along with the <a href="https://css-tricks.com/svg-sprites-use-better-icon-fonts/#article-header-id-2" class="mt3_link"><code>&lt;use&gt;</code></a>
       method to render icons. Icons can be sized small or large, with their default colors or reversed on a colored background. The SVG sprite will be embedded near the top of the body on any given page so if a camera icon is desired
-      (e.g. <svg style="display: inline;vertical-align: top" class="mt2_icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#camera"></use></svg>) then one need only use the following code:
+      (e.g. <svg style="display: inline;vertical-align: top" class="mt3_icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#camera"></use></svg>) then one need only use the following code:
     </p>
 
     <!-- Code snippets -->
 
     {% include "app/icons/_icon-snippets.html" %}
 
-    <p class="mt2_h5">Toggle the icons on this page: </p>
+    <p class="mt3_h5">Toggle the icons on this page: </p>
 
-    <fieldset class="mt2_subh4 fieldset mt2_row-gut-2 mt2_col-md-3">
-      <div class="mt2_row-gut-1">
-        <input class="mt2_radio" type="radio" value="small" name="icon-size" id="small">
+    <fieldset class="mt3_subh4 fieldset mt3_row-gut-2 mt3_col-md-3">
+      <div class="mt3_row-gut-1">
+        <input class="mt3_radio" type="radio" value="small" name="icon-size" id="small">
         <label for="small">Small</label>
       </div>
       <div>
-        <input class="mt2_radio" type="radio" value="large" name="icon-size" id="large" checked>
+        <input class="mt3_radio" type="radio" value="large" name="icon-size" id="large" checked>
         <label for="large">Large</label>
       </div>
     </fieldset>
 
-    <fieldset class="mt2_subh4 fieldset mt2_row-gut-2 mt2_col-md-3">
-      <div class="mt2_row-gut-1">
-        <input class="mt2_radio" type="radio" value="default" name="icon-color" id="default" checked>
+    <fieldset class="mt3_subh4 fieldset mt3_row-gut-2 mt3_col-md-3">
+      <div class="mt3_row-gut-1">
+        <input class="mt3_radio" type="radio" value="default" name="icon-color" id="default" checked>
         <label for="default">Default Colors</label>
       </div>
       <div>
-        <input class="mt2_radio" type="radio" value="inverse" name="icon-color" id="inverse">
+        <input class="mt3_radio" type="radio" value="inverse" name="icon-color" id="inverse">
         <label for="inverse">Inverse Colors</label>
       </div>
     </fieldset>
   </div>
 </div>
 
-<div class="mt2_bgcolor--neutral--xxl mt2_row-gut-4 divider">&nbsp;</div>
+<div class="mt3_bgcolor--neutral--xxl mt3_row-gut-4 divider">&nbsp;</div>
 
 {% include "app/icons/_icons.html" %}
 
-<div class="mt2_bgcolor--neutral--xxl mt2_row-gut-3 divider">&nbsp;</div>
+<div class="mt3_bgcolor--neutral--xxl mt3_row-gut-3 divider">&nbsp;</div>
 
 {% include "app/icons/_icon-examples.html" %}
 
@@ -99,10 +99,10 @@ title: Icons
       displaySnippet();
 
       if (this.value === 'small') {
-        $('.JS_icon').removeClass('mt2_icon--large');
+        $('.JS_icon').removeClass('mt3_icon--large');
       }
       else if (this.value === 'large') {
-        $('.JS_icon').addClass('mt2_icon--large');
+        $('.JS_icon').addClass('mt3_icon--large');
       }
     });
 
@@ -111,13 +111,13 @@ title: Icons
 
       if (this.value === 'default') {
         $('.JS_icon-container')
-        .removeClass('mt2_bgcolor--neutral--d')
-        .removeClass('mt2_color--neutral--xxxl');
+        .removeClass('mt3_bgcolor--neutral--d')
+        .removeClass('mt3_color--neutral--xxxl');
       }
       else if (this.value === 'inverse') {
         $('.JS_icon-container')
-        .addClass('mt2_bgcolor--neutral--d')
-        .addClass('mt2_color--neutral--xxxl');
+        .addClass('mt3_bgcolor--neutral--d')
+        .addClass('mt3_color--neutral--xxxl');
       }
     });
 });

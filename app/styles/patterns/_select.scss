@@ -1,42 +1,42 @@
-.mt2_select-wrapper {
+.mt3_select-wrapper {
   position: relative;
 
   // Dropdown icon
   &::after {
-    background-image: $mt2_dropdown-icon;
+    background-image: $mt3_dropdown-icon;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     content: '';
-    height: $mt2_dropdown-height;
+    height: $mt3_dropdown-height;
     margin-right: .5rem;
     opacity: .3;
     pointer-events: none;
     position: absolute;
     right: 10px;
     top: 17px;
-    width: $mt2_dropdown-width;
+    width: $mt3_dropdown-width;
   }
 }
 
 // Default state
-.mt2_select-input {
+.mt3_select-input {
   appearance: none;
-  background: $mt2_color-neutral-xxxl;
-  border: $mt2_border-default;
+  background: $mt3_color-neutral-xxxl;
+  border: $mt3_border-default;
   border-radius: 0;
   cursor: pointer;
-  padding: $mt2_fs-sm $mt2_fs-med-xlrg $mt2_fs-sm $mt2_fs-sm;
+  padding: $mt3_fs-sm $mt3_fs-med-xlrg $mt3_fs-sm $mt3_fs-sm;
   width: 100%;
 
   // Selected state
   &:focus {
-    color: $mt2_color-neutral-xd;
+    color: $mt3_color-neutral-xd;
   }
 
   // Hover state
   &:hover {
-    border: $mt2_border-default-hover;
+    border: $mt3_border-default-hover;
   }
 
   // For IE 11+
@@ -46,6 +46,6 @@
 }
 
 // For firefox
-.mt2_select-option {
-  color: $mt2_color-neutral-xd;
+.mt3_select-option {
+  color: $mt3_color-neutral-xd;
 }

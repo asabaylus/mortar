@@ -33,15 +33,15 @@ class Captions extends Component {
     let slide = props.slides[this.state.currentSlide];
     if(slide.title || slide.caption){
       captions.push(
-        <p key={i++} className="mt2_color--neutral--xd mt2_row-gut-half">
-          <span className="mt2_h5">{slide.title}</span>
-          <span className="mt2_subh4">{slide.caption}</span>
+        <p key={i++} className="mt3_color--neutral--xd mt3_row-gut-half">
+          <span className="mt3_h5">{slide.title}</span>
+          <span className="mt3_subh4">{slide.caption}</span>
         </p>
       );
     }
     if(slide.credit || slide.assetSource){
       captions.push(
-        <span key={i++} className="mt2_subh3 mt2_color--neutral--l">
+        <span key={i++} className="mt3_subh3 mt3_color--neutral--l">
           Photograph by {slide.credit}<br />
           Source: {slide.assetSource}
         </span>

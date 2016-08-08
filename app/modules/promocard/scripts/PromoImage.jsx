@@ -20,11 +20,11 @@ const PromoImage = ({brandingBadgeLabel, image, sponsorContent, sponsorContentLa
   // Button takes onClick function prop to hook into for play functionality
   return(
     <figure className={image.containerCSSClass} style={image.inlineStyle}>
-      {brandingBadgeLabel ? <figcaption className="mt2_promocard-branding">{brandingBadgeLabel}</figcaption> : null}
-      <div className="mt2_promocard-image" style={imageStyle}>
+      {brandingBadgeLabel ? <figcaption className="mt3_promocard-branding">{brandingBadgeLabel}</figcaption> : null}
+      <div className="mt3_promocard-image" style={imageStyle}>
         {video ? <Button icon={icon} onClick={() => {}} /> : null}
       </div>
-      {sponsorContent ? <figcaption className="mt2_promocard-sponsor">{sponsorContentLabel}</figcaption> : null}
+      {sponsorContent ? <figcaption className="mt3_promocard-sponsor">{sponsorContentLabel}</figcaption> : null}
     </figure>
   );
 };
