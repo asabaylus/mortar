@@ -3,8 +3,8 @@
 import Pestle from '@natgeo/mortar-pestle';
 import PromoCard from '../../../../app/modules/promocard/scripts/MTPromoCardPestle.js';
 import MTPromoCardComponent from '../../../../app/modules/promocard/scripts/MTPromoCard.jsx';
-import PromoImage from '../../../../app/modules/promocard/scripts/PromoImage.jsx';
-import PromoText from '../../../../app/modules/promocard/scripts/PromoText.jsx';
+import PromoImage from '../../../../app/modules/promocard/components/shared/PromoImage.jsx';
+import PromoText from '../../../../app/modules/promocard/components/shared/PromoText.jsx';
 
 import {shallow, mount} from 'enzyme';
 import React from 'react';

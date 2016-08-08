@@ -12,42 +12,41 @@
       <script type="text/json" data-pestle-options>
         {
           "aspectRatio": 0.6667,
-          "leadImage": {
+          "leadMedia": {
             "url": "http://placehold.it/800x600",
             "aspectRatio": 0.6667,
             "position": "above",
             "height": "500",
             "width": 350,
-            "internal": false
+            "internal": false,
             "containerCSSClass": "",
             "inlineStyle": null,
             "srcset": []
           },
+          "link": {
+            "target": "_blank",
+            "trackingCodes": {
+              "utmSource": "google",
+              "utmMedium": "cpc",
+              "utmTerm": ["animals", "aquatic","hippos"],
+              "utmContent": "promolink",
+              "utmCampaign": "promoarticle"
+            },
+            "url": "http://ngm.nationalgeographic.com/2007/05/zambia-wildlife/eckstrom-text"
+          },
+          "type": "article",
           "text": {
+            "title": "This is the title of the card",
+            "abstract": "This is a short dek for the card.",
+            "kicker": "Kicker",
+            "byline": "This is a great byline",
             "containerCSSClass": "",
             "inlineStyle": null
           },
           "modal": false,
-          "target": "_blank",
-          "leadMedia": {
-            "url": "http://placehold.it/350x150",
-            "aspectRatio": 0.6667,
-            "height": 150,
-            "width": 350,
-            "internal": false
-          },
-          "title": "This is the title of the card",
-          "hideTitle": false,
-          "dek": "This is a short dek for the card.",
-          "hideDek": false,
-          "series": "Series",
-          "hideSeries": false,
-          "byline": "This is a great byline",
-          "hideByline": false,
           "brandingBadgeLabel": "This is a cool branding badge label",
           "sponsorContent": true,
-          "sponsorContentLabel": "This is the Sponsor Content Label",
-          "video": false
+          "sponsorContentLabel": "This is the Sponsor Content Label"
         }
       </script>
     </div>
@@ -80,162 +79,6 @@
         &#x22;hideByline&#x22;: false,
         &#x22;brandingBadgeLabel&#x22;: &#x22;This is a cool branding badge label&#x22;,
         &#x22;sponsorContent&#x22;: true,
-        &#x22;sponsorContentLabel&#x22;: &#x22;This is the Sponsor Content Label&#x22;,
-        &#x22;video&#x22;: false
-      }
-    &#x3C;/script&#x3E;
-  &#x3C;/div&#x3E;</code></pre>
-    </div>
-    <p class="mt2_subh4">Here is an example with a video, with the branding badge and sponsored content hidden.</p>
-    <div data-pestle-module="PromoCard">
-      <script type="text/json" data-pestle-options>
-        {
-        "leadImage": {
-          "url": "http://placehold.it/800x600",
-          "position": "above",
-          "height": "500",
-          "containerCSSClass": "",
-          "inlineStyle": null
-        },
-        "text": {
-          "containerCSSClass": "",
-          "inlineStyle": null
-        },
-        "modal": false,
-        "target": "_blank",
-        "title": "This is the title of the card",
-        "hideTitle": false,
-        "dek": "This is a short dek for the card.",
-        "hideDek": false,
-        "series": "Series",
-        "hideSeries": false,
-        "byline": "This is a great byline",
-        "hideByline": false,
-        "brandingBadgeLabel": "",
-        "sponsorContent": false,
-        "sponsorContentLabel": "This is the Sponsor Content Label",
-        "video": true
-      }
-    </script>
-    </div>
-    <div style="clear:both"></div>
-    <div class="codesnippet-wrapper">
-<pre class="codesnippet"><code class="language-markup">
-  &#x3C;div data-pestle-module=&#x22;PromoCard&#x22;&#x3E;
-    &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
-      {
-        &#x22;image&#x22;: {
-          &#x22;url&#x22;: &#x22;http://placehold.it/800x600&#x22;,
-          &#x22;position&#x22;: &#x22;above&#x22;,
-          &#x22;height&#x22;: &#x22;500&#x22;,
-          &#x22;containerCSSClass&#x22;: &#x22;&#x22;,
-          &#x22;inlineStyle&#x22;: null
-        },
-        &#x22;text&#x22;: {
-          &#x22;containerCSSClass&#x22;: &#x22;&#x22;,
-          &#x22;inlineStyle&#x22;: null
-        },
-        &#x22;modal&#x22;: false,
-        &#x22;target&#x22;: &#x22;_blank&#x22;,
-        &#x22;leadMedia&#x22;: {
-          &#x22;url&#x22;: &#x22;http://placehold.it/350x150&#x22;,
-          &#x22;aspectRatio&#x22;: 0.6667,
-          &#x22;height&#x22;: 150,
-          &#x22;width&#x22;: 350,
-          &#x22;internal&#x22;: false
-        },
-        &#x22;title&#x22;: &#x22;This is the title of the card&#x22;,
-        &#x22;hideTitle&#x22;: false,
-        &#x22;dek&#x22;: &#x22;This is a short dek for the card.&#x22;,
-        &#x22;hideDek&#x22;: false,
-        &#x22;series&#x22;: &#x22;Series&#x22;,
-        &#x22;hideSeries&#x22;: false,
-        &#x22;byline&#x22;: &#x22;This is a great byline&#x22;,
-        &#x22;hideByline&#x22;: false,
-        &#x22;brandingBadgeLabel&#x22;: &#x22;&#x22;,
-        &#x22;sponsorContent&#x22;: false,
-        &#x22;sponsorContentLabel&#x22;: &#x22;This is the Sponsor Content Label&#x22;,
-        &#x22;video&#x22;: false
-      }
-    &#x3C;/script&#x3E;
-  &#x3C;/div&#x3E;</code></pre>
-    </div>
-    <p class="mt2_subh4">In addition to multiple configuration options, there are 4 layout options as well. Those options
-    align the photo to the top, right, bottom or left. Here it is aligned to the left, with no video, branding badge or sponsor content.</p>
-    <div data-pestle-module="PromoCard">
-      <script type="text/json" data-pestle-options>
-        {
-          "image": {
-          "url": "http://placehold.it/800x600",
-          "position": "left",
-          "height": "500",
-          "containerCSSClass": "",
-          "inlineStyle": null
-        },
-        "text": {
-          "containerCSSClass": "",
-          "inlineStyle": null
-        },
-        "modal": false,
-        "target": "_blank",
-        "leadMedia": {
-          "url": "http://placehold.it/350x150",
-          "aspectRatio": 0.6667,
-          "height": 150,
-          "width": 350,
-          "internal": false
-        },
-        "title": "This is the title of the card",
-        "hideTitle": false,
-        "dek": "This is a short dek for the card.",
-        "hideDek": false,
-        "series": "Series",
-        "hideSeries": false,
-        "byline": "This is a great byline",
-        "hideByline": false,
-        "brandingBadgeLabel": "",
-        "sponsorContent": false,
-        "sponsorContentLabel": "This is the Sponsor Content Label",
-        "video": false
-      }
-    </script>
-    </div>
-    <div style="clear:both"></div>
-    <div class="codesnippet-wrapper">
-<pre class="codesnippet"><code class="language-markup">
-  &#x3C;div data-pestle-module=&#x22;PromoCard&#x22;&#x3E;
-    &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
-      {
-        &#x22;image&#x22;: {
-          &#x22;url&#x22;: &#x22;http://placehold.it/800x600&#x22;,
-          &#x22;position&#x22;: &#x22;above&#x22;,
-          &#x22;height&#x22;: &#x22;500&#x22;,
-          &#x22;containerCSSClass&#x22;: &#x22;&#x22;,
-          &#x22;inlineStyle&#x22;: null
-        },
-        &#x22;text&#x22;: {
-          &#x22;containerCSSClass&#x22;: &#x22;&#x22;,
-          &#x22;inlineStyle&#x22;: null
-        },
-        &#x22;modal&#x22;: false,
-        &#x22;target&#x22;: &#x22;_blank&#x22;,
-        &#x22;leadMedia&#x22;: {
-          &#x22;url&#x22;: &#x22;http://placehold.it/350x150&#x22;,
-          &#x22;aspectRatio&#x22;: 0.6667,
-          &#x22;height&#x22;: 150,
-          &#x22;width&#x22;: 350,
-          &#x22;internal&#x22;: false
-        },
-        &#x22;title&#x22;: &#x22;This is the title of the card&#x22;,
-        &#x22;hideTitle&#x22;: false,
-        &#x22;dek&#x22;: &#x22;This is a short dek for the card.&#x22;,
-        &#x22;hideDek&#x22;: false,
-        &#x22;series&#x22;: &#x22;Series&#x22;,
-        &#x22;hideSeries&#x22;: false,
-        &#x22;byline&#x22;: &#x22;This is a great byline&#x22;,
-        &#x22;hideByline&#x22;: false,
-        &#x22;brandingBadgeLabel&#x22;: &#x22;&#x22;,
-        &#x22;sponsorContent&#x22;: false,
         &#x22;sponsorContentLabel&#x22;: &#x22;This is the Sponsor Content Label&#x22;,
         &#x22;video&#x22;: false
       }

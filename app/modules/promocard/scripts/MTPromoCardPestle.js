@@ -14,22 +14,15 @@ class PromoCard extends Module {
 
   init() {
     ReactDOM.render(<PromoCardComponent
-      leadImage={this.options.image}
+      leadMedia={this.options.leadMedia}
       text={this.options.text}
+      type={this.options.type}
+      link={this.options.link}
       modal={this.options.modal}
       target={this.options.target}
-      title={this.options.title}
-      hideTitle={this.options.hideTitle}
-      dek={this.options.dek}
-      hideDek={this.options.hideDek}
-      series={this.options.series}
-      hideSeries={this.options.hideSeries}
-      byline={this.options.byline}
-      hideByline={this.options.hideByline}
       brandingBadgeLabel={this.options.brandingBadgeLabel}
       sponsorContent={this.options.sponsorContent}
       sponsorContentLabel={this.options.sponsorContentLabel}
-      video={this.options.video}
       onClick={this.onClick}
     />, this.el);
   }

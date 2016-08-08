@@ -1,9 +1,9 @@
 'use strict';
 
 import React, { PropTypes }  from 'react';
-import Button from '../../button/scripts/CTAButton.jsx';
+import Button from '../../../button/scripts/CTAButton.jsx';
 
-const PromoImage = ({brandingBadgeLabel, image, sponsorContent, sponsorContentLabel, video}) => {
+const PromoImage = (props) => {
   const icon = {
     "align": "left",
     "alt": "Play Button",
@@ -11,27 +11,27 @@ const PromoImage = ({brandingBadgeLabel, image, sponsorContent, sponsorContentLa
   };
 
   const imageStyle = {
-    backgroundImage: 'url(' + image.url + ')',
+    backgroundImage: 'url(' + props.leadMedia.url + ')',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-    height: image.height
+    height: props.leadMedia.height
   };
 
   // Button takes onClick function prop to hook into for play functionality
   return(
-    <figure className={image.containerCSSClass} style={image.inlineStyle}>
-      {brandingBadgeLabel ? <figcaption className="mt2_promocard-branding">{brandingBadgeLabel}</figcaption> : null}
+    <figure className={props.leadMedia.containerCSSClass} style={props.leadMedia.inlineStyle}>
+      {props.brandingBadgeLabel ? <figcaption className="mt2_promocard-branding">{props.brandingBadgeLabel}</figcaption> : null}
       <div className="mt2_promocard-image" style={imageStyle}>
-        {video ? <Button icon={icon} onClick={() => {}} /> : null}
+        {props.type === 'video' ? <Button icon={icon} onClick={() => {}} /> : null}
       </div>
-      {sponsorContent ? <figcaption className="mt2_promocard-sponsor">{sponsorContentLabel}</figcaption> : null}
+      {props.sponsorContent ? <figcaption className="mt2_promocard-sponsor">{props.sponsorContentLabel}</figcaption> : null}
     </figure>
   );
 };
 
 PromoImage.PropTypes = {
   brandingBadgeLabel: PropTypes.string,
-  image: PropTypes.shape({
+  leadMedia: PropTypes.shape({
     url: PropTypes.string,
     position: PropTypes.oneOf(['above', 'below', 'left', 'right']),
     containerCSSClass: PropTypes.string,
@@ -40,7 +40,7 @@ PromoImage.PropTypes = {
   }),
   sponsorContent: PropTypes.bool,
   sponsorContentLabel: PropTypes.string,
-  video: PropTypes.bool
-}
+  type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule'])
+};
 
 export default PromoImage;
