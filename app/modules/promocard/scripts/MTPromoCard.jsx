@@ -5,15 +5,15 @@ import {Pestle} from '@natgeo/mortar-pestle';
 import events from './events';
 import Article from './../components/types/Article.jsx';
 
-const promoData = {
-  // props to pass with the event
-};
-
-const promoClicked = () => {
-  Pestle.PubSub.publish(events.promoClicked, promoData);
-};
-
 const MTPromoCard = (props) => {
+
+  const promoData = {
+    // props to pass with the event
+  };
+
+  const promoClicked = () => {
+    Pestle.PubSub.publish(events.promoClicked, promoData);
+  };
 
   const generateHref = (url, trackingCodes) => {
     let href = url;

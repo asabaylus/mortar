@@ -14,6 +14,7 @@ class PromoCard extends Module {
 
   init() {
     ReactDOM.render(<PromoCardComponent
+      frameAspectRatio={this.options.frameAspectRatio}
       leadMedia={this.options.leadMedia}
       text={this.options.text}
       type={this.options.type}
