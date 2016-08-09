@@ -41,7 +41,8 @@ class Tooltip extends Component {
   componentDidUpdate(){
     if(this.props.placement === "left" && this.state.visible){
       let width =  window.getComputedStyle(this.refs.tooltipContainer).width;
-      width = -parseFloat(width) - 15;
+      const arrowWidth = 15;
+      width = -parseFloat(width) - arrowWidth;
       this.refs.tooltipContainer.style.left = `${width}px`;
     }
   }
