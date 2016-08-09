@@ -7,7 +7,6 @@
   </div>
 
   <div class="mt2_col-lg-8 mt2_col-sm-12 mt2_col-lg-offset-1 mt2_row-gut-4">
-    <p class="mt2_subh4">To create a single instance of a video player on a page the model is really quite simple as is outlined below</p>
     <div data-pestle-module="Video">
       <script type="text/json" data-pestle-options>
       {
@@ -26,7 +25,7 @@
           "overlayPlayButton": true,
           "sharing": true,
           "skinName": "glass-ngs",
-          "type": "inline"
+          "type": "fng"
 
         }
       }
@@ -53,69 +52,13 @@
           &#x22;overlayPlayButton&#x22;: true,
           &#x22;sharing&#x22;: true,
           &#x22;skinName&#x22;: &#x22;glass-ngs&#x22;,
-          &#x22;type&#x22;: &#x22;inline&#x22;
+          &#x22;type&#x22;: &#x22;fng&#x22;
 
         }
     }
     &#x3C;/script&#x3E;
   &#x3C;/div&#x3E;</code></pre>
     </div>
-
-
-    <p class="mt2_subh4">Proof that two videos can exist on the same page</p>
-    <div data-pestle-module="Video">
-      <script type="text/json" data-pestle-options>
-      {
-        "className": "",
-        "lazyLoad": true,
-        "isEditMode": false,
-        "model": {
-          "autoPlay": false,
-          "autoload": true,
-          "debugLib": false,
-          "guid": "1e4402c9-e0ac-46d9-a6a2-becf02fe79fa",
-          "instance": "platformPlaylistVideoPlayer_v1nigrk4-unique",
-          "layoutOptions": {
-            "tpShare": true
-          },
-          "overlayPlayButton": true,
-          "sharing": true,
-          "skinName": "glass-ngs",
-          "type": "inline"
-
-        }
-      }
-      </script>
-    </div>
-
-    <div class="codesnippet-wrapper">
-<pre class="codesnippet"><code class="language-markup">
-  &#x3C;div data-pestle-module=&#x22;Video&#x22;&#x3E;
-    &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
-    {
-        &#x22;className&#x22;: &#x22;&#x22;, //appended to the wrapping class. Can be empty
-        &#x22;lazyLoad&#x22;: true, //tells the component to lazy load the video in
-        &#x22;isEditMode&#x22;: false, //will be used by AEM to not load in the video in edit mode
-        &#x22;model&#x22;: {
-          &#x22;autoPlay&#x22;: false,
-          &#x22;autoload&#x22;: true,
-          &#x22;debugLib&#x22;: false,
-          &#x22;guid&#x22;: &#x22;1e4402c9-e0ac-46d9-a6a2-becf02fe79fa&#x22;, // identifies specific video from MPX to play
-          &#x22;instance&#x22;: &#x22;platformPlaylistVideoPlayer_v1nigrk4-unique&#x22;, // the naming is arbitrary, but needs to be unique so that multiple players can exist on the same page
-          &#x22;layoutOptions&#x22;: {
-            &#x22;tpShare&#x22;: true
-          },
-          &#x22;overlayPlayButton&#x22;: true,
-          &#x22;sharing&#x22;: true,
-          &#x22;skinName&#x22;: &#x22;glass-ngs&#x22;,
-          &#x22;type&#x22;: &#x22;inline&#x22;
-
-        }
-    }
-    &#x3C;/script&#x3E;
-  &#x3C;/div&#x3E;</code></pre>
-    </div>
-
 
   </div>
 </div>

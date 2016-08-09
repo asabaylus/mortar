@@ -2,7 +2,6 @@
 
 import React, { Component, PropTypes }  from 'react';
 import LazyLoad from 'react-lazy-load';
-import classNames from 'classnames';
 import _defaultsDeep from 'lodash/defaultsDeep';
 
 // add the NatGeo modules-video to the global window
@@ -16,7 +15,7 @@ class Video extends Component {
   shapeModel() {
     return _defaultsDeep(this.props.model, {
       autoload: true,
-      type: 'inline',
+      type: 'fng',
       skinName: (this.props.model.overlayPlayButton) ? 'glass-ngs' : 'glass-ngs-no-overlay',
       layoutOptions: {
         tpShare: (this.props.model.sharing !== undefined) ? this.props.model.sharing : true
@@ -26,7 +25,7 @@ class Video extends Component {
 
   createPlayer() {
     let options = this.shapeModel();
-    return ngsPlayer.init(options);
+    ngsPlayer.init(options);
   }
 
   componentDidMount() {
@@ -35,7 +34,6 @@ class Video extends Component {
     // on the public website scrolls the video "near" the viewport
     if (this.props.lazyLoad === false) {
       this.createPlayer();
-      //return NGS.platform.sandbox.log.info('EmbeddedVideo component initialized \"onLoad\"');
     }
   }
 
@@ -43,28 +41,25 @@ class Video extends Component {
     // if we are not using editmode
     if (this.props.isEditMode !== true) {
       this.createPlayer();
-      //NGS.platform.sandbox.log.info('EmbeddedVideo component LazyLoaded');
     }
   }
 
   render() {
-    console.log('does this fire?')
     // LazyLoad will defer PDK initialization until component is within 200px of the visible viewport
     if (this.props.lazyLoad === true) {
       return (
-        <figure itemType="http://schema.org/VideoObject" className={'embedded-video ' + this.props.className }>
+        <figure itemType="http://schema.org/VideoObject" className={'mt2_video mt2_videopromo-container mt2_intratio--broadcast mt2_bgcolor--neutral--xxl ' + this.props.className }>
           <LazyLoad offsetVertical={200} onContentVisible={this.handleOnLoad.bind(this)}><span>&nbsp;</span></LazyLoad>
-          <div className="embedded-video__player-wrapper">
-            <div id={this.props.model.instance} className="embedded-video__player" data-guid={ this.props.model.guid }></div>
+          <div className="mt2_video__player-wrapper">
+            <div id={this.props.model.instance} className="mt2_video__player" data-guid={ this.props.model.guid }></div>
           </div>
         </figure>
       );
     } else {
       return (
-        <figure itemType="http://schema.org/VideoObject" className={'embedded-video ' + this.props.className }>
-          <div className="embedded-video__player-wrapper">
-            <div id={this.props.model.instance} className="embedded-video__player" data-guid={ this.props.model.guid }></div>
-          }
+        <figure itemType="http://schema.org/VideoObject" className={'mt2_video mt2_videopromo-container mt2_intratio--broadcast mt2_bgcolor--neutral--xxl ' + this.props.className }>
+          <div className="mt2_video__player-wrapper">
+            <div id={this.props.model.instance} className="mt2_video__player" data-guid={ this.props.model.guid }></div>
           </div>
         </figure>
       );

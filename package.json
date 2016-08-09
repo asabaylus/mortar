@@ -24,7 +24,7 @@
     "picturefill": "3.x",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
-    "react-lazy-load": "3.0.5",
+    "react-lazy-load": "3.x",
     "react-pure-render": "1.x",
     "react-slick": "krlospelaez/react-slick#fix-npm"
   },
