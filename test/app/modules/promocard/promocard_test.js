@@ -9,7 +9,7 @@ import PromoText from '../../../../app/modules/promocard/components/shared/Promo
 import {shallow, mount} from 'enzyme';
 import React from 'react';
 
-describe('MTPromoCard', () => {
+describe.only('MTPromoCard', () => {
   describe('Pestle Module', () => {
     before(() => {
       const html = `<div

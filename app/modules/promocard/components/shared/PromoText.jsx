@@ -2,12 +2,12 @@
 
 import React, { PropTypes }  from 'react';
 
-const PromoText = ({abstract, byline, kicker, title }) => {
+const PromoText = ({dek, byline, kicker, title }) => {
   return(
     <div>
       {kicker ? <div className="mt2_color--neutral--l mt_subh2">{kicker}</div> : null}
       {title ? <div className="mt2_color--neutral--xxd mt2_h4">{title}</div> : null}
-      {abstract ? <div className="mt2_color--neutral--xxd mt2_subh4">{abstract}</div> : null}
+      {dek ? <div className="mt2_color--neutral--xxd mt2_subh4">{dek}</div> : null}
       {byline ? <div className="mt2_color--neutral--xxd mt2_h5">{byline}</div> : null}
     </div>
   );
@@ -15,7 +15,7 @@ const PromoText = ({abstract, byline, kicker, title }) => {
 
 PromoText.PropTypes = {
   title: PropTypes.string,
-  abstract: PropTypes.string,
+  dek: PropTypes.string,
   kicker: PropTypes.string,
   byline: PropTypes.string
 };

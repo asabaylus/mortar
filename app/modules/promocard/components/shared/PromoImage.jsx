@@ -13,37 +13,37 @@ const PromoImage = (props) => {
 
   // Button takes onClick function prop to hook into for play functionality
   return(
-    <figure className={props.containerCSSClass} style={props.inlineStyle}>
+    <figure className={props.leadMedia.containerCSSClass} style={props.leadMedia.inlineStyle}>
       {props.brandingBadgeLabel ? <figcaption className="mt2_promocard-branding">{props.brandingBadgeLabel}</figcaption> : null}
       <Image
-        aspectRatio={props.aspectRatio}
-        frameAspectRatio={props.frameAspectRatio}
-        lazyLoad={true}
+        aspectRatio={props.leadMedia.aspectRatio}
+        frameAspectRatio={props.config.aspectRatio}
+        lazyLoad={false}
+        altText={props.leadMedia.altText}
         src={props.leadMedia.url}
-        srcset={props.leadMedia.srcset}/>
+        srcset={props.leadMedia.srcset}
+      />
       {props.type === 'video' ? <Button icon={icon} onClick={() => {}} /> : null}
-      {props.sponsorContent ? <figcaption className="mt2_promocard-sponsor">{props.sponsorContentLabel}</figcaption> : null}
+      {props.config.sponsored ? <figcaption className="mt2_promocard-sponsor">{props.sponsorContentLabel}</figcaption> : null}
     </figure>
   );
 };
 
 PromoImage.PropTypes = {
-  frameAspectRatio: PropTypes.number,
-  brandingBadgeLabel: PropTypes.string,
+  type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
+  config: PropTypes.object,
   leadMedia: PropTypes.shape({
     url: PropTypes.string,
     aspectRatio: PropTypes.number,
     height: PropTypes.number,
     width: PropTypes.number,
-    internal: PropTypes.bool,
-    position: PropTypes.oneOf(['above', 'below', 'left', 'right']),
+    altText: PropTypes.string,
     containerCSSClass: PropTypes.string,
     inlineStyle: PropTypes.object,
     srcset: PropTypes.array
   }),
-  sponsorContent: PropTypes.bool,
-  sponsorContentLabel: PropTypes.string,
-  type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule'])
+  brandingBadgeLabel: PropTypes.string,
+  sponsorContentLabel: PropTypes.string
 };
 
 export default PromoImage;

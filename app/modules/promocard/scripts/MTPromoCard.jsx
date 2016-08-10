@@ -8,31 +8,27 @@ import Article from './../components/types/Article.jsx';
 const MTPromoCard = (props) => {
 
   const promoData = {
-    // props to pass with the event
+    // data to pass with the event
   };
 
   const promoClicked = () => {
+    props.onClick();
     Pestle.PubSub.publish(events.promoClicked, promoData);
   };
 
+  // this will need to be refactored based on the AEM-authoring experience to just concat input values
   const generateHref = (url, trackingCodes) => {
     let href = url;
 
     if(trackingCodes) {
       let terms = "";
-      const termsArr = props.link.trackingCodes.utmTerm;
+      const termsArr = props.link.trackingCodes;
       const concatTerms = (element, index, array) => {
         const lastEl = index < array.length - 1;
         terms += lastEl ? element + "+" : element;
       };
       termsArr.forEach(concatTerms);
-      href = href
-        + "?"
-        + "utm_source=" + trackingCodes.utmSource
-        + "&utm_medium=" + trackingCodes.utmMedium
-        + "&utm_term=" + terms
-        + "&utm_content=" + trackingCodes.utmContent
-        + "&utm_campaign=" + trackingCodes.utmCampaign;
+      href = href + "?" + terms;
     }
 
     return href;
@@ -51,6 +47,11 @@ const MTPromoCard = (props) => {
         <Article {...props} />
       </a>;
       break;
+    case 'video':
+      return <a {...attrs}>
+        <Article {...props} />
+      </a>;
+      break;
     // additional cases for the remaining types may be included when they are created
     default:
       return <a {...attrs}>
@@ -61,43 +62,31 @@ const MTPromoCard = (props) => {
 };
 
 MTPromoCard.PropTypes = {
-  frameAspectRatio: PropTypes.number,
   id: PropTypes.string,
-  leadMedia: PropTypes.shape({
-    url: PropTypes.string,
-    aspectRatio: PropTypes.number,
-    height: PropTypes.number,
-    width: PropTypes.number,
-    internal: PropTypes.bool,
-    position: PropTypes.oneOf(['above', 'below', 'left', 'right']),
-    containerCSSClass: PropTypes.string,
-    inlineStyle: PropTypes.object,
-    srcset: PropTypes.array
-  }),
-  link: PropTypes.shape({
-    target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
-    trackingCodes: PropTypes.shape({
-      utmSource: PropTypes.string,
-      utmMedium: PropTypes.string,
-      utmTerm: PropTypes.array, // can be multiple keywords
-      utmContent: PropTypes.string,
-      utmCampaign: PropTypes.string
-    }),
-    url: PropTypes.string.isRequired
-  }),
   type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
-  text: PropTypes.shape({
-    abstract: PropTypes.string,
-    byline: PropTypes.string,
-    containerCSSClass: PropTypes.string,
-    inlineStyle: PropTypes.string,
-    kicker: PropTypes.string,
-    title: PropTypes.string
+  config: PropTypes.object,
+  link: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
+    trackingCodes: PropTypes.array
   }),
-  modal: PropTypes.bool,
+  text: PropTypes.shape({
+    title: PropTypes.string,
+    dek: PropTypes.string,
+    kicker: PropTypes.string,
+    byline: PropTypes.string,
+    duration: PropTypes.string,
+    publishDate: PropTypes.string
+  }),
+  cta: PropTypes.shape({
+    url: PropTypes.string,
+    title: PropTypes.string,
+    target: PropTypes.string,
+    seoTitle: PropTypes.string
+  }),
   brandingBadgeLabel: PropTypes.string,
-  sponsorContent: PropTypes.bool,
   sponsorContentLabel: PropTypes.string,
+  modal: PropTypes.bool,
   onClick: PropTypes.func
 };
 
