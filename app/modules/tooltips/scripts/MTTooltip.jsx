@@ -1,32 +1,23 @@
-'use strict';
-
-import React, { Component, PropTypes }  from 'react';
+import React, { Component, PropTypes } from 'react';
 import {Pestle} from '@natgeo/mortar-pestle';
-import classNames from 'classnames';
 import {SimpleModal} from './modal.jsx';
+import classNames from 'classnames';
 
+export const Tooltip = (props) => {
+  const tooltip = props.modal ? <TooltipModal {...props} /> : <TooltipBubble {...props} />;
+  return tooltip;
+};
 
-class Tooltip extends Component {
-  static propTypes = {
-    tooltipContent: PropTypes.string,
-    placement: PropTypes.oneOf(['top', 'left', 'right', 'bottom']),
-    modal: PropTypes.bool
-  };
+Tooltip.propTypes = {
+  tooltipContent: PropTypes.string,
+  placement: PropTypes.oneOf(['top', 'left', 'right', 'bottom']),
+  modal: PropTypes.bool
+};
 
-  static defaultProps = {
-    placement: 'top',
-    modal: false
-  };
-
-  render(){
-    if(this.props.modal){
-      return <TooltipModal {...this.props} />
-    }
-    else {
-      return <TooltipBubble {...this.props} />
-    }
-  }
-}
+Tooltip.defaultProps = {
+  placement: 'top',
+  modal: false
+};
 
 
 class TooltipBubble extends Component{
@@ -119,25 +110,26 @@ class TooltipModal extends Component {
       active: false
     };
 
-    this.open = this.open.bind(this);
-    this.close = this.close.bind(this);
+    this.toggleVisibility = this.toggleVisibility.bind(this);
   }
-  open(){
-    this.setState({active: true});
+
+  toggleVisibility() {
+    this.setState({
+      active: !this.state.active,
+    })
   }
-  close(){
-    this.setState({active: false});
-  }
+
   renderModal(){
     const tooltipContent = this.props.tooltipContent || '';
 
     return (
-      <SimpleModal onClose={this.close}>
+      <SimpleModal onClose={this.toggleVisibility}>
         <div className="mt2_tooltip-modalcontent">{tooltipContent}</div>
         {this.props.children}
       </SimpleModal>
     )
   }
+
   render(){
     const buttonClasses = `
       mt2_tooltip-modalbtn
@@ -147,7 +139,7 @@ class TooltipModal extends Component {
 
     return (
       <div>
-        <button className={buttonClasses} onClick={this.open}>?</button>
+        <button className={buttonClasses} onClick={this.toggleVisibility}>?</button>
         {this.state.active ? this.renderModal() : ''}
       </div>
     );
