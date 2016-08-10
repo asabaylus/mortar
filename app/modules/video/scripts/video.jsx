@@ -58,16 +58,16 @@ class Video extends Component {
       return (
         <figure itemType="http://schema.org/VideoObject" className={`mt2_video mt2_videopromo-container mt2_intratio--broadcast mt2_bgcolor--neutral--xxl ${className}` }>
           <LazyLoad offsetVertical={200} onContentVisible={this.handleOnLoad.bind(this)}><span>&nbsp;</span></LazyLoad>
-          <div className="mt2_video__player-wrapper">
-            <div id={instance} className="mt2_video__player" data-guid={ guid }></div>
+          <div className="mt2_video-wrapper">
+            <div id={instance} className="mt2_video-player" data-guid={ guid }></div>
           </div>
         </figure>
       );
     } else {
       return (
         <figure itemType="http://schema.org/VideoObject" className={`mt2_video mt2_videopromo-container mt2_intratio--broadcast mt2_bgcolor--neutral--xxl ${className}` }>
-          <div className="mt2_video__player-wrapper">
-            <div id={instance} className="mt2_video__player" data-guid={ guid }></div>
+          <div className="mt2_video-wrapper">
+            <div id={instance} className="mt2_video-player" data-guid={ guid }></div>
           </div>
         </figure>
       );

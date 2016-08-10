@@ -1,5 +1,5 @@
 .mt2_video {
-  &__player {
+  &-player {
     height: 100%;
     position: relative;
     width: 100%;
@@ -10,7 +10,7 @@
     }
   }
 
-  &__player-wrapper {
+  &-wrapper {
     height: 100%;
     position: absolute;
     top: 0;
