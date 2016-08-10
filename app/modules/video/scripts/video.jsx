@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { Component, PropTypes }  from 'react';
+import React, { Component }  from 'react';
 import LazyLoad from 'react-lazy-load';
 import _defaultsDeep from 'lodash/defaultsDeep';
 
@@ -45,21 +45,29 @@ class Video extends Component {
   }
 
   render() {
-    // LazyLoad will defer PDK initialization until component is within 200px of the visible viewport
-    if (this.props.lazyLoad === true) {
+    let {
+      className: className,
+      lazyLoad: lazyLoad,
+      model: {
+        instance: instance,
+        guid: guid
+      }
+    } = this.props;
+
+    if (lazyLoad === true) {
       return (
-        <figure itemType="http://schema.org/VideoObject" className={'mt2_video mt2_videopromo-container mt2_intratio--broadcast mt2_bgcolor--neutral--xxl ' + this.props.className }>
+        <figure itemType="http://schema.org/VideoObject" className={`mt2_video mt2_videopromo-container mt2_intratio--broadcast mt2_bgcolor--neutral--xxl ${className}` }>
           <LazyLoad offsetVertical={200} onContentVisible={this.handleOnLoad.bind(this)}><span>&nbsp;</span></LazyLoad>
           <div className="mt2_video__player-wrapper">
-            <div id={this.props.model.instance} className="mt2_video__player" data-guid={ this.props.model.guid }></div>
+            <div id={instance} className="mt2_video__player" data-guid={ guid }></div>
           </div>
         </figure>
       );
     } else {
       return (
-        <figure itemType="http://schema.org/VideoObject" className={'mt2_video mt2_videopromo-container mt2_intratio--broadcast mt2_bgcolor--neutral--xxl ' + this.props.className }>
+        <figure itemType="http://schema.org/VideoObject" className={`mt2_video mt2_videopromo-container mt2_intratio--broadcast mt2_bgcolor--neutral--xxl ${className}` }>
           <div className="mt2_video__player-wrapper">
-            <div id={this.props.model.instance} className="mt2_video__player" data-guid={ this.props.model.guid }></div>
+            <div id={instance} className="mt2_video__player" data-guid={ guid }></div>
           </div>
         </figure>
       );
