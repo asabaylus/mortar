@@ -18,7 +18,7 @@ class Video extends Component {
       type: 'fng',
       skinName: (this.props.model.overlayPlayButton) ? 'glass-ngs' : 'glass-ngs-no-overlay',
       layoutOptions: {
-        tpShare: (this.props.model.sharing !== undefined) ? this.props.model.sharing : true
+        tpShareFNG: (this.props.model.sharing !== undefined) ? this.props.model.sharing : true
       }
     });
   }
