@@ -1,8 +1,8 @@
 $mt2_arrowheight: .625rem;
 
 .mt2_tooltip-container {
-  max-width: $mt2_unit * 3;
-  padding: .5rem;
+  margin: $mt2_unit-half;
+  pointer-events: none;
   position: relative;
   transition: 400ms;
 }
@@ -10,8 +10,8 @@ $mt2_arrowheight: .625rem;
 .mt2_tooltip-btn {
   cursor: pointer;
   display: block;
-  margin: 10px auto;
-  padding: 1px 6px 0;
+  padding: .0625rem .375rem 0;
+  pointer-events: auto;
 
   &:hover {
     color: $mt2_color-neutral-l;
@@ -19,14 +19,18 @@ $mt2_arrowheight: .625rem;
 }
 
 .mt2_tooltip {
-  padding: 1rem;
+  max-width: 18.75rem;
+  padding: $mt2_unit;
+  pointer-events: auto;
   position: absolute;
   text-align: center;
   z-index: $mt2_z-top;
 
+
   &--top {
     bottom: 100%;
-    left: 50%;
+    margin-bottom: $mt2_unit;
+    margin-left: $mt2_unit-half;
     transform: translateX(-50%);
 
     &::after {
@@ -42,7 +46,7 @@ $mt2_arrowheight: .625rem;
   }
 
   &--right {
-    left: 100%;
+    margin-left: $mt2_fs-med-lrg;
     top: 50%;
     transform: translateY(-50%);
 
@@ -59,9 +63,10 @@ $mt2_arrowheight: .625rem;
   }
 
   &--bottom {
-    right: 50%;
+    margin-left: $mt2_unit-half;
+    margin-top: $mt2_unit;
     top: 100%;
-    transform: translateX(50%);
+    transform: translateX(-50%);
 
     &::after {
       border: $mt2_arrowheight solid transparent;
@@ -75,7 +80,6 @@ $mt2_arrowheight: .625rem;
   }
 
   &--left {
-    right: 100%;
     top: 50%;
     transform: translateY(-50%);
 

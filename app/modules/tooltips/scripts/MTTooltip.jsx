@@ -38,6 +38,15 @@ class Tooltip extends Component {
     }
   }
 
+  componentDidUpdate(){
+    if(this.props.placement === "left" && this.state.visible){
+      let width =  window.getComputedStyle(this.refs.tooltipContainer).width;
+      const arrowWidth = 15;
+      width = -parseFloat(width) - arrowWidth;
+      this.refs.tooltipContainer.style.left = `${width}px`;
+    }
+  }
+
   renderTooltip(){
     let tooltipPlacement = classNames({
       'mt2_tooltip--top': this.props.placement === 'top',
@@ -51,7 +60,7 @@ class Tooltip extends Component {
     }
 
     return(
-      <div className={`mt2_tooltip mt2_subh4 mt2_bgcolor--neutral--xxl ${tooltipPlacement}`}>
+      <div ref="tooltipContainer" className={`mt2_tooltip mt2_subh4 mt2_bgcolor--neutral--xxl ${tooltipPlacement}`}>
         <p dangerouslySetInnerHTML={{__html: this.props.tooltipContent}} />
       </div>
     );
