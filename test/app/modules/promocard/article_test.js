@@ -61,10 +61,6 @@ describe('Article Component', () => {
     />);
   });
 
-  it('Logs to console', () => {
-    console.log(wrapper.find('PromoText').props());
-  });
-
   it('Should have a containing div', () => {
     expect(wrapper.first().type()).to.equal("div");
   });
