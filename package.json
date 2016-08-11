@@ -18,6 +18,7 @@
   "homepage": "https://github.com/natgeo/mortar#readme",
   "dependencies": {
     "@natgeo/modules-images": "^1.0.2",
+    "modules-video": "natgeo/modules-video#v1.2.1",
     "@natgeo/mortar-pestle": "2.x",
     "lodash": "4.x",
     "picturefill": "3.x",

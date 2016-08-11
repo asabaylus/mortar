@@ -1,0 +1,19 @@
+.mt2_video {
+  &-player {
+    height: 100%;
+    position: relative;
+    width: 100%;
+
+    video,
+    iframe {
+      width: 100%;
+    }
+  }
+
+  &-wrapper {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
