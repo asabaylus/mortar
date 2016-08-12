@@ -47,11 +47,6 @@ const MTPromoCard = (props) => {
         <Article {...props} />
       </a>;
       break;
-    case 'video':
-      return <a {...attrs}>
-        <Article {...props} />
-      </a>;
-      break;
     // additional cases for the remaining types may be included when they are created
     default:
       return <a {...attrs}>
