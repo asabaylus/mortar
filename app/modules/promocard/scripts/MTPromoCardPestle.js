@@ -3,7 +3,7 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
 import {Pestle, Module} from '@natgeo/mortar-pestle';
-import {default as PromoCardComponent} from './MTPromoCard.jsx';
+import {default as MTPromoCardComponent} from './MTPromoCard.jsx';
 
 class PromoCard extends Module {
 
@@ -13,24 +13,17 @@ class PromoCard extends Module {
   }
 
   init() {
-    ReactDOM.render(<PromoCardComponent
-      image={this.options.image}
-      text={this.options.text}
-      modal={this.options.modal}
-      target={this.options.target}
+    ReactDOM.render(<MTPromoCardComponent
+      id={this.options.id}
+      type={this.options.type}
+      config={this.options.config}
+      link={this.options.link}
       leadMedia={this.options.leadMedia}
-      title={this.options.title}
-      hideTitle={this.options.hideTitle}
-      dek={this.options.dek}
-      hideDek={this.options.hideDek}
-      series={this.options.series}
-      hideSeries={this.options.hideSeries}
-      byline={this.options.byline}
-      hideByline={this.options.hideByline}
+      text={this.options.text}
+      cta={this.options.cta}
       brandingBadgeLabel={this.options.brandingBadgeLabel}
-      sponsorContent={this.options.sponsorContent}
       sponsorContentLabel={this.options.sponsorContentLabel}
-      video={this.options.video}
+      modal={this.options.modal}
       onClick={this.onClick}
     />, this.el);
   }
