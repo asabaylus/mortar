@@ -12,7 +12,6 @@ const MTPromoCard = (props) => {
   };
 
   const promoClicked = () => {
-    console.log("---------- Promo Clicked ---------");
     props.onClick();
     Pestle.PubSub.publish(events.promoClicked, promoData);
   };

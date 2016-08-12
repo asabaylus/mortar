@@ -4,6 +4,10 @@ $mt2_button-height: 8em;
 .mt2_promocard-container {
   overflow: hidden;
 
+  &:-webkit-any-link{
+   text-decoration: none;
+  }
+
   figure { // user-agent overrides
     margin: 0 0 30px;
     position: relative;
