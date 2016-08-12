@@ -14,6 +14,8 @@ require('../modules/button/scripts/CTAButtonPestle.js');
 require('../modules/promocard/scripts/MTPromoCardPestle.js');
 require('../modules/tooltips/scripts/MTTooltipPestle.js');
 
+require('@natgeo/modules-content-package/helloWorld/helloWorldPestle.js');
+
 
 Pestle.init();
 

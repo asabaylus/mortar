@@ -19,5 +19,8 @@ module.exports = {
     mortarDest: 'lib/',
 
     pestleSrc: './app/scripts/pestle/',
-    pestleDest: 'packages/pestle'
+    pestleDest: 'packages/pestle',
+
+    modulesContentPackageSrc: './app/contentPackages/',
+    modulesContentPackageDest: 'packages/contentPackages/'
 }
