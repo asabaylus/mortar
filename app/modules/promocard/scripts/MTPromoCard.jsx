@@ -12,6 +12,7 @@ const MTPromoCard = (props) => {
   };
 
   const promoClicked = () => {
+    console.log("---------- Promo Clicked ---------");
     props.onClick();
     Pestle.PubSub.publish(events.promoClicked, promoData);
   };
@@ -36,7 +37,7 @@ const MTPromoCard = (props) => {
 
   let attrs = {
     className: "mt2_promocard-container",
-    onClick: promoClicked(),
+    onClick: promoClicked,
     href: generateHref(props.link.url, props.link.trackingCodes),
     target: props.link.target
   };
