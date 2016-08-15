@@ -1,5 +1,17 @@
 'use strict';
 
+/*
+ * It creates an object based on value of fromString then assign value param. e.g
+ * fromString: 'config.image.url', value: 'http://placehold.it/800x600', parent = {}
+ * will create an object like this:
+ *  {
+ *    config: {
+ *      image: {
+ *        url: 'http://placehold.it/800x600'
+ *      }
+ *    }
+ *  }
+ */
 export function createObjectFromString(fromString, value, parent = {}) {
 
   if(!fromString) {
