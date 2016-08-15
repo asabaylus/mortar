@@ -9,13 +9,13 @@ const Article = (props) => {
     return(
       <div className="mt2_row mt2_col-12">
         <PromoImage {...props} />
-        <PromoText {...props.text} />
+        <PromoText {...props} />
       </div>
     );
   }else{
     return(
       <div className="mt2_row">
-        <PromoText {...props.text} />
+        <PromoText {...props} />
       </div>
     );
   }
