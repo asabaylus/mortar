@@ -35,8 +35,6 @@ PromoImage.PropTypes = {
   leadMedia: PropTypes.shape({
     url: PropTypes.string,
     aspectRatio: PropTypes.number,
-    height: PropTypes.number,
-    width: PropTypes.number,
     altText: PropTypes.string,
     containerCSSClass: PropTypes.string,
     inlineStyle: PropTypes.object,

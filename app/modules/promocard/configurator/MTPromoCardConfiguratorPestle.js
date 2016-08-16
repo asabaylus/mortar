@@ -31,8 +31,6 @@ class PromoCardConfigurator extends Module {
       leadMedia: {
         url: 'http://placehold.it/800x600',
         aspectRatio: 0.6667,
-        height: 500,
-        width: 350,
         altText: 'Picture of a caiman swimming underwater in Pantanal, Brazil',
         srcset: ['http://placehold.it/400x300 400w', 'http://placehold.it/800x600 800w', 'http://placehold.it/1600x1200 1600w'],
         containerCSSClass: '',

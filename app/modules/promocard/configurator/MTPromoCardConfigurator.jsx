@@ -103,8 +103,6 @@ class PromoCardConfigurator extends Component {
           <Section text="Lead Media">
             <TextField label="Url" onChange={this.onTextChange('leadMedia.url')} value={props.leadMedia.url} />
             <TextField label="Aspect Ratio" onChange={this.onTextChange('leadMedia.aspectRatio')} value={props.leadMedia.aspectRatio} />
-            <TextField label="Height" onChange={this.onNumberChange('leadMedia.height')} value={props.leadMedia.height} />
-            <TextField label="Width" onChange={this.onNumberChange('leadMedia.width')} value={props.leadMedia.width} />
             <TextField label="Alt Text" onChange={this.onTextChange('leadMedia.altText')} value={props.leadMedia.altText} />
             <TextField label="Container CSS Class" onChange={this.onTextChange('leadMedia.containerCSSClass')} value={props.leadMedia.containerCSSClass} />
             <TextField label="Inline Style (JSON syntax)" onChange={this.onObjectChange('leadMedia.inlineStyle')} value={JSON.stringify(props.leadMedia.inlineStyle)} />

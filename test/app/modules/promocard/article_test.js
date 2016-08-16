@@ -89,10 +89,10 @@ describe('Article Component', () => {
   });
 
   it('PromoText component should have props', () => {
-    expect(wrapper.find('PromoText').props().title).to.equal("This is the title of the card");
-    expect(wrapper.find('PromoText').props().dek).to.equal("This is a short dek for the card.");
-    expect(wrapper.find('PromoText').props().kicker).to.equal("Kicker");
-    expect(wrapper.find('PromoText').props().byline).to.equal("This is a great byline");
+    expect(wrapper.find('PromoText').props().text.title).to.equal("This is the title of the card");
+    expect(wrapper.find('PromoText').props().text.dek).to.equal("This is a short dek for the card.");
+    expect(wrapper.find('PromoText').props().text.kicker).to.equal("Kicker");
+    expect(wrapper.find('PromoText').props().text.byline).to.equal("This is a great byline");
   });
 
 });
