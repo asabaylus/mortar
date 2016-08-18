@@ -65,6 +65,12 @@ MTPromoCard.PropTypes = {
     target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
     trackingCodes: PropTypes.array
   }),
+  leadMedia: PropTypes.arrayOf(PropTypes.shape({
+    url: PropTypes.string,
+    aspectRatio: PropTypes.number,
+    altText: PropTypes.string,
+    srcset: PropTypes.array
+  })),
   text: PropTypes.shape({
     title: PropTypes.string,
     dek: PropTypes.string,

@@ -13,7 +13,7 @@ const PromoImage = (props) => {
 
   // Button takes onClick function prop to hook into for play functionality
   return(
-    <figure className={props.leadMedia.containerCSSClass} style={props.leadMedia.inlineStyle}>
+    <figure>
       {props.brandingBadgeLabel ? <figcaption className="mt2_promocard-branding">{props.brandingBadgeLabel}</figcaption> : null}
       <Image
         aspectRatio={props.leadMedia.aspectRatio}
@@ -36,12 +36,9 @@ PromoImage.PropTypes = {
     url: PropTypes.string,
     aspectRatio: PropTypes.number,
     altText: PropTypes.string,
-    containerCSSClass: PropTypes.string,
-    inlineStyle: PropTypes.object,
     srcset: PropTypes.array
   }),
-  brandingBadgeLabel: PropTypes.string,
-  sponsorContentLabel: PropTypes.string
+  brandingBadgeLabel: PropTypes.string
 };
 
 export default PromoImage;

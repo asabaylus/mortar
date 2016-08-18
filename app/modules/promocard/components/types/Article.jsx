@@ -8,7 +8,7 @@ const Article = (props) => {
   if (props.leadMedia){
     return(
       <div className="mt2_row mt2_col-12">
-        <PromoImage {...props} />
+        <PromoImage type={props.type} config={props.config} leadMedia={props.leadMedia[0]} brandingBadgeLabel={props.brandingBadgeLabel} />
         <PromoText {...props} />
       </div>
     );
@@ -30,14 +30,12 @@ Article.PropTypes = {
     target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
     trackingCodes: PropTypes.array
   }),
-  leadMedia: PropTypes.shape({
+  leadMedia: PropTypes.arrayOf(PropTypes.shape({
     url: PropTypes.string,
     aspectRatio: PropTypes.number,
     altText: PropTypes.string,
-    containerCSSClass: PropTypes.string,
-    inlineStyle: PropTypes.object,
     srcset: PropTypes.array
-  }),
+  })),
   text: PropTypes.shape({
     title: PropTypes.string,
     dek: PropTypes.string,
