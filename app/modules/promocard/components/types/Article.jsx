@@ -25,11 +25,6 @@ Article.PropTypes = {
   id: PropTypes.string,
   type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
   config: PropTypes.object,
-  link: PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
-    trackingCodes: PropTypes.array
-  }),
   leadMedia: PropTypes.arrayOf(PropTypes.shape({
     url: PropTypes.string,
     aspectRatio: PropTypes.number,
@@ -39,7 +34,14 @@ Article.PropTypes = {
   text: PropTypes.shape({
     title: PropTypes.string,
     dek: PropTypes.string,
-    kicker: PropTypes.string,
+    kicker: PropTypes.shape({
+      label: PropTypes.string,
+      url: PropTypes.string,
+      target: PropTypes.string,
+      seoTitle: PropTypes.string,
+      trackingCodes: PropTypes.array || PropTypes.string
+    }),
+    photoCount: PropTypes.number,
     byline: PropTypes.string,
     duration: PropTypes.string,
     publishDate: PropTypes.string
