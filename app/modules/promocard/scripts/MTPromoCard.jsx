@@ -86,7 +86,8 @@ MTPromoCard.PropTypes = {
     photoCount: PropTypes.number,
     byline: PropTypes.string,
     duration: PropTypes.string,
-    publishDate: PropTypes.string
+    publishDate: PropTypes.string,
+    sponsorContentLabel: PropTypes.string,
   }),
   cta: PropTypes.shape({
     url: PropTypes.string,
@@ -95,7 +96,6 @@ MTPromoCard.PropTypes = {
     seoTitle: PropTypes.string
   }),
   brandingBadgeLabel: PropTypes.string,
-  sponsorContentLabel: PropTypes.string,
   modal: PropTypes.bool,
   onClick: PropTypes.func
 };

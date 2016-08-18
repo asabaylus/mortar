@@ -24,7 +24,6 @@ const PromoImage = (props) => {
         srcset={props.leadMedia.srcset}
       />
       {props.type === 'video' ? <Button icon={icon} onClick={() => {}} /> : null}
-      {props.config.sponsored ? <figcaption className="mt2_promocard-sponsor">{props.sponsorContentLabel}</figcaption> : null}
     </figure>
   );
 };

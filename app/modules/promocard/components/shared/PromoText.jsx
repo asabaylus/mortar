@@ -31,7 +31,7 @@ const PromoText = (props) => {
 
   return(
     <div>
-      {props.text.kicker ? <div><a {...attrs}>{props.text.kicker.label}</a></div> : null}
+      {props.text.kicker && !props.config.sponsored ? <div><a {...attrs}>{props.text.kicker.label}</a></div> : props.config.sponsored ? <div><a {...attrs}>{props.text.sponsorContentLabel}</a></div> : null}
       {(props.type && props.type === 'video') ? <div className="mt2_color--neutral--l mt_subh2">{props.text.duration}</div> : null}
       {props.text.title ? <div className="mt2_color--neutral--xxd mt2_h4">{props.text.title}</div> : null}
       {props.text.dek ? <div className="mt2_color--neutral--xxd mt2_subh4">{props.text.dek}</div> : null}
@@ -41,6 +41,7 @@ const PromoText = (props) => {
 };
 
 PromoText.PropTypes = {
+  config: PropTypes.object,
   text: PropTypes.shape({
     title: PropTypes.string,
     dek: PropTypes.string,
@@ -54,7 +55,8 @@ PromoText.PropTypes = {
     photoCount: PropTypes.number,
     byline: PropTypes.string,
     duration: PropTypes.string,
-    publishDate: PropTypes.string
+    publishDate: PropTypes.string,
+    sponsorContentLabel: PropTypes.string
   }),
   type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule'])
 };

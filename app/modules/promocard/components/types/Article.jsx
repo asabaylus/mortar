@@ -44,10 +44,10 @@ Article.PropTypes = {
     photoCount: PropTypes.number,
     byline: PropTypes.string,
     duration: PropTypes.string,
-    publishDate: PropTypes.string
+    publishDate: PropTypes.string,
+    sponsorContentLabel: PropTypes.string
   }),
   brandingBadgeLabel: PropTypes.string,
-  sponsorContentLabel: PropTypes.string,
   modal: PropTypes.bool,
   onClick: PropTypes.func
 };
