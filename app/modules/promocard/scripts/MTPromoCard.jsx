@@ -51,9 +51,9 @@ const MTPromoCard = (props) => {
       break;
     // additional cases for the remaining types may be included when they are created
     default:
-      return <a {...attrs}>
+      return <div {...attrs}>
         <Article {...props} />
-      </a>;
+      </div>;
       break;
   }
 };
