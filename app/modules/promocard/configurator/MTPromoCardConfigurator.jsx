@@ -72,23 +72,18 @@ class PromoCardConfigurator extends Component {
             <SelectField label="Type" onChange={this.onTextChange('type')} value={props.type}>
               <option value="article">Article</option>
               <option value="video">Video</option>
-              <option value="gallery">Gallery</option>
-              <option value="show">Show</option>
-              <option value="schedule">Schedule</option>
             </SelectField>
             <TextField label="Aspect Ratio" onChange={this.onTextChange('config.aspectRatio')} value={props.config.aspectRatio} />
             <CheckboxField label="Sponsored" onChange={this.onToggle('config.sponsored')} value={props.config.sponsored} />
-            <TextField label="Sponsor Content Label" onChange={this.onTextChange('sponsorContentLabel')} value={props.sponsorContentLabel} />
-            <TextField label="Branding Badge Label" onChange={this.onTextChange('brandingBadgeLabel')} value={props.brandingBadgeLabel} />
-            <CheckboxField label="Modal" onChange={this.onToggle('modal')} value={props.modal} />
+            <TextField label="Sponsor Content Label" onChange={this.onTextChange('sponsorContentLabel')} value={props.text.sponsorContentLabel} />
           </Section>
           <Section text="Text">
+            <TextField label="Kicker" onChange={this.onTextChange('text.kicker.label')} value={props.text.kicker.label} />
             <TextField label="Title" onChange={this.onTextChange('text.title')} value={props.text.title} />
             <TextField label="Dek" onChange={this.onTextChange('text.dek')} value={props.text.dek} />
-            <TextField label="Kicker" onChange={this.onTextChange('text.kicker')} value={props.text.kicker} />
-            <TextField label="By Line" onChange={this.onTextChange('text.byline')} value={props.text.byline} />
+            {props.type === 'video' ?
             <TextField label="Duration" onChange={this.onTextChange('text.duration')} value={props.text.duration} />
-            <TextField label="Publish Date" onChange={this.onTextChange('text.publishDate')} value={props.text.publishDate} />
+            : null }
           </Section>
           <Section text="Link">
             <TextField label="Url" onChange={this.onTextChange('link.url')} value={props.link.url} />
@@ -101,23 +96,10 @@ class PromoCardConfigurator extends Component {
             <TextField label="trackingCodes" onChange={this.onArrayChange('link.trackingCodes')} value={props.link.trackingCodes} />
           </Section>
           <Section text="Lead Media">
-            <TextField label="Url" onChange={this.onTextChange('leadMedia.url')} value={props.leadMedia.url} />
-            <TextField label="Aspect Ratio" onChange={this.onTextChange('leadMedia.aspectRatio')} value={props.leadMedia.aspectRatio} />
-            <TextField label="Alt Text" onChange={this.onTextChange('leadMedia.altText')} value={props.leadMedia.altText} />
-            <TextField label="Container CSS Class" onChange={this.onTextChange('leadMedia.containerCSSClass')} value={props.leadMedia.containerCSSClass} />
-            <TextField label="Inline Style (JSON syntax)" onChange={this.onObjectChange('leadMedia.inlineStyle')} value={JSON.stringify(props.leadMedia.inlineStyle)} />
-            <TextField label="SrcSet" onChange={this.onArrayChange('leadMedia.srcset')} value={props.leadMedia.srcset} />
-          </Section>
-          <Section text="CTA">
-            <TextField label="Url" onChange={this.onTextChange('cta.url')} value={props.cta.url} />
-            <TextField label="Title" onChange={this.onTextChange('cta.title')} value={props.cta.title} />
-            <SelectField label="Target" onChange={this.onTextChange('cta.target')} value={props.cta.target}>
-              <option value="_blank">_blank</option>
-              <option value="_self">_self</option>
-              <option value="_parent">_parent</option>
-              <option value="_top">_top</option>
-            </SelectField>
-            <TextField label="Seo Title" onChange={this.onTextChange('cta.seoTitle')} value={props.cta.seoTitle} />
+            <TextField label="Url" onChange={this.onTextChange('leadMedia.url')} value={props.leadMedia[0].url} />
+            <TextField label="Aspect Ratio" onChange={this.onTextChange('leadMedia.aspectRatio')} value={props.leadMedia[0].aspectRatio} />
+            <TextField label="Alt Text" onChange={this.onTextChange('leadMedia.altText')} value={props.leadMedia[0].altText} />
+            <TextField label="SrcSet" onChange={this.onArrayChange('leadMedia.srcset')} value={props.leadMedia[0].srcset} />
           </Section>
           <ForceButton />
         </Configurator>
