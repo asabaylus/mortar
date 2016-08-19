@@ -23,7 +23,7 @@ const PromoImage = (props) => {
         src={props.leadMedia.url}
         srcset={props.leadMedia.srcset}
       />
-      {props.type === 'video' ? <Button icon={icon} onClick={() => {}} /> : null}
+      {props.type === 'video' || props.config.showPlayButton ? <Button icon={icon} onClick={() => {}} /> : null}
     </figure>
   );
 };
