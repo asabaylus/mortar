@@ -3,6 +3,8 @@
 import React, { PropTypes }  from 'react';
 
 const PromoText = (props) => {
+
+  console.log("This is the value of the kicker conditional--------- " + props.text.kicker && !props.config.sponsored);
   const generateHref = (url, trackingCodes) => {
     let href = url;
 
@@ -25,8 +27,8 @@ const PromoText = (props) => {
 
   let attrs = {
     className: "mt2_color--neutral--l mt_subh2 mt2_promocard-kicker",
-    href: generateHref(props.text.kicker.url, props.text.kicker.trackingCodes),
-    target: props.text.kicker.target
+    href: (props.text.kicker && props.text.kicker) ? generateHref(props.text.kicker.url, props.text.kicker.trackingCodes) : null,
+    target: props.text.kicker ? props.text.kicker.target : null
   };
 
   return(

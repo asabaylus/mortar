@@ -20,10 +20,10 @@ const PromoImage = (props) => {
         frameAspectRatio={props.config.aspectRatio}
         lazyLoad={false}
         altText={props.leadMedia.altText}
-        src={props.leadMedia.url}
+        src={props.leadMedia.url || props.leadMedia.imageUrl}
         srcset={props.leadMedia.srcset}
       />
-      {props.type === 'video' || props.config.showPlayButton ? <Button icon={icon} onClick={() => {}} /> : null}
+      {props.config.showPlayButton ? <Button icon={icon} onClick={() => {}} /> : null}
     </figure>
   );
 };

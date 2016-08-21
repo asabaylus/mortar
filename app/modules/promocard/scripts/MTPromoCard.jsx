@@ -4,6 +4,7 @@ import React, { PropTypes }  from 'react';
 import {Pestle} from '@natgeo/mortar-pestle';
 import events from './events';
 import Article from './../components/types/Article.jsx';
+import VideoCard from './../components/types/VideoCard.jsx';
 
 const MTPromoCard = (props) => {
 
@@ -49,6 +50,11 @@ const MTPromoCard = (props) => {
         <Article {...props} />
       </div>;
       break;
+    case 'video':
+      return <div {...attrs}>
+        <VideoCard {...props} />
+      </div>;
+      break;
     // additional cases for the remaining types may be included when they are created
     default:
       return <div {...attrs}>
@@ -71,7 +77,11 @@ MTPromoCard.PropTypes = {
     url: PropTypes.string,
     aspectRatio: PropTypes.number,
     altText: PropTypes.string,
-    srcset: PropTypes.array
+    srcset: PropTypes.array,
+    guid: PropTypes.guid,
+    videoUrl: PropTypes.string,
+    imageUrl: PropTypes.string,
+    renditionUrl: PropTypes.string
   })),
   text: PropTypes.shape({
     title: PropTypes.string,

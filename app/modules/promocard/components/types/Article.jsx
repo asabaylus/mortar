@@ -31,22 +31,7 @@ Article.PropTypes = {
     altText: PropTypes.string,
     srcset: PropTypes.array
   })),
-  text: PropTypes.shape({
-    title: PropTypes.string,
-    dek: PropTypes.string,
-    kicker: PropTypes.shape({
-      label: PropTypes.string,
-      url: PropTypes.string,
-      target: PropTypes.string,
-      seoTitle: PropTypes.string,
-      trackingCodes: PropTypes.array || PropTypes.string
-    }),
-    photoCount: PropTypes.number,
-    byline: PropTypes.string,
-    duration: PropTypes.string,
-    publishDate: PropTypes.string,
-    sponsorContentLabel: PropTypes.string
-  }),
+  text: PropTypes.object,
   brandingBadgeLabel: PropTypes.string,
   modal: PropTypes.bool,
   onClick: PropTypes.func
