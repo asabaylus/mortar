@@ -1,4 +1,4 @@
-%mt3_link {
+%mt2_textlink {
   &,
   &:link,
   &:visited {
@@ -13,6 +13,7 @@
   }
 }
 
-.mt3_link {
-  @extend %mt3_link;
+
+.mt2_textlink {
+  @extend %mt2_textlink;
 }
