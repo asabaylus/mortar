@@ -14,7 +14,7 @@ const PromoImage = (props) => {
   // Button takes onClick function prop to hook into for play functionality
   return(
     <figure>
-      {props.brandingBadgeLabel ? <figcaption className="mt2_promocard-branding">{props.brandingBadgeLabel}</figcaption> : null}
+      {props.brandingBadgeLabel ? <figcaption className="mt3_promocard-branding">{props.brandingBadgeLabel}</figcaption> : null}
       <Image
         aspectRatio={props.leadMedia.aspectRatio}
         frameAspectRatio={props.config.aspectRatio}

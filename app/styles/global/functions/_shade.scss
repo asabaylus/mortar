@@ -1,11 +1,11 @@
 // Slightly darken a color
 // @access public
-// @param {Color} $mt2_color - color to shade
-// @param {Number} $mt2_percentage - percentage of `$mt2_color` in returned color
+// @param {Color} $mt3_color - color to shade
+// @param {Number} $mt3_percentage - percentage of `$mt3_color` in returned color
 // @return {Color}
 //
 // Source: https://css-tricks.com/snippets/sass/tint-shade-functions/
 
-@function mt2_shade($mt2_color, $mt2_percentage) {
-  @return mix(black, $mt2_color, $mt2_percentage);
+@function mt3_shade($mt3_color, $mt3_percentage) {
+  @return mix(black, $mt3_color, $mt3_percentage);
 }

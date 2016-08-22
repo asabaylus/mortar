@@ -1,23 +1,23 @@
-.mt2_relatedcontent-heading {
-  border-bottom: 1px solid $mt2_color-neutral-xl;
+.mt3_relatedcontent-heading {
+  border-bottom: 1px solid $mt3_color-neutral-xl;
   padding: 1.5rem 1rem;
 }
 
-.mt2_relatedcontent-item {
+.mt3_relatedcontent-item {
   list-style: none;
 
   &:not(:last-of-type) {
-    border-bottom: 1px solid $mt2_color-neutral-xl;
+    border-bottom: 1px solid $mt3_color-neutral-xl;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
   }
 }
 
-%mt2_relatedcontent-link {
+%mt3_relatedcontent-link {
   &,
   &:link,
   &:visited {
-    color: $mt2_color-neutral-xd;
+    color: $mt3_color-neutral-xd;
     text-decoration: none;
   }
 
@@ -28,6 +28,6 @@
   }
 }
 
-.mt2_relatedcontent-link {
-  @extend %mt2_relatedcontent-link;
+.mt3_relatedcontent-link {
+  @extend %mt3_relatedcontent-link;
 }

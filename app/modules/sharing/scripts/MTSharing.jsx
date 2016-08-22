@@ -9,9 +9,9 @@ import classNames from 'classnames';
 class MTSharing extends Component {
   render() {
     const containerClasses = classNames({
-      'mt2_sharing-container': true,
-      'mt2_bordercolor--neutral--xl': true,
-      'mt2_sharing-container--vertical': this.props.display === 'vertical'
+      'mt3_sharing-container': true,
+      'mt3_bordercolor--neutral--xl': true,
+      'mt3_sharing-container--vertical': this.props.display === 'vertical'
     });
     const socialButtons = this.props.buttons.map(option => {
       if(option !== 'email') {

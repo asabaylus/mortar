@@ -1,0 +1,66 @@
+<div class="pagewrapper mt3_row mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+  <div class="mt3_col-lg-3 mt3_col-sm-12 mt3_row mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+    <h3 class="mt3_h3">Video Playlist</h3>
+      <p class="mt3_subh4">Basic Video Playlist component</p>
+  </div>
+
+  <div class="mt3_col-lg-8 mt3_col-sm-12 mt3_col-lg-offset-1 mt3_row-gut-4">
+    <p class="mt3_subh4">The Video Playlist Component basic functionality
+      and support for autoContinue playback. The component receives an endpoint
+    which provides the items to populate it. Also, it uses Lazy load in order to
+    get the information on-demand.</p>
+
+  </div>
+  <div class="mt3_col-lg-10 mt3_col-sm-12 mt3_col-lg-offset-2 mt3_row-gut-4">
+    <div data-pestle-module="VideoPlaylist">
+      <script type="text/json" data-pestle-options>
+      {
+        "id": "os1bq322",
+        "endpoint": "http://www.nationalgeographic.com/versions/20160804-v1/_jcr_content/content/videoplaylist.promo-all.json"
+      }
+      </script>
+    </div>
+  </div>
+  <div class="mt3_col-lg-10 mt3_col-lg-offset-2 mt3_col-sm-12 mt3_mt3_row-gut-4">
+    <p class="mt3_subh4">This is the way to create a Video Playlist with autocontinue playback
+    support. Autocontinue property is by default enabled. </p>
+    <div class="codesnippet-wrapper">
+      <pre class="codesnippet"><code class="language-markup">
+        &#x3C;div data-pestle-module=&#x22;VideoPlaylist&#x22;&#x3E;
+          &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
+          {
+              &#x22;id&#x22;: &#x22;os1bq322&#x22;,
+              &#x22;endpoint&#x22;: &#x22;http://www.nationalgeographic.com/versions/20160804-v1/_jcr_content/content/videoplaylist.promo-all.json&#x22;
+          }
+          &#x3C;/script&#x3E;
+        &#x3C;/div&#x3E;</code></pre>
+    </div>
+  </div>
+  <div class="mt3_col-lg-10 mt3_col-sm-12 mt3_col-lg-offset-2 mt3_row-gut-4">
+    <div data-pestle-module="VideoPlaylist">
+      <script type="text/json" data-pestle-options>
+      {
+        "id": "os1bq328",
+        "endpoint": "http://www.nationalgeographic.com/versions/20160804-v1/_jcr_content/content/videoplaylist.promo-all.json",
+        "autoContinue": false
+      }
+      </script>
+    </div>
+  </div>
+  <div class="mt3_col-lg-10 mt3_col-lg-offset-2 mt3_col-sm-12 mt3_mt3_row-gut-4">
+    <p class="mt3_subh4">This is the way to create a Video Playlist without autocontinue playback
+    support.</p>
+    <div class="codesnippet-wrapper">
+      <pre class="codesnippet"><code class="language-markup">
+        &#x3C;div data-pestle-module=&#x22;VideoPlaylist&#x22;&#x3E;
+          &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
+          {
+              &#x22;id&#x22;: &#x22;os1bq328&#x22;,
+              &#x22;endpoint&#x22;: &#x22;http://www.nationalgeographic.com/versions/20160804-v1/_jcr_content/content/videoplaylist.promo-all.json&#x22;,
+              &#x22;autoContinue&#x22;: false
+          }
+          &#x3C;/script&#x3E;
+        &#x3C;/div&#x3E;</code></pre>
+    </div>
+  </div>
+</div>

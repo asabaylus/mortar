@@ -25,7 +25,7 @@ const PromoText = (props) => {
   };
 
   let attrs = {
-    className: "mt2_color--neutral--l mt3_subh2 mt2_promocard-kicker",
+    className: "mt3_color--neutral--l mt3_subh2 mt3_promocard-kicker",
     href: (props.text.kicker && props.text.kicker) ? generateHref(props.text.kicker.url, props.text.kicker.trackingCodes) : null,
     target: props.text.kicker ? props.text.kicker.target : null
   };

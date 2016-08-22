@@ -1,28 +1,28 @@
-.mt2_numericcounter {
+.mt3_numericcounter {
   * {
     display: inline-block;
     vertical-align: middle;
   }
 }
 
-.mt2_numericcounter-button {
+.mt3_numericcounter-button {
   background-color: transparent;
   border: 0;
 }
 
-.mt2_numericcounter-arrow {
+.mt3_numericcounter-arrow {
 
-  &:not(.mt2_numericcounter-arrow--disabled):hover {
-    color: $mt2_color-neutral;
+  &:not(.mt3_numericcounter-arrow--disabled):hover {
+    color: $mt3_color-neutral;
     cursor: pointer;
   }
 
   &--disabled {
-    color: $mt2_color-neutral-xl;
+    color: $mt3_color-neutral-xl;
   }
 }
 
-.mt2_dotcounter-container {
+.mt3_dotcounter-container {
   left: 50%;
   list-style-type: none;
   margin: 0;
@@ -31,7 +31,7 @@
   transform: translateX(-50%);
 
   &:hover {
-    color: $mt2_color-neutral;
+    color: $mt3_color-neutral;
   }
 
   &--inverse {
@@ -39,22 +39,22 @@
   }
 }
 
-.mt2_dotcounter-item {
-  background-color: $mt2_color-neutral-xl;
+.mt3_dotcounter-item {
+  background-color: $mt3_color-neutral-xl;
   border-radius: 50%;
   display: inline-block;
   height: .5rem;
-  margin: $mt2_unit-quarter;
+  margin: $mt3_unit-quarter;
   width: .5rem;
 
   &--active,
   &:hover {
-    background-color: $mt2_color-neutral-l;
+    background-color: $mt3_color-neutral-l;
     cursor: pointer;
   }
 
   &--inverse {
-    box-shadow: 0 0 $mt2_unit-quarter transparentize($mt2_color-primary-xxxl, .6);
+    box-shadow: 0 0 $mt3_unit-quarter transparentize($mt3_color-primary-xxxl, .6);
     opacity: .3;
 
     &--active,

@@ -1,82 +1,82 @@
-$mt2_columns: 12;
+$mt3_columns: 12;
 
 // Object oriented grid classes in the style of bootstrap
 // Reference: http://getbootstrap.com/css/#grid
 
-%mt2_col-padding {
+%mt3_col-padding {
   float: left;
   position: relative;
   width: 100%;
 }
 
-@for $mt2_i from 1 through $mt2_columns { // loop through grid spans
-  .mt2_col-#{$mt2_i} { // build the class name
-    @extend %mt2_col-padding;
+@for $mt3_i from 1 through $mt3_columns { // loop through grid spans
+  .mt3_col-#{$mt3_i} { // build the class name
+    @extend %mt3_col-padding;
 
-    width: percentage($mt2_i / $mt2_columns);
+    width: percentage($mt3_i / $mt3_columns);
   }
 
-  .mt2_col-offset-#{$mt2_i} {
-    margin-left: percentage($mt2_i / $mt2_columns);
+  .mt3_col-offset-#{$mt3_i} {
+    margin-left: percentage($mt3_i / $mt3_columns);
   }
 
-  .mt2_col-pull-#{$mt2_i} {
-    right: percentage($mt2_i / $mt2_columns);
+  .mt3_col-pull-#{$mt3_i} {
+    right: percentage($mt3_i / $mt3_columns);
   }
 
-  .mt2_col-push-#{$mt2_i} {
-    left: percentage($mt2_i / $mt2_columns);
+  .mt3_col-push-#{$mt3_i} {
+    left: percentage($mt3_i / $mt3_columns);
   }
 }
 
-.mt2_col-offset-0 {
+.mt3_col-offset-0 {
   margin-left: 0;
 }
 
-.mt2_col-pull-0 {
+.mt3_col-pull-0 {
   right: auto;
 }
 
-.mt2_col-push-0 {
+.mt3_col-push-0 {
   left: auto;
 }
 
-@each $mt2_bp, $mt2_width in $mt2_layout-bps { // loop through breakpoints
+@each $mt3_bp, $mt3_width in $mt3_layout-bps { // loop through breakpoints
   // hack to get around inability to extend from within media queries
-  @for $mt2_i from 1 through $mt2_columns {
-    .mt2_col-#{$mt2_bp}-#{$mt2_i} {
-      @extend %mt2_col-padding;
+  @for $mt3_i from 1 through $mt3_columns {
+    .mt3_col-#{$mt3_bp}-#{$mt3_i} {
+      @extend %mt3_col-padding;
     }
   }
 
-  @media #{$mt2_width} {
-    @for $mt2_i from 1 through $mt2_columns {
-      .mt2_col-#{$mt2_bp}-#{$mt2_i} {
-        width: percentage($mt2_i / $mt2_columns);
+  @media #{$mt3_width} {
+    @for $mt3_i from 1 through $mt3_columns {
+      .mt3_col-#{$mt3_bp}-#{$mt3_i} {
+        width: percentage($mt3_i / $mt3_columns);
       }
 
-      .mt2_col-#{$mt2_bp}-offset-#{$mt2_i} {
-        margin-left: percentage($mt2_i / $mt2_columns);
+      .mt3_col-#{$mt3_bp}-offset-#{$mt3_i} {
+        margin-left: percentage($mt3_i / $mt3_columns);
       }
 
-      .mt2_col-#{$mt2_bp}-pull-#{$mt2_i} {
-        right: percentage($mt2_i / $mt2_columns);
+      .mt3_col-#{$mt3_bp}-pull-#{$mt3_i} {
+        right: percentage($mt3_i / $mt3_columns);
       }
 
-      .mt2_col-#{$mt2_bp}-push-#{$mt2_i} {
-        left: percentage($mt2_i / $mt2_columns);
+      .mt3_col-#{$mt3_bp}-push-#{$mt3_i} {
+        left: percentage($mt3_i / $mt3_columns);
       }
     }
 
-    .mt2_col-#{$mt2_bp}-offset-0 {
+    .mt3_col-#{$mt3_bp}-offset-0 {
       margin-left: 0;
     }
 
-    .mt2_col-#{$mt2_bp}-pull-0 {
+    .mt3_col-#{$mt3_bp}-pull-0 {
       right: auto;
     }
 
-    .mt2_col-#{$mt2_bp}-push-0 {
+    .mt3_col-#{$mt3_bp}-push-0 {
       left: auto;
     }
   }

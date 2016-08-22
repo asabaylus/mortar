@@ -1,15 +1,15 @@
-.mt2_modal-button {
+.mt3_modal-button {
   background-color: transparent;
   border: 0;
-  color: $mt2_color-neutral-xxxl;
+  color: $mt3_color-neutral-xxxl;
   cursor: pointer;
   position: absolute;
-  right: $mt2_unit-double;
-  top: $mt2_unit;
+  right: $mt3_unit-double;
+  top: $mt3_unit;
 }
 
-.mt2_modal-container {
-  background-color: transparentize($mt2_color-neutral-xxd, .15);
+.mt3_modal-container {
+  background-color: transparentize($mt3_color-neutral-xxd, .15);
   height: 85vh;
   left: 7.5vw;
   opacity: 0;
@@ -18,7 +18,7 @@
   transition: .2s;
   visibility: hidden;
   width: 85vw;
-  z-index: $mt2_z-top;
+  z-index: $mt3_z-top;
 
   &--active {
     height: 100vh;

@@ -1,4 +1,4 @@
-.mt2_sharing-container {
+.mt3_sharing-container {
   display: inline-flex;
 
   &--vertical {
@@ -6,13 +6,13 @@
   }
 }
 
-.mt2_sharing-btn {
+.mt3_sharing-btn {
   background-color: transparent;
   border: 0;
   cursor: pointer;
   padding: .75rem;
 
   *:hover {
-    color: $mt2_color-neutral-l;
+    color: $mt3_color-neutral-l;
   }
 }

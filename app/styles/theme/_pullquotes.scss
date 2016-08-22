@@ -1,12 +1,12 @@
-%mt2_pullquote {
+%mt3_pullquote {
   p {
     margin-top: 0;
 
     &:first-of-type::before {
       content: '\201C';
 
-      @media #{$mt2_mq-lg} {
-        margin-left: -$mt2_fs-sm;
+      @media #{$mt3_mq-lg} {
+        margin-left: -$mt3_fs-sm;
       }
     }
 
@@ -15,17 +15,17 @@
     }
   }
 
-  border-bottom: 1px solid $mt2_color-neutral-xl;
-  border-top: 1px solid $mt2_color-neutral-xl;
-  color: $mt2_color-neutral-xd;
-  margin: ($mt2_fs-xxxlrg / 2) 0;
-  padding: ($mt2_fs-xxxlrg / 2) 0;
+  border-bottom: 1px solid $mt3_color-neutral-xl;
+  border-top: 1px solid $mt3_color-neutral-xl;
+  color: $mt3_color-neutral-xd;
+  margin: ($mt3_fs-xxxlrg / 2) 0;
+  padding: ($mt3_fs-xxxlrg / 2) 0;
 
-  @media #{$mt2_mq-lg} {
-    padding: $mt2_fs-xxxlrg / 2;
+  @media #{$mt3_mq-lg} {
+    padding: $mt3_fs-xxxlrg / 2;
   }
 }
 
-.mt2_pullquote {
-  @extend %mt2_pullquote;
+.mt3_pullquote {
+  @extend %mt3_pullquote;
 }

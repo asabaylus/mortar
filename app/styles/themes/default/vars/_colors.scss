@@ -1,16 +1,16 @@
-$mt2_color-primary: hsl(48, 100%, 50%);
-$mt2_color-affirmation: hsl(124, 73%, 43%);
-$mt2_color-danger: hsl(8, 100%, 47%);
-$mt2_color-neutral: hsl(0, 0%, 50%);
+$mt3_color-primary: hsl(48, 100%, 50%);
+$mt3_color-affirmation: hsl(124, 73%, 43%);
+$mt3_color-danger: hsl(8, 100%, 47%);
+$mt3_color-neutral: hsl(0, 0%, 50%);
 
-$mt2_colors: (
-  primary: $mt2_color-primary,
-  affirmation: $mt2_color-affirmation,
-  danger: $mt2_color-danger,
-  neutral: $mt2_color-neutral
+$mt3_colors: (
+  primary: $mt3_color-primary,
+  affirmation: $mt3_color-affirmation,
+  danger: $mt3_color-danger,
+  neutral: $mt3_color-neutral
 );
 
-$mt2_social-colors: (
+$mt3_social-colors: (
   google-plus: #dc4e41,
   facebook: #3b5998,
   flickr: #ff0084,

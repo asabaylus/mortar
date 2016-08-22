@@ -1,41 +1,41 @@
-$mt2_arrowheight: .625rem;
+$mt3_arrowheight: .625rem;
 
-.mt2_tooltip-container {
-  margin: $mt2_unit-half;
+.mt3_tooltip-container {
+  max-width: $mt3_unit-half;
   pointer-events: none;
   position: relative;
   transition: 400ms;
 }
 
-.mt2_tooltip-btn {
+.mt3_tooltip-btn {
   cursor: pointer;
   display: block;
   padding: .0625rem .375rem 0;
   pointer-events: auto;
 
   &:hover {
-    color: $mt2_color-neutral-l;
+    color: $mt3_color-neutral-l;
   }
 }
 
-.mt2_tooltip {
+.mt3_tooltip {
   max-width: 18.75rem;
-  padding: $mt2_unit;
+  padding: $mt3_unit;
   pointer-events: auto;
   position: absolute;
   text-align: center;
-  z-index: $mt2_z-top;
+  z-index: $mt3_z-top;
 
 
   &--top {
     bottom: 100%;
-    margin-bottom: $mt2_unit;
-    margin-left: $mt2_unit-half;
+    margin-bottom: $mt3_unit;
+    margin-left: $mt3_unit-half;
     transform: translateX(-50%);
 
     &::after {
-      border: $mt2_arrowheight solid transparent;
-      border-top: $mt2_arrowheight solid $mt2_color-neutral-xxl;
+      border: $mt3_arrowheight solid transparent;
+      border-top: $mt3_arrowheight solid $mt3_color-neutral-xxl;
       content: '';
       display: block;
       left: 50%;
@@ -46,13 +46,13 @@ $mt2_arrowheight: .625rem;
   }
 
   &--right {
-    margin-left: $mt2_fs-med-lrg;
+    margin-left: $mt3_fs-med-lrg;
     top: 50%;
     transform: translateY(-50%);
 
     &::before {
-      border: $mt2_arrowheight solid transparent;
-      border-right: $mt2_arrowheight solid $mt2_color-neutral-xxl;
+      border: $mt3_arrowheight solid transparent;
+      border-right: $mt3_arrowheight solid $mt3_color-neutral-xxl;
       content: '';
       display: block;
       position: absolute;
@@ -63,14 +63,14 @@ $mt2_arrowheight: .625rem;
   }
 
   &--bottom {
-    margin-left: $mt2_unit-half;
-    margin-top: $mt2_unit;
+    margin-left: $mt3_unit-half;
+    margin-top: $mt3_unit;
     top: 100%;
     transform: translateX(-50%);
 
     &::after {
-      border: $mt2_arrowheight solid transparent;
-      border-bottom: $mt2_arrowheight solid $mt2_color-neutral-xxl;
+      border: $mt3_arrowheight solid transparent;
+      border-bottom: $mt3_arrowheight solid $mt3_color-neutral-xxl;
       bottom: 100%;
       content: '';
       position: absolute;
@@ -84,8 +84,8 @@ $mt2_arrowheight: .625rem;
     transform: translateY(-50%);
 
     &::before {
-      border: $mt2_arrowheight solid transparent;
-      border-left: $mt2_arrowheight solid $mt2_color-neutral-xxl;
+      border: $mt3_arrowheight solid transparent;
+      border-left: $mt3_arrowheight solid $mt3_color-neutral-xxl;
       content: '';
       left: 100%;
       position: absolute;

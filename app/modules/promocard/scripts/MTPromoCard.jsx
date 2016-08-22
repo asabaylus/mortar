@@ -40,7 +40,7 @@ const MTPromoCard = (props) => {
   };
 
   let attrs = {
-    className: "mt2_promocard-container",
+    className: "mt3_promocard-container",
     onClick: promoClicked
   };
 
