@@ -102,7 +102,7 @@ $mt3_gradient-color: rgba(255, 255, 255, 0);
     padding: 16px;
 
     a {
-      @extend %mt3_link;
+      @extend %mt3_textlink;
       align-items: center;
       display: flex;
 
