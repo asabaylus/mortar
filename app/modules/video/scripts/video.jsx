@@ -5,9 +5,14 @@ import LazyLoad from 'react-lazy-load';
 import _defaultsDeep from 'lodash/defaultsDeep';
 
 // add the NatGeo modules-video to the global window
-window.ngsPlayer = require('modules-video');
+window.ngsPlayer = require('@natgeo/modules-video');
 
 class Video extends Component {
+
+  constructor(props) {
+    super(props);
+    this.videoContainer = `<div id="${props.model.instance}" class="mt2_video-player" data-guid="${props.model.guid}"></div>`;
+  }
 
   /**
   * returns the options objects overriding any existing defaults
@@ -58,16 +63,14 @@ class Video extends Component {
       return (
         <figure itemType="http://schema.org/VideoObject" className={`mt2_video mt2_videopromo-container mt2_intratio--broadcast mt2_bgcolor--neutral--xxl ${className}` }>
           <LazyLoad offsetVertical={200} onContentVisible={this.handleOnLoad.bind(this)}><span>&nbsp;</span></LazyLoad>
-          <div className="mt2_video-wrapper">
-            <div id={instance} className="mt2_video-player" data-guid={ guid }></div>
+          <div className="mt2_video-wrapper" dangerouslySetInnerHTML={{__html: this.videoContainer}}>
           </div>
         </figure>
       );
     } else {
       return (
         <figure itemType="http://schema.org/VideoObject" className={`mt2_video mt2_videopromo-container mt2_intratio--broadcast mt2_bgcolor--neutral--xxl ${className}` }>
-          <div className="mt2_video-wrapper">
-            <div id={instance} className="mt2_video-player" data-guid={ guid }></div>
+          <div className="mt2_video-wrapper" dangerouslySetInnerHTML={{__html: this.videoContainer}}>
           </div>
         </figure>
       );
