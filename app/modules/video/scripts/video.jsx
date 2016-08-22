@@ -11,7 +11,7 @@ class Video extends Component {
 
   constructor(props) {
     super(props);
-    this.videoContainer = `<div id="${props.model.instance}" class="mt2_video-player" data-guid="${props.model.guid}"></div>`;
+    this.videoContainer = `<div id="${props.model.instance}" class="mt3_video-player" data-guid="${props.model.guid}"></div>`;
   }
 
   /**
@@ -61,16 +61,16 @@ class Video extends Component {
 
     if (lazyLoad === true) {
       return (
-        <figure itemType="http://schema.org/VideoObject" className={`mt2_video mt2_videopromo-container mt2_intratio--broadcast mt2_bgcolor--neutral--xxl ${className}` }>
+        <figure itemType="http://schema.org/VideoObject" className={`mt3_video mt3_videopromo-container mt3_intratio--broadcast mt3_bgcolor--neutral--xxl ${className}` }>
           <LazyLoad offsetVertical={200} onContentVisible={this.handleOnLoad.bind(this)}><span>&nbsp;</span></LazyLoad>
-          <div className="mt2_video-wrapper" dangerouslySetInnerHTML={{__html: this.videoContainer}}>
+          <div className="mt3_video-wrapper" dangerouslySetInnerHTML={{__html: this.videoContainer}}>
           </div>
         </figure>
       );
     } else {
       return (
-        <figure itemType="http://schema.org/VideoObject" className={`mt2_video mt2_videopromo-container mt2_intratio--broadcast mt2_bgcolor--neutral--xxl ${className}` }>
-          <div className="mt2_video-wrapper" dangerouslySetInnerHTML={{__html: this.videoContainer}}>
+        <figure itemType="http://schema.org/VideoObject" className={`mt3_video mt3_videopromo-container mt3_intratio--broadcast mt3_bgcolor--neutral--xxl ${className}` }>
+          <div className="mt3_video-wrapper" dangerouslySetInnerHTML={{__html: this.videoContainer}}>
           </div>
         </figure>
       );

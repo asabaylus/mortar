@@ -178,7 +178,7 @@ class VideoPlaylist extends Component {
   }
 
   showHiddenThumb(nextState) {
-    const currThumbs = this.refs.thumbnailContainer.querySelectorAll('.mt2_video-playlist-container--thumbnail');
+    const currThumbs = this.refs.thumbnailContainer.querySelectorAll('.mt3_video-playlist-container--thumbnail');
     let currThumb = currThumbs[nextState.currentVideoIndex];
     let currThumbParent = currThumb.parentNode;
     let thumbOffset = 0;
@@ -204,22 +204,22 @@ class VideoPlaylist extends Component {
 
     const thumbnails = this.props.dataModel.map((item, index) => {
       const thumbClass = classNames({
-        'mt2_video-playlist-container--thumbnail': true,
-        'mt2_video-playlist-container--active-thumbnail': this.state.currentVideoIndex === index,
-        'mt2_hide-play': !this.props.autoContinue
+        'mt3_video-playlist-container--thumbnail': true,
+        'mt3_video-playlist-container--active-thumbnail': this.state.currentVideoIndex === index,
+        'mt3_hide-play': !this.props.autoContinue
       });
       return <VideoThumbnail key={index} wrapperClass={thumbClass} item={item} onClick={this.handleClick.bind(this, index)}/>
     });
     return(
-      <div ref="mainVideoContainer" className="mt2_multi-layout-promos multi-layout-promos--box-ads mt2_video-playlist-container">
-        <div className="mt2_col-12 mt2_col-lg-8 mt2_multi-layout-promos__promo-content">
-          <div className="mt2_multi-layout-promos__promo--text__bg"></div>
+      <div ref="mainVideoContainer" className="mt3_multi-layout-promos multi-layout-promos--box-ads mt3_video-playlist-container">
+        <div className="mt3_col-12 mt3_col-lg-8 mt3_multi-layout-promos__promo-content">
+          <div className="mt3_multi-layout-promos__promo--text__bg"></div>
           <EmbeddedVideo model={videoModel} lazyLoad={true}/>
           <VideoCaption title={firstVideo.title} abstract={firstVideo.abstract} />
         </div>
-        <div className="mt2_col-12 mt2_col-lg-4">
-          <div ref="thumbnailContainer" className='mt2_video-playlist-container--thumbnails'>
-            <div className="mt2_video-playlist-container--thumbnails__scroll">
+        <div className="mt3_col-12 mt3_col-lg-4">
+          <div ref="thumbnailContainer" className='mt3_video-playlist-container--thumbnails'>
+            <div className="mt3_video-playlist-container--thumbnails__scroll">
               {thumbnails}
             </div>
           </div>

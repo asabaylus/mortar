@@ -29,8 +29,8 @@ $mt3_arrowheight: .625rem;
 
   &--top {
     bottom: 100%;
-    margin-bottom: $mt2_unit;
-    margin-left: $mt2_unit-half;
+    margin-bottom: $mt3_unit;
+    margin-left: $mt3_unit-half;
     transform: translateX(-50%);
 
     &::after {
@@ -46,7 +46,7 @@ $mt3_arrowheight: .625rem;
   }
 
   &--right {
-    margin-left: $mt2_fs-med-lrg;
+    margin-left: $mt3_fs-med-lrg;
     top: 50%;
     transform: translateY(-50%);
 
@@ -63,8 +63,8 @@ $mt3_arrowheight: .625rem;
   }
 
   &--bottom {
-    margin-left: $mt2_unit-half;
-    margin-top: $mt2_unit;
+    margin-left: $mt3_unit-half;
+    margin-top: $mt3_unit;
     top: 100%;
     transform: translateX(-50%);
 

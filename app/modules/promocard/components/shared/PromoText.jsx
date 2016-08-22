@@ -24,7 +24,7 @@ const PromoText = (props) => {
   };
 
   let attrs = {
-    className: "mt2_color--neutral--l mt_subh2 mt2_promocard-kicker",
+    className: "mt3_color--neutral--l mt_subh2 mt3_promocard-kicker",
     href: generateHref(props.text.kicker.url, props.text.kicker.trackingCodes),
     target: props.text.kicker.target
   };
@@ -32,10 +32,10 @@ const PromoText = (props) => {
   return(
     <div>
       {props.text.kicker && !props.config.sponsored ? <div><a {...attrs}>{props.text.kicker.label}</a></div> : props.config.sponsored ? <div><a {...attrs}>{props.text.sponsorContentLabel}</a></div> : null}
-      {(props.type && props.type === 'video') ? <div className="mt2_color--neutral--l mt_subh2">{props.text.duration}</div> : null}
-      {props.text.title ? <div className="mt2_color--neutral--xxd mt2_h4">{props.text.title}</div> : null}
-      {props.text.dek ? <div className="mt2_color--neutral--xxd mt2_subh4">{props.text.dek}</div> : null}
-      {props.text.byline ? <div className="mt2_color--neutral--xxd mt2_h5">{props.text.byline}</div> : null}
+      {(props.type && props.type === 'video') ? <div className="mt3_color--neutral--l mt_subh2">{props.text.duration}</div> : null}
+      {props.text.title ? <div className="mt3_color--neutral--xxd mt3_h4">{props.text.title}</div> : null}
+      {props.text.dek ? <div className="mt3_color--neutral--xxd mt3_subh4">{props.text.dek}</div> : null}
+      {props.text.byline ? <div className="mt3_color--neutral--xxd mt3_h5">{props.text.byline}</div> : null}
     </div>
   );
 };

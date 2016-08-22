@@ -19,7 +19,7 @@ class VideoThumbnail extends Component {
 
     return (
       <div className={this.props.wrapperClass}>
-        <a href={this.props.item.path} className="mt2_none" title={this.props.item.title} data-guid={this.props.item.guid} onClick={this.onClick.bind(this)}>
+        <a href={this.props.item.path} className="mt3_none" title={this.props.item.title} data-guid={this.props.item.guid} onClick={this.onClick.bind(this)}>
           <Image {...imageModel} />
           <Truncate lines={3} ellipsis={(<span>...</span>)}>
             <div ref="videoTitle"  dangerouslySetInnerHTML={{__html: this.props.item.title}} />
