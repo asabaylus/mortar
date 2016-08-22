@@ -12,6 +12,8 @@ const MTPromoCard = (props) => {
   };
 
   const promoClicked = () => {
+    const href = generateHref(props.link.url, props.link.trackingCodes);
+    window.open(href, props.link.target);
     props.onClick();
     Pestle.PubSub.publish(events.promoClicked, promoData);
   };
@@ -20,7 +22,7 @@ const MTPromoCard = (props) => {
   const generateHref = (url, trackingCodes) => {
     let href = url;
 
-    if(trackingCodes) {
+    if(trackingCodes && typeof trackingCodes === 'object') {
       let terms = "";
       const termsArr = props.link.trackingCodes;
       const concatTerms = (element, index, array) => {
@@ -29,29 +31,29 @@ const MTPromoCard = (props) => {
       };
       termsArr.forEach(concatTerms);
       href = href + "?" + terms;
-    }
 
-    return href;
+      return href;
+    }else{
+      return url + trackingCodes;
+    }
   };
 
   let attrs = {
     className: "mt2_promocard-container",
-    onClick: promoClicked,
-    href: generateHref(props.link.url, props.link.trackingCodes),
-    target: props.link.target
+    onClick: promoClicked
   };
 
   switch(props.type){
     case 'article':
-      return <a {...attrs}>
+      return <div {...attrs}>
         <Article {...props} />
-      </a>;
+      </div>;
       break;
     // additional cases for the remaining types may be included when they are created
     default:
-      return <a {...attrs}>
+      return <div {...attrs}>
         <Article {...props} />
-      </a>;
+      </div>;
       break;
   }
 };
@@ -63,15 +65,29 @@ MTPromoCard.PropTypes = {
   link: PropTypes.shape({
     url: PropTypes.string.isRequired,
     target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
-    trackingCodes: PropTypes.array
+    trackingCodes: PropTypes.array || PropTypes.string
   }),
+  leadMedia: PropTypes.arrayOf(PropTypes.shape({
+    url: PropTypes.string,
+    aspectRatio: PropTypes.number,
+    altText: PropTypes.string,
+    srcset: PropTypes.array
+  })),
   text: PropTypes.shape({
     title: PropTypes.string,
     dek: PropTypes.string,
-    kicker: PropTypes.string,
+    kicker: PropTypes.shape({
+      label: PropTypes.string,
+      url: PropTypes.string,
+      target: PropTypes.string,
+      seoTitle: PropTypes.string,
+      trackingCodes: PropTypes.array || PropTypes.string
+    }),
+    photoCount: PropTypes.number,
     byline: PropTypes.string,
     duration: PropTypes.string,
-    publishDate: PropTypes.string
+    publishDate: PropTypes.string,
+    sponsorContentLabel: PropTypes.string,
   }),
   cta: PropTypes.shape({
     url: PropTypes.string,
@@ -80,7 +96,6 @@ MTPromoCard.PropTypes = {
     seoTitle: PropTypes.string
   }),
   brandingBadgeLabel: PropTypes.string,
-  sponsorContentLabel: PropTypes.string,
   modal: PropTypes.bool,
   onClick: PropTypes.func
 };

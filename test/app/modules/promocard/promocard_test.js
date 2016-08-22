@@ -57,8 +57,6 @@ describe('MTPromoCard', () => {
         "leadMedia": {
           "url": "http://placehold.it/800x600",
           "aspectRatio": 0.6667,
-          "height": "500",
-          "width": 350,
           "altText": "Picture of a caiman swimming underwater in Pantanal, Brazil",
           "srcset": ["http://placehold.it/400x300 400w", "http://placehold.it/800x600 800w", "http://placehold.it/1600x1200 1600w"],
           "containerCSSClass": "",
@@ -67,10 +65,7 @@ describe('MTPromoCard', () => {
         "text": {
           "title": "This is the title of the card",
           "dek": "This is a short dek for the card.",
-          "kicker": "Kicker",
-          "byline": "This is a great byline",
-          "duration": "",
-          "publishDate": "Thu Aug 04 13:30:39 EDT 2016"
+          "kicker": "Kicker"
         },
         "modal": false,
         "brandingBadgeLabel": "This is a cool branding badge label",
@@ -95,20 +90,11 @@ describe('MTPromoCard', () => {
     });
 
     it('Should have an a tag as a container', () => {
-      expect(wrapper.first().type()).to.equal("a");
+      expect(wrapper.first().type()).to.equal("div");
     });
 
     it('Container should have class', () => {
       expect(wrapper.first().props().className).to.equal("mt2_promocard-container");
-    });
-
-    it('Container should link to url with tracking codes', () => {
-      expect(wrapper.first().props().href).to.equal("http://ngm.nationalgeographic.com/2007/05/zambia-wildlife/eckstrom-text?utm_medium=website+utm_source=site");
-      expect(wrapper.first().props().target).to.equal("_blank");
-    });
-
-    it('Container should have target prop', () => {
-      expect(wrapper.first().props().target).to.equal("_blank");
     });
 
     it('Should have an Article component', () => {
@@ -127,7 +113,6 @@ describe('MTPromoCard', () => {
       expect(wrapper.find('Article').props().text.title).to.equal("This is the title of the card");
       expect(wrapper.find('Article').props().text.dek).to.equal("This is a short dek for the card.");
       expect(wrapper.find('Article').props().text.kicker).to.equal("Kicker");
-      expect(wrapper.find('Article').props().text.byline).to.equal("This is a great byline");
     });
 
   });

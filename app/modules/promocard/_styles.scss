@@ -13,6 +13,10 @@ $mt2_button-height: 8em;
     position: relative;
   }
 
+  .mt2_promocard-kicker{
+    z-index: 999;
+  }
+
   //most of the styles below are just for displaying functionality for this ticket, will most likely be changed/overridden for styling ticket
   .mt2_promocard-image {
     overflow: hidden;

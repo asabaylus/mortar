@@ -22,7 +22,6 @@ class PromoCard extends Module {
       text={this.options.text}
       cta={this.options.cta}
       brandingBadgeLabel={this.options.brandingBadgeLabel}
-      sponsorContentLabel={this.options.sponsorContentLabel}
       modal={this.options.modal}
       onClick={this.onClick}
     />, this.el);
