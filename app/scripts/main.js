@@ -5,13 +5,18 @@ import 'babel-polyfill';
 import {Pestle} from '@natgeo/mortar-pestle';
 
 require('../modules/modals/scripts/ModalPestle.js');
+require('../modules/video/scripts/VideoPestle.js');
 require('../modules/photogallery/scripts/MTPhotoGalleryPestle.js');
 require('../modules/sharing/scripts/MTSharingPestle.js');
 require('../modules/slider/scripts/MTSliderPestle.js');
 require('../modules/icon/scripts/IconPestle.js');
 require('../modules/button/scripts/CTAButtonPestle.js');
 require('../modules/promocard/scripts/MTPromoCardPestle.js');
+require('../modules/promocard/configurator/MTPromoCardConfiguratorPestle.js');
 require('../modules/tooltips/scripts/MTTooltipPestle.js');
+require('../modules/videoplaylist/scripts/VideoPlaylistPestle.js');
+
+require('@natgeo/modules-content-package/helloWorld/helloWorldPestle.js');
 
 
 Pestle.init();

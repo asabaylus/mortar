@@ -35,7 +35,9 @@ module.exports = function(config) {
         ['babelify', {presets: ["es2015", "stage-0", "react"]}],
         ['aliasify', { replacements: {
           '^@natgeo/mortar-pestle$': './app/scripts/pestle/src/main.js',
-          '@natgeo\/mortar-pestle\/(.+)' : './app/scripts/pestle/src/$1.js'
+          '@natgeo\/mortar-pestle\/(.+)' : './app/scripts/pestle/src/$1.js',
+          '@natgeo\/modules-content-package\/(.+)' : './app/contentPackages/$1',
+          'natgeo-mortar\/lib\/(.+)' : './app/$1'
         }}]
       ],
       extensions: ['.js', '.jsx'],

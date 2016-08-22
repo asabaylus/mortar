@@ -4,13 +4,20 @@ $mt3_button-height: 8em;
 .mt3_promocard-container {
   overflow: hidden;
 
+  &:-webkit-any-link{
+   text-decoration: none;
+  }
+
   figure { // user-agent overrides
     margin: 0 0 30px;
     position: relative;
   }
 
-  //most of the styles below are just for displaying functionality for this ticket, will most likely be changed/overridden for styling ticket
+  .mt2_promocard-kicker{
+    z-index: 999;
+  }
 
+  //most of the styles below are just for displaying functionality for this ticket, will most likely be changed/overridden for styling ticket
   .mt3_promocard-image {
     overflow: hidden;
     position: relative;
@@ -22,7 +29,7 @@ $mt3_button-height: 8em;
     padding: .5em 1em;
     position: absolute;
     top: 2em;
-    z-index: 1;
+    z-index: 3;
   }
 
   .mt3_promocard-sponsor {
@@ -33,7 +40,7 @@ $mt3_button-height: 8em;
     position: absolute;
     text-align: left;
     width: 100%;
-    z-index: 1;
+    z-index: 4;
   }
 
   .mt3_btn {
@@ -45,6 +52,7 @@ $mt3_button-height: 8em;
     position: absolute;
     top: calc(50% - (#{$mt3_button-height} / 2));
     width: $mt3_button-width;
+    z-index: 2;
 
     .mt3_icon--left {
       margin: 0;

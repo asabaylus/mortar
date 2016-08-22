@@ -1,8 +1,8 @@
 $mt3_arrowheight: .625rem;
 
 .mt3_tooltip-container {
-  max-width: $mt3_unit * 3;
-  padding: .5rem;
+  max-width: $mt3_unit-half;
+  pointer-events: none;
   position: relative;
   transition: 400ms;
 }
@@ -10,8 +10,8 @@ $mt3_arrowheight: .625rem;
 .mt3_tooltip-btn {
   cursor: pointer;
   display: block;
-  margin: 10px auto;
-  padding: 1px 6px 0;
+  padding: .0625rem .375rem 0;
+  pointer-events: auto;
 
   &:hover {
     color: $mt3_color-neutral-l;
@@ -19,14 +19,18 @@ $mt3_arrowheight: .625rem;
 }
 
 .mt3_tooltip {
-  padding: 1rem;
+  max-width: 18.75rem;
+  padding: $mt3_unit;
+  pointer-events: auto;
   position: absolute;
   text-align: center;
   z-index: $mt3_z-top;
 
+
   &--top {
     bottom: 100%;
-    left: 50%;
+    margin-bottom: $mt2_unit;
+    margin-left: $mt2_unit-half;
     transform: translateX(-50%);
 
     &::after {
@@ -42,7 +46,7 @@ $mt3_arrowheight: .625rem;
   }
 
   &--right {
-    left: 100%;
+    margin-left: $mt2_fs-med-lrg;
     top: 50%;
     transform: translateY(-50%);
 
@@ -59,9 +63,10 @@ $mt3_arrowheight: .625rem;
   }
 
   &--bottom {
-    right: 50%;
+    margin-left: $mt2_unit-half;
+    margin-top: $mt2_unit;
     top: 100%;
-    transform: translateX(50%);
+    transform: translateX(-50%);
 
     &::after {
       border: $mt3_arrowheight solid transparent;
@@ -75,7 +80,6 @@ $mt3_arrowheight: .625rem;
   }
 
   &--left {
-    right: 100%;
     top: 50%;
     transform: translateY(-50%);
 

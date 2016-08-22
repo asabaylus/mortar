@@ -18,21 +18,26 @@
   "homepage": "https://github.com/natgeo/mortar#readme",
   "dependencies": {
     "@natgeo/modules-images": "^1.0.2",
+    "@natgeo/modules-video": "1.2.5",
     "@natgeo/mortar-pestle": "2.x",
     "lodash": "4.x",
     "picturefill": "3.x",
     "react": "^0.14.8",
+    "react-deep-force-update": "^2.0.1",
     "react-dom": "^0.14.8",
     "react-lazy-load": "3.x",
     "react-pure-render": "1.x",
-    "react-slick": "krlospelaez/react-slick#fix-npm"
+    "react-slick": "krlospelaez/react-slick#fix-npm",
+    "react-truncate": "1.0.4",
+    "velocity-animate": "^1.2.2"
   },
   "peerDependencies": {
     "@natgeo/mortar-pestle": "2.x",
     "classnames": "2.2.x",
     "jquery": "2.x",
     "react": "^0.14.8 || ^15.1.0",
-    "react-dom": "^0.14.8 || ^15.1.0"
+    "react-dom": "^0.14.8 || ^15.1.0",
+    "velocity-animate": "1.x"
   },
   "devDependencies": {
     "aliasify": "^2.0.0",
@@ -83,9 +88,9 @@
     "mocha": "^2.4.5",
     "phantomjs-prebuilt": "^2.1.7",
     "pubsub-js": "^1.5.3",
-    "react": "^15.1.0",
-    "react-addons-test-utils": "^15.1.0",
-    "react-dom": "^15.1.0",
+    "react": "^0.14.8",
+    "react-addons-test-utils": "^0.14.8",
+    "react-dom": "^0.14.8",
     "react-slick": "krlospelaez/react-slick#fix-npm",
     "require-dir": "^0.3.0",
     "sinon": "^1.17.4",

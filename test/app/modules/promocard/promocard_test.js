@@ -3,8 +3,7 @@
 import Pestle from '@natgeo/mortar-pestle';
 import PromoCard from '../../../../app/modules/promocard/scripts/MTPromoCardPestle.js';
 import MTPromoCardComponent from '../../../../app/modules/promocard/scripts/MTPromoCard.jsx';
-import PromoImage from '../../../../app/modules/promocard/scripts/PromoImage.jsx';
-import PromoText from '../../../../app/modules/promocard/scripts/PromoText.jsx';
+import Article from '../../../../app/modules/promocard/components/types/Article.jsx';
 
 import {shallow, mount} from 'enzyme';
 import React from 'react';
@@ -40,62 +39,53 @@ describe('MTPromoCard', () => {
   describe('React Component', () => {
     let wrapper;
 
-    const options =
-      {
-        "image": {
+    const options = {
+        "id": "hero_promocard_0",
+        "type": "article",
+        "config": {
+          "aspectRatio": "photo",
+          "sponsored": true
+        },
+        "link": {
+          "url": "http://ngm.nationalgeographic.com/2007/05/zambia-wildlife/eckstrom-text",
+          "target": "_blank",
+          "trackingCodes": [
+            "utm_medium=website",
+            "utm_source=site"
+          ]
+        },
+        "leadMedia": {
           "url": "http://placehold.it/800x600",
-          "position": "above",
-          "height": "500",
-          "containerCSSClass": null,
+          "aspectRatio": 0.6667,
+          "altText": "Picture of a caiman swimming underwater in Pantanal, Brazil",
+          "srcset": ["http://placehold.it/400x300 400w", "http://placehold.it/800x600 800w", "http://placehold.it/1600x1200 1600w"],
+          "containerCSSClass": "",
           "inlineStyle": null
         },
         "text": {
-          "containerCSSClass": null,
-          "inlineStyle": null
+          "title": "This is the title of the card",
+          "dek": "This is a short dek for the card.",
+          "kicker": "Kicker"
         },
         "modal": false,
-        "target": "_blank",
-        "leadMedia": {
-          "url": "http://placehold.it/350x150",
-          "aspectRatio": 0.6667,
-          "height": 150,
-          "width": 350,
-          "internal": false
-        },
-        "title": "This is the title of the card",
-        "hideTitle": false,
-        "dek": "This is a short dek for the card.",
-        "hideDek": false,
-        "series": "Series",
-        "hideSeries": false,
-        "byline": "This is a great byline",
-        "hideByline": false,
         "brandingBadgeLabel": "This is a cool branding badge label",
-        "sponsorContent": true,
-        "sponsorContentLabel": "This is the Sponsor Content Label",
-        "video": true
-      };
+        "sponsorContentLabel": "This is the Sponsor Content Label"
+    };
 
     before(() => {
 
       wrapper = shallow(<MTPromoCardComponent
-        image={options.image}
-        text={options.text}
-        modal={options.modal}
-        target={options.target}
+        id={options.id}
+        type={options.type}
+        config={options.config}
+        link={options.link}
         leadMedia={options.leadMedia}
-        title={options.title}
-        hideTitle={options.hideTitle}
-        dek={options.dek}
-        hideDek={options.hideDek}
-        series={options.series}
-        hideSeries={options.hideSeries}
-        byline={options.byline}
-        hideByline={options.hideByline}
+        text={options.text}
+        cta={options.cta}
         brandingBadgeLabel={options.brandingBadgeLabel}
-        sponsorContent={options.sponsorContent}
         sponsorContentLabel={options.sponsorContentLabel}
-        video={options.video}
+        modal={options.modal}
+        onClick={()=>{}}
       />);
     });
 
@@ -107,27 +97,26 @@ describe('MTPromoCard', () => {
       expect(wrapper.find('PromoImage').type()).to.equal(PromoImage);
     });
 
-    it('PromoImage component should have props', () => {
-      expect(wrapper.find('PromoImage').props().brandingBadgeLabel).to.equal("This is a cool branding badge label");
-      expect(wrapper.find('PromoImage').props().image).to.equal(options.image);
-      expect(wrapper.find('PromoImage').props().sponsorContent).to.equal(true);
-      expect(wrapper.find('PromoImage').props().sponsorContentLabel).to.equal("This is the Sponsor Content Label");
-      expect(wrapper.find('PromoImage').props().video).to.equal(true);
+    it('Container should have class', () => {
+      expect(wrapper.first().props().className).to.equal("mt2_promocard-container");
     });
 
-    it('Should have a PromoText component', () => {
-      expect(wrapper.find('PromoText').type()).to.equal(PromoText);
+    it('Should have an Article component', () => {
+      expect(wrapper.find('Article').type()).to.equal(Article);
     });
 
-    it('PromoText component should have props', () => {
-      expect(wrapper.find('PromoText').props().byline).to.equal("This is a great byline");
-      expect(wrapper.find('PromoText').props().dek).to.equal("This is a short dek for the card.");
-      expect(wrapper.find('PromoText').props().hideByline).to.equal(false);
-      expect(wrapper.find('PromoText').props().hideDek).to.equal(false);
-      expect(wrapper.find('PromoText').props().hideSeries).to.equal(false);
-      expect(wrapper.find('PromoText').props().hideTitle).to.equal(false);
-      expect(wrapper.find('PromoText').props().series).to.equal("Series");
-      expect(wrapper.find('PromoText').props().title).to.equal("This is the title of the card");
+    it('Article component should have props', () => {
+      expect(wrapper.find('Article').props().id).to.equal("hero_promocard_0");
+      expect(wrapper.find('Article').props().type).to.equal("article");
+      expect(wrapper.find('Article').props().config.aspectRatio).to.equal("photo");
+      expect(wrapper.find('Article').props().config.sponsored).to.equal(true);
+      expect(wrapper.find('Article').props().leadMedia.url).to.equal("http://placehold.it/800x600");
+      expect(wrapper.find('Article').props().leadMedia.aspectRatio).to.equal(0.6667);
+      expect(wrapper.find('Article').props().leadMedia.altText).to.equal("Picture of a caiman swimming underwater in Pantanal, Brazil");
+      expect(wrapper.find('Article').props().leadMedia.srcset).to.equal(options.leadMedia.srcset);
+      expect(wrapper.find('Article').props().text.title).to.equal("This is the title of the card");
+      expect(wrapper.find('Article').props().text.dek).to.equal("This is a short dek for the card.");
+      expect(wrapper.find('Article').props().text.kicker).to.equal("Kicker");
     });
 
   });
