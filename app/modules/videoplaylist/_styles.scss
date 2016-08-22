@@ -102,11 +102,7 @@ $mt3_gradient-color: rgba(255, 255, 255, 0);
     padding: 16px;
 
     a {
-<<<<<<< 5e74ff9ba248127fbc37a634891780524f794a8f
-      @extend %mt3_link;
-=======
-      @extend %mt2_textlink;
->>>>>>> [MORTAR-237] Replace .mt_link with .mt_textlink
+      @extend %mt3_textlink;
       align-items: center;
       display: flex;
 
