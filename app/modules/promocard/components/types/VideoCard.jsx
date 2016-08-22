@@ -14,7 +14,6 @@ const VideoCard = (props) => {
 };
 
 VideoCard.PropTypes = {
-  id: PropTypes.string,
   type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
   config: PropTypes.object,
   leadMedia: PropTypes.arrayOf(PropTypes.shape({

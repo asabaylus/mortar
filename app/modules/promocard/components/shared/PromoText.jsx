@@ -34,7 +34,7 @@ const PromoText = (props) => {
   return(
     <div>
       {props.text.kicker && !props.config.sponsored ? <div><a {...attrs}>{props.text.kicker.label}</a></div> : props.config.sponsored ? <div><a {...attrs}>{props.text.sponsorContentLabel}</a></div> : null}
-      {(props.type && props.type === 'video') ? <div className="mt2_color--neutral--l mt_subh2">{props.text.duration}</div> : null}
+      {(props.type === 'video' && props.text.duration) ? <div className="mt2_color--neutral--l mt_subh2">{props.text.duration}</div> : null}
       {props.text.title ? <div className="mt2_color--neutral--xxd mt2_h4">{props.text.title}</div> : null}
       {props.text.dek ? <div className="mt2_color--neutral--xxd mt2_subh4">{props.text.dek}</div> : null}
       {props.text.byline ? <div className="mt2_color--neutral--xxd mt2_h5">{props.text.byline}</div> : null}
