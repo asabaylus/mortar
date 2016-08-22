@@ -20,6 +20,7 @@
     "@natgeo/modules-images": "^1.0.2",
     "@natgeo/modules-video": "1.2.5",
     "@natgeo/mortar-pestle": "2.x",
+    "jquery": "2.x",
     "lodash": "4.x",
     "picturefill": "3.x",
     "react": "^0.14.8",
