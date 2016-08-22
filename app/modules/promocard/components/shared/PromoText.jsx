@@ -4,7 +4,6 @@ import React, { PropTypes }  from 'react';
 
 const PromoText = (props) => {
 
-  console.log("This is the value of the kicker conditional--------- " + props.text.kicker && !props.config.sponsored);
   const generateHref = (url, trackingCodes) => {
     let href = url;
 
@@ -26,15 +25,17 @@ const PromoText = (props) => {
   };
 
   let attrs = {
-    className: "mt2_color--neutral--l mt_subh2 mt2_promocard-kicker",
+    className: "mt2_color--neutral--l mt3_subh2 mt2_promocard-kicker",
     href: (props.text.kicker && props.text.kicker) ? generateHref(props.text.kicker.url, props.text.kicker.trackingCodes) : null,
     target: props.text.kicker ? props.text.kicker.target : null
   };
 
   return(
     <div>
-      {props.text.kicker && !props.config.sponsored ? <div><a {...attrs}>{props.text.kicker.label}</a></div> : props.config.sponsored ? <div><a {...attrs}>{props.text.sponsorContentLabel}</a></div> : null}
-      {(props.type === 'video' && props.text.duration) ? <div className="mt2_color--neutral--l mt_subh2">{props.text.duration}</div> : null}
+      <div className="mt2_row">
+        {props.text.kicker && !props.config.sponsored ? <div><a {...attrs}>{props.text.kicker.label}</a></div> : props.config.sponsored ? <div><a {...attrs}>{props.text.sponsorContentLabel}</a></div> : null}
+        {(props.type === 'video' && props.text.duration) ? <div className="mt2_color--neutral--l mt2_subh2 mt2_card-subhead--right">{props.text.duration}</div> : null}
+      </div>
       {props.text.title ? <div className="mt2_color--neutral--xxd mt2_h4">{props.text.title}</div> : null}
       {props.text.dek ? <div className="mt2_color--neutral--xxd mt2_subh4">{props.text.dek}</div> : null}
       {props.text.byline ? <div className="mt2_color--neutral--xxd mt2_h5">{props.text.byline}</div> : null}

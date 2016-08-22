@@ -48,7 +48,7 @@ describe('Video Component', () => {
   });
 
   it('Containing div should have class', () => {
-    expect(wrapper.first().props().className).to.equal("mt2_row mt2_col-12");
+    expect(wrapper.first().props().className).to.equal("mt3_row mt3_col-12");
   });
 
   it('Should have a PromoImage component', () => {
