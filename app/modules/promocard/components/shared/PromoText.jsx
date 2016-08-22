@@ -32,13 +32,13 @@ const PromoText = (props) => {
 
   return(
     <div>
-      <div className="mt2_row">
+      <div className="mt3_row">
         {props.text.kicker && !props.config.sponsored ? <div><a {...attrs}>{props.text.kicker.label}</a></div> : props.config.sponsored ? <div><a {...attrs}>{props.text.sponsorContentLabel}</a></div> : null}
-        {(props.type === 'video' && props.text.duration) ? <div className="mt2_color--neutral--l mt2_subh2 mt2_card-subhead--right">{props.text.duration}</div> : null}
+        {(props.type === 'video' && props.text.duration) ? <div className="mt3_color--neutral--l mt3_subh2 mt3_card-subhead--right">{props.text.duration}</div> : null}
       </div>
-      {props.text.title ? <div className="mt2_color--neutral--xxd mt2_h4">{props.text.title}</div> : null}
-      {props.text.dek ? <div className="mt2_color--neutral--xxd mt2_subh4">{props.text.dek}</div> : null}
-      {props.text.byline ? <div className="mt2_color--neutral--xxd mt2_h5">{props.text.byline}</div> : null}
+      {props.text.title ? <div className="mt3_color--neutral--xxd mt3_h4">{props.text.title}</div> : null}
+      {props.text.dek ? <div className="mt3_color--neutral--xxd mt3_subh4">{props.text.dek}</div> : null}
+      {props.text.byline ? <div className="mt3_color--neutral--xxd mt3_h5">{props.text.byline}</div> : null}
     </div>
   );
 };

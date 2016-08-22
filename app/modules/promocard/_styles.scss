@@ -12,20 +12,20 @@ $mt3_button-height: 8em;
     margin: 0 0 30px;
     position: relative;
   }
-  
+
   //most of the styles below are just for displaying functionality for this ticket, will most likely be changed/overridden for styling ticket
 
-  .mt2_promocard-kicker{
+  .mt3_promocard-kicker{
     float: left;
     z-index: 999;
   }
 
-  .mt2_card-subhead--right{
+  .mt3_card-subhead--right{
     float: left;
     margin-left: 20px;
   }
 
-  .mt2_promocard-image {
+  .mt3_promocard-image {
     overflow: hidden;
     position: relative;
     width: 100%;
