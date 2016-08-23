@@ -13,6 +13,8 @@ require('../modules/icon/scripts/IconPestle.js');
 require('../modules/button/scripts/CTAButtonPestle.js');
 require('../modules/promocard/scripts/MTPromoCardPestle.js');
 require('../modules/promocard/configurator/MTPromoCardConfiguratorPestle.js');
+require('../modules/podpromo/scripts/PodPromoPestle.js');
+require('../modules/podpromo/configurator/MTPodPromoConfiguratorPestle.js');
 require('../modules/tooltips/scripts/MTTooltipPestle.js');
 require('../modules/videoplaylist/scripts/VideoPlaylistPestle.js');
 
