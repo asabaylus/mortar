@@ -7,7 +7,7 @@
   </div>
 
   <div class="mt3_col-lg-8 mt3_col-sm-12 mt3_col-lg-offset-1 mt3_row-gut-4">
-    <p class="mt3_subh4">The Promo Card has many different options to configure it. Here is an example with what could be considered mostly default values.</p>
+    <p class="mt3_subh4">The Promo Card has many different options to configure it. Here is an example of an article card.</p>
     <div data-pestle-module="PromoCard">
       <script type="text/json" data-pestle-options>
         {
@@ -103,50 +103,30 @@
         </code>
       </pre>
     </div>
-    <p class="mt3_subh4">Here is an example with sponsor content which links to a story with lead video, with the title and byline hidden.</p>
+    <p class="mt3_subh4">This is an example of a video card.</p>
     <div data-pestle-module="PromoCard">
       <script type="text/json" data-pestle-options>
         {
           "id": "hero_promocard_1",
-          "type": "article",
+          "type": "video",
           "config": {
             "aspectRatio": "photo",
             "sponsored": true,
             "showPlayButton": true,
             "showByline": true
           },
-          "link": {
-            "url": "http://ngm.nationalgeographic.com/2007/05/zambia-wildlife/eckstrom-text",
-            "target": "_blank",
-            "trackingCodes": [
-              "utm_medium=website",
-              "utm_source=site"
-            ]
-          },
           "leadMedia": [{
-            "url": "http://placehold.it/800x600",
-            "aspectRatio": 0.6667,
-            "altText": "Picture of a caiman swimming underwater in Pantanal, Brazil",
-            "srcset": ["http://placehold.it/400x300 400w", "http://placehold.it/800x600 800w", "http://placehold.it/1600x1200 1600w"],
-            "containerCSSClass": "",
-            "inlineStyle": null
+            "guid": "47746161-1e00-4514-9b4f-168f0b552c66",
+            "videoUrl": "http://news.localhost.nationalgeographic.com:4502/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4",
+            "imageUrl": "http://pmdvod.nationalgeographic.com/NG_Video/996/847/62501_1_1280x720_640x360_177594435674.jpg",
+            "renditionUrl": "/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png"
           }],
           "text": {
-            "title": "",
+            "title": "This is the title of the card",
             "dek": "This is a short dek for the card.",
-            "kicker": {
-              "label": "Weird & Wild",
-              "url": "http://news.nationalgeographic.com/2016/08/shark-attack/",
-              "target": "_self",
-              "trackingCodes": "?utm_medium=site&utm_source=ng.com"
-            },
-            "byline": "",
-            "duration": "",
-            "publishDate": "Thu Aug 04 13:30:39 EDT 2016",
-            "sponsorContentLabel": "This is the Sponsor Content Label"
+            "duration": "25 mins"
           },
-          "modal": false,
-          "brandingBadgeLabel": ""
+          "modal": true
         }
       </script>
     </div>
@@ -158,29 +138,21 @@
           &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
             {
               &#x22;id&#x22;: &#x22;hero_promocard_1&#x22;,
-              &#x22;type&#x22;: &#x22;article&#x22;,
+              &#x22;type&#x22;: &#x22;video&#x22;,
               &#x22;config&#x22;: {
                 &#x22;aspectRatio&#x22;: "photo",
                 &#x22;sponsored&#x22;: true,
                 &#x22;showPlayButton&#x22;: true,
                 &#x22;showByline&#x22;: true
               },
-              &#x22;link&#x22;: {
-                &#x22;url&#x22;: &#x22;http://ngm.nationalgeographic.com/2007/05/zambia-wildlife/eckstrom-text&#x22;,
-                &#x22;target&#x22;: &#x22;_blank&#x22;,
-                &#x22;trackingCodes&#x22;: [
-                  &#x22;utm_medium=website&#x22;,
-                  &#x22;utm_source=site&#x22;
-                ]
-              },
               &#x22;leadMedia&#x22;: [{
-                &#x22;url&#x22;: &#x22;http://placehold.it/800x600&#x22;,
-                &#x22;aspectRatio&#x22;: 0.6667,
-                &#x22;altText&#x22;: &#x22;Picture of a caiman swimming underwater in Pantanal, Brazil&#x22;,
-                &#x22;srcset&#x22;: [&#x22;http://placehold.it/400x300 400w&#x22;, &#x22;http://placehold.it/800x600 800w&#x22;, &#x22;http://placehold.it/1600x1200 1600w&#x22;],
+                &#x22;guid&#x22;: &#x22;47746161-1e00-4514-9b4f-168f0b552c66&#x22;,
+                &#x22;videoUrl&#x22;: &#x22;http://news.localhost.nationalgeographic.com:4502/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4&#x22;,
+                &#x22;imageUrl&#x22;: &#x22;http://pmdvod.nationalgeographic.com/NG_Video/996/847/62501_1_1280x720_640x360_177594435674.jpg&#x22;,
+                &#x22;renditionUrl&#x22;: &#x22;/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png&#x22;
               }],
               &#x22;text&#x22;: {
-                &#x22;title&#x22;: &#x22;&#x22;,
+                &#x22;title&#x22;: &#x22;This is the title of the card&#x22;,
                 &#x22;dek&#x22;: &#x22;This is a short dek for the card.&#x22;,
                 &#x22;kicker&#x22; {
                   &#x22;label&#x22;: &#x22;Weird & Wild&#x22;,
@@ -264,19 +236,9 @@
               &#x22;text&#x22;: {
                 &#x22;title&#x22;: &#x22;This is a Title&#x22;,
                 &#x22;dek&#x22;: &#x22;This is a short dek for the card.&#x22;,
-                &#x22;kicker&#x22; {
-                  &#x22;label&#x22;: &#x22;Weird & Wild&#x22;,
-                  &#x22;url&#x22;: &#x22;http://news.nationalgeographic.com/2016/08/shark-attack/&#x22;,
-                  &#x22;target&#x22;: &#x22;_self&#x22;,
-                  &#x22;trackingCodes&#x22;: &#x22;?utm_medium=site&utm_source=ng.com&#x22;
-                },
-                &#x22;byline&#x22;: &#x22;This is a great byline&#x22;,
-                &#x22;duration&#x22;: &#x22;02:00&#x22;,
-                &#x22;publishDate&#x22;: &#x22;Thu Aug 04 13:30:39 EDT 2016&#x22;,
-                &#x22;sponsorContentLabel&#x22;: &#x22;&#x22;
+                &#x22;duration&#x22;: &#x22;&#x22;
               },
-              &#x22;modal&#x22;: false,
-              &#x22;brandingBadgeLabel&#x22;: &#x22;&#x22;
+              &#x22;modal&#x22;: false
             }
           &#x3C;/script&#x3E;
           &#x3C;/div&#x3E;

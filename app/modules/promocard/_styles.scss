@@ -13,11 +13,18 @@ $mt3_button-height: 8em;
     position: relative;
   }
 
+  //most of the styles below are just for displaying functionality for this ticket, will most likely be changed/overridden for styling ticket
+
   .mt3_promocard-kicker{
+    float: left;
     z-index: 999;
   }
 
-  //most of the styles below are just for displaying functionality for this ticket, will most likely be changed/overridden for styling ticket
+  .mt3_card-subhead--right{
+    float: left;
+    margin-left: 20px;
+  }
+
   .mt3_promocard-image {
     overflow: hidden;
     position: relative;

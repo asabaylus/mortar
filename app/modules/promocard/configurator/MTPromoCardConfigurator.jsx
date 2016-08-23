@@ -57,6 +57,35 @@ class PromoCardConfigurator extends Component {
     };
   }
 
+  onLeadMediaUpdate(stateProperty, type) {
+    return (event) => {
+      const value = (type) ? Number(event.target.value) : event.target.value;
+
+      const newState = {
+        leadMedia: [{
+          [stateProperty]: {$set: value}
+        }]
+      }
+      this.updateMediaState(newState);
+    }
+  }
+
+  onLeadMediaArrayChange(stateProperty) {
+    return (event) => {
+      const value = event.target.value ? event.target.value.split(',') : null;
+      const newState = {
+        leadMedia: [{
+          [stateProperty]: {$set: value}
+        }]
+      }
+      this.updateMediaState(newState);
+    };
+  }
+
+  updateMediaState(newState) {
+    this.setState(update(this.state, { componentProps : newState }));
+  }
+
   onToggle(stateProperty) {
     return (event) => {
       this.updateState(stateProperty, { $set: event.target.checked });
@@ -86,6 +115,7 @@ class PromoCardConfigurator extends Component {
             <TextField label="Duration" onChange={this.onTextChange('text.duration')} value={props.text.duration} />
             : null }
           </Section>
+          {props.type === 'article' ?
           <Section text="Link">
             <TextField label="Url" onChange={this.onTextChange('link.url')} value={props.link.url} />
             <SelectField label="Target" onChange={this.onTextChange('link.target')} value={props.link.target}>
@@ -96,12 +126,23 @@ class PromoCardConfigurator extends Component {
             </SelectField>
             <TextField label="trackingCodes" onChange={this.onArrayChange('link.trackingCodes')} value={props.link.trackingCodes} />
           </Section>
+          : null}
+          {props.type === 'article' ?
           <Section text="Lead Media">
-            <TextField label="Url" onChange={this.onTextChange('leadMedia.url')} value={props.leadMedia[0].url} />
-            <TextField label="Aspect Ratio" onChange={this.onTextChange('leadMedia.aspectRatio')} value={props.leadMedia[0].aspectRatio} />
-            <TextField label="Alt Text" onChange={this.onTextChange('leadMedia.altText')} value={props.leadMedia[0].altText} />
-            <TextField label="SrcSet" onChange={this.onArrayChange('leadMedia.srcset')} value={props.leadMedia[0].srcset} />
+            <TextField label="Url" onChange={this.onLeadMediaUpdate('url')} value={props.leadMedia[0].url} />
+            <TextField label="Aspect Ratio" onChange={this.onLeadMediaUpdate('aspectRatio')} value={props.leadMedia[0].aspectRatio} />
+            <TextField label="Alt Text" onChange={this.onLeadMediaUpdate('altText')} value={props.leadMedia[0].altText} />
+            <TextField label="SrcSet" onChange={this.onLeadMediaArrayChange('srcset')} value={props.leadMedia[0].srcset} />
           </Section>
+          : null}
+          {props.type === 'video' ?
+          <Section text="Lead Media">
+            <TextField label="Guid" onChange={this.onLeadMediaUpdate('guid')} value={props.leadMedia[0].guid} />
+            <TextField label="Video Url" onChange={this.onLeadMediaUpdate('videoUrl')} value={props.leadMedia[0].videoUrl} />
+            <TextField label="Image Url" onChange={this.onLeadMediaUpdate('imageUrl')} value={props.leadMedia[0].imageUrl} />
+            <TextField label="Rendition Url" onChange={this.onLeadMediaUpdate('renditionUrl')} value={props.leadMedia[0].renditionUrl} />
+          </Section>
+          : null}
           <ForceButton />
         </Configurator>
     );
