@@ -1,7 +1,7 @@
 $mt3_arrowheight: .625rem;
 
 .mt3_tooltip-container {
-  max-width: $mt3_unit-half;
+  margin: $mt3_unit-half;
   pointer-events: none;
   position: relative;
   transition: 400ms;
