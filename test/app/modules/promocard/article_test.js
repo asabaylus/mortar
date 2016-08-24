@@ -49,8 +49,8 @@ describe('Article Component', () => {
     expect(wrapper.first().type()).to.equal("div");
   });
 
-  it('Containing div should have class', () => {
-    expect(wrapper.first().props().className).to.equal("mt3_row mt3_col-12");
+  it('Should have a containing div with classes', () => {
+    expect(wrapper.first().props().className).to.include("mt3_row mt3_col-12 mt3_promocard-container");
   });
 
   it('Should have a PromoImage component', () => {

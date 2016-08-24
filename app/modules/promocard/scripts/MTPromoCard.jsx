@@ -2,64 +2,20 @@
 
 import React, { PropTypes }  from 'react';
 import {Pestle} from '@natgeo/mortar-pestle';
-import events from './events';
 import Article from './../components/types/Article.jsx';
 import VideoCard from './../components/types/VideoCard.jsx';
 
 const MTPromoCard = (props) => {
-
-  const promoData = {
-    // data to pass with the event
-  };
-
-  const promoClicked = () => {
-    const href = generateHref(props.link.url, props.link.trackingCodes);
-    window.open(href, props.link.target);
-    props.onClick();
-    Pestle.PubSub.publish(events.promoClicked, promoData);
-  };
-
-  // this will need to be refactored based on the AEM-authoring experience to just concat input values
-  const generateHref = (url, trackingCodes) => {
-    let href = url;
-
-    if(trackingCodes && typeof trackingCodes === 'object') {
-      let terms = "";
-      const termsArr = props.link.trackingCodes;
-      const concatTerms = (element, index, array) => {
-        const lastEl = index < array.length - 1;
-        terms += lastEl ? element + "+" : element;
-      };
-      termsArr.forEach(concatTerms);
-      href = href + "?" + terms;
-
-      return href;
-    }else{
-      return url + trackingCodes;
-    }
-  };
-
-  let attrs = {
-    className: "mt3_promocard-container",
-    onClick: promoClicked
-  };
-
   switch(props.type){
     case 'article':
-      return <div {...attrs}>
-        <Article {...props} />
-      </div>;
+      return <Article {...props}/>;
       break;
     case 'video':
-      return <div {...attrs}>
-        <VideoCard {...props} />
-      </div>;
+      return <VideoCard {...props} />;
       break;
     // additional cases for the remaining types may be included when they are created
     default:
-      return <div {...attrs}>
-        <Article {...props} />
-      </div>;
+      return <Article {...props}/>;
       break;
   }
 };

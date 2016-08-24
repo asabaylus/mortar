@@ -3,6 +3,7 @@
 import React, { PropTypes }  from 'react';
 import Button from '../../../button/scripts/CTAButton.jsx';
 import Image from '@natgeo/modules-images';
+import events from '../../scripts/events';
 
 const PromoImage = (props) => {
   const icon = {
@@ -31,6 +32,11 @@ const PromoImage = (props) => {
 PromoImage.PropTypes = {
   type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
   config: PropTypes.object,
+  link: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
+    trackingCodes: PropTypes.array || PropTypes.string
+  }),
   leadMedia: PropTypes.shape({
     url: PropTypes.string,
     aspectRatio: PropTypes.number,

@@ -6,7 +6,7 @@ import PromoText  from '../shared/PromoText.jsx';
 
 const VideoCard = (props) => {
   return(
-    <div className="mt3_row mt3_col-12">
+    <div className="mt3_row mt3_col-12 mt3_promocard-container">
       <PromoImage type={props.type} config={props.config} leadMedia={props.leadMedia[0]} brandingBadgeLabel={props.brandingBadgeLabel} />
       <PromoText {...props} />
     </div>

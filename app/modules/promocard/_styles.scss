@@ -3,6 +3,16 @@ $mt3_button-height: 8em;
 
 .mt3_promocard-container {
   overflow: hidden;
+  position: relative;
+
+  a.mt3_div-link {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: $mt3_z-middle + 5;
+  }
 
   &:-webkit-any-link{
    text-decoration: none;
@@ -17,7 +27,8 @@ $mt3_button-height: 8em;
 
   .mt3_promocard-kicker{
     float: left;
-    z-index: 999;
+    position: relative;
+    z-index: $mt3_z-middle + 10;
   }
 
   .mt3_card-subhead--right{

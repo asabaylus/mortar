@@ -1,50 +1,39 @@
 'use strict';
 
 import React, { PropTypes }  from 'react';
+import events from '../../scripts/events';
+import { generateHref } from '../../scripts/generateHref.js';
 
 const PromoText = (props) => {
 
-  const generateHref = (url, trackingCodes) => {
-    let href = url;
-
-    if(trackingCodes && typeof trackingCodes === Array.isArray) {
-      let terms = "";
-      const termsArr = props.text.kicker.trackingCodes;
-      const concatTerms = (element, index, array) => {
-        const lastEl = index < array.length - 1;
-        terms += lastEl ? element + "+" : element;
-      };
-      termsArr.forEach(concatTerms);
-      href = href + "?" + terms;
-
-      return href;
-    }else{
-      return url + trackingCodes;
-    }
-
-  };
-
   let attrs = {
     className: "mt3_color--neutral--l mt3_subh2 mt3_promocard-kicker",
-    href: (props.text.kicker && props.text.kicker) ? generateHref(props.text.kicker.url, props.text.kicker.trackingCodes) : null,
+    href: props.text.kicker ? generateHref(props.text.kicker.url, props.text.kicker.trackingCodes) : null,
     target: props.text.kicker ? props.text.kicker.target : null
   };
 
   return(
     <div>
       <div className="mt3_row">
-        {props.text.kicker && !props.config.sponsored ? <div><a {...attrs}>{props.text.kicker.label}</a></div> : props.config.sponsored ? <div><a {...attrs}>{props.text.sponsorContentLabel}</a></div> : null}
+        {props.text.kicker && !props.config.sponsored ? <a {...attrs}>{props.text.kicker.label}</a> : props.config.sponsored ? <span className={attrs.className}>{props.text.sponsorContentLabel}</span> : null}
         {(props.type === 'video' && props.text.duration) ? <div className="mt3_color--neutral--l mt3_subh2 mt3_card-subhead--right">{props.text.duration}</div> : null}
       </div>
-      {props.text.title ? <div className="mt3_color--neutral--xxd mt3_h4">{props.text.title}</div> : null}
-      {props.text.dek ? <div className="mt3_color--neutral--xxd mt3_subh4">{props.text.dek}</div> : null}
-      {props.text.byline ? <div className="mt3_color--neutral--xxd mt3_h5">{props.text.byline}</div> : null}
+      <div className="mt3_row">
+        {props.text.title ? <div className="mt3_color--neutral--xxd mt3_h4">{props.text.title}</div> : null}
+        {props.text.dek ? <div className="mt3_color--neutral--xxd mt3_subh4">{props.text.dek}</div> : null}
+        {props.text.byline ? <div className="mt3_color--neutral--xxd mt3_h5">{props.text.byline}</div> : null}
+      </div>
     </div>
   );
 };
 
 PromoText.PropTypes = {
   config: PropTypes.object,
+  link: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
+    trackingCodes: PropTypes.array || PropTypes.string
+  }),
   text: PropTypes.shape({
     title: PropTypes.string,
     dek: PropTypes.string,

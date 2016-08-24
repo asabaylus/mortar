@@ -109,6 +109,8 @@ class PromoCardConfigurator extends Component {
           </Section>
           <Section text="Text">
             <TextField label="Kicker" onChange={this.onTextChange('text.kicker.label')} value={props.text.kicker.label} />
+            <TextField label="Kicker Url" onChange={this.onTextChange('text.kicker.url')} value={props.text.kicker.url} />
+            <TextField label="Kicker Target" onChange={this.onTextChange('text.kicker.target')} value={props.text.kicker.target} />
             <TextField label="Title" onChange={this.onTextChange('text.title')} value={props.text.title} />
             <TextField label="Dek" onChange={this.onTextChange('text.dek')} value={props.text.dek} />
             {props.type === 'video' ?
