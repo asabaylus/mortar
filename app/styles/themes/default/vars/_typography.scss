@@ -4,18 +4,18 @@
 
 @font-face {
   font-family: "Haas";
+  font-style: normal;
+  font-weight: 600;
   src:  url('//fonts.ngeo.com/haas/1-0-0/NHaasGroteskDSW01-75Bd.woff2') format('woff2'),
         url('//fonts.ngeo.com/haas/1-0-0/NHaasGroteskDSW01-75Bd.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
 }
 
 @font-face {
   font-family: "Haas";
+  font-style: normal;
+  font-weight: 400;
   src:  url('//fonts.ngeo.com/haas/1-0-0/NHaasGroteskDSW01-45Lt.woff2') format('woff2'),
         url('//fonts.ngeo.com/haas/1-0-0/NHaasGroteskDSW01-45Lt.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
 }
 
 $mt3_haas-stack: "Haas", "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
