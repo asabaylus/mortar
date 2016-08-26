@@ -150,7 +150,7 @@ describe('Module Manager', () => {
         <div data-pestle-module="Module1"></div>
         <div data-pestle-module="Module2">
           <script type="text/json" data-pestle-options>
-            {"prop value"}
+            {"prop": "value"}
           </script>
         </div>
       `;
@@ -185,7 +185,8 @@ describe('Module Manager', () => {
     it('should save the error when module throw an error (ex: invalid json)', () => {
       var selector = "[data-pestle-module=Module2]";
       var instance = moduleManager.createInstance("Module2", document.querySelector(selector));
-      expect(instance.error).to.not.be.null;
+      expect(instance).to.have.a.property("error");
+
     });
   });
 
