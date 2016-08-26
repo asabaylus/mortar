@@ -1,9 +1,33 @@
-$mt3_baseIndex: 3;
-$mt3_contentLinkIndex: 4;
+$mt3_baseIndex: 5;
+$mt3_contentLinkIndex: 6;
+$mt3_moduleLinkIndex: $mt3_contentLinkIndex;
+$mt3_gradientIndex: 3;
+$mt3_gradient: rgba(0, 0, 0, .5), transparent;
+$mt3_black: #000;
+$mt3_white: #fff;
+
+%mt3_podpromo-fade-base {
+  opacity: 1;
+  transition-delay: .25s;
+  transition-duration: .25s;
+  transition-property: opacity;
+}
 
 .mt3_podpromo {
   font-family: inherit;
+  max-width: 1900px;
   position: relative;
+
+  // If the parent class doesn't indicate it's mobile, fade opacity on hover
+  &.mt3_podpromo--tablet:hover,
+  &.mt3_podpromo--desktop:hover,
+  &.mt3_podpromo--largedesktop:hover {
+    .mt3_podpromo-imagewrapper::after,
+    .mt3_podpromo-imagewrapper::before,
+    .mt3_podpromo-fade {
+      opacity: 0;
+    }
+  }
 
   &-container-link {
     bottom: 0;
@@ -11,33 +35,108 @@ $mt3_contentLinkIndex: 4;
     position: absolute;
     right: 0;
     top: 0;
-    z-index: $mt3_baseIndex;
+    z-index: $mt3_moduleLinkIndex;
+  }
+
+  &-fade {
+    @extend %mt3_podpromo-fade-base;
   }
 
   &-content-container {
-    max-width: 50%;
     position: absolute;
-    /* modules-images is setting z-index of images to 2, this assures our text is overlaying the image */
+    // modules-images is setting z-index of images to 2, this assures our text is overlaying the image
     z-index: $mt3_baseIndex;
 
     &-top {
       top: 40px;
 
-      &.mt3_podpromo-content-container-right {
+      &.mt3_podpromo-ctacontainer {
+        // CTA button is coming with a lot of padding wrapped around it, bringing top value up to get alignment correct
+        top: 20px;
         z-index: $mt3_contentLinkIndex;
+
+
+        a.mt3_btn {
+          color: $mt3_white;
+
+          svg {
+            color: $mt3_color-primary;
+            width: 10px;
+          }
+        }
+      }
+
+      .mt3_podpromo--mobile & {
+        position: static;
       }
     }
 
     &-left {
       left: 40px;
+      max-width: 50%;
+
+      .mt3_podpromo--mobile & {
+        max-width: none;
+      }
     }
 
     &-bottom {
       bottom: 40px;
+
+      &.mt3_podpromo-autoindex {
+        @extend %mt3_podpromo-fade-base;
+        z-index: $mt3_gradientIndex + 1;
+      }
+
+      .mt3_podpromo--mobile & {
+        margin-left: 30px;
+        max-width: none;
+        position: static;
+      }
     }
 
     &-right {
+      max-width: 50%;
       right: 40px;
+
+      .mt3_podpromo--mobile & {
+        max-width: none;
+      }
+
+    }
+  }
+
+  &-imagewrapper {
+    position: relative;
+
+    &::after {
+      @extend %mt3_podpromo-fade-base;
+      background: linear-gradient(to top, $mt3_gradient);
+      bottom: 0;
+      content: '';
+      height: 25%;
+      position: absolute;
+      width: 100%;
+      z-index: $mt3_gradientIndex;
+    }
+
+    &::before {
+      @extend %mt3_podpromo-fade-base;
+      background: linear-gradient(to bottom, $mt3_gradient);
+      content: '';
+      height: 30%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: $mt3_gradientIndex;
+    }
+
+    .mt3_podpromo--mobile & {
+
+      &::before,
+      &::after {
+        display: none;
+      }
     }
   }
 
@@ -47,26 +146,155 @@ $mt3_contentLinkIndex: 4;
   }
 
   &-heading {
-    color: #fff;
+    color: $mt3_white;
+    font-family: $mt3_verlag-stack;
     font-size: 50px;
     font-weight: 400;
-    letter-spacing: 0.05em;
+    letter-spacing: .05em;
     line-height: 1.05;
+    // margin-top brings top of characters to top of container to account for spacing added by line-height declaration
+    margin-top: -8px;
+    padding-left: 36px;
+    position: relative;
     text-transform: uppercase;
-    word-spacing: 0.05em;
+    word-spacing: .05em;
+
+    &-firstletter {
+      display: inline-block;
+      position: relative;
+
+      &::before {
+        border-left: 1px solid $mt3_white;
+        content: '';
+        height: calc(100% + 27px);
+        left: -36px;
+        position: absolute;
+        // top: 32px is the result of the subtracting the 8px of the negative top margin from the 40px top position of the container
+        top: -32px;
+
+        .mt3_podpromo--mobile & {
+          border-color: $mt3_black;
+          // bottom and height values are arbitrary (but should match).
+          // values are set high to account for wrapping headings. Line will fall below the image on mobile if it's too long
+          bottom: -150px;
+          height: calc(100% + 150px);
+          left: -28px;
+          top: auto;
+        }
+      }
+    }
+
+    .mt3_podpromo--mobile & {
+      color: $mt3_black;
+      font-size: 26px;
+      padding-left: 58px;
+    }
+
+    .mt3_podpromo--tablet & {
+      font-size: 40px;
+    }
   }
 
-  &-photocredit {
+  &-photocredit-container {
+    border-left: 1px solid $mt3_white;
+    border-right: 1px solid $mt3_white;
+    color: $mt3_white;
+    padding: 0 30px;
     text-align: left;
+
+
+    // Data model included example with text wrapped in a P tag, which leads me to believe this will be a rich text component (from AEM anyway), so this will strip the margin from the p tags
+    p {
+      margin: inherit;
+    }
+
+    .mt3_caption-credit,
+    .mt3_caption-creditname {
+      line-height: 1;
+    }
+
+    .mt3_podpromo-photocredit ~ .mt3_podpromo-affiliation {
+      margin-top: 6px;
+    }
+
+    .mt3_podpromo--mobile & {
+      border-color: $mt3_black;
+      border-right: 0;
+      color: $mt3_black;
+      margin-top: 16px;
+    }
   }
 
   &-title {
-    color: #fff;
+    color: $mt3_white;
+    font-family: $mt3_haas-stack;
     font-size: 42px;
     font-weight: 600;
-    letter-spacing: 0.015em;
+    letter-spacing: .015em;
     line-height: 1.15;
+    margin-bottom: -7px;
+    position: relative;
+    z-index: $mt3_baseIndex;
+
+    .mt3_podpromo--mobile &,
+    .mt3_podpromo--tablet & {
+      font-size: 26px;
+    }
+
+    .mt3_podpromo--mobile & {
+      color: $mt3_black;
+      margin-top: 6px;
+    }
+
+    .mt3_podpromo--tablet & {
+      margin-bottom: -5px;
+    }
+
+    .mt3_podpromo--desktop & {
+      font-size: 34px;
+    }
   }
 
+  .mt3_kicker {
+    border-left-color: $mt3_white;
+    border-right-color: $mt3_white;
+    color: $mt3_white;
+    display: inline-block;
+    line-height: 1;
+    margin-bottom: 6px;
 
+    a {
+      border-bottom: 0;
+      color: inherit;
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-bottom: inherit;
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &.mt3_podpromo--mobile {
+    .mt3_kicker {
+      border-color: $mt3_black;
+      color: $mt3_black;
+      margin-top: 10px;
+    }
+
+    .mt3_podpromo-ctacontainer {
+
+      a.mt3_btn {
+        color: $mt3_black;
+        margin: 0;
+        padding: 0;
+      }
+
+      .mt3_iconandlabel--horizontal {
+        margin-left: 60px;
+      }
+    }
+  }
 }

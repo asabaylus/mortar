@@ -3,10 +3,42 @@
 import React, { Component } from 'react';
 import Image from '@natgeo/modules-images';
 import CTA from '../../button/scripts/CTAButton.jsx';
-import Kicker from './components/Kicker.jsx';
 import LazyLoad from 'react-lazy-load';
+import ElementQuery from 'react-element-query';
 
 class PodPromoComponent extends Component {
+
+  kickerLink(args) {
+    const {
+      trackingCodes,
+      target: linkTarget,
+      url,
+      label,
+    } = args;
+
+    let attrs;
+
+    if (url) {
+      attrs = {
+        href: url + trackingCodes,
+        target: linkTarget,
+        title: label,
+      };
+    }
+
+  return (
+    url ? <div className='mt3_kicker mt3_podpromo-elevate'><a {...attrs}>{label}</a></div> : <div className="mt3_kicker">{label}</div>
+    );
+};
+
+  /*
+    Tried in vain to accomplish this with css alone, but wasn't able to accomplish the desired layout. The purpuse of this method is to wrap a div around the first letter in the heading. That div is used to style the line that matches the height of the first line in the heading (but not the entire height of the heading if it breaks to two lines).
+  */
+  wrapFirstLetter(heading) {
+    let tmpString = heading.split('');
+    tmpString[0] = `<div class="mt3_podpromo-heading-firstletter">${tmpString[0]}</div>`
+    return tmpString.join('');
+  }
 
   render() {
     const {
@@ -27,42 +59,74 @@ class PodPromoComponent extends Component {
       },
     } = this.props;
 
+    const componentIcon = {
+      name: '#plus',
+      align: 'right',
+      alt: 'Plus Icon'
+    };
+
+    const elementQueries = [
+      {
+        name: 'mt3_podpromo--mobile',
+        width: 1
+      },
+      {
+        name: 'mt3_podpromo--tablet',
+        width: 768
+      },
+      {
+        name: 'mt3_podpromo--desktop',
+        width: 1024
+      },
+      {
+        name: 'mt3_podpromo--largedesktop',
+        width: 1280
+      },
+    ];
+
+
     return (
       <LazyLoad offsetVertical={200}>
+        <ElementQuery sizes={elementQueries}>
         <div className="mt3_podpromo">
-          <div className="mt3_podpromo-content-container mt3_podpromo-content-container-top mt3_podpromo-content-container-left">
-            <div className="mt3_podpromo-heading" dangerouslySetInnerHTML={{__html: componentHeading}} />
+          {
+            (componentLink && componentLink.url) ? <a href={componentLink.url+componentLink.trackingCodes} target={componentLink.target} className="mt3_podpromo-container-link" /> : null
+          }
+          <div className="mt3_podpromo-content-container mt3_podpromo-content-container-top mt3_podpromo-content-container-left mt3_podpromo-fade">
+            <div className="mt3_podpromo-heading" dangerouslySetInnerHTML={{__html: this.wrapFirstLetter(componentHeading)}} />
           </div>
-          <div className="mt3_podpromo-content-container mt3_podpromo-content-container-top mt3_podpromo-content-container-right">
+          <div className="mt3_podpromo-content-container mt3_podpromo-content-container-top mt3_podpromo-content-container-right mt3_podpromo-ctacontainer">
             <CTA
+              icon={componentIcon}
               label={componentCTA.title}
               link={componentCTA}
               style="naked"
               type="link"
             />
           </div>
-          <div className="mt3_podpromo-content-container mt3_podpromo-content-container-bottom mt3_podpromo-content-container-left">
-            <Kicker label={componentKicker.label} url={componentKicker.url} target={componentKicker.target} trackingCodes={componentKicker.trackingCodes} />
+          <div className="mt3_podpromo-imagewrapper">
+            <Image
+              aspectRatio={componentImage[0].aspectRatio}
+              frameAspectRatio={componentConfig.aspectRatio}
+              lazyLoad={false}
+              altText={componentImage.altText}
+              src={componentImage[0].url}
+              srcset={componentImage[0].srcset}
+            />
+          </div>
+          <div className="mt3_podpromo-content-container mt3_podpromo-content-container-bottom mt3_podpromo-content-container-left mt3_podpromo-autoindex mt3_podpromo-fade">
+            { this.kickerLink(componentKicker) }
             <div className="mt3_podpromo-title" dangerouslySetInnerHTML={{__html: componentTitle}} />
           </div>
 
-          <div className="mt3_podpromo-content-container mt3_podpromo-content-container-bottom mt3_podpromo-content-container-right">
-            <div className="mt3_podpromo-photocredit" dangerouslySetInnerHTML={{__html: photoCredit}} />
-            <div className="mt3_podpromo-affiliation" dangerouslySetInnerHTML={{__html: photoAffiliation}} />
+          <div className="mt3_podpromo-content-container mt3_podpromo-content-container-bottom mt3_podpromo-content-container-right mt3_podpromo-fade">
+            <div className="mt3_podpromo-photocredit-container">
+              <div className="mt3_caption-creditname mt3_podpromo-photocredit" dangerouslySetInnerHTML={{__html: photoCredit}} />
+              <div className="mt3_caption-credit mt3_podpromo-affiliation" dangerouslySetInnerHTML={{__html: photoAffiliation}} />
+            </div>
           </div>
-
-          <Image
-            aspectRatio={componentImage[0].aspectRatio}
-            frameAspectRatio={componentConfig.aspectRatio}
-            lazyLoad={false}
-            altText={componentImage.altText}
-            src={componentImage[0].url}
-            srcset={componentImage[0].srcset}
-          />
-          {
-            (componentLink && componentLink.url) ? <a href={componentLink.url+componentLink.trackingCodes} target={componentLink.target} className="mt3_podpromo-container-link" /> : null
-          }
         </div>
+        </ElementQuery>
       </LazyLoad>
     );
   }

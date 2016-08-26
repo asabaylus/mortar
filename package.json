@@ -91,6 +91,7 @@
     "pubsub-js": "^1.5.3",
     "react": "^0.14.8",
     "react-addons-test-utils": "^0.14.8",
+    "react-element-query": "^2.0.2",
     "react-dom": "^0.14.8",
     "react-slick": "krlospelaez/react-slick#fix-npm",
     "require-dir": "^0.3.0",

@@ -174,12 +174,13 @@ describe('POD Promo Component', () => {
       wrapper = shallow(<PodPromoComponent model={reactModel} />);
     });
 
-    it('should include a LazyLoad Component to fire video', () => {
+    it('should include a LazyLoad Component', () => {
       expect(wrapper.html()).to.include('<div class="LazyLoad"></div>');
     });
 
+
     it('should have the correct heading value', () => {
-      expect(wrapper.find('.mt3_podpromo-heading').html()).to.equal('<div class="mt3_podpromo-heading">Photo of the Day</div>');
+      expect(wrapper.find('.mt3_podpromo-heading').html()).to.equal('<div class="mt3_podpromo-heading"><div class="mt3_podpromo-heading-firstletter">P</div>hoto of the Day</div>');
     });
 
     it('should have the correct title value', () => {
@@ -187,7 +188,7 @@ describe('POD Promo Component', () => {
     });
 
     it('should have the correct kicker value', () => {
-      expect(wrapper.childAt(0).html()).to.contain('<div class="mt3_podpromo-kicker mt3_podpromo-elevate"><a href="/content/news/en_US/weird-wild.html?utm_medium=site&amp;utm_source=ng.com" target="_self" title="Kicker Label">Kicker Label</a></div>');
+      expect(wrapper.find('.mt3_kicker').html()).to.equal('<div class="mt3_kicker mt3_podpromo-elevate"><a href="/content/news/en_US/weird-wild.html?utm_medium=site&amp;utm_source=ng.com" target="_self" title="Kicker Label">Kicker Label</a></div>');
     });
 
     it('should have the correct cta value', () => {
@@ -195,11 +196,11 @@ describe('POD Promo Component', () => {
     });    
 
     it('should have the correct photo credit value', () => {
-      expect(wrapper.find('.mt3_podpromo-photocredit').html()).to.equal('<div class="mt3_podpromo-photocredit"><p>Photograph by Pete McBride</p></div>');
+      expect(wrapper.find('.mt3_podpromo-photocredit').html()).to.equal('<div class="mt3_caption-creditname mt3_podpromo-photocredit"><p>Photograph by Pete McBride</p></div>');
     });
 
     it('should have the correct photo affiliation value', () => {
-      expect(wrapper.find('.mt3_podpromo-affiliation').html()).to.equal('<div class="mt3_podpromo-affiliation">National Geographic</div>');
+      expect(wrapper.find('.mt3_podpromo-affiliation').html()).to.equal('<div class="mt3_caption-credit mt3_podpromo-affiliation">National Geographic</div>');
     });
 
   });
@@ -258,7 +259,7 @@ describe('POD Promo Component', () => {
     });
 
     it('should have the correct kicker value', () => {
-      expect(wrapper.childAt(0).html()).to.contain('<div class="mt3_podpromo-kicker">Kicker Label</div>');
+      expect(wrapper.find('.mt3_kicker').html()).to.equal('<div class="mt3_kicker">Kicker Label</div>');
     });
   });
 
