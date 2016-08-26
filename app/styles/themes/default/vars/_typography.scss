@@ -47,6 +47,79 @@ $mt3_unit-double:    $mt3_unit * 2;
 $mt3_unit-triple:    $mt3_unit * 3;
 $mt3_unit-quadruple: $mt3_unit * 4;
 
+
+// New Styles
+
+
+.mt3_page-title--large {
+  font-family: $mt3_verlag-stack;
+  font-weight: 400;
+  letter-spacing: .05em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  word-spacing: .05em;
+
+  @media #{$mt3_mq-md} {
+    font-size: $mt3_fs-xxlrg;
+  }
+
+  @media #{$mt3_mq-lg} {
+    font-size: $mt3_fs-xxxlrg;
+  }
+}
+
+.mt3_page-title--small {
+  font-family: $mt3_haas-stack;
+  font-weight: 600;
+  letter-spacing: .015em;
+
+  @media #{$mt3_mq-md} {
+    font-size: $mt3_fs-med-lrg;
+  }
+
+  @media #{$mt3_mq-lg} {
+    font-size: $mt3_fs-med-xlrg;
+  }
+}
+
+.mt3_page-description {
+  font-family: $mt3_haas-stack;
+  font-weight: 400;
+  letter-spacing: .05em;
+}
+
+.mt3_kicker {
+  border-right: 1px solid $mt3_color-neutral;
+  font-family: $mt3_verlag-stack;
+  font-size: .75rem;
+  font-weight: 400;
+  letter-spacing: .05em;
+  line-height: 1.5;
+  padding: 0 1.25rem;
+  text-transform: uppercase;
+  word-spacing: .05em;
+
+  //If there are multiple kickers in a row,
+  // only the first kicker has a border-left
+  &:nth-child(1) {
+    border-left: 1px solid $mt3_color-neutral;
+  }
+
+  &--link {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+// Old Styles
+
+
 %mt3_h1 {
   font-family: 'Chronicle Display 3r', Georgia, serif;
   font-size: $mt3_fs-med-xlrg;
