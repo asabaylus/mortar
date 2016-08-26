@@ -188,7 +188,7 @@ describe('POD Promo Component', () => {
     });
 
     it('should have the correct kicker value', () => {
-      expect(wrapper.find('.mt3_kicker').html()).to.equal('<div class="mt3_kicker mt3_podpromo-elevate"><a href="/content/news/en_US/weird-wild.html?utm_medium=site&amp;utm_source=ng.com" target="_self" title="Kicker Label">Kicker Label</a></div>');
+      expect(wrapper.find('.mt3_kicker').html()).to.equal('<div class="mt3_kicker mt3_podpromo-elevate"><a class="mt3_kicker--link" href="/content/news/en_US/weird-wild.html?utm_medium=site&amp;utm_source=ng.com" target="_self" title="Kicker Label">Kicker Label</a></div>');
     });
 
     it('should have the correct cta value', () => {
