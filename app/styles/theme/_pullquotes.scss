@@ -1,15 +1,6 @@
-%mt3_pullquote {
+%mt2_pullquote {
   p {
-    font-family: Georgia, serif;
-    // Font-size & line-height values are carried over from the existing .mt2_h3 styles
-    font-size: $mt2_fs-lrg;
-    line-height: 1.185;
     margin-top: 0;
-    text-align: center;
-
-    @media #{$mt2_mq-lg} {
-      font-size: $mt2_fs-xlrg;
-    }
 
     &:first-of-type::before {
       content: '\201C';
@@ -35,34 +26,6 @@
   }
 }
 
-.mt3_pullquote {
-  @extend %mt3_pullquote;
-}
-
-
-.mt3_pullquote {
-  &--footer {
-    font-family: 'HCo Verlag', 'CenturyGothic', AppleGothic, Gill Sans, Gill Sans MT, sans-serif;
-    font-size: $mt2_fs-xsm;
-    letter-spacing: .05rem;
-    line-height: 1.5;
-    text-align: center;
-    text-transform: uppercase;
-    word-spacing: .05rem;
-  }
-
-  &--attributionname {
-    border-left: 1px solid $mt2_color-neutral;
-    border-right: 1px solid $mt2_color-neutral;
-    font-weight: 600;
-    padding: 0 1.25rem;
-  }
-
-  &--attributiontitle {
-    border-left: 1px solid $mt2_color-neutral;
-    border-right: 1px solid $mt2_color-neutral;
-    color: $mt2_color-neutral;
-    font-weight: 400;
-    padding: 0 1.25rem;
-  }
+.mt2_pullquote {
+  @extend %mt2_pullquote;
 }
