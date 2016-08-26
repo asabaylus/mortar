@@ -41,7 +41,7 @@ gulp.task('prodStylesMortar', function() {
   return gulp.src(paths.mortarStylesSrc)
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(cleanCSS())
+    .pipe(cleanCSS({processImport: false}))
     .pipe(gulp.dest(paths.mortarStylesDest))
     .pipe(bs.stream({once: true}));
 });
