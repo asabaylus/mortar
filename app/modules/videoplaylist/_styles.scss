@@ -13,6 +13,7 @@ $mt3_gradient-color: rgba(255, 255, 255, 0);
   .mt3_show-more-link {
     border-bottom: 0;
     color: map-get($mt3_colors, 'neutral--l');
+    cursor: pointer;
     padding-left: 0;
     white-space: nowrap;
 

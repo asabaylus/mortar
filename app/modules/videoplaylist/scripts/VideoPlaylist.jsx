@@ -28,6 +28,12 @@ class VideoPlaylist extends Component {
     this.loadVideo(this.props.dataModel[nextState.currentVideoIndex].directLink, nextState);
   }
 
+  componentDidUpdate() {
+    //This line resolves the problem with the abstract video caption that it need two
+    //clicks to render the proper video's abstract.
+    window.dispatchEvent(new Event('resize'));
+  }
+
   componentDidMount() {
     this.pdkCheck(this.activateEventListeners.bind(this));
   }
@@ -198,10 +204,10 @@ class VideoPlaylist extends Component {
   }
 
   render() {
-    const firstVideo = this.props.dataModel[this.state.currentVideoIndex];
+    const currentVideo = this.props.dataModel[this.state.currentVideoIndex];
     const videoModel = {
       instance: this.playerInstanceName,
-      guid: firstVideo.guid,
+      guid: currentVideo.guid,
       sharing: true,
       overlayPlayButton: true,
       autoPlay: false
@@ -220,7 +226,7 @@ class VideoPlaylist extends Component {
         <div className="mt3_col-12 mt3_col-lg-8 mt3_multi-layout-promos__promo-content">
           <div className="mt3_multi-layout-promos__promo--text__bg"></div>
           <EmbeddedVideo model={videoModel} lazyLoad={true}/>
-          <VideoCaption title={firstVideo.title} abstract={firstVideo.abstract} />
+          <VideoCaption title={currentVideo.title} abstract={currentVideo.abstract} />
         </div>
         <div className="mt3_col-12 mt3_col-lg-4">
           <div ref="thumbnailContainer" className='mt3_video-playlist-container--thumbnails'>
