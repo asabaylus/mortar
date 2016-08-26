@@ -30,16 +30,30 @@ class PromoCardConfigurator extends Module {
           'utm_source=site'
         ]
       },
-      leadMedia: [{
-        url: 'http://placehold.it/800x600',
-        aspectRatio: 0.6667,
-        altText: 'Picture of a caiman swimming underwater in Pantanal, Brazil',
-        srcset: ['http://placehold.it/400x300 400w', 'http://placehold.it/800x600 800w', 'http://placehold.it/1600x1200 1600w'],
-        guid: '47746161-1e00-4514-9b4f-168f0b552c66',
-        videoUrl: 'http://news.localhost.nationalgeographic.com:4502/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4',
-        imageUrl: 'http://pmdvod.nationalgeographic.com/NG_Video/996/847/62501_1_1280x720_640x360_177594435674.jpg',
-        renditionUrl: '/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png'
-      }],
+      leadMedia: [
+        {
+          url: 'http://placehold.it/800x600',
+          aspectRatio: 0.6667,
+          altText: 'Picture of a caiman swimming underwater in Pantanal, Brazil',
+          srcset: ['http://placehold.it/400x300 400w', 'http://placehold.it/800x600 800w', 'http://placehold.it/1600x1200 1600w'],
+          guid: '47746161-1e00-4514-9b4f-168f0b552c66',
+          videoUrl: 'http://news.localhost.nationalgeographic.com:4502/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4',
+          imageUrl: 'http://pmdvod.nationalgeographic.com/NG_Video/996/847/62501_1_1280x720_640x360_177594435674.jpg',
+          renditionUrl: '/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png'
+        },
+        {
+          url: 'http://placehold.it/800x600',
+          aspectRatio: 0.6667,
+          altText: 'Picture of a caiman swimming underwater in Pantanal, Brazil',
+          srcset: ['http://placehold.it/400x300 400w', 'http://placehold.it/800x600 800w', 'http://placehold.it/1600x1200 1600w']
+        }
+      ],
+      cta: {
+        url: 'http://www.nationalgeographic.com/magazine/2016/05/yellowstone-national-parks-wildlife-restoration/',
+        title: 'This is the CTA Title',
+        target: '_blank',
+        seoTitle: 'This is an SEO title'
+      },
       text: {
         title: 'This is the title of the card',
         dek: 'This is a short dek for the card.',

@@ -24,6 +24,28 @@ $mt3_button-height: 8em;
   }
 
   //most of the styles below are just for displaying functionality for this ticket, will most likely be changed/overridden for styling ticket
+  .mt3_promocard-gallery-images{
+    margin-bottom: 2em;
+    position: relative;
+    &--image1{
+      position: absolute;
+      top: 2rem;
+      width: 95%;
+      z-index: $mt3_z-middle + 3;
+    }
+    &--image2{
+      left: 3rem;
+      position: relative;
+      width: 95%;
+    }
+  }
+
+  .mt3_promocard-gallery-cta{
+    left: 5em;
+    position: absolute;
+    top: 0.5em;
+    z-index: $mt3_z-middle + 10;
+  }
 
   .mt3_promocard-kicker{
     float: left;

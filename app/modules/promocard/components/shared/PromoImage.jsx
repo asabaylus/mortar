@@ -21,8 +21,8 @@ const PromoImage = (props) => {
         frameAspectRatio={props.config.aspectRatio}
         lazyLoad={false}
         altText={props.leadMedia.altText}
-        src={props.type === 'article' ? props.leadMedia.url : props.type === 'video' ? props.leadMedia.imageUrl : null}
-        srcset={props.type === 'article' ? props.leadMedia.srcset : null}
+        src={props.type !== 'video' ? props.leadMedia.url : props.leadMedia.imageUrl}
+        srcset={props.leadMedia.srcset}
       />
       {props.config.showPlayButton || props.type === 'video' ? <Button icon={icon} onClick={() => {}} /> : null}
     </figure>
@@ -43,6 +43,12 @@ PromoImage.PropTypes = {
     altText: PropTypes.string,
     srcset: PropTypes.array,
     imageUrl: PropTypes.string
+  }),
+  cta: PropTypes.shape({
+    url: PropTypes.string,
+    title: PropTypes.string,
+    target: PropTypes.string,
+    seoTitle: PropTypes.string
   }),
   brandingBadgeLabel: PropTypes.string
 };

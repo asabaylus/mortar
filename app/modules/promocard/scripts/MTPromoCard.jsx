@@ -4,6 +4,7 @@ import React, { PropTypes }  from 'react';
 import {Pestle} from '@natgeo/mortar-pestle';
 import Article from './../components/types/Article.jsx';
 import VideoCard from './../components/types/VideoCard.jsx';
+import Gallery from './../components/types/Gallery.jsx';
 
 const MTPromoCard = (props) => {
   switch(props.type){
@@ -12,6 +13,9 @@ const MTPromoCard = (props) => {
       break;
     case 'video':
       return <VideoCard {...props} />;
+      break;
+    case 'gallery':
+      return <Gallery {...props} />;
       break;
     // additional cases for the remaining types may be included when they are created
     default:
