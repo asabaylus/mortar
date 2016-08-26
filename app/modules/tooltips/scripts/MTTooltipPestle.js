@@ -8,10 +8,7 @@ import {default as TooltipComponent} from './MTTooltip.jsx';
 class Tooltip extends Module {
   init() {
     ReactDOM.render(
-      <TooltipComponent
-      placement={this.options.placement}
-      tooltipContent={this.options.tooltipContent}
-    />, this.el);
+      <TooltipComponent {...this.options} />, this.el);
   }
 }
 
