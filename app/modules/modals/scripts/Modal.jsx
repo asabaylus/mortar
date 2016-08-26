@@ -31,21 +31,21 @@ class Modal extends Component {
 
   render(){
     const modalClasses = classNames({
-      'mt2_modal-container': true,
-      'mt2_color--neutral--xxxl': true,
-      'mt2_modal-container--active': this.state.open
+      'mt3_modal-container': true,
+      'mt3_color--neutral--xxxl': true,
+      'mt3_modal-container--active': this.state.open
     });
 
     return (
       <div>
-        <button className="mt2_btn mt2_btn--secondary" onClick={this.update}>
+        <button className="mt3_btn mt3_btn--secondary" onClick={this.update}>
           Launch Modal
         </button>
 
         <div className={modalClasses}>
-          <button className="mt2_modal-button" onClick={this.update}>
-            <span className="mt2_visuallyhidden">Close Modal</span>
-            <svg className="mt2_icon--large">
+          <button className="mt3_modal-button" onClick={this.update}>
+            <span className="mt3_visuallyhidden">Close Modal</span>
+            <svg className="mt3_icon--large">
               <use xlinkHref="#close"></use>
             </svg>
           </button>

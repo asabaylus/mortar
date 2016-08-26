@@ -34,10 +34,10 @@ class Counter extends Component {
   render() {
 
     return (
-      <div className="mt2_photogallery-countercontainer">
-          <button className="mt2_h5 mt2_numericcounter-button">{this.state.currentSlide}</button>
-          <span className="mt2_h5">/</span>
-          <button className="mt2_h5 mt2_numericcounter-button">{this.props.slides.length}</button>
+      <div className="mt3_photogallery-countercontainer">
+          <button className="mt3_h5 mt3_numericcounter-button">{this.state.currentSlide}</button>
+          <span className="mt3_h5">/</span>
+          <button className="mt3_h5 mt3_numericcounter-button">{this.props.slides.length}</button>
       </div>
     );
   }

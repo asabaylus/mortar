@@ -1,12 +1,12 @@
-.mt2_input {
-  border: $mt2_border-default;
+.mt3_input {
+  border: $mt3_border-default;
   opacity: .9;
-  padding: $mt2_fs-sm $mt2_unit;
+  padding: $mt3_fs-sm $mt3_unit;
   transition: 400ms;
 
   &:focus,
   &:hover {
-    border: $mt2_border-default-hover;
+    border: $mt3_border-default-hover;
     opacity: 1;
     outline: none;
   }
@@ -20,8 +20,8 @@
     &,
     &:focus,
     &:hover {
-      border: $mt2_border-danger;
-      box-shadow: 0 0 $mt2_unit-half $mt2_color-danger;
+      border: $mt3_border-danger;
+      box-shadow: 0 0 $mt3_unit-half $mt3_color-danger;
       opacity: 1;
     }
 
@@ -31,6 +31,6 @@
   }
 }
 
-.mt2_textarea {
-  min-height: $mt2_unit * 6;
+.mt3_textarea {
+  min-height: $mt3_unit * 6;
 }

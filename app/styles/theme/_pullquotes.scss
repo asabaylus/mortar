@@ -1,21 +1,21 @@
 %mt3_pullquote {
   p {
     font-family: Georgia, serif;
-    // Font-size & line-height values are carried over from the existing .mt2_h3 styles
-    font-size: $mt2_fs-lrg;
+    // Font-size & line-height values are carried over from the existing .mt3_h3 styles
+    font-size: $mt3_fs-lrg;
     line-height: 1.185;
     margin-top: 0;
     text-align: center;
 
-    @media #{$mt2_mq-lg} {
-      font-size: $mt2_fs-xlrg;
+    @media #{$mt3_mq-lg} {
+      font-size: $mt3_fs-xlrg;
     }
 
     &:first-of-type::before {
       content: '\201C';
 
-      @media #{$mt2_mq-lg} {
-        margin-left: -$mt2_fs-sm;
+      @media #{$mt3_mq-lg} {
+        margin-left: -$mt3_fs-sm;
       }
     }
 
@@ -24,26 +24,23 @@
     }
   }
 
-  border-bottom: 1px solid $mt2_color-neutral-xl;
-  border-top: 1px solid $mt2_color-neutral-xl;
-  color: $mt2_color-neutral-xd;
-  margin: ($mt2_fs-xxxlrg / 2) 0;
-  padding: ($mt2_fs-xxxlrg / 2) 0;
+  border-bottom: 1px solid $mt3_color-neutral-xl;
+  border-top: 1px solid $mt3_color-neutral-xl;
+  color: $mt3_color-neutral-xd;
+  margin: ($mt3_fs-xxxlrg / 2) 0;
+  padding: ($mt3_fs-xxxlrg / 2) 0;
 
-  @media #{$mt2_mq-lg} {
-    padding: $mt2_fs-xxxlrg / 2;
+  @media #{$mt3_mq-lg} {
+    padding: $mt3_fs-xxxlrg / 2;
   }
 }
 
 .mt3_pullquote {
   @extend %mt3_pullquote;
-}
 
-
-.mt3_pullquote {
   &--footer {
     font-family: 'HCo Verlag', 'CenturyGothic', AppleGothic, Gill Sans, Gill Sans MT, sans-serif;
-    font-size: $mt2_fs-xsm;
+    font-size: $mt3_fs-xsm;
     letter-spacing: .05rem;
     line-height: 1.5;
     text-align: center;
@@ -52,16 +49,16 @@
   }
 
   &--attributionname {
-    border-left: 1px solid $mt2_color-neutral;
-    border-right: 1px solid $mt2_color-neutral;
+    border-left: 1px solid $mt3_color-neutral;
+    border-right: 1px solid $mt3_color-neutral;
     font-weight: 600;
     padding: 0 1.25rem;
   }
 
   &--attributiontitle {
-    border-left: 1px solid $mt2_color-neutral;
-    border-right: 1px solid $mt2_color-neutral;
-    color: $mt2_color-neutral;
+    border-left: 1px solid $mt3_color-neutral;
+    border-right: 1px solid $mt3_color-neutral;
+    color: $mt3_color-neutral;
     font-weight: 400;
     padding: 0 1.25rem;
   }

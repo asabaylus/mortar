@@ -1,36 +1,36 @@
-$mt2_gutters: (
-  sm: $mt2_unit / 2,
-  md: $mt2_unit,
-  lg: $mt2_fs-med-lrg / 2
+$mt3_gutters: (
+  sm: $mt3_unit / 2,
+  md: $mt3_unit,
+  lg: $mt3_fs-med-lrg / 2
 );
 
-.mt2_col-gut-small {
-  padding-left: $mt2_unit / 2;
-  padding-right: $mt2_unit / 2;
+.mt3_col-gut-small {
+  padding-left: $mt3_unit / 2;
+  padding-right: $mt3_unit / 2;
 }
 
-@each $mt2_size, $mt2_value in $mt2_gutters {
-  .mt2_col-gut-#{$mt2_size} {
-    padding-left: $mt2_value;
-    padding-right: $mt2_value;
+@each $mt3_size, $mt3_value in $mt3_gutters {
+  .mt3_col-gut-#{$mt3_size} {
+    padding-left: $mt3_value;
+    padding-right: $mt3_value;
   }
 }
 
-@each $mt2_bp, $mt2_width in $mt2_layout-bps { // loop through breakpoints
-  @media #{$mt2_width} {
-    .mt2_col-#{$mt2_bp}-gut-small {
-      padding-left: $mt2_unit / 2;
-      padding-right: $mt2_unit / 2;
+@each $mt3_bp, $mt3_width in $mt3_layout-bps { // loop through breakpoints
+  @media #{$mt3_width} {
+    .mt3_col-#{$mt3_bp}-gut-small {
+      padding-left: $mt3_unit / 2;
+      padding-right: $mt3_unit / 2;
     }
 
-    @each $mt2_size, $mt2_value in $mt2_gutters {
-      .mt2_col-#{$mt2_bp}-gut-#{$mt2_size} {
-        padding-left: $mt2_value;
-        padding-right: $mt2_value;
+    @each $mt3_size, $mt3_value in $mt3_gutters {
+      .mt3_col-#{$mt3_bp}-gut-#{$mt3_size} {
+        padding-left: $mt3_value;
+        padding-right: $mt3_value;
       }
     }
 
-    .mt2_col-#{$mt2_bp}-gut-none {
+    .mt3_col-#{$mt3_bp}-gut-none {
       padding-left: 0;
       padding-right: 0;
     }

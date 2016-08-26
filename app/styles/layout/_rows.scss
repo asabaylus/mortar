@@ -1,6 +1,6 @@
 // Extends
 
-%mt2_row {
+%mt3_row {
   &::before,
   &::after {
     content: ' ';
@@ -12,36 +12,36 @@
   }
 }
 
-.mt2_row {
-  @extend %mt2_row;
+.mt3_row {
+  @extend %mt3_row;
 }
 
-.mt2_row-gut-half {
-  margin-bottom: $mt2_unit / 2;
+.mt3_row-gut-half {
+  margin-bottom: $mt3_unit / 2;
 }
 
-@for $mt2_i from 0 through 4 {
-  .mt2_row-gut-#{$mt2_i} {
-    @if $mt2_i < 1 {
+@for $mt3_i from 0 through 4 {
+  .mt3_row-gut-#{$mt3_i} {
+    @if $mt3_i < 1 {
       margin-bottom: 0;
     } @else {
-      margin-bottom: $mt2_unit * $mt2_i;
+      margin-bottom: $mt3_unit * $mt3_i;
     }
   }
 }
 
-@each $mt2_bp, $mt2_width in $mt2_layout-bps { // loop through breakpoints
-  @media #{$mt2_width} {
-    .mt2_row-#{$mt2_bp}-gut-half {
-      margin-bottom: $mt2_unit / 2;
+@each $mt3_bp, $mt3_width in $mt3_layout-bps { // loop through breakpoints
+  @media #{$mt3_width} {
+    .mt3_row-#{$mt3_bp}-gut-half {
+      margin-bottom: $mt3_unit / 2;
     }
 
-    @for $mt2_i from 0 through 4 {
-      .mt2_row-#{$mt2_bp}-gut-#{$mt2_i} {
-        @if $mt2_i < 1 {
+    @for $mt3_i from 0 through 4 {
+      .mt3_row-#{$mt3_bp}-gut-#{$mt3_i} {
+        @if $mt3_i < 1 {
           margin-bottom: 0;
         } @else {
-          margin-bottom: $mt2_unit * $mt2_i;
+          margin-bottom: $mt3_unit * $mt3_i;
         }
       }
     }

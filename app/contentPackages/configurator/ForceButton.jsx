@@ -8,14 +8,14 @@ const onForceUpdate = () => {
 };
 
 const ForceButton = () => (
-  <div className="mt2_row-gut-1">
-    <p className="mt2_subh4">
+  <div className="mt3_row-gut-1">
+    <p className="mt3_subh4">
       Sometimes the component is not refreshed on fly.
-      Most of the time this is the excepted behavior, but
-      for testing propuses force update will be very useful
+      Most of the time this is the accepted behavior, but
+      for testing purposes force update will be very useful
       and will bypass that behavior.
     </p>
-    <button className="mt2_btn mt2_btn--error" onClick={onForceUpdate}>Force Update</button>
+    <button className="mt3_btn mt3_btn--error" onClick={onForceUpdate}>Force Update</button>
   </div>
 );
 

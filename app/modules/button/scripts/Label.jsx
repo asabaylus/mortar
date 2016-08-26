@@ -10,33 +10,33 @@ class Label extends Component {
     if (icon) {
       switch (icon.align) {
         case 'right':
-          return <div className='mt2_iconandlabel--horizontal'>
+          return <div className='mt3_iconandlabel--horizontal'>
             <span>{this.props.label}</span>
             <Icon name={icon.name} align='right' size={icon.size}
                   alt={ icon.alt }/>
           </div>;
         case 'top':
-          return <div className='mt2_iconandlabel--vertical'>
+          return <div className='mt3_iconandlabel--vertical'>
             <Icon name={icon.name} align='top' size={icon.size}
                   alt={ icon.alt }/>
             <span>{this.props.label}</span>
           </div>;
         case 'bottom':
-          return <div className='mt2_iconandlabel--vertical'>
+          return <div className='mt3_iconandlabel--vertical'>
             <span>{this.props.label}</span>
             <Icon name={icon.name} align='bottom' size={icon.size}
                   alt={ icon.alt }/>
           </div>;
         case 'left':
         default:
-          return <div className='mt2_iconandlabel--horizontal'>
+          return <div className='mt3_iconandlabel--horizontal'>
             <Icon name={icon.name} align='left' size={icon.size}
                   alt={ icon.alt }/>
             <span>{this.props.label}</span>
           </div>;
       }
     } else {
-      return <div className='mt2_iconandlabel--horizontal'>
+      return <div className='mt3_iconandlabel--horizontal'>
         <span>{this.props.label}</span>
       </div>
     }

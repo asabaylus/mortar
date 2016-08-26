@@ -1,0 +1,72 @@
+$mt3_baseIndex: 3;
+$mt3_contentLinkIndex: 4;
+
+.mt3_podpromo {
+  font-family: inherit;
+  position: relative;
+
+  &-container-link {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: $mt3_baseIndex;
+  }
+
+  &-content-container {
+    max-width: 50%;
+    position: absolute;
+    /* modules-images is setting z-index of images to 2, this assures our text is overlaying the image */
+    z-index: $mt3_baseIndex;
+
+    &-top {
+      top: 40px;
+
+      &.mt3_podpromo-content-container-right {
+        z-index: $mt3_contentLinkIndex;
+      }
+    }
+
+    &-left {
+      left: 40px;
+    }
+
+    &-bottom {
+      bottom: 40px;
+    }
+
+    &-right {
+      right: 40px;
+    }
+  }
+
+  &-elevate {
+    position: relative;
+    z-index: $mt3_contentLinkIndex;
+  }
+
+  &-heading {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    line-height: 1.05;
+    text-transform: uppercase;
+    word-spacing: 0.05em;
+  }
+
+  &-photocredit {
+    text-align: left;
+  }
+
+  &-title {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 0.015em;
+    line-height: 1.15;
+  }
+
+
+}

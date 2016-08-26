@@ -90,7 +90,7 @@ describe('VideoPlaylist Component', () => {
 
     it('should highlight first thumbnail', () => {
       expect(wrapper.state('currentVideoIndex'), 0);
-      expect(videoThumbnail.first().hasClass('mt2_video-playlist-container--active-thumbnail'), true);
+      expect(videoThumbnail.first().hasClass('mt3_video-playlist-container--active-thumbnail'), true);
     });
 
     it('should highlight the clicked thumbnail', () => {
@@ -98,7 +98,7 @@ describe('VideoPlaylist Component', () => {
       const nextThumbnail = videoThumbnail.at(nextThumnailIndex);
       nextThumbnail.simulate('click');
       expect(wrapper.state('currentVideoIndex'), 1);
-      expect(nextThumbnail.hasClass('mt2_video-playlist-container--active-thumbnail'), true);
+      expect(nextThumbnail.hasClass('mt3_video-playlist-container--active-thumbnail'), true);
     });
 
   });
@@ -118,7 +118,7 @@ describe('VideoPlaylist Component', () => {
         "directLink": "http://link.theplatform.com/s/ngs/media/guid/2423130747/00000156-47be-dca8-ab77-7ffe94e00000?format=redirect&policy=12441385&manifest=m3u&mbr=true",
       }
       wrapper = shallow(<VideoThumbnail
-        wrapperClass='mt2_video-playlist-container--thumbnail'
+        wrapperClass='mt3_video-playlist-container--thumbnail'
         item={thumbnailModel}
         onClick={onClickThumnail}
       />);

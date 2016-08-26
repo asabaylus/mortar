@@ -1,0 +1,164 @@
+<div class="pagewrapper mt3_row mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+  <div class="mt3_col-lg-3 mt3_col-sm-12 mt3_row mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+    <h3 class="mt3_h3">POD Promo</h3>
+      <p class="mt3_subh4">
+        The POD Promo can accept it's data either from an endpoint accessed via AJAX or by having the model embedded directly in the Pestle component. If both sources of data exist, the end point will be the winner.
+      </p>
+      <p class="mt3_subh4">
+        All text displayed within the promo, as well as the image and associates src sets are controlled via the data in the JSON, and thus should be configurarble by whichever CMS is providing the data.
+      </p>
+      <p class="mt3_subh4">
+        To experiment with different configuration options, visit the <a href="podpromo/index.html">POD Configurator</a>.
+      </p>
+  </div>
+
+  <div class="mt3_col-lg-8 mt3_col-sm-12 mt3_col-lg-offset-1 mt3_row-gut-4">
+    <div id="f89234jw" data-pestle-module="PodPromo">
+      <script type="text/json" data-pestle-options>
+        {
+          "id": "f89234jw",
+          "dataModel": {
+            "id": "12344678",
+            "type": "pod",
+            "config": {
+              "aspectRatio": "2:1",
+              "yourshot": true,
+              "sponsored": true
+            },
+            "link": {
+              "url": "http://www.nationalgeographic.com/photography/photo-of-the-day/08/some-image",
+              "target": "_self",
+              "trackingCodes": "?utm_medium=site&utm_site=natgeo-hp"
+            },
+            "leadMedia": [{
+              "imageUrl": "http://placehold.it/1140x550.jpg",
+              "title": "This is the image's title in DAM",
+              "altText": "Picture of a stream of water flowing through the narrow Olo Canyon in Arizona",
+              "aspectRatio": 0.4824561403508772,
+              "height": 550,
+              "width": 1140,
+              "srcset": [
+                "http://placehold.it/80x39.jpg 80w",
+                "http://placehold.it/133x64.jpg 133w",
+                "http://placehold.it/152x73.jpg 152w",
+                "http://placehold.it/162x78.jpg 162w",
+                "http://placehold.it/210x101.jpg 210w",
+                "http://placehold.it/224x108.jpg 224w",
+                "http://placehold.it/225x109.jpg 225w",
+                "http://placehold.it/280x135.jpg 280w",
+                "http://placehold.it/352x170.jpg 352w",
+                "http://placehold.it/470x227.jpg 470w",
+                "http://placehold.it/536x259.jpg 536w",
+                "http://placehold.it/590x285.jpg 590w",
+                "http://placehold.it/676x326.jpg 676w",
+                "http://placehold.it/710x343.jpg 710w",
+                "http://placehold.it/768x371.jpg 768w",
+                "http://placehold.it/885x427.jpg 885w",
+                "http://placehold.it/945x456.jpg 945w",
+                "http://placehold.it/1190x574.jpg 1190w",
+                "http://placehold.it/1900x917.jpg 1900w"
+              ]
+            }],
+            "text": {
+              "heading": "Photo of the Day",
+              "title": "This is the title field",
+              "dek": "<p>Forged by the wear of water rushing over rocks, Olo Canyon in Arizona is concealed inside the Grand Canyon. Its alluring landscape includes natural springs and rocks shaped like cathedral amphitheaters.</p> <p><em>See more pictures from the September 2016 story &quot;<a href='http://www.nationalgeographic.com/magazine/2016/09/grand-canyon-development-hiking-national-parks' target='_blank'>Are We Losing the Grand Canyon?</a>&quot; </em></p>",
+              "credit": "<p>Photograph by Pete McBride</p>",
+              "affiliation": "National Geographic",
+              "assetSource":"",
+              "kicker": {
+                "label": "Weird & Wild",
+                "url": "/content/news/en_US/weird-wild.html",
+                "target": "_self",
+                "trackingCodes": "?utm_medium=site&utm_source=ng.com"
+              },
+              "sponsorContentLabel": "Sponsor Content"
+            },
+            "cta": {
+              "url": "http://www.nationalgeographic.com/photography/photo-of-the-day/",
+              "title": "See All",
+              "target": "_blank",
+              "seoTitle": "See more photos"
+            }
+          }            
+        }
+      </script>
+    </div>
+
+    <div class="codesnippet-wrapper">
+<pre class="codesnippet"><code class="language-markup">
+  &#x3C;div data-pestle-module=&#x22;PodPromo&#x22;&#x3E;
+    &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
+        {
+          "id": "f89234jw",
+          "dataModel": {
+            "id": "12344678",
+            "type": "pod",
+            "config": {
+              "aspectRatio": "2:1",
+              "yourshot": true,
+              "sponsored": true
+            },
+            "link": {
+              "url": "http://www.nationalgeographic.com/photography/photo-of-the-day/08/some-image",
+              "target": "_self",
+              "trackingCodes": "?utm_medium=site&utm_site=natgeo-hp"
+            },
+            "leadMedia": [{
+              "imageUrl": "http://placehold.it/1140x550.jpg",
+              "title": "This is the image's title in DAM",
+              "altText": "Picture of a stream of water flowing through the narrow Olo Canyon in Arizona",
+              "aspectRatio": 0.4824561403508772,
+              "height": 550,
+              "width": 1140,
+              "srcset": [
+                "http://placehold.it/80x39.jpg 80w",
+                "http://placehold.it/133x64.jpg 133w",
+                "http://placehold.it/152x73.jpg 152w",
+                "http://placehold.it/162x78.jpg 162w",
+                "http://placehold.it/210x101.jpg 210w",
+                "http://placehold.it/224x108.jpg 224w",
+                "http://placehold.it/225x109.jpg 225w",
+                "http://placehold.it/280x135.jpg 280w",
+                "http://placehold.it/352x170.jpg 352w",
+                "http://placehold.it/470x227.jpg 470w",
+                "http://placehold.it/536x259.jpg 536w",
+                "http://placehold.it/590x285.jpg 590w",
+                "http://placehold.it/676x326.jpg 676w",
+                "http://placehold.it/710x343.jpg 710w",
+                "http://placehold.it/768x371.jpg 768w",
+                "http://placehold.it/885x427.jpg 885w",
+                "http://placehold.it/945x456.jpg 945w",
+                "http://placehold.it/1190x574.jpg 1190w",
+                "http://placehold.it/1900x917.jpg 1900w"
+              ]
+            }],
+            "text": {
+              "heading": "Photo of the Day",
+              "title": "This is the title field",
+              "dek": "<p>Forged by the wear of water rushing over rocks, Olo Canyon in Arizona is concealed inside the Grand Canyon. Its alluring landscape includes natural springs and rocks shaped like cathedral amphitheaters.</p> <p><em>See more pictures from the September 2016 story &quot;<a href='http://www.nationalgeographic.com/magazine/2016/09/grand-canyon-development-hiking-national-parks' target='_blank'>Are We Losing the Grand Canyon?</a>&quot; </em></p>",
+              "credit": "<p>Photograph by Pete McBride</p>",
+              "affiliation": "National Geographic",
+              "assetSource":"",
+              "kicker": {
+                "label": "Weird & Wild",
+                "url": "/content/news/en_US/weird-wild.html",
+                "target": "_self",
+                "trackingCodes": "?utm_medium=site&utm_source=ng.com"
+              },
+              "sponsorContentLabel": "Sponsor Content"
+            },
+            "cta": {
+              "url": "http://www.nationalgeographic.com/photography/photo-of-the-day/",
+              "title": "See All",
+              "target": "_blank",
+              "seoTitle": "See more photos"
+            }
+          }            
+        }
+    &#x3C;/script&#x3E;
+  &#x3C;/div&#x3E;</code></pre>
+    </div>
+
+  </div>
+</div>

@@ -1,8 +1,18 @@
-$mt2_button-width: 8em;
-$mt2_button-height: 8em;
+$mt3_button-width: 8em;
+$mt3_button-height: 8em;
 
-.mt2_promocard-container {
+.mt3_promocard-container {
   overflow: hidden;
+  position: relative;
+
+  a.mt3_div-link {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: $mt3_z-middle + 5;
+  }
 
   &:-webkit-any-link{
    text-decoration: none;
@@ -13,18 +23,48 @@ $mt2_button-height: 8em;
     position: relative;
   }
 
-  .mt2_promocard-kicker{
-    z-index: 999;
+  //most of the styles below are just for displaying functionality for this ticket, will most likely be changed/overridden for styling ticket
+  .mt3_promocard-gallery-images{
+    margin-bottom: 2em;
+    position: relative;
+    &--image1{
+      position: absolute;
+      top: 2rem;
+      width: 95%;
+      z-index: $mt3_z-middle + 3;
+    }
+    &--image2{
+      left: 3rem;
+      position: relative;
+      width: 95%;
+    }
   }
 
-  //most of the styles below are just for displaying functionality for this ticket, will most likely be changed/overridden for styling ticket
-  .mt2_promocard-image {
+  .mt3_promocard-gallery-cta{
+    left: 5em;
+    position: absolute;
+    top: 0.5em;
+    z-index: $mt3_z-middle + 10;
+  }
+
+  .mt3_promocard-kicker{
+    float: left;
+    position: relative;
+    z-index: $mt3_z-middle + 10;
+  }
+
+  .mt3_card-subhead--right{
+    float: left;
+    margin-left: 20px;
+  }
+
+  .mt3_promocard-image {
     overflow: hidden;
     position: relative;
     width: 100%;
   }
 
-  .mt2_promocard-branding {
+  .mt3_promocard-branding {
     background-color: yellow;
     padding: .5em 1em;
     position: absolute;
@@ -32,7 +72,7 @@ $mt2_button-height: 8em;
     z-index: 3;
   }
 
-  .mt2_promocard-sponsor {
+  .mt3_promocard-sponsor {
     background-color: rgba(255, 255, 255, .2);
     bottom: 0;
     color: white;
@@ -43,22 +83,22 @@ $mt2_button-height: 8em;
     z-index: 4;
   }
 
-  .mt2_btn {
+  .mt3_btn {
     background-color: white;
     border-radius: 50%;
-    height: $mt2_button-width;
-    left: calc(50% - (#{$mt2_button-width} / 2));
+    height: $mt3_button-width;
+    left: calc(50% - (#{$mt3_button-width} / 2));
     padding: 0;
     position: absolute;
-    top: calc(50% - (#{$mt2_button-height} / 2));
-    width: $mt2_button-width;
+    top: calc(50% - (#{$mt3_button-height} / 2));
+    width: $mt3_button-width;
     z-index: 2;
 
-    .mt2_icon--left {
+    .mt3_icon--left {
       margin: 0;
     }
 
-    & svg.mt2_icon{
+    & svg.mt3_icon{
       height: 3em;
       width: 3em;
     }

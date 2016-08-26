@@ -1,17 +1,17 @@
-<div class="pagewrapper mt2_row-gut-3">
-  <p class="mt2_subh4 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
-    <span class="mt2_h5">Column:</span>
+<div class="pagewrapper mt3_row-gut-3">
+  <p class="mt3_subh4 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+    <span class="mt3_h5">Column:</span>
 
     This property refers to the number of columns a given object spans. Values range from 1 to 12. The examples below show objects that span the same number of columns across all breakpoints.
   </p>
 
   <!-- Example -->
 
-  <div class="gridexample mt2_row-gut-3 ">
-    <div class="mt2_row">
+  <div class="gridexample mt3_row-gut-3 ">
+    <div class="mt3_row">
       {% for gutter in [12,1,11,2,10,3,9,4,8,5,7,6,6] %}
-        <div class="mt2_col-{{gutter}} mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
-          <div class="exampleborder mt2_row-gut-1">&nbsp;</div>
+        <div class="mt3_col-{{gutter}} mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+          <div class="exampleborder mt3_row-gut-1">&nbsp;</div>
         </div>
       {% endfor %}
     </div>
@@ -23,26 +23,26 @@
 
   <!-- Code snippet -->
   <div class="codesnippet-wrapper">
-<pre class="codesnippet"><code class="language-markup">&lt;div class="mt2_row"&gt;
+<pre class="codesnippet"><code class="language-markup">&lt;div class="mt3_row"&gt;
   {% for gutter in [12,1,11,2,10,3,9,4,8,5,7,6,6] %}
-  &lt;div class="mt2_col-{{gutter}} mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg"&gt;&lt;/div&gt;
+  &lt;div class="mt3_col-{{gutter}} mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg"&gt;&lt;/div&gt;
   {% endfor %}
 &lt;/div&gt;</code></pre>
   </div>
 
 <hr/>
 
-  <p class="mt2_subh4 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
+  <p class="mt3_subh4 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
     The following example uses the breakpoint classes to create an object that spans 6 columns on mobile, but 3 columns on desktop.
   </p>
 
-  <div class="gridexample mt2_row-gut-3">
+  <div class="gridexample mt3_row-gut-3">
 
   <!-- Example -->
 
-  <div class="mt2_row">
-    <div class="mt2_col-6 mt2_col-sm-6 mt2_col-md-3 mt2_col-lg-3 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
-      <div class="exampleborder mt2_row-gut-1">&nbsp;</div>
+  <div class="mt3_row">
+    <div class="mt3_col-6 mt3_col-sm-6 mt3_col-md-3 mt3_col-lg-3 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+      <div class="exampleborder mt3_row-gut-1">&nbsp;</div>
     </div>
   </div>
 
@@ -51,40 +51,40 @@
   {% include "./_partials/grid.html" %}
   </div>
 
-<pre class="codesnippet"><code class="language-markup">&lt;div class="mt2_row"&gt;
-   &lt;div class="mt2_col-6 mt2_col-sm-6 mt2_col-md-3 mt2_col-lg-3 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg"&gt;&lt;/div&gt;
+<pre class="codesnippet"><code class="language-markup">&lt;div class="mt3_row"&gt;
+   &lt;div class="mt3_col-6 mt3_col-sm-6 mt3_col-md-3 mt3_col-lg-3 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
 <hr/>
 
-  <p class="mt2_subh4 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
-    <span class="mt2_h5">Offset:</span>
+  <p class="mt3_subh4 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+    <span class="mt3_h5">Offset:</span>
 
     This property is used to create empty columns of space in between objects. Breakpoint classes are also available for this property.
   </p>
 
-  <div class="gridexample mt2_row-gut-3">
+  <div class="gridexample mt3_row-gut-3">
 
     <!-- Example -->
 
-    <div class="mt2_row">
-      <div class="mt2_col-6 mt2_col-offset-3 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
-        <div class="exampleborder mt2_row-gut-1">&nbsp;</div>
+    <div class="mt3_row">
+      <div class="mt3_col-6 mt3_col-offset-3 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+        <div class="exampleborder mt3_row-gut-1">&nbsp;</div>
       </div>
     </div>
 
-    <div class="mt2_row">
-      <div class="mt2_col-3 mt2_col-offset-4 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
-        <div class="exampleborder mt2_row-gut-1">&nbsp;</div>
+    <div class="mt3_row">
+      <div class="mt3_col-3 mt3_col-offset-4 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+        <div class="exampleborder mt3_row-gut-1">&nbsp;</div>
       </div>
-      <div class="mt2_col-3 mt2_col-offset-2 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
-        <div class="exampleborder mt2_row-gut-1">&nbsp;</div>
+      <div class="mt3_col-3 mt3_col-offset-2 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+        <div class="exampleborder mt3_row-gut-1">&nbsp;</div>
       </div>
     </div>
 
-    <div class="mt2_row">
-      <div class="mt2_col-4 mt2_col-offset-1 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
-        <div class="exampleborder mt2_row-gut-1">&nbsp;</div>
+    <div class="mt3_row">
+      <div class="mt3_col-4 mt3_col-offset-1 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+        <div class="exampleborder mt3_row-gut-1">&nbsp;</div>
       </div>
     </div>
 
@@ -96,39 +96,39 @@
   <!-- Code snippet -->
 
   <div class="codesnippet-wrapper">
-<pre class="codesnippet"><code class="language-markup">&lt;div class="mt2_row"&gt;
-  &lt;div class="mt2_col-6 mt2_col-offset-3 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg"&gt;&lt;/div&gt;
+<pre class="codesnippet"><code class="language-markup">&lt;div class="mt3_row"&gt;
+  &lt;div class="mt3_col-6 mt3_col-offset-3 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg"&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="mt2_row"&gt;
-  &lt;div class="mt2_col-3 mt2_col-offset-4 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg"&gt;&lt;/div&gt;
-  &lt;div class="mt2_col-3 mt2_col-offset-2 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg"&gt;&lt;/div&gt;
+&lt;div class="mt3_row"&gt;
+  &lt;div class="mt3_col-3 mt3_col-offset-4 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg"&gt;&lt;/div&gt;
+  &lt;div class="mt3_col-3 mt3_col-offset-2 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg"&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="mt2_row"&gt;
-  &lt;div class="mt2_col-4 mt2_col-offset-1 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg"&gt;&lt;/div&gt;
+&lt;div class="mt3_row"&gt;
+  &lt;div class="mt3_col-4 mt3_col-offset-1 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
   </div>
 
   <hr/>
 
-  <p class="mt2_subh4 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
-    <span class="mt2_h5">Reorder:</span>
+  <p class="mt3_subh4 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+    <span class="mt3_h5">Reorder:</span>
 
     The &ldquo;push&rdquo; and &ldquo;pull&rdquo; classes can be used to switch the graphical presentation from the source order of the HTML.
   </p>
 
-  <div class="gridexample mt2_row-gut-2">
+  <div class="gridexample mt3_row-gut-2">
 
     <!-- Example -->
 
-    <div class="mt2_row">
-      <div class="mt2_col-3 mt2_col-push-9 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
-        <div class="exampleborder mt2_row-gut-1">&nbsp;</div>
+    <div class="mt3_row">
+      <div class="mt3_col-3 mt3_col-push-9 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+        <div class="exampleborder mt3_row-gut-1">&nbsp;</div>
       </div>
 
-      <div class="mt2_col-9 mt2_col-pull-3 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg">
-        <div class="exampleborder mt2_row-gut-1">&nbsp;</div>
+      <div class="mt3_col-9 mt3_col-pull-3 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+        <div class="exampleborder mt3_row-gut-1">&nbsp;</div>
       </div>
     </div>
 
@@ -139,10 +139,10 @@
 
   <!-- Code snippet -->
 <div class="codesnippet-wrapper">
-<pre class="codesnippet"><code class="language-markup">&lt;div class="mt2_row"&gt;
-  &lt;div class="mt2_col-3 mt2_col-push-9 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg"&gt;&lt;/div&gt;
+<pre class="codesnippet"><code class="language-markup">&lt;div class="mt3_row"&gt;
+  &lt;div class="mt3_col-3 mt3_col-push-9 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg"&gt;&lt;/div&gt;
 
-  &lt;div class="mt2_col-9 mt2_col-pull-3 mt2_col-gut-sm mt2_col-md-gut-md mt2_col-lg-gut-lg"&gt;&lt;/div&gt;
+  &lt;div class="mt3_col-9 mt3_col-pull-3 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 </div>
 

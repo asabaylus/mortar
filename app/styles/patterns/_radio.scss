@@ -1,50 +1,50 @@
 // Default State
-.mt2_radio {
+.mt3_radio {
   visibility: hidden;
 
   & + * {
-    margin-left: $mt2_unit * -1.25;
+    margin-left: $mt3_unit * -1.25;
 
     &::before {
-      background-image: $mt2_radio-bg-unchecked;
+      background-image: $mt3_radio-bg-unchecked;
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
       content: '';
       display: inline-block;
-      height: $mt2_radio-height;
-      margin-right: $mt2_unit * .75;
+      height: $mt3_radio-height;
+      margin-right: $mt3_unit * .75;
       opacity: .9;
       vertical-align: bottom;
-      width: $mt2_radio-width;
+      width: $mt3_radio-width;
     }
   }
 
   // Hover State
-  &:not(.mt2_radio--disabled):focus + *,
-  &:not(.mt2_radio--disabled):hover + * {
+  &:not(.mt3_radio--disabled):focus + *,
+  &:not(.mt3_radio--disabled):hover + * {
     cursor: pointer;
     opacity: 1;
 
     &::before {
-      background-image: $mt2_radio-bg-hover;
+      background-image: $mt3_radio-bg-hover;
       opacity: 1;
     }
   }
 
   // Checked State
-  &:not(.mt2_radio--disabled):checked + * {
+  &:not(.mt3_radio--disabled):checked + * {
     cursor: pointer;
     opacity: 1;
 
     &::before {
-      background-image: $mt2_radio-bg-checked;
+      background-image: $mt3_radio-bg-checked;
       opacity: 1;
     }
   }
 
   // Disabled State
-  &.mt2_radio--disabled {
+  &.mt3_radio--disabled {
     opacity: .4;
 
     & + * {
