@@ -7,9 +7,9 @@ $mt3_black: #000;
 $mt3_white: #fff;
 
 %mt3_podpromo-fade-base {
-  opacity: 1;
-  transition-delay: .25s;
-  transition-duration: .25s;
+  opacity: 0;
+  transition-delay: 400ms;
+  transition-duration: 400ms;
   transition-property: opacity;
 }
 
@@ -25,7 +25,7 @@ $mt3_white: #fff;
     .mt3_podpromo-imagewrapper::after,
     .mt3_podpromo-imagewrapper::before,
     .mt3_podpromo-fade {
-      opacity: 0;
+      @extend %mt3_podpromo-fade-base;
     }
   }
 
@@ -39,7 +39,7 @@ $mt3_white: #fff;
   }
 
   &-fade {
-    @extend %mt3_podpromo-fade-base;
+    opacity: 1;
   }
 
   &-content-container {
@@ -84,7 +84,7 @@ $mt3_white: #fff;
       bottom: 40px;
 
       &.mt3_podpromo-autoindex {
-        @extend %mt3_podpromo-fade-base;
+        opacity: 1;
         z-index: $mt3_gradientIndex + 1;
       }
 
@@ -110,21 +110,21 @@ $mt3_white: #fff;
     position: relative;
 
     &::after {
-      @extend %mt3_podpromo-fade-base;
       background: linear-gradient(to top, $mt3_gradient);
       bottom: 0;
       content: '';
       height: 25%;
+      opacity: 1;
       position: absolute;
       width: 100%;
       z-index: $mt3_gradientIndex;
     }
 
     &::before {
-      @extend %mt3_podpromo-fade-base;
       background: linear-gradient(to bottom, $mt3_gradient);
       content: '';
       height: 30%;
+      opacity: 1;
       position: absolute;
       top: 0;
       width: 100%;
