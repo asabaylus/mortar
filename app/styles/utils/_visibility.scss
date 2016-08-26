@@ -2,14 +2,14 @@
 
 // Hide visually and from screen readers
 
-.mt2_hidden {
+.mt3_hidden {
   display: none !important;
 }
 
 // Hide only visually, but have it available for screen readers:
 // http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 
-.mt2_visuallyhidden {
+.mt3_visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -23,7 +23,7 @@
   // to be focusable when navigated to via the keyboard:
   // https://www.drupal.org/node/897638
 
-  &.mt2_focusable {
+  &.mt3_focusable {
     &:active,
     &:focus {
       clip: auto;

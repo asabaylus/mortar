@@ -3,10 +3,10 @@
 import React from 'react';
 
 const TextField = ({ label, onChange, value }) => (
-  <div className="mt2_row-gut-1 mt2_subh4">
+  <div className="mt3_row-gut-1 mt3_subh4">
     <label>
       {label}
-      <input className="mt2_input mt2_fullwidth mt2_subh4" type="text" onChange={onChange} value={value} />
+      <input className="mt3_input mt3_fullwidth mt3_subh4" type="text" onChange={onChange} value={value} />
     </label>
   </div>
 );

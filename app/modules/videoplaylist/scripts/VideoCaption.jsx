@@ -10,11 +10,11 @@ class VideoCaption extends Component {
   render() {
     return (
       <div>
-        <h3 ref="title" className="mt2_h5">
+        <h3 ref="title" className="mt3_h5">
           <span itemProp='headline' dangerouslySetInnerHTML={{__html: this.props.title}} />
         </h3>
         <div ref="abstract" className="multi-layout-promos__promo-dek">
-          <span itemProp='description' className="mt2_subh4" dangerouslySetInnerHTML={{__html: this.props.abstract}} />
+          <span itemProp='description' className="mt3_subh4" dangerouslySetInnerHTML={{__html: this.props.abstract}} />
         </div>
       </div>
     )

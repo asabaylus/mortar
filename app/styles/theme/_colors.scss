@@ -1,23 +1,23 @@
-@each $mt2_color-name, $mt2_color-value in $mt2_colors {
-  .mt2_color--#{$mt2_color-name} {
-    color: $mt2_color-value;
+@each $mt3_color-name, $mt3_color-value in $mt3_colors {
+  .mt3_color--#{$mt3_color-name} {
+    color: $mt3_color-value;
   }
 
-  .mt2_bgcolor--#{$mt2_color-name} {
-    background-color: $mt2_color-value;
+  .mt3_bgcolor--#{$mt3_color-name} {
+    background-color: $mt3_color-value;
   }
 
-  .mt2_bordercolor--#{$mt2_color-name} {
-    border: 1px solid $mt2_color-value;
+  .mt3_bordercolor--#{$mt3_color-name} {
+    border: 1px solid $mt3_color-value;
   }
 }
 
-@each $mt2_social-color, $mt2_social-bg-color in $mt2_social-colors {
-  .mt2_bgcolor--social--#{$mt2_social-color} {
-    background-color: $mt2_social-bg-color;
+@each $mt3_social-color, $mt3_social-bg-color in $mt3_social-colors {
+  .mt3_bgcolor--social--#{$mt3_social-color} {
+    background-color: $mt3_social-bg-color;
   }
 
-  .mt2_color--social--#{$mt2_social-color} {
-    color: $mt2_social-bg-color;
+  .mt3_color--social--#{$mt3_social-color} {
+    color: $mt3_social-bg-color;
   }
 }

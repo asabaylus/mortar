@@ -10,13 +10,13 @@ import classNames from 'classnames';
 class PrevButton extends React.Component {
   render() {
     let btnClasses = classNames({
-      'mt2_slider-button--prev': true,
-      'mt2_slider-button--inactive': !this.props.infinite && this.props.currentSlide === 0
+      'mt3_slider-button--prev': true,
+      'mt3_slider-button--inactive': !this.props.infinite && this.props.currentSlide === 0
     });
 
     return <button onClick={this.props.onClick} className={btnClasses}>
-      <span className='mt2_visuallyhidden'>Previous</span>
-      <svg className='mt2_icon'>
+      <span className='mt3_visuallyhidden'>Previous</span>
+      <svg className='mt3_icon'>
         <use xlinkHref='#chevron-left'></use>
       </svg>
     </button>
@@ -26,13 +26,13 @@ class PrevButton extends React.Component {
 class NextButton extends React.Component {
   render() {
     let btnClasses = classNames({
-      'mt2_slider-button--next': true,
-      'mt2_slider-button--inactive': !this.props.infinite && this.props.currentSlide === this.props.slideCount - 1
+      'mt3_slider-button--next': true,
+      'mt3_slider-button--inactive': !this.props.infinite && this.props.currentSlide === this.props.slideCount - 1
     });
 
     return <button onClick={this.props.onClick} className={btnClasses}>
-      <span className='mt2_visuallyhidden'>Next</span>
-      <svg className='mt2_icon'>
+      <span className='mt3_visuallyhidden'>Next</span>
+      <svg className='mt3_icon'>
         <use xlinkHref='#chevron-right'></use>
       </svg>
     </button>
@@ -82,7 +82,7 @@ class MTSlider extends Component {
     const settings = {
       afterChange: this.onSlideChange,
       arrows: props.showArrows,
-      className: 'mt2_slider-container',
+      className: 'mt3_slider-container',
       infinite: props.infinite,
       lazyLoad: props.lazyLoad,
       nextArrow: <NextButton

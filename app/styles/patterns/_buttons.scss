@@ -1,106 +1,112 @@
-.mt2_btn {
-  @extend %mt2_h5;
+.mt3_btn {
+  @extend %mt3_h5;
 
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0;
   cursor: pointer;
+  font-family: $mt3_verlag-stack;
+  font-weight: 600;
+  letter-spacing: .05em;
   margin-bottom: .675em;
   margin-right: .675em;
-  padding: $mt2_unit $mt2_unit-double;
+  padding: $mt3_unit $mt3_unit-double;
   text-align: center;
+  text-transform: uppercase;
   transition: 400ms;
 
   &--success {
-    background-color: $mt2_color-affirmation;
-    border: 1px solid $mt2_color-affirmation;
-    color: $mt2_color-neutral-xxxl;
+    background-color: $mt3_color-affirmation;
+    border: 1px solid $mt3_color-affirmation;
+    color: $mt3_color-neutral-xxxl;
 
     &:hover {
-      background-color: $mt2_color-affirmation-l;
-      border: 1px solid $mt2_color-affirmation-l;
+      background-color: $mt3_color-affirmation-l;
+      border: 1px solid $mt3_color-affirmation-l;
     }
   }
 
   &--error {
-    background-color: $mt2_color-danger;
-    border: 1px solid $mt2_color-danger;
-    color: $mt2_color-neutral-xxxl;
+    background-color: $mt3_color-danger;
+    border: 1px solid $mt3_color-danger;
+    color: $mt3_color-neutral-xxxl;
 
     &:hover {
-      background-color: $mt2_color-danger-l;
-      border: 1px solid $mt2_color-danger-l;
+      background-color: $mt3_color-danger-l;
+      border: 1px solid $mt3_color-danger-l;
     }
   }
 }
 
-.mt2_btn--default {
-  background-color: $mt2_color-primary;
+.mt3_btn--default {
+  background-color: $mt3_color-primary;
 
   &:hover {
-    background-color: $mt2_color-primary-l;
-    border: 1px solid $mt2_color-primary-l;
+    background-color: $mt3_color-primary-l;
+    border: 1px solid $mt3_color-primary-l;
   }
 
   &--inverse {
-    color: $mt2_color-neutral-xxxl;
+    color: $mt3_color-neutral-xxxl;
   }
 
   &--inactive {
-    background: $mt2_color-neutral;
-    color: $mt2_color-neutral-xxd;
+    background: $mt3_color-neutral;
+    color: $mt3_color-neutral-xxd;
     cursor: default;
     opacity: .3;
   }
 }
 
-.mt2_btn--secondary {
-  border: 1px solid $mt2_color-primary-l;
+.mt3_btn--secondary {
+  border: 1px solid $mt3_color-primary-l;
 
   &:hover {
-    background: $mt2_color-primary-l;
+    background: $mt3_color-primary-l;
   }
 
   &--inverse {
-    border: 1px solid $mt2_color-primary-l;
-    color: $mt2_color-neutral-xxxl;
+    border: 1px solid $mt3_color-primary-l;
+    color: $mt3_color-neutral-xxxl;
 
     &:hover {
-      background: $mt2_color-primary-l;
-      color: $mt2_color-neutral-xxd;
+      background: $mt3_color-primary-l;
+      color: $mt3_color-neutral-xxd;
     }
   }
 
   &--inactive {
-    border: 1px solid transparentize($mt2_color-neutral-l, .6);
-    color: transparentize($mt2_color-neutral-l, .6);
+    border: 1px solid transparentize($mt3_color-neutral-l, .6);
+    color: transparentize($mt3_color-neutral-l, .6);
     cursor: default;
   }
 }
 
-.mt2_btn--naked {
+.mt3_btn--naked {
   background: none;
-
-  span {
-    border-bottom: 2px solid $mt2_color-primary;
-  }
 
   &:hover {
     background-color: transparent;
-    color: $mt2_color-primary;
+    color: $mt3_color-primary;
   }
 
   &--inverse {
-    color: $mt2_color-neutral-xxxl;
+    color: $mt3_color-neutral-xxxl;
   }
 
   &--inactive {
     border: 0;
-    color: transparentize($mt2_color-neutral-l, .6);
+    color: transparentize($mt3_color-neutral-l, .6);
     cursor: default;
 
     &:hover {
-      color: transparentize($mt2_color-neutral-l, .6);
+      color: transparentize($mt3_color-neutral-l, .6);
     }
   }
+}
+
+.mt3_btn-nakedicon {
+  height: 10px;
+  margin-left: 10px;
+  width: 10px;
 }

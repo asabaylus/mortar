@@ -1,21 +1,21 @@
-%mt2_blockquote {
+%mt3_blockquote {
   p {
-    @extend %mt2_body--emphasis;
+    @extend %mt3_body--emphasis;
 
     font-size: 1rem;
   }
 
-  border-left: ($mt2_fs-med-lrg / 2) solid $mt2_color-neutral-xxl;
-  color: $mt2_color-neutral-xd;
-  margin: ($mt2_fs-med-lrg * 2) 0;
-  padding-left: $mt2_fs-med-lrg;
-  padding-right: $mt2_fs-med-lrg;
+  border-left: ($mt3_fs-med-lrg / 2) solid $mt3_color-neutral-xxl;
+  color: $mt3_color-neutral-xd;
+  margin: ($mt3_fs-med-lrg * 2) 0;
+  padding-left: $mt3_fs-med-lrg;
+  padding-right: $mt3_fs-med-lrg;
 }
 
-.mt2_blockquote {
-  @extend %mt2_blockquote;
+.mt3_blockquote {
+  @extend %mt3_blockquote;
 }
 
-.mt2_blockquote--footer {
+.mt3_blockquote--footer {
   text-align: right;
 }

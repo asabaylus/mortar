@@ -16,8 +16,9 @@ class VideoPlaylist extends Component {
     this.autoPlay = false;
     this.playerInstanceName = `platformPlaylistVideoPlayer_${this.props.divID}`;
     this.adPlaying = false;
-    this.manualPlay = false;
     this.handleEvent = this.handleEvent.bind(this);
+    this.manualPlay = false;
+    this.didLoop = false;
     this.state = {
       currentVideoIndex: START_VIDEO_INDEX
     };
@@ -61,27 +62,29 @@ class VideoPlaylist extends Component {
   }
 
   handleEvent(e) {
+    if (!(ngsPlayer && ngsPlayer.api && typeof $pdk != 'undefined')) {
+      return;
+    }
     if (e.originator.controlId !== this.playerInstanceName) {
       //ignore the event if it's not coming from the current player instance
       return;
     }
 
     this.adPlaying = e.data.baseClip && e.data.baseClip.isAd;
-
-    if ((e.type === 'OnMediaComplete' || e.type === 'OnLoadReleaseUrl') && ngsPlayer && ngsPlayer.api && typeof $pdk != 'undefined') {
-      if (!this.adPlaying && this.autoPlay) {
-        //We're in automated playlist mode
-        this.updateVideo();
-      } else if (!this.props.autoContinue && e.type === 'OnLoadReleaseUrl' && this.manualPlay) {
-        //autoContinue is turned off, so we're reacting to a click on a playlist item
-        if (this.getBreakpoint() !== 'mobile') {
-          //Not able to get iOS to play in the native player by triggering .play() here after the call back from the load method, so, for desktop we'll go ahead and play the video. Mobile will require a click on the player. This only happens when the automated playlist is turned off and we're not calling the .set() api method
-          ngsPlayer.api.play(this.playerInstanceName);
-        }
-        //Turning flag back to false
-        this.manualPlay = false;
-      }
+    if (e.type === 'OnMediaComplete' && !this.adPlaying && this.autoPlay) {
+      //We're in automated playlist mode
+      this.updateVideo();
     }
+    if (!this.props.autoContinue && e.type === 'OnLoadReleaseUrl' && this.manualPlay) {
+      //autoContinue is turned off, so we're reacting to a click on a playlist item
+      if (this.getBreakpoint() !== 'mobile') {
+        //Not able to get iOS to play in the native player by triggering .play() here after the call back from the load method, so, for desktop we'll go ahead and play the video. Mobile will require a click on the player. This only happens when the automated playlist is turned off and we're not calling the .set() api method
+        ngsPlayer.api.play(this.playerInstanceName);
+      }
+      //Turning flag back to false
+      this.manualPlay = false;
+    }
+
     if (e.type === 'OnReleaseStart') {
       if (this.props.autoContinue) {
         this.autoPlay = true;
@@ -99,6 +102,7 @@ class VideoPlaylist extends Component {
       this.changeVideo(this.state.currentVideoIndex + 1);
     } else if (this.state.currentVideoIndex === (this.props.dataModel.length - 1)) {
       this.autoPlay = false;
+      this.didLoop = true;
       this.changeVideo(START_VIDEO_INDEX);
     }
   }
@@ -135,13 +139,14 @@ class VideoPlaylist extends Component {
     //not the first one in the list. So this stops the playback when the last
     //video has been played. If we need a loop just change the second
     //condition by the loop property. Currently that is not in the scope.
-    if (this.props.autoContinue && nextState.currentVideoIndex !== START_VIDEO_INDEX) {
+    if (this.props.autoContinue && !this.didLoop) {
       this.autoPlay = true;
       //This should set the proper url for the video player instance and start playing it
       ngsPlayer.api.set(url, this.playerInstanceName);
     } else {
       //set flag to use in "OnLoadReleaseUrl" call back, so we know to call play on player instance
       this.manualPlay = true;
+      this.didLoop = false;
       ngsPlayer.api.unload(this.playerInstanceName);
       ngsPlayer.api.load(url, this.playerInstanceName);
     }
@@ -178,7 +183,7 @@ class VideoPlaylist extends Component {
   }
 
   showHiddenThumb(nextState) {
-    const currThumbs = this.refs.thumbnailContainer.querySelectorAll('.mt2_video-playlist-container--thumbnail');
+    const currThumbs = this.refs.thumbnailContainer.querySelectorAll('.mt3_video-playlist-container--thumbnail');
     let currThumb = currThumbs[nextState.currentVideoIndex];
     let currThumbParent = currThumb.parentNode;
     let thumbOffset = 0;
@@ -204,22 +209,22 @@ class VideoPlaylist extends Component {
 
     const thumbnails = this.props.dataModel.map((item, index) => {
       const thumbClass = classNames({
-        'mt2_video-playlist-container--thumbnail': true,
-        'mt2_video-playlist-container--active-thumbnail': this.state.currentVideoIndex === index,
-        'mt2_hide-play': !this.props.autoContinue
+        'mt3_video-playlist-container--thumbnail': true,
+        'mt3_video-playlist-container--active-thumbnail': this.state.currentVideoIndex === index,
+        'mt3_hide-play': !this.props.autoContinue
       });
       return <VideoThumbnail key={index} wrapperClass={thumbClass} item={item} onClick={this.handleClick.bind(this, index)}/>
     });
     return(
-      <div ref="mainVideoContainer" className="mt2_multi-layout-promos multi-layout-promos--box-ads mt2_video-playlist-container">
-        <div className="mt2_col-12 mt2_col-lg-8 mt2_multi-layout-promos__promo-content">
-          <div className="mt2_multi-layout-promos__promo--text__bg"></div>
+      <div ref="mainVideoContainer" className="mt3_multi-layout-promos multi-layout-promos--box-ads mt3_video-playlist-container">
+        <div className="mt3_col-12 mt3_col-lg-8 mt3_multi-layout-promos__promo-content">
+          <div className="mt3_multi-layout-promos__promo--text__bg"></div>
           <EmbeddedVideo model={videoModel} lazyLoad={true}/>
           <VideoCaption title={firstVideo.title} abstract={firstVideo.abstract} />
         </div>
-        <div className="mt2_col-12 mt2_col-lg-4">
-          <div ref="thumbnailContainer" className='mt2_video-playlist-container--thumbnails'>
-            <div className="mt2_video-playlist-container--thumbnails__scroll">
+        <div className="mt3_col-12 mt3_col-lg-4">
+          <div ref="thumbnailContainer" className='mt3_video-playlist-container--thumbnails'>
+            <div className="mt3_video-playlist-container--thumbnails__scroll">
               {thumbnails}
             </div>
           </div>

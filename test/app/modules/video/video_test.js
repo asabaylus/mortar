@@ -87,7 +87,7 @@ describe('Video Component', () => {
     });
 
     it('should contain the expected mock inside LazyLoad', () => {
-      expect(wrapper.childAt(1).html()).to.equal('<div class="mt2_video-wrapper"><div id="'+reactModel.instance+'" class="mt2_video-player" data-guid="'+reactModel.guid+'"></div></div>');
+      expect(wrapper.childAt(1).html()).to.equal('<div class="mt3_video-wrapper"><div id="'+reactModel.instance+'" class="mt3_video-player" data-guid="'+reactModel.guid+'"></div></div>');
     });
   });
 
@@ -122,7 +122,7 @@ describe('Video Component', () => {
     });
 
     it('should include a div for the video player to instantiate against', () => {
-      expect(wrapper.html()).to.include('<div id="'+reactModel.instance+'" class="mt2_video-player" data-guid="'+reactModel.guid+'"></div>');
+      expect(wrapper.html()).to.include('<div id="'+reactModel.instance+'" class="mt3_video-player" data-guid="'+reactModel.guid+'"></div>');
     });
   });
 });

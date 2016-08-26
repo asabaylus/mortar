@@ -1,51 +1,51 @@
 // Primary colors
 
-$mt2_color-primary-l: lighten($mt2_color-primary, 20);
-$mt2_color-primary-xl: lighten($mt2_color-primary, 30);
-$mt2_color-primary-xxl: lighten($mt2_color-primary, 40);
-$mt2_color-primary-xxxl: lighten($mt2_color-primary, 45);
+$mt3_color-primary-l: lighten($mt3_color-primary, 20);
+$mt3_color-primary-xl: lighten($mt3_color-primary, 30);
+$mt3_color-primary-xxl: lighten($mt3_color-primary, 40);
+$mt3_color-primary-xxxl: lighten($mt3_color-primary, 45);
 
 // Neutrals -- Dark
 
-$mt2_color-neutral-d: darken($mt2_color-neutral, 30);
-$mt2_color-neutral-xd: darken($mt2_color-neutral, 40);
-$mt2_color-neutral-xxd: darken($mt2_color-neutral, 50);
+$mt3_color-neutral-d: darken($mt3_color-neutral, 30);
+$mt3_color-neutral-xd: darken($mt3_color-neutral, 40);
+$mt3_color-neutral-xxd: darken($mt3_color-neutral, 50);
 
 // Neutrals -- Light
 
-$mt2_color-neutral-l: lighten($mt2_color-neutral, 20);
-$mt2_color-neutral-xl: lighten($mt2_color-neutral, 40);
-$mt2_color-neutral-xxl: lighten($mt2_color-neutral, 45);
-$mt2_color-neutral-xxxl: lighten($mt2_color-neutral, 50);
+$mt3_color-neutral-l: lighten($mt3_color-neutral, 20);
+$mt3_color-neutral-xl: lighten($mt3_color-neutral, 40);
+$mt3_color-neutral-xxl: lighten($mt3_color-neutral, 45);
+$mt3_color-neutral-xxxl: lighten($mt3_color-neutral, 50);
 
 // Affirmation
 
-$mt2_color-affirmation-l: mt2_tint($mt2_color-affirmation, 25);
+$mt3_color-affirmation-l: mt3_tint($mt3_color-affirmation, 25);
 
 // Danger
 
-$mt2_color-danger-l: mt2_tint($mt2_color-danger, 25);
+$mt3_color-danger-l: mt3_tint($mt3_color-danger, 25);
 
 // Borders
 
-$mt2_border-default: 1px solid $mt2_color-neutral-l;
-$mt2_border-default-hover: 1px solid $mt2_color-neutral;
-$mt2_border-danger: 1px solid $mt2_color-danger;
+$mt3_border-default: 1px solid $mt3_color-neutral-l;
+$mt3_border-default-hover: 1px solid $mt3_color-neutral;
+$mt3_border-danger: 1px solid $mt3_color-danger;
 
-$mt2_colors: (
-  primary: $mt2_color-primary,
-  primary--l: $mt2_color-primary-l,
-  primary--xl: $mt2_color-primary-xl,
-  neutral--xxd: $mt2_color-neutral-xxd,
-  neutral--xd: $mt2_color-neutral-xd,
-  neutral--d: $mt2_color-neutral-d,
-  neutral: $mt2_color-neutral,
-  neutral--l: $mt2_color-neutral-l,
-  neutral--xl: $mt2_color-neutral-xl,
-  neutral--xxl: $mt2_color-neutral-xxl,
-  neutral--xxxl: $mt2_color-neutral-xxxl,
-  affirmation: $mt2_color-affirmation,
-  affirmation--l: $mt2_color-affirmation-l,
-  danger: $mt2_color-danger,
-  danger--l: $mt2_color-danger-l
+$mt3_colors: (
+  primary: $mt3_color-primary,
+  primary--l: $mt3_color-primary-l,
+  primary--xl: $mt3_color-primary-xl,
+  neutral--xxd: $mt3_color-neutral-xxd,
+  neutral--xd: $mt3_color-neutral-xd,
+  neutral--d: $mt3_color-neutral-d,
+  neutral: $mt3_color-neutral,
+  neutral--l: $mt3_color-neutral-l,
+  neutral--xl: $mt3_color-neutral-xl,
+  neutral--xxl: $mt3_color-neutral-xxl,
+  neutral--xxxl: $mt3_color-neutral-xxxl,
+  affirmation: $mt3_color-affirmation,
+  affirmation--l: $mt3_color-affirmation-l,
+  danger: $mt3_color-danger,
+  danger--l: $mt3_color-danger-l
 );

@@ -21,7 +21,7 @@ table {
 
 
 td, th {
-  border: 1px solid $mt2_color-neutral-xl;
+  border: 1px solid $mt3_color-neutral-xl;
   padding: .5rem;
   text-align: left;
 }
@@ -37,7 +37,7 @@ td, th {
 .intro-txt {
   text-align: center;
 
-  @media #{$mt2_mq-lg} {
+  @media #{$mt3_mq-lg} {
     text-align: left;
   }
 }
@@ -45,13 +45,13 @@ td, th {
 .examplelink {
   &:link,
   &:visited {
-    color: $mt2_color-neutral-xxd;
+    color: $mt3_color-neutral-xxd;
     text-decoration: none;
   }
 }
 
 .codemarkup {
-  border: 1px solid $mt2_color-neutral-xl;
+  border: 1px solid $mt3_color-neutral-xl;
   display: block;
   padding: 1.5em;
   word-wrap: break-word;
@@ -65,7 +65,7 @@ td, th {
 .pagewrapper {
   position: relative;
 
-  @media #{$mt2_mq-lg} {
+  @media #{$mt3_mq-lg} {
     margin: auto;
     max-width: 70em;
   }
@@ -77,8 +77,8 @@ td, th {
 // ====================
 
 .divider {
-  border-bottom: 1px solid $mt2_color-neutral-xl;
-  border-top: 1px solid $mt2_color-neutral-xl;
+  border-bottom: 1px solid $mt3_color-neutral-xl;
+  border-top: 1px solid $mt3_color-neutral-xl;
   height: 1em;
 }
 
@@ -99,7 +99,7 @@ td, th {
 }
 
 hr {
-  background: $mt2_color-neutral-xl;
+  background: $mt3_color-neutral-xl;
   border: 0;
   display: block;
   height: 1px;
@@ -122,7 +122,7 @@ hr {
 }
 
 .circle {
-  border: 1px solid $mt2_color-neutral-xl;
+  border: 1px solid $mt3_color-neutral-xl;
   border-radius: 50%;
 }
 
@@ -134,7 +134,7 @@ hr {
 // ====================
 
 .typographyexamples-item {
-  border: 1px solid $mt2_color-neutral-xl;
+  border: 1px solid $mt3_color-neutral-xl;
   padding: 0 1rem;
 }
 
@@ -153,7 +153,7 @@ hr {
 }
 
 .copyright {
-  @media #{$mt2_mq-lg} {
+  @media #{$mt3_mq-lg} {
     margin-bottom: 0;
   }
 }
@@ -168,7 +168,7 @@ hr {
 }
 
 .iconexample-container {
-  border: 1px solid $mt2_color-neutral-xl;
+  border: 1px solid $mt3_color-neutral-xl;
   border-radius: 50%;
   position: relative;
 }
@@ -184,7 +184,7 @@ hr {
   &:link,
   &:visited,
   &:hover {
-    color: $mt2_color-neutral-xd;
+    color: $mt3_color-neutral-xd;
     text-decoration: none;
     display: block;
   }
@@ -199,7 +199,7 @@ hr {
 .sectionpadding {
   padding-top: 1rem;
 
-  @media #{$mt2_mq-lg} {
+  @media #{$mt3_mq-lg} {
     padding-top: 3rem;
   }
 }
@@ -222,13 +222,13 @@ hr {
 }
 
 .dashed-border {
-  background-image: linear-gradient(to bottom, $mt2_color-primary 50%, transparent 0);
+  background-image: linear-gradient(to bottom, $mt3_color-primary 50%, transparent 0);
   background-repeat: repeat-y;
   background-size: .09375em 1.125em;
 }
 
 .exampleborder {
-  border: 2px solid $mt2_color-neutral-xxd;
+  border: 2px solid $mt3_color-neutral-xxd;
 }
 
 
@@ -239,12 +239,12 @@ hr {
 // ====================
 
 .headerwrapper {
-  background: $mt2_color-neutral-xxxl;
-  border-bottom: 1px solid $mt2_color-neutral-xl;
+  background: $mt3_color-neutral-xxxl;
+  border-bottom: 1px solid $mt3_color-neutral-xl;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: $mt2_z-top;
+  z-index: $mt3_z-top;
 }
 
 .header {
@@ -267,7 +267,7 @@ hr {
   cursor: pointer;
   vertical-align: bottom;
 
-  @media #{$mt2_mq-lg} {
+  @media #{$mt3_mq-lg} {
     cursor: default;
   }
 }
@@ -276,7 +276,7 @@ hr {
   transition: 400ms;
   vertical-align: middle;
 
-  @media #{$mt2_mq-lg} {
+  @media #{$mt3_mq-lg} {
     display: none;
   }
 
@@ -288,14 +288,14 @@ hr {
 .navcontainer {
   display: none;
 
-  @media #{$mt2_mq-lg} {
+  @media #{$mt3_mq-lg} {
     display: block;
   }
 
   &--active {
-    background-color: $mt2_color-neutral-xxxl;
-    border: 1px solid $mt2_color-neutral-xl;
-    border-bottom: 6px solid $mt2_color-primary;
+    background-color: $mt3_color-neutral-xxxl;
+    border: 1px solid $mt3_color-neutral-xl;
+    border-bottom: 6px solid $mt3_color-primary;
     display: block;
     margin-left: 5rem;
     position: absolute;
@@ -304,7 +304,7 @@ hr {
     width: 200px;
     z-index: 1;
 
-    @media #{$mt2_mq-lg} {
+    @media #{$mt3_mq-lg} {
       border: 0;
       margin-left: 0;
       position: static;
@@ -314,21 +314,21 @@ hr {
 }
 
 .branding-grey-border {
-  background-color: $mt2_color-neutral-xl;
+  background-color: $mt3_color-neutral-xl;
   display: inline-block;
   height: 2rem;
   width: .0625rem;
 }
 
 .navcontainer-yellow-border {
-  background-color: $mt2_color-primary;
+  background-color: $mt3_color-primary;
   display: block;
   height: .375rem;
   position: absolute;
   top: -3%;
   width: 9.5rem;
 
-  @media #{$mt2_mq-lg} {
+  @media #{$mt3_mq-lg} {
     display: none;
   }
 }
@@ -337,7 +337,7 @@ hr {
   display: block;
   font-size: 1rem;
 
-  @media #{$mt2_mq-lg} {
+  @media #{$mt3_mq-lg} {
     display: inline-block;
     margin-bottom: 0;
     margin-right: 1.375em;
@@ -348,12 +348,12 @@ hr {
   &,
   &:link,
   &:visited {
-    color: $mt2_color-neutral-xd;
+    color: $mt3_color-neutral-xd;
     text-decoration: none;
   }
 
   &:hover {
-    color: $mt2_color-neutral;
+    color: $mt3_color-neutral;
     text-decoration: underline;
   }
 }
@@ -366,7 +366,7 @@ hr {
 // ====================
 
 .illustratedexample-border {
-  border: 1px solid $mt2_color-neutral-xl;
+  border: 1px solid $mt3_color-neutral-xl;
 }
 
 
@@ -403,8 +403,8 @@ hr {
 pre {
   &.codesnippet,
   &.codesnippet[class*="language-"] {
-    background-color: $mt2_color-neutral-xd;
-    border: 1px solid $mt2_color-neutral-xl;
+    background-color: $mt3_color-neutral-xd;
+    border: 1px solid $mt3_color-neutral-xl;
     border-radius: 0;
     padding-bottom: -1em;
     margin-top: 1.25rem;
@@ -437,7 +437,7 @@ code {
 }
 
 .codesnippet-button {
-  background-color: $mt2_color-neutral-xxxl;
+  background-color: $mt3_color-neutral-xxxl;
   border: 0;
   cursor: pointer;
   margin: 0;
@@ -452,7 +452,7 @@ code {
   &:active,
   &:focus,
   &:hover {
-    color: $mt2_color-neutral;
+    color: $mt3_color-neutral;
   }
 }
 
@@ -481,7 +481,7 @@ $snippet-chevron-up: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fww
 
   &--expand {
     &:after {
-      background-image: $mt2_dropdown-icon;
+      background-image: $mt3_dropdown-icon;
     }
   }
 }

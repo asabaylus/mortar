@@ -1,28 +1,28 @@
-.mt2_videopromo-container {
+.mt3_videopromo-container {
   margin: 0;
   position: relative;
 }
 
-.mt2_videopromo-button {
+.mt3_videopromo-button {
   background-color: transparent;
-  background-image: $mt2_video-promo-play-button;
+  background-image: $mt3_video-promo-play-button;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   border: 0;
   height: 40%;
   left: 50%;
-  max-height: $mt2_unit * 15;
-  max-width: $mt2_unit * 15;
-  min-height: $mt2_unit-double;
-  min-width: $mt2_unit-double;
+  max-height: $mt3_unit * 15;
+  max-width: $mt3_unit * 15;
+  min-height: $mt3_unit-double;
+  min-width: $mt3_unit-double;
   opacity: .5;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 40%;
 
-  .mt2_videopromo-container:hover & {
+  .mt3_videopromo-container:hover & {
     opacity: .65;
   }
 }
