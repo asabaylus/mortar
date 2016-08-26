@@ -21,7 +21,7 @@ $mt2_unit-triple:    $mt2_unit * 3;
 $mt2_unit-quadruple: $mt2_unit * 4;
 
 %mt2_h1 {
-  font-family: Georgia, serif;
+  font-family: 'Chronicle Display 3r', Georgia, serif;
   font-size: $mt2_fs-med-xlrg;
   font-weight: 300;
   letter-spacing: .005em;
@@ -38,7 +38,7 @@ $mt2_unit-quadruple: $mt2_unit * 4;
 }
 
 %mt2_h2 {
-  font-family: Georgia, serif;
+  font-family: 'Chronicle Deck 6r', Georgia, serif;
   font-size: $mt2_fs-xlrg;
   font-weight: 600;
   letter-spacing: .005em;
@@ -55,7 +55,7 @@ $mt2_unit-quadruple: $mt2_unit * 4;
 }
 
 %mt2_h3 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
   font-size: $mt2_fs-lrg;
   font-weight: 600;
   letter-spacing: -.01em;
@@ -75,20 +75,20 @@ $mt2_unit-quadruple: $mt2_unit * 4;
 }
 
 %mt2_h5 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
   font-size: $mt2_fs-sm;
   font-weight: 600;
 }
 
 %mt2_subh1 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
   font-size: $mt2_fs-med;
   font-weight: 300;
   line-height: 1.37;
 }
 
 %mt2_subh2 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
   font-size: $mt2_fs-sm;
   font-weight: 300;
   line-height: 1.57;
@@ -96,14 +96,14 @@ $mt2_unit-quadruple: $mt2_unit * 4;
 }
 
 %mt2_subh3 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
   font-size: $mt2_fs-xsm;
   font-weight: 300;
   text-transform: uppercase;
 }
 
 %mt2_subh4 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+  font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
   font-size: $mt2_fs-sm;
   font-weight: 300;
   line-height: 1.43;
