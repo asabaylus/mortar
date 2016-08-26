@@ -3,6 +3,7 @@
 import React, { PropTypes }  from 'react';
 import PromoImage from '../shared/PromoImage.jsx';
 import PromoText from '../shared/PromoText.jsx';
+import events from '../../scripts/events';
 import { generateHref } from '../../scripts/generateHref.js';
 
 const Article = (props) => {
@@ -15,12 +16,12 @@ const Article = (props) => {
     Pestle.PubSub.publish(events.promoClicked, promoData);
   };
 
-  let attrs = {
+  let attrs = props.link ? {
     className: "mt3_div-link",
     href: props.link ? generateHref(props.link.url, props.link.trackingCodes) : null,
     target: props.link ? props.link.target : null,
     onClick: promoClicked
-  };
+  } : null;
 
   if (props.leadMedia){
     return(

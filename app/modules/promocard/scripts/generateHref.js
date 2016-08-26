@@ -17,8 +17,10 @@ export function generateHref (url, trackingCodes) {
     href = href + '?' + terms;
 
     return href;
-  }else{
+  }else if(trackingCodes && typeof trackingCodes !== 'object'){
     return url + trackingCodes;
+  }else{
+    return url;
   }
 
 }
