@@ -14,9 +14,65 @@ import React from 'react';
 describe('MTPhotoGallery', () => {
   describe('Pestle Module', () => {
     before(() => {
-      const html = `<div
-        data-pestle-module='PhotoGallery'
-        ></div>`
+      const html = `
+        <div data-pestle-module="PhotoGallery">
+          <script type="text/json" data-pestle-options>
+          {
+            "frameAspectRatio": "photo",
+            "letterboxBackgroundColor": "light",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+            "infinite": false,
+            "letterbox": true,
+            "showArrows": true,
+            "showCounter": true,
+            "slides": [
+              {
+                "aspectRatio": "broadcast",
+                "assetSource": "National Geographic",
+                "caption": "This is Caption One",
+                "credit": "Joel Sartore",
+                "src": "http://placehold.it/350x150.jpg",
+                "srcset": [
+                  "http://placehold.it/350x150.jpg 350w",
+                  "http://placehold.it/700x300.jpg 700w",
+                  "http://placehold.it/1400x600.jpg 1400w"
+                ],
+                "title": "This is Title One",
+                "type": "image"
+              },
+              {
+                "aspectRatio": "photo",
+                "assetSource": "National Geographic",
+                "caption": "This is Caption Two",
+                "credit": "Joel Sartore",
+                "src": "http://placehold.it/350x150.jpg",
+                "srcset": [
+                  "http://placehold.it/350x150.jpg 350w",
+                  "http://placehold.it/700x300.jpg 700w",
+                  "http://placehold.it/1400x600.jpg 1400w"
+                ],
+                "title": "This is Title Two",
+                "type": "image"
+              },
+              {
+                "aspectRatio": "tv",
+                "assetSource": "National Geographic",
+                "caption": "This is Caption Three",
+                "credit": "Joel Sartore",
+                "src": "http://placehold.it/300x200.jpg",
+                "srcset": [
+                  "http://placehold.it/300x200.jpg 300w",
+                  "http://placehold.it/600x400.jpg 600w",
+                  "http://placehold.it/1200x800.jpg 1200w"
+                ],
+                "title": "This is Title Three",
+                "type": "image"
+              }
+            ],
+            "title": "This is the title"
+          }
+          </script>
+        </div>`
 
       insertFixture(html);
       Pestle.init();
