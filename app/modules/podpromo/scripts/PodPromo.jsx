@@ -121,8 +121,13 @@ class PodPromoComponent extends Component {
 
           <div className="mt3_podpromo-content-container mt3_podpromo-content-container-bottom mt3_podpromo-content-container-right mt3_podpromo-fade">
             <div className="mt3_podpromo-photocredit-container">
-              <div className="mt3_caption-creditname mt3_podpromo-photocredit" dangerouslySetInnerHTML={{__html: photoCredit}} />
-              <div className="mt3_caption-credit mt3_podpromo-affiliation" dangerouslySetInnerHTML={{__html: photoAffiliation}} />
+
+              {
+                photoCredit ? <div className="mt3_caption-creditname mt3_podpromo-photocredit" dangerouslySetInnerHTML={{__html: photoCredit}} /> : null
+              }
+              {
+                photoAffiliation ? <div className="mt3_caption-credit mt3_podpromo-affiliation" dangerouslySetInnerHTML={{__html: photoAffiliation}} /> : null
+              }
             </div>
           </div>
         </div>

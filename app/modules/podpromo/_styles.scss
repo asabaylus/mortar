@@ -73,7 +73,11 @@ $mt3_white: #fff;
 
     &-left {
       left: 40px;
-      max-width: 50%;
+      max-width: calc(50% - 40px);
+
+      &.mt3_podpromo-content-container-top {
+        max-width: calc(80% - 40px);
+      }
 
       .mt3_podpromo--mobile & {
         max-width: none;
@@ -96,8 +100,12 @@ $mt3_white: #fff;
     }
 
     &-right {
-      max-width: 50%;
+      max-width: calc(50% - 40px);
       right: 40px;
+
+      &.mt3_podpromo-content-container-top {
+        max-width: calc(20% - 40px);
+      }
 
       .mt3_podpromo--mobile & {
         max-width: none;
