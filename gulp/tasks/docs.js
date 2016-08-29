@@ -66,7 +66,8 @@ gulp.task('docs', ['icons'], function() {
   .use(layouts({
     'engine': 'swig',
     'default': 'default.html',
-    'directory': './' + paths.siteSrc + '_layouts/'
+    'directory': './' + paths.siteSrc + '_layouts/',
+    'pattern': '**/*.html'
   }))
   .use(fileMetadata([
     // Pass list of icons to the icon page as metadata

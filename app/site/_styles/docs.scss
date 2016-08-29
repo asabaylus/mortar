@@ -173,11 +173,16 @@ hr {
   position: relative;
 }
 
-.iconexample-icon {
+.iconexample-icon,
+.iconexample-image {
   left: 50%;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.iconexample-image {
+  max-width: 70%;
 }
 
 .downloadicon-btn {
