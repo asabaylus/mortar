@@ -16,8 +16,6 @@ require('../modules/promocard/configurator/MTPromoCardConfiguratorPestle.js');
 require('../modules/tooltips/scripts/MTTooltipPestle.js');
 require('../modules/videoplaylist/scripts/VideoPlaylistPestle.js');
 
-require('@natgeo/modules-content-package/helloWorld/helloWorldPestle.js');
-
 
 Pestle.init();
 
