@@ -1,3 +1,4 @@
+'use strict';
 import React, { Component, PropTypes } from 'react';
 import {Pestle} from '@natgeo/mortar-pestle';
 import {SimpleModal} from './modal.jsx';
@@ -64,7 +65,7 @@ class TooltipBubble extends Component{
   }
 
   componentDidUpdate(){
-    if(this.props.placement === "left" && this.state.visible){
+    if(this.props.placement === 'left' && this.state.visible){
       let width =  window.getComputedStyle(this.refs.tooltipContainer).width;
       const arrowWidth = 15;
       width = -parseFloat(width) - arrowWidth;
@@ -81,7 +82,7 @@ class TooltipBubble extends Component{
     });
 
     return(
-      <div ref="tooltipContainer" className={`mt2_tooltip mt2_subh4 mt2_bgcolor--neutral--xxl ${tooltipPlacement}`}>
+      <div ref='tooltipContainer' className={`mt2_tooltip mt2_subh4 mt2_bgcolor--neutral--xxl ${tooltipPlacement}`}>
         <p dangerouslySetInnerHTML={{__html: this.props.tooltipContent}} />
       </div>
     );
@@ -89,11 +90,11 @@ class TooltipBubble extends Component{
 
   render() {
     return(
-      <div className="mt2_tooltip-container"
+      <div className='mt2_tooltip-container'
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}>
         {this.state.visible ? this.renderTooltip() : ''}
-        <button onClick={this.onClick} className="mt2_h5 mt2_color--neutral--xd mt2_bordercolor--neutral--xl mt2_bgcolor--neutral--xxxl mt2_tooltip-btn">?</button>
+        <button onClick={this.onClick} className='mt2_h5 mt2_color--neutral--xd mt2_bordercolor--neutral--xl mt2_bgcolor--neutral--xxxl mt2_tooltip-btn'>?</button>
       </div>
     );
   }
@@ -124,7 +125,7 @@ class TooltipModal extends Component {
 
     return (
       <SimpleModal onClose={this.toggleVisibility}>
-        <div className="mt2_tooltip-modalcontent">{tooltipContent}</div>
+        <div className='mt2_tooltip-modalcontent'>{tooltipContent}</div>
         {this.props.children}
       </SimpleModal>
     )

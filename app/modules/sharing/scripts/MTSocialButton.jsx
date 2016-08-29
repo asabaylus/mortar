@@ -1,4 +1,5 @@
-import React, { Component, PropTypes }  from 'react';
+'use strict';
+import React, { Component, PropTypes } from 'react';
 import urlEncode from 'urlencode';
 
 class MTSocialButton extends Component {
@@ -19,35 +20,35 @@ class MTSocialButton extends Component {
     const siteAttr = {
       facebook: {
         h: 279,
-        url: "http://www.facebook.com/share.php?u=" + encodedUrl,
+        url: 'http://www.facebook.com/share.php?u=' + encodedUrl,
         w: 575,
         windowTitle: 'Facebook'
       },
       'google-plus': {
         h: 647,
-        url: "https://plus.google.com/share?url=" + encodedUrl,
+        url: 'https://plus.google.com/share?url=' + encodedUrl,
         w: 500,
         windowTitle: 'Google Plus'
       },
       linkedin: {
         h: 425,
-        url: "https://www.linkedin.com/shareArticle?mini=true&url=nationalgeographic.com" + encodedUrl,
+        url: 'https://www.linkedin.com/shareArticle?mini=true&url=nationalgeographic.com' + encodedUrl,
         w: 450,
         windowTitle: 'LinkedIn'
       },
       pinterest: {
         h: 575,
-        url: "http://pinterest.com/pin/create/button/?" + encodedUrl,
+        url: 'http://pinterest.com/pin/create/button/?' + encodedUrl,
         w: 750,
         windowTitle: 'Pinterest'
       },
       twitter: {
         h: 420,
-        url: "https://twitter.com/intent/tweet?url="
+        url: 'https://twitter.com/intent/tweet?url='
               + encodedUrl
-              + "&text="
+              + '&text='
               + urlEncode(title)
-              + "&via=NatGeo",
+              + '&via=NatGeo',
         w: 550,
         windowTitle: 'Twitter'
       }
@@ -63,11 +64,11 @@ class MTSocialButton extends Component {
     return window.open(
       siteAttr[site].url,
       siteAttr[site].windowTitle,
-      "status = 1, width = " + siteAttr[site].w
-        + ", height = " + siteAttr[site].h
-        + ", left = " + popup.left
-        + ", top = " + popup.top
-        + ", resizable = 0"
+      'status = 1, width = ' + siteAttr[site].w
+        + ', height = ' + siteAttr[site].h
+        + ', left = ' + popup.left
+        + ', top = ' + popup.top
+        + ', resizable = 0'
       );
   }
 
@@ -77,9 +78,9 @@ class MTSocialButton extends Component {
 
   render() {
     return (
-      <button onClick={this.handleClick} className="mt2_sharing-btn">
-        <svg className={"mt2_icon mt2_color--social--" + this.props.site}>
-          <use xlinkHref={"#social-" + this.props.site}></use>
+      <button onClick={this.handleClick} className='mt2_sharing-btn'>
+        <svg className={'mt2_icon mt2_color--social--' + this.props.site}>
+          <use xlinkHref={'#social-' + this.props.site}></use>
         </svg>
       </button>
     )

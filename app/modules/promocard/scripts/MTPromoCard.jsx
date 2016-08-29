@@ -23,14 +23,14 @@ const MTPromoCard = (props) => {
     let href = url;
 
     if(trackingCodes && typeof trackingCodes === 'object') {
-      let terms = "";
+      let terms = '';
       const termsArr = props.link.trackingCodes;
       const concatTerms = (element, index, array) => {
         const lastEl = index < array.length - 1;
-        terms += lastEl ? element + "+" : element;
+        terms += lastEl ? element + '+' : element;
       };
       termsArr.forEach(concatTerms);
-      href = href + "?" + terms;
+      href = href + '?' + terms;
 
       return href;
     }else{
@@ -39,22 +39,22 @@ const MTPromoCard = (props) => {
   };
 
   let attrs = {
-    className: "mt2_promocard-container",
+    className: 'mt2_promocard-container',
     onClick: promoClicked
   };
 
   switch(props.type){
-    case 'article':
-      return <div {...attrs}>
-        <Article {...props} />
-      </div>;
-      break;
-    // additional cases for the remaining types may be included when they are created
-    default:
-      return <div {...attrs}>
-        <Article {...props} />
-      </div>;
-      break;
+  case 'article':
+    return <div {...attrs}>
+      <Article {...props} />
+    </div>;
+    break;
+  // additional cases for the remaining types may be included when they are created
+  default:
+    return <div {...attrs}>
+      <Article {...props} />
+    </div>;
+    break;
   }
 };
 

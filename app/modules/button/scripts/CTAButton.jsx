@@ -11,20 +11,20 @@ class CTAButton extends Component {
     let href = url;
 
     if(trackingCodes) {
-      let terms = "";
+      let terms = '';
       const termsArr = this.props.link.trackingCodes.utmTerm;
       function concatTerms(element, index, array){
         const lastEl = index < array.length - 1;
-        terms += lastEl ? element + "+" : element;
+        terms += lastEl ? element + '+' : element;
       }
       termsArr.forEach(concatTerms);
       href = href
-        + "?"
-        + "utm_source=" + trackingCodes.utmSource
-        + "&utm_medium=" + trackingCodes.utmMedium
-        + "&utm_term=" + terms
-        + "&utm_content=" + trackingCodes.utmContent
-        + "&utm_campaign=" + trackingCodes.utmCampaign;
+        + '?'
+        + 'utm_source=' + trackingCodes.utmSource
+        + '&utm_medium=' + trackingCodes.utmMedium
+        + '&utm_term=' + terms
+        + '&utm_content=' + trackingCodes.utmContent
+        + '&utm_campaign=' + trackingCodes.utmCampaign;
     }
 
     return href;

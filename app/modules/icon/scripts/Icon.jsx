@@ -5,15 +5,15 @@ import React, { Component, PropTypes }  from 'react';
 class Icon extends Component {
 
   render(){
-    let iconClasses = "mt2_icon ";
-    if(this.props.size){
-      iconClasses += "mt2_icon--large ";
+    let iconClasses = 'mt2_icon';
+    if (this.props.size) {
+      iconClasses += ' mt2_icon--large';
     }
-    if(this.props.align){
-      iconClasses += "mt2_icon--" + this.props.align;
+    if (this.props.align) {
+      iconClasses += ' mt2_icon--' + this.props.align;
     }
-    if(this.props.color){
-      iconClasses += " mt2_color--" + this.props.color;
+    if (this.props.color) {
+      iconClasses += ' mt2_color--' + this.props.color;
     }
 
     /***
