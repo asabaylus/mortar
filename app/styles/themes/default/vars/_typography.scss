@@ -54,9 +54,11 @@ $mt3_unit-quadruple: $mt3_unit * 4;
 
 .mt3_page-title--large {
   font-family: $mt3_verlag-stack;
+  font-size: $mt3_fs-med-xlrg;
   font-weight: 400;
   letter-spacing: .05em;
   line-height: 1.05;
+  text-rendering: optimizeLegibility;
   text-transform: uppercase;
   word-spacing: .05em;
 
@@ -71,8 +73,11 @@ $mt3_unit-quadruple: $mt3_unit * 4;
 
 .mt3_page-title--small {
   font-family: $mt3_haas-stack;
+  font-size: $mt3_fs-xlrg;
   font-weight: 600;
   letter-spacing: .015em;
+  line-height: 1.15;
+  text-rendering: optimizeLegibility;
 
   @media #{$mt3_mq-md} {
     font-size: $mt3_fs-med-lrg;
@@ -85,8 +90,10 @@ $mt3_unit-quadruple: $mt3_unit * 4;
 
 .mt3_page-description {
   font-family: $mt3_haas-stack;
+  font-size: $mt3_fs-med;
   font-weight: 400;
   letter-spacing: .05em;
+  line-height: 1.37;
 }
 
 .mt3_kicker {
