@@ -41,7 +41,7 @@
   &--footer {
     font-family: $mt3_verlag-stack;
     font-size: $mt3_fs-xsm;
-    letter-spacing: .05rem;
+    letter-spacing: .1rem;
     line-height: 1.5;
     text-align: center;
     text-transform: uppercase;
@@ -62,4 +62,9 @@
     font-weight: 400;
     padding: 0 1.25rem;
   }
+
+  &--attributionname + &--attributiontitle {
+    border-left: 0;
+  }
+
 }
