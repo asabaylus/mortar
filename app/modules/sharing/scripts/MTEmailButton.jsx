@@ -1,3 +1,4 @@
+'use strict';
 import React, { Component, PropTypes }  from 'react';
 import urlEncode from 'urlencode';
 
@@ -19,9 +20,9 @@ class MTEmailButton extends Component {
     ;
 
     return (
-      <a href={emailFormat} className="mt2_sharing-btn">
-        <svg className="mt2_icon mt2_color--neutral--xxd">
-          <use xlinkHref="#email"></use>
+      <a href={emailFormat} className='mt2_sharing-btn'>
+        <svg className='mt2_icon mt2_color--neutral--xxd'>
+          <use xlinkHref='#email'></use>
         </svg>
       </a>
     )

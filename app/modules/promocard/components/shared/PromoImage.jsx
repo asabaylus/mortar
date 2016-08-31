@@ -6,15 +6,15 @@ import Image from '@natgeo/modules-images';
 
 const PromoImage = (props) => {
   const icon = {
-    "align": "left",
-    "alt": "Play Button",
-    "name": "#play"
+    'align': 'left',
+    'alt': 'Play Button',
+    'name': '#play'
   };
 
   // Button takes onClick function prop to hook into for play functionality
   return(
     <figure>
-      {props.brandingBadgeLabel ? <figcaption className="mt2_promocard-branding">{props.brandingBadgeLabel}</figcaption> : null}
+      {props.brandingBadgeLabel ? <figcaption className='mt2_promocard-branding'>{props.brandingBadgeLabel}</figcaption> : null}
       <Image
         aspectRatio={props.leadMedia.aspectRatio}
         frameAspectRatio={props.config.aspectRatio}

@@ -41,7 +41,7 @@ class NextButton extends React.Component {
 
 class MTSlider extends Component {
   findSlideType(type, data) {
-    const backgroundColor = this.props.letterboxBackgroundColor === "light" ? "#F2F2F2" : this.props.letterboxBackgroundColor === "dark" ? "#000000" : " ";
+    const backgroundColor = this.props.letterboxBackgroundColor === 'light' ? '#F2F2F2' : this.props.letterboxBackgroundColor === 'dark' ? '#000000' : ' ';
     switch(type) {
     case 'image':
       return <ImageSlide aspectRatio={data.aspectRatio}
@@ -112,7 +112,7 @@ class MTSlider extends Component {
 
 MTSlider.defaultProps = {
   animations: true,
-  frameAspectRatio: "3:2",
+  frameAspectRatio: '3:2',
   infinite: true
 }
 

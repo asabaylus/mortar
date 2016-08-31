@@ -6,25 +6,23 @@ const PromoText = (props) => {
   const generateHref = (url, trackingCodes) => {
     let href = url;
 
-    if(trackingCodes && typeof trackingCodes === Array.isArray) {
-      let terms = "";
+    if (trackingCodes && typeof trackingCodes === Array.isArray) {
+      let terms = '';
       const termsArr = props.text.kicker.trackingCodes;
       const concatTerms = (element, index, array) => {
         const lastEl = index < array.length - 1;
-        terms += lastEl ? element + "+" : element;
+        terms += lastEl ? element + '+' : element;
       };
       termsArr.forEach(concatTerms);
-      href = href + "?" + terms;
-
-      return href;
-    }else{
-      return url + trackingCodes;
+      href += '?' + terms;
+    } else {
+      href += trackingCodes;
     }
-
+    return href;
   };
 
   let attrs = {
-    className: "mt2_color--neutral--l mt_subh2 mt2_promocard-kicker",
+    className: 'mt2_color--neutral--l mt_subh2 mt2_promocard-kicker',
     href: generateHref(props.text.kicker.url, props.text.kicker.trackingCodes),
     target: props.text.kicker.target
   };
@@ -32,10 +30,10 @@ const PromoText = (props) => {
   return(
     <div>
       {props.text.kicker && !props.config.sponsored ? <div><a {...attrs}>{props.text.kicker.label}</a></div> : props.config.sponsored ? <div><a {...attrs}>{props.text.sponsorContentLabel}</a></div> : null}
-      {(props.type && props.type === 'video') ? <div className="mt2_color--neutral--l mt_subh2">{props.text.duration}</div> : null}
-      {props.text.title ? <div className="mt2_color--neutral--xxd mt2_h4">{props.text.title}</div> : null}
-      {props.text.dek ? <div className="mt2_color--neutral--xxd mt2_subh4">{props.text.dek}</div> : null}
-      {props.text.byline ? <div className="mt2_color--neutral--xxd mt2_h5">{props.text.byline}</div> : null}
+      {(props.type && props.type === 'video') ? <div className='mt2_color--neutral--l mt_subh2'>{props.text.duration}</div> : null}
+      {props.text.title ? <div className='mt2_color--neutral--xxd mt2_h4'>{props.text.title}</div> : null}
+      {props.text.dek ? <div className='mt2_color--neutral--xxd mt2_subh4'>{props.text.dek}</div> : null}
+      {props.text.byline ? <div className='mt2_color--neutral--xxd mt2_h5'>{props.text.byline}</div> : null}
     </div>
   );
 };

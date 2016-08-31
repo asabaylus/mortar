@@ -7,7 +7,7 @@ class Heading extends Component {
 
   render() {
     let title = [],
-        i = 0;
+      i = 0;
 
     if(this.props.title){
       title.push(<div key={i++} className="mt2_h3 mt2_color--neutral--xd">{this.props.title}</div>);
