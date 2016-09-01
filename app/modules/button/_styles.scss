@@ -13,7 +13,7 @@ a {
       span,
       svg {
         border-bottom: 0;
-        color: mt2_transparentize($mt2_color-neutral-l, .6);
+        color: transparentize($mt2_color-neutral-l, .6);
         text-decoration: none;
       }
     }

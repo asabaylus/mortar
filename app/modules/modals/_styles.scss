@@ -9,7 +9,7 @@
 }
 
 .mt2_modal-container {
-  background-color: mt2_transparentize($mt2_color-neutral-xxd, .15);
+  background-color: transparentize($mt2_color-neutral-xxd, .15);
   height: 85vh;
   left: 7.5vw;
   opacity: 0;
