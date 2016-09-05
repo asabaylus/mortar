@@ -19,19 +19,25 @@ class VideoCaption extends Component {
   }
 
   render() {
-    const {title, abstract} = this.props;
+    const {title, abstract, kickerLabel, duration} = this.props;
     return (
-      <div>
-        <h3 ref="title" className="mt3_h5">
+      <div className="mt3_video-playlist--current-information">
+      <div className="mt3_kicker-wrapper mt3_color--neutral--xxxl">
+        { kickerLabel ? <span className="mt3_kicker">{kickerLabel}</span> : null }
+        { duration ? <span className="mt3_kicker">{duration}</span> : null }
+      </div>
+        <h3 ref="title" className="mt3_video-playlist--current-information__title">
           <span itemProp='headline' dangerouslySetInnerHTML={{__html: title}} />
         </h3>
-        <div ref="abstract" className="multi-layout-promos__promo-dek mt3_subh4">
-          <Truncate
-            lines={this.state.readMore ? 0 : lines}
-            ellipsis={<span>... <a onClick={this.toggleLines} className="mt3_show-more-link">Read more</a></span>}>
-            <span itemProp='description' dangerouslySetInnerHTML={{__html: abstract}} />
-          </Truncate>
-        </div>
+        <figcaption className="mt3_caption-container--indent mt3_caption-container--indent--gray">
+          <p className="mt3_caption-body mt3_video-playlist--current-information__description">
+            <Truncate
+              lines={this.state.readMore ? 0 : lines}
+              ellipsis={<span>... <a onClick={this.toggleLines} className="mt3_show-more-link">Read more</a></span>}>
+              <span itemProp='description' dangerouslySetInnerHTML={{__html: abstract}} />
+            </Truncate>
+          </p>
+        </figcaption>
       </div>
     )
   }
@@ -40,6 +46,8 @@ class VideoCaption extends Component {
 VideoCaption.propTypes = {
   title: React.PropTypes.string.isRequired,
   abstract: React.PropTypes.string.isRequired,
+  kickerLabel: React.PropTypes.string,
+  duration: React.PropTypes.string,
 };
 
 export default VideoCaption;

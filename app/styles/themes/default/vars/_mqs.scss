@@ -19,3 +19,50 @@ $mt3_layout-bps: (
   md: $mt3_mq-md,
   lg: $mt3_mq-lg
 );
+
+$screen-s: 768px;
+$screen-m: 1024px;
+$screen-l: 1280px;
+
+// This function check if the screen responds to the proper size
+// @param $breakpoint this parameter accept s, m, l, xl values.
+@mixin respond-to($breakpoint) {
+
+  @if $breakpoint == s {
+    @media (max-width: #{$screen-s - 1}) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == m {
+    // respond to medium and small
+    @media (min-width: #{$screen-s}) and (max-width: #{$screen-m - 1}) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == l {
+    // respond to medium and bigweb
+    @media (min-width: #{$screen-m}) and (max-width: #{$screen-l - 1}) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == xl {
+    // respond to medium and bigweb
+    @media (min-width: #{$screen-l}) {
+      @content;
+    }
+  }
+
+}
+
+@mixin respond-to-multiple($breakpoints...) {
+  @each $item in $breakpoints {
+    @if $item != null {
+      @include respond-to($item) {
+        @content;
+      }
+    }
+  }
+}

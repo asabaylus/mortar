@@ -1,13 +1,152 @@
 $mt3_playlist-desktop-height: 470px;
 $mt3_gradient-color: rgba(255, 255, 255, 0);
 
-.mt3_video-playlist-container {
-  .mt3_multi-layout-promos__promo-dek {
-    max-height: 84px;
+//Fonts family to applied
+$mt3_verlag-font-family: Verlag, 'CenturyGothic', AppleGothic, Gill Sans, Gill Sans MT, sans-serif;
+$mt3_haas-font-family: Neue Haas, 'Franklin Gothic Medium', 'Franklin Gothic', 'ITC Franklin Gothic', Arial, sans-serif;
+$mt3_georgia-font-family: Georgia, serif;
 
-    @media #{$mt3_mq-lg} {
-      max-height: 48px;
+//Description colors
+$mt3_vp-current-information-bg-color: #555;
+$mt3_vp-current-information-desc-color: #999;
+
+.mt3_video-playlist {
+
+  &__flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-container {
+    background-color: map-get($mt3_colors, 'neutral--xxd');
+  }
+
+  &__main-head {
+    color: map-get($mt3_colors, 'neutral--xxxl');
+    padding-left: 100px;
+
+    @include respond-to(l) {
+      padding-left: 90px;
     }
+
+    @include respond-to(m) {
+      padding-left: 60px;
+    }
+
+    @include respond-to(s) {
+      padding-left: 30px;
+    }
+  }
+
+  &--heading {
+    margin-bottom: 40px;
+    margin-left: 60px;
+
+    &--border {
+      border-left: 1px solid map-get($mt3_colors, 'primary');
+    }
+
+    &__title {
+      font-family: $mt3_verlag-font-family;
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: .05em;
+      line-height: 1.05;
+      padding-left: 40px;
+      padding-top: 40px;
+      text-transform: uppercase;
+      word-spacing: .05em;
+    }
+
+    @include respond-to(l) {
+      margin-bottom: 30px;
+      margin-left: 40px;
+    }
+
+    @include respond-to(m) {
+      margin-left: 40px;
+    }
+
+    @include respond-to(s) {
+      margin-left: 30px;
+    }
+  }
+
+  &--current-information {
+    background: $mt3_vp-current-information-bg-color;
+    color: map-get($mt3_colors, 'neutral--xxxl');
+    padding: 40px 80px 0 60px;
+    margin-left: 100px;
+
+    &__description {
+      color: $mt3_vp-current-information-desc-color;
+      font-family: $mt3_georgia-font-family;
+      font-size: 15px;
+      font-weight: normal;
+      line-height: 1.8666667;
+      margin: 0;
+      width: auto;
+    }
+
+    &__title {
+      font-family: $mt3_haas-font-family;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: .05em;
+      line-height: 1.1;
+      margin-bottom: 30px;
+      margin-top: 10px;
+
+      @include respond-to(xl) {
+        font-size: 42px;
+      }
+
+      @include respond-to(l) {
+        font-size: 34px;
+      }
+
+      @include respond-to(m) {
+        margin-bottom: 0;
+      }
+
+      @include respond-to(s) {
+        margin-bottom: 0;
+      }
+    }
+
+    .mt3_caption-container--indent--gray {
+      border-left: 1px solid map-get($mt3_colors, 'neutral');
+      padding-bottom: 40px;
+      width: auto;
+
+      @include respond-to(l) {
+        padding-bottom: 30px;
+      }
+
+      @include respond-to-multiple(m, s) {
+        display: none;
+      }
+    }
+
+    @include respond-to(l) {
+      margin-left: 90px;
+      padding-left: 40px;
+    }
+
+    @include respond-to(m) {
+      background-color: map-get($mt3_colors, 'neutral--xxd');
+      margin-left: 0;
+      padding: 15px 70px 40px 70px;
+      order: 1;
+    }
+
+    @include respond-to(s) {
+      background-color: map-get($mt3_colors, 'neutral--xxd');
+      margin-left: 0;
+      padding: 15px 30px 40px 30px;
+      order: 1;
+    }
+
   }
 
   .mt3_show-more-link {
@@ -25,34 +164,12 @@ $mt3_gradient-color: rgba(255, 255, 255, 0);
     }
   }
 
-  .mt3_multi-layout-promos {
-    @media #{$mt3_mq-sm} {
-      margin-bottom: 33px;
-    }
-
-    @media #{$mt3_mq-md} {
-      margin-bottom: 40px;
-    }
-
-    &__heading {
-      margin: 35px 0 30px;
-
-      @media #{$mt3_mq-md} {
-        margin: 45px 0 35px;
-      }
-
-      @media #{$mt3_mq-lg} {
-        margin: 55px 0 40px;
-      }
-    }
-  }
-
   // forcing font styles to match sizes set on p tag in _multiLayoutPromos.scss when the data isn't in a p tag
   .mt3_btn--naked {
     font-weight: 300;
   }
 
-  &--thumbnails {
+  &-container--thumbnails {
     @media #{$mt3_mq-lg} {
       margin-left: 40px;
       max-height: $mt3_playlist-desktop-height;
@@ -92,7 +209,7 @@ $mt3_gradient-color: rgba(255, 255, 255, 0);
     }
   }
 
-  &--thumbnail {
+  &-container--thumbnail {
     border-bottom: 1px solid map-get($mt3_colors, 'neutral--xl');
     color: map-get($mt3_colors, 'neutral--xd');
     cursor: pointer;
@@ -153,7 +270,7 @@ $mt3_gradient-color: rgba(255, 255, 255, 0);
     }
   }
 
-  &--active-thumbnail {
+  &-container--active-thumbnail {
     background-color: map-get($mt3_colors, 'neutral--xxl');
   }
 }
