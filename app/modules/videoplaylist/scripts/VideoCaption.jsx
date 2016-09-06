@@ -2,70 +2,60 @@ import React, {Component} from 'react';
 import _debounce from 'lodash/debounce';
 require('jquery.dotdotdot');
 
-const lines = 3;
+const Caption = props => (
+  <figcaption className="mt3_caption-container--indent mt3_caption-container--indent--gray">
+    <div className="mt3_caption-body mt3_video-playlist--current-information__description" id="js_truncate">
+      <span itemProp='description' dangerouslySetInnerHTML={{__html: props.abstract}} />
+    </div>
+    <br/>
+  </figcaption>
+);
+
 /**
  * This component renders the video caption below the video component.
  */
 class VideoCaption extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state= {};
-    this.toggleLines = this.toggleLines.bind(this);
+  constructor() {
+    super();
     this.truncateAbstract = this.truncateAbstract.bind(this);
-  }
-
-  componentWillReceiveProps() {
-    this.setState({
-      readMore: false
-    });
-  }
-
-  componentDidMount() {
-    this.truncateAbstract();
-    const resizeHandler = _debounce(this.truncateAbstract, 500);
-    window.addEventListener('resize', resizeHandler);
   }
 
   componentDidUpdate() {
     this.truncateAbstract();
   }
 
-  truncateAbstract() {
-    const $truncEl = $(this.refs.abstract);
-    if ($truncEl.length > 0 && !this.state.readMore) {
-      $truncEl.dotdotdot({
-        after: 'a.mt3_show-more-link'
-      });
-    }
-
+  componentDidMount() {
+    this.truncateAbstract();
+    window.addEventListener('resize', function () {
+      $("#js_truncate").trigger('update');
+    });
   }
 
-  toggleLines(evt) {
-    evt.preventDefault();
-    const $truncEl = $(this.refs.abstract);
-    $truncEl.trigger('destroy');
-    this.setState({readMore: !this.state.readMore});
+  truncateAbstract() {
+    $("#js_truncate").css({height: '6em'}).dotdotdot({
+      after: $('<a class="mt3_show-more-link" href="#">Read More</a>'),
+      callback: function(isTruncated, original) {
+        $('.mt3_show-more-link').on('click', function(event){
+          event.preventDefault();
+          $("#js_truncate")
+            .trigger('destroy')
+            .css({ height: 'auto' });
+        });
+      }
+    });
   }
 
   render() {
-    const {title, abstract, kickerLabel, duration} = this.props;
-    const {readMore} = this.state;
+    const {title, abstract} = this.props;
     return (
       <div className="mt3_video-playlist--current-information">
-        <div className="mt3_kicker-wrapper mt3_color--neutral--xxxl">
-          { kickerLabel ? <span className="mt3_kicker">{kickerLabel}</span> : null }
-          { duration ? <span className="mt3_kicker">{duration}</span> : null }
-        </div>
+
         <h3 ref="title" className="mt3_video-playlist--current-information__title">
           <span itemProp='headline' dangerouslySetInnerHTML={{__html: title}} />
         </h3>
-        <figcaption className="mt3_caption-container--indent mt3_caption-container--indent--gray">
-          <div style={{height: readMore ? 'auto' : '6em' }} ref="abstract" className="mt3_caption-body mt3_video-playlist--current-information__description">
-            <span itemProp='description' dangerouslySetInnerHTML={{__html: abstract}} />
-            {!readMore && <a onClick={this.toggleLines} href="#" className="mt3_show-more-link">Read more</a>}
-          </div>
-        </figcaption>
+
+        <Caption abstract={abstract} />
       </div>
     )
   }

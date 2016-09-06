@@ -4,6 +4,7 @@
   "description": "a living styleguide for National Geographic Partners",
   "main": "index.js",
   "scripts": {
+    "gulp": "gulp",
     "test": "gulp test"
   },
   "repository": {
