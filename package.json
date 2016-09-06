@@ -22,6 +22,7 @@
     "@natgeo/mortar-pestle": "2.x",
     "gsap": "^1.19.0",
     "jquery": "2.x",
+    "jquery.dotdotdot": "^1.7.0",
     "lodash": "4.x",
     "picturefill": "3.x",
     "react": "^0.14.8",

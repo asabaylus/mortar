@@ -85,7 +85,31 @@ $mt3_vp-current-information-desc-color: #999;
       font-weight: normal;
       line-height: 1.8666667;
       margin: 0;
-      width: auto;
+
+      span[itemprop="description"] {
+        display: block;
+      }
+
+      * {
+        margin: 0;
+      }
+
+      .mt3_show-more-link {
+        border-bottom: 0;
+        color: map-get($mt3_colors, 'neutral--l');
+        cursor: pointer;
+        padding-left: 0;
+        text-decoration: none;
+        white-space: nowrap;
+
+        &:hover,
+        &:focus,
+        &:active {
+          border-bottom: 0;
+          color: map-get($mt3_colors, 'neutral--l');
+        }
+      }
+
     }
 
     &__title {
@@ -117,7 +141,6 @@ $mt3_vp-current-information-desc-color: #999;
     .mt3_caption-container--indent--gray {
       border-left: 1px solid map-get($mt3_colors, 'neutral');
       padding-bottom: 40px;
-      width: auto;
 
       @include respond-to(l) {
         padding-bottom: 30px;
@@ -149,20 +172,6 @@ $mt3_vp-current-information-desc-color: #999;
 
   }
 
-  .mt3_show-more-link {
-    border-bottom: 0;
-    color: map-get($mt3_colors, 'neutral--l');
-    cursor: pointer;
-    padding-left: 0;
-    white-space: nowrap;
-
-    &:hover,
-    &:focus,
-    &:active {
-      border-bottom: 0;
-      color: map-get($mt3_colors, 'neutral--l');
-    }
-  }
 
   // forcing font styles to match sizes set on p tag in _multiLayoutPromos.scss when the data isn't in a p tag
   .mt3_btn--naked {
