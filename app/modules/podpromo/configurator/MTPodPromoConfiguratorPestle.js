@@ -33,29 +33,11 @@ class PodPromoConfigurator extends Module {
           imageUrl: 'http://placehold.it/1140x550.jpg',
           title: 'This is the image title in DAM',
           altText: 'Picture of a stream of water flowing through the narrow Olo Canyon in Arizona',
-          aspectRatio: 0.4824561403508772,
+          aspectRatio: 0.66015625,
           height: 550,
           width: 1140,
           srcset: [
-            'http://placehold.it/80x39.jpg 80w',
-            'http://placehold.it/133x64.jpg 133w',
-            'http://placehold.it/152x73.jpg 152w',
-            'http://placehold.it/162x78.jpg 162w',
-            'http://placehold.it/210x101.jpg 210w',
-            'http://placehold.it/224x108.jpg 224w',
-            'http://placehold.it/225x109.jpg 225w',
-            'http://placehold.it/280x135.jpg 280w',
-            'http://placehold.it/352x170.jpg 352w',
-            'http://placehold.it/470x227.jpg 470w',
-            'http://placehold.it/536x259.jpg 536w',
-            'http://placehold.it/590x285.jpg 590w',
-            'http://placehold.it/676x326.jpg 676w',
-            'http://placehold.it/710x343.jpg 710w',
-            'http://placehold.it/768x371.jpg 768w',
-            'http://placehold.it/885x427.jpg 885w',
-            'http://placehold.it/945x456.jpg 945w',
-            'http://placehold.it/1190x574.jpg 1190w',
-            'http://placehold.it/1900x917.jpg 1900w'
+            'http://www.nationalgeographic.com/content/dam/travel/rights-exempt/Travel-2016/nature-contest-promos/orangutan-leaf-bali.adapt.768.1.JPG'
           ]
         }],
         text: {

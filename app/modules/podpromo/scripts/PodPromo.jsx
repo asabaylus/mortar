@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import Image from '@natgeo/modules-images';
 import CTA from '../../button/scripts/CTAButton.jsx';
+import ParallaxContainer from './components/parallaxContainer.jsx';
 import LazyLoad from 'react-lazy-load';
 import ElementQuery from 'react-element-query';
 
@@ -105,14 +106,16 @@ class PodPromoComponent extends Component {
             />
           </div>
           <div className="mt3_podpromo-imagewrapper">
-            <Image
-              aspectRatio={componentImage[0].aspectRatio}
-              frameAspectRatio={componentConfig.aspectRatio}
-              lazyLoad={false}
-              altText={componentImage.altText}
-              src={componentImage[0].url}
-              srcset={componentImage[0].srcset}
-            />
+            <ParallaxContainer frameRatio={"2:1"}>
+                  <Image
+                    aspectRatio={componentImage[0].aspectRatio}
+                    frameAspectRatio={"3:2"}
+                    lazyLoad={false}
+                    altText={componentImage.altText}
+                    src={componentImage[0].url}
+                    srcset={componentImage[0].srcset}
+                  />
+            </ParallaxContainer>
           </div>
           <div className="mt3_podpromo-content-container mt3_podpromo-content-container-bottom mt3_podpromo-content-container-left mt3_podpromo-autoindex mt3_podpromo-fade">
             { this.kickerLink(componentKicker) }

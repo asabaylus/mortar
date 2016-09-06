@@ -101,9 +101,6 @@ class PodPromoConfigurator extends Component {
     const promoComponent = <MTPodPromo {...props} />;
     return (
         <Configurator component={promoComponent}>
-          <Section text="General">
-            <TextField label="Aspect Ratio" onChange={this.onTextChange('model.config.aspectRatio')} value={props.model.config.aspectRatio} />
-          </Section>
           <Section text="Text">
             <TextField label="Heading" onChange={this.onTextChange('model.text.heading')} value={props.model.text.heading} />
             <TextField label="Title" onChange={this.onTextChange('model.text.title')} value={props.model.text.title} />
