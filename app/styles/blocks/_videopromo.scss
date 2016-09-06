@@ -8,10 +8,10 @@
   border: 0;
   bottom: 0;
   color: $mt3_color-primary;
+  cursor: pointer;
   opacity: .65;
   overflow: hidden;
   position: absolute;
-  transition: 400ms;
   width: 10%;
 
   &:hover {
@@ -26,7 +26,7 @@
 }
 
 .mt3_videopromo-button-icon {
-  padding: 34.95% 32.88%;
+  padding: 34.95% 26.88%;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
