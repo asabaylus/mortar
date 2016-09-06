@@ -20,6 +20,7 @@
     "@natgeo/modules-images": "^1.0.2",
     "@natgeo/modules-video": "1.2.5",
     "@natgeo/mortar-pestle": "2.x",
+    "gsap": "^1.19.0",
     "jquery": "2.x",
     "lodash": "4.x",
     "picturefill": "3.x",
@@ -30,6 +31,7 @@
     "react-pure-render": "1.x",
     "react-slick": "krlospelaez/react-slick#fix-npm",
     "react-truncate": "1.0.4",
+    "scrollmagic": "^2.0.5",
     "velocity-animate": "^1.2.2"
   },
   "peerDependencies": {
@@ -95,6 +97,7 @@
     "react-dom": "^0.14.8",
     "react-slick": "krlospelaez/react-slick#fix-npm",
     "require-dir": "^0.3.0",
+    "scrollmagic": "^2.0.5",
     "sinon": "^1.17.4",
     "swig": "^1.4.2",
     "through2": "^2.0.1",
