@@ -22,9 +22,6 @@ $mt3_vp-current-information-desc-color: #999;
   }
 
   &__main-head {
-    color: map-get($mt3_colors, 'neutral--xxxl');
-    padding-left: 100px;
-
     @include respond-to(l) {
       padding-left: 90px;
     }
@@ -36,6 +33,9 @@ $mt3_vp-current-information-desc-color: #999;
     @include respond-to(s) {
       padding-left: 30px;
     }
+
+    color: map-get($mt3_colors, 'neutral--xxxl');
+    padding-left: 100px;
   }
 
   &--heading {
@@ -75,8 +75,8 @@ $mt3_vp-current-information-desc-color: #999;
   &--current-information {
     background: $mt3_vp-current-information-bg-color;
     color: map-get($mt3_colors, 'neutral--xxxl');
-    padding: 40px 80px 0 60px;
     margin-left: 100px;
+    padding: 40px 80px 0 60px;
 
     &__description {
       color: $mt3_vp-current-information-desc-color;
@@ -85,10 +85,6 @@ $mt3_vp-current-information-desc-color: #999;
       font-weight: normal;
       line-height: 1.8666667;
       margin: 0;
-
-      span[itemprop="description"] {
-        display: block;
-      }
 
       * {
         margin: 0;
@@ -113,14 +109,6 @@ $mt3_vp-current-information-desc-color: #999;
     }
 
     &__title {
-      font-family: $mt3_haas-font-family;
-      font-size: 24px;
-      font-weight: 600;
-      letter-spacing: .05em;
-      line-height: 1.1;
-      margin-bottom: 30px;
-      margin-top: 10px;
-
       @include respond-to(xl) {
         font-size: 42px;
       }
@@ -136,12 +124,17 @@ $mt3_vp-current-information-desc-color: #999;
       @include respond-to(s) {
         margin-bottom: 0;
       }
+
+      font-family: $mt3_haas-font-family;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: .05em;
+      line-height: 1.1;
+      margin-bottom: 30px;
+      margin-top: 10px;
     }
 
     .mt3_caption-container--indent--gray {
-      border-left: 1px solid map-get($mt3_colors, 'neutral');
-      padding-bottom: 40px;
-
       @include respond-to(l) {
         padding-bottom: 30px;
       }
@@ -149,6 +142,9 @@ $mt3_vp-current-information-desc-color: #999;
       @include respond-to-multiple(m, s) {
         display: none;
       }
+
+      border-left: 1px solid map-get($mt3_colors, 'neutral');
+      padding-bottom: 40px;
     }
 
     @include respond-to(l) {
@@ -159,15 +155,15 @@ $mt3_vp-current-information-desc-color: #999;
     @include respond-to(m) {
       background-color: map-get($mt3_colors, 'neutral--xxd');
       margin-left: 0;
-      padding: 15px 70px 40px 70px;
       order: 1;
+      padding: 15px 70px 40px;
     }
 
     @include respond-to(s) {
       background-color: map-get($mt3_colors, 'neutral--xxd');
       margin-left: 0;
-      padding: 15px 30px 40px 30px;
       order: 1;
+      padding: 15px 30px 40px;
     }
 
   }

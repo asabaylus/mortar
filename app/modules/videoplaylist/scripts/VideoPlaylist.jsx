@@ -28,12 +28,6 @@ class VideoPlaylist extends Component {
     this.loadVideo(this.props.dataModel[nextState.currentVideoIndex].directLink, nextState);
   }
 
-  // componentDidUpdate() {
-  //   //This line resolves the problem with the abstract video caption that it need two
-  //   //clicks to render the proper video's abstract.
-  //   window.dispatchEvent(new Event('resize'));
-  // }
-
   componentDidMount() {
     this.pdkCheck(this.activateEventListeners.bind(this));
   }
@@ -232,7 +226,7 @@ class VideoPlaylist extends Component {
           <VideoCaption
             title={currentVideo.title}
             abstract={currentVideo.abstract}
-            kickerLabel={currentVideo.kicker? currentVideo.kicker.label: ""}
+            kickerLabel={currentVideo.kicker? currentVideo.kicker.label: ''}
             duration={currentVideo.duration}
           />
           <EmbeddedVideo model={videoModel} lazyLoad={true}/>
@@ -252,7 +246,7 @@ class VideoPlaylist extends Component {
 VideoPlaylist.propTypes = {
   divID: React.PropTypes.string.isRequired,
   autoContinue: React.PropTypes.bool,
-  header: React.PropTypes.string,
+  header: React.PropTypes.string.isRequired,
   dataModel: React.PropTypes.arrayOf(
     React.PropTypes.shape({
       guid: React.PropTypes.string,

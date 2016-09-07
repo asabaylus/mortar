@@ -79,6 +79,7 @@ describe('VideoPlaylist Component', () => {
         divID="abc123"
         autocontinue={false}
         dataModel={playlistModel}
+        header="Trending Videos"
       />);
       videoThumbnail = wrapper.find('VideoThumbnail');
 
