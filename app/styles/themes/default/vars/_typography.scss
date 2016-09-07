@@ -18,9 +18,16 @@
         url('//fonts.ngeo.com/haas/1-0-0/NHaasGroteskDSW01-45Lt.woff') format('woff');
 }
 
-$mt3_haas-stack: "Haas", "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
-$mt3_verlag-stack: "HCo Verlag", "CenturyGothic", AppleGothic, Gill Sans, Gill Sans MT, sans-serif;
 
+$mt3_century-stack: 'CenturyGothic', AppleGothic, Gill Sans, Gill Sans MT, sans-serif;
+$mt3_franklin-stack: 'Franklin Gothic Medium', 'Franklin Gothic', 'ITC Franklin Gothic', Arial, sans-serif;
+
+$mt3_haas-stack: 'Haas',$mt3_franklin-stack;
+$mt3_verlag-stack: "HCo Verlag", $mt3_century-stack;
+
+$mt3_verlag-font-family: Verlag, $mt3_century-stack;
+$mt3_haas-font-family: Neue Haas, $mt3_franklin-stack;
+$mt3_georgia-font-family: Georgia, serif;
 // ===============
 // START OLD STUFF
 // ===============

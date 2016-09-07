@@ -11,7 +11,7 @@ gulp.task('test', [
 ]);
 
 gulp.task('eslint', function(){
-  return gulp.src(['app/{scripts,modules}/**/*.jsx', '!app/**/node_modules/**/*'])
+  return gulp.src(['app/{scripts,modules}/**/*.js', '!app/**/node_modules/**/*'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
