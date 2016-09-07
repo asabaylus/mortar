@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import _debounce from 'lodash/debounce';
-require('jquery.dotdotdot');
+import 'jquery.dotdotdot';
 
 /**
  * This component renders the video caption below the video component.
@@ -31,7 +31,7 @@ class VideoCaption extends Component {
 
   truncateAbstract() {
     $(this.refs.abstract).css({height: '6em'}).dotdotdot({
-      after: $('<a class="mt3_show-more-link" href="#">Read More</a>'),
+      after: $('<a class="mt3_show-more-link mt3_color--gray-40" href="#">Read More</a>'),
       callback: (isTruncated, original) => {
         const $abstractEl = $(this.refs.abstract);
         if (!isTruncated) {
@@ -50,13 +50,13 @@ class VideoCaption extends Component {
   render() {
     const {title, abstract} = this.props;
     return (
-      <div className="mt3_video-playlist--current-information">
+      <div className="mt3_video-playlist--current-information mt3_bgcolor--gray-66 mt3_color--white">
         <h3 ref="title" className="mt3_video-playlist--current-information__title">
           <span itemProp='headline' dangerouslySetInnerHTML={{__html: title}} />
         </h3>
 
         <figcaption className="mt3_caption-container--indent mt3_caption-container--indent--gray">
-          <div ref="abstract"  className="mt3_caption-body mt3_video-playlist--current-information__description">
+          <div ref="abstract"  className="mt3_caption-body mt3_video-playlist--current-information__description mt3_color--gray-40">
             <span itemProp='description' dangerouslySetInnerHTML={{__html: abstract}} />
           </div>
         </figcaption>

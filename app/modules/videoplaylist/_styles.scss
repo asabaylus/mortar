@@ -1,24 +1,11 @@
 $mt3_playlist-desktop-height: 470px;
 $mt3_gradient-color: rgba(255, 255, 255, 0);
 
-//Fonts family to applied
-$mt3_verlag-font-family: Verlag, 'CenturyGothic', AppleGothic, Gill Sans, Gill Sans MT, sans-serif;
-$mt3_haas-font-family: Neue Haas, 'Franklin Gothic Medium', 'Franklin Gothic', 'ITC Franklin Gothic', Arial, sans-serif;
-$mt3_georgia-font-family: Georgia, serif;
-
-//Description colors
-$mt3_vp-current-information-bg-color: #555;
-$mt3_vp-current-information-desc-color: #999;
-
 .mt3_video-playlist {
 
   &__flex {
     display: flex;
     flex-direction: column;
-  }
-
-  &-container {
-    background-color: map-get($mt3_colors, 'neutral--xxd');
   }
 
   &__main-head {
@@ -34,7 +21,6 @@ $mt3_vp-current-information-desc-color: #999;
       padding-left: 30px;
     }
 
-    color: map-get($mt3_colors, 'neutral--xxxl');
     padding-left: 100px;
   }
 
@@ -73,13 +59,10 @@ $mt3_vp-current-information-desc-color: #999;
   }
 
   &--current-information {
-    background: $mt3_vp-current-information-bg-color;
-    color: map-get($mt3_colors, 'neutral--xxxl');
     margin-left: 100px;
     padding: 40px 80px 0 60px;
 
     &__description {
-      color: $mt3_vp-current-information-desc-color;
       font-family: $mt3_georgia-font-family;
       font-size: 15px;
       font-weight: normal;
@@ -92,7 +75,6 @@ $mt3_vp-current-information-desc-color: #999;
 
       .mt3_show-more-link {
         border-bottom: 0;
-        color: map-get($mt3_colors, 'neutral--l');
         cursor: pointer;
         padding-left: 0;
         text-decoration: none;
@@ -102,7 +84,7 @@ $mt3_vp-current-information-desc-color: #999;
         &:focus,
         &:active {
           border-bottom: 0;
-          color: map-get($mt3_colors, 'neutral--l');
+          color: map-get($mt3_colors, 'gray-40');
         }
       }
 
