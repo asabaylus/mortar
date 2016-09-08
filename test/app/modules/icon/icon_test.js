@@ -16,7 +16,7 @@ describe('Icon', () => {
           "name" : "#camera",
           "align" : "right",
           "size" : "large",
-          "color" : "neutral--xxd",
+          "color" : "black",
           "alt" : "Camera Icon"
         }
         </script>
@@ -52,14 +52,14 @@ describe('Icon', () => {
           name="#share"
           align="left"
           size="large"
-          color="neutral--xxd"
+          color="black"
           alt="Sharing is Caring"
       />);
 
     });
 
     it('has svg element with appropriate classes', () => {
-      expect(wrapper.find('svg').props().className).to.equal('mt3_icon mt3_icon--large mt3_icon--left mt3_color--neutral--xxd');
+      expect(wrapper.find('svg').props().className).to.equal('mt3_icon mt3_icon--large mt3_icon--left mt3_color--black');
     });
 
     it('has title element with alt text', () => {

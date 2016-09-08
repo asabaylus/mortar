@@ -5,18 +5,17 @@ $mt3_color-primary-xl: lighten($mt3_color-primary, 30);
 $mt3_color-primary-xxl: lighten($mt3_color-primary, 40);
 $mt3_color-primary-xxxl: lighten($mt3_color-primary, 45);
 
-// Neutrals -- Dark
+// Neutrals
 
-$mt3_color-neutral-d: darken($mt3_color-neutral, 30);
-$mt3_color-neutral-xd: darken($mt3_color-neutral, 40);
-$mt3_color-neutral-xxd: darken($mt3_color-neutral, 50);
-
-// Neutrals -- Light
-
-$mt3_color-neutral-l: lighten($mt3_color-neutral, 20);
-$mt3_color-neutral-xl: lighten($mt3_color-neutral, 40);
-$mt3_color-neutral-xxl: lighten($mt3_color-neutral, 45);
-$mt3_color-neutral-xxxl: lighten($mt3_color-neutral, 50);
+$mt3_color-black: #000;
+$mt3_color-gray-86: #222;
+$mt3_color-gray-80: #333;
+$mt3_color-gray-66: #555;
+$mt3_color-gray-40: #999;
+$mt3_color-gray-10: #e6e6e6;
+$mt3_color-gray-5: #f2f2f2;
+$mt3_color-gray-2: #fafafa;
+$mt3_color-white: #fff;
 
 // Affirmation
 
@@ -24,28 +23,31 @@ $mt3_color-affirmation-l: mt3_tint($mt3_color-affirmation, 25);
 
 // Danger
 
-$mt3_color-danger-l: mt3_tint($mt3_color-danger, 25);
+$mt3_color-danger-l: #F45840;
 
 // Borders
 
-$mt3_border-default: 1px solid $mt3_color-neutral-l;
-$mt3_border-default-hover: 1px solid $mt3_color-neutral;
+$mt3_border-default: 1px solid $mt3_color-gray-40;
+$mt3_border-default-hover: 1px solid $mt3_color-gray-50;
 $mt3_border-danger: 1px solid $mt3_color-danger;
 
 $mt3_colors: (
   primary: $mt3_color-primary,
   primary--l: $mt3_color-primary-l,
   primary--xl: $mt3_color-primary-xl,
-  neutral--xxd: $mt3_color-neutral-xxd,
-  neutral--xd: $mt3_color-neutral-xd,
-  neutral--d: $mt3_color-neutral-d,
-  neutral: $mt3_color-neutral,
-  neutral--l: $mt3_color-neutral-l,
-  neutral--xl: $mt3_color-neutral-xl,
-  neutral--xxl: $mt3_color-neutral-xxl,
-  neutral--xxxl: $mt3_color-neutral-xxxl,
+  black: $mt3_color-black,
+  gray86: $mt3_color-gray-86,
+  gray80: $mt3_color-gray-80,
+  gray66: $mt3_color-gray-66,
+  gray50: $mt3_color-gray-50,
+  gray40: $mt3_color-gray-40,
+  gray10: $mt3_color-gray-10,
+  gray5: $mt3_color-gray-5,
+  gray2: $mt3_color-gray-2,
+  white: $mt3_color-white,
   affirmation: $mt3_color-affirmation,
   affirmation--l: $mt3_color-affirmation-l,
   danger: $mt3_color-danger,
-  danger--l: $mt3_color-danger-l
+  danger--l: $mt3_color-danger-l,
+  sponsor: $mt3_color-sponsor
 );

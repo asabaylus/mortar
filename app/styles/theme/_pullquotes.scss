@@ -24,9 +24,9 @@
     }
   }
 
-  border-bottom: 1px solid $mt3_color-neutral-xl;
-  border-top: 1px solid $mt3_color-neutral-xl;
-  color: $mt3_color-neutral-xd;
+  border-bottom: 1px solid $mt3_color-gray-10;
+  border-top: 1px solid $mt3_color-gray-10;
+  color: $mt3_color-gray-80;
   margin: ($mt3_fs-xxxlrg / 2) 0;
   padding: ($mt3_fs-xxxlrg / 2) 0;
 
@@ -49,16 +49,16 @@
   }
 
   &--attributionname {
-    border-left: 1px solid $mt3_color-neutral;
-    border-right: 1px solid $mt3_color-neutral;
+    border-left: 1px solid $mt3_color-gray-50;
+    border-right: 1px solid $mt3_color-gray-50;
     font-weight: 600;
     padding: 0 1.25rem;
   }
 
   &--attributiontitle {
-    border-left: 1px solid $mt3_color-neutral;
-    border-right: 1px solid $mt3_color-neutral;
-    color: $mt3_color-neutral;
+    border-left: 1px solid $mt3_color-gray-50;
+    border-right: 1px solid $mt3_color-gray-50;
+    color: $mt3_color-gray-50;
     font-weight: 400;
     padding: 0 1.25rem;
   }

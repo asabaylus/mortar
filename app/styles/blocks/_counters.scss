@@ -13,12 +13,12 @@
 .mt3_numericcounter-arrow {
 
   &:not(.mt3_numericcounter-arrow--disabled):hover {
-    color: $mt3_color-neutral;
+    color: $mt3_color-gray-50;
     cursor: pointer;
   }
 
   &--disabled {
-    color: $mt3_color-neutral-xl;
+    color: $mt3_color-gray-10;
   }
 }
 
@@ -31,7 +31,7 @@
   transform: translateX(-50%);
 
   &:hover {
-    color: $mt3_color-neutral;
+    color: $mt3_color-gray-50;
   }
 
   &--inverse {
@@ -40,7 +40,7 @@
 }
 
 .mt3_dotcounter-item {
-  background-color: $mt3_color-neutral-xl;
+  background-color: $mt3_color-gray-10;
   border-radius: 50%;
   display: inline-block;
   height: .5rem;
@@ -49,7 +49,7 @@
 
   &--active,
   &:hover {
-    background-color: $mt3_color-neutral-l;
+    background-color: $mt3_color-gray-40;
     cursor: pointer;
   }
 

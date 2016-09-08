@@ -10,7 +10,7 @@ class MTSharing extends Component {
   render() {
     const containerClasses = classNames({
       'mt3_sharing-container': true,
-      'mt3_bordercolor--neutral--xl': true,
+      'mt3_bordercolor--gray10': true,
       'mt3_sharing-container--vertical': this.props.display === 'vertical'
     });
     const socialButtons = this.props.buttons.map(option => {

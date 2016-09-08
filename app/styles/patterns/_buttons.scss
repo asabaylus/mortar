@@ -18,7 +18,7 @@
   &--success {
     background-color: $mt3_color-affirmation;
     border: 1px solid $mt3_color-affirmation;
-    color: $mt3_color-neutral-xxxl;
+    color: $mt3_color-white;
 
     &:hover {
       background-color: $mt3_color-affirmation-l;
@@ -29,7 +29,7 @@
   &--error {
     background-color: $mt3_color-danger;
     border: 1px solid $mt3_color-danger;
-    color: $mt3_color-neutral-xxxl;
+    color: $mt3_color-white;
 
     &:hover {
       background-color: $mt3_color-danger-l;
@@ -47,12 +47,12 @@
   }
 
   &--inverse {
-    color: $mt3_color-neutral-xxxl;
+    color: $mt3_color-white;
   }
 
   &--inactive {
-    background: $mt3_color-neutral;
-    color: $mt3_color-neutral-xxd;
+    background: $mt3_color-gray-50;
+    color: $mt3_color-black;
     cursor: default;
     opacity: .3;
   }
@@ -67,17 +67,17 @@
 
   &--inverse {
     border: 1px solid $mt3_color-primary-l;
-    color: $mt3_color-neutral-xxxl;
+    color: $mt3_color-white;
 
     &:hover {
       background: $mt3_color-primary-l;
-      color: $mt3_color-neutral-xxd;
+      color: $mt3_color-black;
     }
   }
 
   &--inactive {
-    border: 1px solid transparentize($mt3_color-neutral-l, .6);
-    color: transparentize($mt3_color-neutral-l, .6);
+    border: 1px solid transparentize($mt3_color-gray-40, .6);
+    color: transparentize($mt3_color-gray-40, .6);
     cursor: default;
   }
 }
@@ -91,16 +91,16 @@
   }
 
   &--inverse {
-    color: $mt3_color-neutral-xxxl;
+    color: $mt3_color-white;
   }
 
   &--inactive {
     border: 0;
-    color: transparentize($mt3_color-neutral-l, .6);
+    color: transparentize($mt3_color-gray-40, .6);
     cursor: default;
 
     &:hover {
-      color: transparentize($mt3_color-neutral-l, .6);
+      color: transparentize($mt3_color-gray-40, .6);
     }
   }
 }

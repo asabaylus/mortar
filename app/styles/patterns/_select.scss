@@ -22,7 +22,7 @@
 // Default state
 .mt3_select-input {
   appearance: none;
-  background: $mt3_color-neutral-xxxl;
+  background: $mt3_color-white;
   border: $mt3_border-default;
   border-radius: 0;
   cursor: pointer;
@@ -31,7 +31,7 @@
 
   // Selected state
   &:focus {
-    color: $mt3_color-neutral-xd;
+    color: $mt3_color-gray-80;
   }
 
   // Hover state
@@ -47,5 +47,5 @@
 
 // For firefox
 .mt3_select-option {
-  color: $mt3_color-neutral-xd;
+  color: $mt3_color-gray-80;
 }

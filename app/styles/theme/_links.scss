@@ -3,13 +3,13 @@
   &:link,
   &:visited {
     border-bottom: 1px solid $mt3_color-primary;
-    color: $mt3_color-neutral-xxd;
+    color: $mt3_color-black;
     text-decoration: none;
   }
 
   &:hover {
-    border-bottom: 1px solid $mt3_color-neutral;
-    color: $mt3_color-neutral;
+    border-bottom: 1px solid $mt3_color-gray-50;
+    color: $mt3_color-gray-50;
   }
 }
 

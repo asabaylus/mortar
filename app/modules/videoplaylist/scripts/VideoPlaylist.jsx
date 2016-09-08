@@ -216,11 +216,11 @@ class VideoPlaylist extends Component {
       return <VideoThumbnail key={index} wrapperClass={thumbClass} item={item} onClick={this.handleClick.bind(this, index)}/>
     });
     return(
-      <div ref="mainVideoContainer" className="mt3_col-12 mt3_col-lg-12 mt3_bgcolor--neutral--xxd">
+      <div ref="mainVideoContainer" className="mt3_col-12 mt3_col-lg-12 mt3_bgcolor--gray80">
         <div className="mt3_col-12 mt3_col-lg-8 mt3_video-playlist__flex">
           <div className="mt3_video-playlist__main-head">
             <div className="mt3_video-playlist--heading mt3_video-playlist--heading--border">
-              <div className="mt3_video-playlist--heading__title mt3_color--neutral--xxxl">{this.props.header}</div>
+              <div className="mt3_video-playlist--heading__title mt3_color--black">{this.props.header}</div>
             </div>
           </div>
           <VideoCaption

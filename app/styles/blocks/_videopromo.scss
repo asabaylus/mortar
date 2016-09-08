@@ -4,7 +4,7 @@
 }
 
 .mt3_videopromo-button {
-  background-color: $mt3_color-neutral-xxd;
+  background-color: $mt3_color-black;
   border: 0;
   bottom: 0;
   color: $mt3_color-primary;
@@ -16,7 +16,7 @@
 
   &:hover {
     background-color: $mt3_color-primary;
-    color: $mt3_color-neutral-xxd;
+    color: $mt3_color-black;
     opacity: 1;
   }
 }

@@ -25,7 +25,7 @@ const Gallery = (props) => {
   } : null;
 
   let ctaAttrs = props.cta ? {
-    className: "mt3_color--neutral--l mt3_subh2 mt3_promocard-gallery-cta",
+    className: "mt3_color--gray40 mt3_subh2 mt3_promocard-gallery-cta",
     href: props.cta.url,
     target: props.link.target,
     title: props.cta.seoTitle

@@ -44,7 +44,7 @@
 
         <!-- Select menu -->
         <div class="mt3_select-wrapper mt3_fullwidth">
-          <select class="mt3_select-input mt3_color--neutral--l mt3_subh4">
+          <select class="mt3_select-input mt3_color--gray40 mt3_subh4">
             <option class="mt3_select-option" value="value1">Country</option>
             <option class="mt3_select-option" value="value2">United States</option>
             <option class="mt3_select-option" value="value3">France</option>
@@ -100,20 +100,20 @@
   </div>
 </div>
 
-<div class="mt3_bgcolor--neutral--xxl mt3_row-gut-2 divider">&nbsp;</div>
+<div class="mt3_bgcolor--gray5 mt3_row-gut-2 divider">&nbsp;</div>
 
 <script>
   $(document).ready(function() {
     $('input[type=radio][name=background-color]').change(function() {
       if (this.value === 'radio1') {
         $('.JS_input-container')
-        .removeClass('mt3_bgcolor--neutral--d')
-        .removeClass('mt3_color--neutral--xxxl');
+        .removeClass('mt3_bgcolor--gray66')
+        .removeClass('mt3_color--white');
       }
       else if (this.value === 'radio2') {
         $('.JS_input-container')
-        .addClass('mt3_bgcolor--neutral--d')
-        .addClass('mt3_color--neutral--xxxl');
+        .addClass('mt3_bgcolor--gray66')
+        .addClass('mt3_color--white');
       }
     });
   });

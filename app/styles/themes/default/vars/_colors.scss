@@ -1,13 +1,15 @@
 $mt3_color-primary: hsl(48, 100%, 50%);
 $mt3_color-affirmation: hsl(124, 73%, 43%);
-$mt3_color-danger: hsl(8, 100%, 47%);
-$mt3_color-neutral: hsl(0, 0%, 50%);
+$mt3_color-danger: #FC4349;
+$mt3_color-sponsor: #7694CB;
+$mt3_color-gray-50: #808080;
 
 $mt3_colors: (
   primary: $mt3_color-primary,
   affirmation: $mt3_color-affirmation,
   danger: $mt3_color-danger,
-  neutral: $mt3_color-neutral
+  gray50: $mt3_color-gray-50,
+  sponsor: $mt3_color-sponsor
 );
 
 $mt3_social-colors: (

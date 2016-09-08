@@ -32,7 +32,7 @@ class Modal extends Component {
   render(){
     const modalClasses = classNames({
       'mt3_modal-container': true,
-      'mt3_color--neutral--xxxl': true,
+      'mt3_color--white': true,
       'mt3_modal-container--active': this.state.open
     });
 

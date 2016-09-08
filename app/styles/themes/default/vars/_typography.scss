@@ -97,7 +97,7 @@ $mt3_unit-quadruple: $mt3_unit * 4;
 }
 
 .mt3_kicker {
-  border-right: 1px solid $mt3_color-neutral;
+  border-right: 1px solid $mt3_color-gray-50;
   font-family: $mt3_verlag-stack;
   font-size: .75rem;
   font-weight: 400;
@@ -110,7 +110,7 @@ $mt3_unit-quadruple: $mt3_unit * 4;
   //If there are multiple kickers in a row,
   // only the first kicker has a border-left
   &:nth-child(1) {
-    border-left: 1px solid $mt3_color-neutral;
+    border-left: 1px solid $mt3_color-gray-50;
   }
 
   &--link {
