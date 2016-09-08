@@ -28,12 +28,6 @@ class VideoPlaylist extends Component {
     this.loadVideo(this.props.dataModel[nextState.currentVideoIndex].directLink, nextState);
   }
 
-  componentDidUpdate() {
-    //This line resolves the problem with the abstract video caption that it need two
-    //clicks to render the proper video's abstract.
-    window.dispatchEvent(new Event('resize'));
-  }
-
   componentDidMount() {
     this.pdkCheck(this.activateEventListeners.bind(this));
   }
@@ -222,11 +216,20 @@ class VideoPlaylist extends Component {
       return <VideoThumbnail key={index} wrapperClass={thumbClass} item={item} onClick={this.handleClick.bind(this, index)}/>
     });
     return(
-      <div ref="mainVideoContainer" className="mt3_multi-layout-promos multi-layout-promos--box-ads mt3_video-playlist-container">
-        <div className="mt3_col-12 mt3_col-lg-8 mt3_multi-layout-promos__promo-content">
-          <div className="mt3_multi-layout-promos__promo--text__bg"></div>
+      <div ref="mainVideoContainer" className="mt3_col-12 mt3_col-lg-12 mt3_bgcolor--neutral--xxd">
+        <div className="mt3_col-12 mt3_col-lg-8 mt3_video-playlist__flex">
+          <div className="mt3_video-playlist__main-head">
+            <div className="mt3_video-playlist--heading mt3_video-playlist--heading--border">
+              <div className="mt3_video-playlist--heading__title mt3_color--neutral--xxxl">{this.props.header}</div>
+            </div>
+          </div>
+          <VideoCaption
+            title={currentVideo.title}
+            abstract={currentVideo.abstract}
+            kickerLabel={currentVideo.kicker? currentVideo.kicker.label: ''}
+            duration={currentVideo.duration}
+          />
           <EmbeddedVideo model={videoModel} lazyLoad={true}/>
-          <VideoCaption title={currentVideo.title} abstract={currentVideo.abstract} />
         </div>
         <div className="mt3_col-12 mt3_col-lg-4">
           <div ref="thumbnailContainer" className='mt3_video-playlist-container--thumbnails'>
@@ -243,6 +246,7 @@ class VideoPlaylist extends Component {
 VideoPlaylist.propTypes = {
   divID: React.PropTypes.string.isRequired,
   autoContinue: React.PropTypes.bool,
+  header: React.PropTypes.string.isRequired,
   dataModel: React.PropTypes.arrayOf(
     React.PropTypes.shape({
       guid: React.PropTypes.string,

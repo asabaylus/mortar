@@ -4,6 +4,7 @@
   "description": "a living styleguide for National Geographic Partners",
   "main": "index.js",
   "scripts": {
+    "gulp": "gulp",
     "test": "gulp test"
   },
   "repository": {
@@ -22,6 +23,7 @@
     "@natgeo/mortar-pestle": "2.x",
     "gsap": "^1.19.0",
     "jquery": "2.x",
+    "jquery.dotdotdot": "^1.7.0",
     "lodash": "4.x",
     "picturefill": "3.x",
     "react": "^0.14.8",
@@ -79,6 +81,7 @@
     "karma-browserify": "^5.0.5",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^1.0.1",
+    "karma-jquery": "^0.1.0",
     "karma-mocha": "^1.0.1",
     "karma-mocha-reporter": "^2.0.3",
     "karma-phantomjs-launcher": "^1.0.0",
@@ -93,8 +96,8 @@
     "pubsub-js": "^1.5.3",
     "react": "^0.14.8",
     "react-addons-test-utils": "^0.14.8",
-    "react-element-query": "^2.0.2",
     "react-dom": "^0.14.8",
+    "react-element-query": "^2.0.2",
     "react-slick": "krlospelaez/react-slick#fix-npm",
     "require-dir": "^0.3.0",
     "scrollmagic": "^2.0.5",

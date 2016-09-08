@@ -6,7 +6,8 @@ module.exports = function(config) {
       'browserify',
       'mocha',
       'chai',
-      'sinon'
+      'sinon',
+      'jquery-2.1.0'
     ],
 
     basePath: '',

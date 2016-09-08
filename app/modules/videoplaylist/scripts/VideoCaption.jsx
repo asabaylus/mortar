@@ -1,37 +1,65 @@
 import React, {Component} from 'react';
-import Truncate from 'react-truncate';
+import _debounce from 'lodash/debounce';
+import 'jquery.dotdotdot';
 
-const lines = 3;
 /**
  * This component renders the video caption below the video component.
  */
 class VideoCaption extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state= {};
-    this.toggleLines = this.toggleLines.bind(this);
+  constructor() {
+    super();
+    this.truncateAbstract = this.truncateAbstract.bind(this);
+    this.resizeHandler = null;
   }
 
-  toggleLines(evt) {
-    evt.preventDefault();
-    this.setState({readMore: !this.state.readMore});
+  componentDidUpdate() {
+    this.truncateAbstract();
+  }
+
+  componentDidMount() {
+    this.truncateAbstract();
+    this.resizeHandler = _debounce(() => {
+      $(this.refs.abstract).trigger('update');
+    }, 500)
+    window.addEventListener('resize', this.resizeHandler);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resizeHandler);
+  }
+
+  truncateAbstract() {
+    $(this.refs.abstract).css({height: '6em'}).dotdotdot({
+      after: $('<a class="mt3_show-more-link mt3_color--neutral--xxxl" href="#">Read More</a>'),
+      callback: (isTruncated, original) => {
+        const $abstractEl = $(this.refs.abstract);
+        if (!isTruncated) {
+          $abstractEl.css({height: 'auto'});
+        }
+        $('.mt3_show-more-link').on('click', (event) => {
+          event.preventDefault();
+          $abstractEl
+            .trigger('destroy')
+            .css({ height: 'auto' });
+        });
+      }
+    });
   }
 
   render() {
     const {title, abstract} = this.props;
     return (
-      <div>
-        <h3 ref="title" className="mt3_h5">
+      <div className="mt3_video-playlist--current-information mt3_bgcolor--neutral--d">
+        <h3 ref="title" className="mt3_video-playlist--current-information__title mt3_color--neutral--xxxl">
           <span itemProp='headline' dangerouslySetInnerHTML={{__html: title}} />
         </h3>
-        <div ref="abstract" className="multi-layout-promos__promo-dek mt3_subh4">
-          <Truncate
-            lines={this.state.readMore ? 0 : lines}
-            ellipsis={<span>... <a onClick={this.toggleLines} className="mt3_show-more-link">Read more</a></span>}>
+
+        <figcaption className="mt3_caption-container--indent mt3_caption-container--indent--gray">
+          <div ref="abstract"  className="mt3_caption-body mt3_video-playlist--current-information__description">
             <span itemProp='description' dangerouslySetInnerHTML={{__html: abstract}} />
-          </Truncate>
-        </div>
+          </div>
+        </figcaption>
       </div>
     )
   }
@@ -40,6 +68,8 @@ class VideoCaption extends Component {
 VideoCaption.propTypes = {
   title: React.PropTypes.string.isRequired,
   abstract: React.PropTypes.string.isRequired,
+  kickerLabel: React.PropTypes.string,
+  duration: React.PropTypes.string,
 };
 
 export default VideoCaption;

@@ -1,58 +1,167 @@
 $mt3_playlist-desktop-height: 470px;
 $mt3_gradient-color: rgba(255, 255, 255, 0);
 
-.mt3_video-playlist-container {
-  .mt3_multi-layout-promos__promo-dek {
-    max-height: 84px;
+//TODO: These are temporary variable with non-existing colors on mortar, when SYTO-781
+//is ready we need to procede to refactor.
+$mt3_gray-40: #999;
 
-    @media #{$mt3_mq-lg} {
-      max-height: 48px;
+.mt3_video-playlist {
+
+  &__flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__main-head {
+    @include respond-to(l) {
+      padding-left: 90px;
+    }
+
+    @include respond-to(m) {
+      padding-left: 60px;
+    }
+
+    @include respond-to(s) {
+      padding-left: 30px;
+    }
+
+    padding-left: 100px;
+  }
+
+  &--heading {
+    margin-bottom: 40px;
+    margin-left: 60px;
+
+    &--border {
+      border-left: 1px solid map-get($mt3_colors, 'primary');
+    }
+
+    &__title {
+      font-family: $mt3_verlag-stack;
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: .05em;
+      line-height: 1.05;
+      padding-left: 40px;
+      padding-top: 40px;
+      text-transform: uppercase;
+      word-spacing: .05em;
+    }
+
+    @include respond-to(l) {
+      margin-bottom: 30px;
+      margin-left: 40px;
+    }
+
+    @include respond-to(m) {
+      margin-left: 40px;
+    }
+
+    @include respond-to(s) {
+      margin-left: 30px;
     }
   }
 
-  .mt3_show-more-link {
-    border-bottom: 0;
-    color: map-get($mt3_colors, 'neutral--l');
-    cursor: pointer;
-    padding-left: 0;
-    white-space: nowrap;
+  &--current-information {
+    margin-left: 100px;
+    padding: 40px 80px 0 60px;
 
-    &:hover,
-    &:focus,
-    &:active {
-      border-bottom: 0;
-      color: map-get($mt3_colors, 'neutral--l');
-    }
-  }
+    &__description {
+      color: $mt3_gray-40;
+      font-family: $mt3_georgia-stack;
+      font-size: 15px;
+      font-weight: normal;
+      line-height: 1.8666667;
+      margin: 0;
 
-  .mt3_multi-layout-promos {
-    @media #{$mt3_mq-sm} {
-      margin-bottom: 33px;
-    }
-
-    @media #{$mt3_mq-md} {
-      margin-bottom: 40px;
-    }
-
-    &__heading {
-      margin: 35px 0 30px;
-
-      @media #{$mt3_mq-md} {
-        margin: 45px 0 35px;
+      * {
+        margin: 0;
       }
 
-      @media #{$mt3_mq-lg} {
-        margin: 55px 0 40px;
+      .mt3_show-more-link {
+        border-bottom: 0;
+        cursor: pointer;
+        padding-left: 0;
+        text-decoration: none;
+        white-space: nowrap;
+
+        &:hover,
+        &:focus,
+        &:active {
+          border-bottom: 0;
+          color: map-get($mt3_colors, 'gray-40');
+        }
       }
+
     }
+
+    &__title {
+      @include respond-to(xl) {
+        font-size: 42px;
+      }
+
+      @include respond-to(l) {
+        font-size: 34px;
+      }
+
+      @include respond-to(m) {
+        margin-bottom: 0;
+      }
+
+      @include respond-to(s) {
+        margin-bottom: 0;
+      }
+
+      font-family: $mt3_haas-stack;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: .05em;
+      line-height: 1.1;
+      margin-bottom: 30px;
+      margin-top: 10px;
+    }
+
+    .mt3_caption-container--indent--gray {
+      @include respond-to(l) {
+        padding-bottom: 30px;
+      }
+
+      @include respond-to-multiple(m, s) {
+        display: none;
+      }
+
+      border-left: 1px solid map-get($mt3_colors, 'neutral');
+      padding-bottom: 40px;
+    }
+
+    @include respond-to(l) {
+      margin-left: 90px;
+      padding-left: 40px;
+    }
+
+    @include respond-to(m) {
+      background-color: map-get($mt3_colors, 'neutral--xxd');
+      margin-left: 0;
+      order: 1;
+      padding: 15px 70px 40px;
+    }
+
+    @include respond-to(s) {
+      background-color: map-get($mt3_colors, 'neutral--xxd');
+      margin-left: 0;
+      order: 1;
+      padding: 15px 30px 40px;
+    }
+
   }
+
 
   // forcing font styles to match sizes set on p tag in _multiLayoutPromos.scss when the data isn't in a p tag
   .mt3_btn--naked {
     font-weight: 300;
   }
 
-  &--thumbnails {
+  &-container--thumbnails {
     @media #{$mt3_mq-lg} {
       margin-left: 40px;
       max-height: $mt3_playlist-desktop-height;
@@ -92,7 +201,7 @@ $mt3_gradient-color: rgba(255, 255, 255, 0);
     }
   }
 
-  &--thumbnail {
+  &-container--thumbnail {
     border-bottom: 1px solid map-get($mt3_colors, 'neutral--xl');
     color: map-get($mt3_colors, 'neutral--xd');
     cursor: pointer;
@@ -153,7 +262,7 @@ $mt3_gradient-color: rgba(255, 255, 255, 0);
     }
   }
 
-  &--active-thumbnail {
+  &-container--active-thumbnail {
     background-color: map-get($mt3_colors, 'neutral--xxl');
   }
 }
