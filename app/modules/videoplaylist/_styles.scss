@@ -3,7 +3,6 @@ $mt3_gradient-color: rgba(255, 255, 255, 0);
 
 //TODO: These are temporary variable with non-existing colors on mortar, when SYTO-781
 //is ready we need to procede to refactor.
-$mt3_gray-66: #555;
 $mt3_gray-40: #999;
 
 .mt3_video-playlist {
@@ -64,7 +63,6 @@ $mt3_gray-40: #999;
   }
 
   &--current-information {
-    background-color: $mt3_gray-66;
     margin-left: 100px;
     padding: 40px 80px 0 60px;
 

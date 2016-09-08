@@ -50,7 +50,7 @@ class VideoCaption extends Component {
   render() {
     const {title, abstract} = this.props;
     return (
-      <div className="mt3_video-playlist--current-information">
+      <div className="mt3_video-playlist--current-information mt3_bgcolor--neutral--d">
         <h3 ref="title" className="mt3_video-playlist--current-information__title mt3_color--neutral--xxxl">
           <span itemProp='headline' dangerouslySetInnerHTML={{__html: title}} />
         </h3>
