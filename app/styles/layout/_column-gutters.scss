@@ -1,38 +1,4 @@
-$mt3_gutters: (
-  sm: $mt3_unit / 2,
-  md: $mt3_unit,
-  lg: $mt3_fs-med-lrg / 2
-);
-
-.mt3_col-gut-small {
-  padding-left: $mt3_unit / 2;
-  padding-right: $mt3_unit / 2;
-}
-
-@each $mt3_size, $mt3_value in $mt3_gutters {
-  .mt3_col-gut-#{$mt3_size} {
-    padding-left: $mt3_value;
-    padding-right: $mt3_value;
-  }
-}
-
-@each $mt3_bp, $mt3_width in $mt3_layout-bps { // loop through breakpoints
-  @media #{$mt3_width} {
-    .mt3_col-#{$mt3_bp}-gut-small {
-      padding-left: $mt3_unit / 2;
-      padding-right: $mt3_unit / 2;
-    }
-
-    @each $mt3_size, $mt3_value in $mt3_gutters {
-      .mt3_col-#{$mt3_bp}-gut-#{$mt3_size} {
-        padding-left: $mt3_value;
-        padding-right: $mt3_value;
-      }
-    }
-
-    .mt3_col-#{$mt3_bp}-gut-none {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
+.mt3_col-gut {
+  padding-left: 1.725%;
+  padding-right: 1.725%;
 }

@@ -1,123 +1,19 @@
 <div class="pagewrapper mt3_row">
-    <p class="mt3_subh4 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
-      <span class="mt3_h5">Column Gutters:</span> The padding between columns is configurable and is available in the following size: none, sm, md, and lg. These can also be configured for each breakpoint.
+    <p class="mt3_subh4 mt3_col-gut">
+      <span class="mt3_h5">Column Gutters:</span> The padding between columns is percentage base, there is a 3.45% gutter inbetween columns.
     </p>
 
-    <!-- Zero gutter example -->
-
-    <div class="gridexample mt3_row-gut-1">
-
-      <!-- Example -->
-
-      <div class="mt3_row mt3_row-gut-1">
-        <div class="mt3_col-6">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-        <div class="mt3_col-6">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-      </div>
-
-      {% include "./_partials/gut-none.html" %}
-    </div>
-
-    <!-- Code snippet -->
-
-<pre class="codesnippet"><code class="language-markup">&lt;div class="mt3_row mt3_row-gut-1"&gt;
-  &lt;div class="mt3_col-6"&gt;&lt;/div&gt;
-  &lt;div class="mt3_col-6"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-
-<hr/>
-
-    <!--Small gutter example  -->
-
-    <div class="mt3_row gridexample mt3_row-gut-1">
-      <div class="mt3_row mt3_row-gut-1">
-        <div class="mt3_col-6 mt3_col-gut-sm">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-        <div class="mt3_col-6 mt3_col-gut-sm">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-      </div>
-
-      {% include "./_partials/gut-sm.html" %}
-    </div>
-
-
-  <!-- Code snippet -->
-
-<pre class="codesnippet"><code class="language-markup">&lt;div class="mt3_row mt3_row-gut-1"&gt;
-  &lt;div class="mt3_col-6 mt3_col-gut-sm"&gt;&lt;/div&gt;
-  &lt;div class="mt3_col-6 mt3_col-gut-sm"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-
-<hr/>
-
-    <!--Medium gutter example-->
-
-    <div class="mt3_row gridexample mt3_row-gut-1">
-      <div class="mt3_row mt3_row-gut-1">
-        <div class="mt3_col-6 mt3_col-gut-md ">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-        <div class="mt3_col-6 mt3_col-gut-md">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-      </div>
-
-      {% include "./_partials/gut-md.html" %}
-    </div>
-
-    <!-- Code snippet -->
-
-<pre class="codesnippet"><code class="language-markup">&lt;div class="mt3_row mt3_row-gut-1"&gt;
-  &lt;div class="mt3_col-6 mt3_col-gut-md"&gt;&lt;/div&gt;
-  &lt;div class="mt3_col-6 mt3_col-gut-md"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-
-<hr/>
-
-    <!--Large gutter example  -->
-
-    <div class="mt3_row gridexample mt3_row-gut-3">
-      <div class="mt3_row mt3_row-gut-1">
-        <div class="mt3_col-6 mt3_col-gut-lg ">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-        <div class="mt3_col-6 mt3_col-gut-lg ">
-          <div class="exampleborder">&nbsp;</div>
-        </div>
-      </div>
-
-      {% include "./_partials/gut-lg.html" %}
-    </div>
-
-    <!-- Code snippet -->
-
-<pre class="codesnippet"><code class="language-markup">&lt;div class="mt3_row mt3_row-gut-1"&gt;
-  &lt;div class="mt3_col-6 mt3_col-gut-lg"&gt;&lt;/div&gt;
-  &lt;div class="mt3_col-6 mt3_col-gut-lg"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-
-<hr/>
-
-    <p class="mt3_subh4 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
-      <span class="mt3_h5">Responsive Gutters:</span>
-
-      Use the breakpoint classes to additionally grow or shrink gutters at different breakpoints. Resize your browser to see how the gutters change.
-    </p>
+    <!-- gutter example -->
 
     <div class="gridexample mt3_row-gut-3">
 
       <!-- Example -->
 
       <div class="mt3_row mt3_row-gut-1">
-        <div class="mt3_col-6 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+        <div class="mt3_col-6 mt3_col-gut">
           <div class="exampleborder">&nbsp;</div>
         </div>
-        <div class="mt3_col-6 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg">
+        <div class="mt3_col-6 mt3_col-gut">
           <div class="exampleborder">&nbsp;</div>
         </div>
       </div>
@@ -130,9 +26,8 @@
     <!-- Code snippet -->
 
 <pre class="codesnippet"><code class="language-markup">&lt;div class="mt3_row mt3_row-gut-1"&gt;
-  &lt;div class="mt3_col-6 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg"&gt;&lt;/div&gt;
-  &lt;div class="mt3_col-6 mt3_col-gut-sm mt3_col-md-gut-md mt3_col-lg-gut-lg"&gt;&lt;/div&gt;
+  &lt;div class="mt3_col-6 mt3_col-gut"&gt;&lt;/div&gt;
+  &lt;div class="mt3_col-6 mt3_col-gut"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-</div>
 
 <div class="mt3_bgcolor--neutral--xxl mt3_row-gut-3 divider">&nbsp;</div>
