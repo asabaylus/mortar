@@ -11,6 +11,7 @@ class VideoThumbnail extends Component {
 
   render() {
     const imageModel = {
+      placeholderBackgroundColor: '#000000',
       src: this.props.item.thumbnail,
       isVideo: true,
       lazyLoad: true,
@@ -21,7 +22,7 @@ class VideoThumbnail extends Component {
       <div className={this.props.wrapperClass}>
         <Image {...imageModel} />
         <a href={this.props.item.path} className="thumbnail-overlay mt3_none" title={this.props.item.title} data-guid={this.props.item.guid} onClick={this.onClick.bind(this)}>
-          <Truncate lines={3} ellipsis={(<span>...</span>)}>
+          <Truncate lines={2} ellipsis={(<span>...</span>)}>
             <div ref="videoTitle"  dangerouslySetInnerHTML={{__html: this.props.item.title}} />
           </Truncate>
         </a>

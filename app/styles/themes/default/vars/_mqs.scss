@@ -1,6 +1,10 @@
-$mt3_mq-sm: 'screen and (min-width: 30em)';
-$mt3_mq-md: 'screen and (min-width: 50em)';
-$mt3_mq-lg: 'screen and (min-width: 70em)';
+$screen-s: 30em;
+$screen-m: 50em;
+$screen-l: 70em;
+
+$mt3_mq-sm: 'screen and (min-width: #{$screen-s})';
+$mt3_mq-md: 'screen and (min-width: #{$screen-m})';
+$mt3_mq-lg: 'screen and (min-width: #{$screen-l})';
 
 // Example Use
 // ===========
@@ -20,30 +24,26 @@ $mt3_layout-bps: (
   lg: $mt3_mq-lg
 );
 
-$screen-s: 768px;
-$screen-m: 1024px;
-$screen-l: 1280px;
-
 // This function check if the screen responds to the proper size
 // @param $breakpoint this parameter accept s, m, l, xl values.
 @mixin respond-to($breakpoint) {
 
   @if $breakpoint == s {
-    @media (max-width: #{$screen-s - 1}) {
+    @media (max-width: #{$screen-s - 0.01}) {
       @content;
     }
   }
 
   @else if $breakpoint == m {
     // respond to medium and small
-    @media (min-width: #{$screen-s}) and (max-width: #{$screen-m - 1}) {
+    @media (min-width: #{$screen-s}) and (max-width: #{$screen-m - 0.01}) {
       @content;
     }
   }
 
   @else if $breakpoint == l {
     // respond to medium and bigweb
-    @media (min-width: #{$screen-m}) and (max-width: #{$screen-l - 1}) {
+    @media (min-width: #{$screen-m}) and (max-width: #{$screen-l - 0.01}) {
       @content;
     }
   }
