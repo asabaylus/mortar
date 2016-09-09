@@ -17,7 +17,7 @@ describe('FourUp Component', () => {
   });
 
   it('FourUp div should be rendered with expected class', () => {
-    expect(el.childAt(0).html()).to.include(`<div class="mt3_fourup`);
+    expect(el.props().children.props.className).to.equal("mt3_fourup mt3_fourup--dark");
   });
 
   it('Heading should be rendered and display provided text', () => {
