@@ -10,11 +10,11 @@ class Heading extends Component {
         i = 0;
 
     if(this.props.title){
-      title.push(<div key={i++} className="mt3_h3 mt3_color--neutral--xd">{this.props.title}</div>);
+      title.push(<div key={i++} className="mt3_h3 mt3_color--gray80">{this.props.title}</div>);
     }
 
     if(this.props.description){
-      title.push(<div key={i++} className="mt3_subh4 mt3_color--neutral--xd">{this.props.description}</div>);
+      title.push(<div key={i++} className="mt3_subh4 mt3_color--gray80">{this.props.description}</div>);
     }
 
     return (

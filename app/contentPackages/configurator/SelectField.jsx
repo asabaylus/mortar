@@ -7,7 +7,7 @@ const SelectField = ({ label, onChange, children, value }) => (
     <label>
       {label}
       <div className="mt3_select-wrapper mt3_fullwidth">
-          <select className="mt3_select-input mt3_color--neutral--l mt3_subh4" onChange={onChange} value={value}>
+          <select className="mt3_select-input mt3_color--gray40 mt3_subh4" onChange={onChange} value={value}>
             {children}
           </select>
       </div>

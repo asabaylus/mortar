@@ -130,7 +130,7 @@ $mt3_gray-40: #999;
         display: none;
       }
 
-      border-left: 1px solid map-get($mt3_colors, 'neutral');
+      border-left: 1px solid map-get($mt3_colors, 'gray50');
       padding-bottom: 40px;
     }
 
@@ -140,14 +140,14 @@ $mt3_gray-40: #999;
     }
 
     @include respond-to(m) {
-      background-color: map-get($mt3_colors, 'neutral--xxd');
+      background-color: map-get($mt3_colors, 'gray80');
       margin-left: 0;
       order: 1;
       padding: 15px 70px 40px;
     }
 
     @include respond-to(s) {
-      background-color: map-get($mt3_colors, 'neutral--xxd');
+      background-color: map-get($mt3_colors, 'gray80');
       margin-left: 0;
       order: 1;
       padding: 15px 30px 40px;
@@ -176,7 +176,7 @@ $mt3_gray-40: #999;
 
     @media #{$mt3_mq-lg} {
       &::after {
-        background: linear-gradient(to bottom, $mt3_gradient-color 0%, map-get($mt3_colors, 'neutral--xxxl') 100%);
+        background: linear-gradient(to bottom, $mt3_gradient-color 0%, map-get($mt3_colors, 'white') 100%);
         bottom: 0;
         content: ' ';
         height: 70px;
@@ -202,8 +202,8 @@ $mt3_gray-40: #999;
   }
 
   &-container--thumbnail {
-    border-bottom: 1px solid map-get($mt3_colors, 'neutral--xl');
-    color: map-get($mt3_colors, 'neutral--xd');
+    border-bottom: 1px solid map-get($mt3_colors, 'gray10');
+    color: map-get($mt3_colors, 'gray80');
     cursor: pointer;
     font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
     font-size: 14px;
@@ -263,6 +263,6 @@ $mt3_gray-40: #999;
   }
 
   &-container--active-thumbnail {
-    background-color: map-get($mt3_colors, 'neutral--xxl');
+    background-color: map-get($mt3_colors, 'gray5');
   }
 }

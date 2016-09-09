@@ -4,7 +4,7 @@ a.mt3_btn {
   text-decoration: none;
 
   &-naked--reversed {
-    color: $mt3_color-neutral-xxxl;
+    color: $mt3_color-white;
   }
 
   &-naked--inactive
@@ -12,7 +12,7 @@ a.mt3_btn {
     span,
     svg {
       border-bottom: 0;
-      color: transparentize($mt3_color-neutral-l, .6);
+      color: transparentize($mt3_color-gray-40, .6);
       text-decoration: none;
     }
   }

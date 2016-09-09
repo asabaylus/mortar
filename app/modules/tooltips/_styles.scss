@@ -14,7 +14,7 @@ $mt3_arrowheight: .625rem;
   pointer-events: auto;
 
   &:hover {
-    color: $mt3_color-neutral-l;
+    color: $mt3_color-gray-40;
   }
 }
 
@@ -35,7 +35,7 @@ $mt3_arrowheight: .625rem;
 
     &::after {
       border: $mt3_arrowheight solid transparent;
-      border-top: $mt3_arrowheight solid $mt3_color-neutral-xxl;
+      border-top: $mt3_arrowheight solid $mt3_color-gray-5;
       content: '';
       display: block;
       left: 50%;
@@ -52,7 +52,7 @@ $mt3_arrowheight: .625rem;
 
     &::before {
       border: $mt3_arrowheight solid transparent;
-      border-right: $mt3_arrowheight solid $mt3_color-neutral-xxl;
+      border-right: $mt3_arrowheight solid $mt3_color-gray-5;
       content: '';
       display: block;
       position: absolute;
@@ -70,7 +70,7 @@ $mt3_arrowheight: .625rem;
 
     &::after {
       border: $mt3_arrowheight solid transparent;
-      border-bottom: $mt3_arrowheight solid $mt3_color-neutral-xxl;
+      border-bottom: $mt3_arrowheight solid $mt3_color-gray-5;
       bottom: 100%;
       content: '';
       position: absolute;
@@ -85,7 +85,7 @@ $mt3_arrowheight: .625rem;
 
     &::before {
       border: $mt3_arrowheight solid transparent;
-      border-left: $mt3_arrowheight solid $mt3_color-neutral-xxl;
+      border-left: $mt3_arrowheight solid $mt3_color-gray-5;
       content: '';
       left: 100%;
       position: absolute;

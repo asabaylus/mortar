@@ -60,7 +60,7 @@ class Tooltip extends Component {
     }
 
     return(
-      <div ref="tooltipContainer" className={`mt3_tooltip mt3_subh4 mt3_bgcolor--neutral--xxl ${tooltipPlacement}`}>
+      <div ref="tooltipContainer" className={`mt3_tooltip mt3_subh4 mt3_bgcolor--gray5 ${tooltipPlacement}`}>
         <p dangerouslySetInnerHTML={{__html: this.props.tooltipContent}} />
       </div>
     );
@@ -72,7 +72,7 @@ class Tooltip extends Component {
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}>
         {this.state.visible ? this.renderTooltip() : ''}
-        <button onClick={this.onClick} className="mt3_h5 mt3_color--neutral--xd mt3_bordercolor--neutral--xl mt3_bgcolor--neutral--xxxl mt3_tooltip-btn">?</button>
+        <button onClick={this.onClick} className="mt3_h5 mt3_color--gray80 mt3_bordercolor--gray10 mt3_bgcolor--white mt3_tooltip-btn">?</button>
       </div>
     );
   }
