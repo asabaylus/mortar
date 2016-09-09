@@ -17,6 +17,9 @@ require('../modules/podpromo/scripts/PodPromoPestle.js');
 require('../modules/podpromo/configurator/MTPodPromoConfiguratorPestle.js');
 require('../modules/tooltips/scripts/MTTooltipPestle.js');
 require('../modules/videoplaylist/scripts/VideoPlaylistPestle.js');
+require('../contentPackages/contentpackage/scripts/ContentPackagePestle.js');
+require('../contentPackages/contentpackage/configurator/ContentPackageConfiguratorPestle.js');
+
 //require('@natgeo/modules-content-package/helloWorld/helloWorldPestle.js');
 require('@natgeo/modules-content-package/heroWithTwoRails/heroWithTwoRailsPestle.js');
 require('@natgeo/modules-content-package/heroWithTwoRails/configurator/heroWithTwoRailsConfiguratorPestle.js');
