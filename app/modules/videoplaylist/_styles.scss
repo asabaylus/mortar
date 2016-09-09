@@ -127,7 +127,7 @@ $mt3_gray-40: #999;
         display: none;
       }
 
-      border-left: 1px solid map-get($mt3_colors, 'neutral');
+      border-left: 1px solid map-get($mt3_colors, 'gray50');
       padding-bottom: 40px;
     }
 
@@ -137,14 +137,14 @@ $mt3_gray-40: #999;
     }
 
     @include respond-to(m) {
-      background-color: map-get($mt3_colors, 'neutral--xxd');
+      background-color: map-get($mt3_colors, 'gray80');
       margin-left: 0;
       order: 1;
       padding: 15px 70px 40px;
     }
 
     @include respond-to(s) {
-      background-color: map-get($mt3_colors, 'neutral--xxd');
+      background-color: map-get($mt3_colors, 'gray80');
       margin-left: 0;
       order: 1;
       padding: 15px 30px 40px;
