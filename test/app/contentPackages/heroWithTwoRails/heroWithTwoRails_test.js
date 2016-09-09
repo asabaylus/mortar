@@ -1,15 +1,20 @@
 'use strict';
 
 import HeroWithTwoRails from '../../../../app/contentPackages/heroWithTwoRails/heroWithTwoRails.jsx';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
+import sinon from 'sinon';
 import React from 'react';
 
 describe('Hero With Two Rails Content Package', () => {
   let el;
+  let headingParallaxStub;
+  let railsParallaxStub;
+
   const options = {
     "type":"hero-two-rails",
     "theme":"dark",
     "heading":"King Tut",
+    "parallaxHeading":true,
     "cards":[
       {
         "id":"hero_promocard_0",
@@ -78,15 +83,57 @@ describe('Hero With Two Rails Content Package', () => {
     ]
   };
 
+  let testRailsDiv = {
+    getBoundingClientRect: function() {
+      return {
+        width: 1400,
+        height: 800
+      }
+    }
+  }
+
   let testParent = {
     className: "foo",
-    getElementsByClassName: function(){
-      return {}
+    getElementsByClassName: function(arg){
+      console.log(arg);
+      let fakeEl = {};
+      switch (arg) {
+        case "hero-with-two-rails__rails":
+          fakeEl = {
+            getBoundingClientRect: function() {
+              return {
+                height: 1200
+              }
+            }
+          };
+          break;
+        case "hero-with-two-rails__heading":
+          fakeEl = {
+            getBoundingClientRect: function() {
+              return {
+                height: 90
+              }
+            }
+          };
+          break;
+        default:
+          fakeEl = null;
+
+      }
+      return [fakeEl];
+    },
+    getBoundingClientRect: function() {
+      return {
+        width: 1400
+      }
     }
   }
 
   before(() => {
-    el = shallow(<HeroWithTwoRails
+    headingParallaxStub = sinon.stub(HeroWithTwoRails.prototype, "headingParallax");
+    railsParallaxStub = sinon.stub(HeroWithTwoRails.prototype, "railsParallax");
+
+    el = mount(<HeroWithTwoRails
       {...options}
       parentEl={testParent}
     />);
@@ -112,4 +159,11 @@ describe('Hero With Two Rails Content Package', () => {
     expect(firstPromoCard.props().leadMedia[0].aspectRatio).to.equal(0.6666666666666666);
   });
 
+  it('Parallax Heading treatment is called properly', () =>{
+    expect(headingParallaxStub.called).to.be.true;
+  });
+
+  it('Parallax Rails treatment is called properly', () =>{
+    expect(railsParallaxStub.called).to.be.true;
+  });
 });

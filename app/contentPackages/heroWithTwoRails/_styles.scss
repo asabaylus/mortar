@@ -1,5 +1,95 @@
+$mt3_small: 768px;
+$mt3_medium: 1024px;
+$mt3_large: 1280px;
+
+
 .hero-with-two-rails {
+  position: relative;
+
+  //specific height rules to match the exact height of the expected text
+  &__heading, &__heading__wrap {
+      @media (min-width: $mt3_small) {
+        height: 47px;
+      }
+      @media (min-width: $mt3_medium) {
+        height: 64px;
+      }
+      @media (min-width: $mt3_large) {
+        height: 93px;
+      }
+  }
+
+  &__hero {
+    margin: 0 auto;
+    max-width: 1600px;
+  }
+
+  //LIGHT theme rules
+  &__heading {
+    overflow: hidden;
+    h1 {
+      color: $mt3_color-gray-10;
+      display: none;
+      font-family: $mt3_verlag-stack;
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      margin: 0 auto;
+      text-align: center;
+      text-transform: uppercase;
+      @media (min-width: $mt3_small) {
+        display: block;
+        font-size: 60px;
+        margin-top: -12px
+      }
+      @media (min-width: $mt3_medium) {
+        font-size: 80px;
+        margin-top: -16px;
+      }
+      @media (min-width: $mt3_large) {
+        font-size: 120px;
+        margin-top:-24px;
+      }
+    }
+    &--fixed {
+      left: 0px;
+      position: fixed;
+      top: 0px;
+      width: 100%;
+    }
+  }
+  //DARK theme rules
   &--dark {
-    background: gray;
+    background: $mt3_color-gray-86;
+
+    .hero-with-two-rails__heading h1 {
+      color: $mt3_color-black;
+    }
+  }
+
+  &__rails {
+    margin: 0 auto;
+    max-width: 1600px;
+    @media (min-width: $mt3_small) {
+      padding: 0 40px;
+    }
+    @media (min-width: $mt3_medium) {
+      padding: 0 60px;
+    }
+  }
+  &__left-rail {
+    @media (max-width: $mt3_small) {
+      padding: 0 0 0 30px;
+    }
+  }
+  &__right-rail {
+    @media (max-width: $mt3_small) {
+      padding: 0 0 0 30px;
+    }
+  }
+  &--no-heading {
+    .hero-with-two-rails__heading__wrap {
+      display: none;
+    }
   }
 }

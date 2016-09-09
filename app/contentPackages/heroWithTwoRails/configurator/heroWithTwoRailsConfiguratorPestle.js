@@ -17,12 +17,13 @@ class HeroWithTwoRailsConfigurator extends Module {
        "type":"hero-two-rails",
        "theme":"light",
        "heading":"King Tut",
+       "parallaxHeading":true,
        "cards":[
           {
              "id":"hero_promocard_0",
              "type":"article",
              "config":{
-                "aspectRatio":"1:1",
+                "aspectRatio":"2:1",
                 "sponsored":false
              },
              "link":{
@@ -131,6 +132,46 @@ class HeroWithTwoRailsConfigurator extends Module {
              }
           },
           {
+             "id":"lr_promocard_2",
+             "type":"article",
+             "config":{
+                "aspectRatio":"19:9",
+                "sponsored":false
+             },
+             "link":{
+                "url":"http://www.nationalgeographic.com/travel/destinations/south-america/brazil/exploring-pantanal-brazil",
+                "target":"_self",
+                "trackingCodes":[
+                   "utm_medium=website",
+                   "utm_source=site"
+                ]
+             },
+             "leadMedia":[
+                {
+                   "url":"some url",
+                   "aspectRatio":0.6692323,
+                   "height":500,
+                   "width":900,
+                   "altText":"Mars photo",
+                   "customCrops":[
+                      "16:9",
+                      "2:1"
+                   ],
+                   "srcset":[
+                      "http://placehold.it/400x300 400w",
+                      "http://placehold.it/800x600 800w",
+                      "http://placehold.it/1600x1200 1600w"
+                   ]
+                }
+             ],
+             "text":{
+                "title":"How to Explore the Pantanal",
+                "dek":"Explore the Pantanal from all corners with this guide to the beauty of this national park and UNESCO World Heritage site.",
+                "kicker":"Space",
+                "publishDate":"Thu Aug 04 13:30:39 EDT 2016"
+             }
+          },
+          {
              "id":"rr_showcard_0",
              "type":"show",
              "config":{
@@ -210,31 +251,46 @@ class HeroWithTwoRailsConfigurator extends Module {
              }
           },
           {
-             "id":"rr_schedulecard_0",
-             "type":"schedule",
+             "id":"rr_promocard_1",
+             "type":"show",
              "config":{
+                "aspectRatio":"2:1",
                 "sponsored":false,
                 "channelMapping":true
              },
              "link":{
-                "url":"http://channel.nationalgeographic.com/some-show/",
+                "url":"http://www.nationalgeographic.com/travel/destinations/south-america/brazil/exploring-pantanal-brazil",
                 "target":"_self",
                 "trackingCodes":[
                    "utm_medium=website",
                    "utm_source=site"
                 ]
              },
+             "leadMedia": [
+               {
+                  "url":"/content/dam/travel/rights-exempt/Travel-2016/how-explore-pantanal/caiman-swim-pantanal-brazil.jpg",
+                  "aspectRatio":0.6666666666666666,
+                  "height":2000,
+                  "width":3000,
+                  "altText":"Picture of a caiman swimming underwater in Pantanal, Brazil",
+                  "srcset":[
+                     "http://placehold.it/400x300 400w",
+                     "http://placehold.it/800x600 800w",
+                     "http://placehold.it/1600x1200 1600w"
+                  ]
+               }
+             ],
              "text":{
                 "heading":"Friday on Wild",
-                "title":"Mars Photo Gallery",
-                "time":"8pm/7c",
+                "title":"Mars",
+                "time":"Sunday 8pm/7c",
                 "kicker":"Space"
              },
              "cta":{
                 "url":"http://channel.nationalgeographic.com/tv-guide/",
-                "title":"View All Schedules +",
+                "title":"See All +",
                 "target":"_blank",
-                "seo-title":"See our schedule of upcoming shows"
+                "seo-title":"See more showtimes for this program"
              }
           }
        ],

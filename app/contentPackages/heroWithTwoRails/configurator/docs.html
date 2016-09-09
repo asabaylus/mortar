@@ -13,10 +13,8 @@
     <div style="clear:both"></div>
   </div>
   <style>
-    .hero-with-two-rails__app-holder fieldset:nth-child(2) .mt3_h5:after {
-      content: "See at Bottom";
-      display: block;
-      font-weight: normal;
+    .configurator__result, .configurator__properties {
+      display: none;
     }
   </style>
   <div class="hero-with-two-rails__app-holder" data-pestle-module="HeroWithTwoRailsConfigurator">
@@ -139,6 +137,46 @@
                }
             },
             {
+               "id":"lr_promocard_2",
+               "type":"article",
+               "config":{
+                  "aspectRatio":"19:9",
+                  "sponsored":false
+               },
+               "link":{
+                  "url":"http://www.nationalgeographic.com/travel/destinations/south-america/brazil/exploring-pantanal-brazil",
+                  "target":"_self",
+                  "trackingCodes":[
+                     "utm_medium=website",
+                     "utm_source=site"
+                  ]
+               },
+               "leadMedia":[
+                  {
+                     "url":"some url",
+                     "aspectRatio":0.6692323,
+                     "height":500,
+                     "width":900,
+                     "altText":"Mars photo",
+                     "customCrops":[
+                        "16:9",
+                        "2:1"
+                     ],
+                     "srcset":[
+                        "http://placehold.it/400x300 400w",
+                        "http://placehold.it/800x600 800w",
+                        "http://placehold.it/1600x1200 1600w"
+                     ]
+                  }
+               ],
+               "text":{
+                  "title":"How to Explore the Pantanal",
+                  "dek":"Explore the Pantanal from all corners with this guide to the beauty of this national park and UNESCO World Heritage site.",
+                  "kicker":"Space",
+                  "publishDate":"Thu Aug 04 13:30:39 EDT 2016"
+               }
+            },
+            {
                "id":"rr_showcard_0",
                "type":"show",
                "config":{
@@ -218,55 +256,69 @@
                }
             },
             {
-               "id":"rr_schedulecard_0",
-               "type":"schedule",
+               "id":"rr_promocard_1",
+               "type":"show",
                "config":{
+                  "aspectRatio":"2:1",
                   "sponsored":false,
                   "channelMapping":true
                },
                "link":{
-                  "url":"http://channel.nationalgeographic.com/some-show/",
+                  "url":"http://www.nationalgeographic.com/travel/destinations/south-america/brazil/exploring-pantanal-brazil",
                   "target":"_self",
                   "trackingCodes":[
                      "utm_medium=website",
                      "utm_source=site"
                   ]
                },
+               "leadMedia": [
+                 {
+                    "url":"/content/dam/travel/rights-exempt/Travel-2016/how-explore-pantanal/caiman-swim-pantanal-brazil.jpg",
+                    "aspectRatio":0.6666666666666666,
+                    "height":2000,
+                    "width":3000,
+                    "altText":"Picture of a caiman swimming underwater in Pantanal, Brazil",
+                    "srcset":[
+                       "http://placehold.it/400x300 400w",
+                       "http://placehold.it/800x600 800w",
+                       "http://placehold.it/1600x1200 1600w"
+                    ]
+                 }
+               ],
                "text":{
                   "heading":"Friday on Wild",
-                  "title":"Mars Photo Gallery",
-                  "time":"8pm/7c",
+                  "title":"Mars",
+                  "time":"Sunday 8pm/7c",
                   "kicker":"Space"
                },
                "cta":{
                   "url":"http://channel.nationalgeographic.com/tv-guide/",
-                  "title":"View All Schedules +",
+                  "title":"See All +",
                   "target":"_blank",
-                  "seo-title":"See our schedule of upcoming shows"
+                  "seo-title":"See more showtimes for this program"
                }
             }
          ]
       }
     </script>
   </div>
+</div>
 
-  <div class="mt3_col-sm-12 mt3_row-gut-4">
-    <div id="configurator" class="hero-with-two-rails">
-      <div class="hero">
-        <div id="hero_promocard_0" class="promo-card"></div>
-      </div>
-      <div class="hero-with-two-rails__rails mt3_row">
-        <div class="hero-with-two-rails__heading"></div>
-        <div class="hero-with-two-rails__left-rail mt3_col-12 mt3_col-lg-6">
-          <div id="lr_promocard_0" class="promo-card"></div>
-          <div id="lr_promocard_1" class="promo-card"></div>
-        </div>
-        <div class="hero-with-two-rails__right-rail mt3_col-12 mt3_col-lg-6">
-          <div id="rr_showcard_0" class="show-card"></div>
-          <div id="rr_promocard_0" class="promo-card"></div>
-          <div id="rr_schedulecard_0" class="schedule-card"></div>
-        </div>
-      </div>
+<div id="configurator" class="hero-with-two-rails">
+  <div class="hero-with-two-rails__hero mt3_row">
+    <div id="hero_promocard_0" class="promo-card"></div>
+  </div>
+  <div class="hero-with-two-rails__rails mt3_row">
+    <div class="hero-with-two-rails__heading__wrap mt3_row mt3_col-12"></div>
+    <div class="hero-with-two-rails__left-rail mt3_col-12 mt3_col-gut mt3_col-md-7">
+      <div id="lr_promocard_0" class="promo-card"></div>
+      <div id="lr_promocard_1" class="promo-card"></div>
+      <div id="lr_promocard_2" class="promo-card"></div>
+    </div>
+    <div class="hero-with-two-rails__right-rail mt3_col-12 mt3_col-gut mt3_col-md-5">
+      <div id="rr_showcard_0" class="show-card"></div>
+      <div id="rr_promocard_0" class="promo-card"></div>
+      <div id="rr_promocard_1" class="promo-card"></div>
     </div>
   </div>
 </div>

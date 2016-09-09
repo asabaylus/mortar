@@ -4,16 +4,9 @@ import React from 'react';
 import * as ReactDOM from 'react-dom';
 import {Pestle, Module} from '@natgeo/mortar-pestle';
 import HeroWithTwoRailsComponent from './heroWithTwoRails.jsx';
-//import HelloWorldConfigurator from './configurator.jsx';
 
 class HeroWithTwoRails extends Module {
   init() {
-    /*TODO: should Mortar components be equipped to hit an endpoint for JSON? If so,
-     * components should be equipped to call the endpoint, and delay rendering the
-     * component until data is retrieved. This should be abstracted into a single util
-     * function at some point most likely
-     */
-
     //if there's an endpoint....
     if (this.options.endpoint) {
       // if there's an endpoint in the Pestle module, fetch that and use the response as our model
