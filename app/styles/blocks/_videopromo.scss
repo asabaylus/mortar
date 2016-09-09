@@ -16,6 +16,9 @@
   overflow: hidden;
   position: absolute;
   width: 10%;
+  height: 24.3%;
+  min-width: 44px;
+  min-height: 63px;
 
   &:hover {
     background-color: $mt3_color-primary;
