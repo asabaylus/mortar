@@ -1,47 +1,99 @@
 'use strict';
 
-import React, { PropTypes }  from 'react';
+import React, { Component, PropTypes }  from 'react';
 import PromoImage from '../shared/PromoImage.jsx';
 import PromoText from '../shared/PromoText.jsx';
 import events from '../../scripts/events';
 import { generateHref } from '../../scripts/generateHref.js';
+import _debounce from 'lodash/debounce';
 
-const Article = (props) => {
-  const promoData = {
-    // data to pass with the event
+class Article extends Component {
+  constructor(props) {
+    super(props);
+    this.resizeHandler = null;
+    this.getWidth = this.getWidth.bind(this);
+    this.state = {
+      breakpoint: null
+    }
+  }
+
+  static defaultProps = {
+    ...Component.defaultProps,
+    config : {
+      overlay : false
+    }
   };
 
-  const promoClicked = () => {
+  promoClicked(){
     props.onClick();
-    Pestle.PubSub.publish(events.promoClicked, promoData);
-  };
+    Pestle.PubSub.publish(events.promoClicked); // data object may be passed as second arg
+  }
 
-  let attrs = props.link ? {
-    className: "mt3_div-link",
-    href: props.link ? generateHref(props.link.url, props.link.trackingCodes) : null,
-    target: props.link ? props.link.target : null,
-    onClick: promoClicked
-  } : null;
+  getWidth(){
+    const containerWidth = this.refs.promocardContainer.getBoundingClientRect().width;
+    this.setState({ breakpoint: containerWidth });
+  }
 
-  if (props.leadMedia){
+  componentDidMount(){
+    this.getWidth();
+    this.resizeHandler = _debounce(this.getWidth, 250);
+    window.addEventListener('resize', this.resizeHandler);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resizeHandler);
+  }
+
+  render(){
+    let content = [];
+    let i = 0;
+    const {type, config, link, leadMedia, brandingBadgeLabel, text, theme, ...props} = this.props;
+    const attrs = link ? {
+      className: "mt3_div-link",
+      href: link ? generateHref(link.url, link.trackingCodes) : null,
+      target: link ? link.target : null,
+      onClick: this.promoClicked
+    } : null;
+
+    const bkgColor = theme === "dark" ? " mt3_promocard-container--dark" : "";
+
+    if(this.state.breakpoint !== null){
+      // this builds the structure differently based on the container width, which if above 768 should have nested text overlaying the photo by passing an additional
+      // property via the config object
+      if(leadMedia && this.state.breakpoint > 768) {
+        Object.assign(config, {
+          overlay: true
+        });
+        content.push(
+          <a key={i++} {...attrs} />,
+          <PromoImage key={i++} type={type} config={config} link={link} leadMedia={leadMedia[0]} brandingBadgeLabel={brandingBadgeLabel} onClick={props.onClick} text={text} />
+        );
+      }else if(leadMedia && this.state.breakpoint < 768){
+        content.push(
+          <a key={i++} {...attrs} />,
+          <PromoImage key={i++} type={type} config={config} link={link} leadMedia={leadMedia[0]} brandingBadgeLabel={brandingBadgeLabel} onClick={props.onClick} />,
+          <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type} />
+        );
+      }else{
+        content.push(
+          <a key={i++} {...attrs} />,
+          <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type} />
+        );
+      }
+    }
+
     return(
-      <div className="mt3_row mt3_col-12 mt3_promocard-container">
-        <a {...attrs} />
-        <PromoImage type={props.type} config={props.config} link={props.link} leadMedia={props.leadMedia[0]} brandingBadgeLabel={props.brandingBadgeLabel} onClick={props.onClick} />
-        <PromoText {...props} />
-      </div>
-    );
-  }else{
-    return(
-      <div className="mt3_row">
-        <PromoText {...props} />
+      <div className={"mt3_row mt3_col-12 mt3_promocard-container" + bkgColor} ref="promocardContainer">
+        { content }
       </div>
     );
   }
-};
+
+}
 
 Article.PropTypes = {
   id: PropTypes.string,
+  theme: PropTypes.string,
   type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
   config: PropTypes.object,
   link: PropTypes.shape({

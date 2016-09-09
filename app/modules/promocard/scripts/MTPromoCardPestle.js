@@ -15,6 +15,7 @@ class PromoCard extends Module {
   init() {
     ReactDOM.render(<MTPromoCardComponent
       id={this.options.id}
+      theme={this.options.theme}
       type={this.options.type}
       config={this.options.config}
       link={this.options.link}

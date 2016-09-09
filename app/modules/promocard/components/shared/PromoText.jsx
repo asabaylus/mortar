@@ -1,19 +1,28 @@
 'use strict';
 
 import React, { PropTypes }  from 'react';
-import events from '../../scripts/events';
+import ElementQuery from 'react-element-query';
 import { generateHref } from '../../scripts/generateHref.js';
 
 const PromoText = (props) => {
 
-  let attrs = {
-    className: "mt3_color--gray40 mt3_subh2 mt3_promocard-kicker",
+  const attrs = {
+    className: props.config.overlay || props.theme === "dark" ? "mt3_color--white mt3_promocard-kicker mt3_promocard-kicker--inverse" : "mt3_color--gray40 mt3_promocard-kicker",
     href: props.text.kicker ? generateHref(props.text.kicker.url, props.text.kicker.trackingCodes) : null,
     target: props.text.kicker ? props.text.kicker.target : null
   };
 
+  /****** commenting out byline for now as it will most likely need to be added back in later
+   {props.text.byline ? <div className="mt3_color--neutral--xxd mt3_h5">{props.text.byline}</div> : null}
+   *****/
+
+  const thumbnailPositionColor = props.config.overlay ? "mt3_color--white mt3_promocard-nested-text" : "mt3_color--neutral--xxd";
+  const subheadColor = props.config.overlay ? "mt3_color--white" : "mt3_color--gray40";
+  const inverse = props.config.overlay || props.theme === "dark" ? "mt3_color--white" : "mt3_color--black";
+  const inverseDek = props.theme === "dark" ? "mt3_color--white mt3_promocard-dek--inverse" : "mt3_color--black";
+
   return(
-    <div>
+    <div className={thumbnailPositionColor}>
       <div className="mt3_row">
         <div className="mt3_promocard-pad">
           {props.text.kicker && !props.config.sponsored ? <a {...attrs}>{props.text.kicker.label}</a> : props.config.sponsored ? <span className={attrs.className}>{props.text.sponsorContentLabel}</span> : null}
@@ -27,6 +36,7 @@ const PromoText = (props) => {
           {props.text.byline ? <div className="mt3_color--black mt3_h5">{props.text.byline}</div> : null}
         </div>
       </div>
+      { delete props.config.overlay }
     </div>
   );
 };
@@ -54,6 +64,7 @@ PromoText.PropTypes = {
     publishDate: PropTypes.string,
     sponsorContentLabel: PropTypes.string
   }),
+  theme: PropTypes.string,
   type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule'])
 };
 

@@ -7,6 +7,7 @@ import PromoText from '../../../../app/modules/promocard/components/shared/Promo
 import {shallow, mount} from 'enzyme';
 import React from 'react';
 
+//skipping for now due to refactor to React - abstract React tests to come
 describe('Article Component', () => {
   let wrapper;
 
@@ -33,7 +34,7 @@ describe('Article Component', () => {
   };
 
   before(() => {
-    wrapper = shallow(<Article
+    wrapper = mount(<Article
       id={options.id}
       type={options.type}
       config={options.config}
@@ -43,14 +44,15 @@ describe('Article Component', () => {
       brandingBadgeLabel={options.brandingBadgeLabel}
       sponsorContentLabel={options.sponsorContentLabel}
     />);
+    wrapper.setState({ breakpoint: "700" });
   });
 
   it('Should have a containing div', () => {
-    expect(wrapper.first().type()).to.equal("div");
+    expect(wrapper.find('.mt3_promocard-container').type()).to.equal("div");
   });
 
   it('Should have a containing div with classes', () => {
-    expect(wrapper.first().props().className).to.include("mt3_row mt3_col-12 mt3_promocard-container");
+    expect(wrapper.find('.mt3_promocard-container').props().className).to.include("mt3_row mt3_col-12 mt3_promocard-container");
   });
 
   it('Should have a PromoImage component', () => {

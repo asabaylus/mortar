@@ -26,6 +26,7 @@ const MTPromoCard = (props) => {
 
 MTPromoCard.PropTypes = {
   id: PropTypes.string,
+  theme: PropTypes.string,
   type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
   config: PropTypes.object,
   link: PropTypes.shape({

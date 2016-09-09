@@ -1,9 +1,16 @@
 $mt3_button-width: 8em;
 $mt3_button-height: 8em;
+$mt3_gradient: rgba(0, 0, 0, .5), transparent;
+$mt3_gradientIndex: 3;
 
 .mt3_promocard-container {
+  margin-bottom: 40px;
   overflow: hidden;
   position: relative;
+
+  &--dark {
+    background-color: inherit;
+  }
 
   a.mt3_div-link {
     height: 100%;
@@ -15,12 +22,58 @@ $mt3_button-height: 8em;
   }
 
   &:-webkit-any-link{
-   text-decoration: none;
+    text-decoration: none;
   }
 
   figure { // user-agent overrides
-    margin: 0 0 30px;
+    margin: 0 0 15px;
     position: relative;
+
+    .mt3_promocard-gradient-overlay{
+      &::after {
+        background: linear-gradient(to top, $mt3_gradient);
+        bottom: 0;
+        content: '';
+        height: 25%;
+        opacity: 1;
+        position: absolute;
+        width: 100%;
+        z-index: $mt3_gradientIndex;
+      }
+
+      &::before {
+        background: linear-gradient(to bottom, $mt3_gradient);
+        content: '';
+        height: 30%;
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: $mt3_gradientIndex;
+      }
+    }
+  }
+
+  .mt3_videopromo-button{
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+  }
+
+  .mt3_promocard-text--overlay {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    z-index: $mt3_z-middle + 4;
+  }
+
+  .mt3_promocard-nested-text {
+    display: inline-block;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    vertical-align: bottom;
+    width: 75%;
+    z-index: 5;
   }
 
   //most of the styles below are just for displaying functionality for this ticket, will most likely be changed/overridden for styling ticket
@@ -47,10 +100,54 @@ $mt3_button-height: 8em;
     z-index: $mt3_z-middle + 10;
   }
 
-  .mt3_promocard-kicker{
+  .mt3_promocard-kicker {
+    @extend .mt3_kicker;
     float: left;
+    font-size: 0.25rem;
+    line-height: 1;
+    margin-bottom: 10px;
     position: relative;
+    text-decoration: none;
     z-index: $mt3_z-middle + 10;
+
+    &--inverse{
+      border-right: 1px solid white;
+
+      &:nth-child(1) {
+        border-left: 1px solid white;
+      }
+    }
+  }
+
+  .mt3_promocard-title {
+    font-family: $mt3_neue-haas-stack;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.015em;
+    line-height: 1.15;
+
+    &--small {
+      font-size: 22px;
+    }
+    &--medium {
+      font-size: 30px;
+    }
+    &--large {
+      font-size: 42px;
+    }
+  }
+
+  .mt3_promocard-dek{
+    border-left: 1px solid #808080;
+    font-family: $mt3_georgia-stack;
+    font-size: 0.75rem;
+    line-height: 1.7;
+    margin-top: 10px;
+    padding-left: 30px;
+
+    &--inverse{
+      border-left: 1px solid white;
+    }
   }
 
   .mt3_card-subhead--right{
