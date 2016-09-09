@@ -172,7 +172,7 @@ $mt3_gray-40: #999;
 
     // Tablet
     @include respond-to(m) {
-      padding: 0 70px 60px;
+      padding: 0 70px 30px;
     }
 
     @include respond-to(xl) {
@@ -227,12 +227,6 @@ $mt3_gray-40: #999;
       }
     }
 
-    @include respond-to(s) {
-      .modules-images {
-        max-height: 190px;
-      }
-    }
-
     @include respond-to(m) {
       width: 50%;
       display: inline-block;
@@ -254,6 +248,7 @@ $mt3_gray-40: #999;
           left: 15px;
         }
       }
+
     }
 
   }
