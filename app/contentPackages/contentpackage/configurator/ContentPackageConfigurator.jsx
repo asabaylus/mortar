@@ -59,7 +59,7 @@ class ContentPackageConfigurator extends Component {
 
   render() {
     const props = this.state.componentProps;
-    const fourUpComponent = <FourUpComponent theme={props.theme} model={props.dataModel.components[1]} />;
+    const fourUpComponent = <FourUpComponent initialWidth={document.getElementsByTagName('body')[0].getBoundingClientRect().width} theme={props.theme} model={props.dataModel.components[1]} />;
     return (
         <Configurator component={fourUpComponent}>
           <Section text="General">
