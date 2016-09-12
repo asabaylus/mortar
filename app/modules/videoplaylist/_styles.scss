@@ -1,10 +1,3 @@
-$mt3_playlist-desktop-height: 470px;
-$mt3_gradient-color: rgba(255, 255, 255, 0);
-
-//TODO: These are temporary variable with non-existing colors on mortar, when SYTO-781
-//is ready we need to procede to refactor.
-$mt3_gray-40: #999;
-
 .mt3_video-playlist {
 
   &__flex {
@@ -67,7 +60,6 @@ $mt3_gray-40: #999;
     padding: 40px 80px 0 60px;
 
     &__description {
-      color: $mt3_gray-40;
       font-family: $mt3_georgia-stack;
       font-size: 15px;
       font-weight: normal;
@@ -140,14 +132,14 @@ $mt3_gray-40: #999;
     }
 
     @include respond-to(m) {
-      background-color: map-get($mt3_colors, 'gray80');
+      background-color: $mt3_color-black;
       margin-left: 0;
       order: 1;
       padding: 15px 70px 40px;
     }
 
     @include respond-to(s) {
-      background-color: map-get($mt3_colors, 'gray80');
+      background-color: $mt3_color-black;
       margin-left: 0;
       order: 1;
       padding: 15px 30px 40px;
@@ -162,107 +154,125 @@ $mt3_gray-40: #999;
   }
 
   &-container--thumbnails {
-    @media #{$mt3_mq-lg} {
-      margin-left: 40px;
-      max-height: $mt3_playlist-desktop-height;
-      width: 92%;
-    }
+    background-color: $mt3_color-black;
     overflow: hidden;
     position: relative;
     transition-duration: 1s;
     transition-property: max-height;
     transition-timing-function: ease-in-out;
 
-
-    @media #{$mt3_mq-lg} {
-      &::after {
-        background: linear-gradient(to bottom, $mt3_gradient-color 0%, map-get($mt3_colors, 'white') 100%);
-        bottom: 0;
-        content: ' ';
-        height: 70px;
-        left: 0;
-        opacity: 1;
-        pointer-events: none;
-        position: absolute;
-        transition-duration: .5s;
-        transition-property: opacity;
-        transition-timing-function: ease-in-out;
-        width: 100%;
-        z-index: 20;
-      }
+    @include respond-to(s) {
+      padding: 0 30px 30px;
     }
 
-    &__scroll {
-      @media #{$mt3_mq-lg} {
-        max-height: $mt3_playlist-desktop-height;
-        overflow-y: scroll;
-        padding-bottom: 35px;
-      }
+    // Tablet
+    @include respond-to(m) {
+      padding: 0 70px 30px;
+    }
+
+    @include respond-to(xl) {
+      padding-right: 70px;
     }
   }
 
   &-container--thumbnail {
-    border-bottom: 1px solid map-get($mt3_colors, 'gray10');
-    color: map-get($mt3_colors, 'gray80');
-    cursor: pointer;
-    font-family: 'Pragmatica-web', 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 22px;
-    padding: 16px;
+    overflow: hidden;
+    position: relative;
 
-    a {
-      @extend %mt3_textlink;
-      align-items: center;
+    // container text over the image.
+    .thumbnail-overlay {
+      bottom: 0;
+      color: $mt3_color-white;
       display: flex;
+      flex-direction: column;
+      font-family: $mt3_haas-stack;
+      font-size: 18px;
+      font-weight: 600;
+      justify-content: center;
+      left: 0px;
+      letter-spacing: 0.05em;
+      line-height: 1.43;
+      padding: 0 30px;
+      position: absolute;
+      right: 0;
+      text-decoration: none;
+      top: 0;
+      z-index: $mt3_z-middle + 1;
 
       &:hover,
       &:focus,
       &:active {
-        color: inherit;
-      }
-
-      &.mt3_none {
-        border-bottom: 0;
+        outline: 0;
       }
     }
 
-    &:last-of-type {
-      border-bottom: 0;
-    }
-
-    figure {
-      margin: 0 16px;
-      min-width: 120px;
-      position: relative;
-      width: 120px;
-
-      &:not(.embedded-video)::before {
-        background-image: $mt3_video-promo-play-button;
-        background-repeat: no-repeat;
-        background-size: 100%;
+    .modules-images {
+      &:before {
+        background-color: black;
         content: '';
-        display: block;
-        height: 45px;
-        left: 50%;
+        height: 100%;
         position: absolute;
-        text-align: center;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 45px;
-        z-index: 10;
+        width: 100%;
+        z-index: $mt3_z-middle + 1;
+      }
+
+      img {
+        opacity: .4;
+        z-index: $mt3_z-middle + 1;
       }
     }
-  }
 
-  & .mt3_hide-play {
+    @include respond-to(m) {
+      width: 50%;
+      display: inline-block;
+      margin-bottom: 30px;
 
-    figure:not(.embedded-video)::before {
-      display: none;
+      // left column
+      &:nth-child(odd) {
+        padding-right: 15px;
+
+        .thumbnail-overlay {
+          right: 15px;
+        }
+      }
+      // right column
+      &:nth-child(even) {
+        padding-left: 15px;
+
+        .thumbnail-overlay {
+          left: 15px;
+        }
+      }
+
     }
+
   }
 
   &-container--active-thumbnail {
-    background-color: map-get($mt3_colors, 'gray5');
+    .thumbnail-overlay {
+      color: $mt3_color-black;
+    }
+
+    .modules-images {
+      &:before {
+        background-color: $mt3_color-primary;
+      }
+    }
+
+    @media #{$mt3_mq-md} {
+      &:after {
+        content: "";
+        display: block;
+        height: 0px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0px;
+        z-index: $mt3_z-middle + 1;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid $mt3_color-black;
+        border-top: 15px solid transparent;
+      }
+    }
   }
 }
