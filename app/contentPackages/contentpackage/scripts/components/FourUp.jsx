@@ -3,6 +3,7 @@
 import React, { Component, PropTypes } from 'react';
 import ElementQuery from 'react-element-query';
 import { default as MTPromoCard } from '../../../../modules/promocard/scripts/MTPromoCard.jsx';
+import _debounce from 'lodash/debounce';
 
 class FourUpComponent extends Component {
 
@@ -11,6 +12,24 @@ class FourUpComponent extends Component {
     this.parentClassName = 'mt3_fourup';
     this.storyCards = [];
     this.maxCards = 4;
+    this.state = {
+      contentWidth: props.initialWidth
+    };
+  }
+
+  componentDidMount() {
+    this.resizeHandler = _debounce(this.getComponentWidth.bind(this), 250);
+    window.addEventListener('resize', this.resizeHandler);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resizeHandler);
+  }
+
+  getComponentWidth() {
+    this.setState({
+      contentWidth: this.refs.fourUpContainer.getBoundingClientRect().width
+    });
   }
 
   pushCard(card, index) {
@@ -22,17 +41,29 @@ class FourUpComponent extends Component {
     let currentCard = card;
     // We want to force the aspect ratio of the first two cards in the stack based on business rules. Here we look at the zero based index and make that decision
     switch(index) {
+      // cards 3 and 4 are rendered differently, and need a different aspect ratio based on the parent container width
+      case 2:
+      case 3:
+        if(this.state.contentWidth < 440) {
+          currentCard.config.aspectRatio = '1:1';
+        } else {
+          currentCard.config.aspectRatio = '16:9';
+        }
+        if(currentCard.text.dek) {
+          currentCard.text.dek = null;
+        }
+      break;
+      // Second card set to 16:9
       case 1:
         currentCard.config.aspectRatio = '16:9';
       break;
+      // First card set to 3:2
       case 0:
         currentCard.config.aspectRatio = '3:2';
       break;
-      default:
-        // Default will be whatever was passed in as a prop. We're only overriding the first two cards
     }
 
-    this.storyCards.push(<MTPromoCard key={index} {...currentCard} />);
+    this.storyCards.push(<MTPromoCard key={index} {...currentCard} theme={'dark'} />);
   }
 
   render() {
@@ -56,6 +87,7 @@ class FourUpComponent extends Component {
       },
     ];
 
+    // configure cards that will be rendered below
     componentStories.forEach(this.pushCard.bind(this));
     
     //apply "theme" class manually to parent element
@@ -63,9 +95,32 @@ class FourUpComponent extends Component {
       this.parentClassName = `mt3_fourup mt3_fourup--${this.props.theme}`;
     }
 
+    // This sets the markup for the last two components when the parent component's width is less than 440
+    const mobileBottomRows = [
+      <div key={"mobile-row-2"} className="mt3_row mt3_fourup-row mt3_fourup-row--extrasmall">
+        {this.storyCards[2]}
+      </div>,
+      <div key={"mobile-row-3"} className="mt3_row mt3_fourup-row mt3_fourup-row--extrasmall">
+        {this.storyCards[3]}
+      </div>
+    ];
+
+    // This sets the markup for the last two components when the parent component's width is >= 440
+    const tabDeskBottomRow = (
+      <div className="mt3_row mt3_fourup-row">
+        <div className="mt3_col-6 mt3_fourup-col--extrasmall">
+          {this.storyCards[2]}
+        </div>
+        <div className="mt3_col-6 mt3_fourup-col--extrasmall">
+          {this.storyCards[3]}
+        </div>
+      </div>);
+
+    const bottomRow = (this.state.contentWidth < 440) ? mobileBottomRows : tabDeskBottomRow;
+
     return (
       <ElementQuery sizes={elementQueries}>
-        <div className={this.parentClassName}>
+        <div ref="fourUpContainer" className={this.parentClassName}>
           <div className="mt3_fourup-header" dangerouslySetInnerHTML={{__html: componentHead}}/>
           <div className="mt3_row mt3_fourup-row mt3_fourup-row--top">
             {this.storyCards[0]}
@@ -73,10 +128,7 @@ class FourUpComponent extends Component {
           <div className="mt3_row mt3_fourup-row">
             {this.storyCards[1]}
           </div>
-          <div className="mt3_row mt3_fourup-row">
-            {this.storyCards[2]}
-            {this.storyCards[3]}
-          </div>
+          { bottomRow }
         </div>
       </ElementQuery>
     );

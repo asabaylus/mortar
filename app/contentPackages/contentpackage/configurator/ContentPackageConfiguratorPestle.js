@@ -204,27 +204,24 @@ class ContentPackageConfigurator extends Module {
             'heading': 'The Latest',
             'stories': [
               {
-                'id': 'hero_promocard_0',
                 'type': 'article',
                 'config': {
-                  'aspectRatio': '1:1',
-                  'sponsored': false
+                  'sponsored': false,
+                  'showPlayButton': false,
+                  'showByline': true
                 },
                 'link': {
-                  'url': 'http:\/\/www.nationalgeographic.com\/travel\/destinations\/south-america\/brazil\/exploring-pantanal-brazil',
+                  'url': '\/content\/magazine\/en_US\/test-article-by-jani-actman.html',
                   'target': '_self',
-                  'trackingCodes': [
-                    'utm_medium=website',
-                    'utm_source=site'
-                  ]
+                  'trackingCodes': '?utm_medium=site&utm_source=ng.com'
                 },
                 'leadMedia': [
                   {
-                    'url': '\/content\/dam\/travel\/rights-exempt\/Travel-2016\/how-explore-pantanal\/caiman-swim-pantanal-brazil.jpg',
-                    'aspectRatio': 0.66666666666667,
-                    'height': 2000,
-                    'width': 3000,
-                    'altText': 'Picture of a caiman swimming underwater in Pantanal, Brazil',
+                    'imageUrl': '\/content\/dam\/photography\/rights-exempt\/PT_hero_42_153645159.jpg',
+                    'title': 'This is the image\'s title in DAM',
+                    'aspectRatio': 0.48245614035088,
+                    'height': 550,
+                    'width': 1140,
                     'srcset': [
                       'http:\/\/placehold.it\/400x300 400w',
                       'http:\/\/placehold.it\/800x600 800w',
@@ -233,10 +230,30 @@ class ContentPackageConfigurator extends Module {
                   }
                 ],
                 'text': {
-                  'title': 'How to Explore the Pantanal',
-                  'dek': 'Explore the Pantanal from all corners with this guide to the beauty of this national park and UNESCO World Heritage site.',
-                  'kicker': 'Space',
-                  'publishDate': 'Thu Aug 04 13:30:39 EDT 2016'
+                  'title': 'Use this title instead',
+                  'dek': 'Sample dek',
+                  'publishDate': 'Thu Aug 11 13:28:00 UTC 2016',
+                  'kicker': {
+                    'label': 'Weird & Wild',
+                    'url': '\/content\/news\/en_US\/weird-wild.html',
+                    'target': '_self',
+                    'trackingCodes': '?utm_medium=site&utm_source=ng.com'
+                  }
+                },
+                'contributor': {
+                  'name': 'Jani Actman',
+                  'url': '\/content\/contributors\/en_US\/jani-actman.html',
+                  'thumbnail': {
+                    'imageUrl': '\/content\/dam\/photography\/rights-exempt\/90725-Colorful-Kittens.jpg',
+                    'aspectRatio': 0.75038520801233,
+                    'height': 487,
+                    'width': 649,
+                    'srcset': [
+                      'http:\/\/placehold.it\/400x300 400w',
+                      'http:\/\/placehold.it\/800x600 800w',
+                      'http:\/\/placehold.it\/1600x1200 1600w'
+                    ]
+                  }
                 }
               },
               {
@@ -275,8 +292,10 @@ class ContentPackageConfigurator extends Module {
                 'text': {
                   'title': 'How to Explore the Pantanal',
                   'dek': 'Explore the Pantanal from all corners with this guide to the beauty of this national park and UNESCO World Heritage site.',
-                  'kicker': 'Space',
-                  'publishDate': 'Thu Aug 04 13:30:39 EDT 2016'
+                  'publishDate': 'Thu Aug 04 13:30:39 EDT 2016',
+                  'kicker': {
+                    'label': 'Kicker Label'
+                  }
                 }
               },
               {
@@ -310,10 +329,59 @@ class ContentPackageConfigurator extends Module {
                 'text': {
                   'title': 'Crime in TN',
                   'dek': 'Just when deputies in Sullivan County, Tennessee and Ashe County, North Carolina think they\'ve seen it all, a dispatch call comes in to corral a donkey on the loose in the streets.',
-                  'kicker': 'Space',
                   'duration': '25 Mins',
-                  'publishDate': 'Thu Aug 04 13:30:39 EDT 2016'
+                  'publishDate': 'Thu Aug 04 13:30:39 EDT 2016',
+                  'kicker': {
+                    'label': 'Video Kicker label'
+                  }
                 }
+              },
+              {
+                'id': 'lr_promocard_0',
+                'type': 'article',
+                'config': {
+                  'aspectRatio': '19:9',
+                  'sponsored': false
+                },
+                'link': {
+                  'url': 'http:\/\/www.nationalgeographic.com\/travel\/destinations\/south-america\/brazil\/exploring-pantanal-brazil',
+                  'target': '_self',
+                  'trackingCodes': [
+                    'utm_medium=website',
+                    'utm_source=site'
+                  ]
+                },
+                'leadMedia': [
+                  {
+                    'url': 'some url',
+                    'aspectRatio': 0.6692323,
+                    'height': 500,
+                    'width': 900,
+                    'altText': 'Mars photo',
+                    'customCrops': [
+                      '16:9',
+                      '2:1'
+                    ],
+                    'srcset': [
+                      'http:\/\/placehold.it\/400x300 400w',
+                      'http:\/\/placehold.it\/800x600 800w',
+                      'http:\/\/placehold.it\/1600x1200 1600w'
+                    ]
+                  }
+                ],
+                'text': {
+                  'title': 'This is the title of the card',
+                  'dek': 'This is a short dek for the card.',
+                  'kicker': {
+                    'label': 'Weird & Wild',
+                    'url': 'http:\/\/news.nationalgeographic.com\/2016\/08\/shark-attack\/',
+                    'target': '_self',
+                    'trackingCodes': '?utm_medium=site&utm_source=ng.com'
+                  },
+                  'duration': '',
+                  'publishDate': 'Thu Aug 04 13:30:39 EDT 2016',
+                  'sponsorContentLabel': 'This is the Sponsor Content Label'
+                },
               },
               {
                 'id': 'hero_promocard_0',
@@ -381,27 +449,24 @@ class ContentPackageConfigurator extends Module {
                 'brandingBadgeLabel': ''
               },
               {
-                'id': 'rr_promocard_0',
                 'type': 'article',
                 'config': {
-                  'aspectRatio': '2:1',
-                  'sponsored': true
+                  'sponsored': false,
+                  'showPlayButton': false,
+                  'showByline': true
                 },
                 'link': {
-                  'url': 'http:\/\/www.nationalgeographic.com\/travel\/destinations\/south-america\/brazil\/exploring-pantanal-brazil',
+                  'url': '\/content\/magazine\/en_US\/test-article-by-jani-actman.html',
                   'target': '_self',
-                  'trackingCodes': [
-                    'utm_medium=website',
-                    'utm_source=site'
-                  ]
+                  'trackingCodes': '?utm_medium=site&utm_source=ng.com'
                 },
                 'leadMedia': [
                   {
-                    'url': '\/content\/dam\/travel\/rights-exempt\/Travel-2016\/how-explore-pantanal\/caiman-swim-pantanal-brazil.jpg',
-                    'aspectRatio': 0.66666666666667,
-                    'height': 2000,
-                    'width': 3000,
-                    'altText': 'Picture of a caiman swimming underwater in Pantanal, Brazil',
+                    'imageUrl': '\/content\/dam\/photography\/rights-exempt\/PT_hero_42_153645159.jpg',
+                    'title': 'This is the image\'s title in DAM',
+                    'aspectRatio': 0.48245614035088,
+                    'height': 550,
+                    'width': 1140,
                     'srcset': [
                       'http:\/\/placehold.it\/400x300 400w',
                       'http:\/\/placehold.it\/800x600 800w',
@@ -410,40 +475,32 @@ class ContentPackageConfigurator extends Module {
                   }
                 ],
                 'text': {
-                  'title': 'How to Explore the Pantanal',
-                  'dek': 'Explore the Pantanal from all corners with this guide to the beauty of this national park and UNESCO World Heritage site.',
-                  'kicker': 'Sponsor Content',
-                  'publishDate': 'Thu Aug 04 13:30:39 EDT 2016'
+                  'title': 'Use this title instead',
+                  'dek': 'Sample dek',
+                  'publishDate': 'Thu Aug 11 13:28:00 UTC 2016',
+                  'kicker': {
+                    'label': 'Weird & Wild',
+                    'url': '\/content\/news\/en_US\/weird-wild.html',
+                    'target': '_self',
+                    'trackingCodes': '?utm_medium=site&utm_source=ng.com'
+                  }
+                },
+                'contributor': {
+                  'name': 'Jani Actman',
+                  'url': '\/content\/contributors\/en_US\/jani-actman.html',
+                  'thumbnail': {
+                    'imageUrl': '\/content\/dam\/photography\/rights-exempt\/90725-Colorful-Kittens.jpg',
+                    'aspectRatio': 0.75038520801233,
+                    'height': 487,
+                    'width': 649,
+                    'srcset': [
+                      'http:\/\/placehold.it\/400x300 400w',
+                      'http:\/\/placehold.it\/800x600 800w',
+                      'http:\/\/placehold.it\/1600x1200 1600w'
+                    ]
+                  }
                 }
               },
-              {
-                'id': 'rr_schedulecard_0',
-                'type': 'schedule',
-                'config': {
-                  'sponsored': false,
-                  'channelMapping': true
-                },
-                'link': {
-                  'url': 'http:\/\/channel.nationalgeographic.com\/some-show\/',
-                  'target': '_self',
-                  'trackingCodes': [
-                    'utm_medium=website',
-                    'utm_source=site'
-                  ]
-                },
-                'text': {
-                  'heading': 'Friday on Wild',
-                  'title': 'Mars Photo Gallery',
-                  'time': '8pm\/7c',
-                  'kicker': 'Space'
-                },
-                'cta': {
-                  'url': 'http:\/\/channel.nationalgeographic.com\/tv-guide\/',
-                  'title': 'View All Schedules +',
-                  'target': '_blank',
-                  'seo-title': 'See our schedule of upcoming shows'
-                }
-              }
             ]
           }
         ]

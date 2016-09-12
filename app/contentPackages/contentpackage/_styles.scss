@@ -1,4 +1,8 @@
 $mt3_fourup_padding: 30px;
+$mt3_fourup_small_offset: 15px;
+$mt3_fourup_small_image_width: 33%;
+$mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
+
 
 .mt3_fourup {
   background-color: $mt3_color-white;
@@ -18,6 +22,25 @@ $mt3_fourup_padding: 30px;
     .mt3_fourup--tablet &,
     .mt3_fourup--desktop & {
       padding-left: 0;
+    }
+
+    &--extrasmall {
+      div .mt3_row {
+        float: left;
+        width: calc(#{$mt3_fourup_small_text_width} - #{$mt3_fourup_small_offset});
+      }
+
+      .mt3_promocard-container {
+        figure {
+          margin-bottom: 0;
+
+          &.modules-images {
+            float: left;
+            margin: 0 $mt3_fourup_small_offset 0 0;
+            width: $mt3_fourup_small_image_width;
+          }
+        }
+      }
     }
   }
 

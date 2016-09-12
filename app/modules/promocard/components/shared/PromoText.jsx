@@ -23,12 +23,13 @@ const PromoText = (props) => {
 
   return(
     <div className={thumbnailPositionColor}>
+    { props.text.kicker || props.config.sponsored ?
       <div className="mt3_row">
         <div className="mt3_promocard-pad">
           {props.text.kicker && !props.config.sponsored ? <a {...attrs}>{props.text.kicker.label}</a> : props.config.sponsored ? <span className={attrs.className}>{props.text.sponsorContentLabel}</span> : null}
           {(props.type === 'video' && props.text.duration) ? <div className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`}>{props.text.duration}</div> : null}
         </div>
-      </div>
+      </div> : null }
       <div className="mt3_row">
         <div className="mt3_promocard-pad">
           <ElementQuery sizes={[{name: 'mt3_promocard-title--large', width: 1024}, {name: 'mt3_promocard-title--medium', width: 768}, {name: 'mt3_promocard-title--small', width: 375}]}>
