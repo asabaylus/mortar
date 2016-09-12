@@ -3,17 +3,16 @@
 import React, { PropTypes }  from 'react';
 import PromoImage from '../shared/PromoImage.jsx';
 import PromoText  from '../shared/PromoText.jsx';
+import Article  from './Article.jsx';
 
 const VideoCard = (props) => {
   return(
-    <div className="mt3_row mt3_col-12 mt3_promocard-container">
-      <PromoImage type={props.type} config={props.config} leadMedia={props.leadMedia[0]} brandingBadgeLabel={props.brandingBadgeLabel} />
-      <PromoText {...props} />
-    </div>
+    <Article {...props} />
   );
 };
 
 VideoCard.PropTypes = {
+  theme: PropTypes.string,
   type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
   config: PropTypes.object,
   leadMedia: PropTypes.arrayOf(PropTypes.shape({

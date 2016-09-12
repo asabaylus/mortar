@@ -26,7 +26,7 @@ const PromoText = (props) => {
       <div className="mt3_row">
         <div className="mt3_promocard-pad">
           {props.text.kicker && !props.config.sponsored ? <a {...attrs}>{props.text.kicker.label}</a> : props.config.sponsored ? <span className={attrs.className}>{props.text.sponsorContentLabel}</span> : null}
-          {(props.type === 'video' && props.text.duration) ? <div className={`${subheadColor} mt3_subh2 mt3_card-subhead--right`}>{props.text.duration}</div> : null}
+          {(props.type === 'video' && props.text.duration) ? <div className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`}>{props.text.duration}</div> : null}
         </div>
       </div>
       <div className="mt3_row">

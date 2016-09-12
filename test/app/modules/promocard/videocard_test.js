@@ -3,6 +3,7 @@
 import VideoCard from '../../../../app/modules/promocard/components/types/VideoCard.jsx';
 import PromoImage from '../../../../app/modules/promocard/components/shared/PromoImage.jsx';
 import PromoText from '../../../../app/modules/promocard/components/shared/PromoText.jsx';
+import Article from '../../../../app/modules/promocard/components/types/Article.jsx';
 
 import {shallow, mount} from 'enzyme';
 import React from 'react';
@@ -43,36 +44,8 @@ describe('Video Component', () => {
     />);
   });
 
-  it('Should have a containing div', () => {
-    expect(wrapper.first().type()).to.equal("div");
-  });
-
-  it('Containing div should have class', () => {
-    expect(wrapper.first().props().className).to.equal("mt3_row mt3_col-12 mt3_promocard-container");
-  });
-
-  it('Should have a PromoImage component', () => {
-    expect(wrapper.find('PromoImage').type()).to.equal(PromoImage);
-  });
-
-  it('PromoImage component should have props', () => {
-    expect(wrapper.find('PromoImage').props().type).to.equal("video");
-    expect(wrapper.find('PromoImage').props().config.aspectRatio).to.equal("photo");
-    expect(wrapper.find('PromoImage').props().config.sponsored).to.equal(false);
-    expect(wrapper.find('PromoImage').props().leadMedia.guid).to.equal("47746161-1e00-4514-9b4f-168f0b552c66");
-    expect(wrapper.find('PromoImage').props().leadMedia.videoUrl).to.equal("http://news.localhost.nationalgeographic.com:4502/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4");
-    expect(wrapper.find('PromoImage').props().leadMedia.imageUrl).to.equal("http://pmdvod.nationalgeographic.com/NG_Video/996/847/62501_1_1280x720_640x360_177594435674.jpg");
-    expect(wrapper.find('PromoImage').props().leadMedia.renditionUrl).to.equal("/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png");
-  });
-
-  it('Should have a PromoText component', () => {
-    expect(wrapper.find('PromoText').type()).to.equal(PromoText);
-  });
-
-  it('PromoText component should have props', () => {
-    expect(wrapper.find('PromoText').props().text.title).to.equal("This is the title of the card");
-    expect(wrapper.find('PromoText').props().text.dek).to.equal("This is a short dek for the card.");
-    expect(wrapper.find('PromoText').props().text.duration).to.equal("25 mins");
+  it('Should contain an Article component', () => {
+    expect(wrapper.first().type()).to.equal(Article);
   });
 
 });
