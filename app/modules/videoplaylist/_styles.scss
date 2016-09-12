@@ -208,7 +208,7 @@
 
     .modules-images {
       &:before {
-        background-color: black;
+        background-color: $mt3_color-black;
         content: '';
         height: 100%;
         position: absolute;
@@ -223,9 +223,9 @@
     }
 
     @include respond-to(m) {
-      width: 50%;
       display: inline-block;
       margin-bottom: 30px;
+      width: 50%;
 
       // left column
       &:nth-child(odd) {
@@ -261,17 +261,17 @@
 
     @media #{$mt3_mq-md} {
       &:after {
-        content: "";
-        display: block;
-        height: 0px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 0px;
-        z-index: $mt3_z-middle + 1;
         border-bottom: 15px solid transparent;
         border-left: 15px solid $mt3_color-black;
         border-top: 15px solid transparent;
+        content: '';
+        display: block;
+        height: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        z-index: $mt3_z-middle + 1;
       }
     }
   }
