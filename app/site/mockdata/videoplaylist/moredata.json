@@ -1,0 +1,34 @@
+{
+  "heading": "Trending Videos",
+  "videos": [
+    {
+      "pageType": "video/mp4",
+      "guid": "0000014f-09ff-deef-a9ef-2bfff83f0001",
+      "title": "These Mountains Cannot Be Conquered Easily",
+      "path": "/content/dam/natgeo/video/mpx/adventure/t/th/the/these-mountains-cannot-be-conquered-easily.mp4",
+      "abstract": "Join three seasoned adventurers as they climb and ski several&nbsp;peaks in Grand Teton National Park. The Tetons are among the most rugged&nbsp;mountains&nbsp;in the&nbsp;lower 48.<br />",
+      "kicker": {
+        "label": "Weird & Wild"
+      },
+      "duration": "2:48",
+      "publishDate": "Fri Aug 07 17:10:15 EDT 2015",
+      "thumbnail": "http://pmdvod.nationalgeographic.com/NG_Video/123/723/Teton_Chin_EMBED_640x360_500509763825.jpg",
+      "damThumbnail": "/content/dam/natgeo/video/mpx/adventure/t/th/the/these-mountains-cannot-be-conquered-easily.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png",
+      "directLink": "http://link.theplatform.com/s/ngs/media/guid/2423130747/0000014f-09ff-deef-a9ef-2bfff83f0001?format=redirect&manifest=m3u&mbr=true",
+      "valid": true
+    },
+    {
+      "pageType": "video/mp4",
+      "guid": "18fb2571-4dc8-4b74-a787-3f2fb4430ec9",
+      "title": "The Impossible Climb: Chris Sharma",
+      "path": "/content/dam/natgeo/video/mpx/adventure/t/th/the/the-impossible-climb-chris-sharma.mp4",
+      "abstract": "<p>Chris Sharma is one of the world’s strongest climbers. Here he tackles the hardest climb ever achieved—a 200-foot overhanging cave at the top of a mountain in southern California.  He trains for the climb in Spain with his girlfriend, Daila.</p>",
+      "duration": "12:20",
+      "publishDate": "Sat Dec 21 00:45:01 EST 2013",
+      "thumbnail": "http://pmdvod.nationalgeographic.com/NG_Video_DEV/974/374/adv-beyond-the-edge-sharma_480x360.jpg",
+      "damThumbnail": "/content/dam/natgeo/video/mpx/adventure/t/th/the/the-impossible-climb-chris-sharma.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png",
+      "directLink": "http://link.theplatform.com/s/ngs/media/guid/2423130747/9aca0619-253e-49f1-8348-f8d81889976c?format=redirect&manifest=m3u&mbr=true",
+      "valid": true
+    }
+  ]
+}
