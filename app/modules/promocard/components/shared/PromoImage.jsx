@@ -5,6 +5,7 @@ import Button from '../../../button/scripts/CTAButton.jsx';
 import ElementQuery from 'react-element-query';
 import Image from '@natgeo/modules-images';
 import PromoText from './PromoText.jsx';
+import { generateHref } from '../../scripts/generateHref.js';
 
 const PromoImage = (props) => {
 
@@ -17,6 +18,12 @@ const PromoImage = (props) => {
           </svg>
         </div>
       </button>;
+
+  const attrs = props.link ? {
+    className: "mt3_promocardtext--overlay-link",
+    href: props.link ? generateHref(props.link.url, props.link.trackingCodes) : null,
+    target: props.link ? props.link.target : null
+  } : null;
 
   return(
       <figure>
@@ -35,6 +42,7 @@ const PromoImage = (props) => {
           srcset={props.leadMedia.srcset}
         />
         <div className="mt3_promocard-text--overlay">
+          <a {...attrs} />
           {props.config.showPlayButton || props.type === 'video' ? playButton : null}
           {props.config.overlay && props.text ? <PromoText {...props} /> : null }
         </div>

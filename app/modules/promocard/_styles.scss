@@ -8,6 +8,12 @@ $mt3_gradientIndex: 3;
   overflow: hidden;
   position: relative;
 
+  &:hover .mt3_videopromo-button {
+    background-color: $mt3_color-primary;
+    color: $mt3_color-black;
+    opacity: 1;
+  }
+
   &--dark {
     background-color: inherit;
   }
@@ -28,29 +34,18 @@ $mt3_gradientIndex: 3;
   figure { // user-agent overrides
     margin: 0 0 15px;
     position: relative;
+  }
 
-    .mt3_promocard-gradient-overlay{
-      &::after {
-        background: linear-gradient(to top, $mt3_gradient);
-        bottom: 0;
-        content: '';
-        height: 25%;
-        opacity: 1;
-        position: absolute;
-        width: 100%;
-        z-index: $mt3_gradientIndex;
-      }
-
-      &::before {
-        background: linear-gradient(to bottom, $mt3_gradient);
-        content: '';
-        height: 30%;
-        opacity: 1;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: $mt3_gradientIndex;
-      }
+  .mt3_promocard-gradient-overlay {
+    &::after {
+      background: linear-gradient(to top, $mt3_gradient);
+      bottom: 0;
+      content: '';
+      height: 25%;
+      opacity: 1;
+      position: absolute;
+      width: 100%;
+      z-index: $mt3_gradientIndex;
     }
   }
 
@@ -64,7 +59,19 @@ $mt3_gradientIndex: 3;
     bottom: 0;
     position: absolute;
     width: 100%;
-    z-index: $mt3_z-middle + 4;
+    z-index: $mt3_z-middle + 10;
+
+    &:hover {
+     cursor: pointer;
+    }
+  }
+
+  .mt3_promocardtext--overlay-link {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      cursor: pointer;
   }
 
   .mt3_promocard-nested-text {
@@ -103,12 +110,15 @@ $mt3_gradientIndex: 3;
   .mt3_promocard-kicker {
     @extend .mt3_kicker;
     float: left;
-    font-size: 0.25rem;
     line-height: 1;
     margin-bottom: 10px;
     position: relative;
     text-decoration: none;
     z-index: $mt3_z-middle + 10;
+
+    &:hover {
+      text-decoration: underline;
+    }
 
     &--inverse{
       border-right: 1px solid white;
@@ -140,7 +150,7 @@ $mt3_gradientIndex: 3;
   .mt3_promocard-dek{
     border-left: 1px solid #808080;
     font-family: $mt3_georgia-stack;
-    font-size: 0.75rem;
+    font-size: 15px;
     line-height: 1.7;
     margin-top: 10px;
     padding-left: 30px;

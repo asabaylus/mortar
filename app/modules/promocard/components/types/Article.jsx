@@ -51,8 +51,7 @@ class Article extends Component {
     const attrs = link ? {
       className: "mt3_div-link",
       href: link ? generateHref(link.url, link.trackingCodes) : null,
-      target: link ? link.target : null,
-      onClick: this.promoClicked
+      target: link ? link.target : null
     } : null;
 
     const bkgColor = theme === "dark" ? " mt3_promocard-container--dark" : "";
@@ -109,8 +108,7 @@ Article.PropTypes = {
   })),
   text: PropTypes.object,
   brandingBadgeLabel: PropTypes.string,
-  modal: PropTypes.bool,
-  onClick: PropTypes.func
+  modal: PropTypes.bool
 };
 
 export default Article;
