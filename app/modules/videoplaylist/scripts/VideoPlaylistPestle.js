@@ -22,7 +22,6 @@ class VideoPlaylistPestle extends Module {
         divID={this.options.id}
         autoContinue={this.options.autoContinue}
         dataModel={items}
-        header="Trending Videos"
             />, this.el);
     } else {
       throw new Error(`Server response with ${response.target.status}`);
