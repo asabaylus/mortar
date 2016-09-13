@@ -19,6 +19,15 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
       }
     }
 
+    .mt3_fourup-col--extrasmall {
+      .mt3_promocard-pad {
+        .mt3_fourup--tablet &,
+        .mt3_fourup--desktop & {
+          padding-right: $mt3_fourup_padding;
+        }
+      }
+    }
+
     .mt3_fourup--tablet &,
     .mt3_fourup--desktop & {
       padding-left: 0;

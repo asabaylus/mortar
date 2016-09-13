@@ -106,7 +106,7 @@ class PodPromoComponent extends Component {
             />
           </div>
           <div className="mt3_podpromo-imagewrapper">
-            <ParallaxContainer frameRatio={"2:1"}>
+            <ParallaxContainer frameRatio={"16:9"}>
                   <Image
                     aspectRatio={componentImage[0].aspectRatio}
                     frameAspectRatio={"3:2"}
