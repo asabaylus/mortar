@@ -21,8 +21,10 @@ require('../modules/videoplaylist/scripts/VideoPlaylistPestle.js');
 // Content Packages
 require('../contentPackages/contentpackage/scripts/ContentPackagePestle.js');
 require('../contentPackages/contentpackage/configurator/ContentPackageConfiguratorPestle.js');
-require('../contentPackages/heroWithTwoRails/heroWithTwoRailsPestle.js');
-require('../contentPackages/heroWithTwoRails/configurator/heroWithTwoRailsConfiguratorPestle.js');
+require('../modules/videoplaylist/configurator/MTVideoPlaylistConfiguratorPestle.js');
+require('@natgeo/modules-content-package/helloWorld/helloWorldPestle.js');
+require('@natgeo/modules-content-package/heroWithTwoRails/heroWithTwoRailsPestle.js');
+require('@natgeo/modules-content-package/heroWithTwoRails/configurator/heroWithTwoRailsConfiguratorPestle.js');
 
 
 Pestle.init();
