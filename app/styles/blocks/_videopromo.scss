@@ -10,16 +10,13 @@
   color: $mt3_color-primary;
   cursor: pointer;
   height: 24.3%;
+  max-width: 100px;
   min-height: 63px;
   min-width: 44px;
   opacity: .65;
   overflow: hidden;
   position: absolute;
   width: 10%;
-  height: 24.3%;
-  min-width: 44px;
-  min-height: 63px;
-  max-width: 100px;
 
   &:hover {
     background-color: $mt3_color-primary;

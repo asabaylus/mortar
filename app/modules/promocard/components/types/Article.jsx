@@ -48,7 +48,7 @@ class Article extends Component {
     let content = [];
     let i = 0;
     const {type, config, link, leadMedia, brandingBadgeLabel, text, theme, ...props} = this.props;
-    const attrs = link ? {
+    const attrs = link || type === "video" ? {
       className: "mt3_div-link",
       href: link ? generateHref(link.url, link.trackingCodes) : null,
       target: link ? link.target : null

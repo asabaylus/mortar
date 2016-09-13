@@ -19,6 +19,7 @@ $mt3_gradientIndex: 3;
   }
 
   a.mt3_div-link {
+    cursor: pointer;
     height: 100%;
     left: 0;
     position: absolute;
@@ -67,11 +68,11 @@ $mt3_gradientIndex: 3;
   }
 
   .mt3_promocardtext--overlay-link {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      cursor: pointer;
+    cursor: pointer;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 
   .mt3_promocard-nested-text {
@@ -83,7 +84,6 @@ $mt3_gradientIndex: 3;
     z-index: 5;
   }
 
-  //most of the styles below are just for displaying functionality for this ticket, will most likely be changed/overridden for styling ticket
   .mt3_promocard-gallery-images{
     margin-bottom: 2em;
     position: relative;
@@ -162,6 +162,11 @@ $mt3_gradientIndex: 3;
 
   .mt3_card-subhead--right{
     float: left;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   .mt3_promocard-image {
