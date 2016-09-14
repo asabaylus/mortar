@@ -42,8 +42,8 @@
   background-color: $mt3_color-primary;
 
   &:hover {
-    background-color: $mt3_color-primary-l;
-    border: 1px solid $mt3_color-primary-l;
+    background-color: $mt3_color-primary;
+    border: 1px solid $mt3_color-primary;
   }
 
   &--inverse {
@@ -59,18 +59,18 @@
 }
 
 .mt3_btn--secondary {
-  border: 1px solid $mt3_color-primary-l;
+  border: 1px solid $mt3_color-primary;
 
   &:hover {
-    background: $mt3_color-primary-l;
+    background: $mt3_color-primary;
   }
 
   &--inverse {
-    border: 1px solid $mt3_color-primary-l;
+    border: 1px solid $mt3_color-primary;
     color: $mt3_color-white;
 
     &:hover {
-      background: $mt3_color-primary-l;
+      background: $mt3_color-primary;
       color: $mt3_color-black;
     }
   }

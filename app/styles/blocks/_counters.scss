@@ -54,7 +54,7 @@
   }
 
   &--inverse {
-    box-shadow: 0 0 $mt3_unit-quarter transparentize($mt3_color-primary-xxxl, .6);
+    box-shadow: 0 0 $mt3_unit-quarter transparentize($mt3_color-primary, .6);
     opacity: .3;
 
     &--active,

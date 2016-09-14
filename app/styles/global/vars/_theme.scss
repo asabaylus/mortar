@@ -1,10 +1,3 @@
-// Primary colors
-
-$mt3_color-primary-l: lighten($mt3_color-primary, 20);
-$mt3_color-primary-xl: lighten($mt3_color-primary, 30);
-$mt3_color-primary-xxl: lighten($mt3_color-primary, 40);
-$mt3_color-primary-xxxl: lighten($mt3_color-primary, 45);
-
 // Neutrals
 
 $mt3_color-black: #000;
@@ -33,8 +26,6 @@ $mt3_border-danger: 1px solid $mt3_color-danger;
 
 $mt3_colors: (
   primary: $mt3_color-primary,
-  primary--l: $mt3_color-primary-l,
-  primary--xl: $mt3_color-primary-xl,
   black: $mt3_color-black,
   gray86: $mt3_color-gray-86,
   gray80: $mt3_color-gray-80,
