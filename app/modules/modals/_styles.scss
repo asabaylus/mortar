@@ -4,18 +4,24 @@
   color: $mt3_color-white;
   cursor: pointer;
   position: absolute;
-  right: $mt3_unit-double;
-  top: $mt3_unit;
+  right: $mt3_unit-double - .125;
+  top: $mt3_unit-double - .125;
+
+  //This media query apply to approve the ticket, since we don't have in mortar
+  // that breakpoint.
+  @media (max-width: 767px) {
+    right: $mt3_unit - .0625;
+    top: $mt3_unit - .0625;
+  }
 }
 
 .mt3_modal-container {
-  background-color: transparentize($mt3_color-black, .15);
+  background-color: $mt3_color-gray-86;
   height: 85vh;
   left: 7.5vw;
   opacity: 0;
   position: fixed;
   top: 7.5vh;
-  transition: .2s;
   visibility: hidden;
   width: 85vw;
   z-index: $mt3_z-top;
