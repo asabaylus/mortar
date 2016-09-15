@@ -37,7 +37,6 @@ module.exports = function(config) {
         ['aliasify', { replacements: {
           '^@natgeo/mortar-pestle$': './app/scripts/pestle/src/main.js',
           '@natgeo\/mortar-pestle\/(.+)' : './app/scripts/pestle/src/$1.js',
-          '@natgeo\/modules-content-package\/(.+)' : './app/contentPackages/$1',
           'natgeo-mortar\/lib\/(.+)' : './app/$1'
         }}]
       ],

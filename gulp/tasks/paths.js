@@ -21,6 +21,6 @@ module.exports = {
     pestleSrc: './app/scripts/pestle/',
     pestleDest: 'packages/pestle',
 
-    modulesContentPackageSrc: './app/contentPackages/',
-    modulesContentPackageDest: 'packages/contentPackages/'
+    modulesContentPackageSrc: './app/contentPackages/**/*.{js,jsx,scss,css}',
+    modulesContentPackageDest: 'lib/contentPackages/'
 }

@@ -12,4 +12,8 @@ gulp.task('copy', function() {
   // modules
   gulp.src(paths.mortarModulesSrc)
     .pipe(gulp.dest(paths.mortarModulesDest));
+
+  // contentPackages
+  gulp.src(paths.modulesContentPackageSrc)
+    .pipe(gulp.dest(paths.modulesContentPackageDest));
 });

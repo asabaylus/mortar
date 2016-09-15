@@ -47,7 +47,6 @@ gulp.task('scripts', ['packages'], function(){
     .transform('aliasify', { replacements: {
       '^@natgeo/mortar-pestle$': paths.pestleSrc + 'src/main.js',
       '@natgeo\/mortar-pestle\/(.+)' : paths.pestleSrc + 'src/$1.js',
-      '@natgeo\/modules-content-package\/(.+)' : paths.modulesContentPackageSrc + '$1',
       'natgeo-mortar\/lib\/(.+)' : './' + paths.mortarSrc + '$1'
     }})
     .bundle()
@@ -65,7 +64,6 @@ gulp.task('prodScripts', ['packages'], function(){
     .transform('aliasify', { replacements: {
       '^@natgeo/mortar-pestle$': paths.pestleSrc + 'src/main.js',
       '@natgeo\/mortar-pestle\/(.+)' : paths.pestleSrc + 'src/$1.js',
-      '@natgeo\/modules-content-package\/(.+)' : paths.modulesContentPackageSrc + '$1',
       'natgeo-mortar\/lib\/(.+)' : './' + paths.mortarSrc + '$1'
     }})
     .bundle()
