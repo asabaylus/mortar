@@ -28,7 +28,8 @@
     "picturefill": "3.x",
     "react": "^0.14.8",
     "react-deep-force-update": "^2.0.1",
-    "react-dom": "^0.14.8",
+    "react-dom": "^0.14.8",    
+    "react-element-query": "^2.0.2",
     "react-lazy-load": "3.x",
     "react-pure-render": "1.x",
     "react-slick": "krlospelaez/react-slick#fix-npm",
@@ -42,7 +43,6 @@
     "jquery": "2.x",
     "react": "^0.14.8 || ^15.1.0",
     "react-dom": "^0.14.8 || ^15.1.0",
-    "react-element-query": "^2.0.2",
     "velocity-animate": "1.x"
   },
   "devDependencies": {
