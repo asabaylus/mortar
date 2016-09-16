@@ -129,6 +129,26 @@ $mt3_gradientIndex: 3;
     }
   }
 
+  .mt3_promocard-sponsored{
+    @extend .mt3_kicker;
+    border-left: 1px solid #7694CB;
+    border-right: 1px solid #7694CB;
+    float: left;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 10px;
+    position: relative;
+    text-decoration: none;
+
+    &--inverse {
+      border-right: 1px solid white;
+
+      &:nth-child(1) {
+        border-left: 1px solid white;
+      }
+    }
+  }
+
   .mt3_promocard-title {
     font-family: $mt3_neue-haas-stack;
     font-size: 18px;
@@ -181,17 +201,6 @@ $mt3_gradientIndex: 3;
     position: absolute;
     top: 2em;
     z-index: 3;
-  }
-
-  .mt3_promocard-sponsor {
-    background-color: rgba(255, 255, 255, .2);
-    bottom: 0;
-    color: white;
-    padding: .5em 1em;
-    position: absolute;
-    text-align: left;
-    width: 100%;
-    z-index: 4;
   }
 
   .mt3_btn {

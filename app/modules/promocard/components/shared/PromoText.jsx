@@ -20,14 +20,22 @@ const PromoText = (props) => {
   const subheadColor = props.config.overlay ? "mt3_color--white" : "mt3_color--gray40";
   const inverse = props.config.overlay || props.theme === "dark" ? "mt3_color--white" : "mt3_color--black";
   const inverseDek = props.theme === "dark" ? "mt3_color--white mt3_promocard-dek--inverse" : "mt3_color--black";
+  const sponsored = props.config.overlay || props.theme === "dark" ? "mt3_color--white mt3_promocard-sponsored mt3_promocard-sponsored--inverse"
+    : "mt3_color--sponsor mt3_promocard-sponsored";
 
   return(
     <div className={thumbnailPositionColor}>
     { props.text.kicker || props.config.sponsored ?
       <div className="mt3_row">
         <div className="mt3_promocard-pad">
-          {props.text.kicker && !props.config.sponsored ? <a {...attrs}>{props.text.kicker.label}</a> : props.config.sponsored ? <span className={attrs.className}>{props.text.sponsorContentLabel}</span> : null}
-          {(props.type === 'video' && props.text.duration) ? <div className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`}>{props.text.duration}</div> : null}
+          {props.text.kicker && !props.config.sponsored ? <a {...attrs}>{props.text.kicker.label}</a>
+            : props.config.sponsored ? <span className={sponsored}>{props.text.sponsorContentLabel}</span>
+            : null
+          }
+          {(props.type === 'video' && props.text.duration) ?
+            <div className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`}>{props.text.duration}</div>
+            : null
+          }
         </div>
       </div> : null }
       <div className="mt3_row">
