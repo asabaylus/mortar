@@ -29,6 +29,7 @@ var PortalComponentMixin = {
 			this._target = document.createElement('div');
 			document.body.appendChild(this._target);
 		}
+		
 		this._renderLayer();
 	},
 	_renderLayer: function() {
@@ -39,8 +40,8 @@ var PortalComponentMixin = {
 		React.unmountComponentAtNode(this._target);
 	},
 	render: function() {
-		if (!this.props.targetDivId && !this.props.targetDiv && !this.props.targetElementQuery) {
-			return this.renderLayer();
+		if (this.props.targetDivId || this.props.targetDiv || this.props.targetElementQuery) {
+			return null;
 		} else {
 			return <span className="portalComponentFailure"/>;
 		}

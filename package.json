@@ -42,6 +42,7 @@
     "jquery": "2.x",
     "react": "^0.14.8 || ^15.1.0",
     "react-dom": "^0.14.8 || ^15.1.0",
+    "react-element-query": "^2.0.2",
     "velocity-animate": "1.x"
   },
   "devDependencies": {
@@ -97,7 +98,6 @@
     "react": "^0.14.8",
     "react-addons-test-utils": "^0.14.8",
     "react-dom": "^0.14.8",
-    "react-element-query": "^2.0.2",
     "react-slick": "krlospelaez/react-slick#fix-npm",
     "require-dir": "^0.3.0",
     "scrollmagic": "^2.0.5",
