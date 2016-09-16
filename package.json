@@ -1,6 +1,6 @@
 {
   "name": "@natgeo/mortar_v3",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "a living styleguide for National Geographic Partners",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,8 @@
     "picturefill": "3.x",
     "react": "^0.14.8",
     "react-deep-force-update": "^2.0.1",
-    "react-dom": "^0.14.8",
+    "react-dom": "^0.14.8",    
+    "react-element-query": "^2.0.2",
     "react-lazy-load": "3.x",
     "react-pure-render": "1.x",
     "react-slick": "krlospelaez/react-slick#fix-npm",
@@ -97,7 +98,6 @@
     "react": "^0.14.8",
     "react-addons-test-utils": "^0.14.8",
     "react-dom": "^0.14.8",
-    "react-element-query": "^2.0.2",
     "react-slick": "krlospelaez/react-slick#fix-npm",
     "require-dir": "^0.3.0",
     "scrollmagic": "^2.0.5",

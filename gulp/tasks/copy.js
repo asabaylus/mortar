@@ -16,4 +16,8 @@ gulp.task('copy', function() {
   // contentPackages
   gulp.src(paths.modulesContentPackageSrc)
     .pipe(gulp.dest(paths.modulesContentPackageDest));
+
+  // util scripts
+  gulp.src(paths.utilScriptsSrc)
+    .pipe(gulp.dest(paths.utilScriptsDest));
 });

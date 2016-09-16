@@ -14,7 +14,7 @@ var PortalWrapper = React.createClass({
 
     renderLayer() {
         return (
-          <div className="portar-wrapper">
+          <div className="portal-wrapper mt3_row">
             {this.props.children}
           </div>
         );
