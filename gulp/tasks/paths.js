@@ -1,29 +1,24 @@
 module.exports = {
-    siteStylesSrc: 'app/site/_styles/*.scss',
-    siteStylesDest: '.tmp/site/styles/',
-
-    siteSrc: 'app/site/',
-    siteDest: '.tmp/site/',
-
-    mortarStylesSrc: 'app/{styles,icons}/**/*.scss',
-    mortarStylesDest: 'lib/',
-
-    mortarIconDir: 'app/icons/',
-    mortarIconsSrc: 'app/icons/*.svg',
-    mortarIconsDest: 'lib/icons/',
-
-    mortarModulesSrc: ['app/modules/**/*.{js,jsx,scss,css}', '!app/modules/**/*Pestle.js'],
-    mortarModulesDest: 'lib/modules',
-
-    mortarSrc: 'app/',
+    mortarSrc: 'src/',
     mortarDest: 'lib/',
 
-    pestleSrc: './app/scripts/pestle/',
-    pestleDest: 'packages/pestle',
+    // For mortar Site
+    siteStylesSrc: 'src/site/_styles/*.scss',
+    siteStylesDest: '.tmp/site/styles/',
+    siteSrc: 'src/site/',
+    siteDest: '.tmp/site/',
 
-    modulesContentPackageSrc: './app/contentPackages/**/*.{js,jsx,scss,css}',
-    modulesContentPackageDest: 'lib/contentPackages/',
+    // For npm package
+    mortarModulesSrc: ['src/**/*.js', '!src/**/*Pestle.js', '!src/scripts/**/*'],
+    mortarStylesSrc: ['src/**/*.scss', '!src/site/**/*'],
+    mortarStylesDest: 'lib/',
 
-    utilScriptsSrc: './app/scripts/util/**/*.{js,jsx}',
-    utilScriptsDest: 'lib/scripts/util/'
+    // Icons
+    mortarIconDir: 'src/icons/',
+    mortarIconsSrc: 'src/icons/*.svg',
+    mortarIconsDest: 'lib/icons/',
+
+    // Pestle
+    pestleSrc: './src/scripts/pestle/',
+    pestleDest: 'packages/pestle'
 }

@@ -11,7 +11,7 @@ gulp.task('test', [
 ]);
 
 gulp.task('eslint', function(){
-  return gulp.src(['app/{scripts,modules}/**/*.js', '!app/**/node_modules/**/*'])
+  return gulp.src(['src/{scripts,modules}/**/*.js', '!src/**/node_modules/**/*'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
@@ -19,8 +19,8 @@ gulp.task('eslint', function(){
 
 gulp.task('sasslint', function(){
   return gulp.src([
-    'app/{styles,modules}/**/*.scss',
-    '!app/styles/layout/_columns.scss'
+    'src/{styles,modules}/**/*.scss',
+    '!src/styles/layout/_columns.scss'
   ])
     .pipe(sassLint())
     .pipe(sassLint.format())

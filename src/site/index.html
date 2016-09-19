@@ -1,0 +1,32 @@
+---
+title: Home
+---
+
+<div class="mt3_row mt3_bgcolor--primary sectionpadding">
+  <div class="pagewrapper mt3_col-gut">
+    <div class="mt3_col-lg-10">
+      <h1 class="mt3_h1 intro-txt">Welcome to Mortar</h1>
+
+      <p class="mt3_subh1 intro-txt mt3_row-gut-2">
+        Mortar is the official Style Guide for National Geographic&apos;s digital products. To use Mortar, add the following line of code into the header of your project:
+      </p>
+
+      <code class="mt3_bgcolor--white mt3_row-gut-2 codemarkup">
+        	&lt;link href='https://www.nationalgeographic.com/styleguide/mortar_2-0-0.css' rel='stylesheet'&gt;
+      </code>
+
+      <p class="mt3_subh4 mt3_row-gut-2">
+        Mortar is version controlled, meaning you have to opt in to each release by updating your header with the link above. If you don't want to opt in to the latest version (cited above), you can safely keep your existing Mortar reference.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="mt3_bgcolor--gray5 mt3_row-gut-2 divider">&nbsp;</div>
+
+{% include "src/site/_partials/home/philosophy.html" %}
+<div class="mt3_bgcolor--gray5 mt3_row-gut-2 divider">&nbsp;</div>
+
+{% include "src/site/_partials/home/documentation.html" %}
+{% include "src/site/_partials/home/links.html" %}
+{% include "src/site/_partials/home/feedback.html" %}

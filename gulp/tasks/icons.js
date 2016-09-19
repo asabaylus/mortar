@@ -28,6 +28,6 @@ gulp.task('icons', function() {
 });
 
 gulp.task('moveIconZip', function() {
-  return gulp.src('app/icons/natgeo-icons.zip')
+  return gulp.src('src/icons/natgeo-icons.zip')
     .pipe(gulp.dest(paths.siteDest));
 });

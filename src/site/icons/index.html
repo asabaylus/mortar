@@ -1,0 +1,173 @@
+---
+title: Icons
+---
+
+<div class="mt3_row pagewrapper sectionpadding">
+  <div class="mt3_col-lg-10 mt3_row-gut-2 mt3_col-gut">
+    <h1 class="mt3_h1">Icons</h1>
+    <p class="mt3_subh1 mt3_row-gut-3">Icons create a visual language for navigation and user interaction.</p>
+
+    <div class="mt3_col-lg-3 mt3_row-gut-2">
+      <a href="../natgeo-icons.zip" class="mt3_btn mt3_btn--default downloadicon-btn" download="natgeo-icons">Download Icons</a>
+    </div>
+  </div>
+</div>
+
+<div class="mt3_bgcolor--gray5 mt3_row-gut-3 divider">&nbsp;</div>
+
+<div class="mt3_row pagewrapper mt3_col-gut mt3_row-gut-2">
+
+  <div class="mt3_col-lg-8">
+    <h3 class="mt3_h3">Usage</h3>
+
+
+    <p class="mt3_subh4">Mortar uses <a href="https://css-tricks.com/svg-sprites-use-better-icon-fonts/" class="mt3_textlink">SVG sprites</a> along with the <a href="https://css-tricks.com/svg-sprites-use-better-icon-fonts/#article-header-id-2" class="mt3_textlink"><code>&lt;use&gt;</code></a>
+      method to render icons. Icons can be sized small or large, with their default colors or reversed on a colored background. The SVG sprite will be embedded near the top of the body on any given page so if a camera icon is desired
+      (e.g. <svg style="display: inline;vertical-align: top" class="mt3_icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#camera"></use></svg>) then one need only use the following code:
+    </p>
+
+    <!-- Code snippets -->
+
+    {% include "src/icons/_icon-snippets.html" %}
+
+    <p class="mt3_h5">Toggle the icons on this page: </p>
+
+    <fieldset class="mt3_subh4 fieldset mt3_row-gut-2 mt3_col-md-3">
+      <div class="mt3_row-gut-1">
+        <input class="mt3_radio" type="radio" value="small" name="icon-size" id="small">
+        <label for="small">Small</label>
+      </div>
+      <div>
+        <input class="mt3_radio" type="radio" value="large" name="icon-size" id="large" checked>
+        <label for="large">Large</label>
+      </div>
+    </fieldset>
+
+    <fieldset class="mt3_subh4 fieldset mt3_row-gut-2 mt3_col-md-3">
+      <div class="mt3_row-gut-1">
+        <input class="mt3_radio" type="radio" value="default" name="icon-color" id="default" checked>
+        <label for="default">Default Colors</label>
+      </div>
+      <div>
+        <input class="mt3_radio" type="radio" value="inverse" name="icon-color" id="inverse">
+        <label for="inverse">Inverse Colors</label>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+<div class="mt3_bgcolor--gray5 mt3_row-gut-4 divider">&nbsp;</div>
+
+{% include "src/icons/_icons.html" %}
+
+<div class="mt3_bgcolor--gray5 mt3_row-gut-3 divider">&nbsp;</div>
+
+{% include "src/icons/_icon-examples.html" %}
+
+<div class="mt3_bgcolor--gray5 mt3_row-gut-3 divider">&nbsp;</div>
+
+<article class="pagewrapper">
+  <div class="mt3_col-lg-3 mt3_row-gut-2 mt3_col-gut">
+    <h3 class="mt3_h3">Logos</h3>
+    <p class="mt3_subh4">The National Geographic logo must appear on every webpage published by or for National Geographic. The Preferred logo treatment is the dark on light two row to the left of the border version, but any of these is suitable. To use, either link directly to the source of the image or save the image and use it in your own project.</p>
+  </div>
+
+  <ul class="mt3_row illustratedexamples-container">
+    <li class="mt3_row-gut-2 mt3_col-6 mt3_col-sm-4 mt3_col-md-3 mt3_col-lg-2 mt3_col-gut illustratedexamples-item">
+      <div class="iconexample-container mt3_intratio--square mt3_row-gut-1">
+        <img class="iconexample-image" src="../logos/ng-logo-2fl.svg" alt="" />
+      </div>
+      <p class="mt3_h5">2 row, left</p>
+    </li>
+    <li class="mt3_row-gut-2 mt3_col-6 mt3_col-sm-4 mt3_col-md-3 mt3_col-lg-2 mt3_col-gut illustratedexamples-item">
+      <div class="iconexample-container mt3_intratio--square mt3_row-gut-1">
+        <img class="iconexample-image" src="../logos/ng-logo-1fl.svg" alt="" />
+      </div>
+      <p class="mt3_h5">1 row, left</p>
+    </li>
+    <li class="mt3_row-gut-2 mt3_col-6 mt3_col-sm-4 mt3_col-md-3 mt3_col-lg-2 mt3_col-gut illustratedexamples-item">
+      <div class="iconexample-container mt3_intratio--square mt3_row-gut-1">
+        <img class="iconexample-image" src="../logos/ng-logo-2c.svg" alt="" />
+      </div>
+      <p class="mt3_h5">2 row, center</p>
+    </li>
+    <li class="mt3_row-gut-2 mt3_col-6 mt3_col-sm-4 mt3_col-md-3 mt3_col-lg-2 mt3_col-gut illustratedexamples-item">
+      <div class="iconexample-container mt3_intratio--square mt3_row-gut-1 mt3_bgcolor--gray66">
+        <img class="iconexample-image" src="../logos/ng-logo-2fl-inv.svg" alt="" />
+      </div>
+      <p class="mt3_h5">2 row, left, inverse</p>
+    </li>
+    <li class="mt3_row-gut-2 mt3_col-6 mt3_col-sm-4 mt3_col-md-3 mt3_col-lg-2 mt3_col-gut illustratedexamples-item">
+      <div class="iconexample-container mt3_intratio--square mt3_row-gut-1 mt3_bgcolor--gray66">
+        <img class="iconexample-image" src="../logos/ng-logo-1fl-inv.svg" alt="" />
+      </div>
+      <p class="mt3_h5">1 row, left, inverse</p>
+    </li>
+    <li class="mt3_row-gut-2 mt3_col-6 mt3_col-sm-4 mt3_col-md-3 mt3_col-lg-2 mt3_col-gut illustratedexamples-item">
+      <div class="iconexample-container mt3_intratio--square mt3_row-gut-1 mt3_bgcolor--gray66">
+        <img class="iconexample-image" src="../logos/ng-logo-2c-inv.svg" alt="" />
+      </div>
+      <p class="mt3_h5">2 row, center, inverse</p>
+    </li>
+  </ul>
+</article>
+
+<script>
+  $(document).ready(function() {
+
+    // Change icons snippets behavior
+    function displaySnippet(){
+      var iconSize = $('input[type=radio][name=icon-size]:checked').val();
+      var iconColor = $('input[type=radio][name=icon-color]:checked').val();
+
+      // Hide all the snippets
+      $('#iconsnippet-container').children().hide();
+
+      // Show appropriate snippet only
+      if (iconSize === 'small' && iconColor === 'default'){
+        $('.JS_smallicon--default').show();
+      }
+      else if (iconSize === 'small' && iconColor === 'inverse') {
+        $('.JS_smallicon--inverse').show();
+      }
+      else if (iconSize === 'large' && iconColor === 'default') {
+        $('.JS_largeicon--default').show();
+      }
+      else if (iconSize === 'large' && iconColor === 'inverse') {
+        $('.JS_largeicon--inverse').show();
+      }
+      else {
+        // We should never get here
+        debugger;
+      }
+    }
+
+    // Change icons styles on toggle
+    // and display the correct code snippet
+    $('input[type=radio][name=icon-size]').change(function() {
+      displaySnippet();
+
+      if (this.value === 'small') {
+        $('.JS_icon').removeClass('mt3_icon--large');
+      }
+      else if (this.value === 'large') {
+        $('.JS_icon').addClass('mt3_icon--large');
+      }
+    });
+
+    $('input[type=radio][name=icon-color]').change(function() {
+      displaySnippet();
+
+      if (this.value === 'default') {
+        $('.JS_icon-container')
+        .removeClass('mt3_bgcolor--gray66')
+        .removeClass('mt3_color--white');
+      }
+      else if (this.value === 'inverse') {
+        $('.JS_icon-container')
+        .addClass('mt3_bgcolor--gray66')
+        .addClass('mt3_color--white');
+      }
+    });
+});
+</script>

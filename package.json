@@ -1,6 +1,6 @@
 {
   "name": "@natgeo/mortar_v3",
-  "version": "1.0.8",
+  "version": "2.0.0",
   "description": "a living styleguide for National Geographic Partners",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,10 @@
     "url": "https://github.com/natgeo/mortar/issues"
   },
   "homepage": "https://github.com/natgeo/mortar#readme",
+  "files": [
+    "lib",
+    "src"
+  ],
   "dependencies": {
     "@natgeo/modules-images": "^1.0.2",
     "@natgeo/modules-video": "1.2.5",
@@ -28,7 +32,7 @@
     "picturefill": "3.x",
     "react": "^0.14.8",
     "react-deep-force-update": "^2.0.1",
-    "react-dom": "^0.14.8",    
+    "react-dom": "^0.14.8",
     "react-element-query": "^2.0.2",
     "react-lazy-load": "3.x",
     "react-pure-render": "1.x",

@@ -3,11 +3,9 @@
 node_modules
 gulp/
 gulpfile.js
-app/scripts
-app/modules
-app/styles
-app/site
-app/**/*.html
+src/scripts
+src/site
+src/**/*.html
 packages/
 test/
 .editorconfig

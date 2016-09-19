@@ -6,18 +6,6 @@ const paths = require('./paths');
 
 gulp.task('copy', function() {
   // styles
-  gulp.src(paths.mortarStylesSrc, {base: './app/'})
+  gulp.src(paths.mortarStylesSrc, {base: './src/'})
     .pipe(gulp.dest(paths.mortarDest));
-
-  // modules
-  gulp.src(paths.mortarModulesSrc)
-    .pipe(gulp.dest(paths.mortarModulesDest));
-
-  // contentPackages
-  gulp.src(paths.modulesContentPackageSrc)
-    .pipe(gulp.dest(paths.modulesContentPackageDest));
-
-  // util scripts
-  gulp.src(paths.utilScriptsSrc)
-    .pipe(gulp.dest(paths.utilScriptsDest));
 });

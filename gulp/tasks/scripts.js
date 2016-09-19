@@ -42,11 +42,18 @@ gulp.task('packages', function() {
 });
 
 gulp.task('scripts', ['packages'], function(){
-  return browserify('./app/scripts/main.js')
+
+  gulp.src(paths.mortarModulesSrc)
+    .pipe(babel({
+      presets: ['es2015', 'react', 'stage-0']
+    }))
+    .pipe(gulp.dest(paths.mortarDest));
+
+  return browserify('./src/scripts/main.js')
     .transform('babelify', {presets: ['es2015', 'stage-0', 'react']})
     .transform('aliasify', { replacements: {
-      '^@natgeo/mortar-pestle$': paths.pestleSrc + 'src/main.js',
-      '@natgeo\/mortar-pestle\/(.+)' : paths.pestleSrc + 'src/$1.js',
+      '^@natgeo/pestle$': paths.pestleSrc + 'src/main.js',
+      '@natgeo\/pestle\/(.+)' : paths.pestleSrc + 'src/$1.js',
       'natgeo-mortar\/lib\/(.+)' : './' + paths.mortarSrc + '$1'
     }})
     .bundle()
@@ -58,12 +65,12 @@ gulp.task('scripts', ['packages'], function(){
 });
 
 gulp.task('prodScripts', ['packages'], function(){
-  return browserify('./app/scripts/main.js')
+  return browserify('./src/scripts/main.js')
     .transform('envify', {global: true, _: 'purge', NODE_ENV: 'production'})
     .transform('babelify', {presets: ['es2015', 'stage-0', 'react']})
     .transform('aliasify', { replacements: {
-      '^@natgeo/mortar-pestle$': paths.pestleSrc + 'src/main.js',
-      '@natgeo\/mortar-pestle\/(.+)' : paths.pestleSrc + 'src/$1.js',
+      '^@natgeo/pestle$': paths.pestleSrc + 'src/main.js',
+      '@natgeo\/pestle\/(.+)' : paths.pestleSrc + 'src/$1.js',
       'natgeo-mortar\/lib\/(.+)' : './' + paths.mortarSrc + '$1'
     }})
     .bundle()
