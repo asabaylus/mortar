@@ -17,13 +17,13 @@ require('../modules/podpromo/scripts/PodPromoPestle.js');
 require('../modules/podpromo/configurator/MTPodPromoConfiguratorPestle.js');
 require('../modules/tooltips/scripts/MTTooltipPestle.js');
 require('../modules/videoplaylist/scripts/VideoPlaylistPestle.js');
+require('../modules/videoplaylist/configurator/MTVideoPlaylistConfiguratorPestle.js');
 
 // Content Packages
 require('../contentPackages/contentpackage/scripts/ContentPackagePestle.js');
 require('../contentPackages/contentpackage/configurator/ContentPackageConfiguratorPestle.js');
 require('../contentPackages/heroWithTwoRails/heroWithTwoRailsPestle.js');
 require('../contentPackages/heroWithTwoRails/configurator/heroWithTwoRailsConfiguratorPestle.js');
-
 
 Pestle.init();
 

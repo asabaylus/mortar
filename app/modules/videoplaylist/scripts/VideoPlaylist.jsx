@@ -25,7 +25,7 @@ class VideoPlaylist extends Component {
   }
 
   componentWillUpdate(nextProps, nextState) {
-    this.loadVideo(this.props.dataModel[nextState.currentVideoIndex].directLink, nextState);
+    this.loadVideo(nextProps.dataModel.videos[nextState.currentVideoIndex].directLink, nextState);
   }
 
   componentDidMount() {
@@ -71,7 +71,7 @@ class VideoPlaylist extends Component {
     }
 
     this.adPlaying = e.data.baseClip && e.data.baseClip.isAd;
-    if (e.type === 'OnMediaComplete' && !this.adPlaying && this.autoPlay) {
+    if (e.type === 'OnMediaComplete' && !this.adPlaying && this.props.autoContinue) {
       //We're in automated playlist mode
       this.updateVideo();
     }
@@ -98,9 +98,9 @@ class VideoPlaylist extends Component {
   }
 
   updateVideo() {
-    if (this.state.currentVideoIndex < (this.props.dataModel.length - 1)) {
+    if (this.state.currentVideoIndex < (this.props.dataModel.videos.length - 1)) {
       this.changeVideo(this.state.currentVideoIndex + 1);
-    } else if (this.state.currentVideoIndex === (this.props.dataModel.length - 1)) {
+    } else if (this.state.currentVideoIndex === (this.props.dataModel.videos.length - 1)) {
       this.autoPlay = false;
       this.didLoop = true;
       this.changeVideo(START_VIDEO_INDEX);
@@ -126,11 +126,21 @@ class VideoPlaylist extends Component {
         this.playVideo(formatUrl, nextState);
       }, 200);
     } else {
-      this.playVideo(formatUrl, nextState);
+      this.playVideo(url, formatUrl, nextState);
     }
   }
 
-  playVideo(url, nextState) {
+  playVideo(originalUrl, formatUrl, nextState) {
+    //This block validates if the properties were changes, it means the state
+    //into the component keep the same, so we need to check if the direct link
+    //is different in order to update the player with the new video.
+    if (nextState.currentVideoIndex === this.state.currentVideoIndex) {
+      if (this.props.dataModel.videos[nextState.currentVideoIndex].directLink !== originalUrl) {
+        this.resetVideo(this.playerInstanceName, formatUrl);
+        window.dispatchEvent(new Event('resize'));
+      }
+      return;
+    }
     const videoContainer = document.getElementById(this.playerInstanceName);
     const stickyHeaderEl = document.getElementById('header-ad');
     const scrollOffset = (stickyHeaderEl) ? (stickyHeaderEl.getBoundingClientRect().height + 20) * -1 : 0;
@@ -142,13 +152,12 @@ class VideoPlaylist extends Component {
     if (this.props.autoContinue && !this.didLoop) {
       this.autoPlay = true;
       //This should set the proper url for the video player instance and start playing it
-      ngsPlayer.api.set(url, this.playerInstanceName);
+      ngsPlayer.api.set(formatUrl, this.playerInstanceName);
     } else {
       //set flag to use in "OnLoadReleaseUrl" call back, so we know to call play on player instance
       this.manualPlay = true;
       this.didLoop = false;
-      ngsPlayer.api.unload(this.playerInstanceName);
-      ngsPlayer.api.load(url, this.playerInstanceName);
+      resetVideo(this.playerInstanceName, formatUrl);
     }
 
     this.showHiddenThumb(nextState);
@@ -160,6 +169,12 @@ class VideoPlaylist extends Component {
       });
     }
   }
+
+  resetVideo(instanceName, url) {
+    ngsPlayer.api.unload(instanceName);
+    ngsPlayer.api.load(url, instanceName);
+  }
+
 
   activateEventListeners() {
     $pdk.controller.addEventListener('OnLoadReleaseUrl', this.handleEvent, '*');
@@ -198,7 +213,8 @@ class VideoPlaylist extends Component {
   }
 
   render() {
-    const currentVideo = this.props.dataModel[this.state.currentVideoIndex];
+    const {videos} = this.props.dataModel;
+    const currentVideo = videos[this.state.currentVideoIndex];
     const videoModel = {
       instance: this.playerInstanceName,
       guid: currentVideo.guid,
@@ -207,7 +223,7 @@ class VideoPlaylist extends Component {
       autoPlay: false
     };
 
-    const thumbnails = this.props.dataModel.map((item, index) => {
+    const thumbnails = videos.map((item, index) => {
       const thumbClass = classNames({
         'mt3_video-playlist-container--thumbnail': true,
         'mt3_video-playlist-container--active-thumbnail': this.state.currentVideoIndex === index,
@@ -220,7 +236,7 @@ class VideoPlaylist extends Component {
         <div className="mt3_col-12 mt3_col-md-9 mt3_video-playlist__flex">
           <div className="mt3_video-playlist__main-head">
             <div className="mt3_video-playlist--heading mt3_video-playlist--heading--border">
-              <div className="mt3_video-playlist--heading__title mt3_color--white">{this.props.header}</div>
+              <div className="mt3_video-playlist--heading__title mt3_color--white">{this.props.dataModel.heading}</div>
             </div>
           </div>
           <VideoCaption
@@ -246,20 +262,22 @@ class VideoPlaylist extends Component {
 VideoPlaylist.propTypes = {
   divID: React.PropTypes.string.isRequired,
   autoContinue: React.PropTypes.bool,
-  header: React.PropTypes.string.isRequired,
-  dataModel: React.PropTypes.arrayOf(
-    React.PropTypes.shape({
-      guid: React.PropTypes.string,
-      title: React.PropTypes.string,
-      path: React.PropTypes.string,
-      abstract: React.PropTypes.string,
-      publishDate: React.PropTypes.string,
-      thumbnail: React.PropTypes.string,
-      damThumbnail: React.PropTypes.string,
-      directLink: React.PropTypes.string,
-      valid: React.PropTypes.bool
-    })
-  ).isRequired
+  dataModel: React.PropTypes.shape({
+    heading: React.PropTypes.string,
+    videos: React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        guid: React.PropTypes.string,
+        title: React.PropTypes.string,
+        path: React.PropTypes.string,
+        abstract: React.PropTypes.string,
+        publishDate: React.PropTypes.string,
+        thumbnail: React.PropTypes.string,
+        damThumbnail: React.PropTypes.string,
+        directLink: React.PropTypes.string,
+        valid: React.PropTypes.bool
+      })
+    )
+  }).isRequired
 
 }
 
