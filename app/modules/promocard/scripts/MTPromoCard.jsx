@@ -2,26 +2,10 @@
 
 import React, { PropTypes }  from 'react';
 import {Pestle} from '@natgeo/mortar-pestle';
-import Article from './../components/types/Article.jsx';
-import VideoCard from './../components/types/VideoCard.jsx';
-import Gallery from './../components/types/Gallery.jsx';
+import Story from './../components/types/Story.jsx';
 
 const MTPromoCard = (props) => {
-  switch(props.type){
-    case 'article':
-      return <Article {...props}/>;
-      break;
-    case 'video':
-      return <VideoCard {...props} />;
-      break;
-    case 'gallery':
-      return <Gallery {...props} />;
-      break;
-    // additional cases for the remaining types may be included when they are created
-    default:
-      return <Article {...props}/>;
-      break;
-  }
+  return <Story {...props}/>;
 };
 
 MTPromoCard.PropTypes = {

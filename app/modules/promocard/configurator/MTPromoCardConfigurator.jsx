@@ -127,18 +127,6 @@ class PromoCardConfigurator extends Component {
               <TextField label="trackingCodes" onChange={this.onArrayChange('link.trackingCodes')} value={props.link.trackingCodes} />
             </Section>
           : null}
-          {props.type === 'gallery' ?
-            <Section text="CTA">
-              <TextField label="Url" onChange={this.onTextChange('cta.url')} value={props.cta.url} />
-              <SelectField label="Target" onChange={this.onTextChange('cta.target')} value={props.cta.target}>
-                <option value="_blank">_blank</option>
-                <option value="_self">_self</option>
-                <option value="_parent">_parent</option>
-                <option value="_top">_top</option>
-              </SelectField>
-              <TextField label="Title" onChange={this.onTextChange('cta.title')} value={props.cta.title} />
-            </Section>
-          : null}
           {props.type === 'article' ?
             <Section text="Lead Media">
               <TextField label="Url" onChange={this.onLeadMediaUpdate('url', null, 0)} value={props.leadMedia[0].url} />

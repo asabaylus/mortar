@@ -25,17 +25,19 @@ const PromoImage = (props) => {
     target: props.link ? props.link.target : null
   } : null;
 
+  const frameAspectRatio = props.type === 'gallery' ? props.childFrameAspectRatio : props.config.frameAspectRatio;
+
   return(
       <figure>
-        {props.config.overlay ?
-          <ElementQuery sizes={[{name: 'mt3_promocard-gradient-overlay', width: 768}]}>
-            <div></div>
-          </ElementQuery>
-        : null }
+        {props.config.overlay && !props.secondImage ?
+        <ElementQuery sizes={[{name: 'mt3_promocard-gradient-overlay', width: 768 - 60}]}>
+          <div></div>
+        </ElementQuery>
+        : null}
         {props.brandingBadgeLabel ? <figcaption className="mt3_promocard-branding">{props.brandingBadgeLabel}</figcaption> : null}
         <Image
           aspectRatio={props.leadMedia.aspectRatio}
-          frameAspectRatio={props.config.aspectRatio}
+          frameAspectRatio={frameAspectRatio}
           lazyLoad={false}
           altText={props.leadMedia.altText}
           src={props.type !== 'video' ? props.leadMedia.url : props.leadMedia.imageUrl}
@@ -43,8 +45,8 @@ const PromoImage = (props) => {
         />
         <div className="mt3_promocard-text--overlay">
           <a {...attrs} />
-          {props.config.showPlayButton || props.type === 'video' ? playButton : null}
-          {props.config.overlay && props.text ? <PromoText {...props} /> : null }
+          {(props.config.showPlayButton && props.type !== "gallery") || props.type === 'video' ? playButton : null}
+          {(props.config.overlay && !props.secondImage) && props.text ? <PromoText {...props} /> : null}
         </div>
       </figure>
   );
@@ -54,6 +56,8 @@ PromoImage.PropTypes = {
   type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
   theme: PropTypes.string,
   config: PropTypes.object,
+  childFrameAspectRatio: PropTypes.number,
+  secondImage: PropTypes.bool,
   link: PropTypes.shape({
     url: PropTypes.string.isRequired,
     target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
@@ -61,7 +65,7 @@ PromoImage.PropTypes = {
   }),
   leadMedia: PropTypes.shape({
     url: PropTypes.string,
-    aspectRatio: PropTypes.number,
+    aspectRatio: PropTypes.number || PropTypes.oneOf(['broadcast', 'photo', 'tv', 'square']),
     altText: PropTypes.string,
     srcset: PropTypes.array,
     imageUrl: PropTypes.string

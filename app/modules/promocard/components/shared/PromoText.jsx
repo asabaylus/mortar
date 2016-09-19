@@ -7,7 +7,8 @@ import { generateHref } from '../../scripts/generateHref.js';
 const PromoText = (props) => {
 
   const attrs = {
-    className: props.config.overlay || props.theme === "dark" ? "mt3_color--white mt3_promocard-kicker mt3_promocard-kicker--inverse" : "mt3_color--gray40 mt3_promocard-kicker",
+    className: props.config.overlay || props.theme === "dark" ? "mt3_color--white mt3_promocard-kicker " +
+    "mt3_promocard-kicker--inverse" : "mt3_color--gray40 mt3_promocard-kicker",
     href: props.text.kicker ? generateHref(props.text.kicker.url, props.text.kicker.trackingCodes) : null,
     target: props.text.kicker ? props.text.kicker.target : null
   };
