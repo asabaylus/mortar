@@ -46,17 +46,14 @@ class Story extends Component {
     case '16:9':
       parentFrameHeightMultiplier = 0.5625;
       break;
-    case '3:2':
-      parentFrameHeightMultiplier = 0.667;
-      break;
     case '4:3':
       parentFrameHeightMultiplier = 0.75;
       break;
     case '1:1':
       parentFrameHeightMultiplier = 1;
       break;
-    default:
-      parentFrameHeightMultiplier = parentFrameAspectRatio;
+    default: //default to 3:2
+      parentFrameHeightMultiplier = 0.667;
     }
     const height = width * parentFrameHeightMultiplier;
 
