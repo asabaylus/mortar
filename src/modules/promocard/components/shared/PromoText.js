@@ -23,6 +23,23 @@ const PromoText = (props) => {
   const sponsored = props.config.overlay || props.theme === 'dark' ? 'mt3_color--white mt3_promocard-sponsored mt3_promocard-sponsored--inverse'
     : 'mt3_color--sponsor mt3_promocard-sponsored';
 
+  let titleClass = 'mt3_promocard-title--';
+
+
+  if(props.breakpoint > 375) {
+    if(props.breakpoint > 768) {
+      if(props.breakpoint > 1024) {
+        titleClass += 'large'
+      } else {
+        titleClass += 'medium';
+      }
+    } else {
+      titleClass += 'small';
+    }
+  } else {
+    titleClass += 'smallest'
+  }
+
   return(
     <div className={thumbnailPositionColor}>
     { props.text.kicker || props.config.sponsored ?
@@ -40,9 +57,9 @@ const PromoText = (props) => {
       </div> : null }
       <div className="mt3_row">
         <div className="mt3_promocard-pad">
-          <ElementQuery sizes={[{name: 'mt3_promocard-title--large', width: 1024}, {name: 'mt3_promocard-title--medium', width: 768}, {name: 'mt3_promocard-title--small', width: 375}]}>
-            {props.text.title ? <div className={`mt3_promocard-title ${inverse}`}>{props.text.title}</div> : null}
-          </ElementQuery>
+          {props.text.title ?
+            <div className={`mt3_promocard-title ${inverse} ${titleClass}`}>{props.text.title}</div>
+          : null}
           { props.text.dek && !props.config.overlay ? <div className={`mt3_promocard-dek ${inverseDek}`}>{props.text.dek}</div> : null }
         </div>
       </div>

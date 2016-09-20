@@ -15,7 +15,7 @@ class Story extends Component {
     this.getWidth = this.getWidth.bind(this);
     this.calcAspectRatio = this.calcAspectRatio.bind(this);
     this.state = {
-      breakpoint: null
+      breakpoint: this.props.parentWidth || null
     }
   }
 
@@ -32,13 +32,14 @@ class Story extends Component {
 
   getWidth(){
     const containerWidth = this.refs.promocardContainer.getBoundingClientRect().width;
-    this.setState({
-      breakpoint: containerWidth
-    });
+    if(this.state.containerWidth !== containerWidth) {
+      this.setState({
+        breakpoint: containerWidth
+      });
+    }
   }
 
   calcAspectRatio(){
-    //childframeAspectRatio = (parentFrameAspectRatioHEIGHT - 40px) / (parentFrameAspectRatioWIDTH - 40px)
     const width = this.state.breakpoint;
     const parentFrameAspectRatio = this.props.config.aspectRatio;
     let parentFrameHeightMultiplier;
@@ -103,9 +104,10 @@ class Story extends Component {
           overlay: true
         });
         if (type === 'gallery'){
+          const ctaSizeClass = this.state.breakpoint < (768 + 60) ? 'mt3_promocard-gallery-cta--medium' : 'mt3_promocard-gallery-cta--large';
           content.push(
             <div key={i++} className={`mt3_row mt3_promocard-gallery-images ${aspectRatio}`}>
-              <ElementQuery sizes={[{name: 'mt3_promocard-gallery-cta--medium', width: 375 + 40}, {name: 'mt3_promocard-gallery-cta--large', width: 768 + 60} ]}>
+              <div className={ctaSizeClass}>
                 <div className="mt3_color--white mt3_btn mt3_btn--naked mt3_fullwidth mt3_promocard-gallery-cta">
                   <a {...attrs} />
                   <span>Photo Gallery</span>
@@ -113,62 +115,68 @@ class Story extends Component {
                     <use xlinkHref="#plus"></use>
                   </svg>
                 </div>
-              </ElementQuery>
-              <ElementQuery sizes={[{name: 'mt3_promocard-gallery-images--image1-medium', width: 375}, {name: 'mt3_row mt3_promocard-gallery-images--image1-large', width: 768} ]}>
+              </div>
+              <div className='mt3_row mt3_promocard-gallery-images--image1-large'>
                 <div className="mt3_row mt3_promocard-gallery-images--image1">
                   <a {...attrs} />
-                  <PromoImage type={type} config={config} leadMedia={leadMedia[0]} childFrameAspectRatio={this.calcAspectRatio()} link={link} brandingBadgeLabel={brandingBadgeLabel} text={text}/>
+                  <PromoImage type={type} config={config} leadMedia={leadMedia[0]} childFrameAspectRatio={this.calcAspectRatio()} link={link} brandingBadgeLabel={brandingBadgeLabel} text={text} breakpoint={this.state.breakpoint}/>
                 </div>
-              </ElementQuery>
-              <ElementQuery sizes={[{name: 'mt3_promocard-gallery-images--image2-medium', width: 375}, {name: 'mt3_row mt3_promocard-gallery-images--image2-large', width: 768} ]}>
+              </div>
+              <div className='mt3_row mt3_promocard-gallery-images--image2-large'>
                 <div className="mt3_row mt3_promocard-gallery-images--image2">
-                  <PromoImage type={type} config={config} leadMedia={leadMedia[1]} childFrameAspectRatio={this.calcAspectRatio()} secondImage={true} />
+                  <PromoImage type={type} config={config} leadMedia={leadMedia[1]} childFrameAspectRatio={this.calcAspectRatio()} secondImage={true}  breakpoint={this.state.breakpoint}/>
                 </div>
-              </ElementQuery>
+              </div>
             </div>
           );
         }else{
           content.push(
-            <PromoImage key={i++} type={type} config={config} link={link} leadMedia={leadMedia[0]} brandingBadgeLabel={brandingBadgeLabel} text={text} />
+            <PromoImage key={i++} type={type} config={config} link={link} leadMedia={leadMedia[0]} brandingBadgeLabel={brandingBadgeLabel} text={text}  breakpoint={this.state.breakpoint}/>
           );
         }
-      } else if (leadMedia && this.state.breakpoint < 768){
+      } else if (leadMedia && this.state.breakpoint < 768) {
         if (type === 'gallery'){
+          const ctaSizeClass = this.state.breakpoint > (375 + 40) ? 'mt3_promocard-gallery-cta--medium' : '';
+          const imageSizeClass = this.state.breakpoint > 375 ? 'mt3_promocard-gallery-images--image2-medium' : '';
+
           content.push(
             <div key={i++} className={`mt3_row mt3_promocard-gallery-images ${aspectRatio}`}>
-              <ElementQuery sizes={[{name: 'mt3_promocard-gallery-cta--medium', width: 375 + 40}, {name: 'mt3_promocard-gallery-cta--large', width: 768 + 60} ]}>
-                <div className="mt3_color--white mt3_btn mt3_btn--naked mt3_fullwidth mt3_promocard-gallery-cta">
-                  <a {...attrs} />
-                  <span>Photo Gallery</span>
-                  <svg className="mt3_promocard-gallery-cta-icon">
-                    <use xlinkHref="#plus"></use>
-                  </svg>
+              <div className='mt3_promocard-gallery-cta--medium'>
+                <div className={ctaSizeClass}>
+                  <div className="mt3_color--white mt3_btn mt3_btn--naked mt3_fullwidth mt3_promocard-gallery-cta">
+                    <a {...attrs} />
+                    <span>Photo Gallery</span>
+                    <svg className="mt3_promocard-gallery-cta-icon">
+                      <use xlinkHref="#plus"></use>
+                    </svg>
+                  </div>
                 </div>
-              </ElementQuery>
-              <ElementQuery  sizes={[{name: 'mt3_promocard-gallery-images--image1-medium', width: 375}, {name: 'mt3_row mt3_promocard-gallery-images--image1-large', width: 768} ]}>
+              </div>
+              <div className={imageSizeClass}>
                 <div className="mt3_row mt3_promocard-gallery-images--image1">
                   <a {...attrs} />
-                  <PromoImage type={type} config={config} leadMedia={leadMedia[0]} childFrameAspectRatio={this.calcAspectRatio()} />
+                  <PromoImage type={type} config={config} leadMedia={leadMedia[0]} childFrameAspectRatio={this.calcAspectRatio()} breakpoint={this.state.breakpoint}/>
                 </div>
-              </ElementQuery>
-              <ElementQuery sizes={[{name: 'mt3_promocard-gallery-images--image2-medium', width: 375}, {name: 'mt3_row mt3_promocard-gallery-images--image2-large', width: 768} ]}>
+              </div>
+
+              <div className={imageSizeClass}>
                 <div className="mt3_row mt3_promocard-gallery-images--image2">
-                  <PromoImage type={type} config={config} leadMedia={leadMedia[1]} childFrameAspectRatio={this.calcAspectRatio()} secondImage={true} />
+                  <PromoImage type={type} config={config} leadMedia={leadMedia[1]} childFrameAspectRatio={this.calcAspectRatio()} secondImage={true}  breakpoint={this.state.breakpoint}/>
                 </div>
-              </ElementQuery>
+              </div>
             </div>,
-            <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type} />
+            <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type} breakpoint={this.state.breakpoint}/>
           );
-        }else {
+        } else {
           content.push(
             <PromoImage key={i++} type={type} config={config} link={link} leadMedia={leadMedia[0]}
-                        brandingBadgeLabel={brandingBadgeLabel} text={text}/>,
-            <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type}/>
+                        brandingBadgeLabel={brandingBadgeLabel} text={text}  breakpoint={this.state.breakpoint}/>,
+            <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type}  breakpoint={this.state.breakpoint}/>
           );
         }
-      }else{
+      } else{
         content.push(
-          <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type} />
+          <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type}  breakpoint={this.state.breakpoint}/>
         );
       }
     }
