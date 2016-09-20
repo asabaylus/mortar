@@ -43,20 +43,17 @@ class Story extends Component {
     const parentFrameAspectRatio = this.props.config.aspectRatio;
     let parentFrameHeightMultiplier;
     switch(parentFrameAspectRatio){
-    case 'broadcast':
+    case '16:9':
       parentFrameHeightMultiplier = 0.5625;
       break;
-    case 'photo':
-      parentFrameHeightMultiplier = 0.667;
-      break;
-    case 'tv':
+    case '4:3':
       parentFrameHeightMultiplier = 0.75;
       break;
-    case 'square':
+    case '1:1':
       parentFrameHeightMultiplier = 1;
       break;
-    default:
-      parentFrameHeightMultiplier = parentFrameAspectRatio;
+    default: //default to 3:2
+      parentFrameHeightMultiplier = 0.667;
     }
     const height = width * parentFrameHeightMultiplier;
 
@@ -91,10 +88,10 @@ class Story extends Component {
     const bkgColor = theme === 'dark' ? ' mt3_promocard-container--dark' : '';
     let i = 0;
     let content = [<a key={i++} {...attrs} />];
-    const aspectRatio = config.aspectRatio === 'broadcast' ? 'mt3_intratio--broadcast'
-      : config.aspectRatio === 'photo' ? 'mt3_intratio--photo'
-      : config.aspectRatio === 'tv' ? 'mt3_intratio--tv'
-      : config.aspectRatio === 'square' ? 'mt3_intratio--square'
+    const aspectRatio = config.aspectRatio === '16:9' ? 'mt3_intratio--broadcast'
+      : config.aspectRatio === '3:2' ? 'mt3_intratio--photo'
+      : config.aspectRatio === '4:3' ? 'mt3_intratio--tv'
+      : config.aspectRatio === '1:1' ? 'mt3_intratio--square'
       : 'mt3_intratio--photo';
 
     if(this.state.breakpoint !== null){

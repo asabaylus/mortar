@@ -17,7 +17,7 @@ class PromoCardConfigurator extends Module {
       id: 'hero_promocard_0',
       type: 'article',
       config: {
-        aspectRatio: 'photo',
+        aspectRatio: '3:2',
         sponsored: false,
         showPlayButton: false,
         showByline: true

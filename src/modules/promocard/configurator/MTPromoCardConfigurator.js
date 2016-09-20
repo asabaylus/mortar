@@ -100,7 +100,12 @@ class PromoCardConfigurator extends Component {
               <option value="video">Video</option>
               <option value="gallery">Gallery</option>
             </SelectField>
-            <TextField label="Aspect Ratio" onChange={this.onTextChange('config.aspectRatio')} value={props.config.aspectRatio} />
+            <SelectField label="Aspect Ratio" onChange={this.onTextChange('config.aspectRatio')} value={props.config.aspectRatio}>
+              <option value="3:2">3:2</option>
+              <option value="1:1">1:1</option>
+              <option value="2:1">2:1</option>
+              <option value="16:9">16:9</option>
+            </SelectField>
             <CheckboxField label="Sponsored" onChange={this.onToggle('config.sponsored')} value={props.config.sponsored} />
             <TextField label="Sponsor Content Label" onChange={this.onTextChange('sponsorContentLabel')} value={props.text.sponsorContentLabel} />
             <CheckboxField label="Show Play Button" onChange={this.onToggle('config.showPlayButton')} value={props.config.showPlayButton} />
