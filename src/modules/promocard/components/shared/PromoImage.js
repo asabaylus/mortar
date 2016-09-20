@@ -10,23 +10,23 @@ import { generateHref } from '../../generateHref';
 const searchAndGetCroppingSrcset = (croppingSrcset, aspectRatio) => {
   let srcset;
   switch(aspectRatio) {
-    case '16:9':
-      srcset = croppingSrcset.SixteenNine;
-      break;
-    case '3:2':
-      srcset = croppingSrcset.ThreeTwo;
-      break;
-    case '4:3':
-      srcset = croppingSrcset.FourThree;
-      break;
-    case '2:1':
-      srcset = croppingSrcset.TwoOne;
-      break;
-    case '1:1':
-      srcset = croppingSrcset.OneOne;
-      break;
-    default:
-      srcset = null;
+  case '16:9':
+    srcset = croppingSrcset.SixteenNine;
+    break;
+  case '3:2':
+    srcset = croppingSrcset.ThreeTwo;
+    break;
+  case '4:3':
+    srcset = croppingSrcset.FourThree;
+    break;
+  case '2:1':
+    srcset = croppingSrcset.TwoOne;
+    break;
+  case '1:1':
+    srcset = croppingSrcset.OneOne;
+    break;
+  default:
+    srcset = null;
   }
 
   return srcset;
