@@ -7,8 +7,34 @@ import Image from '@natgeo/modules-images';
 import PromoText from './PromoText';
 import { generateHref } from '../../generateHref';
 
+const searchAndGetCroppingSrcset = (croppingSrcset, aspectRatio) => {
+  let srcset;
+  switch(aspectRatio) {
+    case '16:9':
+      srcset = croppingSrcset.SixteenNine;
+      break;
+    case '3:2':
+      srcset = croppingSrcset.ThreeTwo;
+      break;
+    case '4:3':
+      srcset = croppingSrcset.FourThree;
+      break;
+    case '2:1':
+      srcset = croppingSrcset.TwoOne;
+      break;
+    case '1:1':
+      srcset = croppingSrcset.OneOne;
+      break;
+    default:
+      srcset = null;
+  }
+
+  return srcset;
+};
+
 const PromoImage = (props) => {
 
+  let srcset;
   const playButton =
       <button className="mt3_videopromo-button">
         <span className="mt3_visuallyhidden">Play</span>
@@ -27,6 +53,14 @@ const PromoImage = (props) => {
 
   const frameAspectRatio = props.type === 'gallery' ? props.childFrameAspectRatio : props.config.frameAspectRatio;
 
+  if(props.config.aspectRatio && props.leadMedia.croppings) {
+    const croppingSrcset = searchAndGetCroppingSrcset(props.leadMedia.croppings, props.config.aspectRatio);
+    srcset = croppingSrcset ? croppingSrcset : props.leadMedia.srcset;
+  }
+  else {
+    srcset = props.leadMedia.srcset;
+  }
+
   return(
       <figure>
         {props.config.overlay && !props.secondImage ?
@@ -41,7 +75,7 @@ const PromoImage = (props) => {
           lazyLoad={false}
           altText={props.leadMedia.altText}
           src={props.type !== 'video' ? props.leadMedia.url : props.leadMedia.imageUrl}
-          srcset={props.leadMedia.srcset}
+          srcset={srcset}
         />
         <div className="mt3_promocard-text--overlay">
           <a {...attrs} />
