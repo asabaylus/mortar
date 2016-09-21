@@ -3,6 +3,7 @@
 import React, {Component} from 'react';
 import Velocity from 'velocity-animate';
 import classNames from 'classnames';
+import _defer from 'lodash/defer';
 import EmbeddedVideo from '../video/video';
 
 import VideoThumbnail from './VideoThumbnail';
@@ -22,7 +23,14 @@ class VideoPlaylist extends Component {
     this.manualPlay = false;
     this.didLoop = false;
     this.state = {
-      currentVideoIndex: START_VIDEO_INDEX
+      currentVideoIndex: START_VIDEO_INDEX,
+    };
+    this.videoModel = {
+      instance: this.playerInstanceName,
+      guid: props.dataModel.videos[START_VIDEO_INDEX].guid,
+      sharing: true,
+      overlayPlayButton: true,
+      autoPlay: false
     };
   }
 
@@ -71,7 +79,6 @@ class VideoPlaylist extends Component {
       //ignore the event if it's not coming from the current player instance
       return;
     }
-
     this.adPlaying = e.data.baseClip && e.data.baseClip.isAd;
     if (e.type === 'OnMediaComplete' && !this.adPlaying && this.props.autoContinue) {
       //We're in automated playlist mode
@@ -118,18 +125,8 @@ class VideoPlaylist extends Component {
   }
 
   loadVideo(url, nextState) {
-    const formatUrl = url.match(/http.*\?|mbr.*/g).join('');
-    //if ads are playing, we need to call the unload method so that we can replace the existing video
-    if (this.adPlaying) {
-      ngsPlayer.api.pause(this.playerInstanceName);
-      //calling unload immediately after the call to pause doesn't seem to work properly, and just calling unload allows the audio from the ad to continue playing (though that does not happen on regular clips). This ads a 200ms delay between call to pause and unload
-      window.setTimeout(() => {
-        ngsPlayer.api.unload(this.playerInstanceName);
-        this.playVideo(formatUrl, nextState);
-      }, 200);
-    } else {
-      this.playVideo(url, formatUrl, nextState);
-    }
+    const formatUrl = url.match(/http.*\?|mbr.*|policy=.*/g).join('');
+    this.playVideo(url, formatUrl, nextState);
   }
 
   playVideo(originalUrl, formatUrl, nextState) {
@@ -153,8 +150,19 @@ class VideoPlaylist extends Component {
     //condition by the loop property. Currently that is not in the scope.
     if (this.props.autoContinue && !this.didLoop) {
       this.autoPlay = true;
-      //This should set the proper url for the video player instance and start playing it
-      ngsPlayer.api.set(formatUrl, this.playerInstanceName);
+
+      // Play new video while a PreRoll is playing.
+      if (this.adPlaying) {
+        // Cancel current video
+        ngsPlayer.api.unload(this.playerInstanceName);
+        // load and play the video at next JS call stack.
+        // It gives enough time to unload the previous video
+        _defer((releaseURL)=> {
+          ngsPlayer.api.set(releaseURL, this.playerInstanceName);
+        }, formatUrl);
+      } else {
+        ngsPlayer.api.set(formatUrl, this.playerInstanceName);
+      }
     } else {
       //set flag to use in "OnLoadReleaseUrl" call back, so we know to call play on player instance
       this.manualPlay = true;
@@ -217,13 +225,6 @@ class VideoPlaylist extends Component {
   render() {
     const {videos} = this.props.dataModel;
     const currentVideo = videos[this.state.currentVideoIndex];
-    const videoModel = {
-      instance: this.playerInstanceName,
-      guid: currentVideo.guid,
-      sharing: true,
-      overlayPlayButton: true,
-      autoPlay: false
-    };
 
     const thumbnails = videos.map((item, index) => {
       const thumbClass = classNames({
@@ -247,7 +248,7 @@ class VideoPlaylist extends Component {
             kickerLabel={currentVideo.kicker? currentVideo.kicker.label: ''}
             duration={currentVideo.duration}
           />
-          <EmbeddedVideo model={videoModel} lazyLoad={true}/>
+          <EmbeddedVideo model={this.videoModel} lazyLoad={true}/>
         </div>
         <div className="mt3_col-12 mt3_col-md-3">
           <div ref="thumbnailContainer" className='mt3_video-playlist-container--thumbnails'>

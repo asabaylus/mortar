@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "@natgeo/modules-images": "^2.0.0",
-    "@natgeo/modules-video": "1.2.5",
+    "@natgeo/modules-video": "1.2.6",
     "@natgeo/mortar-pestle": "2.x",
     "gsap": "^1.19.0",
     "jquery": "2.x",

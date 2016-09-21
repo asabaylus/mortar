@@ -3,6 +3,7 @@
 import React, { Component }  from 'react';
 import LazyLoad from 'react-lazy-load';
 import _defaultsDeep from 'lodash/defaultsDeep';
+import _isEqual from 'lodash/isEqual';
 
 // add the NatGeo modules-video to the global window
 window.ngsPlayer = require('@natgeo/modules-video');
@@ -47,6 +48,14 @@ class Video extends Component {
     if (this.props.isEditMode !== true) {
       this.createPlayer();
     }
+  }
+
+  shouldComponentUpdate(nextProps) {
+    // Prevent unnecessary re-render
+    // because this component is stateless and only changes from props alterations
+    // therefore it prevents from re-loading the video content.
+    // a serious big performance impact.
+    return !_isEqual(this.props, nextProps);
   }
 
   render() {
