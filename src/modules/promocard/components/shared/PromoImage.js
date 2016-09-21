@@ -50,11 +50,11 @@ const PromoImage = (props) => {
     target: props.link ? props.link.target : null
   } : null;
 
-  const frameAspectRatio = props.type === 'gallery' ? props.childFrameAspectRatio : props.config.aspectRatio;
+  const frameAspectRatio = props.type === 'gallery' ? props.childFrameAspectRatio : props.config.cardAspectRatio;
   const overlayClass = props.breakpoint > (768 - 60) ? 'mt3_promocard-gradient-overlay' : ''
 
-  if(props.config.aspectRatio && props.leadMedia.croppings) {
-    const croppingSrcset = searchAndGetCroppingSrcset(props.leadMedia.croppings, props.config.aspectRatio);
+  if(props.config.cardAspectRatio && props.leadMedia.croppings) {
+    const croppingSrcset = searchAndGetCroppingSrcset(props.leadMedia.croppings, props.config.cardAspectRatio);
     srcset = croppingSrcset ? croppingSrcset : props.leadMedia.srcset;
   }
   else {

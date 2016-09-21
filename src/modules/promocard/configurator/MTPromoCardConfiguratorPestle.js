@@ -14,10 +14,10 @@ class PromoCardConfigurator extends Module {
 
   init() {
     const props = {
-      id: 'hero_promocard_0',
+      itemId: 'hero_promocard_0',
       type: 'article',
       config: {
-        aspectRatio: '3:2',
+        cardAspectRatio: '3:2',
         sponsored: false,
         showPlayButton: false,
         showByline: true

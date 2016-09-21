@@ -40,12 +40,12 @@ describe('FourUp Component', () => {
 
   it('First Promo Card\'s config should have the proper aspect ratio', () => {
     const firstPromoCard = el.find("MTPromoCard").first();
-    expect(firstPromoCard.props().config.aspectRatio).to.equal("3:2");
+    expect(firstPromoCard.props().config.cardAspectRatio).to.equal("3:2");
   });
 
   it('The Second Promo Card\'s config should have the proper aspect ratio', () => {
     const secondPromoCard = el.find("MTPromoCard").nodes[1];
-    expect(secondPromoCard.props.config.aspectRatio).to.equal("16:9");
+    expect(secondPromoCard.props.config.cardAspectRatio).to.equal("16:9");
   });
 
   it('The Second Promo Card should have the proper title', () => {

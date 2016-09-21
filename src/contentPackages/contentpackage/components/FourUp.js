@@ -45,9 +45,9 @@ class FourUpComponent extends Component {
       case 2:
       case 3:
         if(this.state.contentWidth < 440) {
-          currentCard.config.aspectRatio = '1:1';
+          currentCard.config.cardAspectRatio = '1:1';
         } else {
-          currentCard.config.aspectRatio = '16:9';
+          currentCard.config.cardAspectRatio = '16:9';
         }
         if(currentCard.text.dek) {
           currentCard.text.dek = null;
@@ -55,11 +55,11 @@ class FourUpComponent extends Component {
       break;
       // Second card set to 16:9
       case 1:
-        currentCard.config.aspectRatio = '16:9';
+        currentCard.config.cardAspectRatio = '16:9';
       break;
       // First card set to 3:2
       case 0:
-        currentCard.config.aspectRatio = '3:2';
+        currentCard.config.cardAspectRatio = '3:2';
       break;
     }
 

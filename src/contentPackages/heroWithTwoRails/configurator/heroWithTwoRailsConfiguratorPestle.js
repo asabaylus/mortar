@@ -21,10 +21,10 @@ class HeroWithTwoRailsConfigurator extends Module {
        "parallaxHeading":true,
        "cards":[
           {
-             "id":"hero_promocard_0",
+             "itemId":"hero_promocard_0",
              "type":"article",
              "config":{
-                "aspectRatio":"2:1",
+                "cardAspectRatio":"2:1",
                 "sponsored":false
              },
              "link":{
@@ -57,10 +57,10 @@ class HeroWithTwoRailsConfigurator extends Module {
              }
           },
           {
-             "id":"lr_promocard_0",
+             "itemId":"lr_promocard_0",
              "type":"article",
              "config":{
-                "aspectRatio":"19:9",
+                "cardAspectRatio":"19:9",
                 "sponsored":false
              },
              "link":{
@@ -78,10 +78,6 @@ class HeroWithTwoRailsConfigurator extends Module {
                    "height":500,
                    "width":900,
                    "altText":"Mars photo",
-                   "customCrops":[
-                      "16:9",
-                      "2:1"
-                   ],
                    "srcset":[
                       "http://placehold.it/400x300 400w",
                       "http://placehold.it/800x600 800w",
@@ -97,10 +93,10 @@ class HeroWithTwoRailsConfigurator extends Module {
              }
           },
           {
-             "id":"lr_promocard_1",
+             "itemId":"lr_promocard_1",
              "type":"article",
              "config":{
-                "aspectRatio":"16:9",
+                "cardAspectRatio":"16:9",
                 "sponsored":false
              },
              "link":{
@@ -113,10 +109,6 @@ class HeroWithTwoRailsConfigurator extends Module {
                    "height":500,
                    "width":900,
                    "altText":"Mars photo",
-                   "customCrops":[
-                      "16:9",
-                      "2:1"
-                   ],
                    "srcset":[
                       "http://placehold.it/400x300 400w",
                       "http://placehold.it/800x600 800w",
@@ -133,10 +125,10 @@ class HeroWithTwoRailsConfigurator extends Module {
              }
           },
           {
-             "id":"lr_promocard_2",
+             "itemId":"lr_promocard_2",
              "type":"article",
              "config":{
-                "aspectRatio":"19:9",
+                "cardAspectRatio":"19:9",
                 "sponsored":false
              },
              "link":{
@@ -150,14 +142,10 @@ class HeroWithTwoRailsConfigurator extends Module {
              "leadMedia":[
                 {
                    "url":"some url",
-                   "aspectRatio":0.6692323,
+                   "cardAspectRatio":0.6692323,
                    "height":500,
                    "width":900,
                    "altText":"Mars photo",
-                   "customCrops":[
-                      "16:9",
-                      "2:1"
-                   ],
                    "srcset":[
                       "http://placehold.it/400x300 400w",
                       "http://placehold.it/800x600 800w",
@@ -173,10 +161,10 @@ class HeroWithTwoRailsConfigurator extends Module {
              }
           },
           {
-             "id":"rr_showcard_0",
+             "itemId":"rr_showcard_0",
              "type":"show",
              "config":{
-                "aspectRatio":"2:1",
+                "cardAspectRatio":"2:1",
                 "sponsored":false,
                 "channelMapping":true
              },
@@ -216,10 +204,10 @@ class HeroWithTwoRailsConfigurator extends Module {
              }
           },
           {
-             "id":"rr_promocard_0",
+             "itemId":"rr_promocard_0",
              "type":"article",
              "config":{
-                "aspectRatio":"2:1",
+                "cardAspectRatio":"2:1",
                 "sponsored":true
              },
              "link":{
@@ -252,10 +240,10 @@ class HeroWithTwoRailsConfigurator extends Module {
              }
           },
           {
-             "id":"rr_promocard_1",
+             "itemId":"rr_promocard_1",
              "type":"show",
              "config":{
-                "aspectRatio":"2:1",
+                "cardAspectRatio":"2:1",
                 "sponsored":false,
                 "channelMapping":true
              },

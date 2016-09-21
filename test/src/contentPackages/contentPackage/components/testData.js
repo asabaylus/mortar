@@ -6,7 +6,7 @@
       'dataModel': {
         'components': [
           {
-            'id': 'lr_mostRead',
+            'itemId': 'lr_mostRead',
             'type': 'mostRead',
             'heading': 'Most Read',
             'stories': [
@@ -184,7 +184,7 @@
             ]
           },
           {
-            'id': 'rr_theLatest',
+            'itemId': 'rr_theLatest',
             'type': 'theLatest',
             'heading': 'The Latest',
             'stories': [
@@ -192,7 +192,7 @@
                 'id': 'hero_promocard_0',
                 'type': 'article',
                 'config': {
-                  'aspectRatio': '1:1',
+                  'cardAspectRatio': '1:1',
                   'sponsored': false
                 },
                 'link': {
@@ -225,10 +225,10 @@
                 }
               },
               {
-                'id': 'lr_promocard_0',
+                'itemId': 'lr_promocard_0',
                 'type': 'article',
                 'config': {
-                  'aspectRatio': '19:9',
+                  'cardAspectRatio': '19:9',
                   'sponsored': false
                 },
                 'link': {
@@ -265,10 +265,10 @@
                 }
               },
               {
-                'id': 'lr_promocard_1',
+                'itemId': 'lr_promocard_1',
                 'type': 'video',
                 'config': {
-                  'aspectRatio': '16:9',
+                  'cardAspectRatio': '16:9',
                   'sponsored': false
                 },
                 'link': {
@@ -301,10 +301,10 @@
                 }
               },
               {
-                'id': 'hero_promocard_0',
+                'itemId': 'hero_promocard_0',
                 'type': 'gallery',
                 'config': {
-                  'aspectRatio': 'photo',
+                  'cardAspectRatio': 'photo',
                   'sponsored': false,
                   'showPlayButton': false,
                   'showByline': true
@@ -366,10 +366,10 @@
                 'brandingBadgeLabel': ''
               },
               {
-                'id': 'rr_promocard_0',
+                'itemId': 'rr_promocard_0',
                 'type': 'article',
                 'config': {
-                  'aspectRatio': '2:1',
+                  'cardAspectRatio': '2:1',
                   'sponsored': true
                 },
                 'link': {
@@ -402,7 +402,7 @@
                 }
               },
               {
-                'id': 'rr_schedulecard_0',
+                'itemId': 'rr_schedulecard_0',
                 'type': 'schedule',
                 'config': {
                   'sponsored': false,

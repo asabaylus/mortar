@@ -144,7 +144,6 @@ PodPromoComponent.propTypes = {
   model: React.PropTypes.shape({
     type: React.PropTypes.string.isRequired,
     config: React.PropTypes.shape({
-      aspectRatio: React.PropTypes.string,
       yourshot: React.PropTypes.bool,
       sponsored: React.PropTypes.bool,
     }),

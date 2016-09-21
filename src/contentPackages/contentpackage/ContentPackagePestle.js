@@ -32,7 +32,7 @@ class ContentPackage extends Module {
 
   renderRails(model) {
     const fourUpIndex = _findIndex(model.components, ['type', 'theLatest']);
-    const fourUpContainer = document.getElementById(model.components[fourUpIndex].id);
+    const fourUpContainer = document.getElementById(model.components[fourUpIndex].itemId);
     if(fourUpIndex && fourUpContainer) {
       ReactDOM.render(<FourUpComponent theme={this.options.theme} initialWidth={fourUpContainer.getBoundingClientRect().width} model={model.components[fourUpIndex]} />, fourUpContainer);
     }

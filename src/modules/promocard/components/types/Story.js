@@ -41,7 +41,7 @@ class Story extends Component {
 
   calcAspectRatio(){
     const width = this.state.breakpoint;
-    const parentFrameAspectRatio = this.props.config.aspectRatio;
+    const parentFrameAspectRatio = this.props.config.cardAspectRatio;
     let parentFrameHeightMultiplier;
     switch(parentFrameAspectRatio){
     case '16:9':
@@ -89,10 +89,10 @@ class Story extends Component {
     const bkgColor = theme === 'dark' ? ' mt3_promocard-container--dark' : '';
     let i = 0;
     let content = [<a key={i++} {...attrs} />];
-    const aspectRatio = config.aspectRatio === '16:9' ? 'mt3_intratio--broadcast'
-      : config.aspectRatio === '3:2' ? 'mt3_intratio--photo'
-      : config.aspectRatio === '4:3' ? 'mt3_intratio--tv'
-      : config.aspectRatio === '1:1' ? 'mt3_intratio--square'
+    const aspectRatio = config.cardAspectRatio === '16:9' ? 'mt3_intratio--broadcast'
+      : config.cardAspectRatio === '3:2' ? 'mt3_intratio--photo'
+      : config.cardAspectRatio === '4:3' ? 'mt3_intratio--tv'
+      : config.cardAspectRatio === '1:1' ? 'mt3_intratio--square'
       : 'mt3_intratio--photo';
 
     if(this.state.breakpoint !== null){

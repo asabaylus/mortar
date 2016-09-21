@@ -220,7 +220,7 @@ class HeroWithTwoRails extends Component {
       let i = 0;
       for (const card of this.props.cards) {
         //make sure target div exists
-        const cardDiv = document.getElementById(card.id);
+        const cardDiv = document.getElementById(card.itemId);
 
         if(cardDiv) {
           //if it's targeted to the hero

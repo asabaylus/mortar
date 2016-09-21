@@ -14,13 +14,10 @@ class PodPromoConfigurator extends Module {
 
   init() {
     const props = {
-      id: 'f89234jw',
       endpoint: '/mockdata/podpromo/data.json',
       model: {
-        id: '12344678',
         type: 'pod',
         config: {
-          aspectRatio: '2:1',
           yourshot: true,
           sponsored: true
         },

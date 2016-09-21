@@ -17,10 +17,10 @@ describe('Hero With Two Rails Content Package', () => {
     "parallaxHeading":true,
     "cards":[
       {
-        "id":"hero_promocard_0",
+        "itemId":"hero_promocard_0",
         "type":"article",
         "config":{
-            "aspectRatio":"1:1",
+            "cardAspectRatio":"1:1",
             "sponsored":false
           },
         "link":{
@@ -53,7 +53,7 @@ describe('Hero With Two Rails Content Package', () => {
         }
       },
       {
-         "id":"rr_schedulecard_0",
+         "itemId":"rr_schedulecard_0",
          "type":"schedule",
          "config":{
             "sponsored":false,
@@ -153,7 +153,7 @@ describe('Hero With Two Rails Content Package', () => {
 
   it('Sample Promo Cards passed in data model should be called with expected props', () => {
     const firstPromoCard = el.find("MTPromoCard").first();
-    expect(firstPromoCard.props().id).to.equal("hero_promocard_0");
+    expect(firstPromoCard.props().itemId).to.equal("hero_promocard_0");
     expect(firstPromoCard.props().type).to.equal("article");
     expect(firstPromoCard.props().config.sponsored).to.be.false;
     expect(firstPromoCard.props().leadMedia[0].aspectRatio).to.equal(0.6666666666666666);
