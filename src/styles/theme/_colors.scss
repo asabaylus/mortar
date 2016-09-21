@@ -20,4 +20,8 @@
   .mt3_color--social--#{$mt3_social-color} {
     color: $mt3_social-bg-color;
   }
+
+  .mt3_bordercolor--social--#{$mt3_social-color} {
+    border: 1px solid $mt3_social-bg-color;
+  }
 }
