@@ -83,6 +83,10 @@ $mt3_gradientIndex: 3;
     width: 75%;
     z-index: 5;
   }
+  
+  .mt3_promocard-pad {
+    padding-right:30px;
+  }
 
   .mt3_promocard-gallery-images {
     margin-bottom: 15px;
@@ -245,12 +249,6 @@ $mt3_gradientIndex: 3;
     &:hover {
       text-decoration: none;
     }
-  }
-
-  .mt3_promocard-image {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
   }
 
   .mt3_promocard-branding {

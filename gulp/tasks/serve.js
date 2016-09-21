@@ -31,8 +31,8 @@ gulp.task('serve', ['build'], function() {
   });
 
   gulp.watch(paths.mortarIconsSrc, ['icons']);
-  gulp.watch(paths.mortarSrc + '{styles,modules,icons,contentPackages}/**/*.scss', ['styles']);
-  gulp.watch(paths.mortarSrc + '{scripts,modules,contentPackages}/**/*.{js,jsx}', ['scripts']);
+  gulp.watch(paths.mortarSrc + '{styles,modules,icons,contentPackages,util}/**/*.scss', ['styles']);
+  gulp.watch(paths.mortarSrc + '{scripts,modules,contentPackages,util}/**/*.{js,jsx}', ['scripts']);
   gulp.watch(paths.mortarSrc + '**/*.{md,html}', ['docs']);
   gulp.watch(paths.mortarDest + 'lib/symbol/svg/*.svg', ['docs']);
 

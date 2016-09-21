@@ -171,6 +171,7 @@ class HeroWithTwoRails extends Component {
   render() {
     let portalContent = [];
     let heroExists = false;
+    const parentWidth = this.props.parentEl.getBoundingClientRect().width > 768 ? 600 : null;
 
     //Heading
     if(this.props.heading && this.props.heading !== "") {
@@ -211,7 +212,8 @@ class HeroWithTwoRails extends Component {
             <PortalWrapper targetDiv={cardDiv} key={i++}>
               <MTPromoCard
                 {...card}
-                theme={this.props.theme}/>
+                theme={this.props.theme}
+                parentWidth={parentWidth}/>
             </PortalWrapper>
           );
         } else {
@@ -219,6 +221,7 @@ class HeroWithTwoRails extends Component {
             <MTPromoCard
               {...card}
               theme={this.props.theme}
+              parentWidth={parentWidth}
               key={i++}/>
           );
         }

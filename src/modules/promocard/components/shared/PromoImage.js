@@ -2,7 +2,6 @@
 
 import React, { PropTypes }  from 'react';
 import Button from '../../../button/CTAButton';
-import ElementQuery from 'react-element-query';
 import Image from '@natgeo/modules-images';
 import PromoText from './PromoText';
 import { generateHref } from '../../generateHref';
@@ -10,23 +9,23 @@ import { generateHref } from '../../generateHref';
 const searchAndGetCroppingSrcset = (croppingSrcset, aspectRatio) => {
   let srcset;
   switch(aspectRatio) {
-    case '16:9':
-      srcset = croppingSrcset.SixteenNine;
-      break;
-    case '3:2':
-      srcset = croppingSrcset.ThreeTwo;
-      break;
-    case '4:3':
-      srcset = croppingSrcset.FourThree;
-      break;
-    case '2:1':
-      srcset = croppingSrcset.TwoOne;
-      break;
-    case '1:1':
-      srcset = croppingSrcset.OneOne;
-      break;
-    default:
-      srcset = null;
+  case '16:9':
+    srcset = croppingSrcset.SixteenNine;
+    break;
+  case '3:2':
+    srcset = croppingSrcset.ThreeTwo;
+    break;
+  case '4:3':
+    srcset = croppingSrcset.FourThree;
+    break;
+  case '2:1':
+    srcset = croppingSrcset.TwoOne;
+    break;
+  case '1:1':
+    srcset = croppingSrcset.OneOne;
+    break;
+  default:
+    srcset = null;
   }
 
   return srcset;
@@ -51,7 +50,8 @@ const PromoImage = (props) => {
     target: props.link ? props.link.target : null
   } : null;
 
-  const frameAspectRatio = props.type === 'gallery' ? props.childFrameAspectRatio : props.config.frameAspectRatio;
+  const frameAspectRatio = props.type === 'gallery' ? props.childFrameAspectRatio : props.config.aspectRatio;
+  const overlayClass = props.breakpoint > (768 - 60) ? 'mt3_promocard-gradient-overlay' : ''
 
   if(props.config.aspectRatio && props.leadMedia.croppings) {
     const croppingSrcset = searchAndGetCroppingSrcset(props.leadMedia.croppings, props.config.aspectRatio);
@@ -64,9 +64,9 @@ const PromoImage = (props) => {
   return(
       <figure>
         {props.config.overlay && !props.secondImage ?
-        <ElementQuery sizes={[{name: 'mt3_promocard-gradient-overlay', width: 768 - 60}]}>
+        <div className={overlayClass}>
           <div></div>
-        </ElementQuery>
+        </div>
         : null}
         {props.brandingBadgeLabel ? <figcaption className="mt3_promocard-branding">{props.brandingBadgeLabel}</figcaption> : null}
         <Image
