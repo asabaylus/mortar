@@ -12,11 +12,11 @@
   }
 
   &-wrapper {
+    background-color: $mt3_default-modules-images-background;
     height: 100%;
     position: absolute;
     top: 0;
     width: 100%;
-    background-color: $mt3_default-modules-images-background;
     &:after {
       border: 6px solid $mt3_default-modules-images-box-logo;
       box-sizing: border-box;
