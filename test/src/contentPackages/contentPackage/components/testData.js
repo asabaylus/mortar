@@ -15,7 +15,8 @@
                 'config': {
                   'sponsored': false,
                   'showPlayButton': false,
-                  'showByline': true
+                  'showByline': true,
+                  'aspectRatio': '16:9'
                 },
                 'link': {
                   'url': '\/content\/magazine\/en_US\/test-article-by-jani-actman.html',
@@ -68,7 +69,8 @@
                 'config': {
                   'sponsored': false,
                   'showPlayButton': false,
-                  'showByline': false
+                  'showByline': false,
+                  'aspectRatio': '3:2'
                 },
                 'link': {
                   'url': '\/content\/magazine\/en_US\/test-gallery.html',

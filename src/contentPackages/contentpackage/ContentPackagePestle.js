@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Pestle, Module } from '@natgeo/pestle';
-import FourUpComponent from './components/FourUp';
+import LeftAndRightContentPackageComponent from './ContentPackage.js';
 import _findIndex from 'lodash/findIndex';
 
 class ContentPackage extends Module {
@@ -17,25 +17,28 @@ class ContentPackage extends Module {
       rqs.send();
     } else if (this.options.dataModel) {
       // there wasn't an end point specified, so use data specified in markup
-      this.renderRails(this.options.dataModel);
+      this.render(this.options.dataModel);
     }
   }
 
   onLoadData(response) {
     if (response.target.status >= 200 && response.target.status < 400) {
       const items = JSON.parse(response.target.responseText);
-      this.renderRails(items);
+      this.render(items);
     } else {
       throw new Error(`Server response with ${response.target.status}`);
     }
   }
 
-  renderRails(model) {
+  render(model) {
+    const packageContainer = this.el;
+    const fiveUpIndex = _findIndex(model.components, ['type', 'mostRead']);
     const fourUpIndex = _findIndex(model.components, ['type', 'theLatest']);
     const fourUpContainer = document.getElementById(model.components[fourUpIndex].itemId);
-    if(fourUpIndex && fourUpContainer) {
-      ReactDOM.render(<FourUpComponent theme={this.options.theme} initialWidth={fourUpContainer.getBoundingClientRect().width} model={model.components[fourUpIndex]} />, fourUpContainer);
-    }
+    const fiveUpContainer = document.getElementById(model.components[fiveUpIndex].itemId);
+
+    ReactDOM.render(
+      <LeftAndRightContentPackageComponent theme={this.options.theme} initialWidth={packageContainer.getBoundingClientRect().width} fourUpModel={model.components[fourUpIndex]} fourUpWidth={fourUpContainer.getBoundingClientRect().width} fiveUpModel={model.components[fiveUpIndex]} fiveUpWidth={fiveUpContainer.getBoundingClientRect().width} />, packageContainer);
   }
 }
 

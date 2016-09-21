@@ -17,11 +17,11 @@ describe('FourUp Component', () => {
   });
 
   it('FourUp div should be rendered with expected class', () => {
-    expect(el.props().children.props.className).to.equal("mt3_fourup mt3_fourup--dark");
+    expect(el.props().children.props.className).to.equal("mt3_fourup");
   });
 
   it('Heading should be rendered and display provided text', () => {
-    expect(el.childAt(0).childAt(0).html()).to.equal(`<div class="mt3_fourup-header">The Latest</div>`);
+    expect(el.childAt(0).childAt(0).html()).to.equal(`<div class="mt3_left-and-right-package-header">The Latest</div>`);
   });
 
   it('Expect there to be 4 Promo Card components', () => {

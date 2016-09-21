@@ -11,7 +11,7 @@ export function generateHref (url, trackingCodes) {
     const termsArr = trackingCodes;
     const concatTerms = (element, index, array) => {
       const lastEl = index < array.length - 1;
-      terms += lastEl ? element + '+' : element;
+      terms += lastEl ? element + '&' : element;
     };
     termsArr.forEach(concatTerms);
     href = href + '?' + terms;

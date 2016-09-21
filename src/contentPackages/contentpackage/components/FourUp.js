@@ -90,11 +90,6 @@ class FourUpComponent extends Component {
     // configure cards that will be rendered below
     componentStories.forEach(this.pushCard.bind(this));
 
-    //apply "theme" class manually to parent element
-    if(componentTheme) {
-      this.parentClassName = `mt3_fourup mt3_fourup--${this.props.theme}`;
-    }
-
     // This sets the markup for the last two components when the parent component's width is less than 440
     const mobileBottomRows = [
       <div key={"mobile-row-2"} className="mt3_row mt3_fourup-row mt3_fourup-row--extrasmall">
@@ -120,8 +115,8 @@ class FourUpComponent extends Component {
 
     return (
       <ElementQuery sizes={elementQueries}>
-        <div ref="fourUpContainer" className={this.parentClassName}>
-          <div className="mt3_fourup-header" dangerouslySetInnerHTML={{__html: componentHead}}/>
+        <div ref="fourUpContainer" className="mt3_fourup">
+          <div className="mt3_left-and-right-package-header" dangerouslySetInnerHTML={{__html: componentHead}}/>
           <div className="mt3_row mt3_fourup-row mt3_fourup-row--top">
             {this.storyCards[0]}
           </div>
