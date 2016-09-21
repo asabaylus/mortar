@@ -3,9 +3,20 @@
     <h3 class="mt3_h3">Page Headings</h3>
     <p class="mt3_subh4 mt3_row-gut-4 mt3_col-lg-8">
       Page headings may be composed of a kicker, a title, and a description. The <strong>kicker</strong> is used to indicate that something is part of a larger set of pages, such as a series (i.e., Photo of the Day). The <strong>title</strong> communicates the main purpose of the page. The <strong>description</strong> adds extra information about the page.
-    </p
+    </p>
 
     <div class="mt3_row"></div>
+
+    <div class="mt3_row mt3_row-gut-4">
+      {% for heading in [1, 2, 3] %}
+        <h1 class="mt3_heading--h1--{{heading}}">Heading one</h1>
+        <h2 class="mt3_heading--h2--{{heading}}">Heading one</h2>
+        <h3 class="mt3_heading--h3--{{heading}}">Heading one</h3>
+        <h4 class="mt3_heading--h4--{{heading}}">Heading one</h4>
+        <h5 class="mt3_heading--h5--{{heading}}">Heading one</h5>
+        <h6 class="mt3_heading--h6--{{heading}}">Heading one</h6>
+      {% endfor %}
+    </div>
 
     <div class="mt3_row">
       <div class="mt3_col-lg-3">
@@ -72,5 +83,5 @@
 
       </div>
     </div>
-  </div>
+  </>
 </div>

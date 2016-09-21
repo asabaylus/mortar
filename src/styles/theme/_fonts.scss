@@ -3,6 +3,17 @@
 // Style Extends
 
 
+.mt3_haas-heading {
+  @extend %mt3_haas-heading;
+}
+
+.mt3_verlag-heading {
+  @extend %mt3_verlag-heading;
+}
+
+.mt3_georgia-heading {
+  @extend %mt3_georgia-heading;
+}
 
 .mt3_h1 {
   @extend %mt3_h1;
