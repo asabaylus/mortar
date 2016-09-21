@@ -3,6 +3,7 @@
     height: 100%;
     position: relative;
     width: 100%;
+    z-index: 2;
 
     video,
     iframe {
@@ -15,5 +16,17 @@
     position: absolute;
     top: 0;
     width: 100%;
+    background-color: $mt3_default-modules-images-background;
+    &:after {
+      border: 6px solid $mt3_default-modules-images-box-logo;
+      box-sizing: border-box;
+      content: " ";
+      height: 58px;
+      left: 50%;
+      margin: -29px 0 0 -20px;
+      position: absolute;
+      top: 50%;
+      width: 40px;
+    }
   }
 }

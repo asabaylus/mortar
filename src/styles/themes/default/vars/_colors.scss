@@ -4,6 +4,10 @@ $mt3_color-danger: #FC4349;
 $mt3_color-sponsor: #7694CB;
 $mt3_color-gray-50: #808080;
 
+//some vars to match placeholder colors against the defaults in modules-images
+$mt3_default-modules-images-background: rgba(179,179,179,0.4);
+$mt3_default-modules-images-box-logo: #FFCC00;
+
 $mt3_colors: (
   primary: $mt3_color-primary,
   affirmation: $mt3_color-affirmation,
