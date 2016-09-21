@@ -19,6 +19,7 @@ const mobileBreakpoint = 768;
 class HeroWithTwoRails extends Component {
   constructor(props) {
     super(props);
+    this.enableParallax = false;
     this.resizeHandler = null;
     this._window = $(window);
     this.resetParallax = this.resetParallax.bind(this);
@@ -151,7 +152,7 @@ class HeroWithTwoRails extends Component {
     );
 
     // build heading scenes
-    if(this.props.parallaxHeading && this.props.heading && this.props.heading !== "") {
+    if(this.props.parallaxHeading && this.props.heading && this.props.heading !== "" && this.props.headingPosition === "below") {
       this.headingParallax(viewportHeight);
     }
 
@@ -160,13 +161,25 @@ class HeroWithTwoRails extends Component {
 
   }
   componentDidMount() {
-    this.resetParallax();
-    this.resizeHandler = _debounce(this.resetParallax, 250);
-    window.addEventListener('resize', this.resizeHandler);
+    /* NOTE: temporarily disabling parallax, unless a "enableParallax" query var is found */
+    const queryVars = window.location.search.substring(1);
+    if (queryVars.indexOf('enableParallax') !== -1) {
+      this.enableParallax = true;
+    }
+
+    if(this.enableParallax) {
+      this.resetParallax();
+      this.resizeHandler = _debounce(this.resetParallax, 250);
+      window.addEventListener('resize', this.resizeHandler);
+    }
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.resizeHandler);
+    /* NOTE: temporarily disabling parallax, unless a "enableParallax" query var is found */
+    if(this.enableParallax) {
+      window.removeEventListener('resize', this.resizeHandler);
+    }
+
   }
   render() {
     let portalContent = [];
@@ -175,7 +188,14 @@ class HeroWithTwoRails extends Component {
 
     //Heading
     if(this.props.heading && this.props.heading !== "") {
-      const headingDiv = this.props.parentEl.getElementsByClassName("hero-with-two-rails__heading__wrap")[0];
+      let headingDiv;
+
+      if(this.props.headingPosition === "below") {
+        headingDiv = this.props.parentEl.getElementsByClassName("hero-with-two-rails__heading__wrap")[0];
+      } else {
+        headingDiv = this.props.parentEl.getElementsByClassName("hero-with-two-rails__heading__wrap--above")[0];
+      }
+
       if (headingDiv) {
         portalContent.push(
           <PortalWrapper targetDiv={headingDiv} key="heading">
@@ -238,6 +258,8 @@ class HeroWithTwoRails extends Component {
     }
     if(!this.props.heading || this.props.heading === "") {
       parentClasses += ` hero-with-two-rails--no-heading`;
+    } else {
+      parentClasses += ` hero-with-two-rails--heading-${this.props.headingPosition}`;
     }
 
     this.props.parentEl.className = parentClasses;
@@ -253,12 +275,14 @@ class HeroWithTwoRails extends Component {
 HeroWithTwoRails.propTypes = {
   cards: PropTypes.array,
   heading: PropTypes.string,
+  headingPosition: PropTypes.string,
   parallaxHeading: PropTypes.bool,
   theme: PropTypes.string,
   parentEl: PropTypes.object.isRequired
 };
 
 HeroWithTwoRails.defaultProps = {
+  headingPosition: 'above',
   parallaxHeading: true,
   theme: 'light'
 };

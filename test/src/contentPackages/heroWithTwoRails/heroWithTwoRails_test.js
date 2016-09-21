@@ -159,11 +159,13 @@ describe('Hero With Two Rails Content Package', () => {
     expect(firstPromoCard.props().leadMedia[0].aspectRatio).to.equal(0.6666666666666666);
   });
 
-  it('Parallax Heading treatment is called properly', () =>{
-    expect(headingParallaxStub.called).to.be.true;
-  });
-
-  it('Parallax Rails treatment is called properly', () =>{
-    expect(railsParallaxStub.called).to.be.true;
-  });
+  /* NOTE: temporarily disabling parallax */
+  //
+  // it('Parallax Heading treatment is called properly', () =>{
+  //   expect(headingParallaxStub.called).to.be.true;
+  // });
+  //
+  // it('Parallax Rails treatment is called properly', () =>{
+  //   expect(railsParallaxStub.called).to.be.true;
+  // });
 });

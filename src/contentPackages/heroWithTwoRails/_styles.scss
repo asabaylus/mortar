@@ -109,4 +109,14 @@ $mt3_large: 1280px;
       display: none;
     }
   }
+  &--heading-above {
+    .hero-with-two-rails__heading__wrap {
+      display: none;
+    }
+  }
+  &--heading-below {
+    .hero-with-two-rails__heading__wrap--above {
+      display: none
+    }
+  }
 }

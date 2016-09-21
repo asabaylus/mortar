@@ -17,6 +17,7 @@ class HeroWithTwoRailsConfigurator extends Module {
        "type":"hero-two-rails",
        "theme":"light",
        "heading":"King Tut",
+       "headingPosition":"above",
        "parallaxHeading":true,
        "cards":[
           {
