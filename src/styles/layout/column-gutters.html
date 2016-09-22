@@ -1,6 +1,6 @@
 <div class="pagewrapper mt3_row">
     <p class="mt3_subh4 mt3_col-gut">
-      <span class="mt3_h5">Column Gutters:</span> The padding between columns is percentage base, there is a 3.45% gutter inbetween columns.
+      <span class="mt3_h5">Column Gutters:</span> Use the <code>mt3_col-gut</code> class on an object to apply a 3.45% gutter between columns. If this class is not used, then there will be no gutter between columns.
     </p>
 
     <!-- gutter example -->
@@ -23,11 +23,36 @@
       {% include "./_partials/grid.html" %}
     </div>
 
+
+    <div class="gridexample mt3_row-gut-3">
+
+      <!-- Example -->
+
+      <div class="mt3_row mt3_row-gut-1">
+        <div class="mt3_col-6">
+          <div class="exampleborder">&nbsp;</div>
+        </div>
+        <div class="mt3_col-6">
+          <div class="exampleborder">&nbsp;</div>
+        </div>
+      </div>
+
+      <!-- Grid design example -->
+
+      {% include "./_partials/grid.html" %}
+    </div>
+
     <!-- Code snippet -->
 
 <pre class="codesnippet"><code class="language-markup">&lt;div class="mt3_row mt3_row-gut-1"&gt;
   &lt;div class="mt3_col-6 mt3_col-gut"&gt;&lt;/div&gt;
   &lt;div class="mt3_col-6 mt3_col-gut"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="mt3_row mt3_row-gut-1"&gt;
+  &lt;div class="mt3_col-6"&gt;&lt;/div&gt;
+  &lt;div class="mt3_col-6"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
+
 
 <div class="mt3_bgcolor--gray5 mt3_row-gut-3 divider">&nbsp;</div>
