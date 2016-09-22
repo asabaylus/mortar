@@ -49,10 +49,10 @@ class PromoCardConfigurator extends Module {
         }
       ],
       cta: {
-        url: 'http://www.nationalgeographic.com/magazine/2016/05/yellowstone-national-parks-wildlife-restoration/',
-        title: 'This is the CTA Title',
-        target: '_blank',
-        seoTitle: 'This is an SEO title'
+        linkUrl: 'http://www.nationalgeographic.com/magazine/2016/05/yellowstone-national-parks-wildlife-restoration/',
+        linkText: 'This is the CTA Title',
+        linkTarget: '_blank',
+        linkSeoTitle: 'This is an SEO title'
       },
       text: {
         title: 'This is the title of the card',

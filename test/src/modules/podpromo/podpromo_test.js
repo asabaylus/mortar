@@ -57,7 +57,7 @@ describe('POD Promo Component', () => {
                 ]
               }],
               "text": {
-                "heading": "Photo of the Day",
+                "brandingBadge": "Photo of the Day",
                 "title": "This is the title field",
                 "dek": "<p>Forged by the wear of water rushing over rocks, Olo Canyon in Arizona is concealed inside the Grand Canyon. Its alluring landscape includes natural springs and rocks shaped like cathedral amphitheaters.</p> <p><em>See more pictures from the September 2016 story &quot;<a href='http://www.nationalgeographic.com/magazine/2016/09/grand-canyon-development-hiking-national-parks' target='_blank'>Are We Losing the Grand Canyon?</a>&quot; </em></p>",
                 "credit": "<p>Photograph by Pete McBride</p>",
@@ -72,10 +72,10 @@ describe('POD Promo Component', () => {
                 "sponsorContentLabel": "Sponsor Content"
               },
               "cta": {
-                "url": "http://www.nationalgeographic.com/photography/photo-of-the-day/",
-                "title": "See All",
-                "target": "_blank",
-                "seoTitle": "See more photos"
+                "linkUrl": "http://www.nationalgeographic.com/photography/photo-of-the-day/",
+                "linkText": "See All",
+                "linkTarget": "_blank",
+                "linkSeoTitle": "See more photos"
               }
             }
           }
@@ -148,7 +148,7 @@ describe('POD Promo Component', () => {
         ]
       }],
       text: {
-        heading: 'Photo of the Day',
+        brandingBadge: 'Photo of the Day',
         title: 'This is the title field',
         dek: '<p>This was in the DataModel, but the comopnent does not seem to have a use for it</p>',
         credit: '<p>Photograph by Pete McBride</p>',
@@ -163,21 +163,16 @@ describe('POD Promo Component', () => {
         sponsorContentLabel: 'Sponsor Content'
       },
       cta: {
-        url: 'http://www.nationalgeographic.com/photography/photo-of-the-day/',
-        title: 'See All',
-        target: '_blank',
-        seoTitle: 'See more photos'
+        linkUrl: 'http://www.nationalgeographic.com/photography/photo-of-the-day/',
+        linkText: 'See All',
+        linkTarget: '_blank',
+        linkSeoTitle: 'See more photos'
       }
     };
 
     before(() => {
       wrapper = shallow(<PodPromoComponent model={reactModel} />);
     });
-
-    it('should include a LazyLoad Component', () => {
-      expect(wrapper.html()).to.include('<div class="LazyLoad"></div>');
-    });
-
 
     it('should have the correct heading value', () => {
       expect(wrapper.find('.mt3_podpromo-heading').html()).to.equal('<div class="mt3_podpromo-heading"><div class="mt3_podpromo-heading-firstletter">P</div>hoto of the Day</div>');
@@ -232,7 +227,7 @@ describe('POD Promo Component', () => {
         ]
       }],
       text: {
-        heading: 'Photo of the Day',
+        brandingBadge: 'Photo of the Day',
         title: 'This is the title field',
         dek: '<p>This was in the DataModel, but the comopnent does not seem to have a use for it</p>',
         credit: '<p>Photograph by Pete McBride</p>',
@@ -247,10 +242,10 @@ describe('POD Promo Component', () => {
         sponsorContentLabel: 'Sponsor Content'
       },
       cta: {
-        url: 'http://www.nationalgeographic.com/photography/photo-of-the-day/',
-        title: 'See All',
-        target: '_blank',
-        seoTitle: 'See more photos'
+        linkUrl: 'http://www.nationalgeographic.com/photography/photo-of-the-day/',
+        linkText: 'See All',
+        linkTarget: '_blank',
+        linkSeoTitle: 'See more photos'
       }
     };
 

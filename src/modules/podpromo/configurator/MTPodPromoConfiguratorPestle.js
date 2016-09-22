@@ -38,7 +38,7 @@ class PodPromoConfigurator extends Module {
           ]
         }],
         text: {
-          heading: 'Photo of the Day',
+          brandingBadge: 'Photo of the Day',
           title: 'This is the title field',
           dek: '<p>This was in the DataModel, but the comopnent does not seem to have a use for it</p>',
           credit: '<p>Photograph by Pete McBride</p>',
@@ -53,10 +53,10 @@ class PodPromoConfigurator extends Module {
           sponsorContentLabel: 'Sponsor Content'
         },
         cta: {
-          url: 'http://www.nationalgeographic.com/photography/photo-of-the-day/',
-          title: 'See All',
-          target: '_blank',
-          seoTitle: 'See more photos'
+          linkUrl: 'http://www.nationalgeographic.com/photography/photo-of-the-day/',
+          linkText: 'See All',
+          linkTarget: '_blank',
+          linkSeoTitle: 'See more photos'
         }
       }
     };

@@ -36,9 +36,11 @@ class PodPromoComponent extends Component {
     Tried in vain to accomplish this with css alone, but wasn't able to accomplish the desired layout. The purpuse of this method is to wrap a div around the first letter in the heading. That div is used to style the line that matches the height of the first line in the heading (but not the entire height of the heading if it breaks to two lines).
   */
   wrapFirstLetter(heading) {
-    let tmpString = heading.split('');
-    tmpString[0] = `<div class="mt3_podpromo-heading-firstletter">${tmpString[0]}</div>`
-    return tmpString.join('');
+    if (heading) {
+      let tmpString = heading.split('');
+      tmpString[0] = `<div class="mt3_podpromo-heading-firstletter">${tmpString[0]}</div>`
+      return tmpString.join('');
+    }
   }
 
   render() {
@@ -48,7 +50,7 @@ class PodPromoComponent extends Component {
         link: componentLink,
         leadMedia: componentImage,
         text: {
-          heading: componentHeading,
+          brandingBadge: componentHeading,
           title: componentTitle,
           credit: photoCredit,
           affiliation: photoAffiliation,
@@ -59,6 +61,13 @@ class PodPromoComponent extends Component {
         cta: componentCTA,
       },
     } = this.props;
+
+    const mortarCTAModel = {
+      url: componentCTA.linkUrl,
+      title: componentCTA.linkText,
+      target: componentCTA.linkTarget,
+      seoTitle: componentCTA.linkSeoTitle
+    }
 
     const componentIcon = {
       name: '#plus',
@@ -87,8 +96,7 @@ class PodPromoComponent extends Component {
 
 
     return (
-      <LazyLoad offsetVertical={200}>
-        <ElementQuery sizes={elementQueries}>
+      <ElementQuery sizes={elementQueries}>
         <div className="mt3_podpromo">
           {
             (componentLink && componentLink.url) ? <a href={componentLink.url+componentLink.trackingCodes} target={componentLink.target} className="mt3_podpromo-container-link" /> : null
@@ -99,22 +107,22 @@ class PodPromoComponent extends Component {
           <div className="mt3_podpromo-content-container mt3_podpromo-content-container-top mt3_podpromo-content-container-right mt3_podpromo-ctacontainer">
             <CTA
               icon={componentIcon}
-              label={componentCTA.title}
-              link={componentCTA}
+              label={mortarCTAModel.title}
+              link={mortarCTAModel}
               style="naked"
               type="link"
             />
           </div>
           <div className="mt3_podpromo-imagewrapper">
             <ParallaxContainer frameRatio={"16:9"}>
-                  <Image
-                    aspectRatio={componentImage[0].aspectRatio}
-                    frameAspectRatio={"3:2"}
-                    lazyLoad={false}
-                    altText={componentImage.altText}
-                    src={componentImage[0].url}
-                    srcset={componentImage[0].srcset}
-                  />
+                <Image
+                  aspectRatio={componentImage[0].aspectRatio}
+                  frameAspectRatio={"3:2"}
+                  lazyLoad={true}
+                  altText={componentImage.altText}
+                  src={componentImage[0].url}
+                  srcset={componentImage[0].srcset}
+                />
             </ParallaxContainer>
           </div>
           <div className="mt3_podpromo-content-container mt3_podpromo-content-container-bottom mt3_podpromo-content-container-left mt3_podpromo-autoindex mt3_podpromo-fade">
@@ -134,8 +142,7 @@ class PodPromoComponent extends Component {
             </div>
           </div>
         </div>
-        </ElementQuery>
-      </LazyLoad>
+      </ElementQuery>
     );
   }
 }
@@ -163,7 +170,7 @@ PodPromoComponent.propTypes = {
       srcset: React.PropTypes.array,
     })),
     text: React.PropTypes.shape({
-      heading: React.PropTypes.string,
+      brandingBadge: React.PropTypes.string,
       title: React.PropTypes.string,
       dek: React.PropTypes.string,
       credit: React.PropTypes.string,
@@ -178,10 +185,10 @@ PodPromoComponent.propTypes = {
       sponsoredContentLabel: React.PropTypes.string,
     }),
     cta: React.PropTypes.shape({
-      url: React.PropTypes.string,
-      title: React.PropTypes.string,
-      target: React.PropTypes.string,
-      seoTitle: React.PropTypes.string,
+      linkUrl: React.PropTypes.string,
+      linkText: React.PropTypes.string,
+      linkTarget: React.PropTypes.string,
+      linkSeoTitle: React.PropTypes.string,
 
     }),
   }).isRequired,

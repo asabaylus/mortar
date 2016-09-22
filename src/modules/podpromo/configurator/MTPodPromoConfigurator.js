@@ -102,7 +102,7 @@ class PodPromoConfigurator extends Component {
     return (
         <Configurator component={promoComponent}>
           <Section text="Text">
-            <TextField label="Heading" onChange={this.onTextChange('model.text.heading')} value={props.model.text.heading} />
+            <TextField label="Heading" onChange={this.onTextChange('model.text.brandingBadge')} value={props.model.text.brandingBadge} />
             <TextField label="Title" onChange={this.onTextChange('model.text.title')} value={props.model.text.title} />
           </Section>
           <Section text="Kicker">
@@ -128,15 +128,15 @@ class PodPromoConfigurator extends Component {
             <TextField label="SrcSet" onChange={this.onLeadMediaArrayChange('srcset')} value={props.model.leadMedia[0].srcset} />
           </Section>
           <Section text="CTA">
-            <TextField label="Url" onChange={this.onTextChange('model.cta.url')} value={props.model.cta.url} />
-            <TextField label="Title" onChange={this.onTextChange('model.cta.title')} value={props.model.cta.title} />
-            <SelectField label="Target" onChange={this.onTextChange('model.cta.target')} value={props.model.cta.target}>
+            <TextField label="Url" onChange={this.onTextChange('model.cta.linkUrl')} value={props.model.cta.linkUrl} />
+            <TextField label="Title" onChange={this.onTextChange('model.cta.linkText')} value={props.model.cta.linkText} />
+            <SelectField label="Target" onChange={this.onTextChange('model.cta.linkTarget')} value={props.model.cta.linkTarget}>
               <option value="_blank">_blank</option>
               <option value="_self">_self</option>
               <option value="_parent">_parent</option>
               <option value="_top">_top</option>
             </SelectField>
-            <TextField label="Seo Title" onChange={this.onTextChange('model.cta.seoTitle')} value={props.model.cta.seoTitle} />
+            <TextField label="Seo Title" onChange={this.onTextChange('model.cta.linkSeoTitle')} value={props.model.cta.linkSeoTitle} />
           </Section>
           <ForceButton />
         </Configurator>
