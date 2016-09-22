@@ -20,7 +20,7 @@ const PromoText = (props) => {
   const subheadColor = props.config.overlay ? 'mt3_color--white' : 'mt3_color--gray40';
   const inverse = props.config.overlay || props.theme === 'dark' ? 'mt3_color--white' : 'mt3_color--black';
   const inverseDek = props.theme === 'dark' ? 'mt3_color--white mt3_promocard-dek--inverse' : 'mt3_color--black';
-  const sponsored = props.config.overlay || props.theme === 'dark' ? 'mt3_color--white mt3_promocard-sponsored mt3_promocard-sponsored--inverse'
+  const sponsored = props.config.overlay || props.theme === 'dark' ? 'mt3_color--sponsor mt3_promocard-sponsored mt3_promocard-sponsored--inverse'
     : 'mt3_color--sponsor mt3_promocard-sponsored';
 
   let titleClass = 'mt3_promocard-title--';
