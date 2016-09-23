@@ -221,6 +221,10 @@ class HeroWithTwoRails extends Component {
       for (const card of this.props.cards) {
         //make sure target div exists
         const cardDiv = document.getElementById(card.itemId);
+        const cardLocation = card.itemPos || null;
+
+        //pass class if it's the first promo
+        const additionalClasses = !i ? "mt3_promocard--first" : "";
 
         if(cardDiv) {
           //if it's targeted to the hero
@@ -232,16 +236,20 @@ class HeroWithTwoRails extends Component {
             <PortalWrapper targetDiv={cardDiv} key={i++}>
               <MTPromoCard
                 {...card}
-                theme={this.props.theme}
-                parentWidth={parentWidth}/>
+                additionalClasses={additionalClasses}
+                cardLocation={cardLocation}
+                parentWidth={parentWidth}
+                theme={this.props.theme}/>
             </PortalWrapper>
           );
         } else {
           portalContent.push(
             <MTPromoCard
               {...card}
-              theme={this.props.theme}
+              additionalClasses={additionalClasses}
+              cardLocation={cardLocation}
               parentWidth={parentWidth}
+              theme={this.props.theme}
               key={i++}/>
           );
         }

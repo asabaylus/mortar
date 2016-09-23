@@ -80,13 +80,13 @@ class Story extends Component {
   }
 
   render(){
-    const {type, config, link, leadMedia, brandingBadgeLabel, text, theme, ...props} = this.props;
+    const {additionalClasses, type, config, cardLocation, link, leadMedia, brandingBadgeLabel, text, theme, ...props} = this.props;
     const attrs = link || type === 'video' ? {
       className: 'mt3_div-link',
       href: link ? generateHref(link.url, link.trackingCodes) : null,
       target: link ? link.target : null
     } : null;
-    const bkgColor = theme === 'dark' ? ' mt3_promocard-container--dark' : '';
+    const bkgColor = theme === 'dark' ? 'mt3_promocard-container--dark' : '';
     let i = 0;
     let content = [<a key={i++} {...attrs} />];
     const aspectRatio = config.cardAspectRatio === '16:9' ? 'mt3_intratio--broadcast'
@@ -131,7 +131,7 @@ class Story extends Component {
           );
         }else{
           content.push(
-            <PromoImage key={i++} type={type} config={config} link={link} leadMedia={leadMedia[0]} brandingBadgeLabel={brandingBadgeLabel} text={text}  breakpoint={this.state.breakpoint}/>
+            <PromoImage key={i++} type={type} config={config} cardLocation={cardLocation} link={link} leadMedia={leadMedia[0]} brandingBadgeLabel={brandingBadgeLabel} text={text}  breakpoint={this.state.breakpoint}/>
           );
         }
       } else if (leadMedia && this.state.breakpoint < 768) {
@@ -169,7 +169,7 @@ class Story extends Component {
           );
         } else {
           content.push(
-            <PromoImage key={i++} type={type} config={config} link={link} leadMedia={leadMedia[0]}
+            <PromoImage key={i++} type={type} config={config} cardLocation={cardLocation} link={link} leadMedia={leadMedia[0]}
                         brandingBadgeLabel={brandingBadgeLabel} text={text}  breakpoint={this.state.breakpoint}/>,
             <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type}  breakpoint={this.state.breakpoint}/>
           );
@@ -182,7 +182,7 @@ class Story extends Component {
     }
 
     return(
-      <div className={'mt3_row mt3_col-12 mt3_promocard-container' + bkgColor} ref='promocardContainer'>
+      <div className={`mt3_row mt3_col-12 mt3_promocard-container ${bkgColor} ${additionalClasses}`} ref='promocardContainer'>
         {content}
       </div>
     );
@@ -192,6 +192,7 @@ class Story extends Component {
 
 Story.PropTypes = {
   id: PropTypes.string,
+  additionalClasses: PropTypes.string,
   theme: PropTypes.string,
   type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
   config: PropTypes.object,

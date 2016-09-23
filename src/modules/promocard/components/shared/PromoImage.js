@@ -50,11 +50,27 @@ const PromoImage = (props) => {
     target: props.link ? props.link.target : null
   } : null;
 
-  const frameAspectRatio = props.type === 'gallery' ? props.childFrameAspectRatio : props.config.cardAspectRatio;
   const overlayClass = props.breakpoint > (768 - 60) ? 'mt3_promocard-gradient-overlay' : ''
 
+  let frameAspectRatio = props.type === 'gallery' ? props.childFrameAspectRatio : props.config.cardAspectRatio;
+
+  if(props.type === 'gallery') {
+    frameAspectRatio = props.childFrameAspectRatio;
+  } else {
+    //"hero" promos get an enforced frameAspectRatio depending on the current breakpoint
+    if(props.cardLocation === 'hero') {
+      if (props.breakpoint > 768) {
+        frameAspectRatio = '2:1';
+      } else {
+        frameAspectRatio = '1:1';
+      }
+    } else {
+      frameAspectRatio = props.config.cardAspectRatio;
+    }
+  }
+
   if(props.config.cardAspectRatio && props.leadMedia.croppings) {
-    const croppingSrcset = searchAndGetCroppingSrcset(props.leadMedia.croppings, props.config.cardAspectRatio);
+    const croppingSrcset = searchAndGetCroppingSrcset(props.leadMedia.croppings, frameAspectRatio);
     srcset = croppingSrcset ? croppingSrcset : props.leadMedia.srcset;
   }
   else {
