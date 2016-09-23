@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import _defer from 'lodash/defer';
 import EmbeddedVideo from '../video/video';
 
-import VideoThumbnail from './VideoThumbnail';
+import VideoThumbnail, { KICKER_TYPES } from './VideoThumbnail';
 import VideoCaption from './VideoCaption';
 
 //This is the initial index of the video playback.
@@ -225,14 +225,14 @@ class VideoPlaylist extends Component {
   render() {
     const {videos} = this.props.dataModel;
     const currentVideo = videos[this.state.currentVideoIndex];
-
     const thumbnails = videos.map((item, index) => {
+      const kickerType = KICKER_TYPES[index - this.state.currentVideoIndex];
       const thumbClass = classNames({
         'mt3_video-playlist-container--thumbnail': true,
         'mt3_video-playlist-container--active-thumbnail': this.state.currentVideoIndex === index,
         'mt3_hide-play': !this.props.autoContinue
       });
-      return <VideoThumbnail key={index} wrapperClass={thumbClass} item={item} onClick={this.handleClick.bind(this, index)}/>
+      return <VideoThumbnail key={index} wrapperClass={thumbClass} kickerType={kickerType} item={item} onClick={this.handleClick.bind(this, index)}/>
     });
     return(
       <div ref="mainVideoContainer" className="mt3_video-playlist mt3_col-12 mt3_col-lg-12 mt3_bgcolor--black">
@@ -273,6 +273,9 @@ VideoPlaylist.propTypes = {
         title: React.PropTypes.string,
         path: React.PropTypes.string,
         abstract: React.PropTypes.string,
+        kicker: React.PropTypes.shape({
+          label: React.PropTypes.string.isRequired
+        }),
         publishDate: React.PropTypes.string,
         thumbnail: React.PropTypes.string,
         damThumbnail: React.PropTypes.string,

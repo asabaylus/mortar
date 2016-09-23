@@ -201,6 +201,7 @@
           display: none;
         }
       }
+
       &::after {
         background: linear-gradient(to bottom, transparent 0%, $mt3_color-black 100%);
         bottom: 0;
@@ -251,6 +252,17 @@
       }
     }
 
+    .mt3_kicker-wrapper {
+      margin-bottom: .5rem;
+
+      .thumbnail-kicker--now {
+        border-color: $mt3_color-black;
+      }
+      .thumbnail-kicker--next {
+        border-color: $mt3_color-primary;
+      }
+    }
+
     .modules-images {
       &:before {
         background-color: $mt3_color-black;
@@ -288,9 +300,15 @@
           left: 15px;
         }
       }
-
     }
 
+    @media #{$mt3_mq-md} {
+      // when you scroll to the bottom
+      // the black gradient no longer covers the thumbnail
+      &:last-of-type {
+        margin-bottom: 70px;
+      }
+    }
   }
 
   &-container--active-thumbnail {

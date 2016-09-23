@@ -50,9 +50,13 @@ class VideoCaption extends Component {
   }
 
   render() {
-    const {title, abstract} = this.props;
+    const { duration, kickerLabel, title, abstract} = this.props;
     return (
       <div className="mt3_video-playlist--current-information mt3_bgcolor--gray80">
+        <div className="mt3_kicker-wrapper">
+          {(kickerLabel) ? <span className="mt3_kicker mt3_color--white">{kickerLabel}</span> : null}
+          {(duration) ? <span className="mt3_kicker mt3_color--white">{duration}</span> : null}
+        </div>
         <h3 ref="title" className="mt3_video-playlist--current-information__title mt3_color--white">
           <span itemProp='headline' dangerouslySetInnerHTML={{__html: title}} />
         </h3>
