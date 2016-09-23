@@ -180,20 +180,20 @@
 
     // small and big desk
     @media #{$mt3_mq-md} {
-      position: relative;
+      backface-visibility: hidden;
       height: 100%;
+      position: relative;
       width: 100%;
       // some performance improvements for scrolling
-      backface-visibility: hidden;
       will-change: overflow;
 
       &__scroll {
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
         height: 100%;
         overflow-y: scroll;
         position: absolute;
         width: 100%;
-        -ms-overflow-style: none;
-        -webkit-overflow-scrolling: touch;
         &::-webkit-scrollbar {
           display: none;
         }
@@ -202,11 +202,11 @@
         background: linear-gradient(to bottom, transparent 0%, $mt3_color-black 100%);
         bottom: 0;
         content: '';
-        left: 0;
         height: 70px;
+        left: 0;
         opacity: 1;
-        position: relative;
         pointer-events: none;
+        position: relative;
         position: absolute;
         transition-duration: 0.5s;
         transition-property: opacity;
