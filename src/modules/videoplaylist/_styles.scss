@@ -1,4 +1,9 @@
 .mt3_video-playlist {
+  display: flex;
+  flex-direction: column;
+  @media #{$mt3_mq-md} {
+    flex-direction: row;
+  }
 
   &__flex {
     display: flex;
@@ -156,7 +161,6 @@
   &-container--thumbnails {
     background-color: $mt3_color-black;
     overflow: hidden;
-    position: relative;
     transition-duration: 1s;
     transition-property: max-height;
     transition-timing-function: ease-in-out;
@@ -172,6 +176,44 @@
 
     @include respond-to(xl) {
       padding-right: 70px;
+    }
+
+    // small and big desk
+    @media #{$mt3_mq-md} {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      // some performance improvements for scrolling
+      backface-visibility: hidden;
+      will-change: overflow;
+
+      &__scroll {
+        height: 100%;
+        overflow-y: scroll;
+        position: absolute;
+        width: 100%;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+      &::after {
+        background: linear-gradient(to bottom, transparent 0%, $mt3_color-black 100%);
+        bottom: 0;
+        content: '';
+        left: 0;
+        height: 70px;
+        opacity: 1;
+        position: relative;
+        pointer-events: none;
+        position: absolute;
+        transition-duration: 0.5s;
+        transition-property: opacity;
+        transition-timing-function: ease-in-out;
+        width: 100%;
+        z-index: $mt3_z-middle + 1;
+      }
     }
   }
 

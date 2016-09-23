@@ -60,6 +60,66 @@
       "damThumbnail": "/content/dam/natgeo/video/mpx/news/a/a1/a18/a-1800-number-that-helps-animals-and-humans-coexist.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png",
       "directLink": "http://link.theplatform.com/s/ngs/media/guid/2423130747/00000155-c743-d45b-af77-f7efeeee0000?format=redirect&policy=12441385&manifest=m3u&mbr=true",
       "valid": true
+    },
+    {
+      "pageType": "video/mp4",
+      "guid": "00000156-46b5-dca8-ab77-7ffdfcf90000",
+      "title": "Thursday, August 4: Saving Lions",
+      "path": "/content/dam/natgeo/video/mpx/845/s/sa/sav/saving-lions-how-im-protecting-wildlife-in-my-homeland.mp4",
+      "abstract": "<p>Thandiwe Mweetwa, a National Geographic emerging explorer, takes the stage to talk about her work protecting lions and other wildlife in her home country of Zambia.</p>\n",
+      "publishDate": "Mon Aug 01 11:25:56 EDT 2016",
+      "thumbnail": "http://pmdvod.nationalgeographic.com/NG_Video/440/971/160801-sciex-nglive-mweetwa-lion-conservation-lecture_branded_M16001-31_640x360_736058435549.jpg",
+      "damThumbnail": "/content/dam/natgeo/video/mpx/845/s/sa/sav/saving-lions-how-im-protecting-wildlife-in-my-homeland.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png",
+      "directLink": "http://link.theplatform.com/s/ngs/media/guid/2423130747/00000156-46b5-dca8-ab77-7ffdfcf90000?format=redirect&policy=12441385&manifest=m3u&mbr=true",
+      "valid": true
+    },
+    {
+      "pageType": "video/mp4",
+      "guid": "00000156-47be-dca8-ab77-7ffe94e00000",
+      "title": "Wednesday, August 3: New Studies Reveal Secrets From a Dead City",
+      "path": "/content/dam/natgeo/video/mpx/news/p/po/pom/pompeii-new-studies-reveal-secrets-from-a-dead-city.mp4",
+      "abstract": "<p>The remains of Pompeii’s inhabitants provide details about life in the Roman Empire.</p>\n",
+      "publishDate": "Mon Aug 01 16:14:54 EDT 2016",
+      "thumbnail": "http://pmdvod.nationalgeographic.com/NG_Video/587/943/160728-news-pompeii-italy_txls_split_ds1602001-69~_640x360_737363523925.jpg",
+      "damThumbnail": "/content/dam/natgeo/video/mpx/news/p/po/pom/pompeii-new-studies-reveal-secrets-from-a-dead-city.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png",
+      "directLink": "http://link.theplatform.com/s/ngs/media/guid/2423130747/00000156-47be-dca8-ab77-7ffe94e00000?format=redirect&policy=12441385&manifest=m3u&mbr=true",
+      "valid": true
+    },
+    {
+      "pageType": "video/mp4",
+      "guid": "00000154-e3c8-d691-ad7e-f7c873670002",
+      "title": "Tuesday, August 2: Young Orphaned Gorillas",
+      "path": "/content/dam/natgeo/video/mpx/magazine/y/yo/you/young-orphaned-gorillas-see-their-adorable-bond-with-park-rangers.mp4",
+      "abstract": "<p>See the adorable bond between primates and their caretakers in Virunga National Park.</p>\n",
+      "publishDate": "Tue May 24 13:20:54 EDT 2016",
+      "thumbnail": "http://pmdvod.nationalgeographic.com/NG_Video/385/407/Virunga_640x360_704723523847.jpg",
+      "damThumbnail": "/content/dam/natgeo/video/mpx/magazine/y/yo/you/young-orphaned-gorillas-see-their-adorable-bond-with-park-rangers.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png",
+      "directLink": "http://link.theplatform.com/s/ngs/media/guid/2423130747/00000154-e3c8-d691-ad7e-f7c873670002?format=redirect&policy=12441385&manifest=m3u&mbr=true",
+      "valid": true
+    },
+    {
+      "pageType": "video/mp4",
+      "guid": "00000155-c798-dc79-aff5-e7fb69890000",
+      "title": "Monday, August 1: You Didn't Know Mushrooms Could Do This",
+      "path": "/content/dam/natgeo/video/mpx/news/y/yo/you/you-didnt-know-mushrooms-could-do-all-this.mp4",
+      "abstract": "<p>They can be used to construct buildings and cure diseases.</p>\n",
+      "publishDate": "Thu Jul 07 19:01:53 EDT 2016",
+      "thumbnail": "http://pmdvod.nationalgeographic.com/NG_Video/265/735/160708-news-mushroom-mountain-uses-vin_ds1502001-118_thumb1_640x360_722996291581.jpg",
+      "damThumbnail": "/content/dam/natgeo/video/mpx/news/y/yo/you/you-didnt-know-mushrooms-could-do-all-this.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png",
+      "directLink": "http://link.theplatform.com/s/ngs/media/guid/2423130747/00000155-c798-dc79-aff5-e7fb69890000?format=redirect&policy=12441385&manifest=m3u&mbr=true",
+      "valid": true
+    },
+    {
+      "pageType": "video/mp4",
+      "guid": "00000155-c743-d45b-af77-f7efeeee0000",
+      "title": "Sunday, July 31: Helping Human and Animals Coexist",
+      "path": "/content/dam/natgeo/video/mpx/news/a/a1/a18/a-1800-number-that-helps-animals-and-humans-coexist.mp4",
+      "abstract": "<p>This 1-800 number is helping animals and humans live peacefully.</p>\n",
+      "publishDate": "Thu Jul 07 17:29:34 EDT 2016",
+      "thumbnail": "http://pmdvod.nationalgeographic.com/NG_Video/190/535/160711-krithi-wild-seve-vin_640x360_721480771592.jpg",
+      "damThumbnail": "/content/dam/natgeo/video/mpx/news/a/a1/a18/a-1800-number-that-helps-animals-and-humans-coexist.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png",
+      "directLink": "http://link.theplatform.com/s/ngs/media/guid/2423130747/00000155-c743-d45b-af77-f7efeeee0000?format=redirect&policy=12441385&manifest=m3u&mbr=true",
+      "valid": true
     }
   ]
 }
