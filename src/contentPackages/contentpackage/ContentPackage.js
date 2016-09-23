@@ -23,6 +23,10 @@ class LeftAndRightContentPackage extends Component {
         name: 'mt3_left-and-right-package--desktop',
         width: 1024
       },
+      {
+        name: 'mt3_left-and-right-package--largedesktop',
+        width: 1280
+      },
     ];
 
     return (
@@ -31,20 +35,24 @@ class LeftAndRightContentPackage extends Component {
           <div className="mt3_left-and-right-package__app">
             <div className="left-rail mt3_col-12 mt3_col-md-5">
               <div id="lr_mostRead" className="promo-card">
-                <FiveUpComponent
-                  theme={this.props.theme}
-                  initialWidth={this.props.fiveUpWidth}
-                  model={this.props.fiveUpModel}
-                />
+                { this.props.fiveUpModel ?
+                  <FiveUpComponent
+                    theme={this.props.theme}
+                    initialWidth={this.props.fiveUpWidth}
+                    model={this.props.fiveUpModel}
+                  />
+                : null }
               </div>
             </div>
             <div className="right-rail mt3_col-12 mt3_col-md-7">
               <div id="rr_theLatest" className="show-card">
-                <FourUpComponent
-                  theme={this.props.theme}
-                  initialWidth={this.props.fourUpWidth}
-                  model={this.props.fourUpModel}
-                />
+                { this.props.fourUpModel ?
+                  <FourUpComponent
+                    theme={this.props.theme}
+                    initialWidth={this.props.fourUpWidth}
+                    model={this.props.fourUpModel}
+                  />
+                : null }
               </div>
             </div>
           </div>

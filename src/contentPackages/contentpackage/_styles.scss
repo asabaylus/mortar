@@ -5,6 +5,20 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
 
 .mt3_left-and-right-package {
   background: $mt3_color-gray-86;
+  &__app {
+    margin: 0 auto;
+    max-width: 1600px;
+    padding: 0;
+
+    .mt3_left-and-right-package--tablet & {
+      padding: 50px;
+    }
+
+    .mt3_left-and-right-package--desktop & {
+      padding: 60px;
+    }
+
+  }
 
   &-header {
     background: $mt3_color-gray-86;
@@ -31,6 +45,10 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
       font-size: 50px;
       margin-top: 0;
     }
+
+    p {
+      margin: 0;
+    }
   }
 
   .mt3_videopromo-button {
@@ -54,10 +72,18 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
   counter-reset: row-count;
   margin-right: 0;
 
-  .mt3_left-and-right-package--tablet &,
+  .mt3_left-and-right-package--tablet & {
+    margin-right: 20px;
+  }
+
   .mt3_left-and-right-package--desktop & {
     margin-right: 30px;
   }
+
+  .mt3_left-and-right-package--largedesktop & {
+    margin-right: 40px;
+  }
+
 
   &-card {
     margin-bottom: 30px;
@@ -65,6 +91,14 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     margin-right: 0;
     padding-left: 30px;
     position: relative;
+
+    .mt3_left-and-right-package--desktop & {
+      padding-left: 40px;
+    }
+
+    .mt3_left-and-right-package--largedesktop & {
+      padding-left: 50px;
+    }
 
     &-row {
       width: calc(70% + 20px);
