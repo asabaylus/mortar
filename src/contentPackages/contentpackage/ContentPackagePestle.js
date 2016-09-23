@@ -32,13 +32,15 @@ class ContentPackage extends Module {
 
   render(model) {
     const packageContainer = this.el;
+    const packageTarget = document.getElementById(`target_${packageContainer.id}`);
+
     const fiveUpIndex = _findIndex(model.components, ['type', 'mostRead']);
     const fourUpIndex = _findIndex(model.components, ['type', 'theLatest']);
     const fourUpContainer = document.getElementById(model.components[fourUpIndex].itemId);
     const fiveUpContainer = document.getElementById(model.components[fiveUpIndex].itemId);
 
     ReactDOM.render(
-      <LeftAndRightContentPackageComponent theme={this.options.theme} initialWidth={packageContainer.getBoundingClientRect().width} fourUpModel={model.components[fourUpIndex]} fourUpWidth={fourUpContainer.getBoundingClientRect().width} fiveUpModel={model.components[fiveUpIndex]} fiveUpWidth={fiveUpContainer.getBoundingClientRect().width} />, packageContainer);
+      <LeftAndRightContentPackageComponent theme={this.options.theme} initialWidth={packageContainer.getBoundingClientRect().width} fourUpModel={model.components[fourUpIndex]} fourUpWidth={fourUpContainer.getBoundingClientRect().width} fiveUpModel={model.components[fiveUpIndex]} fiveUpWidth={fiveUpContainer.getBoundingClientRect().width} />, packageTarget);
   }
 }
 

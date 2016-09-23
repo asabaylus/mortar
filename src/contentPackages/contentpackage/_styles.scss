@@ -1,3 +1,7 @@
+$mt3_small: 768px;
+$mt3_medium: 1024px;
+$mt3_large: 1280px;
+
 $mt3_left_and_right_package_padding: 30px;
 $mt3_fourup_small_offset: 15px;
 $mt3_fourup_small_image_width: 33%;
@@ -5,19 +9,19 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
 
 .mt3_left-and-right-package {
   background: $mt3_color-gray-86;
+
   &__app {
     margin: 0 auto;
     max-width: 1600px;
     padding: 0;
 
-    .mt3_left-and-right-package--tablet & {
+    @media (min-width: $mt3_small) {
       padding: 50px;
     }
 
-    .mt3_left-and-right-package--desktop & {
+    @media (min-width: $mt3_medium) {
       padding: 60px;
     }
-
   }
 
   &-header {
@@ -35,13 +39,13 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     text-transform: uppercase;
     word-spacing: .05em;
 
-    .mt3_left-and-right-package--tablet & {
+    @media (min-width: $mt3_small) {
       font-size: 36px;
       margin-top: 0;
       padding-left: 40px;
     }
 
-    .mt3_left-and-right-package--desktop & {
+    @media (min-width: $mt3_medium) {
       font-size: 50px;
       margin-top: 0;
     }
@@ -72,18 +76,17 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
   counter-reset: row-count;
   margin-right: 0;
 
-  .mt3_left-and-right-package--tablet & {
+  @media (min-width: $mt3_small) {
     margin-right: 20px;
   }
 
-  .mt3_left-and-right-package--desktop & {
+  @media (min-width: $mt3_medium) {
     margin-right: 30px;
   }
 
-  .mt3_left-and-right-package--largedesktop & {
+  @media (min-width: $mt3_large) {
     margin-right: 40px;
   }
-
 
   &-card {
     margin-bottom: 30px;
@@ -92,20 +95,20 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     padding-left: 30px;
     position: relative;
 
-    .mt3_left-and-right-package--desktop & {
+    @media (min-width: $mt3_medium) {
       padding-left: 40px;
     }
 
-    .mt3_left-and-right-package--largedesktop & {
+    @media (min-width: $mt3_large) {
       padding-left: 50px;
     }
 
     &-row {
       width: calc(70% + 20px);
-    } 
+    }
 
     &::after {
-      border-bottom: 1px solid #555;
+      border-bottom: 1px solid $mt3_color-gray-66;
       bottom: 0;
       content: '';
       position: absolute;
@@ -122,7 +125,7 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     top: -46px;
     z-index: 3;
 
-    &:after {
+    &::after {
       bottom: 0;
       color: $mt3_color-gray-86;
       content: counter(row-count);
@@ -134,10 +137,10 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
       line-height: .7;
       position: absolute;
       right: 7%;
-      z-index: 3;      
+      z-index: 3;
     }
 
-    &:hover:after {
+    &:hover::after {
       color: $mt3_color-white;
     }
 
@@ -162,11 +165,6 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
   &-row {
     position: relative;
 
-
-    &::before {
-
-    } 
-
     &--top {
       .mt3_fiveup-card-title {
         font-size: 26px;
@@ -176,7 +174,7 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
         padding-bottom: 30px;
       }
 
-      .mt3_fiveup-divlink:after {
+      .mt3_fiveup-divlink::after {
         bottom: 0;
         color: $mt3_color-primary;
       }
@@ -206,24 +204,21 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     .mt3_promocard-pad {
       padding-right: $mt3_left_and_right_package_padding;
 
-      .mt3_left-and-right-package--tablet &,
-      .mt3_left-and-right-package--desktop & {
+      @media (min-width: $mt3_small) {
         padding-right: 0;
       }
     }
 
     .mt3_fourup-col--extrasmall {
       .mt3_promocard-pad {
-        .mt3_left-and-right-package--tablet &,
-        .mt3_left-and-right-package--desktop & {
+        @media (min-width: $mt3_small) {
           padding-right: $mt3_left_and_right_package_padding;
         }
       }
     }
 
-    .mt3_left-and-right-package--tablet &,
-    .mt3_left-and-right-package--desktop & {
-      padding-left: 0;
+    @media (min-width: $mt3_small) {
+      padding-left: 0;;
     }
 
     &--extrasmall {
