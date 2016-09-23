@@ -1,0 +1,72 @@
+<div class="pagewrapper mt3_row mt3_col-gut">
+  <div class="mt3_col-lg-3 mt3_col-sm-12 mt3_row mt3_col-gut mt3_subh4">
+    <h3 class="mt3_h3">Video Modal</h3>
+    <p class="mt3_subh4">
+    Video Modal is the component which loads the video in the same page using
+    a popup window
+    </p>
+  </div>
+
+  <div class="mt3_col-lg-8 mt3_col-sm-12 mt3_col-lg-offset-1 mt3_row-gut-4">
+    <p class="mt3_subh4">This component wraps the other component in a window
+    which contain the video associated data</p>
+
+    <div class="codesnippet-wrapper">
+      <pre class="codesnippet"><code class="language-markup">&#x3C;div
+data-pestle-module=&#x22;VideoModal&#x22;&#x3E;
+  &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
+    {
+      &#x22;dataModel&#x22;: [
+        {
+          &#x22;leadMedia&#x22;: [{
+            &#x22;guid&#x22;: &#x22;00000156-46b5-dca8-ab77-7ffdfcf90000&#x22;,
+            &#x22;directLink&#x22;: &#x22;http://link.theplatform.com/s/ngs/media/guid/2423130747/00000156-46b5-dca8-ab77-7ffdfcf90000?format=redirect&policy=12441385&manifest=m3u&mbr=true&#x22;
+          }],
+          &#x22;text&#x22;: {
+            &#x22;title&#x22;: &#x22;Thursday, August 4: Saving Lions&#x22;,
+            &#x22;dek&#x22;: &#x22;&#x3c;p&#x3e;Thandiwe Mweetwa, a National
+            Geographic emerging explorer, takes the stage to talk about her work
+            protecting lions and other wildlife in her home country of
+            Zambia.&#x3c;/p&#x3e;,
+            &#x22;kicker&#x22;: {
+              &#x22;label&#x22;: &#x22;National Geographic Live&#x22;
+            },
+            &#x22;duration&#x22;: &#x22;9:08&#x22;,
+            &#x22;publishDate&#x22;: &#x22;Mon Aug 01 11:25:56 EDT 2016&#x22;
+          }
+        }
+      ]
+    }
+  &#x3C;/script&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+    </div>
+
+    <p class="mt3_subh4">The button launches the video modal with the specified
+    data in the Pestle script. </p>
+
+    <h2 class="mt3_h5">Video Modal</h2>
+    <div data-pestle-module="VideoModal">
+      <script type="text/json" data-pestle-options>
+      {
+        "id": "df3lk433",
+        "dataModel":
+        {
+          "leadMedia": [{
+            "guid": "00000156-46b5-dca8-ab77-7ffdfcf90000",
+            "directLink": "http://link.theplatform.com/s/ngs/media/guid/2423130747/00000156-46b5-dca8-ab77-7ffdfcf90000?format=redirect&policy=12441385&manifest=m3u&mbr=true"
+          }],
+          "text": {
+            "title": "Thursday, August 4: Saving Lions",
+            "dek": "<p>Thandiwe Mweetwa, a National Geographic emerging explorer, takes the stage to talk about her work protecting lions and other wildlife in her home country of Zambia.</p>",
+            "kicker": {
+              "label": "National Geographic Live"
+            }
+          },
+          "duration": "9:08"
+        }
+      }
+      </script>
+    </div>
+
+  </div>
+</div>

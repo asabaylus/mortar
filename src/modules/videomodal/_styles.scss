@@ -1,0 +1,31 @@
+$mt3_videomodal-max-width: 800px;
+
+.mt3_video-modal {
+
+  &-container {
+    margin: 0 auto;
+    max-width: $mt3_videomodal-max-width;
+    padding-top: 60px;
+
+    .mt3_border--gray40 {
+      border-left: 1px solid $mt3_color-gray-40;
+    }
+  }
+
+  &__head {
+    margin: 10px 0 40px;
+  }
+
+  &__title {
+    font-size: $mt3_h-med9 + (2 / 16);
+  }
+
+  &__description {
+    margin: 30px 0 40px;
+
+    * {
+      margin: 0;
+    }
+  }
+
+}

@@ -13,14 +13,20 @@ class Modal extends Component {
   }
 
   componentWillMount() {
-    const targetIdNode = document.getElementById(this.props.targetId);
-    const modalContent = targetIdNode.innerHTML;
+    //This is a temporal fix when the in the modal don't render content in the
+    //DOM.
+    try {
+      const targetIdNode = document.getElementById(this.props.targetId);
+      const modalContent = targetIdNode.innerHTML;
 
-    targetIdNode.parentNode.removeChild(targetIdNode);
+      targetIdNode.parentNode.removeChild(targetIdNode);
 
-    this.setState({
-      modalContent: modalContent
-    });
+      this.setState({
+        modalContent: modalContent
+      });
+    } catch(e) {
+      //DO NOTHING
+    }
   }
 
   update(e) {
@@ -50,6 +56,7 @@ class Modal extends Component {
             </svg>
           </button>
           <div dangerouslySetInnerHTML={{__html: this.state.modalContent}} />
+          {this.props.children}
         </div>
       </div>
     );

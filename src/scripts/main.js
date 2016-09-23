@@ -18,6 +18,7 @@ require('../modules/podpromo/configurator/MTPodPromoConfiguratorPestle');
 require('../modules/tooltips/MTTooltipPestle');
 require('../modules/videoplaylist/VideoPlaylistPestle');
 require('../modules/videoplaylist/configurator/MTVideoPlaylistConfiguratorPestle');
+require('../modules/videomodal/VideoModalPestle');
 
 // Content Packages
 require('../contentPackages/contentpackage/ContentPackagePestle');
