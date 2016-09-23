@@ -174,8 +174,11 @@
       padding: 0 70px 30px;
     }
 
+    // only big desk
     @include respond-to(xl) {
-      padding-right: 70px;
+      &__scroll {
+        padding-right: 70px;
+      }
     }
 
     // small and big desk
