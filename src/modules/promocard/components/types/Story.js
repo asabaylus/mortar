@@ -47,8 +47,8 @@ class Story extends Component {
     case '16:9':
       parentFrameHeightMultiplier = 0.5625;
       break;
-    case '4:3':
-      parentFrameHeightMultiplier = 0.75;
+    case '2:1':
+      parentFrameHeightMultiplier = 0.5;
       break;
     case '1:1':
       parentFrameHeightMultiplier = 1;
@@ -66,7 +66,6 @@ class Story extends Component {
     }
 
     return (height - corner) / (width - corner);
-
   }
 
   componentDidMount(){
@@ -91,7 +90,7 @@ class Story extends Component {
     let content = [<a key={i++} {...attrs} />];
     const aspectRatio = config.cardAspectRatio === '16:9' ? 'mt3_intratio--broadcast'
       : config.cardAspectRatio === '3:2' ? 'mt3_intratio--photo'
-      : config.cardAspectRatio === '4:3' ? 'mt3_intratio--tv'
+      : config.cardAspectRatio === '2:1' ? 'mt3_intratio--two-one'
       : config.cardAspectRatio === '1:1' ? 'mt3_intratio--square'
       : 'mt3_intratio--photo';
 
@@ -107,25 +106,19 @@ class Story extends Component {
           const ctaSizeClass = this.state.breakpoint < (768 + 60) ? 'mt3_promocard-gallery-cta--medium' : 'mt3_promocard-gallery-cta--large';
           content.push(
             <div key={i++} className={`mt3_row mt3_promocard-gallery-images ${aspectRatio}`}>
-              <div className={ctaSizeClass}>
-                <div className="mt3_color--white mt3_btn mt3_btn--naked mt3_fullwidth mt3_promocard-gallery-cta">
-                  <a {...attrs} />
-                  <span>Photo Gallery</span>
-                  <svg className="mt3_promocard-gallery-cta-icon">
-                    <use xlinkHref="#plus"></use>
-                  </svg>
-                </div>
+              <div className={`mt3_color--white mt3_btn mt3_btn--naked mt3_fullwidth mt3_promocard-gallery-cta ${ctaSizeClass}`}>
+                <a {...attrs} />
+                <span>Photo Gallery</span>
+                <svg className="mt3_promocard-gallery-cta-icon">
+                  <use xlinkHref="#plus"></use>
+                </svg>
               </div>
-              <div className='mt3_row mt3_promocard-gallery-images--image1-large'>
-                <div className="mt3_row mt3_promocard-gallery-images--image1">
-                  <a {...attrs} />
-                  <PromoImage type={type} config={config} leadMedia={leadMedia[0]} childFrameAspectRatio={this.calcAspectRatio()} link={link} brandingBadgeLabel={brandingBadgeLabel} text={text} breakpoint={this.state.breakpoint}/>
-                </div>
+              <div className="mt3_row mt3_promocard-gallery-images--image1 mt3_promocard-gallery-images--image1-large">
+                <a {...attrs} />
+                <PromoImage type={type} config={config} leadMedia={leadMedia[0]} childFrameAspectRatio={this.calcAspectRatio()} link={link} brandingBadgeLabel={brandingBadgeLabel} text={text} breakpoint={this.state.breakpoint}/>
               </div>
-              <div className='mt3_row mt3_promocard-gallery-images--image2-large'>
-                <div className="mt3_row mt3_promocard-gallery-images--image2">
-                  <PromoImage type={type} config={config} leadMedia={leadMedia[1]} childFrameAspectRatio={this.calcAspectRatio()} secondImage={true}  breakpoint={this.state.breakpoint}/>
-                </div>
+              <div className="mt3_row mt3_promocard-gallery-images--image2 mt3_promocard-gallery-images--image2-large">
+                <PromoImage type={type} config={config} leadMedia={leadMedia[1]} childFrameAspectRatio={this.calcAspectRatio()} secondImage={true}  breakpoint={this.state.breakpoint}/>
               </div>
             </div>
           );
@@ -142,27 +135,21 @@ class Story extends Component {
           content.push(
             <div key={i++} className={`mt3_row mt3_promocard-gallery-images ${aspectRatio}`}>
               <div className='mt3_promocard-gallery-cta--medium'>
-                <div className={ctaSizeClass}>
-                  <div className="mt3_color--white mt3_btn mt3_btn--naked mt3_fullwidth mt3_promocard-gallery-cta">
-                    <a {...attrs} />
-                    <span>Photo Gallery</span>
-                    <svg className="mt3_promocard-gallery-cta-icon">
-                      <use xlinkHref="#plus"></use>
-                    </svg>
-                  </div>
+                <div className={`mt3_color--white mt3_btn mt3_btn--naked mt3_fullwidth mt3_promocard-gallery-cta ${ctaSizeClass}`}>
+                  <a {...attrs} />
+                  <span>Photo Gallery</span>
+                  <svg className="mt3_promocard-gallery-cta-icon">
+                    <use xlinkHref="#plus"></use>
+                  </svg>
                 </div>
               </div>
-              <div className={imageSizeClass}>
-                <div className="mt3_row mt3_promocard-gallery-images--image1">
-                  <a {...attrs} />
-                  <PromoImage type={type} config={config} leadMedia={leadMedia[0]} childFrameAspectRatio={this.calcAspectRatio()} breakpoint={this.state.breakpoint}/>
-                </div>
+              <div className={`mt3_row mt3_promocard-gallery-images--image1 ${imageSizeClass}`}>
+                <a {...attrs} />
+                <PromoImage type={type} config={config} leadMedia={leadMedia[0]} childFrameAspectRatio={this.calcAspectRatio()} breakpoint={this.state.breakpoint}/>
               </div>
 
-              <div className={imageSizeClass}>
-                <div className="mt3_row mt3_promocard-gallery-images--image2">
-                  <PromoImage type={type} config={config} leadMedia={leadMedia[1]} childFrameAspectRatio={this.calcAspectRatio()} secondImage={true}  breakpoint={this.state.breakpoint}/>
-                </div>
+              <div className={`mt3_row mt3_promocard-gallery-images--image2 ${imageSizeClass}`}>
+                <PromoImage type={type} config={config} leadMedia={leadMedia[1]} childFrameAspectRatio={this.calcAspectRatio()} secondImage={true}  breakpoint={this.state.breakpoint}/>
               </div>
             </div>,
             <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type} breakpoint={this.state.breakpoint}/>
@@ -192,7 +179,6 @@ class Story extends Component {
 
 Story.PropTypes = {
   id: PropTypes.string,
-  additionalClasses: PropTypes.string,
   theme: PropTypes.string,
   type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
   config: PropTypes.object,

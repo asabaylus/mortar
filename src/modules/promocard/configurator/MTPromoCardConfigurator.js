@@ -100,7 +100,7 @@ class PromoCardConfigurator extends Component {
               <option value="video">Video</option>
               <option value="gallery">Gallery</option>
             </SelectField>
-            <SelectField label="Card Aspect Ratio" onChange={this.onTextChange('config.cardAspectRatio')} value={props.config.cardAspectRatio}>
+            <SelectField label="Aspect Ratio" onChange={this.onTextChange('config.cardAspectRatio')} value={props.config.cardAspectRatio}>
               <option value="3:2">3:2</option>
               <option value="1:1">1:1</option>
               <option value="2:1">2:1</option>
@@ -118,6 +118,9 @@ class PromoCardConfigurator extends Component {
             <TextField label="Dek" onChange={this.onTextChange('text.dek')} value={props.text.dek} />
             {props.type === 'video' ?
             <TextField label="Duration" onChange={this.onTextChange('text.duration')} value={props.text.duration} />
+            : null }
+            {props.type === 'gallery' ?
+            <TextField label="Photo Count" onChange={this.onTextChange('text.photoCount')} value={props.text.photoCount} />
             : null }
           </Section>
           {props.type === 'article' || props.type === 'gallery' ?

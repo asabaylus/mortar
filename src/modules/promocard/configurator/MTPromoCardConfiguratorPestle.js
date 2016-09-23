@@ -43,9 +43,12 @@ class PromoCardConfigurator extends Module {
         },
         {
           url: 'http://placehold.it/800x600',
-          aspectRatio: 0.6667,
+          aspectRatio: '2048:1365',
           altText: 'Picture of a caiman swimming underwater in Pantanal, Brazil',
-          srcset: ['http://placehold.it/400x300 400w', 'http://placehold.it/800x600 800w', 'http://placehold.it/1600x1200 1600w']
+          srcset: ['http://www.nationalgeographic.com/content/dam/parks/finals/glacier-hero-1.adapt.470.jpg 470w',
+  'http://www.nationalgeographic.com/content/dam/parks/finals/glacier-hero-1.adapt.885.jpg 885w',
+  'http://www.nationalgeographic.com/content/dam/parks/finals/glacier-hero-1.adapt.1190.jpg 1190w',
+  'http://www.nationalgeographic.com/content/dam/parks/finals/glacier-hero-1.adapt.1900.jpg 1900w']
         }
       ],
       cta: {
@@ -64,6 +67,7 @@ class PromoCardConfigurator extends Module {
           trackingCodes: '?utm_medium=site&utm_source=ng.com'
         },
         duration: '',
+        photoCount: 12,
         publishDate: 'Thu Aug 04 13:30:39 EDT 2016',
         sponsorContentLabel: 'This is the Sponsor Content Label'
       },
