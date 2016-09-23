@@ -178,6 +178,11 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
         bottom: 0;
         color: $mt3_color-primary;
       }
+
+      .mt3_fiveup-divlink:hover::after {
+        color: $mt3_color-white;
+      }
+
     }
   }
 
