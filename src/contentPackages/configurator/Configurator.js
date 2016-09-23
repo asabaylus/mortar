@@ -8,10 +8,11 @@ class Configurator extends React.Component {
       // Maybe one day this will all be done in React?
 
       var expButton = '<button class="codesnippet-button codesnippet-icon codesnippet-icon--expand mt3_col-12 mt3_h5">Expand</button>';
+      var mobileWidth = 480;
 
       $('.codesnippet-wrapper').each(function(index, value) {
         var container = $(value);
-        var isMobile = $(window).width() <= 500;
+        var isMobile = $(window).width() <= mobileWidth;
         var showExpandButton = false;
         var constrainClass = '';
 
@@ -40,7 +41,7 @@ class Configurator extends React.Component {
         var btn = $(e.target);
         var snippetContainer = btn.parent('.codesnippet-wrapper');
 
-        var isMobile = $(window).width() <= 500;
+        var isMobile = $(window).width() <= mobileWidth;
         var constrainClass = isMobile ? 'constrainheight-mobile' : 'constrainheight';
 
         // Update styles
