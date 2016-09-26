@@ -87,7 +87,7 @@ describe('Video Component', () => {
     });
 
     it('should contain the expected mock inside LazyLoad', () => {
-      expect(wrapper.childAt(1).html()).to.equal('<div class="mt3_video-wrapper"><div id="'+reactModel.instance+'" class="mt3_video-player" data-guid="'+reactModel.guid+'"></div></div>');
+      expect(wrapper.childAt(0).childAt(0).html()).to.equal('<div class="mt3_video-wrapper"><div id="'+reactModel.instance+'" class="mt3_video-player" data-guid="'+reactModel.guid+'"></div></div>');
     });
   });
 

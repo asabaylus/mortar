@@ -29,4 +29,16 @@
       width: 40px;
     }
   }
+
+  //This is a fix for the load into the playlist on FF and Edge, due to Flexbox
+  //and the aspect ratio didn't show the video box.
+  &::after {
+    content: '';
+    display: block;
+    // intrinsic aspect ratio
+    height: 0;
+    padding-bottom: 56.25%;
+  }
 }
+
+

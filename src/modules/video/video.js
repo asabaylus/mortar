@@ -70,15 +70,17 @@ class Video extends Component {
 
     if (lazyLoad === true) {
       return (
-        <figure itemType="http://schema.org/VideoObject" className={`mt3_video mt3_videopromo-container mt3_intratio--broadcast mt3_bgcolor--black ${className}` }>
-          <LazyLoad offsetVertical={200} onContentVisible={this.handleOnLoad.bind(this)}><span>&nbsp;</span></LazyLoad>
+        <figure itemType="http://schema.org/VideoObject" className={`mt3_video mt3_videopromo-container mt3_bgcolor--black ${className}` }>
           <div className="mt3_video-wrapper" dangerouslySetInnerHTML={{__html: this.videoContainer}}>
           </div>
+          <LazyLoad offsetVertical={200} onContentVisible={this.handleOnLoad.bind(this)}>
+            <span />
+          </LazyLoad>
         </figure>
       );
     } else {
       return (
-        <figure itemType="http://schema.org/VideoObject" className={`mt3_video mt3_videopromo-container mt3_intratio--broadcast mt3_bgcolor--gray5 ${className}` }>
+        <figure itemType="http://schema.org/VideoObject" className={`mt3_video mt3_videopromo-container mt3_bgcolor--gray5 ${className}` }>
           <div className="mt3_video-wrapper" dangerouslySetInnerHTML={{__html: this.videoContainer}}>
           </div>
         </figure>
