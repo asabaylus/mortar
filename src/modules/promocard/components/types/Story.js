@@ -103,7 +103,7 @@ class Story extends Component {
           overlay: true
         });
         if (type === 'gallery'){
-          const ctaSizeClass = this.state.breakpoint < (768 + 60) ? 'mt3_promocard-gallery-cta--medium' : 'mt3_promocard-gallery-cta--large';
+          const ctaSizeClass = 'mt3_promocard-gallery-cta--large';
           content.push(
             <div key={i++} className={`mt3_row mt3_promocard-gallery-images ${aspectRatio}`}>
               <div className={`mt3_color--white mt3_btn mt3_btn--naked mt3_fullwidth mt3_promocard-gallery-cta ${ctaSizeClass}`}>
@@ -129,7 +129,7 @@ class Story extends Component {
         }
       } else if (leadMedia && this.state.breakpoint < 768) {
         if (type === 'gallery'){
-          const ctaSizeClass = this.state.breakpoint > (375 + 40) ? 'mt3_promocard-gallery-cta--medium' : '';
+          const ctaSizeClass = this.state.breakpoint > 375 ? 'mt3_promocard-gallery-cta--medium' : '';
           const imageSizeClass = this.state.breakpoint > 375 ? 'mt3_promocard-gallery-images--image2-medium' : '';
 
           content.push(

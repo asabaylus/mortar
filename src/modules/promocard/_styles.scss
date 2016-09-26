@@ -147,6 +147,7 @@ $mt3_gradientIndex: 3;
     position: absolute;
     text-align: left;
     top: 8px;
+    transition: none;
     z-index: $mt3_z-middle + 3;
 
     &-icon {
