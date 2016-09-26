@@ -45,7 +45,7 @@ $mt3_large: 1280px;
   &__rails .mt3_promocard--first {
     @media(max-width: $mt3_small - 1) {
       margin-left: -30px;
-      width: auto;
+      width: calc(100% + 30px);
       .mt3_promocard-pad {
         padding-left:30px;
       }
