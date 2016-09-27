@@ -1,8 +1,18 @@
+$mt3_playlist-l-screen: 100rem;
+
 .mt3_video-playlist {
   display: flex;
   flex-direction: column;
+
   @media #{$mt3_mq-md} {
     flex-direction: row;
+  }
+
+  &__wrapper {
+    @media #{$mt3_mq-lg} {
+      margin: 0 auto;
+      max-width: $mt3_playlist-l-screen;
+    }
   }
 
   &__flex {
@@ -249,6 +259,10 @@
       &:focus,
       &:active {
         outline: 0;
+      }
+
+      &__video-title {
+        height: 3em;
       }
     }
 

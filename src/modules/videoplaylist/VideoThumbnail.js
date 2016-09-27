@@ -2,8 +2,7 @@
 
 import React, {Component} from 'react';
 import Image from '@natgeo/modules-images';
-import Truncate from 'react-truncate';
-
+import _debounce from 'lodash/debounce';
 export const KICKER_TYPES = ['now', 'next'];
 
 const Kicker = ({type}) => (
@@ -14,10 +13,36 @@ const Kicker = ({type}) => (
 );
 
 class VideoThumbnail extends Component {
+  constructor(props) {
+    super(props);
+    this.truncateVideo = this.truncateVideo.bind(this);
+    this.resizeHandler = null;
+  }
 
   onClick(e) {
     e.preventDefault();
     this.props.onClick();
+  }
+
+  componentDidUpdate() {
+    this.truncateVideo();
+  }
+
+  componentDidMount() {
+    this.videoTitleElement = $(this.refs.videoTitle);
+    this.truncateVideo();
+    this.resizeHandler = _debounce(() => {
+      this.videoTitleElement.trigger('update');
+    }, 100)
+    window.addEventListener('resize', this.resizeHandler);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resizeHandler);
+  }
+
+  truncateVideo() {
+    this.videoTitleElement.css({'height':'3em'}).dotdotdot();
   }
 
   render() {
@@ -35,9 +60,9 @@ class VideoThumbnail extends Component {
         <Image {...imageModel} />
         <a href={this.props.item.path} className="thumbnail-overlay mt3_none" title={this.props.item.title} data-guid={this.props.item.guid} onClick={this.onClick.bind(this)}>
           {(kickerType) ? <Kicker type={kickerType}/> : null}
-          <Truncate lines={2} ellipsis={(<span>...</span>)}>
-            <div ref="videoTitle"  dangerouslySetInnerHTML={{__html: this.props.item.title}} />
-          </Truncate>
+          <div ref='videoTitle'>
+            <span className="thumbnail-overlay__video-title" dangerouslySetInnerHTML={{__html: this.props.item.title}}></span>
+          </div>
         </a>
       </div>
     )

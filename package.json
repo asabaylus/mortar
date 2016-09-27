@@ -37,7 +37,6 @@
     "react-lazy-load": "3.x",
     "react-pure-render": "1.x",
     "react-slick": "krlospelaez/react-slick#fix-npm",
-    "react-truncate": "1.0.4",
     "scrollmagic": "^2.0.5",
     "velocity-animate": "^1.2.2"
   },
