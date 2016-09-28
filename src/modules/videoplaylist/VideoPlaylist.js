@@ -125,7 +125,7 @@ class VideoPlaylist extends Component {
   }
 
   loadVideo(url, nextState) {
-    const formatUrl = url.match(/http.*\?|mbr.*|policy=.*/g).join('');
+    const formatUrl = url.match(/http.*\?|policy=\d*&|mbr=.*/g).join('');
     this.playVideo(url, formatUrl, nextState);
   }
 
