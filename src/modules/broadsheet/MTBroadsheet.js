@@ -1,11 +1,11 @@
 'use strict';
 
-import React, { PropTypes }  from 'react';
+import React, { Component, PropTypes }  from 'react';
 
 class Broadsheet extends Component {
   render() {
     const bodyNodes = this.props.mainBody.map((node, index) => {
-      if(node.type === "text") {
+      if(node.type === 'text') {
         return (
           <div key={index} dangerouslySetInnerHTML={{__html: node.text}} />
         )
@@ -18,7 +18,7 @@ class Broadsheet extends Component {
 
     return(
       <div>
-        <a href="http://nationalgeographic.com/magazine">National Geographic Magazine</a>
+        <a href='http://nationalgeographic.com/magazine'>National Geographic Magazine</a>
         <section>
           <header>
             <a href={this.props.issueUrl}>{this.props.issueDate}</a>
