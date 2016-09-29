@@ -20,6 +20,7 @@ class PromoCardConfigurator extends Module {
         cardAspectRatio: '3:2',
         sponsored: false,
         showPlayButton: false,
+        channelMapping: true,
         showByline: true
       },
       link: {
@@ -66,6 +67,8 @@ class PromoCardConfigurator extends Module {
           target: '_self',
           trackingCodes: '?utm_medium=site&utm_source=ng.com'
         },
+        brandingBadge: 'Heading',
+        time: 'Sunday 8pm',
         duration: '',
         photoCount: 12,
         publishDate: 'Thu Aug 04 13:30:39 EDT 2016',

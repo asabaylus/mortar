@@ -1,0 +1,125 @@
+.mt3_showcard {
+  &-container {
+    background: $mt3_color-black;
+    color: $mt3_color-white;
+    position: relative;
+    .mt3_div-link {
+      cursor: pointer;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: $mt3_z-middle + 4;
+    }
+    /*lead media*/
+    figure {
+      margin: 0;
+      position: relative;
+    }
+    .mt3_promocard-text--overlay {
+      background: rgba(0,0,0, 0.2);
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: $mt3_z-middle + 2;
+    }
+  }
+  &-text-container {
+    display: table;
+    height: 100%;
+    left: 0;
+    padding: 0 30px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: $mt3_z-middle + 3;
+    .mt3_showcard--tablet & {
+      padding: 0 60px;
+    }
+    .mt3_showcard--desktop & {
+      padding: 0 100px;
+    }
+    .mt3_showcard--lg-desktop & {
+      padding: 0 160px;
+    }
+  }
+  &-text-cell {
+    /*vertically center show card text*/
+    display: table-cell;
+    text-align: center;
+		vertical-align: middle;
+  }
+  &-text {
+    color: $mt3_color-white;
+    display: inline-block;
+    font-family: $mt3_verlag-stack;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    line-height: 1.05;
+    /*horizontally center show card text*/
+    text-align: left;
+    vertical-align: middle;
+    word-spacing: .05em;
+  }
+  &-heading, &-title, &-airdate {
+    text-transform: uppercase;
+  }
+  &-heading, &-airdate {
+    display: block;
+    font-size: 0.75rem;
+    padding-left: 60px;
+    .mt3_showcard--tablet & {
+      padding-left: 80px;
+    }
+    .mt3_showcard--desktop & {
+      padding-left: 120px;
+    }
+    .mt3_showcard--lg-desktop & {
+      padding-left: 160px;
+    }
+  }
+  &-title {
+    font-size: 22px;
+    font-weight: 400;
+    margin: 0.25em 0;
+    padding-left: 30px;
+    position: relative;
+    /*yellow index*/
+    &:before {
+      border-left: 3px solid map-get($mt3_colors, 'primary');
+      content: '';
+      display: inline-block;
+      height: 22px;
+      left: 0;
+      position: absolute;
+      vertical-align: top;
+    }
+    .mt3_showcard--tablet & {
+      font-size: 36px;
+      padding-left: 40px;
+      /*yellow index*/
+      &:before {
+        height: 36px;
+      }
+    }
+    .mt3_showcard--desktop & {
+      font-size: 50px;
+      padding-left: 60px;
+      /*yellow index*/
+      &:before {
+        height: 50px;
+      }
+    }
+    .mt3_showcard--lg-desktop & {
+      font-size: 60px;
+      padding-left: 80px;
+      /*yellow index*/
+      &:before {
+        height: 60px;
+      }
+    }
+  }
+}

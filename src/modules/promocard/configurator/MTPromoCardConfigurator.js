@@ -12,6 +12,7 @@ import ForceButton from '../../../contentPackages/configurator/ForceButton';
 import { createObjectFromString } from '../../../contentPackages/configurator/utils';
 
 import MTPromoCard from '../MTPromoCard';
+import MTShowCard from '../../showcard/ShowCard';
 
 class PromoCardConfigurator extends Component {
   constructor(props) {
@@ -92,13 +93,15 @@ class PromoCardConfigurator extends Component {
   render() {
     const props = this.state.componentProps;
     const promoComponent = <MTPromoCard {...props} />;
+    const showComponent = <MTShowCard {...props} />;
     return (
-        <Configurator component={promoComponent}>
+        <Configurator component={props.type !== 'show' ? promoComponent : showComponent}>
           <Section text="General">
             <SelectField label="Type" onChange={this.onTextChange('type')} value={props.type}>
               <option value="article">Article</option>
               <option value="video">Video</option>
               <option value="gallery">Gallery</option>
+              <option value="show">Show</option>
             </SelectField>
             <SelectField label="Aspect Ratio" onChange={this.onTextChange('config.cardAspectRatio')} value={props.config.cardAspectRatio}>
               <option value="3:2">3:2</option>
@@ -106,24 +109,34 @@ class PromoCardConfigurator extends Component {
               <option value="2:1">2:1</option>
               <option value="16:9">16:9</option>
             </SelectField>
+            {props.type === 'show' ?
+              <CheckboxField label="Channel Branding" onChange={this.onToggle('config.channelMapping')} value={props.config.channelMapping} />
+            : null }
             <CheckboxField label="Sponsored" onChange={this.onToggle('config.sponsored')} value={props.config.sponsored} />
             <TextField label="Sponsor Content Label" onChange={this.onTextChange('sponsorContentLabel')} value={props.text.sponsorContentLabel} />
             <CheckboxField label="Show Play Button" onChange={this.onToggle('config.showPlayButton')} value={props.config.showPlayButton} />
           </Section>
-          <Section text="Text">
-            <TextField label="Kicker" onChange={this.onTextChange('text.kicker.label')} value={props.text.kicker.label} />
-            <TextField label="Kicker Url" onChange={this.onTextChange('text.kicker.url')} value={props.text.kicker.url} />
-            <TextField label="Kicker Target" onChange={this.onTextChange('text.kicker.target')} value={props.text.kicker.target} />
-            <TextField label="Title" onChange={this.onTextChange('text.title')} value={props.text.title} />
-            <TextField label="Dek" onChange={this.onTextChange('text.dek')} value={props.text.dek} />
-            {props.type === 'video' ?
-            <TextField label="Duration" onChange={this.onTextChange('text.duration')} value={props.text.duration} />
-            : null }
-            {props.type === 'gallery' ?
-            <TextField label="Photo Count" onChange={this.onTextChange('text.photoCount')} value={props.text.photoCount} />
-            : null }
-          </Section>
-          {props.type === 'article' || props.type === 'gallery' ?
+          {props.type !== 'show' ?
+            <Section text="Text">
+              <TextField label="Kicker" onChange={this.onTextChange('text.kicker.label')} value={props.text.kicker.label} />
+              <TextField label="Kicker Url" onChange={this.onTextChange('text.kicker.url')} value={props.text.kicker.url} />
+              <TextField label="Kicker Target" onChange={this.onTextChange('text.kicker.target')} value={props.text.kicker.target} />
+              <TextField label="Title" onChange={this.onTextChange('text.title')} value={props.text.title} />
+              <TextField label="Dek" onChange={this.onTextChange('text.dek')} value={props.text.dek} />
+              {props.type === 'video' ?
+                <TextField label="Duration" onChange={this.onTextChange('text.duration')} value={props.text.duration} />
+              : null }
+              {props.type === 'gallery' ?
+                <TextField label="Photo Count" onChange={this.onTextChange('text.photoCount')} value={props.text.photoCount} />
+              : null }
+            </Section>
+          : <Section text="Text">
+              <TextField label="Heading" onChange={this.onTextChange('text.brandingBadge')} value={props.text.brandingBadge} />
+              <TextField label="Title" onChange={this.onTextChange('text.title')} value={props.text.title} />
+              <TextField label="Time" onChange={this.onTextChange('text.time')} value={props.text.time} />
+            </Section>
+          }
+          {props.type === 'article' || props.type === 'gallery' || props.type === 'show' ?
             <Section text="Link">
               <TextField label="Url" onChange={this.onTextChange('link.url')} value={props.link.url} />
               <SelectField label="Target" onChange={this.onTextChange('link.target')} value={props.link.target}>
@@ -135,7 +148,7 @@ class PromoCardConfigurator extends Component {
               <TextField label="trackingCodes" onChange={this.onArrayChange('link.trackingCodes')} value={props.link.trackingCodes} />
             </Section>
           : null}
-          {props.type === 'article' ?
+          {props.type === 'article' || props.type === 'show' ?
             <Section text="Lead Media">
               <TextField label="Url" onChange={this.onLeadMediaUpdate('url', null, 0)} value={props.leadMedia[0].url} />
               <TextField label="Aspect Ratio" onChange={this.onLeadMediaUpdate('aspectRatio', 'number', 0)} value={props.leadMedia[0].aspectRatio} />
