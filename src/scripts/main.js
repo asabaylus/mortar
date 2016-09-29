@@ -4,6 +4,7 @@ import 'babel-polyfill';
 
 import {Pestle} from '@natgeo/pestle';
 
+require('../modules/broadsheet/MTBroadsheetPestle');
 require('../modules/modals/ModalPestle');
 require('../modules/video/VideoPestle');
 require('../modules/photogallery/MTPhotoGalleryPestle');
