@@ -12,7 +12,7 @@ import ForceButton from '../../../contentPackages/configurator/ForceButton';
 import { createObjectFromString } from '../../../contentPackages/configurator/utils';
 
 import MTPromoCard from '../MTPromoCard';
-import MTShowCard from '../../showcard/ShowCard';
+import MTShowCard from '../../showcard/showCard';
 
 class PromoCardConfigurator extends Component {
   constructor(props) {
