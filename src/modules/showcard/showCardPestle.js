@@ -3,7 +3,7 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
 import {Pestle, Module} from '@natgeo/pestle';
-import MTShowCardComponent from './ShowCard';
+import MTShowCardComponent from './showCard';
 
 class ShowCard extends Module {
 
