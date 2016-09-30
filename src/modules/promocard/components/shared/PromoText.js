@@ -1,81 +1,144 @@
 'use strict';
 
-import React, { PropTypes }  from 'react';
-import ElementQuery from 'react-element-query';
+import React, { Component, PropTypes }  from 'react';
 import { generateHref } from '../../generateHref';
 
-const PromoText = (props) => {
+class PromoText extends Component {
 
-  const attrs = {
-    className: props.config.overlay || props.theme === 'dark' ? 'mt3_color--white mt3_promocard-kicker  mt3_promocard-kicker--inverse' : 'mt3_color--gray40 mt3_promocard-kicker',
-    href: props.text.kicker ? generateHref(props.text.kicker.url, props.text.kicker.trackingCodes) : null,
-    target: props.text.kicker ? props.text.kicker.target : null
-  };
+  render() {
+    const {...props} = this.props;
+    const attrs = {
+      className: props.config.overlay || props.theme === 'dark' || props.noImages ? 'mt3_color--white mt3_promocard-kicker mt3_promocard-kicker--inverse' : 'mt3_color--gray40 mt3_promocard-kicker',
+      href: props.text.kicker ? generateHref(props.text.kicker.url, props.text.kicker.trackingCodes) : null,
+      target: props.text.kicker ? props.text.kicker.target : null
+    };
 
-  /****** commenting out byline for now as it will most likely need to be added back in later
-   {props.text.byline ? <div className="mt3_color--neutral--xxd mt3_h5">{props.text.byline}</div> : null}
-   *****/
+    const overlayClasses = props.config.overlay ? 'mt3_color--white mt3_promocard-nested-text' : 'mt3_color--neutral--xxd';
+    const subheadColor = props.config.overlay ? 'mt3_color--white' : 'mt3_color--gray40';
+    const inverseTitle = props.config.overlay || props.theme === 'dark' || props.noImages ? 'mt3_color--white' : 'mt3_color--black';
+    const inverseDek = props.theme === 'dark' ? 'mt3_color--white mt3_promocard-dek--inverse' : props.noImages ? 'mt3_color--white mt3_promocard-dek--text-only' : 'mt3_color--black';
+    let sponsoredClasses = props.theme === 'dark' ? 'mt3_color--sponsor mt3_promocard-sponsored mt3_promocard-sponsored--inverse' : 'mt3_color--sponsor mt3_promocard-sponsored';
 
-  const thumbnailPositionColor = props.config.overlay ? 'mt3_color--white mt3_promocard-nested-text' : 'mt3_color--neutral--xxd';
-  const subheadColor = props.config.overlay ? 'mt3_color--white' : 'mt3_color--gray40';
-  const inverse = props.config.overlay || props.theme === 'dark' ? 'mt3_color--white' : 'mt3_color--black';
-  const inverseDek = props.theme === 'dark' ? 'mt3_color--white mt3_promocard-dek--inverse' : 'mt3_color--black';
-  let sponsoredClasses = props.theme === 'dark' ? 'mt3_color--sponsor mt3_promocard-sponsored mt3_promocard-sponsored--inverse'
-    : 'mt3_color--sponsor mt3_promocard-sponsored';
+    //for largest size variation, sponsored kicker oughta be white
+    if (props.config.overlay) {
+      sponsoredClasses = 'mt3_color--white mt3_promocard-kicker  mt3_promocard-kicker--inverse';
+    }
 
-  //for largest size variation, sponsored kicker oughta be white
-  if(props.config.overlay) {
-    sponsoredClasses = 'mt3_color--white mt3_promocard-kicker  mt3_promocard-kicker--inverse';
-  }
+    let titleClass = 'mt3_promocard-title--';
 
-  let titleClass = 'mt3_promocard-title--';
-
-  if(props.breakpoint > 375) {
-    if(props.breakpoint > 768) {
-      if(props.breakpoint > 1024) {
-        titleClass += 'large'
+    if (props.breakpoint > 375) {
+      if (props.breakpoint > 768) {
+        if (props.breakpoint > 1024) {
+          titleClass += 'large'
+        } else {
+          titleClass += 'medium';
+        }
       } else {
-        titleClass += 'medium';
+        titleClass += 'small';
       }
     } else {
-      titleClass += 'small';
+      titleClass += 'smallest'
     }
-  } else {
-    titleClass += 'smallest'
-  }
 
-  return(
-    <div className={thumbnailPositionColor}>
-    { props.text.kicker || props.config.sponsored ?
-      <div className="mt3_row">
-        <div className="mt3_promocard-pad">
-          {props.text.kicker && props.text.kicker.url && props.text.kicker.style !== 'prompt' && !props.config.sponsored ? <a {...attrs}>{props.text.kicker.label}</a>
-            : !props.config.sponsored && !props.text.kicker.url || props.text.kicker.style === 'prompt' ? <span className={`${attrs.className}`}>{props.text.kicker.label}</span>
-            : props.config.sponsored ? <span className={sponsoredClasses}>{props.text.sponsorContentLabel}</span>
-            : null
-          }
-          {(props.type === 'video' && props.text.duration && props.text.kicker.style !== 'prompt') ?
-            <div className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`}>{props.text.duration}</div>
-            : null
-          }
-          {(props.type === 'gallery' && props.text.photoCount && props.text.kicker.style !== 'prompt') ?
-            <div className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`}>{props.text.photoCount} Photos</div>
-            : null
-          }
+    let i = 0;
+    let content  = [];
+
+    const textOnlyHorizontal = props.text.dek ? ' mt3_promocard-nested-text--horizontal' : ' mt3_promocard-nested-text--horizontal-no-dek';
+
+    let subHeadingContent = [];
+    let j = 0;
+
+    if(props.text.kicker && props.text.kicker.url && props.text.kicker.style !== 'prompt' && !props.config.sponsored){
+      subHeadingContent.push(<a key={j++} {...attrs}>{props.text.kicker.label}</a>);
+    }else if(!props.config.sponsored && !props.text.kicker.url || props.text.kicker.style === 'prompt'){
+      subHeadingContent.push(<span key={j++} className={`${attrs.className}`}>{props.text.kicker.label}</span>);
+    }else if(props.config.sponsored){
+      subHeadingContent.push(<span key={j++} className={sponsoredClasses}>{props.text.sponsorContentLabel}</span>);
+    }else{
+      return null;
+    }
+
+    (props.type === 'video' && props.text.duration && props.text.kicker.style !== 'prompt') ?
+      subHeadingContent.push(<div key={j++} className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`}>{props.text.duration}</div>)
+    : null;
+
+    (props.type === 'gallery' && props.text.photoCount && props.text.kicker.style !== 'prompt') ?
+      subHeadingContent.push(<div key={j++} className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`}>{props.text.photoCount} Photos</div>)
+    : null;
+
+
+    if(props.breakpoint < 768){
+      content.push(
+        <div key={i++}>
+          { props.text.kicker || props.config.sponsored ?
+            <div className="mt3_row">
+              <div className="mt3_promocard-pad">
+                {subHeadingContent}
+              </div>
+            </div> : null }
+          <div className="mt3_row">
+            <div className="mt3_promocard-pad">
+              {props.text.title ?
+                <div className={`mt3_promocard-title ${inverseTitle} ${titleClass}`}>{props.text.title}</div>
+              : null}
+              { props.text.dek && !props.config.overlay ?
+                <div className={`mt3_promocard-dek ${inverseDek}`}>{props.text.dek}</div>
+              : null}
+            </div>
+          </div>
+          { delete props.config.overlay }
         </div>
-      </div> : null }
-      <div className="mt3_row">
-        <div className="mt3_promocard-pad">
-          {props.text.title ?
-            <div className={`mt3_promocard-title ${inverse} ${titleClass}`}>{props.text.title}</div>
-          : null}
-          { props.text.dek && !props.config.overlay ? <div className={`mt3_promocard-dek ${inverseDek}`}>{props.text.dek}</div> : null }
+      );
+    }else if(props.breakpoint > 768 && props.noImages){
+      content.push(
+        <div key={i++}>
+          <div className="mt3_row">
+            {subHeadingContent}
+          </div>
+          <div className={textOnlyHorizontal + textOnlyHorizontal+'--left'}>
+            {props.text.title ?
+              <div className={`mt3_promocard-title ${inverseTitle} ${titleClass}`}>{props.text.title}</div>
+              : null
+            }
+          </div>
+          <div className={textOnlyHorizontal + textOnlyHorizontal+'--right'}>
+            { props.text.dek && !props.config.overlay ?
+              <div className={`mt3_promocard-dek ${inverseDek}`}>{props.text.dek}</div>
+            : null }
+          </div>
+          { delete props.config.overlay }
         </div>
+      );
+    }else if(props.breakpoint > 768 && !props.noImages){
+      content.push(
+        <div key={i++}>
+          { props.text.kicker || props.config.sponsored ?
+            <div className="mt3_row">
+              <div className="mt3_promocard-pad">
+                {subHeadingContent}
+              </div>
+            </div> : null }
+          <div className="mt3_row">
+            <div className="mt3_promocard-pad">
+              {props.text.title ?
+                <div className={`mt3_promocard-title ${inverseTitle} ${titleClass}`}>{props.text.title}</div>
+                : null}
+              { props.text.dek && !props.config.overlay ?
+                <div className={`mt3_promocard-dek ${inverseDek}`}>{props.text.dek}</div> : null }
+            </div>
+          </div>
+          { delete props.config.overlay }
+        </div>
+      );
+    }
+
+    return (
+      <div className={overlayClasses}>
+        {content}
       </div>
-      { delete props.config.overlay }
-    </div>
-  );
-};
+    );
+  }
+}
 
 PromoText.PropTypes = {
   config: PropTypes.object,
@@ -84,6 +147,7 @@ PromoText.PropTypes = {
     target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
     trackingCodes: PropTypes.array || PropTypes.string
   }),
+  noImages: PropTypes.bool,
   text: PropTypes.shape({
     title: PropTypes.string,
     dek: PropTypes.string,

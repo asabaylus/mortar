@@ -6,7 +6,6 @@ import PromoText from '../shared/PromoText';
 import events from '../../events';
 import { generateHref } from '../../generateHref';
 import _debounce from 'lodash/debounce';
-import ElementQuery from 'react-element-query';
 
 class Story extends Component {
   constructor(props) {
@@ -85,7 +84,8 @@ class Story extends Component {
       href: link ? generateHref(link.url, link.trackingCodes) : null,
       target: link ? link.target : null
     } : null;
-    const bkgColor = theme === 'dark' ? 'mt3_promocard-container--dark' : '';
+    const noImages = !leadMedia || leadMedia[0].url === ''; // add second check for configurator as leadMedia array is always present
+    const bkgColor = theme === 'dark' ? 'mt3_promocard-container--dark' : noImages ? 'mt3_promocard-container--text-only' : '';
     let i = 0;
     let content = [<a key={i++} {...attrs} />];
     const aspectRatio = config.cardAspectRatio === '16:9' ? 'mt3_intratio--broadcast'
@@ -100,7 +100,7 @@ class Story extends Component {
 
       // this builds the structure differently based on the container width, which if above 768 should have nested text overlaying the photo by passing an additional
       // property via the config object
-      if(leadMedia && this.state.breakpoint > 768) {
+      if(!noImages && this.state.breakpoint > 768) {
         Object.assign(config, {
           overlay: true
         });
@@ -117,19 +117,28 @@ class Story extends Component {
               </div>
               <div className="mt3_row mt3_promocard-gallery-images--image1 mt3_promocard-gallery-images--image1-large">
                 <a {...attrs} />
-                <PromoImage type={type} config={config} leadMedia={leadMedia[0]} childFrameAspectRatio={this.calcAspectRatio()} link={link} brandingBadgeLabel={brandingBadgeLabel} text={text} breakpoint={this.state.breakpoint}/>
+                <PromoImage type={type} config={config} leadMedia={leadMedia[0]}
+                            childFrameAspectRatio={this.calcAspectRatio()} link={link}
+                            brandingBadgeLabel={brandingBadgeLabel} text={text} breakpoint={this.state.breakpoint}
+                />
               </div>
               <div className="mt3_row mt3_promocard-gallery-images--image2 mt3_promocard-gallery-images--image2-large">
-                <PromoImage type={type} config={config} leadMedia={leadMedia[1]} childFrameAspectRatio={this.calcAspectRatio()} secondImage={true}  breakpoint={this.state.breakpoint}/>
+                <PromoImage type={type} config={config} leadMedia={leadMedia[1]}
+                            childFrameAspectRatio={this.calcAspectRatio()} secondImage={true}
+                            breakpoint={this.state.breakpoint}
+                />
               </div>
             </div>
           );
         }else{
           content.push(
-            <PromoImage key={i++} type={type} config={config} cardLocation={cardLocation} link={link} leadMedia={leadMedia[0]} brandingBadgeLabel={brandingBadgeLabel} text={text}  breakpoint={this.state.breakpoint}/>
+            <PromoImage key={i++} type={type} config={config} cardLocation={cardLocation} link={link}
+                        leadMedia={leadMedia[0]} brandingBadgeLabel={brandingBadgeLabel} text={text}
+                        breakpoint={this.state.breakpoint}
+            />
           );
         }
-      } else if (leadMedia && this.state.breakpoint < 768) {
+      } else if (!noImages && this.state.breakpoint < 768) {
         if (type === 'gallery'){
           const ctaSizeClass = this.state.breakpoint > 375 ? 'mt3_promocard-gallery-cta--medium' : '';
           const imageSizeClass = this.state.breakpoint > 375 ? 'mt3_promocard-gallery-images--image2-medium' : '';
@@ -147,25 +156,38 @@ class Story extends Component {
               </div>
               <div className={`mt3_row mt3_promocard-gallery-images--image1 ${imageSizeClass}`}>
                 <a {...attrs} />
-                <PromoImage type={type} config={config} leadMedia={leadMedia[0]} childFrameAspectRatio={this.calcAspectRatio()} breakpoint={this.state.breakpoint}/>
+                <PromoImage type={type} config={config} leadMedia={leadMedia[0]}
+                            childFrameAspectRatio={this.calcAspectRatio()} breakpoint={this.state.breakpoint}
+                />
               </div>
 
               <div className={`mt3_row mt3_promocard-gallery-images--image2 ${imageSizeClass}`}>
-                <PromoImage type={type} config={config} leadMedia={leadMedia[1]} childFrameAspectRatio={this.calcAspectRatio()} secondImage={true}  breakpoint={this.state.breakpoint}/>
+                <PromoImage type={type} config={config} leadMedia={leadMedia[1]}
+                            childFrameAspectRatio={this.calcAspectRatio()} secondImage={true}
+                            breakpoint={this.state.breakpoint}
+                />
               </div>
             </div>,
-            <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type} breakpoint={this.state.breakpoint}/>
+            <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type} leadMedia={leadMedia}
+                       breakpoint={this.state.breakpoint}
+            />
           );
         } else {
           content.push(
-            <PromoImage key={i++} type={type} config={config} cardLocation={cardLocation} link={link} leadMedia={leadMedia[0]}
-                        brandingBadgeLabel={brandingBadgeLabel} text={text}  breakpoint={this.state.breakpoint}/>,
-            <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type}  breakpoint={this.state.breakpoint}/>
+            <PromoImage key={i++} type={type} config={config} cardLocation={cardLocation} link={link}
+                        leadMedia={leadMedia[0]} brandingBadgeLabel={brandingBadgeLabel} text={text}
+                        breakpoint={this.state.breakpoint}
+            />,
+            <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type} noImages={noImages}
+                       leadMedia={leadMedia} breakpoint={this.state.breakpoint}
+            />
           );
         }
       } else{
         content.push(
-          <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type}  breakpoint={this.state.breakpoint}/>
+          <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type} noImages={noImages}
+                     breakpoint={this.state.breakpoint}
+          />
         );
       }
     }

@@ -18,6 +18,12 @@ $mt3_gradientIndex: 3;
     background-color: inherit;
   }
 
+  &--text-only {
+    background: $mt3_color-black;
+    border-top: 3px solid $mt3_color-primary;
+    padding: 30px;
+  }
+
   a.mt3_div-link {
     cursor: pointer;
     height: 100%;
@@ -83,6 +89,37 @@ $mt3_gradientIndex: 3;
     vertical-align: bottom;
     width: 75%;
     z-index: 5;
+
+    &--horizontal {
+      display: inline-block;
+      vertical-align: top;
+
+      &--left {
+        max-width: 60%;
+      }
+
+      &--right {
+        max-width: 40%;
+
+        .mt3_promocard-dek--text-only {
+          margin-top: 0;
+        }
+      }
+
+      .mt3_promocard-title {
+        padding-right: 40px;
+      }
+
+      &-no-dek {
+        max-width: 800px;
+        padding-right: 0;
+        width: 100%;
+
+        .mt3_promocard-title {
+          padding-right: 0;
+        }
+      }
+    }
   }
 
   .mt3_promocard-pad {
@@ -193,6 +230,10 @@ $mt3_gradientIndex: 3;
     text-decoration: underline;
   }
 
+  span.mt3_promocard-kicker, div.mt3_promocard-kicker {
+    pointer-events: none;
+  }
+
   .mt3_promocard-sponsored {
     @extend .mt3_kicker;
     border-left: 1px solid #7694CB;
@@ -238,6 +279,13 @@ $mt3_gradientIndex: 3;
     &--inverse {
       border-left: 1px solid white;
     }
+
+    &--text-only {
+      border-left: none;
+      color: $mt3_color-gray-40;
+      padding-left: 0;
+    }
+
   }
 
   .mt3_card-subhead--right {
