@@ -93,6 +93,8 @@ class Story extends Component {
       : config.cardAspectRatio === '2:1' ? 'mt3_intratio--two-one'
       : config.cardAspectRatio === '1:1' ? 'mt3_intratio--square'
       : 'mt3_intratio--photo';
+    
+    const kickerStyle = text.kicker.style === 'prompt' ? 'mt3_promocard-container--prompt' : '';
 
     if(this.state.breakpoint !== null){
 
@@ -169,7 +171,7 @@ class Story extends Component {
     }
 
     return(
-      <div className={`mt3_row mt3_col-12 mt3_promocard-container ${bkgColor} ${additionalClasses}`} ref='promocardContainer'>
+      <div className={`mt3_row mt3_col-12 mt3_promocard-container ${bkgColor} ${kickerStyle} ${additionalClasses}`} ref='promocardContainer'>
         {content}
       </div>
     );

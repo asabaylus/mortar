@@ -63,6 +63,7 @@ class PromoCardConfigurator extends Module {
         dek: 'This is a short dek for the card.',
         kicker: {
           label: 'Weird & Wild',
+          style: '',
           url: 'http://news.nationalgeographic.com/2016/08/shark-attack/',
           target: '_self',
           trackingCodes: '?utm_medium=site&utm_source=ng.com'

@@ -44,6 +44,7 @@ $mt3_gradientIndex: 3;
       content: '';
       height: 25%;
       opacity: 1;
+      pointer-events: none;
       position: absolute;
       width: 100%;
       z-index: $mt3_gradientIndex;
@@ -179,10 +180,6 @@ $mt3_gradientIndex: 3;
     text-decoration: none;
     z-index: $mt3_z-middle + 10;
 
-    &:hover {
-      text-decoration: underline;
-    }
-
     &--inverse {
       border-right: 1px solid white;
 
@@ -192,7 +189,11 @@ $mt3_gradientIndex: 3;
     }
   }
 
-  .mt3_promocard-sponsored{
+  a.mt3_promocard-kicker:hover {
+    text-decoration: underline;
+  }
+
+  .mt3_promocard-sponsored {
     @extend .mt3_kicker;
     border-left: 1px solid #7694CB;
     border-right: 1px solid #7694CB;
@@ -234,7 +235,7 @@ $mt3_gradientIndex: 3;
     margin-top: 10px;
     padding-left: 30px;
 
-    &--inverse{
+    &--inverse {
       border-left: 1px solid white;
     }
   }
@@ -254,5 +255,18 @@ $mt3_gradientIndex: 3;
     position: absolute;
     top: 2em;
     z-index: 3;
+  }
+  /*overridden styles for kicker style = prompt*/
+  &.mt3_promocard-container--prompt {
+    .mt3_promocard-kicker, .mt3_promocard-sponsored {
+      border: 0;
+      color: $mt3_color-primary;
+      font-family: $mt3_haas-stack;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: .015em;
+      padding: 0;
+      text-transform: none;
+    }
   }
 }

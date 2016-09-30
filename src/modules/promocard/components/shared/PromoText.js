@@ -49,15 +49,16 @@ const PromoText = (props) => {
     { props.text.kicker || props.config.sponsored ?
       <div className="mt3_row">
         <div className="mt3_promocard-pad">
-          {props.text.kicker && !props.config.sponsored ? <a {...attrs}>{props.text.kicker.label}</a>
+          {props.text.kicker && props.text.kicker.url && props.text.kicker.style !== 'prompt' && !props.config.sponsored ? <a {...attrs}>{props.text.kicker.label}</a>
+            : !props.config.sponsored && !props.text.kicker.url || props.text.kicker.style === 'prompt' ? <span className={`${attrs.className}`}>{props.text.kicker.label}</span>
             : props.config.sponsored ? <span className={sponsoredClasses}>{props.text.sponsorContentLabel}</span>
             : null
           }
-          {(props.type === 'video' && props.text.duration) ?
+          {(props.type === 'video' && props.text.duration && props.text.kicker.style !== 'prompt') ?
             <div className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`}>{props.text.duration}</div>
             : null
           }
-          {(props.type === 'gallery' && props.text.photoCount) ?
+          {(props.type === 'gallery' && props.text.photoCount && props.text.kicker.style !== 'prompt') ?
             <div className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`}>{props.text.photoCount} Photos</div>
             : null
           }
@@ -88,6 +89,7 @@ PromoText.PropTypes = {
     dek: PropTypes.string,
     kicker: PropTypes.shape({
       label: PropTypes.string,
+      style: PropTypes.string,
       url: PropTypes.string,
       target: PropTypes.string,
       seoTitle: PropTypes.string,

@@ -35,6 +35,7 @@ MTPromoCard.PropTypes = {
     dek: PropTypes.string,
     kicker: PropTypes.shape({
       label: PropTypes.string,
+      style: PropTypes.string,
       url: PropTypes.string,
       target: PropTypes.string,
       seoTitle: PropTypes.string,
