@@ -1,0 +1,41 @@
+/*Channel Branding - Channel Mapping*/
+.mt3_channelbranding {
+  $ratio: 1.5;
+  &--default, &--inverse {
+    position: relative;
+  }
+  &--rect {
+    $width: 30%;
+    background: $mt3_color-black;
+    height: 0;
+    opacity: 0.3;
+    padding-bottom: $width/$ratio;
+    position: absolute;
+    width: $width;
+    z-index: $mt3_z-middle + 3;
+    .mt3_channelbranding--inverse & {
+      background: $mt3_color-white;
+    }
+    .mt3_channelbranding--nobranding & {
+      display: none;
+    }
+  }
+  &--topleft {
+    left: 0;
+    top: 0;
+    .mt3_channelbranding--inverse & {
+      opacity: 0.15;
+    }
+  }
+  &--bottomright {
+    $width: 40%;
+    bottom: 0;
+    opacity: 0.4;
+    padding-bottom: $width/$ratio;
+    right: 0;
+    width: $width;
+    .mt3_channelbranding--inverse & {
+      opacity: 0.2;
+    }
+  }
+}

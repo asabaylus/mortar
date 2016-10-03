@@ -34,12 +34,12 @@ class ShowCard extends Component {
       : config.cardAspectRatio === '1:1' ? 'mt3_intratio--square'
       : 'mt3_intratio--photo';
     
-    let brandingTheme = 'mt3_showcard-container--nobranding';
+    let brandingTheme = 'mt3_channelbranding--nobranding';
     if (config.channelMapping) {
       if (leadMedia && leadMedia.length > 0) {
-        brandingTheme = 'mt3_showcard-container--default';
+        brandingTheme = 'mt3_channelbranding--default';
       } else {
-        brandingTheme = 'mt3_showcard-container--inverse';
+        brandingTheme = 'mt3_channelbranding--inverse';
       }
     }
     
@@ -59,6 +59,8 @@ class ShowCard extends Component {
     return (
       <ElementQuery sizes={elementQueries}>
         <div className={`mt3_row mt3_col-12 mt3_showcard-container ${aspectRatio} ${brandingTheme}`} ref='showcardContainer'>
+          <span className='mt3_channelbranding--rect mt3_channelbranding--topleft'></span>
+          <span className='mt3_channelbranding--rect mt3_channelbranding--bottomright'></span>
           <a {...attrs} />
           {imageContent}
           <div className='mt3_showcard-text-container'>
