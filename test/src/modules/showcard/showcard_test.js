@@ -1,8 +1,8 @@
 'use strict';
 
 import Pestle from '@natgeo/pestle';
-import ShowCard from '../../../../src/modules/showcard/ShowCardPestle.js';
-import MTShowCardComponent from '../../../../src/modules/showcard/ShowCard.js';
+import ShowCard from '../../../../src/modules/showcard/showCardPestle.js';
+import MTShowCardComponent from '../../../../src/modules/showcard/showCard.js';
 import PromoImage from '../../../../src/modules/promocard/components/shared/PromoImage.js';
 
 import {shallow, mount} from 'enzyme';
@@ -79,7 +79,7 @@ describe('ShowCard', () => {
         onClick={()=>{}}
       />);
     });
-    
+
     it('Should have a containing div', () => {
       expect(wrapper.find('.mt3_showcard-container').type()).to.equal("div");
     });
@@ -87,23 +87,23 @@ describe('ShowCard', () => {
     it('Should have a containing div with classes', () => {
       expect(wrapper.find('.mt3_showcard-container').props().className).to.include("mt3_row mt3_col-12 mt3_showcard-container");
     });
-    
+
     it('Should have a containing div with expected aspect ratio class', () => {
       expect(wrapper.find('.mt3_showcard-container').props().className).to.include("mt3_intratio--broadcast");
     });
-    
+
     it('Should have a containing div with expected theme class', () => {
       expect(wrapper.find('.mt3_showcard-container').props().className).to.include("mt3_showcard-container--default");
     });
-    
+
     it('should have the correct title value', () => {
       expect(wrapper.find('.mt3_showcard-title').html()).to.equal('<h2 class="mt3_showcard-title">This is the show title</h2>');
     });
-    
+
     it('Should have a PromoImage component', () => {
       expect(wrapper.find('PromoImage').type()).to.equal(PromoImage);
     });
-    
+
     it('PromoImage component should have props', () => {
       expect(wrapper.find('PromoImage').props().leadMedia.url).to.equal("http://placehold.it/800x600");
       expect(wrapper.find('PromoImage').props().leadMedia.aspectRatio).to.equal(0.6667);
