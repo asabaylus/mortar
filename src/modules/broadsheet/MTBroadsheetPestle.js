@@ -11,7 +11,7 @@ class Broadsheet extends Module {
     const issue = this.options.endpoint.issue;
 
     ReactDOM.render(<MTBroadsheet
-      coverImage={issue.subscribe.image.imageUrl}
+      coverImage={issue.subscribe.image}
       issueUrl={issue.url}
       issueDate={issue.text.kicker.label}
       mainAuthor={issue.text.contributors.writers[0].name}

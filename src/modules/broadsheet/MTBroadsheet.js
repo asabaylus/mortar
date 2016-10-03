@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes }  from 'react';
 import PromoImage from '../promocard/components/shared/PromoImage';
+import Image from '@natgeo/modules-images';
 
 class Broadsheet extends Component {
 
@@ -70,7 +71,7 @@ class Broadsheet extends Component {
       <div className="broadsheet mt3_bgcolor--primary">
         <a className="mt3_color--black mt3_heading--h6--2" href='http://nationalgeographic.com/magazine'>National Geographic Magazine</a>
         <section className="mt3_bgcolor--white">
-          <header className="mt3_row" style={{'minHeight': '320px'}}>
+          <header className="mt3_row" style={{'minHeight': '450px'}}>
             <div className="mt3_broadsheet-leadMedia-header">
               <a className="mt3_broadsheet-leadMedia-issue-date mt3_color--white mt3_haas-heading" href={this.props.issueUrl}>{this.props.issueDate}</a>
               <a className="mt3_broadsheet-leadMedia-title mt3_btn mt3_btn--naked" href={this.props.mainUrl}>
@@ -96,16 +97,28 @@ class Broadsheet extends Component {
             </div>
           </header>
           <div className="mt3_row">
-            <div className="mt3_col-8 mt3_col-gut">
+            <div className="mt3_article mt3_col-8 mt3_col-gut">
             {bodyNodes}
             </div>
-            <aside className="mt3_col-4 mt3_col-gut">
-              <header>
-                <p>Subscribe National Geographic Magazine</p>
-                <img src={this.props.coverImage} />
+            <aside className="mt3_broadsheet-col-right mt3_col-4 mt3_col-gut">
+              <header className="mt3_broadsheet-cover-heading mt3_verlag-heading">
+                <p><span className="mt3_broadsheet-subscribe-label">Subscribe</span><br/> National Geographic Magazine</p>
+                <Image
+                  aspectRatio={this.props.coverImage.aspectRatio}
+                  frameAspectRatio={this.props.coverImage.aspectRatio}
+                  lazyLoad={false}
+                  placeholderBackgroundColor={"rgb(0,0,0)"}
+                  letterboxBackgroundColor = {"rgb(0,0,0)"}
+                  placeholder="none"
+                  height={this.props.height}
+                  width={this.props.width}
+                  altText="National Geographic Magazine Cover Image"
+                  src={this.props.coverImage.src}
+                  srcset={this.props.coverImage.srcset}
+                />
               </header>
               <p>Also in this issue</p>
-              <ul>
+              <ul className="mt3_body">
               {this.props.subStories.map((item, index) => (
                 <li key={index}>
                 <h2>{item.text.title}</h2>
@@ -122,12 +135,10 @@ class Broadsheet extends Component {
 }
 
 Broadsheet.propTypes = {
-  coverImage: PropTypes.string,
+  coverImage: PropTypes.obj,
   issueDate: PropTypes.string,
   issueUrl: PropTypes.string,
-  leadMediaCaption: PropTypes.string,
-  leadMediaCredit: PropTypes.string,
-  leadMediaImage: PropTypes.string,
+  leadMedia: PropTypes.obj,
   subStoriesHeading: PropTypes.string,
   subStories: PropTypes.array,
   mainAuthor: PropTypes.string,
