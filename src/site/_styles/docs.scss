@@ -411,7 +411,6 @@ pre {
     background-color: $mt3_color-gray-80;
     border: 1px solid $mt3_color-gray-10;
     border-radius: 0;
-    padding-bottom: -1em;
     margin-top: 1.25rem;
 
     code {
@@ -503,6 +502,7 @@ $snippet-chevron-up: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fww
 
 .expandheight {
   height: auto;
+  overflow: auto;
 }
 
 .constrainheight {
