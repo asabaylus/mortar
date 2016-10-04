@@ -56,15 +56,33 @@ class Broadsheet extends Component {
 
   render() {
     const bodyNodes = this.props.mainBody.map((node, index) => {
+
       if(node.type === 'text') {
         return (
           <div key={index} dangerouslySetInnerHTML={{__html: node.text}} />
         )
       }
 
+      if(node.type === 'image') {
+        return(
+            <Image
+              key={index}
+              aspectRatio={node.aspectRatio}
+              frameAspectRatio={node.aspectRatio}
+              lazyLoad={true}
+              placeholder="none"
+              height={this.props.height}
+              width={this.props.width}
+              altText={node.altText || ''}
+              src={node.imageUrl}
+              srcset={node.srcset}
+          />
+        )
+      }
+
       return (
-        <img key={index} src={node.imageUrl} />
-      )
+        <span key={index} >Content Not Found</span>
+      );
     });
 
     return(
@@ -122,7 +140,7 @@ class Broadsheet extends Component {
               {this.props.subStories.map((item, index) => (
                 <li key={index}>
                 <h2 className="mt3_broadsheet-story-title mt3_haas-heading mt3_color--black">{item.text.title}</h2>
-                <p className="mt3_broadsheet-story-dek">{item.text.dek}</p>
+                <p className="mt3_broadsheet-story-dek mt3_color--gray66">{item.text.dek}</p>
                 </li>
               ))}
               </ul>
@@ -135,10 +153,10 @@ class Broadsheet extends Component {
 }
 
 Broadsheet.propTypes = {
-  coverImage: PropTypes.obj,
+  coverImage: PropTypes.object,
   issueDate: PropTypes.string,
   issueUrl: PropTypes.string,
-  leadMedia: PropTypes.obj,
+  leadMedia: PropTypes.object,
   subStoriesHeading: PropTypes.string,
   subStories: PropTypes.array,
   mainAuthor: PropTypes.string,
