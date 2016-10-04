@@ -34,6 +34,7 @@ class ShowCard extends Component {
       : config.cardAspectRatio === '1:1' ? 'mt3_intratio--square'
       : 'mt3_intratio--photo';
     
+
     let brandingTheme = 'mt3_channelbranding--nobranding';
     if (config.channelMapping) {
       if (leadMedia && leadMedia.length > 0) {

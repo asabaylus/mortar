@@ -70,6 +70,7 @@
   &-heading, &-airdate {
     display: block;
     font-size: 0.75rem;
+    line-height: 1.4;
     padding-left: 60px;
     .mt3_showcard--tablet & {
       padding-left: 80px;
@@ -84,7 +85,7 @@
   &-title {
     font-size: 22px;
     font-weight: 400;
-    margin: 0.25em 0;
+    margin: 0.5em 0;
     padding-left: 30px;
     position: relative;
     /*yellow index*/
@@ -92,17 +93,18 @@
       border-left: 3px solid map-get($mt3_colors, 'primary');
       content: '';
       display: inline-block;
-      height: 22px;
+      height: 17px; //(fontsize - 5px)
       left: 0;
       position: absolute;
-      vertical-align: top;
+      top: 2px;
     }
     .mt3_showcard--tablet & {
       font-size: 36px;
       padding-left: 40px;
       /*yellow index*/
       &:before {
-        height: 36px;
+        height: 28px; //(fontsize - 8px)
+        top: 3px;
       }
     }
     .mt3_showcard--desktop & {
@@ -110,7 +112,8 @@
       padding-left: 60px;
       /*yellow index*/
       &:before {
-        height: 50px;
+        height: 38px; //(fontsize - 12px)
+        top: 6px;
       }
     }
     .mt3_showcard--lg-desktop & {
@@ -118,7 +121,8 @@
       padding-left: 80px;
       /*yellow index*/
       &:before {
-        height: 60px;
+        height: 46px; //(fontsize - 14px)
+        top: 7px;
       }
     }
   }

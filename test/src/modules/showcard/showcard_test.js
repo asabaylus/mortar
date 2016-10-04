@@ -91,7 +91,7 @@ describe('ShowCard', () => {
     it('Should have a containing div with expected aspect ratio class', () => {
       expect(wrapper.find('.mt3_showcard-container').props().className).to.include("mt3_intratio--broadcast");
     });
-    
+
     it('Should have a containing div with expected channel branding theme class', () => {
       expect(wrapper.find('.mt3_showcard-container').props().className).to.include("mt3_channelbranding--default");
     });
@@ -113,7 +113,7 @@ describe('ShowCard', () => {
       expect(wrapper.find('PromoImage').props().leadMedia.srcset[2]).to.equal("http://placehold.it/1600x1200 1600w");
     });
 
-
   });
 
 });
+
