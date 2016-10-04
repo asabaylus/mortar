@@ -247,7 +247,7 @@ class VideoPlaylist extends Component {
             <VideoCaption
               title={currentVideo.title}
               abstract={currentVideo.abstract}
-              kickerLabel={currentVideo.kicker? currentVideo.kicker.label: ''}
+              kicker={currentVideo.kicker}
               duration={currentVideo.duration}
             />
             <EmbeddedVideo model={this.videoModel} lazyLoad={true}/>
@@ -277,7 +277,11 @@ VideoPlaylist.propTypes = {
         path: React.PropTypes.string,
         abstract: React.PropTypes.string,
         kicker: React.PropTypes.shape({
-          label: React.PropTypes.string.isRequired
+          label: React.PropTypes.string,
+          url: React.PropTypes.string,
+          target: React.PropTypes.string
+        }) || React.PropTypes.shape({
+          html: React.PropTypes.string
         }),
         publishDate: React.PropTypes.string,
         thumbnail: React.PropTypes.string,

@@ -50,11 +50,14 @@ class VideoCaption extends Component {
   }
 
   render() {
-    const { duration, kickerLabel, title, abstract} = this.props;
+    const { duration, kicker, title, abstract} = this.props;
     return (
       <div className="mt3_video-playlist--current-information mt3_bgcolor--gray80">
         <div className="mt3_kicker-wrapper">
-          {(kickerLabel) ? <span className="mt3_kicker mt3_color--white">{kickerLabel}</span> : null}
+          {(kicker && kicker.label) ? <a className="mt3_kicker mt3_color--white" href={kicker.url} target={kicker.target}>{kicker.label}</a>
+            : (kicker && kicker.html) ? <span className="mt3_kicker mt3_color--white" dangerouslySetInnerHTML={{__html: kicker.html}} />
+            : null
+          }
           {(duration) ? <span className="mt3_kicker mt3_color--white">{duration}</span> : null}
         </div>
         <h3 ref="title" className="mt3_video-playlist--current-information__title mt3_color--white">
@@ -74,8 +77,8 @@ class VideoCaption extends Component {
 VideoCaption.propTypes = {
   title: React.PropTypes.string.isRequired,
   abstract: React.PropTypes.string.isRequired,
-  kickerLabel: React.PropTypes.string,
-  duration: React.PropTypes.string,
+  kicker: React.PropTypes.object,
+  duration: React.PropTypes.string
 };
 
 export default VideoCaption;

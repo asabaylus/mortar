@@ -1,6 +1,6 @@
 {
   "name": "@natgeo/mortar_v3",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "a living styleguide for National Geographic Partners",
   "main": "index.js",
   "scripts": {
@@ -43,7 +43,7 @@
   "peerDependencies": {
     "@natgeo/mortar-pestle": "2.x",
     "classnames": "2.2.x",
-    "jquery": "2.x",
+    "jquery": "2.x || 3.x",
     "react": "^0.14.8 || ^15.1.0",
     "react-dom": "^0.14.8 || ^15.1.0",
     "velocity-animate": "1.x"
