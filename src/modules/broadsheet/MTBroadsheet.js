@@ -75,7 +75,7 @@ class Broadsheet extends Component {
             <div className="mt3_broadsheet-leadMedia-header">
               <a className="mt3_broadsheet-leadMedia-issue-date mt3_color--white mt3_haas-heading" href={this.props.issueUrl}>{this.props.issueDate}</a>
               <a className="mt3_broadsheet-leadMedia-title mt3_btn mt3_btn--naked" href={this.props.mainUrl}>
-                <h1 className=" mt3_color--white">{this.props.mainTitle}</h1>
+                <h1 className="mt3_color--white mt3_haas-heading">{this.props.mainTitle}</h1>
                 <p>
                   <span className="mt3_georgia-heading mt3_broadsheet-leadMedia-by-label">By:</span>
                   <span className="mt3_georgia-heading mt3_broadsheet-leadMedia-by">{this.props.mainAuthor}</span>
@@ -117,12 +117,12 @@ class Broadsheet extends Component {
                   srcset={this.props.coverImage.srcset}
                 />
               </header>
-              <p>Also in this issue</p>
+              <p className="mt3_broadsheet-story-also-in mt3_verlag-heading">Also in this issue</p>
               <ul className="mt3_body">
               {this.props.subStories.map((item, index) => (
                 <li key={index}>
-                <h2>{item.text.title}</h2>
-                <p>{item.text.dek}</p>
+                <h2 className="mt3_broadsheet-story-title mt3_haas-heading mt3_color--black">{item.text.title}</h2>
+                <p className="mt3_broadsheet-story-dek">{item.text.dek}</p>
                 </li>
               ))}
               </ul>
