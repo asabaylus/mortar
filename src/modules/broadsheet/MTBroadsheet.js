@@ -115,7 +115,7 @@ class Broadsheet extends Component {
             </div>
           </header>
           <div className="mt3_row">
-            <div className="mt3_article mt3_col-8 mt3_col-gut">
+            <div className="mt3_article mt3_col-8">
             {bodyNodes}
             </div>
             <aside className="mt3_broadsheet-col-right mt3_col-4 mt3_col-gut">
