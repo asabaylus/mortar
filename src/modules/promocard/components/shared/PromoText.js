@@ -9,8 +9,8 @@ class PromoText extends Component {
     const {...props} = this.props;
     const attrs = {
       className: props.config.overlay || props.theme === 'dark' || props.noImages ? 'mt3_color--white mt3_promocard-kicker mt3_promocard-kicker--inverse' : 'mt3_color--gray40 mt3_promocard-kicker',
-      href: props.text.kicker ? generateHref(props.text.kicker.url, props.text.kicker.trackingCodes) : null,
-      target: props.text.kicker ? props.text.kicker.target : null
+      href: props.text.kicker && props.text.kicker.url ? generateHref(props.text.kicker.url, props.text.kicker.trackingCodes) : null,
+      target: props.text.kicker && props.text.kicker.target ? props.text.kicker.target : null
     };
 
     const overlayClasses = props.config.overlay ? 'mt3_color--white mt3_promocard-nested-text' : 'mt3_color--neutral--xxd';
@@ -50,11 +50,11 @@ class PromoText extends Component {
 
     if(props.text.kicker && props.text.kicker.url && props.text.kicker.style !== 'prompt' && !props.config.sponsored){
       subHeadingContent.push(<a key={j++} {...attrs}>{props.text.kicker.label}</a>);
-    }else if(!props.config.sponsored && !props.text.kicker.url || props.text.kicker.style === 'prompt'){
-      subHeadingContent.push(<span key={j++} className={`${attrs.className}`}>{props.text.kicker.label}</span>);
-    }else if(props.config.sponsored){
+    } else if(props.config.sponsored){
       subHeadingContent.push(<span key={j++} className={sponsoredClasses}>{props.text.sponsorContentLabel}</span>);
-    }else{
+    } else if(props.text.kicker){
+      subHeadingContent.push(<span key={j++} className={`${attrs.className}`}>{props.text.kicker.label}</span>);
+    } else{
       return null;
     }
 

@@ -1,0 +1,13 @@
+.mt3_parallax-wrap {
+  position: relative;
+  &--outer {
+    position: relative;
+  }
+  &--active {
+    position: absolute;
+  }
+  &--fixed {
+    position: fixed;
+    top: 0;
+  }
+}

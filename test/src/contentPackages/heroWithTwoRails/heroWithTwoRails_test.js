@@ -131,7 +131,6 @@ describe('Hero With Two Rails Content Package', () => {
 
   before(() => {
     headingParallaxStub = sinon.stub(HeroWithTwoRails.prototype, "headingParallax");
-    railsParallaxStub = sinon.stub(HeroWithTwoRails.prototype, "railsParallax");
 
     el = mount(<HeroWithTwoRails
       {...options}

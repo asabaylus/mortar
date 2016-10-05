@@ -555,9 +555,11 @@ class ContentPackageConfigurator extends Module {
             ]
           }
         ]
-      }
+      },
+      "parentEl": document.getElementById("configurator")
     };
-
+    console.log("QQ");
+    console.log(props.parentEl);
     this.instance = ReactDOM.render(<ContentPackageConfiguratorComponent initialProps={props} />, this.el);
     Pestle.PubSub.subscribe('Configurator.ForceUpdate', () => { this.forceUpdate(); });
   }

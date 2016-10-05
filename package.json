@@ -25,7 +25,6 @@
     "@natgeo/modules-images": "^2.0.0",
     "@natgeo/modules-video": "1.2.6",
     "@natgeo/mortar-pestle": "2.x",
-    "gsap": "^1.19.0",
     "jquery": "2.x",
     "jquery.dotdotdot": "^1.7.0",
     "lodash": "4.x",
@@ -37,7 +36,6 @@
     "react-lazy-load": "3.x",
     "react-pure-render": "1.x",
     "react-slick": "krlospelaez/react-slick#fix-npm",
-    "scrollmagic": "^2.0.5",
     "velocity-animate": "^1.2.2"
   },
   "peerDependencies": {

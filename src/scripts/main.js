@@ -3,6 +3,7 @@
 import 'babel-polyfill';
 
 import {Pestle} from '@natgeo/pestle';
+import ParallaxSceneManager from '../util/parallax/parallaxSceneManager';
 
 require('../modules/broadsheet/MTBroadsheetPestle');
 require('../modules/modals/ModalPestle');
@@ -29,6 +30,8 @@ require('../contentPackages/contentpackage/configurator/ContentPackageConfigurat
 require('../contentPackages/heroWithTwoRails/heroWithTwoRailsPestle');
 require('../contentPackages/heroWithTwoRails/configurator/heroWithTwoRailsConfiguratorPestle');
 
+let parallaxSceneManager =  new ParallaxSceneManager;
+parallaxSceneManager.init();
 
 Pestle.init();
 

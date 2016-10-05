@@ -52,13 +52,6 @@ class HeroWithTwoRailsConfigurator extends Component {
             <option value="light">light</option>
           </SelectField>
 
-          <CheckboxField label="Parallax Heading" onChange={this.onToggle('parallaxHeading')} value={props.parallaxHeading} />
-
-          <SelectField label="Heading Position" onChange={this.onTextChange('headingPosition')} value={props.headingPosition}>
-            <option value="above">above</option>
-            <option value="below">below</option>
-          </SelectField>
-
           <ForceButton />
         </Configurator>
     );

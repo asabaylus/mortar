@@ -54,7 +54,6 @@ $mt3_large: 1280px;
 
   //LIGHT theme rules
   &__heading {
-    overflow: hidden;
     h1 {
       color: $mt3_color-gray-10;
       display: none;
@@ -106,11 +105,13 @@ $mt3_large: 1280px;
     }
   }
   &__left-rail {
+    min-height: 1px; //this rule enables the rail to still take up space even if it has no relative-positioned content (for parallax purposes)
     @media (max-width: $mt3_small) {
       padding: 0 0 0 30px;
     }
   }
   &__right-rail {
+    min-height: 1px; //this rule enables the rail to still take up space even if it has no relative-positioned content (for parallax purposes)
     @media (max-width: $mt3_small) {
       padding: 0 0 0 30px;
     }

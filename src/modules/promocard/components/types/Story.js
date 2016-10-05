@@ -93,8 +93,8 @@ class Story extends Component {
       : config.cardAspectRatio === '2:1' ? 'mt3_intratio--two-one'
       : config.cardAspectRatio === '1:1' ? 'mt3_intratio--square'
       : 'mt3_intratio--photo';
-    
-    const kickerStyle = text.kicker.style === 'prompt' ? 'mt3_promocard-container--prompt' : '';
+
+    const kickerStyle = text.kicker && text.kicker.style === 'prompt' ? 'mt3_promocard-container--prompt' : '';
 
     if(this.state.breakpoint !== null){
 

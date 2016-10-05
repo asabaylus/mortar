@@ -69,6 +69,9 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     }
   }
 
+  .left-rail, .right-rail {
+      min-height: 1px; //this rule enables the rail to still take up space even if it has no relative-positioned content (for parallax purposes)
+  }
 }
 
 .mt3_fiveup {

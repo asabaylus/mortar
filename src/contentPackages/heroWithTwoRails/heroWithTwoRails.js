@@ -2,28 +2,21 @@
 
 import React, { Component, PropTypes } from 'react';
 import {default as MTPromoCard} from '../../modules/promocard/MTPromoCard';
+import {Pestle} from '@natgeo/pestle';
 import PortalWrapper from '../../util/PortalWrapper';
 
-import { TweenLite, CSSPlugin } from 'gsap';
-import ScrollMagic from 'scrollmagic';
 import $ from 'jquery';
 import _debounce from 'lodash/debounce';
-
-
-//additional Scrollmagic plugins: GSAP API, debug indicators. Debug plugin commented out here - uncomment to debug
-import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
-// import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js';
+import railsParallax from '../../util/parallax/railsParallax';
 
 const mobileBreakpoint = 768;
 
 class HeroWithTwoRails extends Component {
   constructor(props) {
     super(props);
-    this.enableParallax = false;
     this.resizeHandler = null;
     this._window = $(window);
     this.resetParallax = this.resetParallax.bind(this);
-    this.scrollmagicController = null;
   }
 
   headingParallax(viewportHeight) {
@@ -32,124 +25,43 @@ class HeroWithTwoRails extends Component {
 
     const railsHeight = railsDiv.getBoundingClientRect().height;
     const headingHeight = headingDiv.getBoundingClientRect().height;
-    let firstTransitionDuration;
-    let firstTransitionDistance;
-    let secondTransitionDuration;
+    const percentageUnpinned = 0.33;
+
+    let sceneDuration;
+    let transformDistance;
     let setPin = true;
+    let bottomPositionOverride = null;
 
     //animate differently depending if both rails are larger than the whole viewport or not
     if(viewportHeight > railsHeight) {
       setPin = false;
-      firstTransitionDuration = railsHeight * 0.7;
-      firstTransitionDistance = railsHeight - headingHeight;
+      sceneDuration = railsHeight * 0.7;
+      transformDistance = railsHeight - headingHeight;
     } else {
-      let pageHeadingOffset = (viewportHeight - headingHeight)/2;
-
-      firstTransitionDuration = railsHeight / 3;
-      firstTransitionDistance = pageHeadingOffset + firstTransitionDuration;
-      secondTransitionDuration = railsHeight - pageHeadingOffset - headingHeight - firstTransitionDuration;
+      const pageHeadingOffset = (viewportHeight - headingHeight)/2;
+      sceneDuration = railsHeight - pageHeadingOffset - headingHeight;
+      bottomPositionOverride = railsHeight - headingHeight;
+      transformDistance = pageHeadingOffset
     }
 
-    new ScrollMagic.Scene({
-        triggerElement: railsDiv,
-        duration: firstTransitionDuration
-      })
-      .setTween(headingDiv, {y: `${firstTransitionDistance}px`, ease: Linear.easeNone})
-      /*
-        for debugging, uncomment this next line, and make sure the "debug.addIndicators.js" plugin is imported
-      */
-      //.addIndicators()
-      .addTo(this.scrollmagicController);
-
-    //part 2 - stay fixed in middle of viewport until package exits viewport.
-    if(setPin) {
-      new ScrollMagic.Scene({
-          triggerElement: railsDiv,
-          duration: secondTransitionDuration,
-          offset: firstTransitionDuration
-        })
-        .setPin(headingDiv)
-        //.addIndicators()
-        .addTo(this.scrollmagicController);
-    }
-  }
-
-  railsParallax(viewportHeight) {
-    const leftRail = this.props.parentEl.getElementsByClassName("hero-with-two-rails__left-rail")[0];
-    const rightRail = this.props.parentEl.getElementsByClassName("hero-with-two-rails__right-rail")[0];
-
-    //if both rails aren't present, do not create parallax effect
-    if(!leftRail || !rightRail) { return }
-
-    const leftRailHeight = leftRail.getBoundingClientRect().height;
-    const rightRailHeight = rightRail.getBoundingClientRect().height;
-    const railDifference = Math.abs(leftRailHeight - rightRailHeight);
-
-    // if the rails are not sufficiently unequal, do not create parallax effect
-    if(railDifference < 100) {
-      return;
-    }
-
-    let shorterRail;
-    let tallerRail;
-    let tallerRailHeight;
-    let railsDuration;
-
-    //assign vars depending on which rail is taller
-    if(leftRailHeight < rightRailHeight) {
-      shorterRail = leftRail;
-      tallerRail = rightRail;
-      tallerRailHeight = rightRailHeight;
-    } else {
-      shorterRail = rightRail;
-      tallerRail = leftRail;
-      tallerRailHeight = leftRailHeight;
-    }
-
-    //animate differently depending if both rails are larger than the whole viewport or not
-    if(viewportHeight > tallerRailHeight) {
-      railsDuration = viewportHeight - tallerRailHeight;
-    } else {
-      railsDuration = tallerRailHeight - viewportHeight;
-    }
-
-    // build scenes
-    new ScrollMagic.Scene({
-      triggerElement: tallerRail,
-      duration: railsDuration
-     })
-      .setTween(shorterRail, {y: railDifference, ease: Linear.easeNone})
-     /*
-       for debugging, uncomment this next line, and make sure the "debug.addIndicators.js" plugin is imported
-     */
-      //.addIndicators()
-      .addTo(this.scrollmagicController);
+    Pestle.PubSub.publish('ParallaxScenes.addParallaxScene', {
+      triggerElement: railsDiv,
+      duration: sceneDuration,
+      parallaxElement: headingDiv.getElementsByClassName("mt3_parallax-wrap")[0],
+      transformDistance: transformDistance,
+      pinAfterPercentage: setPin ? percentageUnpinned : null,
+      bottomPositionOverride: bottomPositionOverride
+    });
   }
 
   resetParallax() {
     const contentWidth = this.props.parentEl.getBoundingClientRect().width;
     const viewportHeight = this._window.height();
 
-
-    //if there's already a ScrollMagic controller, destroy it
-    if(this.scrollmagicController) {
-      //pass an argument of true to "reset" the scene
-      this.scrollmagicController = this.scrollmagicController.destroy(true);
-    }
-
     //if the component width is < mobileBreakpoint, cancel parallax effects
     if(contentWidth < mobileBreakpoint) {
       return;
     }
-
-    // init controller
-    this.scrollmagicController = new ScrollMagic.Controller(
-      {
-        globalSceneOptions: {
-          triggerHook: 0
-        }
-      }
-    );
 
     // build heading scenes
     if(this.props.parallaxHeading && this.props.heading && this.props.heading !== "" && this.props.headingPosition === "below") {
@@ -157,17 +69,18 @@ class HeroWithTwoRails extends Component {
     }
 
     //build rails scene
-    this.railsParallax(viewportHeight);
-
-  }
-  componentDidMount() {
-    /* NOTE: temporarily disabling parallax, unless a "enableParallax" query var is found */
-    const queryVars = window.location.search.substring(1);
-    if (queryVars.indexOf('enableParallax') !== -1) {
-      this.enableParallax = true;
+    if(this.props.parallaxRails) {
+      railsParallax({
+        leftRail: this.props.parentEl.getElementsByClassName("hero-with-two-rails__left-rail")[0],
+        rightRail: this.props.parentEl.getElementsByClassName("hero-with-two-rails__right-rail")[0],
+        viewportHeight: viewportHeight
+      });
     }
 
-    if(this.enableParallax) {
+  }
+
+  componentDidMount() {
+    if(this.props.parallaxRails || this.props.parallaxHeading) {
       this.resetParallax();
       this.resizeHandler = _debounce(this.resetParallax, 250);
       window.addEventListener('resize', this.resizeHandler);
@@ -175,8 +88,7 @@ class HeroWithTwoRails extends Component {
   }
 
   componentWillUnmount() {
-    /* NOTE: temporarily disabling parallax, unless a "enableParallax" query var is found */
-    if(this.enableParallax) {
+    if(this.props.parallaxRails || this.props.parallaxHeading) {
       window.removeEventListener('resize', this.resizeHandler);
     }
 
@@ -184,7 +96,6 @@ class HeroWithTwoRails extends Component {
   render() {
     let portalContent = [];
     let heroExists = false;
-    const parentWidth = this.props.parentEl.getBoundingClientRect().width > 768 ? 600 : null;
 
     //Heading
     if(this.props.heading && this.props.heading !== "") {
@@ -200,7 +111,11 @@ class HeroWithTwoRails extends Component {
         portalContent.push(
           <PortalWrapper targetDiv={headingDiv} key="heading">
             <div className={`hero-with-two-rails__heading hero-with-two-rails__heading--${this.props.theme}`}>
-              <h1>{this.props.heading}</h1>
+              <div className="mt3_parallax-wrap--outer">
+                <div className="mt3_parallax-wrap">
+                  <h1>{this.props.heading}</h1>
+                </div>
+              </div>
             </div>
           </PortalWrapper>
         );
@@ -232,13 +147,25 @@ class HeroWithTwoRails extends Component {
             heroExists = true;
           }
 
+          //initial promo width
+          let promoWidth = null;
+          const parentWidth = this.props.parentEl.getBoundingClientRect().width;
+
+          if (parentWidth > 768) {
+            if(parentWidth > 1534 && card.config.itemPos == "lr") {
+              promoWidth = 1000;
+            } else {
+              promoWidth = 600;
+            }
+          }
+
           portalContent.push(
             <PortalWrapper targetDiv={cardDiv} key={i++}>
               <MTPromoCard
                 {...card}
                 additionalClasses={additionalClasses}
                 cardLocation={cardLocation}
-                parentWidth={parentWidth}
+                parentWidth={promoWidth}
                 theme={this.props.theme}/>
             </PortalWrapper>
           );
@@ -248,7 +175,6 @@ class HeroWithTwoRails extends Component {
               {...card}
               additionalClasses={additionalClasses}
               cardLocation={cardLocation}
-              parentWidth={parentWidth}
               theme={this.props.theme}
               key={i++}/>
           );
@@ -285,6 +211,7 @@ HeroWithTwoRails.propTypes = {
   heading: PropTypes.string,
   headingPosition: PropTypes.string,
   parallaxHeading: PropTypes.bool,
+  parallaxRails: PropTypes.bool,
   theme: PropTypes.string,
   parentEl: PropTypes.object.isRequired
 };
@@ -292,6 +219,7 @@ HeroWithTwoRails.propTypes = {
 HeroWithTwoRails.defaultProps = {
   headingPosition: 'above',
   parallaxHeading: true,
+  parallaxRails: true,
   theme: 'light'
 };
 

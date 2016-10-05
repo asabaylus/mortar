@@ -39,6 +39,10 @@ class FourUpComponent extends Component {
     }
 
     let currentCard = card;
+    const parentWidth = this.props.initialWidth;
+
+
+
     // We want to force the aspect ratio of the first two cards in the stack based on business rules. Here we look at the zero based index and make that decision
     switch(index) {
       // cards 3 and 4 are rendered differently, and need a different aspect ratio based on the parent container width
@@ -63,7 +67,7 @@ class FourUpComponent extends Component {
       break;
     }
 
-    this.storyCards.push(<MTPromoCard key={index} {...currentCard} theme={'dark'} />);
+    this.storyCards.push(<MTPromoCard key={index} {...currentCard} theme={'dark'} parentWidth={parentWidth}/>);
   }
 
   render() {

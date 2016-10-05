@@ -76,7 +76,7 @@ class ContentPackageConfigurator extends Component {
 
   render() {
     const props = this.state.componentProps;
-    const ContainerComponent = <LeftAndRightContentPackageComponent theme={props.theme} initialWidth={document.getElementsByTagName('body')[0].getBoundingClientRect().width} fourUpWidth={document.getElementsByTagName('body')[0].getBoundingClientRect().width * 0.58} fourUpModel={props.dataModel.components[1]} fiveUpModel={props.dataModel.components[0]} fiveUpWidth={document.getElementsByTagName('body')[0].getBoundingClientRect().width * 0.42}/>;
+    const ContainerComponent = <LeftAndRightContentPackageComponent theme={props.theme} initialWidth={document.getElementsByTagName('body')[0].getBoundingClientRect().width} fourUpWidth={document.getElementsByTagName('body')[0].getBoundingClientRect().width * 0.58} fourUpModel={props.dataModel.components[1]} fiveUpModel={props.dataModel.components[0]} fiveUpWidth={document.getElementsByTagName('body')[0].getBoundingClientRect().width * 0.42} parentEl={props.parentEl}/>;
 
     return (
         <Configurator component={ContainerComponent}>
