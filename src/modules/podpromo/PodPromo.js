@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import Image from '@natgeo/modules-images';
 import CTA from '../button/CTAButton';
-import BackgroundImageParallax from '../../util/parallax/BackgroundImageParallax';
+import BackgroundImageParallax from '../../util/parallax/backgroundImageParallax';
 import LazyLoad from 'react-lazy-load';
 import ElementQuery from 'react-element-query';
 
