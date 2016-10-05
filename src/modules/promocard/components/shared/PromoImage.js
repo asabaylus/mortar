@@ -33,7 +33,9 @@ const searchAndGetCroppingSrcset = (croppingSrcset, aspectRatio) => {
 
 const PromoImage = (props) => {
 
-  let srcset;
+  let srcset = props.leadMedia.srcset;
+  let aspectRatio = props.leadMedia.aspectRatio;
+
   const playButton =
       <button className="mt3_videopromo-button">
         <span className="mt3_visuallyhidden">Play</span>
@@ -69,12 +71,12 @@ const PromoImage = (props) => {
     }
   }
 
-  if(props.config.cardAspectRatio && props.leadMedia.croppings) {
+  if (props.config.cardAspectRatio && props.leadMedia.croppings) {
     const croppingSrcset = searchAndGetCroppingSrcset(props.leadMedia.croppings, frameAspectRatio);
-    srcset = croppingSrcset ? croppingSrcset : props.leadMedia.srcset;
-  }
-  else {
-    srcset = props.leadMedia.srcset;
+    if (croppingSrcset) {
+      srcset = croppingSrcset;
+      aspectRatio = frameAspectRatio;
+    }
   }
 
   return(
@@ -86,7 +88,7 @@ const PromoImage = (props) => {
         : null}
         {props.brandingBadgeLabel ? <figcaption className="mt3_promocard-branding">{props.brandingBadgeLabel}</figcaption> : null}
         <Image
-          aspectRatio={props.leadMedia.aspectRatio}
+          aspectRatio={aspectRatio}
           frameAspectRatio={frameAspectRatio}
           lazyLoad={false}
           altText={props.leadMedia.altText}
