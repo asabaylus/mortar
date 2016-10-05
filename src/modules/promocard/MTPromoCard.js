@@ -6,7 +6,7 @@ import Story from './components/types/Story';
 import ShowCard from '../showcard/showCard';
 
 const MTPromoCard = (props) => {
-  return props.type == "show" ? <ShowCard {...props}/> : <Story {...props}/>;
+  return props.type === 'show' ? <ShowCard {...props}/> : <Story {...props}/>;
 };
 
 MTPromoCard.PropTypes = {
