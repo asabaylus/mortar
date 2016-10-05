@@ -141,22 +141,22 @@ class HeroWithTwoRails extends Component {
         //pass class if it's the first promo
         const additionalClasses = !i ? "mt3_promocard--first" : "";
 
+        //initial promo width
+        let promoWidth = null;
+        const parentWidth = this.props.parentEl.getBoundingClientRect().width;
+
+        if (parentWidth > 768) {
+          if(parentWidth > 1534 && card.config.itemPos == "lr") {
+            promoWidth = 1000;
+          } else {
+            promoWidth = 600;
+          }
+        }
+
         if(cardDiv) {
           //if it's targeted to the hero
           if($(cardDiv.parentNode).hasClass("hero-with-two-rails__hero")) {
             heroExists = true;
-          }
-
-          //initial promo width
-          let promoWidth = null;
-          const parentWidth = this.props.parentEl.getBoundingClientRect().width;
-
-          if (parentWidth > 768) {
-            if(parentWidth > 1534 && card.config.itemPos == "lr") {
-              promoWidth = 1000;
-            } else {
-              promoWidth = 600;
-            }
           }
 
           portalContent.push(

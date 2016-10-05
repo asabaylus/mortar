@@ -3,14 +3,15 @@
 import React, { PropTypes }  from 'react';
 import {Pestle} from '@natgeo/pestle';
 import Story from './components/types/Story';
+import ShowCard from '../showcard/showCard';
 
 const MTPromoCard = (props) => {
-  return <Story {...props}/>;
+  return props.type === 'show' ? <ShowCard {...props}/> : <Story {...props}/>;
 };
 
 MTPromoCard.PropTypes = {
   itemId: PropTypes.string,
-  itemPos: PropTypes.string,  
+  itemPos: PropTypes.string,
   additionalClasses: PropTypes.string,
   theme: PropTypes.string,
   type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
