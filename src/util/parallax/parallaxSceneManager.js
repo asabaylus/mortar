@@ -1,4 +1,3 @@
-import { TweenLite, CSSPlugin } from 'gsap';
 import {Pestle} from '@natgeo/pestle';
 import $ from 'jquery';
 import _debounce from 'lodash/debounce';
