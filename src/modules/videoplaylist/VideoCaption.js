@@ -2,6 +2,7 @@
 
 import React, {Component} from 'react';
 import _debounce from 'lodash/debounce';
+import $ from 'jquery';
 import 'jquery.dotdotdot';
 
 /**
