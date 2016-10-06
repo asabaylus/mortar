@@ -3,9 +3,18 @@ $mt3_medium: 1024px;
 $mt3_large: 1280px;
 
 
+.broadsheet_wrapper {
+}
+
+.broadsheet_wrapper--grow {
+  box-shadow: inset 0 0 0 60px #ffcc00;
+  transition: box-shadow 1s ease-in-out;
+}
+
 .broadsheet {
+  border: 60px solid rgba(0,0,0,0);
   position: relative;
-  padding: 30px 60px;
+  // padding: 30px 60px;
   text-align: center;
 
   // Natgeo banner cetered in gold border
@@ -14,8 +23,10 @@ $mt3_large: 1280px;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.1em;
-    top: -14px;
+    top: -28px;
     position: relative;
+    line-height: 0;
+    display: block;
   }
 
   .mt3_broadsheet-leadMedia-header {
@@ -99,7 +110,7 @@ $mt3_large: 1280px;
     background-image:
         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><line x1='50%' y1='0' x2='50%' y2='100%' stroke-width='0.5' stroke='#999999'/></svg>");
     padding: 0;
-    margin: 0 0 10px;
+    margin: 0;
     ul {
       list-style: none;
       margin: 0;
