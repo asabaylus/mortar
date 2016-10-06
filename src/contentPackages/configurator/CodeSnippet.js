@@ -1,6 +1,7 @@
 'use strict';
 
 import React, {Component, PropTypes} from 'react';
+import * as Prism from 'prismjs';
 
 class CodeSnippet extends Component {
   constructor(props) {
@@ -65,20 +66,21 @@ class CodeSnippet extends Component {
     }
   }
 
-  // This minor witchcraft is needed to add html to the code snippet.
-  // If we don't properly escape the html entities, the whole component breaks
   get codeString(){
-    const start = `&#x3C;div data-pestle-module=&#x22;${this.props.componentName}&#x22;&#x3E;\n&#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;\n`;
-    const end = "\n&lt;script&gt;";
+    let start = `<div data-pestle-module="${this.props.componentName}">\n<script type="text/json" data-pestle-options>\n`;
+    let end = "\n</script>\n</div>";
 
-    return start + JSON.stringify(this.props.code, null, 2) + end;
+    const code = Prism.highlight(JSON.stringify(this.props.code, null, 2), Prism.languages.javascript);
+    start = Prism.highlight(start, Prism.languages.markup)
+    end = Prism.highlight(end, Prism.languages.markup)
+    return start + code + end;
   }
 
   renderSimpleState(){
     return (
       <div className="codesnippet-wrapper expandheight" ref="codesnippetWrapper">
-        <pre className="codesnippet">
-          <code className="language-markup" dangerouslySetInnerHTML={{__html: this.codeString }} />
+        <pre className="configurator-codesnippet">
+          <code className="configurator-markup" dangerouslySetInnerHTML={{__html: this.codeString }} />
         </pre>
       </div>
     )
@@ -90,8 +92,8 @@ class CodeSnippet extends Component {
 
       return (
         <div className={codeSnippetWrapperClass} ref="codesnippetWrapper">
-          <pre className="codesnippet">
-            <code className="language-markup" dangerouslySetInnerHTML={{__html: this.codeString}} />
+          <pre className="configurator-codesnippet">
+            <code className="configurator-markup" dangerouslySetInnerHTML={{__html: this.codeString}} />
           </pre>
           {
               this.state.collapsed

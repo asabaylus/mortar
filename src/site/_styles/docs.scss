@@ -405,19 +405,35 @@ hr {
 // ====================
 // ====================
 
+$codesnippet-fs: .9375rem;
+
 pre {
   &.codesnippet,
-  &.codesnippet[class*="language-"] {
+  &.codesnippet[class*="language-"],
+  &.configurator-codesnippet {
     background-color: $mt3_color-gray-80;
     border: 1px solid $mt3_color-gray-10;
     border-radius: 0;
     margin-top: 1.25rem;
+    padding: 1em;
 
     code {
-      font-size: .9375rem;
+      font-size: $codesnippet-fs;
       margin: 0;
     }
   }
+}
+
+.configurator-markup,
+.configurator-codesnippet {
+  // Additional styles imported from prism to accomodate the configurator codesnippet
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  line-height: 1.5;
+  overflow: auto;
+  white-space: pre;
+  word-break: normal;
+  word-wrap: normal;
 }
 
 // Applies to other code found on site. Doesn't apply to code snippets
