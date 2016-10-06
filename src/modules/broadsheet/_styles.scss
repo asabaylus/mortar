@@ -1,0 +1,126 @@
+$mt3_small: 768px;
+$mt3_medium: 1024px;
+$mt3_large: 1280px;
+
+
+.broadsheet {
+  position: relative;
+  padding: 50px 80px;
+  text-align: center;
+
+  // Natgeo banner cetered in gold border
+  > a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    top: -22px;
+    position: relative;
+  }
+
+  .mt3_broadsheet-leadMedia-header {
+    position: relative;
+    z-index: 1;
+    top: auto;
+    left: auto;
+    margin-top: 50px;
+  }
+
+  .mt3_broadsheet-leadMedia-issue-date {
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    line-height: 1.15;
+    text-transform: uppercase;
+    font-weight: 100;
+    margin-top: 50px;
+    padding: 0 2rem;
+    border-left: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.5);
+  }
+  .mt3_broadsheet-leadMedia-title {
+    font-size: 1.2rem;
+    text-transform: none;
+    margin: 0px 20% 30px;
+    padding: 0;
+    display: block;
+    h1 {
+      margin: 0;
+    }
+  }
+
+  .mt3_broadsheet-leadMedia-image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+
+  .mt3_broadsheet-leadMedia-image-overlay {
+    padding-bottom:56.49717514124294%;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .mt3_broadsheet-leadMedia-by-label,
+  .mt3_broadsheet-leadMedia-photograph-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    font-style: italic;
+    color: #CCCCCC;
+  }
+
+  .mt3_broadsheet-leadMedia-by,
+  .mt3_broadsheet-leadMedia-photograph {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+
+  section {
+      position: relative;
+      background-color: #FFF;
+      figure {
+        margin: 0;
+      }
+  }
+
+
+  //specific height rules to match the exact height of the expected text
+  &__title {
+      @media (min-width: $mt3_small) {
+        height: 47px;
+      }
+      @media (min-width: $mt3_medium) {
+        height: 64px;
+      }
+      @media (min-width: $mt3_large) {
+        height: 93px;
+      }
+  }
+
+  // &__hero {
+  //   margin: 0 auto;
+  //   max-width: 1600px;
+  //
+  //   //specific override - modify promo's margins for a "hero" promos
+  //   .mt3_promocard-container {
+  //     .mt3_promocard-pad {
+  //       padding-left: 30px;
+  //     }
+  //     @media(min-width: $mt3_small) {
+  //       margin-bottom: 0;
+  //       figure {
+  //         margin-bottom: 0;
+  //       }
+  //
+  //       .mt3_promocard-pad {
+  //         padding-left: 0px;
+  //       }
+  //     }
+  //   }
+  // }
+}

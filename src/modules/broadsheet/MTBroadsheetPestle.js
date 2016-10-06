@@ -19,9 +19,7 @@ class Broadsheet extends Module {
       mainPhotographer={issue.text.contributors.photographers[0].name}
       mainTitle={issue.text.title}
       mainUrl={issue.text.kicker.url}
-      leadMediaImage={issue.leadMedia[0].imageUrl}
-      leadMediaCaption={issue.leadMedia[0].caption}
-      leadMediaCredit={issue.leadMedia[0].credit}
+      leadMedia={issue.leadMedia[0]}
       subStoryHeading={issue.subStories.heading}
       subStories={issue.subStories.stories}
     />, this.el);
