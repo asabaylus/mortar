@@ -12,19 +12,9 @@ class Broadsheet extends Component {
     super(props);
     this.debouncedReveal = null;
     this.reveal = this.reveal.bind(this);
-    this.getWidth = this.getWidth.bind(this);
     this.calcAspectRatio = this.calcAspectRatio.bind(this);
     this.state = {
       breakpoint: this.props.parentWidth || null
-    }
-  }
-
-  getWidth(){
-    const containerWidth = this.refs.promocardContainer.getBoundingClientRect().width;
-    if(this.state.containerWidth !== containerWidth) {
-      this.setState({
-        breakpoint: containerWidth
-      });
     }
   }
 
@@ -172,6 +162,7 @@ class Broadsheet extends Component {
                     placeholderBackgroundColor={"rgb(0,0,0)"}
                     letterboxBackgroundColor = {"rgb(0,0,0)"}
                     placeholder="none"
+                    fadeSpeed={0}
                     height={this.props.height}
                     width={this.props.width}
                     altText="National Geographic Magazine Cover Image"
@@ -197,6 +188,7 @@ class Broadsheet extends Component {
   }
 }
 
+// TODO: add shape validation for leadMedia and coverImage
 Broadsheet.propTypes = {
   coverImage: PropTypes.object,
   issueDate: PropTypes.string,
