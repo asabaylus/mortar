@@ -3,6 +3,7 @@
 import React, {Component} from 'react';
 import Image from '@natgeo/modules-images';
 import _debounce from 'lodash/debounce';
+import $ from 'jquery';
 export const KICKER_TYPES = ['now', 'next'];
 
 const Kicker = ({type}) => (
