@@ -1,6 +1,6 @@
 {
   "name": "@natgeo/mortar_v3",
-  "version": "2.0.16",
+  "version": "2.0.17",
   "description": "a living styleguide for National Geographic Partners",
   "main": "index.js",
   "scripts": {
