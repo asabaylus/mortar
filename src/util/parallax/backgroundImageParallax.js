@@ -97,7 +97,8 @@ class BackgroundImageParallax extends Component {
     }
 
     const frameContentStyle = {
-      'zIndex' : -1,
+      'pointerEvents': "none",
+      'zIndex' : -1
     }
 
     return (

@@ -71,7 +71,7 @@ class LeftAndRightContentPackage extends Component {
     ];
 
     return (
-      <div className="mt3_left-and-right-package__app">
+      <div className="mt3_left-and-right-package__portal-wrap">
         {portalContent}
       </div>
     )

@@ -54,8 +54,6 @@ class PromoText extends Component {
       subHeadingContent.push(<span key={j++} className={sponsoredClasses}>{props.text.sponsorContentLabel}</span>);
     } else if(props.text.kicker){
       subHeadingContent.push(<span key={j++} className={`${attrs.className}`}>{props.text.kicker.label}</span>);
-    } else{
-      return null;
     }
 
     (props.type === 'video' && props.text.duration && props.text.kicker.style !== 'prompt') ?

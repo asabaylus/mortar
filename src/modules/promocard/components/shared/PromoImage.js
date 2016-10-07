@@ -92,7 +92,7 @@ const PromoImage = (props) => {
           frameAspectRatio={frameAspectRatio}
           lazyLoad={false}
           altText={props.leadMedia.altText}
-          src={props.type !== 'video' ? props.leadMedia.url : props.leadMedia.imageUrl}
+          src={props.leadMedia.url || props.leadMedia.imageUrl}
           srcset={srcset}
         />
         <div className="mt3_promocard-text--overlay">
