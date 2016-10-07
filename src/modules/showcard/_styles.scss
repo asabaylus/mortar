@@ -28,7 +28,6 @@
     }
   }
   &-text-container {
-    display: table;
     height: 100%;
     left: 0;
     padding: 0 30px;
@@ -46,8 +45,13 @@
       padding: 0 160px;
     }
   }
+  /*vertically center show card text*/
+  &-text-center {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
   &-text-cell {
-    /*vertically center show card text*/
     display: table-cell;
     text-align: center;
 		vertical-align: middle;

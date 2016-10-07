@@ -65,11 +65,13 @@ class ShowCard extends Component {
           <a {...attrs} />
           {imageContent}
           <div className='mt3_showcard-text-container'>
-            <div className='mt3_showcard-text-cell'>
-              <div className='mt3_showcard-text'>
-                <span className='mt3_showcard-heading'>{text.brandingBadge}</span>
-                <h2 className='mt3_showcard-title'>{text.title}</h2>
-                <span className='mt3_showcard-airdate'>{text.time}</span>
+            <div className='mt3_showcard-text-center'>
+              <div className='mt3_showcard-text-cell'>
+                <div className='mt3_showcard-text'>
+                  <span className='mt3_showcard-heading'>{text.brandingBadge}</span>
+                  <h2 className='mt3_showcard-title'>{text.title}</h2>
+                  <span className='mt3_showcard-airdate'>{text.time}</span>
+                </div>
               </div>
             </div>
           </div>
