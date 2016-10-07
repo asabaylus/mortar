@@ -40,7 +40,12 @@ class ContentPackage extends Module {
     const fiveUpContainer = document.getElementById(model.components[fiveUpIndex].itemId);
 
     ReactDOM.render(
-      <LeftAndRightContentPackageComponent theme={this.options.theme} initialWidth={packageContainer.getBoundingClientRect().width} fourUpModel={model.components[fourUpIndex]} fourUpWidth={fourUpContainer.getBoundingClientRect().width} fiveUpModel={model.components[fiveUpIndex]} fiveUpWidth={fiveUpContainer.getBoundingClientRect().width} parentEl={packageContainer} />, packageTarget);
+      <LeftAndRightContentPackageComponent
+        theme={this.options.theme}
+        initialWidth={packageContainer.getBoundingClientRect().width} fourUpModel={model.components[fourUpIndex]} fourUpWidth={fourUpContainer.getBoundingClientRect().width} fiveUpModel={model.components[fiveUpIndex]} fiveUpWidth={fiveUpContainer.getBoundingClientRect().width}
+        parentEl={packageContainer}
+        parallaxRails={this.options.parallaxRails}
+      />, packageTarget);
   }
 }
 

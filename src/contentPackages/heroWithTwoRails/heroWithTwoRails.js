@@ -14,23 +14,47 @@ const mobileBreakpoint = 768;
 class HeroWithTwoRails extends Component {
   constructor(props) {
     super(props);
+    this.heroExists = false;
     this.resizeHandler = null;
     this._window = $(window);
     this.resetParallax = this.resetParallax.bind(this);
   }
 
-  headingParallax(viewportHeight) {
+  headingParallax(viewportHeight, position) {
     const railsDiv = this.props.parentEl.getElementsByClassName("hero-with-two-rails__rails")[0];
     const headingDiv = this.props.parentEl.getElementsByClassName("hero-with-two-rails__heading")[0];
-
-    const railsHeight = railsDiv.getBoundingClientRect().height;
     const headingHeight = headingDiv.getBoundingClientRect().height;
-    const percentageUnpinned = 0.33;
+    const pageHeadingOffset = (viewportHeight - headingHeight)/2;
 
-    let sceneDuration;
-    let transformDistance;
-    let setPin = true;
     let bottomPositionOverride = null;
+    let heroDiv = null;
+    let heroHeight = null;
+    let percentageUnpinned = 0.33;
+    let railsHeight = railsDiv.getBoundingClientRect().height;
+    let sceneDuration;
+    let setPin = true;
+    let transformDistance;
+    let triggerElement = railsDiv;
+
+    //if the header is ABOVE the hero (and there is a hero)
+    if(position === "above" && this.heroExists) {
+      heroDiv = this.props.parentEl.getElementsByClassName("hero-with-two-rails__hero")[0];
+
+      //add hero's height to height of rails
+      if(heroDiv) {
+        heroHeight = heroDiv.getBoundingClientRect().height;
+
+        railsHeight += heroHeight;
+
+        //percentage of scene that the content is unpinned should roughly equal where the gap between
+        //hero and rails ends, centered in the viewport
+        percentageUnpinned = (heroHeight - (viewportHeight / 2) + headingHeight ) / railsHeight;
+        triggerElement = heroDiv;
+      } else {
+        position = "below";
+      }
+    }
+
 
     //animate differently depending if both rails are larger than the whole viewport or not
     if(viewportHeight > railsHeight) {
@@ -38,14 +62,13 @@ class HeroWithTwoRails extends Component {
       sceneDuration = railsHeight * 0.7;
       transformDistance = railsHeight - headingHeight;
     } else {
-      const pageHeadingOffset = (viewportHeight - headingHeight)/2;
       sceneDuration = railsHeight - pageHeadingOffset - headingHeight;
       bottomPositionOverride = railsHeight - headingHeight;
       transformDistance = pageHeadingOffset
     }
 
     Pestle.PubSub.publish('ParallaxScenes.addParallaxScene', {
-      triggerElement: railsDiv,
+      triggerElement: triggerElement,
       duration: sceneDuration,
       parallaxElement: headingDiv.getElementsByClassName("mt3_parallax-wrap")[0],
       transformDistance: transformDistance,
@@ -64,8 +87,8 @@ class HeroWithTwoRails extends Component {
     }
 
     // build heading scenes
-    if(this.props.parallaxHeading && this.props.heading && this.props.heading !== "" && this.props.headingPosition === "below") {
-      this.headingParallax(viewportHeight);
+    if(this.props.parallaxHeading && this.props.heading && this.props.heading !== "") {
+      this.headingParallax(viewportHeight, this.props.headingPosition);
     }
 
     //build rails scene
@@ -95,13 +118,66 @@ class HeroWithTwoRails extends Component {
   }
   render() {
     let portalContent = [];
-    let heroExists = false;
+
+    //Promo Cards
+    if(this.props.cards && this.props.cards.length) {
+      let i = 0;
+      for (const card of this.props.cards) {
+        //make sure target div exists
+        const cardDiv = document.getElementById(card.itemId);
+        const cardLocation = card.config.itemPos || null;
+
+        //pass class if it's the first promo
+        const additionalClasses = !i ? "mt3_promocard--first" : "";
+
+        //initial promo width
+        let promoWidth = null;
+        const parentWidth = this.props.parentEl.getBoundingClientRect().width;
+
+        if (parentWidth > 768) {
+          if(parentWidth > 1534 && card.config.itemPos === 'lr') {
+            promoWidth = 1000;
+          } else if (card.config.itemPos === 'hero'){
+            promoWidth = parentWidth;
+          } else {
+            promoWidth = 600;
+          }
+        }
+
+        if(cardDiv) {
+          //if it's targeted to the hero
+          if($(cardDiv.parentNode).hasClass("hero-with-two-rails__hero")) {
+            this.heroExists = true;
+          }
+
+          portalContent.push(
+            <PortalWrapper targetDiv={cardDiv} key={i++}>
+              <MTPromoCard
+                {...card}
+                additionalClasses={additionalClasses}
+                cardLocation={cardLocation}
+                parentWidth={promoWidth}
+                theme={this.props.theme}/>
+            </PortalWrapper>
+          );
+        } else {
+          portalContent.push(
+            <MTPromoCard
+              {...card}
+              additionalClasses={additionalClasses}
+              cardLocation={cardLocation}
+              theme={this.props.theme}
+              key={i++}/>
+          );
+        }
+      }
+    }
 
     //Heading
     if(this.props.heading && this.props.heading !== "") {
       let headingDiv;
 
-      if(this.props.headingPosition === "below") {
+      if(this.props.headingPosition === "below" || !this.heroExists) {
         headingDiv = this.props.parentEl.getElementsByClassName("hero-with-two-rails__heading__wrap")[0];
       } else {
         headingDiv = this.props.parentEl.getElementsByClassName("hero-with-two-rails__heading__wrap--above")[0];
@@ -130,64 +206,12 @@ class HeroWithTwoRails extends Component {
       }
     }
 
-    //Promo Cards
-    if(this.props.cards && this.props.cards.length) {
-      let i = 0;
-      for (const card of this.props.cards) {
-        //make sure target div exists
-        const cardDiv = document.getElementById(card.itemId);
-        const cardLocation = card.itemPos || null;
-
-        //pass class if it's the first promo
-        const additionalClasses = !i ? "mt3_promocard--first" : "";
-
-        //initial promo width
-        let promoWidth = null;
-        const parentWidth = this.props.parentEl.getBoundingClientRect().width;
-
-        if (parentWidth > 768) {
-          if(parentWidth > 1534 && card.config.itemPos == "lr") {
-            promoWidth = 1000;
-          } else {
-            promoWidth = 600;
-          }
-        }
-
-        if(cardDiv) {
-          //if it's targeted to the hero
-          if($(cardDiv.parentNode).hasClass("hero-with-two-rails__hero")) {
-            heroExists = true;
-          }
-
-          portalContent.push(
-            <PortalWrapper targetDiv={cardDiv} key={i++}>
-              <MTPromoCard
-                {...card}
-                additionalClasses={additionalClasses}
-                cardLocation={cardLocation}
-                parentWidth={promoWidth}
-                theme={this.props.theme}/>
-            </PortalWrapper>
-          );
-        } else {
-          portalContent.push(
-            <MTPromoCard
-              {...card}
-              additionalClasses={additionalClasses}
-              cardLocation={cardLocation}
-              theme={this.props.theme}
-              key={i++}/>
-          );
-        }
-      }
-    }
-
     //apply "theme" class manually to parent element
     let parentClasses = "hero with two rails mt3_row";
     if(this.props.theme) {
       parentClasses += ` hero-with-two-rails--${this.props.theme}`;
     }
-    if(heroExists) {
+    if(this.heroExists) {
       parentClasses += ` hero-with-two-rails--no-hero`;
     }
     if(!this.props.heading || this.props.heading === "") {

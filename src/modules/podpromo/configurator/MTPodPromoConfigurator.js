@@ -72,6 +72,12 @@ class PodPromoConfigurator extends Component {
     }
   }
 
+  onToggle(stateProperty) {
+    return (event) => {
+      this.updateState(stateProperty, { $set: event.target.checked });
+    };
+  }
+
   onLeadMediaArrayChange(stateProperty) {
     return (event) => {
       const value = event.target.value ? event.target.value.split(',') : null;
@@ -88,12 +94,6 @@ class PodPromoConfigurator extends Component {
 
   updateMediaState(newState) {
     this.setState(update(this.state, { componentProps : newState }));
-  }
-
-  onToggle(stateProperty) {
-    return (event) => {
-      this.updateState(stateProperty, { $set: event.target.checked });
-    };
   }
 
   render() {

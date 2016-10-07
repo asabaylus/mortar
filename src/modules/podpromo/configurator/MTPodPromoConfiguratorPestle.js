@@ -18,8 +18,9 @@ class PodPromoConfigurator extends Module {
       model: {
         type: 'pod',
         config: {
-          yourshot: true,
-          sponsored: true
+          parallax: true,
+          sponsored: true,
+          yourshot: true
         },
         link: {
           url: 'http://www.nationalgeographic.com/photography/photo-of-the-day/08/some-image',

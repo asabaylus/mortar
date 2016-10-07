@@ -65,13 +65,17 @@ class BackgroundImageParallax extends Component {
   }
 
   componentDidMount() {
-    this.resetMeasurements();
-    this.resizeHandler = _debounce(this.resetMeasurements, 250);
-    window.addEventListener('resize', this.resizeHandler);
+    if(this.props.enableParallax) {
+      this.resetMeasurements();
+      this.resizeHandler = _debounce(this.resetMeasurements, 250);
+      window.addEventListener('resize', this.resizeHandler);
+    }
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.resizeHandler);
+    if(this.props.enableParallax) {
+      window.removeEventListener('resize', this.resizeHandler);
+    }
   }
 
   //sets the aspect ratio of the parallax frame
@@ -107,7 +111,13 @@ class BackgroundImageParallax extends Component {
 }
 
 BackgroundImageParallax.propTypes = {
+  enableParallax: React.PropTypes.bool,
   frameRatio: React.PropTypes.string
 };
+
+
+BackgroundImageParallax.defaultProps = {
+  enableParallax: true
+}
 
 export default BackgroundImageParallax;

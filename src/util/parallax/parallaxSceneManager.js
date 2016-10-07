@@ -116,10 +116,8 @@ module.exports = class ParallaxSceneManager {
         if(relativeScrollPercentage <= scene.pinAfterPercentage) {
           initialAnimationPercentage = (scrollTop - scene.scrollTop) / (scene.duration * scene.pinAfterPercentage);
         }
-
         transformPixelValue = (Math.round(1000 * initialAnimationPercentage  * scene.transformDistance))/1000;
       } else {
-
         let fixedTransformDifference = scene.duration - scene.transformDistance;
 
         transformPixelValue = 0 - (Math.round(1000 * relativeScrollPercentage * fixedTransformDifference))/1000;

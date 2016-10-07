@@ -24,9 +24,9 @@ class HeroWithTwoRailsConfigurator extends Module {
          {
             "itemId":"hero_promocard_0",
             "type":"article",
-            "itemPos":"hero",
             "config":{
                "cardAspectRatio":"2:1",
+               "itemPos":"hero",
                "sponsored":false
             },
             "link":{

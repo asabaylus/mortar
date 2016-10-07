@@ -114,10 +114,10 @@ class PodPromoComponent extends Component {
             />
           </div>
           <div className="mt3_podpromo-imagewrapper">
-            <BackgroundImageParallax frameRatio={"16:9"}>
+            <BackgroundImageParallax frameRatio={"16:9"} enableParallax={componentConfig.parallax}>
                 <Image
                   aspectRatio={componentImage[0].aspectRatio}
-                  frameAspectRatio={"3:2"}
+                  frameAspectRatio={componentConfig.parallax ? '3:2' : '16:9'}
                   lazyLoad={true}
                   altText={componentImage.altText}
                   src={componentImage[0].url}
@@ -151,8 +151,9 @@ PodPromoComponent.propTypes = {
   model: React.PropTypes.shape({
     type: React.PropTypes.string.isRequired,
     config: React.PropTypes.shape({
-      yourshot: React.PropTypes.bool,
+      parallax: React.PropTypes.bool,
       sponsored: React.PropTypes.bool,
+      yourshot: React.PropTypes.bool,
     }),
     link: React.PropTypes.shape({
       url: React.PropTypes.string,

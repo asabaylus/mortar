@@ -7,16 +7,17 @@ $mt3_large: 1280px;
   position: relative;
 
   //specific height rules to match the exact height of the expected text
-  &__heading, &__heading__wrap {
-      @media (min-width: $mt3_small) {
-        height: 47px;
-      }
-      @media (min-width: $mt3_medium) {
-        height: 64px;
-      }
-      @media (min-width: $mt3_large) {
-        height: 93px;
-      }
+  &__heading, &__heading__wrap, &__heading__wrap--above {
+    height: 31px;
+    @media (min-width: $mt3_small) {
+      height: 47px;
+    }
+    @media (min-width: $mt3_medium) {
+      height: 64px;
+    }
+    @media (min-width: $mt3_large) {
+      height: 93px;
+    }
   }
 
   &__hero {
@@ -56,7 +57,6 @@ $mt3_large: 1280px;
   &__heading {
     h1 {
       color: $mt3_color-gray-10;
-      display: none;
       font-family: $mt3_verlag-stack;
       font-size: 40px;
       font-weight: 600;
@@ -64,8 +64,8 @@ $mt3_large: 1280px;
       margin: 0 auto;
       text-align: center;
       text-transform: uppercase;
+      margin-top: -7px;
       @media (min-width: $mt3_small) {
-        display: block;
         font-size: 60px;
         margin-top: -12px
       }
@@ -121,13 +121,18 @@ $mt3_large: 1280px;
       display: none;
     }
   }
-  &--heading-above {
-    .hero-with-two-rails__heading__wrap {
-      display: none;
+  &--heading-below {
+    .hero-with-two-rails__heading__wrap--above, .hero-with-two-rails__heading__wrap {
+      display: none
     }
   }
-  &--heading-below {
-    .hero-with-two-rails__heading__wrap--above {
+
+  &--heading-above {
+    margin-top: 30px;
+    @media (min-width: $mt3_small) {
+      margin-top: 60px;
+    }
+    .hero-with-two-rails__heading__wrap {
       display: none
     }
   }
