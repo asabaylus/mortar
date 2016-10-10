@@ -99,6 +99,7 @@
     "metalsmith-markdown": "^0.2.1",
     "mocha": "^2.4.5",
     "phantomjs-prebuilt": "^2.1.7",
+    "prismjs": "^1.5.1",
     "pubsub-js": "^1.5.3",
     "react": "0.14.x || 15.3.x",
     "react-addons-test-utils": "0.14.x || 15.3.x",
