@@ -122,8 +122,13 @@ $mt3_large: 1280px;
     }
   }
   &--heading-below {
-    .hero-with-two-rails__heading__wrap--above, .hero-with-two-rails__heading__wrap {
-      display: none
+    .hero-with-two-rails__heading__wrap--above {
+      display: none;
+    }
+    @media (max-width: $mt3_small) {
+      .hero-with-two-rails__heading__wrap {
+        display: none
+      }
     }
   }
 
@@ -132,8 +137,11 @@ $mt3_large: 1280px;
     @media (min-width: $mt3_small) {
       margin-top: 60px;
     }
-    .hero-with-two-rails__heading__wrap {
-      display: none
+
+    @media (max-width: $mt3_small) {
+      .hero-with-two-rails__heading__wrap {
+        display: none
+      }
     }
   }
 }
