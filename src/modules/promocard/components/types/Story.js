@@ -1,11 +1,13 @@
 'use strict';
 
 import React, { Component, PropTypes }  from 'react';
+import {Pestle} from '@natgeo/pestle';
+import events from '../../events';
 import PromoImage from '../shared/PromoImage';
 import PromoText from '../shared/PromoText';
-import events from '../../events';
 import { generateHref } from '../../generateHref';
 import _debounce from 'lodash/debounce';
+import VideoModal from '../../../videomodal/VideoModal';
 
 class Story extends Component {
   constructor(props) {
@@ -13,6 +15,7 @@ class Story extends Component {
     this.resizeHandler = null;
     this.getWidth = this.getWidth.bind(this);
     this.calcAspectRatio = this.calcAspectRatio.bind(this);
+    this.launchModal = this.launchModal.bind(this);
     this.state = {
       breakpoint: this.props.parentWidth || null
     }
@@ -20,29 +23,34 @@ class Story extends Component {
 
   static defaultProps = {
     ...Component.defaultProps,
-    config : {
-      overlay : false
+    config: {
+      overlay: false
     }
   };
 
-  promoClicked(){
-    Pestle.PubSub.publish(events.promoClicked); // data object may be passed as second arg
+  launchModal() {
+    const videoData = {
+      'itemId': this.props.itemId,
+      'leadMedia': this.props.leadMedia,
+      'text': this.props.text
+    };
+    Pestle.PubSub.publish(events.launchVideoModal, videoData);
   }
 
-  getWidth(){
+  getWidth() {
     const containerWidth = this.refs.promocardContainer.getBoundingClientRect().width;
-    if(this.state.containerWidth !== containerWidth) {
+    if (this.state.containerWidth !== containerWidth) {
       this.setState({
         breakpoint: containerWidth
       });
     }
   }
 
-  calcAspectRatio(){
+  calcAspectRatio() {
     const width = this.state.breakpoint;
     const parentFrameAspectRatio = this.props.config.cardAspectRatio;
     let parentFrameHeightMultiplier;
-    switch(parentFrameAspectRatio){
+    switch (parentFrameAspectRatio) {
     case '16:9':
       parentFrameHeightMultiplier = 0.5625;
       break;
@@ -58,16 +66,16 @@ class Story extends Component {
     const height = width * parentFrameHeightMultiplier;
 
     let corner = 30;
-    if(width > 375 && width < 768){
+    if (width > 375 && width < 768) {
       corner = 40;
-    }else if(width > 768){
+    } else if (width > 768) {
       corner = 60;
     }
 
     return (height - corner) / (width - corner);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.getWidth();
     this.resizeHandler = _debounce(this.getWidth, 250);
     window.addEventListener('resize', this.resizeHandler);
@@ -77,9 +85,9 @@ class Story extends Component {
     window.removeEventListener('resize', this.resizeHandler);
   }
 
-  render(){
-    const {additionalClasses, type, config, cardLocation, link, leadMedia, brandingBadgeLabel, text, theme, ...props} = this.props;
-    const attrs = link || type === 'video' ? {
+  render() {
+    const {itemId, additionalClasses, type, config, cardLocation, link, leadMedia, brandingBadgeLabel, text, theme, ...props} = this.props;
+    const attrs = link || type !== 'video' ? {
       className: 'mt3_div-link',
       href: link ? generateHref(link.url, link.trackingCodes) : null,
       target: link ? link.target : null
@@ -87,7 +95,7 @@ class Story extends Component {
     const noImages = !leadMedia || leadMedia[0].url === ''; // add second check for configurator as leadMedia array is always present
     const bkgColor = theme === 'dark' ? 'mt3_promocard-container--dark' : noImages ? 'mt3_promocard-container--text-only' : '';
     let i = 0;
-    let content = [<a key={i++} {...attrs} />];
+    let content = type === 'video' ? [] : [<a key={i++} {...attrs} />]; // container should not be linked if video card
     const aspectRatio = config.cardAspectRatio === '16:9' ? 'mt3_intratio--broadcast'
       : config.cardAspectRatio === '3:2' ? 'mt3_intratio--photo'
       : config.cardAspectRatio === '2:1' ? 'mt3_intratio--two-one'
@@ -96,19 +104,20 @@ class Story extends Component {
 
     const kickerStyle = text.kicker && text.kicker.style === 'prompt' ? 'mt3_promocard-container--prompt' : '';
 
-    if(this.state.breakpoint !== null){
+    if (this.state.breakpoint !== null) {
 
       // this builds the structure differently based on the container width, which if above 768 should have nested text overlaying the photo by passing an additional
       // property via the config object
-      if(!noImages && this.state.breakpoint > 768) {
+      if (!noImages && this.state.breakpoint > 768) {
         Object.assign(config, {
           overlay: true
         });
-        if (type === 'gallery'){
+        if (type === 'gallery') {
           const ctaSizeClass = 'mt3_promocard-gallery-cta--large';
           content.push(
             <div key={i++} className={`mt3_row mt3_promocard-gallery-images ${aspectRatio}`}>
-              <div className={`mt3_color--white mt3_btn mt3_btn--naked mt3_fullwidth mt3_promocard-gallery-cta ${ctaSizeClass}`}>
+              <div
+                className={`mt3_color--white mt3_btn mt3_btn--naked mt3_fullwidth mt3_promocard-gallery-cta ${ctaSizeClass}`}>
                 <a {...attrs} />
                 <span>Photo Gallery</span>
                 <svg className="mt3_promocard-gallery-cta-icon">
@@ -130,7 +139,7 @@ class Story extends Component {
               </div>
             </div>
           );
-        }else{
+        } else {
           content.push(
             <PromoImage key={i++} type={type} config={config} cardLocation={cardLocation} link={link}
                         leadMedia={leadMedia[0]} brandingBadgeLabel={brandingBadgeLabel} text={text}
@@ -139,14 +148,15 @@ class Story extends Component {
           );
         }
       } else if (!noImages && this.state.breakpoint < 768) {
-        if (type === 'gallery'){
+        if (type === 'gallery') {
           const ctaSizeClass = this.state.breakpoint > 375 ? 'mt3_promocard-gallery-cta--medium' : '';
           const imageSizeClass = this.state.breakpoint > 375 ? 'mt3_promocard-gallery-images--image2-medium' : '';
 
           content.push(
             <div key={i++} className={`mt3_row mt3_promocard-gallery-images ${aspectRatio}`}>
               <div className='mt3_promocard-gallery-cta--medium'>
-                <div className={`mt3_color--white mt3_btn mt3_btn--naked mt3_fullwidth mt3_promocard-gallery-cta ${ctaSizeClass}`}>
+                <div
+                  className={`mt3_color--white mt3_btn mt3_btn--naked mt3_fullwidth mt3_promocard-gallery-cta ${ctaSizeClass}`}>
                   <a {...attrs} />
                   <span>Photo Gallery</span>
                   <svg className="mt3_promocard-gallery-cta-icon">
@@ -183,7 +193,7 @@ class Story extends Component {
             />
           );
         }
-      } else{
+      } else {
         content.push(
           <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type} noImages={noImages}
                      breakpoint={this.state.breakpoint}
@@ -192,8 +202,9 @@ class Story extends Component {
       }
     }
 
-    return(
-      <div className={`mt3_row mt3_col-12 mt3_promocard-container ${bkgColor} ${kickerStyle} ${additionalClasses}`} ref='promocardContainer'>
+    return (
+      <div className={`mt3_row mt3_col-12 mt3_promocard-container ${bkgColor} ${kickerStyle} ${additionalClasses}`}
+           ref='promocardContainer' onClick={type === 'video' ? this.launchModal : null}>
         {content}
       </div>
     );
@@ -202,7 +213,7 @@ class Story extends Component {
 }
 
 Story.PropTypes = {
-  id: PropTypes.string,
+  itemId: PropTypes.string,
   theme: PropTypes.string,
   type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
   config: PropTypes.object,
@@ -211,12 +222,17 @@ Story.PropTypes = {
     target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
     trackingCodes: PropTypes.array || PropTypes.string
   }),
-  leadMedia: PropTypes.arrayOf(PropTypes.shape({
-    url: PropTypes.string,
-    aspectRatio: PropTypes.number,
-    altText: PropTypes.string,
-    srcset: PropTypes.array
-  })),
+  leadMedia: PropTypes.arrayOf(
+    PropTypes.shape({
+      url: PropTypes.string,
+      aspectRatio: PropTypes.number,
+      altText: PropTypes.string,
+      srcset: PropTypes.array
+    }) ||
+    PropTypes.shape({
+      guid: PropTypes.string,
+      directLink: PropTypes.string
+    })),
   text: PropTypes.object,
   brandingBadgeLabel: PropTypes.string,
   modal: PropTypes.bool

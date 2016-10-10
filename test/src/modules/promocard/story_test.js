@@ -235,10 +235,6 @@ describe('Story Component', () => {
       wrapper.setState({ breakpoint: "700" });
     });
 
-    it('logs to console', () => {
-      console.log(wrapper.find('.mt3_promocard-gallery-images--image1').childAt(0));
-    });
-
     it('Should have a containing div', () => {
       expect(wrapper.find('.mt3_promocard-container').type()).to.equal("div");
     });

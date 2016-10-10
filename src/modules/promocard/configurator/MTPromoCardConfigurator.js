@@ -13,6 +13,7 @@ import { createObjectFromString } from '../../../contentPackages/configurator/ut
 
 import MTPromoCard from '../MTPromoCard';
 import MTShowCard from '../../showcard/showCard';
+import VideoModal from '../../videomodal/VideoModal';
 
 class PromoCardConfigurator extends Component {
   constructor(props) {
@@ -96,6 +97,7 @@ class PromoCardConfigurator extends Component {
     const showComponent = <MTShowCard {...props} />;
     return (
         <Configurator component={props.type !== 'show' ? promoComponent : showComponent}>
+          <VideoModal />
           <Section text="General">
             <SelectField label="Type" onChange={this.onTextChange('type')} value={props.type}>
               <option value="article">Article</option>

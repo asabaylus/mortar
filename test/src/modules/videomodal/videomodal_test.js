@@ -5,8 +5,8 @@ import Pestle from '@natgeo/pestle';
 
 import VideoModalPestle from '../../../../src/modules/videomodal/VideoModalPestle';
 import VideoModal from '../../../../src/modules/videomodal/VideoModal';
-import VideoContainer from '../../../../src/modules/videomodal/VideoContainer';
-import {shallow} from 'enzyme';
+import Modal from '../../../../src/modules/modals/Modal';
+import {shallow, mount} from 'enzyme';
 import React from 'react';
 
 describe('VideoModal Component', () => {
@@ -60,38 +60,26 @@ describe('VideoModal Component', () => {
   describe('VideoModal Component', () => {
     let wrapper;
     before(() => {
-      wrapper = shallow(<VideoModal id="abc321" />);
+      wrapper = mount(<VideoModal />);
+      wrapper.setState({ open: true });
     });
 
-    it('should render correclty', () => {
+    it('should render correctly', () => {
       expect(wrapper.is('VideoModal'), true);
     });
 
-  });
-
-  describe('VideoContainer Component', () => {
-    let wrapper;
-    before(() => {
-      const dataModel = {
-        leadMedia: [{
-          guid: "00000156-46b5-dca8-ab77-7ffdfcf90000",
-          directLink: "http://link.theplatform.com/s/ngs/media/guid/2423130747/00000156-46b5-dca8-ab77-7ffdfcf90000?format=redirect&policy=12441385&manifest=m3u&mbr=true"
-        }],
-        text: {
-          title: "Thursday, August 4: Saving Lions",
-          dek: "<p>Thandiwe Mweetwa, a National Geographic emerging explorer, takes the stage to talk about her work protecting lions and other wildlife in her home country of Zambia.</p>",
-          kicker: {
-            label: "National Geographic Live"
-          }
-        },
-        duration: "9:08"
-      };
-      wrapper = shallow(<VideoContainer id="ab32c1" dataModel={dataModel} />);
+    it('Should have a Modal component', () => {
+      expect(wrapper.find('Modal').type()).to.equal(Modal);
     });
 
-    it('should render correclty', () => {
-      expect(wrapper.is('VideoContainer'), true);
-      expect(wrapper.find('.mt3_kicker')).to.have.length(2);
+    it('Should have correct elements and classes', () => {
+      expect(wrapper.find(".mt3_modal-container").childAt(0).hasClass("mt3_modal-button")).to.equal(true);
+      expect(wrapper.find(".mt3_modal-button").childAt(0).hasClass("mt3_visuallyhidden")).to.equal(true);
+      expect(wrapper.find('.mt3_video-modal-container').childAt(0).hasClass("mt3_kicker-wrapper")).to.equal(true);
+      expect(wrapper.find('.mt3_video-modal-container').childAt(1).hasClass("mt3_video-modal__head")).to.equal(true);
+      expect(wrapper.find('.mt3_video-modal__head').childAt(0).hasClass("mt3_video-modal__title")).to.equal(true);
+      expect(wrapper.find('.mt3_video-modal-container').childAt(3).hasClass("mt3_video-modal__description")).to.equal(true);
+      expect(wrapper.find('.mt3_video-modal__description').childAt(0).hasClass("mt3_caption-body")).to.equal(true);
     });
 
   });

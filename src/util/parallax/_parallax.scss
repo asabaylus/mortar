@@ -10,4 +10,8 @@
     position: fixed;
     top: 0;
   }
+  &__background-image {
+    pointer-events: none;
+    z-index: -1;
+  }
 }

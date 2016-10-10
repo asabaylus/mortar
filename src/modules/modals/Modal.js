@@ -1,70 +1,55 @@
 'use strict';
 
 import React, { Component, PropTypes }  from 'react';
+import {Pestle} from '@natgeo/pestle';
+import events from '../promocard/events';
 import classNames from 'classnames';
 
 class Modal extends Component {
   constructor() {
     super();
     this.state = {
-      open: false
-    }
-    this.update = this.update.bind(this);
+      shouldRender: false,
+      renderNGSModal: false
+    };
   }
 
-  componentWillMount() {
-    //This is a temporal fix when the in the modal don't render content in the
-    //DOM.
-    try {
-      const targetIdNode = document.getElementById(this.props.targetId);
-      const modalContent = targetIdNode.innerHTML;
+  static defaultProps = {
+    ...Component.defaultProps,
+    onClose: function(){}
+  };
 
-      targetIdNode.parentNode.removeChild(targetIdNode);
-
-      this.setState({
-        modalContent: modalContent
-      });
-    } catch(e) {
-      //DO NOTHING
+  componentWillReceiveProps(props){
+    if(this.props.renderNGSModal != props.renderNGSModal) {
+      this.shouldRender = props.renderNGSModal;
+      this.setState({renderNGSModal: props.renderNGSModal});
     }
-  }
-
-  update(e) {
-    this.setState({
-      open: !this.state.open
-    })
   }
 
   render(){
     const modalClasses = classNames({
       'mt3_modal-container': true,
       'mt3_color--white': true,
-      'mt3_modal-container--active': this.state.open
+      'mt3_modal-container--active': this.state.renderNGSModal
     });
 
-    return (
-      <div>
-        <button className="mt3_btn mt3_btn--secondary" onClick={this.update}>
-          Launch Modal
-        </button>
+    //if the modal hasn't been called yet, it should not render
+    if(!this.shouldRender) {
+      return null;
+    }
 
-        <div className={modalClasses}>
-          <button className="mt3_modal-button" onClick={this.update}>
-            <span className="mt3_visuallyhidden">Close Modal</span>
-            <svg className="mt3_icon--large">
-              <use xlinkHref="#close"></use>
-            </svg>
-          </button>
-          <div dangerouslySetInnerHTML={{__html: this.state.modalContent}} />
-          {this.props.children}
-        </div>
+    return (
+      <div className={modalClasses}>
+        <button className="mt3_modal-button" onClick={this.props.onClose}>
+          <span className="mt3_visuallyhidden">Close Modal</span>
+          <svg className="mt3_icon--large">
+            <use xlinkHref="#close"></use>
+          </svg>
+        </button>
+        {this.props.children}
       </div>
     );
   }
-}
-
-Modal.propTypes = {
-  targetId: PropTypes.string
 }
 
 export default Modal

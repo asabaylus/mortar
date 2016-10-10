@@ -3,69 +3,55 @@
     <h3 class="mt3_h3">Video Modal</h3>
     <p class="mt3_subh4">
     Video Modal is the component which loads the video in the same page using
-    a popup window
+    a popup window. An example can be found by clicking on the video promo card.
     </p>
   </div>
 
   <div class="mt3_col-lg-8 mt3_col-sm-12 mt3_col-lg-offset-1 mt3_row-gut-4">
-    <p class="mt3_subh4">This component wraps the other component in a window
-    which contain the video associated data</p>
+    <p class="mt3_subh4">To use this component it must be present somewhere on the page.</p>
 
     <div class="codesnippet-wrapper">
-      <pre class="codesnippet"><code class="language-markup">&#x3C;div
-data-pestle-module=&#x22;VideoModal&#x22;&#x3E;
-  &#x3C;script type=&#x22;text/json&#x22; data-pestle-options&#x3E;
-    {
-      &#x22;dataModel&#x22;: [
-        {
-          &#x22;leadMedia&#x22;: [{
-            &#x22;guid&#x22;: &#x22;00000156-46b5-dca8-ab77-7ffdfcf90000&#x22;,
-            &#x22;directLink&#x22;: &#x22;http://link.theplatform.com/s/ngs/media/guid/2423130747/00000156-46b5-dca8-ab77-7ffdfcf90000?format=redirect&policy=12441385&manifest=m3u&mbr=true&#x22;
-          }],
-          &#x22;text&#x22;: {
-            &#x22;title&#x22;: &#x22;Thursday, August 4: Saving Lions&#x22;,
-            &#x22;dek&#x22;: &#x22;&#x3c;p&#x3e;Thandiwe Mweetwa, a National
-            Geographic emerging explorer, takes the stage to talk about her work
-            protecting lions and other wildlife in her home country of
-            Zambia.&#x3c;/p&#x3e;,
-            &#x22;kicker&#x22;: {
-              &#x22;label&#x22;: &#x22;National Geographic Live&#x22;
-            },
-            &#x22;duration&#x22;: &#x22;9:08&#x22;,
-            &#x22;publishDate&#x22;: &#x22;Mon Aug 01 11:25:56 EDT 2016&#x22;
-          }
-        }
-      ]
-    }
-  &#x3C;/script&#x3E;
-&#x3C;/div&#x3E;</code></pre>
+      <pre class="codesnippet">
+        <code class="language-markup">
+          &#x3C;div data-pestle-module=&#x22;VideoModal&#x22; /&#x3E;
+        </code>
+      </pre>
     </div>
 
-    <p class="mt3_subh4">The button launches the video modal with the specified
-    data in the Pestle script. </p>
+    <p class="mt3_subh4">Create a function to call within the component you are launching the modal from and pass the
+      data through Pestle's Pub/Sub (don't forget to bind it in your constructor)</p>
 
-    <h2 class="mt3_h5">Video Modal</h2>
-    <div data-pestle-module="VideoModal">
-      <script type="text/json" data-pestle-options>
-      {
-        "id": "df3lk433",
-        "dataModel":
-        {
-          "leadMedia": [{
-            "guid": "00000156-46b5-dca8-ab77-7ffdfcf90000",
-            "directLink": "http://link.theplatform.com/s/ngs/media/guid/2423130747/00000156-46b5-dca8-ab77-7ffdfcf90000?format=redirect&policy=12441385&manifest=m3u&mbr=true"
-          }],
-          "text": {
-            "title": "Thursday, August 4: Saving Lions",
-            "dek": "<p>Thandiwe Mweetwa, a National Geographic emerging explorer, takes the stage to talk about her work protecting lions and other wildlife in her home country of Zambia.</p>",
-            "kicker": {
-              "label": "National Geographic Live"
+    <div class="codesnippet-wrapper">
+      <pre class="codesnippet">
+        <code class="language-markup">
+          constructor(props) {
+            super(props);
+            this.launchModal = this.launchModal.bind(this);
+          }
+
+          launchModal(){
+            const videoData = {
+              "itemId" : this.props.itemId,
+              "leadMedia" : this.props.leadMedia,
+              "text" : this.props.text
             }
-          },
-          "duration": "9:08"
-        }
-      }
-      </script>
+            Pestle.PubSub.publish(events.launchVideoModal, videoData);
+          }
+        </code>
+      </pre>
+    </div>
+
+    <p class="mt3_subh4">Attach the function to the onClick event of the element you want to launch it from.</p>
+
+    <div class="codesnippet-wrapper">
+      <pre class="codesnippet">
+        <code class="language-markup">
+          &#x3C;div onClick={this.launchModal} /&#x3E;
+        </code>
+      </pre>
+    </div>
+
+    <div data-pestle-module="VideoModal">
     </div>
 
   </div>

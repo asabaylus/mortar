@@ -48,7 +48,7 @@ class PromoText extends Component {
     let subHeadingContent = [];
     let j = 0;
 
-    if(props.text.kicker && props.text.kicker.url && props.text.kicker.style !== 'prompt' && !props.config.sponsored){
+    if(props.text.kicker && props.text.kicker.url && props.text.kicker.style !== 'prompt' && !props.config.sponsored && props.type !== 'video'){
       subHeadingContent.push(<a key={j++} {...attrs}>{props.text.kicker.label}</a>);
     } else if(props.config.sponsored){
       subHeadingContent.push(<span key={j++} className={sponsoredClasses}>{props.text.sponsorContentLabel}</span>);

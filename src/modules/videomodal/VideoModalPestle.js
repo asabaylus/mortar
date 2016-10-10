@@ -8,9 +8,7 @@ import VideoModal from './VideoModal';
 class VideoModalPestle extends Module {
 
   init() {
-    ReactDOM.render(<VideoModal id={this.options.id}
-      dataModel={this.options.dataModel}
-          />, this.el);
+    ReactDOM.render(<VideoModal />, this.el);
   }
 
 }

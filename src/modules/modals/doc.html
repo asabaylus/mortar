@@ -1,21 +1,54 @@
 <div class="pagewrapper mt3_row mt3_col-gut">
-  <div class="mt3_col-lg-7 mt3_row-gut-2">
+  <div class="mt3_col-lg-3 mt3_col-sm-12 mt3_row mt3_col-gut mt3_subh4">
     <h3 class="mt3_h3">Modals</h3>
     <p class="mt3_subh4">
       Modals are useful for displaying secondary content, either as a user-initiated interaction or as an auto-opening popup.
     </p>
+  </div>
 
-    <div data-pestle-module="Modal">
+  <div class="mt3_col-lg-8 mt3_col-sm-12 mt3_col-lg-offset-1 mt3_row-gut-4">
+    <div data-pestle-module="PromoCard">
       <script type="text/json" data-pestle-options>
-      {
-        "targetId" : "thing"
-      }
+        {
+          "itemId": "hero_promocard_1",
+          "theme": "light",
+          "type": "video",
+          "config": {
+            "cardAspectRatio": "3:2",
+            "sponsored": false,
+            "showPlayButton": true,
+            "showByline": true
+          },
+          "leadMedia": [{
+            "guid": "00000156-46b5-dca8-ab77-7ffdfcf90000",
+            "videoUrl": "http://news.localhost.nationalgeographic.com:4502/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4",
+            "imageUrl": "http://pmdvod.nationalgeographic.com/NG_Video/996/847/62501_1_1280x720_640x360_177594435674.jpg",
+            "renditionUrl": "/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png"
+          }],
+          "text": {
+            "title": "This is the second title of the card",
+            "dek": "This is a second short dek for the card.",
+            "kicker": {
+                  "label": "African Wildlife",
+                  "url": "http://news.nationalgeographic.com/2016/08/shark-attack/",
+                  "target": "_self",
+                  "trackingCodes": "?utm_medium=site&utm_source=ng.com"
+            },
+            "duration": "17 mins"
+          },
+          "modal": true
+        }
       </script>
     </div>
-    <div id="thing" class="mt3_visuallyhidden"><p>Example Text</p></div>
+    <div style="clear:both"></div>
+
+    <p class="mt3_subh4">To use this component compose it within another component that contains the data you wish to pass.
+      Please refer to the VideoModal component for reference</p>
+
+    <div data-pestle-module="VideoModal">
+    </div>
+
   </div>
 </div>
-
-<div class="mt3_row mt3_row-gut-3"></div>
 
 <div class="mt3_bgcolor--gray5 mt3_row-gut-4 divider">&nbsp;</div>

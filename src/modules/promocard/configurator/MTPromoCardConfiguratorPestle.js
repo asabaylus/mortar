@@ -37,7 +37,7 @@ class PromoCardConfigurator extends Module {
           aspectRatio: 0.6667,
           altText: 'Picture of a caiman swimming underwater in Pantanal, Brazil',
           srcset: ['http://placehold.it/400x300 400w', 'http://placehold.it/800x600 800w', 'http://placehold.it/1600x1200 1600w'],
-          guid: '47746161-1e00-4514-9b4f-168f0b552c66',
+          guid: '00000156-46b5-dca8-ab77-7ffdfcf90000',
           videoUrl: 'http://news.localhost.nationalgeographic.com:4502/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4',
           imageUrl: 'http://pmdvod.nationalgeographic.com/NG_Video/996/847/62501_1_1280x720_640x360_177594435674.jpg',
           renditionUrl: '/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png'

@@ -125,7 +125,7 @@ class HeroWithTwoRails extends Component {
       for (const card of this.props.cards) {
         //make sure target div exists
         const cardDiv = document.getElementById(card.itemId);
-        const cardLocation = card.config.itemPos || null;
+        const cardLocation = card.config.itemPos || card.itemPos || null;
 
         //pass class if it's the first promo
         const additionalClasses = !i ? "mt3_promocard--first" : "";
@@ -135,7 +135,7 @@ class HeroWithTwoRails extends Component {
         const parentWidth = this.props.parentEl.getBoundingClientRect().width;
 
         if (parentWidth > 768) {
-          if(parentWidth > 1534 && card.config.itemPos === 'lr') {
+          if(parentWidth > 1534 && cardLocation === 'lr') {
             promoWidth = 1000;
           } else if (card.config.itemPos === 'hero'){
             promoWidth = parentWidth;
@@ -146,7 +146,7 @@ class HeroWithTwoRails extends Component {
 
         if(cardDiv) {
           //if it's targeted to the hero
-          if($(cardDiv.parentNode).hasClass("hero-with-two-rails__hero")) {
+          if(cardLocation === "hero") {
             this.heroExists = true;
           }
 

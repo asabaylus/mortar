@@ -96,14 +96,9 @@ class BackgroundImageParallax extends Component {
       'zIndex' : 1
     }
 
-    const frameContentStyle = {
-      'pointerEvents': "none",
-      'zIndex' : -1
-    }
-
     return (
       <div style={frameStyle} id={this.randomId} ref="frame">
-        <div style={frameContentStyle} ref="content">
+        <div className="mt3_parallax-wrap__background-image" ref="content">
           {this.props.children}
         </div>
       </div>
