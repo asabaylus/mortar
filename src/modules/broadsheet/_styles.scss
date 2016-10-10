@@ -101,10 +101,21 @@ $mt3_large: 1280px;
     color: #FFFFFF;
   }
 
+  .mt3_broadsheet-leadMedia-attributions {
+    padding-bottom: 1.2rem;
+  }
+
   .mt3_article {
+    // lead paragraph
+    .lead-paragraph {
+        font-family: $mt3_verlag-stack;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        line-height: 1.6;
+    }
     text-align: left;
     padding-left: 104px;
-    padding-top: 60px;
   }
 
   .mt3_broadsheet-col-right {

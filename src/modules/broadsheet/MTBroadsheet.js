@@ -154,6 +154,20 @@ class Broadsheet extends Component {
             </header>
             <div className="mt3_row">
               <div className="mt3_article mt3_col-8">
+                <figure className="mt3_broadsheet-leadMedia-attributions">
+                  <figcaption className="mt3_caption-container--indent">
+                    <p className="mt3_caption-body">
+                      <span className="mt3_caption-title mt3_visuallyhidden">Photo Title{" "}</span>
+                      <span dangerouslySetInnerHTML={{__html: this.props.leadMedia.caption}}></span>
+                    </p>
+                    <p className="mt3_caption-credit">
+                      {/* Photograph by */}
+                      <span
+                        className="mt3_caption-creditname"
+                        dangerouslySetInnerHTML={{__html: this.props.leadMedia.credit}}></span>
+                    </p>
+                  </figcaption>
+                </figure>
               {bodyNodes}
               </div>
               <aside className="mt3_broadsheet-col-right mt3_col-4 mt3_col-gut">
