@@ -122,9 +122,13 @@ class Broadsheet extends Component {
         <div className="broadsheet">
           <a className="mt3_color--black mt3_heading--h6--2" href='http://nationalgeographic.com/magazine'>National Geographic Magazine</a>
           <section className="mt3_bgcolor--white">
-            <header className="mt3_row" style={{'minHeight': '450px'}}>
+            <header className="mt3_row">
               <div className="mt3_broadsheet-leadMedia-header">
-                <a className="mt3_broadsheet-leadMedia-issue-date mt3_color--white mt3_haas-heading" href={this.props.issueUrl}>{this.props.issueDate}</a>
+                <a className="mt3_broadsheet-leadMedia-issue-date mt3_color--white mt3_haas-heading" href={this.props.issueUrl}>
+                  <span className="mt3_georgia-heading mt3_broadsheet-leadMedia-issue-date-label mt3_visuallyhidden">
+                  Issue Date:</span>
+                  {this.props.issueDate}
+                </a>
                 <a className="mt3_broadsheet-leadMedia-title mt3_btn mt3_btn--naked" href={this.props.mainUrl}>
                   <h1 className="mt3_color--white mt3_haas-heading">{this.props.mainTitle}</h1>
                   <p>
