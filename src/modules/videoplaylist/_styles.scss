@@ -205,7 +205,6 @@ $mt3_playlist-l-screen: 100rem;
     @media #{$mt3_mq-md} {
       backface-visibility: hidden;
       height: 100%;
-      position: relative;
       width: 100%;
       // some performance improvements for scrolling
       will-change: overflow;
