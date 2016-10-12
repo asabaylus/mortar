@@ -30,7 +30,7 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     color: $mt3_color-white;
     font-family: $mt3_verlag-stack;
     font-size: 30px;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: .1em;
     line-height: 1.05;
     margin-top: 50px;
@@ -38,6 +38,11 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     padding-left: $mt3_left_and_right_package_padding;
     text-transform: uppercase;
     word-spacing: .05em;
+
+    @media (max-width: $mt3_small - 1) {
+      margin-left: 30px;
+    }
+
 
     @media (min-width: $mt3_small) {
       font-size: 36px;
@@ -69,13 +74,13 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     }
   }
 
-  .left-rail, .right-rail {
+  .left-rail,
+  .right-rail {
       min-height: 1px; //this rule enables the rail to still take up space even if it has no relative-positioned content (for parallax purposes)
   }
 }
 
 .mt3_fiveup {
-  background-color: $mt3_color-black;
   counter-reset: row-count;
   margin-right: 0;
 
@@ -95,8 +100,15 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     margin-bottom: 30px;
     margin-left: 0;
     margin-right: 0;
+    margin-top: 0;
     padding-left: 30px;
     position: relative;
+
+    &:hover {
+      .mt3_fiveup-divlink::after {
+        color: $mt3_color-white;
+      }
+    }
 
     @media (min-width: $mt3_medium) {
       padding-left: 40px;
@@ -107,7 +119,7 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     }
 
     &-row {
-      width: calc(70% + 20px);
+      width: calc(60% + 20px);
     }
 
     &::after {
@@ -115,7 +127,7 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
       bottom: 0;
       content: '';
       position: absolute;
-      width: 70%;
+      width: 60%;
     }
   }
 
@@ -125,7 +137,7 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     left: 0;
     position: absolute;
     right: 0;
-    top: -46px;
+    top: -31px;
     z-index: 3;
 
     &::after {
@@ -142,11 +154,6 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
       right: 7%;
       z-index: 3;
     }
-
-    &:hover::after {
-      color: $mt3_color-white;
-    }
-
   }
 
   &-kicker {
@@ -166,6 +173,7 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
   }
 
   &-row {
+    background-color: $mt3_color-black;
     position: relative;
 
     &--top {
@@ -175,15 +183,16 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
 
       .mt3_fiveup-card {
         padding-bottom: 30px;
+        padding-top: 30px;
       }
 
-      .mt3_fiveup-divlink::after {
-        bottom: 0;
-        color: $mt3_color-primary;
-      }
+      .mt3_fiveup-divlink {
+        top: 0;
 
-      .mt3_fiveup-divlink:hover::after {
-        color: $mt3_color-white;
+        &::after {
+          bottom: 0;
+          color: $mt3_color-primary;
+        }
       }
 
     }
@@ -222,7 +231,7 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     }
 
     @media (min-width: $mt3_small) {
-      padding-left: 0;;
+      padding-left: 0;
     }
 
     &--extrasmall {
@@ -249,7 +258,11 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     padding-left: 0;
 
     .mt3_promocard-pad {
-      padding: 0 $mt3_left_and_right_package_padding;
+      padding: 0;
+
+      @media (max-width: $mt3_small - 1) {
+        padding: 0 $mt3_left_and_right_package_padding;
+      }
     }
   }
 }
