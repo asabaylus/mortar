@@ -95,7 +95,7 @@ class Story extends Component {
     const noImages = !leadMedia || leadMedia[0].url === ''; // add second check for configurator as leadMedia array is always present
     const bkgColor = theme === 'dark' ? 'mt3_promocard-container--dark' : noImages ? 'mt3_promocard-container--text-only' : '';
     let i = 0;
-    let content = type === 'video' ? [] : [<a key={i++} {...attrs} />]; // container should not be linked if video card
+    let content = type === 'video' ? [<div key={i++} className='mt3_div-link' onClick={this.launchModal}></div>] : [<a key={i++} {...attrs} />]; // container should not be linked if video card
     const aspectRatio = config.cardAspectRatio === '16:9' ? 'mt3_intratio--broadcast'
       : config.cardAspectRatio === '3:2' ? 'mt3_intratio--photo'
       : config.cardAspectRatio === '2:1' ? 'mt3_intratio--two-one'
@@ -143,7 +143,7 @@ class Story extends Component {
           content.push(
             <PromoImage key={i++} type={type} config={config} cardLocation={cardLocation} link={link}
                         leadMedia={leadMedia[0]} brandingBadgeLabel={brandingBadgeLabel} text={text}
-                        breakpoint={this.state.breakpoint}
+                        breakpoint={this.state.breakpoint} launchModal={this.launchModal}
             />
           );
         }
@@ -186,7 +186,7 @@ class Story extends Component {
           content.push(
             <PromoImage key={i++} type={type} config={config} cardLocation={cardLocation} link={link}
                         leadMedia={leadMedia[0]} brandingBadgeLabel={brandingBadgeLabel} text={text}
-                        breakpoint={this.state.breakpoint}
+                        breakpoint={this.state.breakpoint} launchModal={this.launchModal}
             />,
             <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type} noImages={noImages}
                        leadMedia={leadMedia} breakpoint={this.state.breakpoint}
@@ -204,7 +204,7 @@ class Story extends Component {
 
     return (
       <div className={`mt3_row mt3_col-12 mt3_promocard-container ${bkgColor} ${kickerStyle} ${additionalClasses}`}
-           ref='promocardContainer' onClick={type === 'video' ? this.launchModal : null}>
+           ref='promocardContainer'>
         {content}
       </div>
     );
@@ -224,13 +224,13 @@ Story.PropTypes = {
   }),
   leadMedia: PropTypes.arrayOf(
     PropTypes.shape({
-      url: PropTypes.string,
+      url: PropTypes.string.isRequired,
       aspectRatio: PropTypes.number,
       altText: PropTypes.string,
       srcset: PropTypes.array
     }) ||
     PropTypes.shape({
-      guid: PropTypes.string,
+      guid: PropTypes.string.isRequired,
       directLink: PropTypes.string
     })),
   text: PropTypes.object,

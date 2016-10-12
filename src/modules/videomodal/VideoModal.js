@@ -25,10 +25,10 @@ class VideoModal extends Component {
 
   showVideoModal (msg, data) {
     this.guid = data.leadMedia[0].guid;
-    this.label = data.text.kicker.label;
-    this.duration = data.text.duration;
-    this.title = data.text.title;
-    this.dek = data.text.dek;
+    this.label = data.text.kicker && data.text.kicker.label ? data.text.kicker.label : null;
+    this.duration = data.text.duration ? data.text.duration : null;
+    this.title = data.text.title ? data.text.title : null;
+    this.dek = data.text.dek ? data.text.dek : null;
 
     this.setState({
       open: true
@@ -70,8 +70,8 @@ class VideoModal extends Component {
         {isOpen ?
           <div className="mt3_video-modal-container">
             <div className="mt3_kicker-wrapper">
-              {this.label && <span className="mt3_kicker">{this.label}</span>}
-              {this.duration && <span className="mt3_kicker">{this.duration}</span>}
+              {this.label ? <span className="mt3_kicker">{this.label}</span> : null}
+              {this.duration ? <span className="mt3_kicker">{this.duration}</span> : null}
             </div>
             <div className="mt3_video-modal__head">
               <div className="mt3_video-modal__title mt3_heading--h1--1 mt3_color--white">

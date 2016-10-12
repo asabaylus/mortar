@@ -24,7 +24,7 @@ $mt3_gradientIndex: 3;
     padding: 30px;
   }
 
-  a.mt3_div-link {
+  a.mt3_div-link, div.mt3_div-link {
     cursor: pointer;
     height: 100%;
     left: 0;
@@ -61,6 +61,11 @@ $mt3_gradientIndex: 3;
     display: inline-block;
     position: relative;
     vertical-align: bottom;
+
+    a.mt3_promocardtext--overlay-link {
+      left: 0;
+      z-index: $mt3_z-middle + 3;
+    }
   }
 
   .mt3_promocard-text--overlay {

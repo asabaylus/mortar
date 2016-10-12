@@ -48,7 +48,7 @@ class PromoText extends Component {
     let subHeadingContent = [];
     let j = 0;
 
-    if(props.text.kicker && props.text.kicker.url && props.text.kicker.style !== 'prompt' && !props.config.sponsored && props.type !== 'video'){
+    if(props.text.kicker && props.text.kicker.url && props.text.kicker.style !== 'prompt' && !props.config.sponsored){
       subHeadingContent.push(<a key={j++} {...attrs}>{props.text.kicker.label}</a>);
     } else if(props.config.sponsored){
       subHeadingContent.push(<span key={j++} className={sponsoredClasses}>{props.text.sponsorContentLabel}</span>);
@@ -56,11 +56,11 @@ class PromoText extends Component {
       subHeadingContent.push(<span key={j++} className={`${attrs.className}`}>{props.text.kicker.label}</span>);
     }
 
-    (props.type === 'video' && props.text.duration && props.text.kicker.style !== 'prompt') ?
+    (props.type === 'video' && props.text.duration && props.text.kicker && props.text.kicker.style !== 'prompt') ?
       subHeadingContent.push(<div key={j++} className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`}>{props.text.duration}</div>)
     : null;
 
-    (props.type === 'gallery' && props.text.photoCount && props.text.kicker.style !== 'prompt') ?
+    (props.type === 'gallery' && props.text.photoCount && props.text.kicker && props.text.kicker.style !== 'prompt') ?
       subHeadingContent.push(<div key={j++} className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`}>{props.text.photoCount} Photos</div>)
     : null;
 
