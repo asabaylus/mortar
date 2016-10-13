@@ -86,6 +86,9 @@
       padding-left: 160px;
     }
   }
+  &-heading, &-title {
+    @include couldBeRichText();
+  }
   &-title {
     font-size: 22px;
     font-weight: 400;
