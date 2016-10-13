@@ -62,20 +62,25 @@ $mt3_large: 1280px;
       font-weight: 600;
       letter-spacing: 0.1em;
       margin: 0 auto;
+      overflow: hidden;
       text-align: center;
       text-transform: uppercase;
       margin-top: -7px;
+      max-height: 50px;
       @media (min-width: $mt3_small) {
         font-size: 60px;
-        margin-top: -12px
+        margin-top: -12px;
+        max-height: 75px;
       }
       @media (min-width: $mt3_medium) {
         font-size: 80px;
         margin-top: -16px;
+        max-height: 90px;
       }
       @media (min-width: $mt3_large) {
         font-size: 120px;
         margin-top:-24px;
+        max-height: 150px;
       }
     }
     &--fixed {
