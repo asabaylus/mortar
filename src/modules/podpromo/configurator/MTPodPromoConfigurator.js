@@ -107,7 +107,6 @@ class PodPromoConfigurator extends Component {
           </Section>
           <Section text="Kicker">
             <TextField label="Kicker Label" onChange={this.onTextChange('model.text.kicker.label')} value={props.model.text.kicker.label} />
-            <TextField label="Kicker Url" onChange={this.onTextChange('model.text.kicker.url')} value={props.model.text.kicker.url} />
           </Section>
           <Section text="Link">
             <TextField label="Url" onChange={this.onTextChange('model.link.url')} value={props.model.link.url} />

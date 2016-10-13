@@ -46,10 +46,7 @@ class PodPromoConfigurator extends Module {
           affiliation: 'National Geographic',
           assetSource: '',
           kicker: {
-            label: 'Kicker Label',
-            url: '/content/news/en_US/weird-wild.html',
-            target: '_self',
-            trackingCodes: '?utm_medium=site&utm_source=ng.com'
+            label: '<a href="http://www.google.com">Kicker Label</a>'
           },
           sponsorContentLabel: 'Sponsor Content'
         },

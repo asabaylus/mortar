@@ -19,17 +19,20 @@ class PodPromoComponent extends Component {
 
     let attrs;
 
-    if (url) {
+    if (url && trackingCodes && linkTarget && label) {
       attrs = {
         href: url + trackingCodes,
         target: linkTarget,
         title: label,
       };
-    }
-
-    return (
-      url ? <div className='mt3_kicker mt3_podpromo-elevate'><a className="mt3_kicker--link" {...attrs}>{label}</a></div> : <div className="mt3_kicker">{label}</div>
+      return (
+        url ? <div className='mt3_kicker mt3_podpromo-elevate'><a className="mt3_kicker--link" {...attrs}>{label}</a></div> : <div className="mt3_kicker">{label}</div>
       );
+    } else {
+      return (
+        <div className="mt3_kicker mt3_podpromo-elevate" dangerouslySetInnerHTML={{__html: label}} />
+      );
+    }
   };
 
   /*
@@ -126,7 +129,9 @@ class PodPromoComponent extends Component {
             </BackgroundImageParallax>
           </div>
           <div className="mt3_podpromo-content-container mt3_podpromo-content-container-bottom mt3_podpromo-content-container-left mt3_podpromo-autoindex mt3_podpromo-fade">
-            { this.kickerLink(componentKicker) }
+            {
+              componentKicker ? this.kickerLink(componentKicker) : null
+            }
             <div className="mt3_podpromo-title" dangerouslySetInnerHTML={{__html: componentTitle}} />
           </div>
 
