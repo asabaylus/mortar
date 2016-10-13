@@ -16,11 +16,11 @@ class ShowCard extends Component {
     const elementQueries = [
       {
         name: 'mt3_showcard--tablet',
-        width: 768
+        width: 480
       },
       {
         name: 'mt3_showcard--desktop',
-        width: 1024
+        width: 920
       },
       {
         name: 'mt3_showcard--lg-desktop',
