@@ -254,7 +254,7 @@ describe('POD Promo Component', () => {
     });
 
     it('should have the correct kicker value', () => {
-      expect(wrapper.find('.mt3_kicker').html()).to.equal('<div class="mt3_kicker">Kicker Label</div>');
+      expect(wrapper.find('.mt3_kicker').html()).to.equal('<div class="mt3_kicker mt3_podpromo-elevate">Kicker Label</div>');
     });
   });
 

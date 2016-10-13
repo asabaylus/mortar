@@ -256,6 +256,7 @@ $mt3_gradientIndex: 3;
   }
 
   .mt3_promocard-title {
+    @include couldBeRichText();
     font-family: $mt3_haas-stack;
     font-size: 18px;
     font-weight: 600;
@@ -274,6 +275,7 @@ $mt3_gradientIndex: 3;
   }
 
   .mt3_promocard-dek {
+    @include couldBeRichText();
     border-left: 1px solid #808080;
     font-family: $mt3_georgia-stack;
     font-size: 15px;

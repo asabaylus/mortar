@@ -64,6 +64,19 @@ class PromoText extends Component {
       subHeadingContent.push(<div key={j++} className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`}>{props.text.photoCount} Photos</div>)
     : null;
 
+    let title = [];
+    let dek = [];
+
+    if(props.text.title) {
+      title.push(
+        <div key="title" className={`mt3_promocard-title ${inverseTitle} ${titleClass}`} dangerouslySetInnerHTML={{__html: props.text.title}}/>
+      );
+    }
+    if(props.text.dek && !props.config.overlay) {
+      dek.push(
+        <div key="dek" className={`mt3_promocard-dek ${inverseDek}`} dangerouslySetInnerHTML={{__html: props.text.dek}}/>
+      );
+    }
 
     if(props.breakpoint < 768){
       content.push(
@@ -76,12 +89,8 @@ class PromoText extends Component {
             </div> : null }
           <div className="mt3_row">
             <div className="mt3_promocard-pad">
-              {props.text.title ?
-                <div className={`mt3_promocard-title ${inverseTitle} ${titleClass}`}>{props.text.title}</div>
-              : null}
-              { props.text.dek && !props.config.overlay ?
-                <div className={`mt3_promocard-dek ${inverseDek}`}>{props.text.dek}</div>
-              : null}
+              {title.length ? title : null}
+              {dek.length ? dek : null}
             </div>
           </div>
           { delete props.config.overlay }
@@ -94,15 +103,10 @@ class PromoText extends Component {
             {subHeadingContent}
           </div>
           <div className={textOnlyHorizontal + textOnlyHorizontal+'--left'}>
-            {props.text.title ?
-              <div className={`mt3_promocard-title ${inverseTitle} ${titleClass}`}>{props.text.title}</div>
-              : null
-            }
+            {title.length ? title : null}
           </div>
           <div className={textOnlyHorizontal + textOnlyHorizontal+'--right'}>
-            { props.text.dek && !props.config.overlay ?
-              <div className={`mt3_promocard-dek ${inverseDek}`}>{props.text.dek}</div>
-            : null }
+            {dek.length ? dek : null}
           </div>
           { delete props.config.overlay }
         </div>
@@ -118,11 +122,8 @@ class PromoText extends Component {
             </div> : null }
           <div className="mt3_row">
             <div className="mt3_promocard-pad">
-              {props.text.title ?
-                <div className={`mt3_promocard-title ${inverseTitle} ${titleClass}`}>{props.text.title}</div>
-                : null}
-              { props.text.dek && !props.config.overlay ?
-                <div className={`mt3_promocard-dek ${inverseDek}`}>{props.text.dek}</div> : null }
+              {title.length ? title : null}
+              {dek.length ? dek : null}
             </div>
           </div>
           { delete props.config.overlay }
