@@ -12,6 +12,18 @@ const FiveUpCard = (props) => {
     target: props.text.kicker ? props.text.kicker.target : null
   };
 
+  const kicker = [];
+
+  if(props.text.kicker && !props.config.sponsored) {
+    if(attrs.href) {
+      kicker.push(<span className={attrs.className}><a href={attrs.href} target={attrs.target} className="mt3_kicker--link">{props.text.kicker.label}</a></span>);
+    } else {
+      kicker.push(<span className={attrs.className} dangerouslySetInnerHTML={{__html: props.text.kicker.label}} />);
+    }
+  } else if(props.config.sponsored) {
+    kicker.push(<span className={attrs.className} dangerouslySetInnerHTML={{__html: props.text.sponsorContentLabel}} />);
+  }
+
   const playButton =
       <button className="mt3_videopromo-button">
         <span className="mt3_visuallyhidden">Play</span>
@@ -28,12 +40,12 @@ const FiveUpCard = (props) => {
         { props.text.kicker || props.config.sponsored ?
         <div className="mt3_row mt3_fiveup-kicker">
           <div className="mt3_kicker-wrapper">
-            {props.text.kicker && !props.config.sponsored ? <span className={attrs.className}><a href={attrs.href} target={attrs.target} className="mt3_kicker--link">{props.text.kicker.label}</a></span> : props.config.sponsored ? <span className={attrs.className}>{props.text.sponsorContentLabel}</span> : null}
-            {(props.type === 'video' && props.text.duration) ? <span className={`${attrs.className} mt3_kicker`}>{props.text.duration}</span> : null}
+            {kicker.length ? kicker : null}
+            {(props.type === 'video' && props.text.duration) ? <span className={`${attrs.className} mt3_kicker`} dangerouslySetInnerHTML={{__html: props.text.duration}} /> : null}
           </div>
         </div> : null }
         <div className="mt3_row mt3_fiveup-card-row">
-            {props.text.title ? <div className="mt3_fiveup-card-title">{props.text.title}</div> : null}
+            {props.text.title ? <div className="mt3_fiveup-card-title" dangerouslySetInnerHTML={{__html: props.text.title}} /> : null}
         </div>
 
         {

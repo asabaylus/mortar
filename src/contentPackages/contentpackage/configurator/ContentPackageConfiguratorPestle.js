@@ -56,10 +56,7 @@ class ContentPackageConfigurator extends Module {
                   'dek': 'Sample dek',
                   'publishDate': 'Thu Aug 11 13:28:00 UTC 2016',
                   'kicker': {
-                    'label': 'Weird & Wild',
-                    'url': '\/content\/news\/en_US\/weird-wild.html',
-                    'target': '_self',
-                    'trackingCodes': '?utm_medium=site&utm_source=ng.com'
+                    'label': '<p><a href="http://www.google.com">Weird & Wild</a></p>'
                   }
                 },
                 'contributor': {
@@ -101,7 +98,10 @@ class ContentPackageConfigurator extends Module {
                 ],
                 'text': {
                   'title': 'Article with Video Lead',
-                  'publishDate': 'Sun Aug 14 16:28:43 UTC 2016'
+                  'publishDate': 'Sun Aug 14 16:28:43 UTC 2016',
+                  'kicker': {
+                    'label': 'Technology'
+                  }
                 }
               },
               {
@@ -131,7 +131,7 @@ class ContentPackageConfigurator extends Module {
               },
               {
                 'itemId': 'hero_promocard_0',
-                'type': 'gallery',
+                'type': 'video',
                 'config': {
                   'aspectRatio': 'photo',
                   'sponsored': false,
@@ -182,12 +182,9 @@ class ContentPackageConfigurator extends Module {
                   'title': 'This is the title of the card',
                   'dek': 'This is a short dek for the card.',
                   'kicker': {
-                    'label': 'Weird & Wild',
-                    'url': 'http:\/\/news.nationalgeographic.com\/2016\/08\/shark-attack\/',
-                    'target': '_self',
-                    'trackingCodes': '?utm_medium=site&utm_source=ng.com'
+                    'label': '<p><a href="http://www.cnn.com">Weird & Really Wild</a></p>'
                   },
-                  'duration': '',
+                  'duration': '<p><i>2:35</i></p>',
                   'publishDate': 'Thu Aug 04 13:30:39 EDT 2016',
                   'sponsorContentLabel': 'This is the Sponsor Content Label'
                 },

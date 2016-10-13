@@ -1,5 +1,6 @@
 @mixin couldBeRichText() {
   p {
+    display: inline-block;
     margin: 0;
   }
 }

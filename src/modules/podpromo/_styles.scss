@@ -236,6 +236,8 @@ $mt3_white: #fff;
   }
 
   &-title {
+    @include couldBeRichText();
+
     color: $mt3_white;
     font-family: $mt3_haas-stack;
     font-size: 42px;

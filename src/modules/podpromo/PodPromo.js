@@ -26,7 +26,7 @@ class PodPromoComponent extends Component {
         title: label,
       };
       return (
-        url ? <div className='mt3_kicker mt3_podpromo-elevate'><a className="mt3_kicker--link" {...attrs}>{label}</a></div> : <div className="mt3_kicker">{label}</div>
+        url ? <div className='mt3_kicker mt3_podpromo-elevate'><a className="mt3_kicker--link" {...attrs} dangerouslySetInnerHTML={{__html: label}} /></div> : <div className="mt3_kicker mt3_podpromo-elevate" dangerouslySetInnerHTML={{__html: label}} />
       );
     } else {
       return (
