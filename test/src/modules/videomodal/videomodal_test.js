@@ -72,14 +72,16 @@ describe('VideoModal Component', () => {
       expect(wrapper.find('Modal').type()).to.equal(Modal);
     });
 
-    it('Should have correct elements and classes', () => {
-      expect(wrapper.find(".mt3_modal-container").childAt(0).hasClass("mt3_modal-button")).to.equal(true);
-      expect(wrapper.find(".mt3_modal-button").childAt(0).hasClass("mt3_visuallyhidden")).to.equal(true);
-      expect(wrapper.find('.mt3_video-modal-container').childAt(0).hasClass("mt3_kicker-wrapper")).to.equal(true);
-      expect(wrapper.find('.mt3_video-modal-container').childAt(1).hasClass("mt3_video-modal__head")).to.equal(true);
+    it('Should have a button', () => {
+      expect(wrapper.find('.mt3_modal-container').childAt(0).hasClass("mt3_modal-button")).to.equal(true);
+    });
+
+    it('Should have a title', () => {
       expect(wrapper.find('.mt3_video-modal__head').childAt(0).hasClass("mt3_video-modal__title")).to.equal(true);
+    });
+
+    it('Should have a description', () => {
       expect(wrapper.find('.mt3_video-modal-container').childAt(3).hasClass("mt3_video-modal__description")).to.equal(true);
-      expect(wrapper.find('.mt3_video-modal__description').childAt(0).hasClass("mt3_caption-body")).to.equal(true);
     });
 
   });

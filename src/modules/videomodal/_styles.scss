@@ -1,6 +1,40 @@
 $mt3_videomodal-max-width: 800px;
+$mt3_color-inverse: $mt3_color-white;
 
 .mt3_video-modal {
+  &-kicker {
+    @extend .mt3_kicker;
+    @include couldBeRichText();
+    float: left;
+    line-height: 1;
+    margin-bottom: 10px;
+    position: relative;
+    text-decoration: none;
+    z-index: $mt3_z-middle + 10;
+
+    a:hover, a.mt3_promocard-kicker:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    &--inverse {
+      border-right: 1px solid $mt3_color-inverse;
+
+      &:nth-child(1) {
+        border-left: 1px solid $mt3_color-inverse;
+      }
+    }
+  }
+
+  &-subhead--right {
+    float: left;
+    text-decoration: none;
+    z-index: $mt3_z-middle - 1;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 
   &-container {
     margin: 0 auto;
@@ -22,10 +56,8 @@ $mt3_videomodal-max-width: 800px;
 
   &__description {
     margin: 30px 0 40px;
-
-    * {
-      margin: 0;
+    .mt3_caption-body {
+      @include couldBeRichText();
     }
   }
-
 }

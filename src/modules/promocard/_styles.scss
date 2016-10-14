@@ -215,12 +215,18 @@ $mt3_gradientIndex: 3;
 
   .mt3_promocard-kicker {
     @extend .mt3_kicker;
+    @include couldBeRichText();
     float: left;
     line-height: 1;
     margin-bottom: 10px;
     position: relative;
     text-decoration: none;
     z-index: $mt3_z-middle + 10;
+
+    a:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
 
     &--inverse {
       border-right: 1px solid white;
@@ -232,15 +238,13 @@ $mt3_gradientIndex: 3;
   }
 
   a.mt3_promocard-kicker:hover {
+    cursor: pointer;
     text-decoration: underline;
-  }
-
-  span.mt3_promocard-kicker, div.mt3_promocard-kicker {
-    pointer-events: none;
   }
 
   .mt3_promocard-sponsored {
     @extend .mt3_kicker;
+    @include couldBeRichText();
     border-left: 1px solid #7694CB;
     border-right: 1px solid #7694CB;
     float: left;
@@ -298,6 +302,7 @@ $mt3_gradientIndex: 3;
   .mt3_card-subhead--right {
     float: left;
     text-decoration: none;
+    z-index: $mt3_z-middle - 1;
 
     &:hover {
       text-decoration: none;
@@ -309,7 +314,6 @@ $mt3_gradientIndex: 3;
     padding: .5em 1em;
     position: absolute;
     top: 2em;
-    z-index: 3;
   }
   /*overridden styles for kicker style = prompt*/
   &.mt3_promocard-container--prompt {

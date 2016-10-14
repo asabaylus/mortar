@@ -51,15 +51,25 @@ class VideoCaption extends Component {
   }
 
   render() {
-    const { duration, kicker, title, abstract} = this.props;
+    const { duration, kicker, title, abstract } = this.props;
+
+    let subHeadingContent = [];
+    let j = 0;
+
+    if(kicker && kicker.url){
+      subHeadingContent.push(<a key={j++} className="mt3_kicker mt3_color--white" href={kicker.url} target={kicker.target} dangerouslySetInnerHTML={{__html: kicker.label}} />);
+    } else if(kicker){
+      subHeadingContent.push(<span key={j++} className="mt3_kicker mt3_color--white" href={kicker.url} target={kicker.target} dangerouslySetInnerHTML={{__html: kicker.label}} />);
+    }
+
+    (duration && kicker) ?
+      subHeadingContent.push(<span key={j++} className="mt3_kicker mt3_color--white" dangerouslySetInnerHTML={{__html: duration}} />)
+      : null;
+
     return (
       <div className="mt3_video-playlist--current-information mt3_bgcolor--gray80">
         <div className="mt3_kicker-wrapper">
-          {(kicker && kicker.label) ? <a className="mt3_kicker mt3_color--white" href={kicker.url} target={kicker.target}>{kicker.label}</a>
-            : (kicker && kicker.html) ? <span className="mt3_kicker mt3_color--white" dangerouslySetInnerHTML={{__html: kicker.html}} />
-            : null
-          }
-          {(duration) ? <span className="mt3_kicker mt3_color--white">{duration}</span> : null}
+          {subHeadingContent}
         </div>
         <h3 ref="title" className="mt3_video-playlist--current-information__title mt3_color--white">
           <span itemProp='headline' dangerouslySetInnerHTML={{__html: title}} />

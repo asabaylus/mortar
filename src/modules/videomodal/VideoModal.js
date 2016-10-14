@@ -69,9 +69,9 @@ class VideoModal extends Component {
       <Modal onClose={this.closeNGSModal} renderNGSModal={isOpen}>
         {isOpen ?
           <div className="mt3_video-modal-container">
-            <div className="mt3_kicker-wrapper">
-              {this.label ? <span className="mt3_kicker">{this.label}</span> : null}
-              {this.duration ? <span className="mt3_kicker">{this.duration}</span> : null}
+            <div className="mt3_row">
+              { this.label ? <span className="mt3_video-modal-kicker" dangerouslySetInnerHTML={{__html: this.label}} /> : null }
+              { this.duration ? <span className="mt3_video-modal-kicker" dangerouslySetInnerHTML={{__html: this.duration}} /> : null }
             </div>
             <div className="mt3_video-modal__head">
               <div className="mt3_video-modal__title mt3_heading--h1--1 mt3_color--white">
@@ -80,9 +80,7 @@ class VideoModal extends Component {
             </div>
             <EmbeddedVideo key={i} model={videoModel} lazyLoad={true} />
             <figcaption className="mt3_video-modal__description mt3_caption-container--indent mt3_border--gray40">
-              <div className="mt3_caption-body mt3_color--gray40">
-                <span dangerouslySetInnerHTML={{__html: this.dek}} />
-              </div>
+              <div className="mt3_caption-body mt3_color--gray40" dangerouslySetInnerHTML={{__html: this.dek}}/>
             </figcaption>
           </div>
         : null}

@@ -51,17 +51,17 @@ class PromoText extends Component {
     if(props.text.kicker && props.text.kicker.url && props.text.kicker.style !== 'prompt' && !props.config.sponsored){
       subHeadingContent.push(<a key={j++} {...attrs}>{props.text.kicker.label}</a>);
     } else if(props.config.sponsored){
-      subHeadingContent.push(<span key={j++} className={sponsoredClasses}>{props.text.sponsorContentLabel}</span>);
+      subHeadingContent.push(<span key={j++} className={sponsoredClasses} dangerouslySetInnerHTML={{__html: props.text.sponsorContentLabel}} />);
     } else if(props.text.kicker){
-      subHeadingContent.push(<span key={j++} className={`${attrs.className}`}>{props.text.kicker.label}</span>);
+      subHeadingContent.push(<span key={j++} className={`${attrs.className}`} dangerouslySetInnerHTML={{__html: props.text.kicker.label}} />);
     }
 
     (props.type === 'video' && props.text.duration && props.text.kicker && props.text.kicker.style !== 'prompt') ?
-      subHeadingContent.push(<div key={j++} className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`}>{props.text.duration}</div>)
+      subHeadingContent.push(<div key={j++} className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`} dangerouslySetInnerHTML={{__html: props.text.duration}} />)
     : null;
 
     (props.type === 'gallery' && props.text.photoCount && props.text.kicker && props.text.kicker.style !== 'prompt') ?
-      subHeadingContent.push(<div key={j++} className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`}>{props.text.photoCount} Photos</div>)
+      subHeadingContent.push(<div key={j++} className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`} dangerouslySetInnerHTML={{__html: props.text.photoCount}} />)
     : null;
 
     let title = [];

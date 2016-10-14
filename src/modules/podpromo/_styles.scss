@@ -150,6 +150,7 @@ $mt3_white: #fff;
   }
 
   &-elevate {
+    @include couldBeRichText("inline-block");
     position: relative;
     z-index: $mt3_contentLinkIndex;
   }
