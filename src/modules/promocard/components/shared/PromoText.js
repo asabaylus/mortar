@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes }  from 'react';
+import cx from 'classnames';
 import { generateHref } from '../../generateHref';
 
 class PromoText extends Component {
@@ -16,7 +17,13 @@ class PromoText extends Component {
     const overlayClasses = props.config.overlay ? 'mt3_color--white mt3_promocard-nested-text' : 'mt3_color--neutral--xxd';
     const subheadColor = props.config.overlay ? 'mt3_color--white' : 'mt3_color--gray40';
     const inverseTitle = props.config.overlay || props.theme === 'dark' || props.noImages ? 'mt3_color--white' : 'mt3_color--black';
-    const inverseDek = props.theme === 'dark' ? 'mt3_color--white mt3_promocard-dek--inverse' : props.noImages ? 'mt3_color--white mt3_promocard-dek--text-only' : 'mt3_color--black';
+    
+    const dekClass = cx({
+      'mt3_promocard-dek--text-only': props.noImages,
+      'mt3_color--white mt3_promocard-dek--inverse': props.theme === 'dark',
+      'mt3_color--black': !props.noImages && props.theme === 'light'
+    });
+    
     let sponsoredClasses = props.theme === 'dark' ? 'mt3_color--sponsor mt3_promocard-sponsored mt3_promocard-sponsored--inverse' : 'mt3_color--sponsor mt3_promocard-sponsored';
 
     //for largest size variation, sponsored kicker oughta be white
@@ -74,7 +81,7 @@ class PromoText extends Component {
     }
     if(props.text.dek && !props.config.overlay) {
       dek.push(
-        <div key="dek" className={`mt3_promocard-dek ${inverseDek}`} dangerouslySetInnerHTML={{__html: props.text.dek}}/>
+        <div key="dek" className={`mt3_promocard-dek ${dekClass}`} dangerouslySetInnerHTML={{__html: props.text.dek}}/>
       );
     }
 

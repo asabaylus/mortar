@@ -2,12 +2,14 @@
 
 import React, { Component, PropTypes }  from 'react';
 import {Pestle} from '@natgeo/pestle';
+import cx from 'classnames';
 import events from '../../events';
 import PromoImage from '../shared/PromoImage';
 import PromoText from '../shared/PromoText';
 import { generateHref } from '../../generateHref';
 import _debounce from 'lodash/debounce';
 import VideoModal from '../../../videomodal/VideoModal';
+
 
 class Story extends Component {
   constructor(props) {
@@ -93,7 +95,12 @@ class Story extends Component {
       target: link ? link.target : null
     } : null;
     const noImages = !leadMedia || leadMedia[0].url === ''; // add second check for configurator as leadMedia array is always present
-    const bkgColor = theme === 'dark' ? 'mt3_promocard-container--dark' : noImages ? 'mt3_promocard-container--text-only' : '';
+    
+    const promoContainerClass = cx({
+      'mt3_promocard-container--text-only': noImages,
+      'mt3_promocard-container--dark': theme === 'dark'
+    });
+
     let i = 0;
     let content = type === 'video' ? [<div key={i++} className='mt3_div-link' onClick={this.launchModal}></div>] : [<a key={i++} {...attrs} />]; // container should not be linked if video card
     const aspectRatio = config.cardAspectRatio === '16:9' ? 'mt3_intratio--broadcast'
@@ -203,7 +210,7 @@ class Story extends Component {
     }
 
     return (
-      <div className={`mt3_row mt3_col-12 mt3_promocard-container ${bkgColor} ${kickerStyle} ${additionalClasses}`}
+      <div className={`mt3_row mt3_col-12 mt3_promocard-container ${promoContainerClass} ${kickerStyle} ${additionalClasses}`}
            ref='promocardContainer'>
         {content}
       </div>
