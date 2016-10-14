@@ -34,6 +34,9 @@ const FiveUpCard = (props) => {
         </div>
       </button>;
 
+  // setting a class on the top card if it has an image so that it can span 100% width
+  const rowClass = (props.showImage && props.leadMedia && (props.leadMedia[0].url || props.leadMedia[0].imageUrl)) ? 'mt3_row mt3_fiveup-card-row mt3_fiveup-card-row--has-image' : 'mt3_row mt3_fiveup-card-row';
+
   return(
       <figure className="mt3_fiveup-card">
         { props.link && props.link.url ? <a className="mt3_fiveup-divlink" href={generateHref(props.link.url, props.link.trackingCodes)} target={props.link.target} /> : null}
@@ -44,12 +47,12 @@ const FiveUpCard = (props) => {
             {(props.type === 'video' && props.text.duration) ? <span className={`${attrs.className} mt3_kicker`} dangerouslySetInnerHTML={{__html: props.text.duration}} /> : null}
           </div>
         </div> : null }
-        <div className="mt3_row mt3_fiveup-card-row">
+        <div className={rowClass}>
             {props.text.title ? <div className="mt3_fiveup-card-title" dangerouslySetInnerHTML={{__html: props.text.title}} /> : null}
         </div>
 
         {
-          props.showImage ? 
+          props.showImage && props.leadMedia && props.leadMedia[0] ?
             <Image
               aspectRatio={props.leadMedia[0].aspectRatio}
               frameAspectRatio={'16:9'}

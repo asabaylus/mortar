@@ -30,7 +30,7 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     color: $mt3_color-white;
     font-family: $mt3_verlag-stack;
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: .1em;
     line-height: 1.05;
     margin-top: 50px;
@@ -120,6 +120,10 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
 
     &-row {
       width: calc(60% + 20px);
+
+      &--has-image {
+        width: 100%;
+      }
     }
 
     &::after {
@@ -161,7 +165,13 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     @include couldBeRichText();
     display: inline-block;
     position: relative;
+    width: 70%;
     z-index: 4;
+
+    .mt3_kicker {
+      display: inline-block;
+      line-height: 1;
+    }
 
     a {
       color: inherit;
@@ -180,9 +190,10 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     color: $mt3_color-white;
     font-family: $mt3_haas-stack;
     font-size: 18px;
+    font-weight: 600;
     letter-spacing: .05em;
-    line-height: 1.1;
-    margin-bottom: 20px;
+    line-height: 1.3;
+    margin-bottom: 30px;
     margin-top: 15px;
   }
 
