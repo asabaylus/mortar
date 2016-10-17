@@ -65,12 +65,12 @@ class PodPromoComponent extends Component {
       },
     } = this.props;
 
-    const mortarCTAModel = {
+    const mortarCTAModel = (componentCTA) ? {
       url: componentCTA.linkUrl,
       title: componentCTA.linkText,
       target: componentCTA.linkTarget,
       seoTitle: componentCTA.linkSeoTitle
-    }
+    } : null;
 
     let componentUrl = (componentLink.url) ? componentLink.url : null;
 
@@ -114,13 +114,15 @@ class PodPromoComponent extends Component {
           </div>
           <div className="mt3_podpromo-content-container mt3_podpromo-content-container-top mt3_podpromo-content-container-right mt3_podpromo-ctacontainer">
             <div className="mt3_podpromo-ctaBtn-wrapper">
+              { mortarCTAModel && mortarCTAModel.url ?
               <CTA
                 icon={componentIcon}
                 label={mortarCTAModel.title}
                 link={mortarCTAModel}
                 style="naked"
                 type="link"
-              />
+              /> : null
+              }
             </div>
           </div>
           <div className="mt3_podpromo-imagewrapper">
