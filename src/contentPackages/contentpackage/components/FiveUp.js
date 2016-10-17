@@ -65,7 +65,7 @@ class FiveUpComponent extends Component {
 
       return (
         <div key={`fiveUp-promo-row-container-${index}`} className={containerRowClassName}>
-          <FiveUpCard key={`fiveUp-promo-${index}`} {...card} theme={'dark'} showImage={showImage} />
+          <FiveUpCard cardNum={index} key={`fiveUp-promo-${index}`} {...card} theme={'dark'} showImage={showImage} />
         </div>
       )
     });

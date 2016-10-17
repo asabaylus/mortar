@@ -16,12 +16,12 @@ const FiveUpCard = (props) => {
 
   if(props.text.kicker && !props.config.sponsored) {
     if(attrs.href) {
-      kicker.push(<span className={attrs.className}><a href={attrs.href} target={attrs.target} className="mt3_kicker--link">{props.text.kicker.label}</a></span>);
+      kicker.push(<span key={`kicker-container-${props.cardNum}`} className={attrs.className}><a href={attrs.href} target={attrs.target} className="mt3_kicker--link">{props.text.kicker.label}</a></span>);
     } else {
-      kicker.push(<span className={attrs.className} dangerouslySetInnerHTML={{__html: props.text.kicker.label}} />);
+      kicker.push(<span key={`kicker-container-${props.cardNum}`} className={attrs.className} dangerouslySetInnerHTML={{__html: props.text.kicker.label}} />);
     }
   } else if(props.config.sponsored) {
-    kicker.push(<span className={attrs.className} dangerouslySetInnerHTML={{__html: props.text.sponsorContentLabel}} />);
+    kicker.push(<span key={`kicker-container-${props.cardNum}`} className={attrs.className} dangerouslySetInnerHTML={{__html: props.text.sponsorContentLabel}} />);
   }
 
   const playButton =
@@ -58,7 +58,7 @@ const FiveUpCard = (props) => {
               frameAspectRatio={'16:9'}
               lazyLoad={false}
               altText={props.leadMedia[0].altText}
-              src={props.type !== 'video' ? props.leadMedia[0].url : props.leadMedia[0].imageUrl}
+              src={props.leadMedia[0].url || props.leadMedia[0].imageUrl}
               srcset={props.leadMedia[0].srcset}
             /> : null
         }
@@ -75,6 +75,7 @@ FiveUpCard.PropTypes = {
   theme: PropTypes.string,
   config: PropTypes.object,
   showImage: PropTypes.bool,
+  cardNum: PropTypes.number,
   link: PropTypes.shape({
     url: PropTypes.string.isRequired,
     target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
