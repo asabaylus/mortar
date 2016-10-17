@@ -98,7 +98,8 @@ class Story extends Component {
     
     const promoContainerClass = cx({
       'mt3_promocard-container--text-only': noImages,
-      'mt3_promocard-container--dark': theme === 'dark'
+      'mt3_promocard-container--dark': theme === 'dark',
+      'mt3_promocard-container--large': this.state.breakpoint > 768
     });
 
     let i = 0;

@@ -2,6 +2,9 @@ $mt3_button-width: 8em;
 $mt3_button-height: 8em;
 $mt3_gradient: rgba(0, 0, 0, .5), transparent;
 $mt3_gradientIndex: 3;
+$mt3_small: 768px;
+$mt3_medium: 1024px;
+$mt3_large: 1280px;
 
 .mt3_promocard-container {
   margin-bottom: 40px;
@@ -22,6 +25,18 @@ $mt3_gradientIndex: 3;
     background: $mt3_color-black;
     border-top: 3px solid $mt3_color-primary;
     padding: 30px;
+    &.mt3_promocard-container--large {
+      @media(min-width: $mt3_small) {
+        /*not using shorthand to keep top and bottom padding as is - should match .hero-with-two-rails__rails left/right padding + .mt3_col-gut padding */
+        padding-left: calc(1.725% + 40px);
+        padding-right: calc(1.725% + 40px);
+      }
+      @media (min-width: $mt3_medium) {
+        /*not using shorthand to keep top and bottom padding as is - should match .hero-with-two-rails__rails left/right padding + .mt3_col-gut padding */
+        padding-left: calc(1.725% + 60px);
+        padding-right: calc(1.725% + 60px);
+      }
+    }
   }
 
   a.mt3_div-link, div.mt3_div-link {
@@ -94,17 +109,17 @@ $mt3_gradientIndex: 3;
     vertical-align: bottom;
     width: 75%;
     z-index: 5;
-
+    
     &--horizontal {
       display: inline-block;
       vertical-align: top;
 
       &--left {
-        max-width: 60%;
+        width: 60%;
       }
 
       &--right {
-        max-width: 40%;
+        width: 40%;
 
         .mt3_promocard-dek--text-only {
           margin-top: 0;
