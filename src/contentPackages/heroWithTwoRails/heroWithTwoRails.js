@@ -73,21 +73,24 @@ class HeroWithTwoRails extends Component {
       parallaxElement: headingDiv.getElementsByClassName("mt3_parallax-wrap")[0],
       transformDistance: transformDistance,
       pinAfterPercentage: setPin ? percentageUnpinned : null,
-      bottomPositionOverride: bottomPositionOverride
+      bottomPositionOverride: bottomPositionOverride,
+      resetFunction: this.resetParallax
     });
   }
 
   resetParallax() {
     const contentWidth = this.props.parentEl.getBoundingClientRect().width;
-    const viewportHeight = this._window.height();
 
     //if the component width is < mobileBreakpoint, cancel parallax effects
     if(contentWidth < mobileBreakpoint) {
       return;
     }
 
+    const viewportHeight = this._window.height();
+    const callHeadingParallax = this.props.parallaxHeading && this.props.heading && this.props.heading !== "";
+
     // build heading scenes
-    if(this.props.parallaxHeading && this.props.heading && this.props.heading !== "") {
+    if(callHeadingParallax) {
       this.headingParallax(viewportHeight, this.props.headingPosition);
     }
 
@@ -96,7 +99,8 @@ class HeroWithTwoRails extends Component {
       railsParallax({
         leftRail: this.props.parentEl.getElementsByClassName("hero-with-two-rails__left-rail")[0],
         rightRail: this.props.parentEl.getElementsByClassName("hero-with-two-rails__right-rail")[0],
-        viewportHeight: viewportHeight
+        viewportHeight: viewportHeight,
+        resetFunction: callHeadingParallax ? null : this.resetParallax
       });
     }
 

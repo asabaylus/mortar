@@ -33,7 +33,8 @@ class LeftAndRightContentPackage extends Component {
       railsParallax({
         leftRail: this.props.parentEl.getElementsByClassName("left-rail")[0],
         rightRail: this.props.parentEl.getElementsByClassName("right-rail")[0],
-        viewportHeight: viewportHeight
+        viewportHeight: viewportHeight,
+        resetFunction: this.resetParallax
       });
     }
   }

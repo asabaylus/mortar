@@ -60,7 +60,8 @@ class BackgroundImageParallax extends Component {
       parallaxElement: this.refs.content,
       transformDistance: distanceToTranslate,
       onEnterViewport: true,
-      translationOffset: translationOffset
+      translationOffset: translationOffset,
+      resetFunction: this.resetMeasurements
     });
   }
 

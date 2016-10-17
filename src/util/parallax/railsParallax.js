@@ -1,7 +1,7 @@
 import {Pestle} from '@natgeo/pestle';
 
 module.exports = function(config) {
-  const {leftRail, rightRail, viewportHeight} = config;
+  const {leftRail, rightRail, viewportHeight, resetFunction} = config;
 
   //if both rails aren't present, do not create parallax effect
   if(!leftRail || !rightRail) { return }
@@ -42,6 +42,7 @@ module.exports = function(config) {
     triggerElement: tallerRail,
     duration: railsDuration,
     parallaxElement: shorterRail,
-    transformDistance: railDifference
+    transformDistance: railDifference,
+    resetFunction: resetFunction
   });
 }

@@ -50,10 +50,13 @@ module.exports = class ParallaxSceneManager {
       this.updateScrollInterval = setInterval(this.updatePage.bind(this), updateScrollInterval);
       this.updateDocHeightInterval = setInterval(this.updateDocHeight.bind(this), updateDocHeightInterval);
     }
+
+    this.checkForUpdates(true);
   }
 
-  checkForUpdates() {
-    if(this.pageConfig.scrollTop === cachedScrollTop) {
+  //check which scenes need an update
+  checkForUpdates(forceUpdate) {
+    if(!forceUpdate && this.pageConfig.scrollTop === cachedScrollTop) {
       return;
     } else {
       cachedScrollTop = this.pageConfig.scrollTop;
@@ -63,7 +66,6 @@ module.exports = class ParallaxSceneManager {
       if(!scene.scrollTop) {
         return;
       }
-
       let scrollTop = this.pageConfig.scrollTop
 
       if(scene.onEnterViewport) {
@@ -127,7 +129,6 @@ module.exports = class ParallaxSceneManager {
       transformPixelValue = scene.bottomPositionOverride ? scene.bottomPositionOverride : scene.transformDistance;
     }
 
-
     scene.parallaxElement.css({
       'transform':    'translate3d(0px, ' + transformPixelValue + 'px, 0px)'
     })
@@ -143,23 +144,39 @@ module.exports = class ParallaxSceneManager {
     this.pageConfig.scrollTop = this.pageConfig.$window.scrollTop();
   }
 
+  //this function will be called at an interval (though less often than the "updatePage" function) to check if new measurements are needed
   updateDocHeight() {
+    //check doc height
     const newDocHeight = this.pageConfig.$document.height()
+
+    //if the doc's height has changed, reset parallax measurements wholesale (like a resize event)
     if(newDocHeight !== this.pageConfig.documentHeight) {
       this.pageConfig.documentHeight = newDocHeight;
-      if(this.scenes.length) {
-        for(let scene of this.scenes) {
-          scene = this.updateScene(scene);
+
+      //keep reference to scenes before destroying them
+      let scenesCached = this.scenes;
+
+      //the resize handler will destroy the scenes array
+      this.onResize();
+
+      // call scene resize listeners manually
+      if(scenesCached.length) {
+        for(let scene of scenesCached) {
+          if(scene.resetFunction) {
+            scene.resetFunction();
+          }
         }
       }
     }
   }
 
+  //this is the function that is called most often. it should only update the page-wide scrollTop value, and check each scene for resulting updates
   updatePage() {
     window.requestAnimationFrame(() => {
       this.updateScrollTop()
       this.checkForUpdates();
     });
+
   }
 
   onResize() {
