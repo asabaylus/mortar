@@ -170,7 +170,7 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
   }
 
   &-kicker {
-    @include couldBeRichText("inline-block");
+    @include couldBeRichText("inline");
     position: relative;
     width: 70%;
     z-index: 4;

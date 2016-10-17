@@ -72,6 +72,12 @@ class PodPromoComponent extends Component {
       seoTitle: componentCTA.linkSeoTitle
     }
 
+    let componentUrl = (componentLink.url) ? componentLink.url : null;
+
+    if (componentUrl && componentLink.trackingCodes) {
+      componentUrl = componentUrl + componentLink.trackingCodes;
+    }
+
     const componentIcon = {
       name: '#plus',
       align: 'right',
@@ -97,24 +103,25 @@ class PodPromoComponent extends Component {
       },
     ];
 
-
     return (
       <ElementQuery sizes={elementQueries}>
         <div className="mt3_podpromo">
           {
-            (componentLink && componentLink.url) ? <a href={componentLink.url+componentLink.trackingCodes} target={componentLink.target} className="mt3_podpromo-container-link" /> : null
+            (componentUrl) ? <a href={componentUrl} target={componentLink.target} className="mt3_podpromo-container-link" /> : null
           }
           <div className="mt3_podpromo-content-container mt3_podpromo-content-container-top mt3_podpromo-content-container-left mt3_podpromo-fade">
             <div className="mt3_podpromo-heading" dangerouslySetInnerHTML={{__html: this.wrapFirstLetter(componentHeading)}} />
           </div>
           <div className="mt3_podpromo-content-container mt3_podpromo-content-container-top mt3_podpromo-content-container-right mt3_podpromo-ctacontainer">
-            <CTA
-              icon={componentIcon}
-              label={mortarCTAModel.title}
-              link={mortarCTAModel}
-              style="naked"
-              type="link"
-            />
+            <div className="mt3_podpromo-ctaBtn-wrapper">
+              <CTA
+                icon={componentIcon}
+                label={mortarCTAModel.title}
+                link={mortarCTAModel}
+                style="naked"
+                type="link"
+              />
+            </div>
           </div>
           <div className="mt3_podpromo-imagewrapper">
             <BackgroundImageParallax frameRatio={"16:9"} enableParallax={componentConfig.parallax}>
