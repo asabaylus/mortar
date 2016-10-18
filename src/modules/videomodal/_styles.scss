@@ -1,4 +1,4 @@
-$mt3_videomodal-max-width: 800px;
+$mt3_videomodal-max-width: 860px;
 $mt3_color-inverse: $mt3_color-white;
 
 .mt3_video-modal {
@@ -39,7 +39,7 @@ $mt3_color-inverse: $mt3_color-white;
   &-container {
     margin: 0 auto;
     max-width: $mt3_videomodal-max-width;
-    padding-top: 60px;
+    padding: 60px 30px 0;
 
     .mt3_border--gray40 {
       border-left: 1px solid $mt3_color-gray-40;
@@ -52,6 +52,10 @@ $mt3_color-inverse: $mt3_color-white;
 
   &__title {
     font-size: $mt3_h-med9 + (2 / 16);
+
+    @media (max-width: 767px) {
+      font-size: $mt3_h-sm5;
+    }
   }
 
   &__description {
@@ -59,5 +63,9 @@ $mt3_color-inverse: $mt3_color-white;
     .mt3_caption-body {
       @include couldBeRichText();
     }
+  }
+
+  &__overflow--hidden {
+    overflow: hidden;
   }
 }

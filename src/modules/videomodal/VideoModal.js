@@ -31,7 +31,7 @@ class VideoModal extends Component {
     this.duration = data.text.duration ? data.text.duration : null;
     this.title = data.text.title ? data.text.title : null;
     this.dek = data.text.dek ? data.text.dek : null;
-    
+    VideoModal.toggleBodyOverflow();
     this.setState({
       open: true
     });
@@ -41,6 +41,7 @@ class VideoModal extends Component {
     if(ngsPlayer && ngsPlayer.api && typeof $pdk != 'undefined') {
       ngsPlayer.api.unload('platformModalVideoPlayer'+i);
     }
+    VideoModal.toggleBodyOverflow();
     this.setState({
       open: false
     });
@@ -53,6 +54,10 @@ class VideoModal extends Component {
 
   componentWillUnmount(){
     Pestle.PubSub.unsubscribe(events.launchVideoModal);
+  }
+
+  static toggleBodyOverflow() {
+    document.body.classList.toggle('mt3_video-modal__overflow--hidden');
   }
 
   render() {
