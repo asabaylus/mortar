@@ -118,6 +118,8 @@ $mt3_white: #fff;
   &-imagewrapper {
     background: $mt3_white;
     position: relative;
+    /*fixes overflow issue in Firefox and IE*/
+    z-index: -1;
 
     &::after {
       background: linear-gradient(to top, $mt3_gradient);

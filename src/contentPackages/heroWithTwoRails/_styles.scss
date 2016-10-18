@@ -53,6 +53,10 @@ $mt3_large: 1280px;
   }
 
   //LIGHT theme rules
+  &--light {
+    /*needed overflow issue with pod promo in Firefox and IE*/
+    background: $mt3_color-white;
+  }
   &__heading {
     h1 {
       color: $mt3_color-gray-10;
