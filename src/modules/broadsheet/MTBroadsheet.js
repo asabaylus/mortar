@@ -97,6 +97,7 @@ class Broadsheet extends Component {
 
       if(node.type === 'image') {
         return(
+          <div>
             <Image
               key={index}
               aspectRatio={node.aspectRatio}
@@ -107,8 +108,11 @@ class Broadsheet extends Component {
               width={this.props.width}
               altText={node.altText || ''}
               src={node.imageUrl}
-              srcset={node.srcset}
-          />
+              srcset={node.srcset} />
+            <Attributions
+              caption={node.caption}
+              credit={node.credit} />
+          </div>
         )
       }
 
@@ -154,20 +158,9 @@ class Broadsheet extends Component {
             </header>
             <div className="mt3_row">
               <div className="mt3_article mt3_col-8">
-                <figure className="mt3_broadsheet-leadMedia-attributions">
-                  <figcaption className="mt3_caption-container--indent">
-                    <p className="mt3_caption-body">
-                      <span className="mt3_caption-title mt3_visuallyhidden">Photo Title{" "}</span>
-                      <span dangerouslySetInnerHTML={{__html: this.props.leadMedia.caption}}></span>
-                    </p>
-                    <p className="mt3_caption-credit">
-                      {/* Photograph by */}
-                      <span
-                        className="mt3_caption-creditname"
-                        dangerouslySetInnerHTML={{__html: this.props.leadMedia.credit}}></span>
-                    </p>
-                  </figcaption>
-                </figure>
+                <Attributions
+                  caption={this.props.leadMedia.caption}
+                  credit={this.props.leadMedia.credit} />
               {bodyNodes}
               </div>
               <aside className="mt3_broadsheet-col-right mt3_col-4 mt3_col-gut">
@@ -219,6 +212,38 @@ Broadsheet.propTypes = {
   mainPhotographer: PropTypes.string,
   mainTitle: PropTypes.string,
   mainUrl: PropTypes.string
+}
+
+
+class Attributions extends Component {
+
+  render() {
+    if (!this.props.caption && this.props.credit) {
+      return (<span/>);
+    }
+
+    return (
+      <figure className="mt3_broadsheet-leadMedia-attributions">
+        <figcaption className="mt3_caption-container--indent">
+          <p className="mt3_caption-body">
+            <span className="mt3_caption-title mt3_visuallyhidden">Photo Title{" "}</span>
+            <span dangerouslySetInnerHTML={{__html: this.props.caption}}></span>
+          </p>
+          <p className="mt3_caption-credit">
+            {/* Photograph by */}
+            <span
+              className="mt3_caption-creditname"
+              dangerouslySetInnerHTML={{__html: this.props.credit}}></span>
+          </p>
+        </figcaption>
+      </figure>
+    );
+  }
+}
+
+Attributions.propTypes = {
+  caption: PropTypes.string,
+  credit: PropTypes.string
 }
 
 export default Broadsheet;
