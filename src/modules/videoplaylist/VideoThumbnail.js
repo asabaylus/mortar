@@ -43,7 +43,8 @@ class VideoThumbnail extends Component {
   }
 
   truncateVideo() {
-    this.videoTitleElement.css({'height':'3em'}).dotdotdot();
+    //Truncate the video title
+    this.videoTitleElement.dotdotdot();
   }
 
   render() {
@@ -61,7 +62,7 @@ class VideoThumbnail extends Component {
         <Image {...imageModel} />
         <a href={this.props.item.path} className="thumbnail-overlay mt3_none" title={this.props.item.title} data-guid={this.props.item.guid} onClick={this.onClick.bind(this)}>
           {(kickerType) ? <Kicker type={kickerType}/> : null}
-          <div ref='videoTitle'>
+          <div ref='videoTitle' className="mt3_thumbnail-video-title__container">
             <span className="thumbnail-overlay__video-title" dangerouslySetInnerHTML={{__html: this.props.item.title}}></span>
           </div>
         </a>

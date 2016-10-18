@@ -46,27 +46,27 @@ $mt3_playlist-l-screen: 100rem;
 
     &__title {
       font-family: $mt3_verlag-stack;
-      font-size: 26px;
+      font-size: $mt3_h-sm5;
       font-weight: 400;
       letter-spacing: .1em;
       line-height: 1.05;
-      padding-left: 40px;
-      padding-top: 40px;
+      padding-left: 2.5rem;
+      padding-top: 2.5rem;
       text-transform: uppercase;
       word-spacing: .05em;
     }
 
     @include respond-to(l) {
-      margin-bottom: 30px;
-      margin-left: 40px;
+      margin-bottom: 1.875rem;
+      margin-left: 2.5rem;
     }
 
     @include respond-to(m) {
-      margin-left: 40px;
+      margin-left: 2.5rem;
     }
 
     @include respond-to(s) {
-      margin-left: 30px;
+      margin-left: 1.875rem;
     }
   }
 
@@ -90,6 +90,8 @@ $mt3_playlist-l-screen: 100rem;
       font-weight: normal;
       line-height: 1.8666667;
       margin: 0;
+      position: relative;
+      top: -0.4375rem;
 
       * {
         margin: 0;
@@ -134,21 +136,17 @@ $mt3_playlist-l-screen: 100rem;
       font-weight: 600;
       letter-spacing: .05em;
       line-height: 1.1;
-      margin-bottom: 30px;
+      margin-bottom: 1.25rem;
       margin-top: 10px;
     }
 
     .mt3_caption-container--indent--gray {
-      @include respond-to(l) {
-        padding-bottom: 30px;
-      }
-
       @include respond-to-multiple(m, s) {
         display: none;
       }
 
       border-left: 1px solid map-get($mt3_colors, 'gray50');
-      padding-bottom: 40px;
+      padding-bottom: 1.25rem;
     }
 
     @include respond-to(l) {
@@ -280,10 +278,17 @@ $mt3_playlist-l-screen: 100rem;
 
       .thumbnail-kicker--now {
         border-color: $mt3_color-black;
+        font-weight: 600;
       }
       .thumbnail-kicker--next {
         border-color: $mt3_color-primary;
+        font-weight: 600;
       }
+    }
+
+    .mt3_thumbnail-video-title__container {
+      max-height: 3em;
+      height: auto;
     }
 
     .modules-images {
