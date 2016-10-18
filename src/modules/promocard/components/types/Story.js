@@ -95,7 +95,7 @@ class Story extends Component {
       target: link ? link.target : null
     } : null;
     const noImages = !leadMedia || leadMedia[0].url === ''; // add second check for configurator as leadMedia array is always present
-    
+
     const promoContainerClass = cx({
       'mt3_promocard-container--text-only': noImages,
       'mt3_promocard-container--dark': theme === 'dark',
@@ -239,6 +239,7 @@ Story.PropTypes = {
     }) ||
     PropTypes.shape({
       guid: PropTypes.string.isRequired,
+      account: PropTypes.string,
       directLink: PropTypes.string
     })),
   text: PropTypes.object,

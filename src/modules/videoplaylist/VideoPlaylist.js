@@ -28,6 +28,7 @@ class VideoPlaylist extends Component {
     this.videoModel = {
       instance: this.playerInstanceName,
       guid: props.dataModel.videos[START_VIDEO_INDEX].guid,
+      account: props.dataModel.videos[START_VIDEO_INDEX].account,
       sharing: true,
       overlayPlayButton: true,
       autoPlay: false
@@ -273,6 +274,7 @@ VideoPlaylist.propTypes = {
     videos: React.PropTypes.arrayOf(
       React.PropTypes.shape({
         guid: React.PropTypes.string,
+        account: React.PropTypes.string,
         title: React.PropTypes.string,
         path: React.PropTypes.string,
         abstract: React.PropTypes.string,

@@ -21,6 +21,7 @@ describe('VideoModal Component', () => {
             {
               "leadMedia": [{
                 "guid": "00000156-46b5-dca8-ab77-7ffdfcf90000",
+                "account": "2423130747",
                 "directLink": "http://link.theplatform.com/s/ngs/media/guid/2423130747/00000156-46b5-dca8-ab77-7ffdfcf90000?format=redirect&policy=12441385&manifest=m3u&mbr=true"
               }],
               "text": {

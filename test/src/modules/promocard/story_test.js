@@ -101,6 +101,7 @@ describe('Story Component', () => {
       },
       "leadMedia": [{
         "guid": "47746161-1e00-4514-9b4f-168f0b552c66",
+        "account": "2423130747",
         "videoUrl": "http://news.localhost.nationalgeographic.com:4502/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4",
         "imageUrl": "http://pmdvod.nationalgeographic.com/NG_Video/996/847/62501_1_1280x720_640x360_177594435674.jpg",
         "renditionUrl": "/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png"
@@ -150,6 +151,7 @@ describe('Story Component', () => {
       expect(wrapper.find('PromoImage').props().config.aspectRatio).to.equal("photo");
       expect(wrapper.find('PromoImage').props().config.sponsored).to.equal(true);
       expect(wrapper.find('PromoImage').props().leadMedia.guid).to.equal("47746161-1e00-4514-9b4f-168f0b552c66");
+      expect(wrapper.find('PromoImage').props().leadMedia.account).to.equal("2423130747");
       expect(wrapper.find('PromoImage').props().leadMedia.videoUrl).to.equal("http://news.localhost.nationalgeographic.com:4502/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4");
       expect(wrapper.find('PromoImage').props().leadMedia.imageUrl).to.equal("http://pmdvod.nationalgeographic.com/NG_Video/996/847/62501_1_1280x720_640x360_177594435674.jpg");
       expect(wrapper.find('PromoImage').props().leadMedia.renditionUrl).to.equal("/content/dam/natgeo/video/mpx/news/c/ch/cha/chasing-ice-photographer-talks-melting-glaciers.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png");

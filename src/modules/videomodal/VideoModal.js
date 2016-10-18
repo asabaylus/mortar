@@ -13,6 +13,7 @@ class VideoModal extends Component {
     super();
     this.state = {
       guid: null,
+      account: null,
       title: '',
       label: '',
       duration: '',
@@ -25,11 +26,12 @@ class VideoModal extends Component {
 
   showVideoModal (msg, data) {
     this.guid = data.leadMedia[0].guid;
+    this.account = data.leadMedia[0].account;
     this.label = data.text.kicker && data.text.kicker.label ? data.text.kicker.label : null;
     this.duration = data.text.duration ? data.text.duration : null;
     this.title = data.text.title ? data.text.title : null;
     this.dek = data.text.dek ? data.text.dek : null;
-
+    
     this.setState({
       open: true
     });
@@ -61,6 +63,7 @@ class VideoModal extends Component {
     const videoModel = {
       instance: 'platformModalVideoPlayer'+i,
       guid: this.guid,
+      account: this.account,
       autoplay: true
     };
     let isOpen = this.state.open;
