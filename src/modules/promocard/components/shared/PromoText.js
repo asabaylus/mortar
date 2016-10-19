@@ -9,13 +9,13 @@ class PromoText extends Component {
   render() {
     const {...props} = this.props;
     const attrs = {
-      className: props.config.overlay || props.theme === 'dark' || props.noImages ? 'mt3_color--white mt3_promocard-kicker mt3_promocard-kicker--inverse' : 'mt3_color--gray40 mt3_promocard-kicker',
+      className: props.config.overlay || props.theme === 'dark' || props.noImages ? 'mt3_color--white mt3_promocard-kicker mt3_promocard-kicker--inverse' : 'mt3_color--black mt3_promocard-kicker',
       href: props.text.kicker && props.text.kicker.url ? generateHref(props.text.kicker.url, props.text.kicker.trackingCodes) : null,
       target: props.text.kicker && props.text.kicker.target ? props.text.kicker.target : null
     };
 
     const overlayClasses = props.config.overlay ? 'mt3_color--white mt3_promocard-nested-text' : 'mt3_color--neutral--xxd';
-    const subheadColor = props.config.overlay ? 'mt3_color--white' : 'mt3_color--gray40';
+    const subheadColor = props.config.overlay ? 'mt3_color--white' : 'mt3_color--black';
     const inverseTitle = props.config.overlay || props.theme === 'dark' || props.noImages ? 'mt3_color--white' : 'mt3_color--black';
     
     const dekClass = cx({

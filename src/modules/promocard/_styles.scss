@@ -11,10 +11,15 @@ $mt3_large: 1280px;
   overflow: hidden;
   position: relative;
 
-  &:hover .mt3_videopromo-button {
-    background-color: $mt3_color-primary;
-    color: $mt3_color-black;
-    opacity: 1;
+  &:hover {
+    .mt3_videopromo-button {
+      background-color: $mt3_color-primary;
+      color: $mt3_color-black;
+      opacity: 1;
+    }
+    .mt3_promocard-title {
+      opacity: 0.6;
+    }
   }
 
   &--dark {
@@ -193,8 +198,9 @@ $mt3_large: 1280px;
   }
 
   .mt3_promocard-gallery-cta {
+    font-size: 0.75rem;
     left: 60px;
-    letter-spacing: .1em;
+    letter-spacing: 0.2em;
     padding: 0;
     position: absolute;
     text-align: left;
@@ -203,9 +209,10 @@ $mt3_large: 1280px;
     z-index: $mt3_z-middle + 3;
 
     &-icon {
-      height: 12px;
+      color: $mt3_color-primary;
+      height: 10px;
       margin-left: 5px;
-      width: 12px;
+      width: 10px;
     }
 
     &--medium {
@@ -226,6 +233,7 @@ $mt3_large: 1280px;
     @extend .mt3_kicker;
     @include couldBeRichText();
     float: left;
+    letter-spacing: 0.2em;
     line-height: 1;
     margin-bottom: 10px;
     position: relative;
@@ -273,8 +281,8 @@ $mt3_large: 1280px;
     font-family: $mt3_haas-stack;
     font-size: 18px;
     font-weight: 600;
-    letter-spacing: 0.015em;
-    line-height: 1.15;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
 
     &--small {
       font-size: 22px;

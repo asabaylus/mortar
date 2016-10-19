@@ -35,8 +35,13 @@ $mt3_large: 1280px;
           margin-bottom: 0;
         }
         .mt3_promocard-pad {
-          padding-left: 0px;
+          padding-left: 0;
         }
+      }
+    }
+    .mt3_promocard-container--text-only {
+      .mt3_promocard-pad {
+        padding: 0;
       }
     }
   }
