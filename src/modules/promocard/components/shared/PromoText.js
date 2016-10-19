@@ -109,10 +109,10 @@ class PromoText extends Component {
           <div className="mt3_row">
             {subHeadingContent}
           </div>
-          <div className={textOnlyHorizontal + textOnlyHorizontal+'--left'}>
+          <div className={textOnlyHorizontal + textOnlyHorizontal+'--left mt3_col-gut mt3_col-md-7'}>
             {title.length ? title : null}
           </div>
-          <div className={textOnlyHorizontal + textOnlyHorizontal+'--right'}>
+          <div className={textOnlyHorizontal + textOnlyHorizontal+'--right mt3_col-gut mt3_col-md-5'}>
             {dek.length ? dek : null}
           </div>
           { delete props.config.overlay }

@@ -27,14 +27,14 @@ $mt3_large: 1280px;
     padding: 30px;
     &.mt3_promocard-container--large {
       @media(min-width: $mt3_small) {
-        /*not using shorthand to keep top and bottom padding as is - should match .hero-with-two-rails__rails left/right padding + .mt3_col-gut padding */
-        padding-left: calc(1.725% + 40px);
-        padding-right: calc(1.725% + 40px);
+        /*not using shorthand to keep top and bottom padding as is - should match .hero-with-two-rails__rails left/right padding*/
+        padding-left: 40px;
+        padding-right: 40px;
       }
       @media (min-width: $mt3_medium) {
-        /*not using shorthand to keep top and bottom padding as is - should match .hero-with-two-rails__rails left/right padding + .mt3_col-gut padding */
-        padding-left: calc(1.725% + 60px);
-        padding-right: calc(1.725% + 60px);
+        /*not using shorthand to keep top and bottom padding as is - should match .hero-with-two-rails__rails left/right padding*/
+        padding-left: 60px;
+        padding-right: 60px;
       }
     }
   }
@@ -114,13 +114,7 @@ $mt3_large: 1280px;
       display: inline-block;
       vertical-align: top;
 
-      &--left {
-        width: 60%;
-      }
-
       &--right {
-        width: 40%;
-
         .mt3_promocard-dek--text-only {
           margin-top: 0;
         }
