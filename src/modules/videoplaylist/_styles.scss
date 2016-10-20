@@ -239,6 +239,7 @@ $mt3_playlist-l-screen: 100rem;
   }
 
   &-container--thumbnail {
+    cursor: pointer;
     overflow: hidden;
     position: relative;
 

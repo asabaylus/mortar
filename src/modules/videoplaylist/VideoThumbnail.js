@@ -60,7 +60,7 @@ class VideoThumbnail extends Component {
     return (
       <div className={this.props.wrapperClass}>
         <Image {...imageModel} />
-        <a href={this.props.item.path} className="thumbnail-overlay mt3_none" title={this.props.item.title} data-guid={this.props.item.guid} onClick={this.onClick.bind(this)}>
+        <a data-href={this.props.item.path} className="thumbnail-overlay mt3_none" title={this.props.item.title} data-guid={this.props.item.guid} onClick={this.onClick.bind(this)}>
           {(kickerType) ? <Kicker type={kickerType}/> : null}
           <div ref='videoTitle' className="mt3_thumbnail-video-title__container">
             <span className="thumbnail-overlay__video-title" dangerouslySetInnerHTML={{__html: this.props.item.title}}></span>
