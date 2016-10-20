@@ -130,6 +130,7 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
       width: calc(60% + 20px);
 
       &--has-image {
+        padding-right: 30px;
         width: 100%;
       }
     }
@@ -209,13 +210,21 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     position: relative;
 
     &--top {
-      .mt3_fiveup-card-title {
-        font-size: 26px;
-      }
 
       .mt3_fiveup-card {
         padding-bottom: 30px;
         padding-top: 30px;
+      }
+
+      .mt3_fiveup-card-title {
+        font-size: 26px;
+        margin-bottom: 0;
+      }
+
+      .mt3_fiveup-card-row--has-image {
+        .mt3_fiveup-card-title {
+          margin-bottom: 30px;
+        }
       }
 
       .mt3_fiveup-divlink {
