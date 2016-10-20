@@ -99,14 +99,14 @@ $mt3_h-xxlg: $mt3_h-base + (47/16);  // 65px
 %mt3_haas-heading {
   font-family: $mt3_haas-stack;
   font-weight: 600;
-  letter-spacing: .05em;
+  letter-spacing: .04em;
   line-height: 1.1;
 }
 
 %mt3_verlag-heading {
   font-family: $mt3_verlag-stack;
   font-weight: 400;
-  letter-spacing: .05em;
+  letter-spacing: .2em;
   line-height: 1.05;
   text-transform: uppercase;
   word-spacing: .05em;
@@ -284,7 +284,7 @@ $mt3_h-xxlg: $mt3_h-base + (47/16);  // 65px
   font-family: $mt3_verlag-stack;
   font-size: $mt3_fs-med-xlrg;
   font-weight: 400;
-  letter-spacing: .05em;
+  letter-spacing: .2em;
   line-height: 1.05;
   text-rendering: optimizeLegibility;
   text-transform: uppercase;
@@ -303,7 +303,7 @@ $mt3_h-xxlg: $mt3_h-base + (47/16);  // 65px
   font-family: $mt3_haas-stack;
   font-size: $mt3_fs-xlrg;
   font-weight: 600;
-  letter-spacing: .015em;
+  letter-spacing: .04em;
   line-height: 1.15;
   text-rendering: optimizeLegibility;
 
@@ -320,7 +320,7 @@ $mt3_h-xxlg: $mt3_h-base + (47/16);  // 65px
   font-family: $mt3_haas-stack;
   font-size: $mt3_fs-med;
   font-weight: 400;
-  letter-spacing: .05em;
+  letter-spacing: .04em;
   line-height: 1.37;
 }
 
@@ -329,7 +329,7 @@ $mt3_h-xxlg: $mt3_h-base + (47/16);  // 65px
   font-family: $mt3_verlag-stack;
   font-size: .75rem;
   font-weight: 400;
-  letter-spacing: .1em;
+  letter-spacing: .2em;
   line-height: 1.5;
   padding: 0 1.25rem;
   text-transform: uppercase;
