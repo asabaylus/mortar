@@ -27,11 +27,11 @@
   z-index: $mt3_z-top;
 
   &--active {
-    height: 100vh;
+    height: 100%;
     left: 0;
     opacity: 100;
     top: 0;
     visibility: visible;
-    width: 100vw;
+    width: 100%;
   }
 }
