@@ -31,6 +31,9 @@ $mt3_large: 1280px;
     border-top: 3px solid $mt3_color-primary;
     padding: 30px;
     &.mt3_promocard-container--large {
+      .mt3_promocard-kicker {
+        margin-left: 1.725%; /*matches .mt3_col-gut padding*/
+      }
       @media(min-width: $mt3_small) {
         /*not using shorthand to keep top and bottom padding as is - should match .hero-with-two-rails__rails left/right padding*/
         padding-left: 40px;
