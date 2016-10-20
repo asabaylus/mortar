@@ -52,7 +52,7 @@ class PodPromoConfigurator extends Module {
         },
         cta: {
           linkUrl: 'http://www.nationalgeographic.com/photography/photo-of-the-day/',
-          linkText: 'See All',
+          linkText: 'See All but be long',
           linkTarget: '_blank',
           linkSeoTitle: 'See more photos'
         }

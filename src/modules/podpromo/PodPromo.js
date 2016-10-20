@@ -6,6 +6,7 @@ import CTA from '../button/CTAButton';
 import BackgroundImageParallax from '../../util/parallax/backgroundImageParallax';
 import LazyLoad from 'react-lazy-load';
 import ElementQuery from 'react-element-query';
+import classNames from 'classnames';
 
 class PodPromoComponent extends Component {
 
@@ -78,6 +79,11 @@ class PodPromoComponent extends Component {
       componentUrl = componentUrl + componentLink.trackingCodes;
     }
 
+    let headerClassNames = classNames({
+      'mt3_podpromo-heading': true,
+      'mt3_podpromo-heading--noCTA': !(mortarCTAModel && mortarCTAModel.url)
+    });
+
     const componentIcon = {
       name: '#plus',
       align: 'right',
@@ -110,21 +116,22 @@ class PodPromoComponent extends Component {
             (componentUrl) ? <a href={componentUrl} target={componentLink.target} className="mt3_podpromo-container-link" /> : null
           }
           <div className="mt3_podpromo-content-container mt3_podpromo-content-container-top mt3_podpromo-content-container-left mt3_podpromo-fade">
-            <div className="mt3_podpromo-heading" dangerouslySetInnerHTML={{__html: this.wrapFirstLetter(componentHeading)}} />
+            <div className={headerClassNames} dangerouslySetInnerHTML={{__html: this.wrapFirstLetter(componentHeading)}} />
           </div>
-          <div className="mt3_podpromo-content-container mt3_podpromo-content-container-top mt3_podpromo-content-container-right mt3_podpromo-ctacontainer">
-            <div className="mt3_podpromo-ctaBtn-wrapper">
-              { mortarCTAModel && mortarCTAModel.url ?
-              <CTA
-                icon={componentIcon}
-                label={mortarCTAModel.title}
-                link={mortarCTAModel}
-                style="naked"
-                type="link"
-              /> : null
-              }
+          { mortarCTAModel && mortarCTAModel.url ?
+            <div className="mt3_podpromo-content-container mt3_podpromo-content-container-top mt3_podpromo-content-container-right mt3_podpromo-ctacontainer">
+              <div className="mt3_podpromo-ctaBtn-wrapper">
+                <CTA
+                  icon={componentIcon}
+                  label={mortarCTAModel.title}
+                  link={mortarCTAModel}
+                  style="naked"
+                  type="link"
+                />
+              </div>
             </div>
-          </div>
+            : null
+          }
           <div className="mt3_podpromo-imagewrapper">
             <BackgroundImageParallax frameRatio={"16:9"} enableParallax={componentConfig.parallax}>
                 <Image
