@@ -7,9 +7,7 @@
   right: $mt3_unit-double - .125;
   top: $mt3_unit-double - .125;
 
-  //This media query apply to approve the ticket, since we don't have in mortar
-  // that breakpoint.
-  @media (max-width: 767px) {
+  @include respond-to-multiple(s, m) {
     right: $mt3_unit - .0625;
     top: $mt3_unit - .0625;
   }
@@ -20,6 +18,7 @@
   height: 85vh;
   left: 7.5vw;
   opacity: 0;
+  overflow: auto;
   position: fixed;
   top: 7.5vh;
   visibility: hidden;
@@ -34,4 +33,8 @@
     visibility: visible;
     width: 100%;
   }
+}
+
+.mt3_modal__overflow--hidden {
+  overflow: hidden;
 }
