@@ -131,7 +131,7 @@ $mt3_large: 1280px;
   }
   &--no-heading {
     .hero-with-two-rails__heading__wrap {
-      display: none;
+      height: 40px;
     }
   }
   &--heading-below {
@@ -154,6 +154,41 @@ $mt3_large: 1280px;
     @media (max-width: $mt3_small) {
       .hero-with-two-rails__heading__wrap {
         display: none
+      }
+    }
+  }
+
+  &--no-hero {
+    .hero-with-two-rails__heading__wrap--above {
+      display: none;
+    }
+
+    &.hero-with-two-rails--heading-below {
+      padding-top: 0;
+
+      @media (min-width: $mt3_small) {
+        padding-top: 60px;
+      }
+    }
+
+    &.hero-with-two-rails--no-heading {
+      padding-top: 40px;
+
+      @media (max-width: $mt3_small) {
+        padding-top: 0;
+      }
+
+
+      .hero-with-two-rails__heading__wrap {
+        display: none;
+      }
+    }
+
+    &.hero-with-two-rails--heading-above {
+      @media (max-width: $mt3_small) {
+        .hero-with-two-rails__heading__wrap {
+          display: block
+        }
       }
     }
   }

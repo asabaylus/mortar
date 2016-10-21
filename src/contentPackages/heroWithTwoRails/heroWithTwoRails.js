@@ -215,7 +215,7 @@ class HeroWithTwoRails extends Component {
     if(this.props.theme) {
       parentClasses += ` hero-with-two-rails--${this.props.theme}`;
     }
-    if(this.heroExists) {
+    if(!this.heroExists) {
       parentClasses += ` hero-with-two-rails--no-hero`;
     }
     if(!this.props.heading || this.props.heading === "") {
