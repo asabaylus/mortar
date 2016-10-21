@@ -1,12 +1,28 @@
+// ======
+// COLORS
+// ======
+
+
+// Neutrals
+
+$mt3_color-black: #000;
+$mt3_color-gray-86: #222;
+$mt3_color-gray-80: #333;
+$mt3_color-gray-66: #555;
+$mt3_color-gray-40: #999;
+$mt3_color-gray-10: #e6e6e6;
+$mt3_color-gray-5: #f2f2f2;
+$mt3_color-gray-2: #fafafa;
+$mt3_color-white: #fff;
+
+
+// Main colors
+
 $mt3_color-primary: hsl(48, 100%, 50%);
 $mt3_color-affirmation: hsl(124, 73%, 43%);
 $mt3_color-danger: #FC4349;
 $mt3_color-sponsor: #7694CB;
 $mt3_color-gray-50: #808080;
-
-//some vars to match placeholder colors against the defaults in modules-images
-$mt3_default-modules-images-background: rgba(179,179,179,0.4);
-$mt3_default-modules-images-box-logo: #FFCC00;
 
 $mt3_colors: (
   primary: $mt3_color-primary,
@@ -15,6 +31,7 @@ $mt3_colors: (
   gray50: $mt3_color-gray-50,
   sponsor: $mt3_color-sponsor
 );
+
 
 $mt3_social-colors: (
   google-plus: #dd4b39,
@@ -31,3 +48,42 @@ $mt3_social-colors: (
   whatsapp: #43d854,
   youtube: #cd201f
 );
+
+
+// Affirmation
+$mt3_color-affirmation-l: mt3_tint($mt3_color-affirmation, 25);
+
+// Danger
+$mt3_color-danger-l: #F45840;
+
+// Borders
+$mt3_border-default: 1px solid $mt3_color-gray-40;
+$mt3_border-default-hover: 1px solid $mt3_color-gray-50;
+$mt3_border-danger: 1px solid $mt3_color-danger;
+
+
+$mt3_colors: (
+  primary: $mt3_color-primary,
+  black: $mt3_color-black,
+  gray86: $mt3_color-gray-86,
+  gray80: $mt3_color-gray-80,
+  gray66: $mt3_color-gray-66,
+  gray50: $mt3_color-gray-50,
+  gray40: $mt3_color-gray-40,
+  gray10: $mt3_color-gray-10,
+  gray5: $mt3_color-gray-5,
+  gray2: $mt3_color-gray-2,
+  white: $mt3_color-white,
+  affirmation: $mt3_color-affirmation,
+  affirmation--l: $mt3_color-affirmation-l,
+  danger: $mt3_color-danger,
+  danger--l: $mt3_color-danger-l,
+  sponsor: $mt3_color-sponsor
+);
+
+
+// overrides
+
+// some vars to match placeholder colors against the defaults in modules-images
+$mt3_default-modules-images-background: rgba(179,179,179,0.4);
+$mt3_default-modules-images-box-logo: #FFCC00;
