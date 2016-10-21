@@ -53,7 +53,7 @@ $mt3_color-inverse: $mt3_color-white;
   &__title {
     font-size: $mt3_h-med9 + (2 / 16);
 
-    @media (max-width: 767px) {
+    @include respond-to-multiple(s, m) {
       font-size: $mt3_h-sm5;
     }
   }
@@ -63,9 +63,5 @@ $mt3_color-inverse: $mt3_color-white;
     .mt3_caption-body {
       @include couldBeRichText();
     }
-  }
-
-  &__overflow--hidden {
-    overflow: hidden;
   }
 }
