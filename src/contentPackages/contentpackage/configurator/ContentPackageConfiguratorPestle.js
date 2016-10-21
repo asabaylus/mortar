@@ -29,7 +29,7 @@ class ContentPackageConfigurator extends Module {
                 'type': 'article',
                 'config': {
                   'sponsored': false,
-                  'showPlayButton': false,
+                  'showPlayButton': true,
                   'showByline': true
                 },
                 'link': {
@@ -135,7 +135,7 @@ class ContentPackageConfigurator extends Module {
                 'config': {
                   'aspectRatio': 'photo',
                   'sponsored': false,
-                  'showPlayButton': false,
+                  'showPlayButton': true,
                   'showByline': true
                 },
                 'link': {
@@ -195,7 +195,7 @@ class ContentPackageConfigurator extends Module {
                 'type': 'article',
                 'config': {
                   'sponsored': false,
-                  'showPlayButton': false,
+                  'showPlayButton': true,
                   'showByline': true
                 },
                 'link': {
@@ -255,7 +255,7 @@ class ContentPackageConfigurator extends Module {
                 'type': 'article',
                 'config': {
                   'sponsored': false,
-                  'showPlayButton': false,
+                  'showPlayButton': true,
                   'showByline': true
                 },
                 'link': {
@@ -437,7 +437,7 @@ class ContentPackageConfigurator extends Module {
                 'config': {
                   'cardAspectRatio': '3:2',
                   'sponsored': false,
-                  'showPlayButton': false,
+                  'showPlayButton': true,
                   'showByline': true
                 },
                 'link': {
@@ -500,7 +500,7 @@ class ContentPackageConfigurator extends Module {
                 'type': 'article',
                 'config': {
                   'sponsored': false,
-                  'showPlayButton': false,
+                  'showPlayButton': true,
                   'showByline': true
                 },
                 'link': {

@@ -68,11 +68,6 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     }
   }
 
-  .mt3_videopromo-button {
-    bottom: $mt3_left_and_right_package_padding;
-    z-index: 2;
-  }
-
   &--tablet,
   &--desktop {
     .mt3_fourup {
@@ -203,6 +198,11 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     line-height: 1.3;
     margin-bottom: 30px;
     margin-top: 15px;
+  }
+
+  .mt3_videopromo-button {
+    bottom: $mt3_left_and_right_package_padding;
+    z-index: 2;
   }
 
   &-row {
