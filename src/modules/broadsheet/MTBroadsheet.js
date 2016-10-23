@@ -67,7 +67,7 @@ class Broadsheet extends Component {
       (left + width) > window.pageXOffset
     ) {
       console.log('broadsheet in viewport');
-      this.setState({growClass: "broadsheet_wrapper--grow"});
+      this.setState({growClass: "mt3_broadsheet_wrapper--grow"});
     };
   }
 
@@ -122,9 +122,9 @@ class Broadsheet extends Component {
     });
 
     return(
-      <div ref="broadsheet" className={"broadsheet_wrapper " + this.state.growClass} data-reveal="true">
-        <div className="broadsheet">
-          <a className="mt3_color--black mt3_heading--h6--2" href='http://nationalgeographic.com/magazine'>National Geographic Magazine</a>
+      <div ref="broadsheet" className={"mt3_broadsheet_wrapper " + this.state.growClass} data-reveal="true">
+        <div className="mt3_broadsheet">
+          <a className="mt3_color--black mt3_heading--h6--2 mt3_broadsheet-magazine-title" href='http://nationalgeographic.com/magazine'>National Geographic Magazine</a>
           <section className="mt3_bgcolor--white">
             <header className="mt3_row">
               <div className="mt3_broadsheet-leadMedia-header">
@@ -156,40 +156,42 @@ class Broadsheet extends Component {
                   breakpoint={this.state.breakpoint} />
               </div>
             </header>
-            <div className="mt3_row">
-              <div className="mt3_article mt3_col-8">
+            <div className="mt3_broadsheet_row">
+              <div className="mt3_article mt3_broadsheet-article">
                 <Attributions
                   caption={this.props.leadMedia.caption}
                   credit={this.props.leadMedia.credit} />
               {bodyNodes}
               </div>
-              <aside className="mt3_broadsheet-col-right mt3_col-4 mt3_col-gut">
-                <header className="mt3_broadsheet-cover-heading mt3_verlag-heading">
-                  <p><span className="mt3_broadsheet-subscribe-label">Subscribe</span><br/> National Geographic Magazine</p>
-                  <Image
-                    aspectRatio={this.props.coverImage.aspectRatio}
-                    frameAspectRatio={this.props.coverImage.aspectRatio}
-                    lazyLoad={false}
-                    placeholderBackgroundColor={"rgb(0,0,0)"}
-                    letterboxBackgroundColor = {"rgb(0,0,0)"}
-                    placeholder="none"
-                    fadeSpeed={0}
-                    height={this.props.height}
-                    width={this.props.width}
-                    altText="National Geographic Magazine Cover Image"
-                    src={this.props.coverImage.src}
-                    srcset={this.props.coverImage.srcset}
-                  />
-                </header>
-                <p className="mt3_broadsheet-story-also-in mt3_verlag-heading">Also in this issue</p>
-                <ul className="mt3_body">
-                {this.props.subStories.map((item, index) => (
-                  <li key={index}>
-                  <h2 className="mt3_broadsheet-story-title mt3_haas-heading mt3_color--black">{item.text.title}</h2>
-                  <p className="mt3_broadsheet-story-dek mt3_color--gray66">{item.text.dek}</p>
-                  </li>
-                ))}
-                </ul>
+              <aside className="mt3_broadsheet-aside">
+              <div className="mt3_broadsheet-aside-v-background">
+                  <header className="mt3_broadsheet-cover-heading mt3_verlag-heading">
+                    <p><span className="mt3_broadsheet-subscribe-label">Subscribe</span><br/> National Geographic Magazine</p>
+                    <Image
+                      aspectRatio={this.props.coverImage.aspectRatio}
+                      frameAspectRatio={this.props.coverImage.aspectRatio}
+                      lazyLoad={false}
+                      placeholderBackgroundColor={"rgb(0,0,0)"}
+                      letterboxBackgroundColor = {"rgb(0,0,0)"}
+                      placeholder="none"
+                      fadeSpeed={0}
+                      height={this.props.height}
+                      width={this.props.width}
+                      altText="National Geographic Magazine Cover Image"
+                      src={this.props.coverImage.src}
+                      srcset={this.props.coverImage.srcset}
+                    />
+                  </header>
+                  <p className="mt3_broadsheet-story-also-in mt3_verlag-heading">Also in this issue</p>
+                  <ul className="mt3_body">
+                  {this.props.subStories.map((item, index) => (
+                    <li key={index}>
+                      <h2 className="mt3_broadsheet-story-title mt3_haas-heading mt3_color--black">{item.text.title}</h2>
+                      <p className="mt3_broadsheet-story-dek mt3_color--gray66">{item.text.dek}</p>
+                    </li>
+                  ))}
+                  </ul>
+                </div>
               </aside>
             </div>
           </section>

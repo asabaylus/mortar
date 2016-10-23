@@ -3,31 +3,91 @@ $mt3_medium: 1024px;
 $mt3_large: 1280px;
 
 
-.broadsheet_wrapper {
+.mt3_broadsheet_wrapper {
+}
+.boo {
+    background: red;
 }
 
-.broadsheet_wrapper--grow {
-  box-shadow: inset 0 0 0 60px #ffcc00;
-  transition: box-shadow 1s ease-in-out;
-}
-
-.broadsheet {
-  border: 60px solid rgba(0,0,0,0);
-  position: relative;
-  // padding: 30px 60px;
-  text-align: center;
-
-  // Natgeo banner cetered in gold border
-  > a {
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    top: -28px;
-    position: relative;
-    line-height: 0;
-    display: block;
+// Layout
+.mt3_broadsheet_row {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  align-items: stretch;
+  clear: both;
+  @media(max-width: $mt3_small) {
+    -webkit-flex-direction: column;
+    flex-direction: column;
   }
+}
+
+.mt3_broadsheet-magazine-title {
+  // Natgeo banner cetered in gold border
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  position: relative;
+  line-height: 0;
+  display: block;
+  @media(min-width: 1025px) {
+    top: -28px;
+  }
+  @media(min-width:376px) and (max-width:1024px) {
+    top: -22px;
+  }
+  @media(max-width: 375px) {
+    display: none;
+  }
+}
+
+.mt3_broadsheet-article {
+   -webkit-flex: 1 0 0;
+   flex: 1 0 0;
+   padding-bottom: 2.5rem;
+}
+.mt3_broadsheet-aside {
+  //  -webkit-flex: 1 0 0;
+  //  flex: 1 0 0;
+  width: 17.5rem;
+  @media(max-width: 375px) {
+    width: 14.2rem
+  }
+
+  @media(max-width: $mt3_small) {
+    // because you have a little screen you suck and dont deserve to read the same content -- Mobile Second thank you Code & Theory!
+    display: none;
+  }
+}
+
+.mt3_broadsheet_wrapper--grow {
+  transition: box-shadow 1s ease-in-out;
+  @media(min-width: 1025px) {
+    box-shadow: inset 0 0 0 60px #ffcc00;
+  }
+  @media(min-width:376px) and (max-width:1024px) {
+    box-shadow: inset 0 0 0 47px #ffcc00;
+  }
+  @media(max-width: 375px) {
+    box-shadow: inset 0 0 0 23px #ffcc00;
+  }
+}
+
+.mt3_broadsheet {
+  @media(min-width: 1025px) {
+    border: 60px solid rgba(0,0,0,0);
+  }
+  @media(min-width:376px) and (max-width:1024px) {
+    border: 47px solid rgba(0,0,0,0);
+  }
+  @media(max-width: 375px) {
+    border: 23px solid rgba(0,0,0,0);
+  }
+  position: relative;
+  display: inline-block;
+  text-align: center;
 
 
   .mt3_broadsheet-leadMedia-header {
@@ -116,16 +176,28 @@ $mt3_large: 1280px;
     }
     text-align: left;
     padding-left: 104px;
+    @media(max-width: 375px) {
+      padding-left: 2.7rem;
+    }
+    @media(max-width: $mt3_small) {
+      padding-left: 0;
+      p {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
   }
 
-  .mt3_broadsheet-col-right {
+  .mt3_broadsheet-aside {
     right: -60px;
     position: relative;
     background: #f2f2f2;
-    background-image:
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><line x1='50%' y1='0' x2='50%' y2='100%' stroke-width='0.5' stroke='#999999'/></svg>");
     padding: 0;
     margin: 0;
+    // ok this sucks, we both know it's badly done -- deal with it
+    .mt3_broadsheet-aside-v-background {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><line x1='50%' y1='0' x2='50%' y2='100%' stroke-width='0.5' stroke='#999999'/></svg>");
+    }
     ul {
       list-style: none;
       margin: 0;
@@ -150,14 +222,13 @@ $mt3_large: 1280px;
   }
 
   .mt3_broadsheet-story-also-in {
-    background: #f2f2f2;
     padding: 12px;
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     line-height: 1.6;
     margin: 30px 0;
-
+    background-color: #f2f2f2;
   }
 
   .mt3_broadsheet-story-title {
@@ -215,26 +286,4 @@ $mt3_large: 1280px;
         height: 93px;
       }
   }
-
-  // &__hero {
-  //   margin: 0 auto;
-  //   max-width: 1600px;
-  //
-  //   //specific override - modify promo's margins for a "hero" promos
-  //   .mt3_promocard-container {
-  //     .mt3_promocard-pad {
-  //       padding-left: 30px;
-  //     }
-  //     @media(min-width: $mt3_small) {
-  //       margin-bottom: 0;
-  //       figure {
-  //         margin-bottom: 0;
-  //       }
-  //
-  //       .mt3_promocard-pad {
-  //         padding-left: 0px;
-  //       }
-  //     }
-  //   }
-  // }
 }

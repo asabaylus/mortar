@@ -3,6 +3,8 @@ module.exports = {
     mortarDest: 'lib/',
 
     // For mortar Site
+    jquery: 'src/scripts/jquery.min.js',
+    jqueryDest: '.tmp/site/scripts',
     siteStylesSrc: 'src/site/_styles/*.scss',
     siteStylesDest: '.tmp/site/styles/',
     siteSrc: 'src/site/',
