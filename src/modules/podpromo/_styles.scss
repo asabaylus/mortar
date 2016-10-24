@@ -21,7 +21,7 @@ $mt3_white: #fff;
 
   // adds margin when it's the first element on AEM page
   .parsys.content .section:first-of-type & {
-    margin-top: 30px;
+    border-top: 30px solid #fff;
   }
 
   // If the parent class doesn't indicate it's mobile, fade opacity on hover
