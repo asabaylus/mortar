@@ -12,39 +12,9 @@ class Broadsheet extends Component {
     super(props);
     this.debouncedReveal = null;
     this.reveal = this.reveal.bind(this);
-    this.calcAspectRatio = this.calcAspectRatio.bind(this);
     this.state = {
       breakpoint: this.props.parentWidth || null
     }
-  }
-
-  calcAspectRatio(){
-    const width = this.state.breakpoint;
-    const parentFrameAspectRatio = this.props.leadMedia.aspectRatio;
-    let parentFrameHeightMultiplier;
-    switch(parentFrameAspectRatio){
-    case '16:9':
-      parentFrameHeightMultiplier = 0.5625;
-      break;
-    case '2:1':
-      parentFrameHeightMultiplier = 0.5;
-      break;
-    case '1:1':
-      parentFrameHeightMultiplier = 1;
-      break;
-    default: //default to 3:2
-      parentFrameHeightMultiplier = 0.667;
-    }
-    const height = width * parentFrameHeightMultiplier;
-
-    let corner = 30;
-    if(width > 375 && width < 768){
-      corner = 40;
-    }else if(width > 768){
-      corner = 60;
-    }
-
-    return (height - corner) / (width - corner);
   }
 
   reveal() {
@@ -66,8 +36,11 @@ class Broadsheet extends Component {
       (top + height) > window.pageYOffset &&
       (left + width) > window.pageXOffset
     ) {
-      console.log('broadsheet in viewport');
+      // When the BroadSheet enters the viewport animate the gold border, once
+      // console.log('broadsheet in viewport');
       this.setState({growClass: "mt3_broadsheet_wrapper--grow"});
+      window.removeEventListener('resize', this.debouncedReveal);
+      window.removeEventListener('scroll', this.debouncedReveal);
     };
   }
 
@@ -87,6 +60,16 @@ class Broadsheet extends Component {
   }
 
   render() {
+
+
+    // set the aspect ratio for the "hero" image
+    // if mobile then 1:1 otherwise 16:9
+    // let cardAspectRatio = 0.5649717514124294;
+    let cardAspectRatio = 0.5649717514124294;
+    if (window.innerWidth < 768) {
+      cardAspectRatio = 1;
+    }
+
     const bodyNodes = this.props.mainBody.map((node, index) => {
 
       if(node.type === 'text') {
@@ -148,12 +131,12 @@ class Broadsheet extends Component {
               <div className="mt3_broadsheet-leadMedia-image mt3_promocard-gallery-images--image2-large">
                 <PromoImage
                   type="image"
-                  config={''}
+                  config={{
+                    "cardAspectRatio": cardAspectRatio
+                  }}
                   fadeSpeed={0}
                   leadMedia={this.props.leadMedia}
-                  childFrameAspectRatio={this.calcAspectRatio()}
-                  secondImage={false}
-                  breakpoint={this.state.breakpoint} />
+                  secondImage={false} />
               </div>
             </header>
             <div className="mt3_broadsheet_row">
