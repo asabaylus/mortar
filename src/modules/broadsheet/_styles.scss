@@ -76,6 +76,11 @@ $mt3_large: 1280px;
 }
 
 .mt3_broadsheet {
+  header {
+    // permit absolute positioned hero title to align
+    // bottom for mobile screens
+    position: relative;
+  }
   @media(min-width: 1025px) {
     border: 60px solid rgba(0,0,0,0);
   }
@@ -96,10 +101,12 @@ $mt3_large: 1280px;
     top: 50px;
     left: auto;
     width: 100%;
+    @media(max-width: 375px) {
+      // align the hero img title to bottom for mobile
+      top: auto;
+      bottom: 0px;
+    }
   }
-
-  // Visually Hidden but accessible
-  // .mt3_broadsheet-leadMedia-issue-date-label {}
 
   .mt3_broadsheet-leadMedia-issue-date {
     color: white;
@@ -121,12 +128,18 @@ $mt3_large: 1280px;
     line-height: 1.15;
     text-transform: none;
     margin: 0px 20% 30px;
+    @media(max-width: 375px) {
+      margin: 0px 10% 30px;
+    }
     padding: 0;
     display: block;
     h1 {
       font-size: 1.8rem;
       letter-spacing: 0.05em;
       margin: 12px 0;
+      @media(max-width: 375px) {
+        font-size: 1.3rem;
+      }
     }
     p {
       margin: 6px 0;
