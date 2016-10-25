@@ -1,10 +1,8 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-import ElementQuery from 'react-element-query';
+import EQ from '../../../util/EQ.js';
 import FiveUpCard from './FiveUpCard.js';
-
-import _debounce from 'lodash/debounce';
 
 class FiveUpComponent extends Component {
 
@@ -18,21 +16,6 @@ class FiveUpComponent extends Component {
     };
   }
 
-  componentDidMount() {
-    this.resizeHandler = _debounce(this.getComponentWidth.bind(this), 250);
-    window.addEventListener('resize', this.resizeHandler);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.resizeHandler);
-  }
-
-  getComponentWidth() {
-    this.setState({
-      contentWidth: this.refs.fiveUpContainer.getBoundingClientRect().width
-    });
-  }
-
   render() {
     const {
       theme: componentTheme,
@@ -43,16 +26,10 @@ class FiveUpComponent extends Component {
     } = this.props;
 
     // classnames below are rather arbitrary. Should find out if there's a standard across components and be consistent
-    const elementQueries = [
-      {
-        name: 'mt3_fiveup--tablet',
-        width: 440
-      },
-      {
-        name: 'mt3_fiveup--desktop',
-        width: 740
-      },
-    ];
+    const sizes = {
+      '440': 'mt3_fiveup--tablet',
+      '740': 'mt3_fiveup--desktop'
+    };
 
     const storyCards = componentStories.map((card, index) => {
       // Don't worry about adding to the array if it won't be shown
@@ -71,12 +48,12 @@ class FiveUpComponent extends Component {
     });
 
     return (
-      <ElementQuery sizes={elementQueries}>
+      <EQ sizeClasses={sizes} >
         <div ref="fiveUpContainer" className="mt3_fiveup">
           <div className="mt3_left-and-right-package-header" dangerouslySetInnerHTML={{__html: componentHead}}/>
           {storyCards}
         </div>
-      </ElementQuery>
+      </EQ>
     );
   }
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-import ElementQuery from 'react-element-query';
+import EQ from '../../../util/EQ.js';
 import { default as MTPromoCard } from '../../../modules/promocard/MTPromoCard';
 import _debounce from 'lodash/debounce';
 
@@ -80,16 +80,10 @@ class FourUpComponent extends Component {
     } = this.props;
 
     // classnames below are rather arbitrary. Should find out if there's a standard across components and be consistent
-    const elementQueries = [
-      {
-        name: 'mt3_fourup--tablet',
-        width: 440
-      },
-      {
-        name: 'mt3_fourup--desktop',
-        width: 740
-      },
-    ];
+    const sizes = {
+      '440': 'mt3_fourup--tablet',
+      '740': 'mt3_fourup--desktop'
+    };
 
     // configure cards that will be rendered below
     componentStories.forEach(this.pushCard.bind(this));
@@ -118,7 +112,7 @@ class FourUpComponent extends Component {
     const bottomRow = (this.state.contentWidth < 440) ? mobileBottomRows : tabDeskBottomRow;
 
     return (
-      <ElementQuery sizes={elementQueries}>
+      <EQ sizeClasses={sizes}>
         <div ref="fourUpContainer" className="mt3_fourup">
           <div className="mt3_left-and-right-package-header" dangerouslySetInnerHTML={{__html: componentHead}}/>
           <div className="mt3_row mt3_fourup-row mt3_fourup-row--top">
@@ -129,7 +123,7 @@ class FourUpComponent extends Component {
           </div>
           { bottomRow }
         </div>
-      </ElementQuery>
+      </EQ>
     );
   }
 }

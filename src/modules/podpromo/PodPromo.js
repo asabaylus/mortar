@@ -5,7 +5,7 @@ import Image from '@natgeo/modules-images';
 import CTA from '../button/CTAButton';
 import BackgroundImageParallax from '../../util/parallax/backgroundImageParallax';
 import LazyLoad from 'react-lazy-load';
-import ElementQuery from 'react-element-query';
+import EQ from '../../util/EQ.js';
 import classNames from 'classnames';
 
 class PodPromoComponent extends Component {
@@ -90,27 +90,15 @@ class PodPromoComponent extends Component {
       alt: 'Plus Icon'
     };
 
-    const elementQueries = [
-      {
-        name: 'mt3_podpromo--mobile',
-        width: 1
-      },
-      {
-        name: 'mt3_podpromo--tablet',
-        width: 768
-      },
-      {
-        name: 'mt3_podpromo--desktop',
-        width: 1024
-      },
-      {
-        name: 'mt3_podpromo--largedesktop',
-        width: 1280
-      },
-    ];
+    const sizes = {
+      '1': 'mt3_podpromo--mobile',
+      '768': 'mt3_podpromo--tablet',
+      '1024': 'mt3_podpromo--desktop',
+      '1280': 'mt3_podpromo--largedesktop'
+    };
 
     return (
-      <ElementQuery sizes={elementQueries}>
+      <EQ sizeClasses={sizes}>
         <div className="mt3_podpromo">
           {
             (componentUrl) ? <a href={componentUrl} target={componentLink.target} className="mt3_podpromo-container-link" /> : null
@@ -163,7 +151,7 @@ class PodPromoComponent extends Component {
             </div>
           </div>
         </div>
-      </ElementQuery>
+      </EQ>
     );
   }
 }
