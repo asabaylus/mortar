@@ -19,11 +19,6 @@ $mt3_white: #fff;
   max-width: 1600px;
   position: relative;
 
-  // adds margin when it's the first element on AEM page
-  .parsys.content .section:first-of-type & {
-    border-top: 30px solid #fff;
-  }
-
   // If the parent class doesn't indicate it's mobile, fade opacity on hover
   &.mt3_podpromo--tablet:hover,
   &.mt3_podpromo--desktop:hover,
@@ -107,6 +102,13 @@ $mt3_white: #fff;
         margin-left: 30px;
         max-width: none;
         position: static;
+      }
+
+
+      &.mt3_podpromo-content-container-left {
+        .mt3_podpromo--mobile & {
+          margin-top: 26px;
+        }
       }
     }
 
@@ -313,10 +315,15 @@ $mt3_white: #fff;
   }
 
   &.mt3_podpromo--mobile {
+
+    // adds margin when it's the first element on AEM page at the mobile breakpoint
+    .parsys.content .section:first-of-type & {
+      border-top: 30px solid #fff;
+    }
+
     .mt3_kicker {
       border-color: $mt3_black;
       color: $mt3_black;
-      margin-top: 26px;
     }
 
     .mt3_podpromo-ctacontainer {
@@ -332,6 +339,10 @@ $mt3_white: #fff;
         color: $mt3_black;
         margin: 0;
         padding: 0;
+
+        .mt3_iconandlabel--horizontal {
+          text-align: left;
+        }
       }
     }
   }

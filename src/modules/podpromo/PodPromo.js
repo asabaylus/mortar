@@ -91,15 +91,14 @@ class PodPromoComponent extends Component {
     };
 
     const sizes = {
-      '1': 'mt3_podpromo--mobile',
-      '768': 'mt3_podpromo--tablet',
-      '1024': 'mt3_podpromo--desktop',
-      '1280': 'mt3_podpromo--largedesktop'
+      '1': 'mt3_podpromo mt3_podpromo--mobile',
+      '768': 'mt3_podpromo mt3_podpromo--tablet',
+      '1024': 'mt3_podpromo mt3_podpromo--desktop',
+      '1280': 'mt3_podpromo mt3_podpromo--largedesktop'
     };
 
     return (
       <EQ sizeClasses={sizes}>
-        <div className="mt3_podpromo">
           {
             (componentUrl) ? <a href={componentUrl} target={componentLink.target} className="mt3_podpromo-container-link" /> : null
           }
@@ -150,7 +149,6 @@ class PodPromoComponent extends Component {
               }
             </div>
           </div>
-        </div>
       </EQ>
     );
   }
