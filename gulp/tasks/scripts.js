@@ -49,8 +49,6 @@ gulp.task('scripts', ['packages'], function(){
     }))
     .pipe(gulp.dest(paths.mortarDest));
 
-  gulp.src(paths.jquery)
-    .pipe(gulp.dest(paths.jqueryDest));
 
   return browserify('./src/scripts/main.js')
     .transform('babelify', {presets: ['es2015', 'stage-0', 'react']})
@@ -65,8 +63,6 @@ gulp.task('scripts', ['packages'], function(){
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./' + paths.siteDest + 'scripts'))
-
-
 });
 
 gulp.task('prodScripts', ['packages'], function(){
