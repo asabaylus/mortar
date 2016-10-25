@@ -1,0 +1,186 @@
+// =============
+// FONT HEADINGS
+// =============
+
+
+%mt3_haas-heading {
+  font-family: $mt3_haas-stack;
+  font-weight: 600;
+  letter-spacing: .04em;
+  line-height: 1.1;
+}
+
+%mt3_verlag-heading {
+  font-family: $mt3_verlag-stack;
+  font-weight: 400;
+  letter-spacing: .2em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  word-spacing: .05em;
+}
+
+%mt3_georgia-heading {
+  font-family: $mt3_georgia-stack;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+// The following classes with numerical endings (1,2,3) inherit specific fonts
+
+.mt3_heading--h1--1,
+.mt3_heading--h2--1,
+.mt3_heading--h3--1,
+.mt3_heading--h4--1,
+.mt3_heading--h5--1,
+.mt3_heading--h6--1 {
+  @extend %mt3_haas-heading;
+}
+
+.mt3_heading--h1--2,
+.mt3_heading--h2--2,
+.mt3_heading--h3--2,
+.mt3_heading--h4--2,
+.mt3_heading--h5--2,
+.mt3_heading--h6--2 {
+  @extend %mt3_verlag-heading;
+}
+
+.mt3_heading--h1--3,
+.mt3_heading--h2--3,
+.mt3_heading--h3--3,
+.mt3_heading--h4--3,
+.mt3_heading--h5--3,
+.mt3_heading--h6--3 {
+  @extend %mt3_georgia-heading;
+}
+
+.mt3_heading--h1--1,
+.mt3_heading--h1--3 {
+  font-size: $mt3_h-med3;
+
+  @media #{$mt3_mq-md} {
+    font-size: $mt3_h-med7;
+  }
+
+  @media #{$mt3_mq-lg} {
+    font-size: $mt3_h-med11;
+  }
+}
+
+.mt3_heading--h1--2 {
+  font-size: $mt3_h-med10;
+
+  @media #{$mt3_mq-md} {
+    font-size: $mt3_h-xlg;
+  }
+  @media #{$mt3_mq-lg} {
+    font-size: $mt3_h-xxlg;
+  }
+}
+
+.mt3_heading--h2--1,
+.mt3_heading--h2--3 {
+  font-size: $mt3_h-sm6;
+
+  @media #{$mt3_mq-md} {
+    font-size: $mt3_h-med5;
+  }
+
+  @media #{$mt3_mq-lg} {
+    font-size: $mt3_h-med9;
+  }
+}
+
+.mt3_heading--h2--2 {
+  font-size: $mt3_h-med8;
+
+  @media #{$mt3_mq-md} {
+    font-size: $mt3_h-lg;
+  }
+
+  @media #{$mt3_mq-lg} {
+    font-size: $mt3_h-xlg;
+  }
+}
+
+.mt3_heading--h3--1,
+.mt3_heading--h3--3 {
+  font-size: $mt3_h-sm4;
+
+  @media #{$mt3_mq-md} {
+    font-size: $mt3_h-med3;
+  }
+
+  @media #{$mt3_mq-lg} {
+    font-size: $mt3_h-med5;
+  }
+}
+
+.mt3_heading--h3--2 {
+  font-size: $mt3_h-med5;
+
+  @media #{$mt3_mq-md} {
+    font-size: $mt3_h-med9;
+  }
+
+  @media #{$mt3_mq-lg} {
+    font-size: $mt3_h-med11;
+  }
+}
+
+.mt3_heading--h4--1,
+.mt3_heading--h4--3 {
+  font-size: $mt3_h-sm6;
+
+  @media #{$mt3_mq-md} {
+    font-size: $mt3_h-sm5;
+  }
+
+  @media #{$mt3_mq-lg} {
+    font-size: $mt3_h-med2;
+  }
+}
+
+.mt3_heading--h4--2 {
+  font-size: $mt3_h-med1;
+
+  @media #{$mt3_mq-md} {
+    font-size: $mt3_h-med4;
+  }
+
+  @media #{$mt3_mq-lg} {
+    font-size: $mt3_h-med6;
+  }
+}
+
+.mt3_heading--h5--1,
+.mt3_heading--h5--3 {
+  font-size: $mt3_h-sm2;
+
+  @media #{$mt3_mq-md} {
+    font-size: $mt3_h-sm6;
+  }
+
+  @media #{$mt3_mq-lg} {
+    font-size: $mt3_h-sm3;
+  }
+}
+
+.mt3_heading--h5--2 {
+  font-family: $mt3_verlag-stack;
+  font-size: $mt3_h-sm3;
+
+  @media #{$mt3_mq-md} {
+    font-size: $mt3_h-sm4;
+  }
+
+  @media #{$mt3_mq-lg} {
+    font-size: $mt3_h-sm6;
+  }
+}
+
+.mt3_heading--h6--1,
+.mt3_heading--h6--2,
+.mt3_heading--h6--3 {
+  font-size: $mt3_h-sm1;
+}
