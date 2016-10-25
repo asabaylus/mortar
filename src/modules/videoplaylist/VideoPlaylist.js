@@ -29,7 +29,7 @@ class VideoPlaylist extends Component {
       instance: this.playerInstanceName,
       guid: props.dataModel.videos[START_VIDEO_INDEX].guid,
       account: props.dataModel.videos[START_VIDEO_INDEX].account,
-      sharing: true,
+      sharing: this.props.sharing,
       overlayPlayButton: true,
       autoPlay: false
     };
@@ -292,12 +292,14 @@ VideoPlaylist.propTypes = {
         valid: React.PropTypes.bool
       })
     )
-  }).isRequired
+  }).isRequired,
+  sharing: React.PropTypes.bool
 
 }
 
 VideoPlaylist.defaultProps = {
-  autoContinue: true
+  autoContinue: true,
+  sharing: true
 }
 
 export default VideoPlaylist;
