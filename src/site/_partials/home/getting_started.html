@@ -1,0 +1,92 @@
+<div class="pagewrapper mt3_col-gut mt3_row">
+  <h2 class="mt3_h3">Install Mortar with npm</h2>
+  <p class="mt3_subh1 mt3_row-gut-2">
+    Current version of Mortar (v3) is currently under development. Be aware that you're using software that is in development and may contain errors or bugs.
+  </p>
+
+  <p class="mt3_subh1 mt3_row-gut-2">
+    If you want a part of Mortar, use our private npm account (@natgeo).
+  </p>
+
+  <code class="mt3_bgcolor--white mt3_row-gut-2 codemarkup">
+      $ npm install @natgeo/mortar_v3
+  </code>
+
+  <p class="mt3_subh1 intro-txt mt3_row-gut-2">
+    Choose just the component you want to use and require/import it into your code. ex:
+  </p>
+
+  <code class="mt3_bgcolor--white mt3_row-gut-2 codemarkup">
+    import HeroWithTwoRailsComponent from '@natgeo/mortar_v3/lib/contentPackages/heroWithTwoRails/heroWithTwoRails';
+  </code>
+
+  <h2 class="mt3_h3 intro-txt">Using Mortar SCSS/CSS</h2>
+
+  <p class="mt3_subh1 intro-txt mt3_row-gut-2">
+    Mortar's SCSS and CSS are included in the package.<br />
+    Use precompiled bundle if:<br />
+    <br />
+    - You want start developing a.s.a.p.<br />
+    - You don't want to add task to compile sass files.<br />
+    - You don't want to worry about digging sass files.<br />
+    - You're ok adding all mortar's css on your project.
+  </p>
+
+  <code class="mt3_bgcolor--white mt3_row-gut-2 codemarkup">
+     # Precomiled CSS<br />
+     node_modules/@natgeo/mortar_v3/lib/styles/mortar-default.min.css<br /><br />
+  </code>
+
+  <p class="mt3_subh1 intro-txt mt3_row-gut-2">
+    Use scss files if you want: <br />
+    <br />
+    - Use styles for specific components of Mortar<br />
+    - Keep css bundle smaller<br />
+    - Keep control on the css you're including.<br />
+
+    You'll find all scss file on
+    <code>node_modules/@natgeo/mortar_v3/lib/styles/</code>
+  </p>
+  <code class="mt3_bgcolor--white mt3_row-gut-2 codemarkup">
+     # Layout SCSS<br />
+     node_modules/@natgeo/mortar_v3/lib/styles/layout/_rows.scss <br />
+     node_modules/@natgeo/mortar_v3/lib/styles/layout/_columns.scss <br />
+  </code>
+
+  <h2 class="mt3_h3 intro-txt">Using Mortar SVG Icons</h2>
+  <p class="mt3_subh1 intro-txt mt3_row-gut-2">
+    Mortar SVG icons are also included on the package.<br />
+
+    Use SVG sprite if:<br />
+
+    - You want to use good amount of icons from mortar<br />
+    - You're using a lot of components from mortar that includes svg icons<br />
+    <br />
+    To import sprite SVG on your project, just add all the
+    <strong>content</strong> from the following svg file
+    below the opening body tag definition (<code>&#x3C;body&#x3E;</code>).
+  </p>
+  <code class="mt3_bgcolor--white mt3_row-gut-2 codemarkup">
+    node_modules/@natgeo/mortar_v3/lib/icons/mortar-symbol-sprite.svg
+  </code>
+
+  <p class="mt3_subh1 intro-txt mt3_row-gut-2">
+    Use individual SVG icons if:<br />
+    - Specific icons are required<br />
+    - You are not using mortar components<br />
+    - You're creating your own svg sprite<br />
+    <br />
+    Individual icons can be found:
+  </p>
+  <code class="mt3_bgcolor--white mt3_row-gut-2 codemarkup">
+    node_modules/@natgeo/mortar_v3/src/icons/
+  </code>
+
+  <h2 class="mt3_h3 intro-txt">Using Mortar Fonts</h2>
+  <p class="mt3_subh1 intro-txt mt3_row-gut-2">
+    Mortar's fonts are available when you install the main CSS file in your site. Due to license restrictions fonts will <em>not</em> load outside a <b>*.nationalgeographic.com</b> domain.
+
+    During development modify your etc host file as follows:
+    127.0.0.1 yourAppHere.nationalgeographic.com
+  </p>
+</div>

@@ -6,6 +6,7 @@ const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const cleanCSS = require('gulp-clean-css');
+const rename = require('gulp-rename');
 
 const paths = require('./paths');
 
@@ -37,11 +38,13 @@ gulp.task('stylesDocs', function() {
     .pipe(bs.stream({once: true}));
 });
 
-gulp.task('prodStylesMortar', function() {
-  return gulp.src(paths.mortarStylesSrc)
-    .pipe(sass())
-    .pipe(autoprefixer())
+gulp.task('prodStylesMortar', ['stylesMortar'], function() {
+  var mortarStylesSrc = paths.mortarStylesDest + '**/*.css';
+  return gulp.src(mortarStylesSrc)
     .pipe(cleanCSS({processImport: false}))
+    .pipe(rename({
+      suffix: '.min'
+    }))
     .pipe(gulp.dest(paths.mortarStylesDest))
     .pipe(bs.stream({once: true}));
 });
