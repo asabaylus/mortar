@@ -1,6 +1,9 @@
 'use strict';
 
 const gulp = require('gulp');
+const argv = require('yargs')
+            .alias('p', 'production')
+            .argv;
 const Metalsmith = require('metalsmith');
 const markdown = require('metalsmith-markdown');
 const fileMetadata = require('metalsmith-filemetadata');
@@ -55,7 +58,8 @@ gulp.task('docs', ['icons'], function() {
   .metadata({
     'title': 'Mortar',
     'description': 'A living styleguide for National Geographic Partners',
-    'iconSprite': fs.readFileSync(paths.mortarIconsDest + 'mortar-symbol-sprite.svg', 'utf8')
+    'iconSprite': fs.readFileSync(paths.mortarIconsDest + 'mortar-symbol-sprite.svg', 'utf8'),
+    'cssSuffix': argv.p ? '.min' : ''
   })
   .ignore([
     '_layouts',
