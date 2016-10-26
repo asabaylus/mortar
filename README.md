@@ -1,4 +1,4 @@
-# Mortar 2.0
+# Mortar 3.1.3
 
 NGP foundational framework
 
@@ -32,4 +32,4 @@ This task will build a *production* version of documentation site with no watch 
 
 ### Test URL's
 
-http://assets-qa.int.ngeo.com/mortar2/latest/site/
+http://assets-qa.int.ngeo.com/mortar/dev/
