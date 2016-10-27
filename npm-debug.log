@@ -1,0 +1,190 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/bchapman/.nvm/versions/node/v5.6.0/bin/node',
+1 verbose cli   '/Users/bchapman/.nvm/versions/node/v5.6.0/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@3.6.0
+3 info using node@v5.6.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/bchapman/Documents/workspaces/ngs/what/mortar',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/bchapman/.npm/@natgeo/mortar_v3/3.1.4/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/bchapman/.npm correctMkdir not in flight; initializing
+10 info lifecycle @natgeo/mortar_v3@3.1.4~prepublish: @natgeo/mortar_v3@3.1.4
+11 silly lifecycle @natgeo/mortar_v3@3.1.4~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/bchapman/.npm/@natgeo/mortar_v3/3.1.4/package.tgz',
+12 verbose tar pack   '/Users/bchapman/Documents/workspaces/ngs/what/mortar' ]
+13 verbose tarball /Users/bchapman/.npm/@natgeo/mortar_v3/3.1.4/package.tgz
+14 verbose folder /Users/bchapman/Documents/workspaces/ngs/what/mortar
+15 verbose addLocalTarball adding from inside cache /Users/bchapman/.npm/@natgeo/mortar_v3/3.1.4/package.tgz
+16 verbose correctMkdir /Users/bchapman/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd @natgeo/mortar_v3@3.1.4
+18 verbose afterAdd /Users/bchapman/.npm/@natgeo/mortar_v3/3.1.4/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/bchapman/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/bchapman/.npm/@natgeo/mortar_v3/3.1.4/package/package.json written
+21 silly publish { name: '@natgeo/mortar_v3',
+21 silly publish   version: '3.1.4',
+21 silly publish   description: 'a living styleguide for National Geographic Partners',
+21 silly publish   main: 'index.js',
+21 silly publish   scripts: { gulp: 'gulp', test: 'gulp test' },
+21 silly publish   repository: { type: 'git', url: 'git+https://github.com/natgeo/mortar.git' },
+21 silly publish   author: { name: 'Welch Canavan' },
+21 silly publish   license: 'ISC',
+21 silly publish   bugs: { url: 'https://github.com/natgeo/mortar/issues' },
+21 silly publish   homepage: 'https://github.com/natgeo/mortar#readme',
+21 silly publish   files: [ 'lib', 'src' ],
+21 silly publish   dependencies:
+21 silly publish    { '@natgeo/modules-images': '^2.0.0',
+21 silly publish      '@natgeo/modules-video': '1.2.6',
+21 silly publish      '@natgeo/pestle': '2.1.x',
+21 silly publish      jquery: '2.x',
+21 silly publish      'jquery.dotdotdot': '^1.7.0',
+21 silly publish      lodash: '4.x',
+21 silly publish      picturefill: '3.x',
+21 silly publish      prismjs: '^1.5.1',
+21 silly publish      react: '0.14.x || 15.3.x',
+21 silly publish      'react-addons-shallow-compare': '0.14.x || 15.3.x',
+21 silly publish      'react-deep-force-update': '^2.0.1',
+21 silly publish      'react-dom': '0.14.x || 15.3.x',
+21 silly publish      'react-element-query': '^2.0.2',
+21 silly publish      'react-lazy-load': '3.x',
+21 silly publish      'react-pure-render': '1.x',
+21 silly publish      'react-slick': 'github:krlospelaez/react-slick#fix-npm',
+21 silly publish      'velocity-animate': '^1.2.2' },
+21 silly publish   peerDependencies:
+21 silly publish    { '@natgeo/pestle': '2.1.x',
+21 silly publish      classnames: '2.2.x',
+21 silly publish      jquery: '2.x || 3.x',
+21 silly publish      react: '0.14.x || 15.3.x',
+21 silly publish      'react-dom': '0.14.x || 15.3.x',
+21 silly publish      'react-addons-shallow-compare': '0.14.x || 15.3.x',
+21 silly publish      'velocity-animate': '1.x' },
+21 silly publish   devDependencies:
+21 silly publish    { aliasify: '^2.0.0',
+21 silly publish      'babel-core': '^6.8.0',
+21 silly publish      'babel-eslint': '^5.0.0',
+21 silly publish      'babel-polyfill': '^6.9.1',
+21 silly publish      'babel-preset-es2015': '^6.6.0',
+21 silly publish      'babel-preset-react': '^6.5.0',
+21 silly publish      'babel-preset-stage-0': '^6.5.0',
+21 silly publish      babelify: '^7.2.0',
+21 silly publish      'browser-sync': '^2.11.1',
+21 silly publish      browserify: '^13.0.0',
+21 silly publish      chai: '^3.5.0',
+21 silly publish      chalk: '^1.1.3',
+21 silly publish      classnames: '^2.2.5',
+21 silly publish      del: '^2.2.0',
+21 silly publish      envify: '^3.4.1',
+21 silly publish      enzyme: '2.2.0',
+21 silly publish      eslint: '^1.10.3',
+21 silly publish      fs: '0.0.2',
+21 silly publish      glob: '^7.0.3',
+21 silly publish      gulp: '^3.9.0',
+21 silly publish      'gulp-autoprefixer': '^3.1.0',
+21 silly publish      'gulp-babel': '^6.1.2',
+21 silly publish      'gulp-clean-css': '^2.0.10',
+21 silly publish      'gulp-envify': '^1.0.0',
+21 silly publish      'gulp-eslint': '^1.1.1',
+21 silly publish      'gulp-newer': '^1.2.0',
+21 silly publish      'gulp-plumber': '^1.1.0',
+21 silly publish      'gulp-rename': '^1.2.2',
+21 silly publish      'gulp-sass': '^2.3.2',
+21 silly publish      'gulp-sass-lint': '^1.2.0',
+21 silly publish      'gulp-sourcemaps': '^1.6.0',
+21 silly publish      'gulp-svg-sprite': '^1.2.19',
+21 silly publish      'gulp-uglify': '^1.5.3',
+21 silly publish      'gulp-util': '^3.0.7',
+21 silly publish      karma: '^0.13.22',
+21 silly publish      'karma-browserify': '^5.0.5',
+21 silly publish      'karma-chai': '^0.1.0',
+21 silly publish      'karma-chrome-launcher': '^1.0.1',
+21 silly publish      'karma-jquery': '^0.1.0',
+21 silly publish      'karma-mocha': '^1.0.1',
+21 silly publish      'karma-mocha-reporter': '^2.0.3',
+21 silly publish      'karma-phantomjs-launcher': '^1.0.0',
+21 silly publish      'karma-sinon': '^1.0.5',
+21 silly publish      metalsmith: '^2.1.0',
+21 silly publish      'metalsmith-filemetadata': '^1.0.0',
+21 silly publish      'metalsmith-in-place': '^1.3.3',
+21 silly publish      'metalsmith-layouts': '^1.4.2',
+21 silly publish      'metalsmith-markdown': '^0.2.1',
+21 silly publish      mocha: '^2.4.5',
+21 silly publish      'phantomjs-prebuilt': '^2.1.7',
+21 silly publish      'pubsub-js': '^1.5.3',
+21 silly publish      react: '0.14.x || 15.3.x',
+21 silly publish      'react-addons-test-utils': '0.14.x || 15.3.x',
+21 silly publish      'react-dom': '0.14.x || 15.3.x',
+21 silly publish      'react-slick': 'github:krlospelaez/react-slick#fix-npm',
+21 silly publish      'require-dir': '^0.3.0',
+21 silly publish      scrollmagic: '^2.0.5',
+21 silly publish      sinon: '^1.17.4',
+21 silly publish      swig: '^1.4.2',
+21 silly publish      through2: '^2.0.1',
+21 silly publish      urlencode: '^1.1.0',
+21 silly publish      'vinyl-buffer': '^1.0.0',
+21 silly publish      'vinyl-source-stream': '^1.1.0',
+21 silly publish      watchify: '^3.7.0' },
+21 silly publish   readme: '# Mortar 3.1.3\n\nNGP foundational framework\n\n## Environment Instructions\n\n1. Install Homebrew (the missing package manager): `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`\n- Install Git: `brew install Git`\n- Add your SSH Key to Github: [https://help.github.com/articles/generating-an-ssh-key/]()\n- Install NVM (Node Version Manager): `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash`\n- Install Node.js: `nvm install v5.6.0`\n- Install Gulp globally: `npm install --global gulp`\n- Clone Repo: `git clone git@github.com:natgeo/mortar.git`\n- Change directory to the repository: `cd ~/code/mortar`\n- Set Node version (it will respect the .nvmrc file in the repo): `nvm use`\n- Install packages: `npm install`\n- Run project: `gulp serve`\n\n## Gulp Tasks\n\n### `gulp serve`\n\nThis is the most common task a developer will run. `gulp serve` will open the documentation site at the root and continue to run a watch task. `gulp serve --start [path]` or `gulp serve -s [path]` will open the documentation site at the specified path. For example `gulp serve --start icons` will open directly to the icons page at `http://localhost:3000/icons/`.\n\n### `gulp build`\n\nThis task will build a *development* version of documentation site with no watch task.\n\n### `gulp build -p` or `gulp build --production`\n\nThis task will build a *production* version of documentation site with no watch task.\n\n### Test URL\'s\n\nhttp://assets-qa.int.ngeo.com/mortar/dev/\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '79881cd2d7df8ab9c24d80db4b469a9faf14ef07',
+21 silly publish   _id: '@natgeo/mortar_v3@3.1.4',
+21 silly publish   _shasum: '69b9320d6d9505a456a84ab167db46428501090f',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name @natgeo/mortar_v3
+24 silly mapToRegistry scope (from package name) @natgeo
+25 verbose mapToRegistry no registry URL found in name for scope @natgeo
+26 silly mapToRegistry using default registry
+27 silly mapToRegistry registry https://registry.npmjs.org/
+28 silly mapToRegistry uri https://registry.npmjs.org/@natgeo%2fmortar_v3
+29 verbose publish registryBase https://registry.npmjs.org/
+30 silly publish uploading /Users/bchapman/.npm/@natgeo/mortar_v3/3.1.4/package.tgz
+31 verbose request uri https://registry.npmjs.org/@natgeo%2fmortar_v3
+32 verbose request sending authorization for write operation
+33 info attempt registry request try #1 at 2:24:59 PM
+34 verbose request using bearer token for auth
+35 verbose request id 5568fc07532bd7a9
+36 http request PUT https://registry.npmjs.org/@natgeo%2fmortar_v3
+37 http 403 https://registry.npmjs.org/@natgeo%2fmortar_v3
+38 verbose headers { 'content-type': 'application/json',
+38 verbose headers   'cache-control': 'max-age=0',
+38 verbose headers   'content-length': '95',
+38 verbose headers   'accept-ranges': 'bytes',
+38 verbose headers   date: 'Thu, 27 Oct 2016 18:24:59 GMT',
+38 verbose headers   via: '1.1 varnish',
+38 verbose headers   connection: 'keep-alive',
+38 verbose headers   'x-served-by': 'cache-iad2142-IAD',
+38 verbose headers   'x-cache': 'MISS',
+38 verbose headers   'x-cache-hits': '0',
+38 verbose headers   'x-timer': 'S1477592693.789358,VS0,VE5747' }
+39 verbose request invalidating /Users/bchapman/.npm/registry.npmjs.org/_40natgeo_252fmortar_v3 on PUT
+40 error publish Failed PUT 403
+41 verbose stack Error: "You cannot publish over the previously published version 3.1.4." : @natgeo/mortar_v3
+41 verbose stack     at makeError (/Users/bchapman/.nvm/versions/node/v5.6.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+41 verbose stack     at CachingRegistryClient.<anonymous> (/Users/bchapman/.nvm/versions/node/v5.6.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+41 verbose stack     at Request._callback (/Users/bchapman/.nvm/versions/node/v5.6.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+41 verbose stack     at Request.self.callback (/Users/bchapman/.nvm/versions/node/v5.6.0/lib/node_modules/npm/node_modules/request/request.js:198:22)
+41 verbose stack     at emitTwo (events.js:100:13)
+41 verbose stack     at Request.emit (events.js:185:7)
+41 verbose stack     at Request.<anonymous> (/Users/bchapman/.nvm/versions/node/v5.6.0/lib/node_modules/npm/node_modules/request/request.js:1035:10)
+41 verbose stack     at emitOne (events.js:95:20)
+41 verbose stack     at Request.emit (events.js:182:7)
+41 verbose stack     at IncomingMessage.<anonymous> (/Users/bchapman/.nvm/versions/node/v5.6.0/lib/node_modules/npm/node_modules/request/request.js:962:12)
+42 verbose statusCode 403
+43 verbose pkgid @natgeo/mortar_v3
+44 verbose cwd /Users/bchapman/Documents/workspaces/ngs/what/mortar
+45 error Darwin 14.5.0
+46 error argv "/Users/bchapman/.nvm/versions/node/v5.6.0/bin/node" "/Users/bchapman/.nvm/versions/node/v5.6.0/bin/npm" "publish"
+47 error node v5.6.0
+48 error npm  v3.6.0
+49 error code E403
+50 error "You cannot publish over the previously published version 3.1.4." : @natgeo/mortar_v3
+51 error If you need help, you may report this error at:
+51 error     <https://github.com/npm/npm/issues>
+52 verbose exit [ 1, true ]
