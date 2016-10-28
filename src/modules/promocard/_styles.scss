@@ -240,7 +240,6 @@ $mt3_large: 1280px;
     @extend .mt3_kicker;
     @include couldBeRichText();
     float: left;
-    letter-spacing: 0.2em;
     line-height: 1;
     margin-bottom: 10px;
     position: relative;
@@ -285,10 +284,9 @@ $mt3_large: 1280px;
 
   .mt3_promocard-title {
     @include couldBeRichText();
-    font-family: $mt3_haas-stack;
+    @extend %mt3_haas;
     font-size: 18px;
     font-weight: 600;
-    letter-spacing: 0.04em;
     line-height: 1.3;
 
     &--small {
@@ -344,10 +342,9 @@ $mt3_large: 1280px;
     .mt3_promocard-kicker, .mt3_promocard-sponsored {
       border: 0;
       color: $mt3_color-primary;
-      font-family: $mt3_haas-stack;
+      @extend %mt3_haas;
       font-size: 16px;
       font-weight: 600;
-      letter-spacing: .015em;
       padding: 0;
       text-transform: none;
     }

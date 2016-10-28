@@ -60,17 +60,12 @@
   &-text {
     color: $mt3_color-white;
     display: inline-block;
-    font-family: $mt3_verlag-stack;
+    @extend %mt3_verlag;
     font-weight: 400;
-    letter-spacing: 0.1em;
     line-height: 1.05;
     /*horizontally center show card text*/
     text-align: left;
     vertical-align: middle;
-    word-spacing: .05em;
-  }
-  &-heading, &-title, &-airdate {
-    text-transform: uppercase;
   }
   &-heading, &-airdate {
     display: block;

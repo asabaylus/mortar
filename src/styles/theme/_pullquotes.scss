@@ -39,13 +39,10 @@
   @extend %mt3_pullquote;
 
   &--footer {
-    font-family: $mt3_verlag-stack;
+    @extend %mt3_verlag;
     font-size: $mt3_fs-xsm;
-    letter-spacing: .1rem;
     line-height: 1.5;
     text-align: center;
-    text-transform: uppercase;
-    word-spacing: .05rem;
   }
 
   &--attributionname {

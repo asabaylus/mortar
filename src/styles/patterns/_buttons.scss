@@ -5,14 +5,12 @@
   border: 1px solid transparent;
   border-radius: 0;
   cursor: pointer;
-  font-family: $mt3_verlag-stack;
+  @extend %mt3_verlag;
   font-weight: 600;
-  letter-spacing: .05em;
   margin-bottom: .675em;
   margin-right: .675em;
   padding: $mt3_unit $mt3_unit-double;
   text-align: center;
-  text-transform: uppercase;
   transition: 400ms;
 
   &--success {

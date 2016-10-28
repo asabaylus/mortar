@@ -45,15 +45,12 @@ $mt3_playlist-l-screen: 100rem;
     }
 
     &__title {
-      font-family: $mt3_verlag-stack;
+      @extend %mt3_verlag;
       font-size: $mt3_h-sm5;
       font-weight: 400;
-      letter-spacing: .1em;
       line-height: 1.05;
       padding-left: 2.5rem;
       padding-top: 2.5rem;
-      text-transform: uppercase;
-      word-spacing: .05em;
     }
 
     @include respond-to(l) {
@@ -131,10 +128,9 @@ $mt3_playlist-l-screen: 100rem;
         margin-bottom: 0;
       }
 
-      font-family: $mt3_haas-stack;
+      @extend %mt3_haas;
       font-size: 24px;
       font-weight: 600;
-      letter-spacing: .05em;
       line-height: 1.1;
       margin-bottom: 1.25rem;
       margin-top: 10px;
@@ -249,12 +245,11 @@ $mt3_playlist-l-screen: 100rem;
       color: $mt3_color-white;
       display: flex;
       flex-direction: column;
-      font-family: $mt3_haas-stack;
+      @extend %mt3_haas;
       font-size: 14px;
       font-weight: 600;
       justify-content: center;
       left: 0px;
-      letter-spacing: 0.05em;
       line-height: 1.43;
       padding: 0 30px;
       position: absolute;
