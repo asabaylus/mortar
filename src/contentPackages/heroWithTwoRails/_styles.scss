@@ -132,6 +132,10 @@ $mt3_large: 1280px;
   &--no-heading {
     .hero-with-two-rails__heading__wrap {
       height: 40px;
+
+      &--above {
+        display: none;
+      }
     }
   }
   &--heading-below {
