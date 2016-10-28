@@ -6,6 +6,9 @@ import _debounce from 'lodash/debounce';
 const updateScrollInterval = 10;
 const updateDocHeightInterval = 3000;
 
+//when an element is sticky rather than parallaxed, it will have a hardcoded margin (in px) from the top of the viewport
+const stickyMargin = 40;
+
 let i = 0;
 let cachedScrollTop = null
 let cachedRelativeScrollPosition = null;
@@ -91,9 +94,13 @@ module.exports = class ParallaxSceneManager {
           }
           scene.parallaxElement.addClass("mt3_parallax-wrap--fixed");
           scene.status = "active";
+          this.animateElement(scene, "active", scrollTop);
         }
-
-        this.animateElement(scene, "active", scrollTop);
+        /* if the scene is sticky, and the scene is already active, subsequent
+           calls to animate aren't necessary - only takes one to get it to "stick" */
+        else if (!scene.sticky) {
+          this.animateElement(scene, "active", scrollTop);
+        }
       }
     }
   }
@@ -125,18 +132,35 @@ module.exports = class ParallaxSceneManager {
         transformPixelValue = 0 - (Math.round(1000 * relativeScrollPercentage * fixedTransformDifference))/1000;
       }
 
+      if(!scene.sticky) {
+        scene.parallaxElement.css({
+          'transform':    'translate3d(0px, ' + transformPixelValue + 'px, 0px)'
+        });
+      } else {
+        scene.parallaxElement.css({
+          'transform':    'translate3d(0px, ' + stickyMargin + 'px, 0px)'
+        })
+      }
+
     } else if (pos === "below") {
       transformPixelValue = scene.bottomPositionOverride ? scene.bottomPositionOverride : scene.transformDistance;
-    }
 
-    scene.parallaxElement.css({
-      'transform':    'translate3d(0px, ' + transformPixelValue + 'px, 0px)'
-    })
+      scene.parallaxElement.css({
+        'transform':    'translate3d(0px, ' + transformPixelValue + 'px, 0px)'
+      });
+    } else {
+      scene.parallaxElement.css({
+        'transform':    'inherit'
+      })
+    }
   }
 
   updateScene(scene) {
     scene.scrollTop = scene.scrollTopElement.offset().top;
-
+    //if the element is sticky, the scrolltop should include the stickyMargin
+    if(scene.sticky) {
+      scene.scrollTop -= stickyMargin;
+    }
     return scene;
   }
 

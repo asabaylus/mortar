@@ -9,6 +9,7 @@ module.exports = function(config) {
   const leftRailHeight = leftRail.getBoundingClientRect().height;
   const rightRailHeight = rightRail.getBoundingClientRect().height;
   const railDifference = Math.abs(leftRailHeight - rightRailHeight);
+  let sticky = false;
 
   // if the rails are not sufficiently unequal, do not create parallax effect
   if(railDifference < 100) {
@@ -16,6 +17,7 @@ module.exports = function(config) {
   }
 
   let shorterRail;
+  let shorterRailHeight;
   let tallerRail;
   let tallerRailHeight;
   let railsDuration;
@@ -23,17 +25,20 @@ module.exports = function(config) {
   //assign vars depending on which rail is taller
   if(leftRailHeight < rightRailHeight) {
     shorterRail = leftRail.getElementsByClassName("mt3_parallax-wrap")[0];
+    shorterRailHeight = leftRailHeight;
     tallerRail = rightRail;
     tallerRailHeight = rightRailHeight;
   } else {
     shorterRail = rightRail.getElementsByClassName("mt3_parallax-wrap")[0];
+    shorterRailHeight = rightRailHeight;
     tallerRail = leftRail;
     tallerRailHeight = leftRailHeight;
   }
 
-  //animate differently depending if both rails are larger than the whole viewport or not
-  if(viewportHeight > tallerRailHeight) {
-    railsDuration = viewportHeight - tallerRailHeight;
+  //animate differently (sticky) if the smaller rail is smaller than the viewport
+  if (viewportHeight > shorterRailHeight) {
+    sticky = true;
+    railsDuration = railDifference;
   } else {
     railsDuration = tallerRailHeight - viewportHeight;
   }
@@ -43,6 +48,7 @@ module.exports = function(config) {
     duration: railsDuration,
     parallaxElement: shorterRail,
     transformDistance: railDifference,
-    resetFunction: resetFunction
+    resetFunction: resetFunction,
+    sticky: sticky
   });
 }
