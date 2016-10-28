@@ -81,7 +81,7 @@ const PromoImage = (props) => {
   }
 
   return(
-    <figure>
+    <figure className={props.breakpoint > 768 ? 'mt3_promocard-image--large' :  null}>
       {props.config.overlay && !props.secondImage ?
       <div className={overlayClass}>
         <div></div>

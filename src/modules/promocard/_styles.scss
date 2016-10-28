@@ -66,6 +66,10 @@ $mt3_large: 1280px;
     position: relative;
   }
 
+  figure.mt3_promocard-image--large {
+    margin: 0;
+  }
+
   .mt3_promocard-gradient-overlay {
     &::after {
       background: linear-gradient(to top, $mt3_gradient);
@@ -117,7 +121,7 @@ $mt3_large: 1280px;
     vertical-align: bottom;
     width: 75%;
     z-index: 5;
-    
+
     &--horizontal {
       display: inline-block;
       vertical-align: top;

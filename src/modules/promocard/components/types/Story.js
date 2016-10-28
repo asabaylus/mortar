@@ -109,6 +109,7 @@ class Story extends Component {
       : config.cardAspectRatio === '2:1' ? 'mt3_intratio--two-one'
       : config.cardAspectRatio === '1:1' ? 'mt3_intratio--square'
       : 'mt3_intratio--photo';
+    const galleryImageClass = this.state.breakpoint < 768 ? 'mt3_promocard-gallery-images' : null;
 
     const kickerStyle = text.kicker && text.kicker.style === 'prompt' ? 'mt3_promocard-container--prompt' : '';
 
@@ -123,7 +124,7 @@ class Story extends Component {
         if (type === 'gallery') {
           const ctaSizeClass = 'mt3_promocard-gallery-cta--large';
           content.push(
-            <div key={i++} className={`mt3_row mt3_promocard-gallery-images ${aspectRatio}`}>
+            <div key={i++} className={`mt3_row ${galleryImageClass} ${aspectRatio}`}>
               <div
                 className={`mt3_color--white mt3_btn mt3_btn--naked mt3_fullwidth mt3_promocard-gallery-cta ${ctaSizeClass}`}>
                 <a {...attrs} />
