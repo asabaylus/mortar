@@ -23,7 +23,7 @@
   top: 7.5vh;
   visibility: hidden;
   width: 85vw;
-  z-index: $mt3_z-top;
+  z-index: zIndex('modal');
 
   &--active {
     height: 100%;

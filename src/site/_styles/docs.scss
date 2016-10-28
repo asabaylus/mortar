@@ -273,7 +273,7 @@ hr {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: $mt3_z-top;
+  z-index: zIndex('site-top');
 }
 
 .header {

@@ -233,7 +233,7 @@ $mt3_playlist-l-screen: 100rem;
         transition-property: opacity;
         transition-timing-function: ease-in-out;
         width: 100%;
-        z-index: $mt3_z-middle + 1;
+        z-index: zIndex('video-playlist-top');
       }
     }
   }
@@ -261,7 +261,7 @@ $mt3_playlist-l-screen: 100rem;
       right: 0;
       text-decoration: none;
       top: 0;
-      z-index: $mt3_z-middle + 1;
+      z-index: zIndex('video-playlist-top');
 
       &:hover,
       &:focus,
@@ -299,12 +299,12 @@ $mt3_playlist-l-screen: 100rem;
         height: 100%;
         position: absolute;
         width: 100%;
-        z-index: $mt3_z-middle + 1;
+        z-index: zIndex('video-playlist-top');
       }
 
       img {
         opacity: .4;
-        z-index: $mt3_z-middle + 1;
+        z-index: zIndex('video-playlist-top');
       }
     }
 
@@ -363,7 +363,7 @@ $mt3_playlist-l-screen: 100rem;
         top: 50%;
         transform: translateY(-50%);
         width: 0;
-        z-index: $mt3_z-middle + 1;
+        z-index: zIndex('video-playlist-top');
       }
     }
   }

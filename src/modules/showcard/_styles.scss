@@ -11,7 +11,7 @@
       position: absolute;
       top: 0;
       width: 100%;
-      z-index: $mt3_z-middle + 4;
+      z-index: zIndex('showcard-top');
     }
     /*lead media*/
     figure {
@@ -25,7 +25,7 @@
       position: absolute;
       right: 0;
       top: 0;
-      z-index: $mt3_z-middle + 2;
+      z-index: zIndex('showcard-back');
     }
   }
   &-text-container {
@@ -35,7 +35,7 @@
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: $mt3_z-middle + 3;
+    z-index: zIndex('showcard-middle');
     .mt3_showcard--tablet & {
       padding: 0 60px;
     }

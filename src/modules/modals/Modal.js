@@ -12,12 +12,28 @@ class Modal extends Component {
       shouldRender: false,
       renderNGSModal: false
     };
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   static defaultProps = {
     ...Component.defaultProps,
     onClose: function(){}
   };
+
+  componentDidMount() {
+    document.body.addEventListener('keydown', this.handleKeyDown);
+  }
+
+  componentWillUnmount() {
+    document.body.removeEventListener('keydown', this.handleKeyDown);
+  }
+
+  handleKeyDown(event) {
+    //esc closes modal
+    if (event.keyCode == 27) {
+      this.props.onClose(event);
+    }
+  }
 
   componentWillReceiveProps(props){
     if(this.props.renderNGSModal != props.renderNGSModal) {
@@ -52,4 +68,4 @@ class Modal extends Component {
   }
 }
 
-export default Modal
+export default Modal;

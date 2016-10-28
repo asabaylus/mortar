@@ -1,5 +1,5 @@
 .mt3_slider-container {
-  z-index: $mt3_z-middle;
+  z-index: zIndex('slider-container');
 
   img { // this probably needs to go away once the component exists
     height: auto;
@@ -17,7 +17,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%) scale(1, 1);
-  z-index: $mt3_z-top;
+  z-index: zIndex('showcard-button');
 }
 
 .mt3_slider-button--inactive {

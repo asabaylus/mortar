@@ -54,7 +54,7 @@ $mt3_large: 1280px;
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: $mt3_z-middle + 3;
+    z-index: zIndex('promocard-middle');
   }
 
   &:-webkit-any-link{
@@ -91,7 +91,7 @@ $mt3_large: 1280px;
 
     a.mt3_promocardtext--overlay-link {
       left: 0;
-      z-index: $mt3_z-middle + 3;
+      z-index: zIndex('promocard-middle');
     }
   }
 
@@ -99,7 +99,7 @@ $mt3_large: 1280px;
     bottom: 0;
     position: absolute;
     width: 100%;
-    z-index: $mt3_z-middle + 10;
+    z-index: zIndex('promocard-top');
 
     &:hover {
      cursor: pointer;
@@ -162,7 +162,7 @@ $mt3_large: 1280px;
       left: 0;
       position: absolute;
       width: calc(100% - 30px);
-      z-index: $mt3_z-middle + 3;
+      z-index: zIndex('promocard-middle');
 
       &-medium {
         height: calc(100% - 40px);
@@ -213,7 +213,7 @@ $mt3_large: 1280px;
     text-align: left;
     top: 8px;
     transition: none;
-    z-index: $mt3_z-middle + 3;
+    z-index: zIndex('promocard-middle');
 
     &-icon {
       color: $mt3_color-primary;
@@ -245,7 +245,7 @@ $mt3_large: 1280px;
     margin-bottom: 10px;
     position: relative;
     text-decoration: none;
-    z-index: $mt3_z-middle + 10;
+    z-index: zIndex('promocard-top');
 
     a:hover {
       cursor: pointer;
@@ -326,7 +326,7 @@ $mt3_large: 1280px;
   .mt3_card-subhead--right {
     float: left;
     text-decoration: none;
-    z-index: $mt3_z-middle - 1;
+    z-index: zIndex('promocard-back');
 
     &:hover {
       text-decoration: none;

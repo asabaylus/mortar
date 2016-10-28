@@ -12,7 +12,7 @@
     padding-bottom: $width/$ratio;
     position: absolute;
     width: $width;
-    z-index: $mt3_z-middle + 3;
+    z-index: zIndex('channel-branding-middle');
     .mt3_channelbranding--inverse & {
       background: $mt3_color-white;
     }

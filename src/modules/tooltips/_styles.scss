@@ -24,7 +24,7 @@ $mt3_arrowheight: .625rem;
   pointer-events: auto;
   position: absolute;
   text-align: center;
-  z-index: $mt3_z-top;
+  z-index: zIndex('tooltip');
 
 
   &--top {

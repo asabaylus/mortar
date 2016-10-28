@@ -10,7 +10,7 @@ $mt3_color-inverse: $mt3_color-white;
     margin-bottom: 10px;
     position: relative;
     text-decoration: none;
-    z-index: $mt3_z-middle + 10;
+    z-index: zIndex('video-modal-kicker');
 
     a:hover, a.mt3_promocard-kicker:hover {
       cursor: pointer;
@@ -29,7 +29,7 @@ $mt3_color-inverse: $mt3_color-white;
   &-subhead--right {
     float: left;
     text-decoration: none;
-    z-index: $mt3_z-middle - 1;
+    z-index: zIndex('video-modal-subhead-right');
 
     &:hover {
       text-decoration: none;

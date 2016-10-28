@@ -1,5 +1,89 @@
-// Z Values
+/***
+* Use these indexes as bases. If you need to modify them, add an appropriate number within the commented range
+* eg. $mt3_z-main-content-standard-ads + 333. https://confluence.natgeo.com/pages/viewpage.action?spaceKey=DS&title=Z-index+Guidelines
+***/
 
-$mt3_z-bottom: -1;
-$mt3_z-middle: 0;
-$mt3_z-top:    999;
+/**
+* Background elements.
+* Can be any range below zero.
+**/
+$mt3_z-background-elements: -1;
+
+/**
+* Standard ad tags in place with regular content. Includes IBA Self Regulation Message (CLEAR Ad Notice).
+* Can be range from 0 - 2999.
+**/
+$mt3_z-main-content-standard-ads: 0;
+
+/**
+* Flyout menus, video players, carousels etc.
+* Can be range from 3000 - 3999.
+**/
+$mt3_z-js-menus-widgets: 3000;
+
+/**
+* Main navigation menus and registration package.
+* Can be range from 4000 - 4999.
+**/
+$mt3_z-nav-menus: 4000;
+
+/**
+* The entire expandable ad unit should be set within this range.
+* Can be range from 5000 - 1999999.
+**/
+$mt3_z-expanding-advertising: 5000;
+
+/**
+* Over The Page ads (OTP's).
+* Can be range from 2000000 - 2999999.
+**/
+$mt3_z-floating-advertising: 2000000;
+
+/**
+* Chat windows, message notifications.
+* Can be range from 3000000 - 3999999.
+**/
+$mt3_z-popup-elements: 3000000;
+
+/**
+* Survey recruitment panels.
+* Can be range from 4000000 - 4999999.
+**/
+$mt3_z-non-anchored-floating-elements: 4000000;
+
+/**
+* Drop down navigation, site warnings, etc. Only the expanding portion of navigation elements should be included on this level.
+* Can be range from 5000000 - 5999999.
+**/
+$mt3_z-expanding-site-nav-elements: 5000000;
+
+/**
+* Full-window Over-the-Page (OTP) ads and Between-the-Page ads IF they cover page content.
+* Can be range from 6000000 - 6999999.
+**/
+$mt3_z-full-page-overlays: 6000000;
+
+/* z-index helper */
+@function zIndex($layer) {
+  @return map-get($z-index-layers, $layer);
+}
+
+$z-index-layers: (
+  'modal' : $mt3_z-full-page-overlays,
+  'promocard-back': $mt3_z-background-elements,
+  'promocard-middle' : $mt3_z-main-content-standard-ads + 3,
+  'promocard-top' : $mt3_z-main-content-standard-ads + 10,
+  'showcard-back': $mt3_z-main-content-standard-ads + 2,
+  'showcard-middle' : $mt3_z-main-content-standard-ads + 3,
+  'showcard-top' : $mt3_z-main-content-standard-ads + 4,
+  'slide-container' : $mt3_z-main-content-standard-ads,
+  'slider-button' : $mt3_z-main-content-standard-ads + 999,
+  'tooltip' : $mt3_z-main-content-standard-ads + 999,
+  'video-modal-kicker' : $mt3_z-main-content-standard-ads + 10,
+  'video-modal-subhead-right' : $mt3_z-background-elements,
+  'video-playlist-top' : $mt3_z-main-content-standard-ads + 1,
+  'site-top' : $mt3_z-main-content-standard-ads + 999,
+  'channel-branding-middle' : $mt3_z-main-content-standard-ads + 3
+);
+
+
