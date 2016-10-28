@@ -12,6 +12,7 @@ class Video extends Component {
 
   constructor(props) {
     super(props);
+    this.handleOnLoad = this.handleOnLoad.bind(this);
     this.videoContainer = `<div id="${props.model.instance}" class="mt3_video-player" data-guid="${props.model.guid}"></div>`;
   }
 
@@ -68,24 +69,21 @@ class Video extends Component {
       }
     } = this.props;
 
-    if (lazyLoad === true) {
-      return (
-        <figure itemType="http://schema.org/VideoObject" className={`mt3_video mt3_videopromo-container mt3_bgcolor--black ${className}` }>
-          <div className="mt3_video-wrapper" dangerouslySetInnerHTML={{__html: this.videoContainer}}>
-          </div>
-          <LazyLoad offsetVertical={200} onContentVisible={this.handleOnLoad.bind(this)}>
-            <span />
+    return (
+      <figure itemType="http://schema.org/VideoObject" className={`mt3_video mt3_videopromo-container mt3_bgcolor--black ${className}` }>
+        <div className="mt3_video-wrapper" dangerouslySetInnerHTML={{__html: this.videoContainer}}>
+        </div>
+        { lazyLoad &&
+          /** Don't use LazyLoad's onContentVisible callback.
+           * Lazyload triggers twice the callback if the element
+           * was on the viewport at first mount.
+           **/
+          <LazyLoad offsetVertical={200}>
+            <span ref={() => { this.handleOnLoad() }}/>
           </LazyLoad>
-        </figure>
-      );
-    } else {
-      return (
-        <figure itemType="http://schema.org/VideoObject" className={`mt3_video mt3_videopromo-container mt3_bgcolor--gray5 ${className}` }>
-          <div className="mt3_video-wrapper" dangerouslySetInnerHTML={{__html: this.videoContainer}}>
-          </div>
-        </figure>
-      );
-    }
+        }
+      </figure>
+    );
   }
 }
 
