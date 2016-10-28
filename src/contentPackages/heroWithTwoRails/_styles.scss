@@ -65,14 +65,12 @@ $mt3_large: 1280px;
   &__heading {
     h1 {
       color: $mt3_color-gray-10;
-      font-family: $mt3_verlag-stack;
+      @extend %mt3_verlag;
       font-size: 40px;
       font-weight: 600;
-      letter-spacing: 0.1em;
       margin: 0 auto;
       overflow: hidden;
       text-align: center;
-      text-transform: uppercase;
       margin-top: -7px;
       max-height: 50px;
       @media (min-width: $mt3_small) {

@@ -39,3 +39,16 @@
 $mt3_haas-stack: 'Haas', 'Franklin Gothic Medium', 'Franklin Gothic', 'ITC Franklin Gothic', Arial, sans-serif;
 $mt3_verlag-stack: 'HCo Verlag', 'CenturyGothic', AppleGothic, Gill Sans, Gill Sans MT, sans-serif;
 $mt3_georgia-stack: Georgia, serif;
+
+
+%mt3_verlag {
+  font-family: $mt3_verlag-stack;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  word-spacing: 0.05em;
+}
+
+%mt3_haas {
+  font-family: $mt3_haas-stack;
+  letter-spacing: 0.04em;
+}

@@ -4,19 +4,15 @@
 
 
 %mt3_haas-heading {
-  font-family: $mt3_haas-stack;
+  @extend %mt3_haas;
   font-weight: 600;
-  letter-spacing: .04em;
   line-height: 1.1;
 }
 
 %mt3_verlag-heading {
-  font-family: $mt3_verlag-stack;
+  @extend %mt3_verlag;
   font-weight: 400;
-  letter-spacing: .2em;
   line-height: 1.05;
-  text-transform: uppercase;
-  word-spacing: .05em;
 }
 
 %mt3_georgia-heading {
@@ -167,7 +163,7 @@
 }
 
 .mt3_heading--h5--2 {
-  font-family: $mt3_verlag-stack;
+  @extend %mt3_verlag;
   font-size: $mt3_h-sm3;
 
   @media #{$mt3_mq-md} {

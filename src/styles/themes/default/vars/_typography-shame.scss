@@ -10,14 +10,11 @@
 */
 
 .mt3_page-title--large {
-  font-family: $mt3_verlag-stack;
+  @extend %mt3_verlag;
   font-size: $mt3_fs-med-xlrg;
   font-weight: 400;
-  letter-spacing: .2em;
   line-height: 1.05;
   text-rendering: optimizeLegibility;
-  text-transform: uppercase;
-  word-spacing: .05em;
 
   @media #{$mt3_mq-md} {
     font-size: $mt3_fs-xxlrg;
@@ -29,10 +26,9 @@
 }
 
 .mt3_page-title--small {
-  font-family: $mt3_haas-stack;
+  @extend %mt3_haas;
   font-size: $mt3_fs-xlrg;
   font-weight: 600;
-  letter-spacing: .04em;
   line-height: 1.15;
   text-rendering: optimizeLegibility;
 
@@ -46,23 +42,19 @@
 }
 
 .mt3_page-description {
-  font-family: $mt3_haas-stack;
+  @extend %mt3_haas;
   font-size: $mt3_fs-med;
   font-weight: 400;
-  letter-spacing: .04em;
   line-height: 1.37;
 }
 
 .mt3_kicker {
   border-right: 1px solid $mt3_color-gray-50;
-  font-family: $mt3_verlag-stack;
+  @extend %mt3_verlag;
   font-size: .75rem;
   font-weight: 400;
-  letter-spacing: .2em;
   line-height: 1.5;
   padding: 0 1.25rem;
-  text-transform: uppercase;
-  word-spacing: .05em;
 
   //If there are multiple kickers in a row,
   // only the first kicker has a border-left
