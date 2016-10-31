@@ -22,8 +22,8 @@
     "src"
   ],
   "dependencies": {
-    "@natgeo/modules-images": "^2.0.0",
-    "@natgeo/modules-video": "1.2.6",
+    "@natgeo/modules-images": "^2.0.4",
+    "@natgeo/modules-video": "1.3.2",
     "@natgeo/pestle": "2.1.x",
     "jquery": "2.x",
     "jquery.dotdotdot": "^1.7.0",
@@ -42,6 +42,8 @@
   },
   "peerDependencies": {
     "@natgeo/pestle": "2.1.x",
+    "@natgeo/modules-images": ">2.0.0",
+    "@natgeo/modules-video": ">1.3.0",
     "classnames": "2.2.x",
     "jquery": "2.x || 3.x",
     "react": "0.14.x || 15.3.x",
