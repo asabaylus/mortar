@@ -44,9 +44,13 @@ class Video extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.willUnmount = true;
+  }
+
   handleOnLoad() {
     // if we are not using editmode
-    if (this.props.isEditMode !== true) {
+    if ((this.props.isEditMode !== true) && (!this.willUnmount)) {
       this.createPlayer();
     }
   }
