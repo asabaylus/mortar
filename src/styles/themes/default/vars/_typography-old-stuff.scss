@@ -39,10 +39,9 @@
 }
 
 %mt3_h3 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+  @extend %mt3_haas;
   font-size: $mt3_fs-lrg;
   font-weight: 600;
-  letter-spacing: -.01em;
   line-height: 1.185;
 
   @media #{$mt3_mq-lg} {
@@ -59,20 +58,20 @@
 }
 
 %mt3_h5 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+  @extend %mt3_haas;
   font-size: $mt3_fs-sm;
   font-weight: 600;
 }
 
 %mt3_subh1 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+  @extend %mt3_haas;
   font-size: $mt3_fs-med;
   font-weight: 300;
   line-height: 1.37;
 }
 
 %mt3_subh2 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+  @extend %mt3_haas;
   font-size: $mt3_fs-sm;
   font-weight: 300;
   line-height: 1.57;
@@ -80,14 +79,14 @@
 }
 
 %mt3_subh3 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+  @extend %mt3_haas;
   font-size: $mt3_fs-xsm;
   font-weight: 300;
   text-transform: uppercase;
 }
 
 %mt3_subh4 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans L', sans-serif;
+  @extend %mt3_haas;
   font-size: $mt3_fs-sm;
   font-weight: 300;
   line-height: 1.43;

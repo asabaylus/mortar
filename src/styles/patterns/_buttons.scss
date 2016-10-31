@@ -1,11 +1,10 @@
 .mt3_btn {
-  @extend %mt3_h5;
-
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0;
   cursor: pointer;
   @extend %mt3_verlag;
+  font-size: $mt3_fs-sm;
   font-weight: 600;
   margin-bottom: .675em;
   margin-right: .675em;
