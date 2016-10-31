@@ -55,9 +55,9 @@ const PromoImage = (props) => {
 
   const overlayClass = props.breakpoint > (768 - 60) ? 'mt3_promocard-gradient-overlay' : '';
 
-  let frameAspectRatio = props.type === 'gallery' ? props.childFrameAspectRatio : props.config.cardAspectRatio;
+  let frameAspectRatio = (props.type === 'gallery' && props.galleryImage) ? props.childFrameAspectRatio : props.config.cardAspectRatio;
 
-  if(props.type === 'gallery') {
+  if(props.type === 'gallery' && props.galleryImage) {
     frameAspectRatio = props.childFrameAspectRatio;
   } else {
     //"hero" promos get an enforced frameAspectRatio depending on the current breakpoint
@@ -81,7 +81,7 @@ const PromoImage = (props) => {
   }
 
   return(
-    <figure className={props.breakpoint > 768 ? 'mt3_promocard-image--large' :  null}>
+    <figure>
       {props.config.overlay && !props.secondImage ?
       <div className={overlayClass}>
         <div></div>
@@ -110,7 +110,7 @@ PromoImage.PropTypes = {
   theme: PropTypes.string,
   config: PropTypes.object,
   childFrameAspectRatio: PropTypes.number,
-  secondImage: PropTypes.bool,
+  galleryImage: PropTypes.bool,
   link: PropTypes.shape({
     url: PropTypes.string.isRequired,
     target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),

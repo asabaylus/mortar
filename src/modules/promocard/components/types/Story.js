@@ -121,7 +121,7 @@ class Story extends Component {
         Object.assign(config, {
           overlay: true
         });
-        if (type === 'gallery') {
+        if (type === 'gallery' && leadMedia.length > 1) {
           const ctaSizeClass = 'mt3_promocard-gallery-cta--large';
           content.push(
             <div key={i++} className={`mt3_row ${galleryImageClass} ${aspectRatio}`}>
@@ -137,12 +137,12 @@ class Story extends Component {
                 <a {...attrs} />
                 <PromoImage type={type} config={config} leadMedia={leadMedia[0]}
                             childFrameAspectRatio={this.calcAspectRatio()} link={link}
-                            brandingBadgeLabel={brandingBadgeLabel} text={text} breakpoint={this.state.breakpoint}
+                            brandingBadgeLabel={brandingBadgeLabel} text={text} breakpoint={this.state.breakpoint} galleryImage={true}
                 />
               </div>
               <div className="mt3_row mt3_promocard-gallery-images--image2 mt3_promocard-gallery-images--image2-large">
                 <PromoImage type={type} config={config} leadMedia={leadMedia[1]}
-                            childFrameAspectRatio={this.calcAspectRatio()} secondImage={true}
+                            childFrameAspectRatio={this.calcAspectRatio()} galleryImage={true}
                             breakpoint={this.state.breakpoint}
                 />
               </div>
@@ -157,7 +157,7 @@ class Story extends Component {
           );
         }
       } else if (!noImages && this.state.breakpoint < 768) {
-        if (type === 'gallery') {
+        if (type === 'gallery' && leadMedia.length > 1) {
           const ctaSizeClass = this.state.breakpoint > 375 ? 'mt3_promocard-gallery-cta--medium' : '';
           const imageSizeClass = this.state.breakpoint > 375 ? 'mt3_promocard-gallery-images--image2-medium' : '';
 
@@ -176,13 +176,13 @@ class Story extends Component {
               <div className={`mt3_row mt3_promocard-gallery-images--image1 ${imageSizeClass}`}>
                 <a {...attrs} />
                 <PromoImage type={type} config={config} leadMedia={leadMedia[0]}
-                            childFrameAspectRatio={this.calcAspectRatio()} breakpoint={this.state.breakpoint}
+                            childFrameAspectRatio={this.calcAspectRatio()} breakpoint={this.state.breakpoint} galleryImage={true}
                 />
               </div>
 
               <div className={`mt3_row mt3_promocard-gallery-images--image2 ${imageSizeClass}`}>
                 <PromoImage type={type} config={config} leadMedia={leadMedia[1]}
-                            childFrameAspectRatio={this.calcAspectRatio()} secondImage={true}
+                            childFrameAspectRatio={this.calcAspectRatio()} galleryImage={true}
                             breakpoint={this.state.breakpoint}
                 />
               </div>
