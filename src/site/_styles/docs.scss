@@ -16,6 +16,9 @@ body {
 
 table {
   border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  word-wrap: break-word;
 }
 
 
@@ -387,7 +390,6 @@ hr {
   }
 }
 
-
 // ====================
 // ====================
 // Components page
@@ -397,7 +399,6 @@ hr {
 .illustratedexample-border {
   border: 1px solid $mt3_color-gray-10;
 }
-
 
 // ====================
 // ====================
@@ -560,3 +561,4 @@ $snippet-chevron-up: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fww
   margin-top: -9.375rem;
   display: block;
 }
+
