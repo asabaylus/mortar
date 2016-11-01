@@ -89,6 +89,7 @@ $mt3_large: 1280px;
         max-height: 150px;
       }
     }
+
     &--fixed {
       left: 0px;
       position: fixed;
@@ -125,6 +126,46 @@ $mt3_large: 1280px;
     min-height: 1px; //this rule enables the rail to still take up space even if it has no relative-positioned content (for parallax purposes)
     @media (max-width: $mt3_small) {
       padding: 0 0 0 30px;
+    }
+  }
+  &--large-heading {
+    .hero-with-two-rails__heading {
+      h1 {
+        font-size: 80px;
+        margin-top: -16px;
+        max-height: 90px;
+        @media (min-width: $mt3_small) {
+          font-size: 120px;
+          margin-top: -24px;
+          max-height: 135px;
+        }
+        @media (min-width: $mt3_medium) {
+          font-size: 160px;
+          margin-top: -32px;
+          max-height: 180px;
+        }
+        @media (min-width: $mt3_large) {
+          font-size: 200px;
+          margin-top: -40px;
+          max-height: 225px;
+        }
+      }
+    }
+
+    //specific height rules to match the exact height of the expected text
+    .hero-with-two-rails__heading,
+    .hero-with-two-rails__heading__wrap,
+    .hero-with-two-rails__heading__wrap--above {
+      height: 62px;
+      @media (min-width: $mt3_small) {
+        height: 93px;
+      }
+      @media (min-width: $mt3_medium) {
+        height: 125px;
+      }
+      @media (min-width: $mt3_large) {
+        height: 155px;
+      }
     }
   }
   &--no-heading {

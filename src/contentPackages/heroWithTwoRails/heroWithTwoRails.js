@@ -215,6 +215,11 @@ class HeroWithTwoRails extends Component {
     if(this.props.theme) {
       parentClasses += ` hero-with-two-rails--${this.props.theme}`;
     }
+
+    if(this.props.headingSize === 'large') {
+      parentClasses += ' hero-with-two-rails--large-heading';
+    }
+
     if(!this.heroExists) {
       parentClasses += ` hero-with-two-rails--no-hero`;
     }
@@ -238,6 +243,7 @@ HeroWithTwoRails.propTypes = {
   cards: PropTypes.array,
   heading: PropTypes.string,
   headingPosition: PropTypes.string,
+  headingSize: PropTypes.string,
   parallaxHeading: PropTypes.bool,
   parallaxRails: PropTypes.bool,
   theme: PropTypes.string,

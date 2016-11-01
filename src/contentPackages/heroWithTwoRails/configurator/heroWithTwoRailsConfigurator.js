@@ -47,6 +47,12 @@ class HeroWithTwoRailsConfigurator extends Component {
             <TextField label="Heading" onChange={this.onTextChange('heading')} value={props.heading} />
           </Section>
 
+          <SelectField label="Heading Size" onChange={this.onTextChange('headingSize')} value={props.headingSize}>
+            <option value="standard">Standard</option>
+            <option value="large">Large</option>
+          </SelectField>
+
+
           <SelectField label="Theme" onChange={this.onTextChange('theme')} value={props.theme}>
             <option value="dark">dark</option>
             <option value="light">light</option>

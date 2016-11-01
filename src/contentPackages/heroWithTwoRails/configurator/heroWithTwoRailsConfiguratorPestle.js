@@ -15,9 +15,10 @@ class HeroWithTwoRailsConfigurator extends Module {
   init() {
     const props = {
       "type":"hero-two-rails",
-      "theme":"light",
+      "theme":"dark",
       "heading":"Testo Patronus",
-      "headingPosition":"below",
+      "headingPosition":"above",
+      "headingSize":"standard",
       "parallaxHeading": true,
       "parallaxRails": true,
       "cards":[
