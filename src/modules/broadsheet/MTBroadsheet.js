@@ -6,41 +6,31 @@ import Image from '@natgeo/modules-images';
 import _debounce from 'lodash/debounce';
 import _delay from 'lodash/delay';
 
+
 class Broadsheet extends Component {
 
   constructor(props) {
     super(props);
-    this.debouncedReveal = null;
     this.reveal = this.reveal.bind(this);
+    this.debouncedReveal = _debounce(this.reveal, 500);
     this.state = {
       breakpoint: this.props.parentWidth || null
     }
   }
 
   reveal() {
-    let el = this.refs.broadsheet;
-    let top = el.offsetTop;
-    let left = el.offsetLeft;
-    let width = el.offsetWidth;
-    let height = el.offsetHeight;
 
-    while(el.offsetParent) {
-      el = el.offsetParent;
-      top += el.offsetTop;
-      left += el.offsetLeft;
-    }
 
-    if (
-      top < (window.pageYOffset + window.innerHeight) &&
-      left < (window.pageXOffset + window.innerWidth) &&
-      (top + height) > window.pageYOffset &&
-      (left + width) > window.pageXOffset
-    ) {
+    let el = this.broadsheet,
+      { top, left, width, height } = el.getBoundingClientRect();
+
+    if (top < (window.pageYOffset + window.innerHeight)
+      && left < (window.pageXOffset + window.innerWidth)
+      && (top + height) > window.pageYOffset
+      && (left + width) > window.pageXOffset)
+    {
       // When the BroadSheet enters the viewport animate the gold border, once
-      // console.log('broadsheet in viewport');
       this.setState({growClass: "mt3_broadsheet_wrapper--grow"});
-      window.removeEventListener('resize', this.debouncedReveal);
-      window.removeEventListener('scroll', this.debouncedReveal);
     };
   }
 
@@ -49,7 +39,6 @@ class Broadsheet extends Component {
     // before we start the animation if the broadsheet is inframe on initial
     // page load
     _delay(this.reveal, 2000);
-    this.debouncedReveal = _debounce(this.reveal, 500);
     window.addEventListener('resize', this.debouncedReveal);
     window.addEventListener('scroll', this.debouncedReveal);
   }
@@ -60,25 +49,24 @@ class Broadsheet extends Component {
   }
 
   render() {
-
-
     // set the aspect ratio for the "hero" image
     // if mobile then 1:1 otherwise 16:9
     // let cardAspectRatio = 0.5649717514124294;
     let cardAspectRatio = 0.5649717514124294;
+
     if (window.innerWidth < 768) {
       cardAspectRatio = 1;
     }
 
     const bodyNodes = this.props.mainBody.map((node, index) => {
 
-      if(node.type === 'text') {
+      if (node.type === 'text') {
         return (
           <div key={index} dangerouslySetInnerHTML={{__html: node.text}} />
         )
       }
 
-      if(node.type === 'image') {
+      if (node.type === 'image') {
         return(
           <div>
             <Image
@@ -104,8 +92,8 @@ class Broadsheet extends Component {
       );
     });
 
-    return(
-      <div ref="broadsheet" className={"mt3_broadsheet_wrapper " + this.state.growClass} data-reveal="true">
+    return (
+      <div ref={ref => this.broadsheet = ref} className={"mt3_broadsheet_wrapper " + this.state.growClass} data-reveal="true">
         <div className="mt3_broadsheet">
           <a className="mt3_color--black mt3_heading--h6--2 mt3_broadsheet-magazine-title" href='http://nationalgeographic.com/magazine'>National Geographic Magazine</a>
           <section className="mt3_bgcolor--white">

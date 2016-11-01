@@ -3,20 +3,18 @@ $mt3_medium: 1024px;
 $mt3_large: 1280px;
 
 
-.mt3_broadsheet_wrapper {
-}
-.boo {
-    background: red;
-}
+// .mt3_broadsheet_wrapper {
+// }
 
 // Layout
 .mt3_broadsheet_row {
-  display: -webkit-flex;
-  display: flex;
   -webkit-flex-direction: row;
-  flex-direction: row;
   align-items: stretch;
   clear: both;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+
   @media(max-width: $mt3_small) {
     -webkit-flex-direction: column;
     flex-direction: column;
@@ -25,19 +23,22 @@ $mt3_large: 1280px;
 
 .mt3_broadsheet-magazine-title {
   // Natgeo banner cetered in gold border
-  text-decoration: none;
+  display: block;
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  position: relative;
+  letter-spacing: .1em;
   line-height: 0;
-  display: block;
+  position: relative;
+  text-decoration: none;
+
   @media(min-width: 1025px) {
     top: -28px;
   }
-  @media(min-width:376px) and (max-width:1024px) {
+
+  @media(min-width: 376px) and (max-width: 1024px) {
     top: -22px;
   }
+
   @media(max-width: 375px) {
     display: none;
   }
@@ -48,10 +49,12 @@ $mt3_large: 1280px;
    flex: 1 0 0;
    padding-bottom: 2.5rem;
 }
+
 .mt3_broadsheet-aside {
   //  -webkit-flex: 1 0 0;
   //  flex: 1 0 0;
   width: 17.5rem;
+
   @media(max-width: 375px) {
     width: 14.2rem
   }
@@ -64,88 +67,100 @@ $mt3_large: 1280px;
 
 .mt3_broadsheet_wrapper--grow {
   transition: box-shadow 1s ease-in-out;
+
   @media(min-width: 1025px) {
     box-shadow: inset 0 0 0 60px #ffcc00;
   }
-  @media(min-width:376px) and (max-width:1024px) {
+
+  @media(min-width: 376px) and (max-width: 1024px) {
     box-shadow: inset 0 0 0 47px #ffcc00;
   }
+
   @media(max-width: 375px) {
     box-shadow: inset 0 0 0 23px #ffcc00;
   }
 }
 
 .mt3_broadsheet {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+
   header {
     // permit absolute positioned hero title to align
     // bottom for mobile screens
     position: relative;
   }
+
   @media(min-width: 1025px) {
     border: 60px solid rgba(0,0,0,0);
   }
-  @media(min-width:376px) and (max-width:1024px) {
+
+  @media(min-width: 376px) and (max-width: 1024px) {
     border: 47px solid rgba(0,0,0,0);
   }
+
   @media(max-width: 375px) {
     border: 23px solid rgba(0,0,0,0);
   }
-  position: relative;
-  display: inline-block;
-  text-align: center;
+
 
 
   .mt3_broadsheet-leadMedia-header {
-    position: absolute;
-    z-index: 1;
-    top: 50px;
     left: auto;
+    position: absolute;
+    top: 50px;
     width: 100%;
+    z-index: 1;
+
     @media(max-width: 375px) {
       // align the hero img title to bottom for mobile
-      top: auto;
       bottom: 0px;
+      top: auto;
     }
   }
 
   .mt3_broadsheet-leadMedia-issue-date {
+    border-left: 1px solid rgba(255,255,255,.5);
+    border-right: 1px solid rgba(255,255,255,.5);
     color: white;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    line-height: 1.15;
-    text-transform: uppercase;
+    font-size: .8rem;
     font-weight: 100;
+    // font-weight: 600;  // duplicated style and applied first
+    letter-spacing: .05em;
+    line-height: 1.15;
     margin-top: 50px;
     padding: 0 2rem;
-    border-left: 1px solid rgba(255,255,255,0.5);
-    border-right: 1px solid rgba(255,255,255,0.5);
+    text-transform: uppercase;
   }
 
   .mt3_broadsheet-leadMedia-title {
+    display: block;
     font-size: 26px;
     font-weight: 600;
     line-height: 1.15;
-    text-transform: none;
     margin: 0px 20% 30px;
+    padding: 0;
+    text-transform: none;
+
     @media(max-width: 375px) {
       margin: 0px 10% 30px;
     }
-    padding: 0;
-    display: block;
+
     h1 {
       font-size: 1.8rem;
-      letter-spacing: 0.05em;
+      letter-spacing: .05em;
       margin: 12px 0;
+
       @media(max-width: 375px) {
         font-size: 1.3rem;
       }
     }
-    p {
-      margin: 6px 0;
-      line-height: 0;
-    }
 
+    p {
+      line-height: 0;
+      margin: 6px 0;
+    }
   }
 
   .mt3_broadsheet-leadMedia-image {
@@ -156,22 +171,22 @@ $mt3_large: 1280px;
   }
 
   .mt3_broadsheet-leadMedia-image-overlay {
-    padding-bottom:56.49717514124294%;
+    padding-bottom: 56.49717514124294%;
   }
 
   .mt3_broadsheet-leadMedia-by-label,
   .mt3_broadsheet-leadMedia-photograph-label {
-    font-size: 0.7rem;
-    font-weight: 500;
-    font-style: italic;
     color: #CCCCCC;
+    font-size: .7rem;
+    font-style: italic;
+    font-weight: 500;
   }
 
   .mt3_broadsheet-leadMedia-by,
   .mt3_broadsheet-leadMedia-photograph {
-    font-size: 0.7rem;
-    font-weight: 500;
     color: #FFFFFF;
+    font-size: .7rem;
+    font-weight: 500;
   }
 
   .mt3_broadsheet-leadMedia-attributions {
@@ -179,21 +194,24 @@ $mt3_large: 1280px;
   }
 
   .mt3_article {
-    // lead paragraph
-    .lead-paragraph {
-        font-family: $mt3_verlag-stack;
-        font-size: 18px;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        line-height: 1.6;
-    }
-    text-align: left;
     padding-left: 104px;
+    text-align: left;
+
+    .lead-paragraph {
+      font-family: $mt3_verlag-stack;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      line-height: 1.6;
+    }
+
     @media(max-width: 375px) {
       padding-left: 2.7rem;
     }
+
     @media(max-width: $mt3_small) {
       padding-left: 0;
+
       p {
         padding-left: 1rem;
         padding-right: 1rem;
@@ -202,59 +220,62 @@ $mt3_large: 1280px;
   }
 
   .mt3_broadsheet-aside {
-    right: -60px;
-    position: relative;
     background: #f2f2f2;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    position: relative;
+    right: -60px;
+
     // ok this sucks, we both know it's badly done -- deal with it
     .mt3_broadsheet-aside-v-background {
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><line x1="50%" y1="0" x2="50%" y2="100%" stroke-width="0.5" stroke="#999999"/></svg>');
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><line x1="50%" y1="0" x2="50%" y2="100%" stroke-width=".5" stroke="#999999"/></svg>');
     }
+
     ul {
       list-style: none;
       margin: 0;
       padding: 0;
+
       li {
-        text-align: center;
         background: #f2f2f2;
-        padding: 14px;
         margin: 20px auto 0;
+        padding: 14px;
+        text-align: center;
       }
     }
 
     // remove the centered vertical rule from the right cols last entry
     &:after {
-      content: "";
       background: #f2f2f2;
       clear: both;
+      content: "";
       float: left;
-      width: 100%;
       height: 30px;
+      width: 100%;
     }
   }
 
   .mt3_broadsheet-story-also-in {
-    padding: 12px;
-    font-size: 0.7rem;
+    background-color: #f2f2f2;
+    font-size: .7rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: .1em;
     line-height: 1.6;
     margin: 30px 0;
-    background-color: #f2f2f2;
+    padding: 12px;
   }
 
   .mt3_broadsheet-story-title {
     font-size: 1.1rem;
     font-weight: 600;
-    letter-spacing: 0.05em;
+    letter-spacing: .05em;
     line-height: 1.15;
-    margin: 0 0 0.2rem 0;
+    margin: 0 0 .2rem 0;
   }
 
   .mt3_broadsheet-story-dek {
     font-family: Georgia, serif;
-    font-size: 0.9rem;
+    font-size: .9rem;
     font-weight: normal;
     line-height: 1.6875;
     margin: 0;
@@ -263,40 +284,43 @@ $mt3_large: 1280px;
   .mt3_broadsheet-cover-heading {
     background: #000000;
     color: #FFFFFF;
-    text-align: center;
     padding-bottom: 1rem;
-    &> p {
+    text-align: center;
+
+    & > p {
       font-size: .7rem;
-      padding: 1rem;
       margin: 0;
+      padding: 1rem;
     }
   }
 
   .mt3_broadsheet-subscribe-label {
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: .1em;
     line-height: 1.6;
   }
 
   section {
-      position: relative;
-      background-color: #FFF;
-      figure {
-        margin: 0;
-      }
-  }
+    background-color: #FFF;
+    position: relative;
 
+    figure {
+      margin: 0;
+    }
+  }
 
   //specific height rules to match the exact height of the expected text
   &__title {
-      @media (min-width: $mt3_small) {
-        height: 47px;
-      }
-      @media (min-width: $mt3_medium) {
-        height: 64px;
-      }
-      @media (min-width: $mt3_large) {
-        height: 93px;
-      }
+    @media (min-width: $mt3_small) {
+      height: 47px;
+    }
+
+    @media (min-width: $mt3_medium) {
+      height: 64px;
+    }
+
+    @media (min-width: $mt3_large) {
+      height: 93px;
+    }
   }
 }
