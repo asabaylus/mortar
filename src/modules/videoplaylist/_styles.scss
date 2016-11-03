@@ -1,4 +1,6 @@
 $mt3_playlist-l-screen: 100rem;
+$mt3_small-title-width: 768px;
+$mt3_medium-title-width: 1024px;
 
 .mt3_video-playlist {
   display: flex;
@@ -25,11 +27,7 @@ $mt3_playlist-l-screen: 100rem;
       padding-left: 90px;
     }
 
-    @include respond-to(m) {
-      padding-left: 60px;
-    }
-
-    @include respond-to(s) {
+    @include respond-to-multiple(m, s) {
       padding-left: 30px;
     }
 
@@ -46,11 +44,23 @@ $mt3_playlist-l-screen: 100rem;
 
     &__title {
       @extend %mt3_verlag;
-      font-size: $mt3_h-sm5;
       font-weight: 400;
       line-height: 1.05;
       padding-left: 2.5rem;
       padding-top: 2.5rem;
+
+      @media (max-width: #{$mt3_small-title-width - 0.01}) {
+        font-size: $mt3_h-med3;
+        padding-left: 1.875rem;
+      }
+
+      @media (min-width: #{$mt3_small-title-width}) and (max-width: #{$mt3_medium-title-width - 0.01}) {
+        font-size: $mt3_h-med6;
+      }
+
+      @media (min-width: #{$mt3_medium-title-width}) {
+        font-size: $mt3_h-lg2;
+      }
     }
 
     @include respond-to(l) {
@@ -58,12 +68,8 @@ $mt3_playlist-l-screen: 100rem;
       margin-left: 2.5rem;
     }
 
-    @include respond-to(m) {
-      margin-left: 2.5rem;
-    }
-
-    @include respond-to(s) {
-      margin-left: 1.875rem;
+    @include respond-to-multiple(m, s) {
+      margin-left: 0;
     }
   }
 
