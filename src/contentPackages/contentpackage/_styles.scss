@@ -261,7 +261,9 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
 
     &:last-child {
       .mt3_promocard-container {
-        margin: 0;
+        @media (min-width: $mt3_small) {
+          margin: 0;
+        }
       }
     }
 
