@@ -32,7 +32,7 @@ const searchAndGetCroppingSrcset = (croppingSrcset, aspectRatio) => {
 };
 
 const PromoImage = (props) => {
-
+  let src = props.leadMedia.url || props.leadMedia.imageUrl;
   let srcset = props.leadMedia.srcset;
   let aspectRatio = props.leadMedia.aspectRatio;
 
@@ -89,11 +89,12 @@ const PromoImage = (props) => {
       : null}
       {props.brandingBadgeLabel ? <figcaption className="mt3_promocard-branding">{props.brandingBadgeLabel}</figcaption> : null}
       <Image
+        key={src}
         aspectRatio={aspectRatio}
         frameAspectRatio={frameAspectRatio}
         lazyLoad={false}
         altText={props.leadMedia.altText}
-        src={props.leadMedia.url || props.leadMedia.imageUrl}
+        src={src}
         srcset={srcset}
       />
       <div className="mt3_promocard-text--overlay">
