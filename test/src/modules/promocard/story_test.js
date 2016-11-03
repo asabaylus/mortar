@@ -25,7 +25,9 @@ describe('Story Component', () => {
       "text": {
         "title": "This is the title of the card",
         "dek": "This is a short dek for the card.",
-        "kicker": "Kicker"
+        "kicker": {
+          "label" : "Kicker"
+        }
       },
       "modal": false,
       "brandingBadgeLabel": "This is a cool branding badge label",
@@ -77,7 +79,7 @@ describe('Story Component', () => {
     it('PromoText component should have props', () => {
       expect(wrapper.find('PromoText').props().text.title).to.equal("This is the title of the card");
       expect(wrapper.find('PromoText').props().text.dek).to.equal("This is a short dek for the card.");
-      expect(wrapper.find('PromoText').props().text.kicker).to.equal("Kicker");
+      expect(wrapper.find('PromoText').props().text.kicker.label).to.equal("Kicker");
     });
   });
 
@@ -109,7 +111,9 @@ describe('Story Component', () => {
       "text": {
         "title": "This is the title of the card",
         "dek": "This is a short dek for the card.",
-        "kicker": "Kicker"
+        "kicker": {
+          "label" : "Kicker"
+        }
       },
       "modal": false,
       "brandingBadgeLabel": "This is a cool branding badge label",
@@ -164,7 +168,7 @@ describe('Story Component', () => {
     it('PromoText component should have props', () => {
       expect(wrapper.find('PromoText').props().text.title).to.equal("This is the title of the card");
       expect(wrapper.find('PromoText').props().text.dek).to.equal("This is a short dek for the card.");
-      expect(wrapper.find('PromoText').props().text.kicker).to.equal("Kicker");
+      expect(wrapper.find('PromoText').props().text.kicker.label).to.equal("Kicker");
     });
 
   });

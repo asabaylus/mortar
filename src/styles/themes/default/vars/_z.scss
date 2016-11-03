@@ -70,7 +70,7 @@ $mt3_z-full-page-overlays: 6000000;
 
 $z-index-layers: (
   'modal' : $mt3_z-full-page-overlays,
-  'promocard-back': $mt3_z-background-elements,
+  'promocard-bottom': $mt3_z-main-content-standard-ads,
   'promocard-middle' : $mt3_z-main-content-standard-ads + 3,
   'promocard-top' : $mt3_z-main-content-standard-ads + 10,
   'showcard-back': $mt3_z-main-content-standard-ads + 2,

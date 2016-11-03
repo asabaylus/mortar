@@ -244,7 +244,11 @@ $mt3_large: 1280px;
     margin-bottom: 10px;
     position: relative;
     text-decoration: none;
-    z-index: zIndex('promocard-top');
+    z-index: zIndex('promocard-bottom');
+
+    &--linked{
+      z-index: zIndex('promocard-top');
+    }
 
     a:hover {
       cursor: pointer;
@@ -324,7 +328,7 @@ $mt3_large: 1280px;
   .mt3_card-subhead--right {
     float: left;
     text-decoration: none;
-    z-index: zIndex('promocard-back');
+    z-index: zIndex('promocard-bottom');
 
     &:hover {
       text-decoration: none;

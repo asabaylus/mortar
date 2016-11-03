@@ -2,28 +2,38 @@
 
 import React, { Component, PropTypes }  from 'react';
 import cx from 'classnames';
-import { generateHref } from '../../generateHref';
+
+let kickerClasses;
 
 class PromoText extends Component {
 
   render() {
     const {...props} = this.props;
+
+    const kickerIsLink = /<a/g; //check if the kicker contains an <a/> tag, this will affect z-index of class applied
+
+    if(props.config.overlay || props.theme === 'dark' || props.noImages){
+      kickerClasses = 'mt3_color--white mt3_promocard-kicker mt3_promocard-kicker--inverse';
+    }else if(props.text.kicker && props.text.kicker.label.match(kickerIsLink)){
+      kickerClasses = 'mt3_color--black mt3_color--black mt3_promocard-kicker mt3_promocard-kicker--linked';
+    }else{
+      kickerClasses = 'mt3_color--black mt3_promocard-kicker';
+    }
+
     const attrs = {
-      className: props.config.overlay || props.theme === 'dark' || props.noImages ? 'mt3_color--white mt3_promocard-kicker mt3_promocard-kicker--inverse' : 'mt3_color--black mt3_promocard-kicker',
-      href: props.text.kicker && props.text.kicker.url ? generateHref(props.text.kicker.url, props.text.kicker.trackingCodes) : null,
-      target: props.text.kicker && props.text.kicker.target ? props.text.kicker.target : null
+      className: kickerClasses
     };
 
     const overlayClasses = props.config.overlay ? 'mt3_color--white mt3_promocard-nested-text' : 'mt3_color--neutral--xxd';
     const subheadColor = props.config.overlay ? 'mt3_color--white' : 'mt3_color--black';
     const inverseTitle = props.config.overlay || props.theme === 'dark' || props.noImages ? 'mt3_color--white' : 'mt3_color--black';
-    
+
     const dekClass = cx({
       'mt3_promocard-dek--text-only': props.noImages,
       'mt3_color--white mt3_promocard-dek--inverse': props.theme === 'dark',
       'mt3_color--black': !props.noImages && props.theme === 'light'
     });
-    
+
     let sponsoredClasses = props.theme === 'dark' ? 'mt3_color--sponsor mt3_promocard-sponsored mt3_promocard-sponsored--inverse' : 'mt3_color--sponsor mt3_promocard-sponsored';
 
     //for largest size variation, sponsored kicker oughta be white
@@ -55,21 +65,36 @@ class PromoText extends Component {
     let subHeadingContent = [];
     let j = 0;
 
-    if(props.text.kicker && props.text.kicker.url && props.text.kicker.style !== 'prompt' && !props.config.sponsored){
-      subHeadingContent.push(<a key={j++} {...attrs}>{props.text.kicker.label}</a>);
-    } else if(props.config.sponsored){
-      subHeadingContent.push(<span key={j++} className={sponsoredClasses} dangerouslySetInnerHTML={{__html: props.text.sponsorContentLabel}} />);
-    } else if(props.text.kicker){
-      subHeadingContent.push(<span key={j++} className={`${attrs.className}`} dangerouslySetInnerHTML={{__html: props.text.kicker.label}} />);
+    //kicker. first, check if sponsored kicker should be used
+    if(props.config.sponsored) {
+      const sponsorText = props.text.sponsorContentLabel || 'Sponsored Content';
+      subHeadingContent.push(<span key={j++} className={sponsoredClasses} dangerouslySetInnerHTML={{__html: sponsorText}} />);
+    } else {
+      //when not sponsored, render normal kicker
+      if (props.text.kicker) {
+        let kicker = props.text.kicker;
+        //does the kicker have text it should display
+        if(kicker.label) {
+          //should it be a link?
+          if(kicker.url && kicker.style !== 'prompt' && !props.config.sponsored) {
+            subHeadingContent.push(<a key={j++} {...attrs}>{props.text.kicker.label}</a>);
+          } else {
+            subHeadingContent.push(<span key={j++} className={`${attrs.className}`} dangerouslySetInnerHTML={{__html: props.text.kicker.label}} />);
+          }
+        }
+      }
     }
 
-    (props.type === 'video' && props.text.duration && props.text.kicker && props.text.kicker.style !== 'prompt') ?
-      subHeadingContent.push(<div key={j++} className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`} dangerouslySetInnerHTML={{__html: props.text.duration}} />)
-    : null;
-
-    (props.type === 'gallery' && props.text.photoCount && props.text.kicker && props.text.kicker.style !== 'prompt') ?
-      subHeadingContent.push(<div key={j++} className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`} dangerouslySetInnerHTML={{__html: props.text.photoCount}} />)
-    : null;
+    //additional custom fields
+    let customField = (props.type === 'video' && props.text.duration) || (props.type === 'gallery' && props.text.photoCount);
+    if(customField) {
+      //don't render if the kicker style is "prompt"
+      if(props.text.kicker && props.text.kicker.style === 'prompt') {
+        return;
+      } else {
+        subHeadingContent.push(<div key={j++} className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`} dangerouslySetInnerHTML={{__html: customField}} />);
+      }
+    }
 
     let title = [];
     let dek = [];
@@ -88,7 +113,7 @@ class PromoText extends Component {
     if(props.breakpoint < 768){
       content.push(
         <div key={i++}>
-          { props.text.kicker || props.config.sponsored ?
+          { props.text.kicker || props.config.sponsored || props.text.duration || props.text.photoCount ?
             <div className="mt3_row">
               <div className="mt3_promocard-pad">
                 {subHeadingContent}
@@ -121,7 +146,7 @@ class PromoText extends Component {
     }else if(props.breakpoint > 768 && !props.noImages){
       content.push(
         <div key={i++}>
-          { props.text.kicker || props.config.sponsored ?
+          { props.text.kicker || props.config.sponsored || props.text.duration || props.text.photoCount ?
             <div className="mt3_row">
               <div className="mt3_promocard-pad">
                 {subHeadingContent}
