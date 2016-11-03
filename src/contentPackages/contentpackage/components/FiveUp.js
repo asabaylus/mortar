@@ -26,7 +26,7 @@ class FiveUpComponent extends Component {
     } = this.props;
 
     // classnames below are rather arbitrary. Should find out if there's a standard across components and be consistent
-    const sizes = {
+    const fiveUpSizes = {
       '440': 'mt3_fiveup--tablet',
       '740': 'mt3_fiveup--desktop'
     };
@@ -48,7 +48,7 @@ class FiveUpComponent extends Component {
     });
 
     return (
-      <EQ sizeClasses={sizes} >
+      <EQ elementRef="fiveup" sizeClasses={fiveUpSizes} >
         <div ref="fiveUpContainer" className="mt3_fiveup">
           <div className="mt3_left-and-right-package-header" dangerouslySetInnerHTML={{__html: componentHead}}/>
           {storyCards}

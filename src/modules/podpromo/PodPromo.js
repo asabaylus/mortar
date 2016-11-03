@@ -90,7 +90,7 @@ class PodPromoComponent extends Component {
       alt: 'Plus Icon'
     };
 
-    const sizes = {
+    const PODSizes = {
       '1': 'mt3_podpromo mt3_podpromo--mobile',
       '768': 'mt3_podpromo mt3_podpromo--tablet',
       '1024': 'mt3_podpromo mt3_podpromo--desktop',
@@ -98,7 +98,7 @@ class PodPromoComponent extends Component {
     };
 
     return (
-      <EQ sizeClasses={sizes}>
+      <EQ elementRef="podpromo" sizeClasses={PODSizes}>
           {
             (componentUrl) ? <a href={componentUrl} target={componentLink.target} className="mt3_podpromo-container-link" /> : null
           }

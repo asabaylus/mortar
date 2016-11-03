@@ -7,7 +7,6 @@ import _debounce from 'lodash/debounce';
  This attempts to simplify and relieve the ElementQuery dependency, as-well-as offering performance improvements
  */
 
-let cssClass;
 
 class EQ extends Component {
 
@@ -16,6 +15,7 @@ class EQ extends Component {
     this.state = {
       contentWidth: null
     };
+    this.elementRefVal = (props.elementRef) ? `elementContainer_${props.elementRef}` : 'elementContainer'
     this.getElementWidth = this.getElementWidth.bind(this);
   }
 
@@ -31,12 +31,13 @@ class EQ extends Component {
 
   getElementWidth() {
     this.setState({
-      contentWidth: this.refs.elementContainer.getBoundingClientRect().width
+      contentWidth: this.refs[this.elementRefVal].getBoundingClientRect().width
     });
   }
 
   render() {
-    const { sizeClasses } = this.props;
+    const { sizeClasses, elementRef } = this.props;
+    let cssClass;
 
     for( let prop in sizeClasses){
       if(sizeClasses.hasOwnProperty(prop) && prop < this.state.contentWidth){
@@ -45,7 +46,7 @@ class EQ extends Component {
     }
 
     return (
-      <div ref="elementContainer" className={cssClass}>
+      <div ref={this.elementRefVal} className={cssClass}>
         {this.props.children}
       </div>
     );
@@ -56,6 +57,7 @@ class EQ extends Component {
 
 EQ.PropTypes = {
   resizeDbTime : PropTypes.number,
+  elementRef: PropTypes.string,
   sizeClasses : PropTypes.object,
   initialWidth : PropTypes.number
 };
