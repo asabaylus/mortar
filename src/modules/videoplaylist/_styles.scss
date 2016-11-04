@@ -52,6 +52,7 @@ $mt3_medium-title-width: 1024px;
       @media (max-width: #{$mt3_small-title-width - 0.01}) {
         font-size: $mt3_h-med3;
         padding-left: 1.875rem;
+        padding-right: 1.875rem;
       }
 
       @media (min-width: #{$mt3_small-title-width}) and (max-width: #{$mt3_medium-title-width - 0.01}) {
