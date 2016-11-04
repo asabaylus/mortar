@@ -4,7 +4,8 @@ import _debounce from 'lodash/debounce';
 
 //interval at which page will update parallax positions (in milliseconds)
 const updateScrollInterval = 10;
-const updateDocHeightInterval = 3000;
+//interval at which the page's height will be checked - if difference is found, system will recalculate
+const updateDocHeightInterval = 2000;
 
 //when an element is sticky rather than parallaxed, it will have a hardcoded margin (in px) from the top of the viewport
 const stickyMargin = 40;

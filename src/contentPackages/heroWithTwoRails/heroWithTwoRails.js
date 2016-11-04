@@ -29,7 +29,7 @@ class HeroWithTwoRails extends Component {
     let bottomPositionOverride = null;
     let heroDiv = null;
     let heroHeight = null;
-    let percentageUnpinned = 0.33;
+    let percentageUnpinned = 0.5;
     let railsHeight = railsDiv.getBoundingClientRect().height;
     let sceneDuration;
     let setPin = true;
@@ -54,7 +54,6 @@ class HeroWithTwoRails extends Component {
         position = "below";
       }
     }
-
 
     //animate differently depending if both rails are larger than the whole viewport or not
     if(viewportHeight > railsHeight) {

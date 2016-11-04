@@ -66,7 +66,7 @@ $mt3_large: 1280px;
     position: relative;
   }
 
-  figure.mt3_promocard-image--large {
+  &--large figure, figure.mt3_promocard-image--large {
     margin: 0;
   }
 
