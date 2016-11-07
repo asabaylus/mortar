@@ -8,6 +8,9 @@ import VideoThumbnail from '../../../../src/modules/videoplaylist/VideoThumbnail
 import {shallow} from 'enzyme';
 import React from 'react';
 
+//this may or may not help with an error we're seeing in the pipeline. Let's give it a shot.
+const START_VIDEO_INDEX = 0;
+
 describe('VideoPlaylist Component', () => {
   describe('Pestle Module', () => {
     before(() => {
