@@ -15,10 +15,10 @@ class PromoText extends Component {
     const isDarkTheme = props.config.overlay || props.theme === 'dark' || props.noImages;
     kickerClasses = cx(
       'mt3_promocard-kicker',
-    {
-      'mt3_color--white mt3_promocard-kicker--inverse': isDarkTheme,
-      'mt3_color--black': !isDarkTheme,
-    })
+      {
+        'mt3_color--white mt3_promocard-kicker--inverse': isDarkTheme,
+        'mt3_color--black': !isDarkTheme,
+      })
 
     const attrs = {
       className: kickerClasses
