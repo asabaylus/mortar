@@ -246,13 +246,18 @@ $mt3_large: 1280px;
     text-decoration: none;
     z-index: zIndex('promocard-bottom');
 
-    &--linked{
-      z-index: zIndex('promocard-top');
+    a[href] {
+      position: relative;
     }
 
-    a:hover {
-      cursor: pointer;
-      text-decoration: underline;
+    &[href], a[href] {
+      // if kicker is a link set it above big massive link
+      z-index: zIndex('promocard-top');
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
     }
 
     &--inverse {
@@ -262,11 +267,6 @@ $mt3_large: 1280px;
         border-left: 1px solid white;
       }
     }
-  }
-
-  a.mt3_promocard-kicker:hover {
-    cursor: pointer;
-    text-decoration: underline;
   }
 
   .mt3_promocard-sponsored {

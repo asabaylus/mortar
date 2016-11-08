@@ -12,13 +12,13 @@ class PromoText extends Component {
 
     const kickerIsLink = /<a/g; //check if the kicker contains an <a/> tag, this will affect z-index of class applied
 
-    if(props.config.overlay || props.theme === 'dark' || props.noImages){
-      kickerClasses = 'mt3_color--white mt3_promocard-kicker mt3_promocard-kicker--inverse';
-    }else if(props.text.kicker && (props.text.kicker.url || props.text.kicker.label.match(kickerIsLink))) {
-      kickerClasses = 'mt3_color--black mt3_color--black mt3_promocard-kicker mt3_promocard-kicker--linked';
-    }else{
-      kickerClasses = 'mt3_color--black mt3_promocard-kicker';
-    }
+    const isDarkTheme = props.config.overlay || props.theme === 'dark' || props.noImages;
+    kickerClasses = cx(
+      'mt3_promocard-kicker',
+    {
+      'mt3_color--white mt3_promocard-kicker--inverse': isDarkTheme,
+      'mt3_color--black': !isDarkTheme,
+    })
 
     const attrs = {
       className: kickerClasses
