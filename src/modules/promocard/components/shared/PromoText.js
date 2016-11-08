@@ -14,7 +14,7 @@ class PromoText extends Component {
 
     if(props.config.overlay || props.theme === 'dark' || props.noImages){
       kickerClasses = 'mt3_color--white mt3_promocard-kicker mt3_promocard-kicker--inverse';
-    }else if(props.text.kicker && props.text.kicker.label.match(kickerIsLink)){
+    }else if(props.text.kicker && (props.text.kicker.url || props.text.kicker.label.match(kickerIsLink))) {
       kickerClasses = 'mt3_color--black mt3_color--black mt3_promocard-kicker mt3_promocard-kicker--linked';
     }else{
       kickerClasses = 'mt3_color--black mt3_promocard-kicker';
@@ -77,7 +77,7 @@ class PromoText extends Component {
         if(kicker.label) {
           //should it be a link?
           if(kicker.url && kicker.style !== 'prompt' && !props.config.sponsored) {
-            subHeadingContent.push(<a key={j++} {...attrs}>{props.text.kicker.label}</a>);
+            subHeadingContent.push(<a key={j++} href={kicker.url} {...attrs}>{props.text.kicker.label}</a>);
           } else {
             subHeadingContent.push(<span key={j++} className={`${attrs.className}`} dangerouslySetInnerHTML={{__html: props.text.kicker.label}} />);
           }
