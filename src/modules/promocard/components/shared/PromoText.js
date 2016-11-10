@@ -86,13 +86,15 @@ class PromoText extends Component {
     }
 
     //additional custom fields
-    let customField = (props.type === 'video' && props.text.duration) || (props.type === 'gallery' && props.text.photoCount);
-    if(customField) {
+    let duration = props.type === 'video' && props.text.duration;
+    let photoCount = props.type === 'gallery' && props.text.photoCount;
+    const customField = duration ? props.text.duration : props.text.photoCount + " Photos";
+    if(duration || photoCount) {
       //don't render if the kicker style is "prompt"
       if(props.text.kicker && props.text.kicker.style === 'prompt') {
         return;
       } else {
-        subHeadingContent.push(<div key={j++} className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`} dangerouslySetInnerHTML={{__html: customField}} />);
+        subHeadingContent.push(<div key={j++} className={`${subheadColor} ${attrs.className} mt3_card-subhead--right`} dangerouslySetInnerHTML={{ __html: customField }} />);
       }
     }
 
