@@ -1,4 +1,6 @@
-$mt3_playlist-l-screen: 100rem;
+//The width of the playlist container should be in px in order to match the
+// width of the rest of the components.
+$mt3_playlist-l-screen: 1600px;
 $mt3_small-title-width: 768px;
 $mt3_medium-title-width: 1024px;
 
