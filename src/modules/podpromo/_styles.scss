@@ -320,6 +320,19 @@ $mt3_white: #fff;
     .mt3_kicker {
       border-color: $mt3_black;
       color: $mt3_black;
+
+      &--sponsored {
+        @extend .mt3_kicker;
+        @include couldBeRichText();
+        border-left: 1px solid $mt3_color-sponsor;
+        border-right: 1px solid $mt3_color-sponsor;
+        color: $mt3_color-sponsor;
+        font-weight: 600;
+        /*overwrite extended mt3_kicker*/
+        &:nth-child(1) {
+         border-left: 1px solid $mt3_color-sponsor;
+        }
+      }
     }
 
     .mt3_podpromo-ctacontainer {

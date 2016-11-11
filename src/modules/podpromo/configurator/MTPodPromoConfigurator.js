@@ -57,6 +57,14 @@ class PodPromoConfigurator extends Component {
     };
   }
 
+  onBoolChange(stateProperty) {
+    return (event) => {
+      let value = event.target.value === 'true' ? true : false;
+      this.updateState(stateProperty, { $set: value });
+    };
+  }
+
+
   onLeadMediaUpdate(stateProperty, type) {
     return (event) => {
       const value = (type) ? Number(event.target.value) : event.target.value;
@@ -105,6 +113,14 @@ class PodPromoConfigurator extends Component {
             <TextField label="Heading" onChange={this.onTextChange('model.text.brandingBadge')} value={props.model.text.brandingBadge} />
             <TextField label="Title" onChange={this.onTextChange('model.text.title')} value={props.model.text.title} />
           </Section>
+          <Section text="Sponsor">
+            <SelectField label="Sponsored" onChange={this.onBoolChange('model.config.sponsored')} value={props.model.config.sponsored}>
+              <option value="true">True</option>
+              <option value="false">False</option>
+            </SelectField>
+            <TextField label="Sponsor Label" onChange={this.onTextChange('model.text.sponsorContentLabel')} value={props.model.text.sponsorContentLabel} />
+          </Section>
+
           <Section text="Kicker">
             <TextField label="Kicker Label" onChange={this.onTextChange('model.text.kicker.label')} value={props.model.text.kicker.label} />
           </Section>

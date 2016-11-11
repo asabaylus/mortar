@@ -133,7 +133,7 @@ class PodPromoComponent extends Component {
           </div>
           <div className="mt3_podpromo-content-container mt3_podpromo-content-container-bottom mt3_podpromo-content-container-left mt3_podpromo-autoindex mt3_podpromo-fade">
             {
-              componentKicker ? this.kickerLink(componentKicker) : null
+              componentConfig.sponsored ? <div className='mt3_kicker mt3_kicker--sponsored'>{sponsorLabel}</div> : componentKicker ? this.kickerLink(componentKicker) : null
             }
             <div className="mt3_podpromo-title" dangerouslySetInnerHTML={{__html: componentTitle}} />
           </div>
