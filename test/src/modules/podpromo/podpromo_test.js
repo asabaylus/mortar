@@ -20,7 +20,7 @@ describe('POD Promo Component', () => {
               "config": {
                 "aspectRatio": "2:1",
                 "yourshot": true,
-                "sponsored": true
+                "sponsored": false
               },
               "link": {
                 "url": "http://www.nationalgeographic.com/photography/photo-of-the-day/08/some-image",
@@ -183,7 +183,7 @@ describe('POD Promo Component', () => {
     });
 
     it('should have the correct kicker value', () => {
-      expect(wrapper.find('.mt3_kicker').html()).to.equal('<div class="mt3_kicker mt3_podpromo-elevate"><a class="mt3_kicker--link" href="/content/news/en_US/weird-wild.html?utm_medium=site&amp;utm_source=ng.com" target="_self" title="Kicker Label">Kicker Label</a></div>');
+      expect(wrapper.find('.mt3_kicker').html()).to.equal('<div class="mt3_kicker mt3_kicker--sponsored">Sponsor Content</div>');
     });
 
     it('should have the correct cta value', () => {
@@ -208,7 +208,7 @@ describe('POD Promo Component', () => {
       config: {
         aspectRatio: '2:1',
         yourshot: true,
-        sponsored: true
+        sponsored: false
       },
       link: {
         url: 'http://www.nationalgeographic.com/photography/photo-of-the-day/08/some-image',

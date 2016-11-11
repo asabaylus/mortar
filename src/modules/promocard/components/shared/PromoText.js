@@ -88,7 +88,7 @@ class PromoText extends Component {
     //additional custom fields
     let duration = props.type === 'video' && props.text.duration;
     let photoCount = props.type === 'gallery' && props.text.photoCount;
-    const customField = duration ? props.text.duration : props.text.photoCount + " Photos";
+    const customField = duration ? props.text.duration : props.text.photoCount + ' Photos';
     if(duration || photoCount) {
       //don't render if the kicker style is "prompt"
       if(props.text.kicker && props.text.kicker.style === 'prompt') {
