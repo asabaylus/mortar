@@ -45,6 +45,7 @@ $mt3_white: #fff;
 
   &-content-container {
     position: absolute;
+    transform: translateZ(0);
     // modules-images is setting z-index of images to 2, this assures our text is overlaying the image
     z-index: $mt3_baseIndex;
 

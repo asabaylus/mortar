@@ -17,8 +17,11 @@ $mt3_large: 1280px;
       color: $mt3_color-black;
       opacity: 1;
     }
-    .mt3_promocard-title {
-      opacity: 0.6;
+
+    &:not(.mt3_promocard-container--large) {
+      .mt3_promocard-title {
+        color: $mt3_color-gray-40;
+      }
     }
   }
 
