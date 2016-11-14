@@ -58,7 +58,7 @@ class FourUpComponent extends Component {
       // set type to 'article' if type is not 'article' or 'video' to account for gallery cards not rendering correctly in the 3rd and 4th slots
       case 2:
       case 3:
-        if (currentCard.type !== 'article' || 'video'){
+        if (currentCard.type !== 'video'){
           currentCard.type = 'article';
         }
         if(this.state.contentWidth < 440) {
