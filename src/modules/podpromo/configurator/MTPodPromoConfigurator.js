@@ -139,7 +139,7 @@ class PodPromoConfigurator extends Component {
             <TextField label="Aspect Ratio" onChange={this.onLeadMediaUpdate('aspectRatio', 'number')} value={props.model.leadMedia[0].aspectRatio} />
             <TextField label="Alt Text" onChange={this.onLeadMediaUpdate('altText')} value={props.model.leadMedia[0].altText} />
             <TextField label="Photo Credit" onChange={this.onTextChange('model.text.credit')} value={props.model.text.credit} />
-            <TextField label="Photo Affiliation" onChange={this.onTextChange('model.text.affiliation')} value={props.model.text.affiliation} />
+            <TextField label="Photo Source" onChange={this.onTextChange('model.text.assetSource')} value={props.model.text.assetSource} />
             <TextField label="SrcSet" onChange={this.onLeadMediaArrayChange('srcset')} value={props.model.leadMedia[0].srcset} />
           </Section>
           <Section text="CTA">

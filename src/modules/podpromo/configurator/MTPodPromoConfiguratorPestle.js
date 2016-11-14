@@ -43,8 +43,7 @@ class PodPromoConfigurator extends Module {
           title: 'This is the title field',
           dek: '<p>This was in the DataModel, but the comopnent does not seem to have a use for it</p>',
           credit: '<p>Photograph by Pete McBride</p>',
-          affiliation: 'National Geographic',
-          assetSource: '',
+          assetSource: 'National Geographic',
           kicker: {
             label: '<a href="http://www.google.com">Kicker Label</a>'
           },

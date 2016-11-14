@@ -61,8 +61,7 @@ describe('POD Promo Component', () => {
                 "title": "This is the title field",
                 "dek": "<p>Forged by the wear of water rushing over rocks, Olo Canyon in Arizona is concealed inside the Grand Canyon. Its alluring landscape includes natural springs and rocks shaped like cathedral amphitheaters.</p> <p><em>See more pictures from the September 2016 story &quot;<a href='http://www.nationalgeographic.com/magazine/2016/09/grand-canyon-development-hiking-national-parks' target='_blank'>Are We Losing the Grand Canyon?</a>&quot; </em></p>",
                 "credit": "<p>Photograph by Pete McBride</p>",
-                "affiliation": "National Geographic",
-                "assetSource":"",
+                "assetSource":"National Geographic",
                 "kicker": {
                   "label": "Weird & Wild",
                   "url": "/content/news/en_US/weird-wild.html",
@@ -152,8 +151,7 @@ describe('POD Promo Component', () => {
         title: 'This is the title field',
         dek: '<p>This was in the DataModel, but the comopnent does not seem to have a use for it</p>',
         credit: '<p>Photograph by Pete McBride</p>',
-        affiliation: 'National Geographic',
-        assetSource: '',
+        assetSource: 'National Geographic',
         kicker: {
           label: 'Kicker Label',
           url: '/content/news/en_US/weird-wild.html',
@@ -194,8 +192,8 @@ describe('POD Promo Component', () => {
       expect(wrapper.find('.mt3_podpromo-photocredit').html()).to.equal('<div class="mt3_caption-creditname mt3_podpromo-photocredit"><p>Photograph by Pete McBride</p></div>');
     });
 
-    it('should have the correct photo affiliation value', () => {
-      expect(wrapper.find('.mt3_podpromo-affiliation').html()).to.equal('<div class="mt3_caption-credit mt3_podpromo-affiliation">National Geographic</div>');
+    it('should have the correct photo source value', () => {
+      expect(wrapper.find('.mt3_podpromo-source').html()).to.equal('<div class="mt3_caption-credit mt3_podpromo-source">National Geographic</div>');
     });
 
   });
@@ -231,8 +229,7 @@ describe('POD Promo Component', () => {
         title: 'This is the title field',
         dek: '<p>This was in the DataModel, but the comopnent does not seem to have a use for it</p>',
         credit: '<p>Photograph by Pete McBride</p>',
-        affiliation: 'National Geographic',
-        assetSource: '',
+        assetSource: 'National Geographic',
         kicker: {
           label: 'Kicker Label',
           url: '',
