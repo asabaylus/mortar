@@ -55,8 +55,12 @@ class FourUpComponent extends Component {
     // We want to force the aspect ratio of the first two cards in the stack based on business rules. Here we look at the zero based index and make that decision
     switch(index) {
       // cards 3 and 4 are rendered differently, and need a different aspect ratio based on the parent container width
+      // set type to 'article' if type is not 'article' or 'video' to account for gallery cards not rendering correctly in the 3rd and 4th slots
       case 2:
       case 3:
+        if (currentCard.type !== 'article' || 'video'){
+          currentCard.type = 'article';
+        }
         if(this.state.contentWidth < 440) {
           currentCard.config.cardAspectRatio = '1:1';
         } else {
@@ -92,7 +96,6 @@ class FourUpComponent extends Component {
       '440': 'mt3_fourup--tablet',
       '740': 'mt3_fourup--desktop'
     };
-
 
     // This sets the markup for the last two components when the parent component's width is less than 440
     const mobileBottomRows = [
