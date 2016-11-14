@@ -20,7 +20,7 @@ gulp.task('eslint', function(){
 gulp.task('sasslint', function(){
   return gulp.src([
     'src/{styles,modules}/**/*.scss',
-    '!src/styles/layout/_columns.scss'
+    '!src/styles/grid/_columns.scss'
   ])
     .pipe(sassLint())
     .pipe(sassLint.format())
