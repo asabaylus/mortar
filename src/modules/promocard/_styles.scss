@@ -115,6 +115,7 @@ $mt3_large: 1280px;
     position: absolute;
     top: 0;
     width: 100%;
+    z-index: zIndex('promocard-top-link');
   }
 
   .mt3_promocard-nested-text {
@@ -254,7 +255,7 @@ $mt3_large: 1280px;
 
     &[href], a[href] {
       // if kicker is a link set it above big massive link
-      z-index: zIndex('promocard-top');
+      z-index: zIndex('promocard-top-kicker-link');
 
       &:hover {
         cursor: pointer;
