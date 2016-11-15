@@ -28,6 +28,20 @@ class ContentPackageConfigurator extends Component {
     this.setState(update(this.state, { componentProps : newState }));
   }
 
+  onBoolChange(stateProperty) {
+    return (event) => {
+      const value = (event.target.value === 'true') ? true : false;
+      const newState = {
+        dataModel: {
+          components: [{
+            [stateProperty]: {$set: value}
+          }]
+        }
+      }
+      this.updateSubheadState(newState);
+    };
+  }
+
   onTextChange(stateProperty) {
     return (event) => {
       this.updateState(stateProperty, { $set: event.target.value });
@@ -83,7 +97,21 @@ class ContentPackageConfigurator extends Component {
           <Section text="General">
             <TextField label="Most Read Heading" onChange={this.onMostReadSubHeadUpdate('heading')} value={props.dataModel.components[0].heading} />
 
+            <SelectField label="Most Read: Show Numbers" onChange={this.onBoolChange('showNumbers')} value={props.dataModel.components[0].showNumbers}>
+              <option value="true">True</option>
+              <option value="false">False</option>
+            </SelectField>
+
+            <SelectField label="Most Read: Show Kickers" onChange={this.onBoolChange('showKickers')} value={props.dataModel.components[0].showKickers}>
+              <option value="true">True</option>
+              <option value="false">False</option>
+            </SelectField>
+
+
             <TextField label="Latest Heading" onChange={this.onSubHeadUpdate('heading')} value={props.dataModel.components[1].heading} />
+
+
+
           </Section>
           <ForceButton />
         </Configurator>

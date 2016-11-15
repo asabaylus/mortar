@@ -14,13 +14,16 @@ const FiveUpCard = (props) => {
 
   const kicker = [];
 
-  if(props.text.kicker && !props.config.sponsored) {
+  if(props.showKicker && props.text.kicker && !props.config.sponsored) {
     if(attrs.href) {
       kicker.push(<span key={`kicker-container-${props.cardNum}`} className={attrs.className}><a href={attrs.href} target={attrs.target} className="mt3_kicker--link">{props.text.kicker.label}</a></span>);
     } else {
       kicker.push(<span key={`kicker-container-${props.cardNum}`} className={attrs.className} dangerouslySetInnerHTML={{__html: props.text.kicker.label}} />);
     }
   } else if(props.config.sponsored) {
+    if(!props.showKicker) {
+      attrs.className += ' mt3_fiveup-no-kicker'
+    }
     kicker.push(<span key={`kicker-container-${props.cardNum}`} className={attrs.className} dangerouslySetInnerHTML={{__html: props.text.sponsorContentLabel}} />);
   }
 
@@ -44,7 +47,7 @@ const FiveUpCard = (props) => {
         <div className="mt3_row mt3_fiveup-kicker">
           <div className="mt3_kicker-wrapper">
             {kicker.length ? kicker : null}
-            {(props.type === 'video' && props.text.duration) ? <span className={`${attrs.className} mt3_kicker`} dangerouslySetInnerHTML={{__html: props.text.duration}} /> : null}
+            {(props.showKicker && props.type === 'video' && props.text.duration) ? <span className={`${attrs.className} mt3_kicker`} dangerouslySetInnerHTML={{__html: props.text.duration}} /> : null}
           </div>
         </div> : null }
         <div className={rowClass}>

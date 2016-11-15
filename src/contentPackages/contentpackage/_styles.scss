@@ -104,18 +104,14 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     padding-left: 30px;
     position: relative;
 
+    .mt3_fiveup--no-kicker & {
+      margin-bottom: 15px;
+    }
+
     &:hover {
       .mt3_fiveup-divlink::after {
         color: $mt3_color-white;
       }
-    }
-
-    @media (min-width: $mt3_medium) {
-      padding-left: 40px;
-    }
-
-    @media (min-width: $mt3_large) {
-      padding-left: 50px;
     }
 
     &-row {
@@ -133,7 +129,34 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
       content: '';
       position: absolute;
       width: 60%;
+
+      .mt3_fiveup--no-numbers & {
+        width: calc(100% - 60px);
+      }
+
     }
+
+    @media (min-width: $mt3_medium) {
+      padding-left: 40px;
+
+      &::after {
+        .mt3_fiveup--no-numbers & {
+          width: calc(100% - 80px);
+        }
+      }
+    }
+
+    @media (min-width: $mt3_large) {
+      padding-left: 50px;
+
+      &::after {
+        .mt3_fiveup--no-numbers & {
+          width: calc(100% - 100px);
+        }
+      }
+    }
+
+
   }
 
   &-divlink {
@@ -159,6 +182,10 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
       position: absolute;
       right: 7%;
       z-index: 3;
+
+      .mt3_fiveup--no-numbers & {
+        display: none;
+      }
     }
   }
 
@@ -186,6 +213,10 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     }
   }
 
+  &-no-kicker {
+    margin-top: 19px;
+  }
+
   .mt3_fiveup-card-title {
     color: $mt3_color-white;
     @extend %mt3_haas;
@@ -204,6 +235,15 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
   &-row {
     background-color: $mt3_color-black;
     position: relative;
+
+    // in the case where kickers are turned off, we still need to give the last card the bottom margin to hold space in the component
+    &:last-of-type {
+      .mt3_fiveup--no-kicker & {
+        .mt3_fiveup-card {
+          margin-bottom: 30px;
+        }
+      }
+    }
 
     &--top {
 

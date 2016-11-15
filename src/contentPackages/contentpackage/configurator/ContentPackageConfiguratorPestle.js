@@ -24,6 +24,8 @@ class ContentPackageConfigurator extends Module {
             'itemId': 'lr_mostRead',
             'type': 'mostRead',
             'heading': 'Most Read',
+            'showKickers': false,
+            'showNumbers': false,
             'stories': [
               {
                 'type': 'article',

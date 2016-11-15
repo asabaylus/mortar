@@ -3,6 +3,7 @@
 import React, { Component, PropTypes } from 'react';
 import EQ from '../../../util/EQ.js';
 import FiveUpCard from './FiveUpCard.js';
+import classNames from 'classnames';
 
 class FiveUpComponent extends Component {
 
@@ -21,7 +22,9 @@ class FiveUpComponent extends Component {
       theme: componentTheme,
       model: {
         heading: componentHead,
-        stories: componentStories
+        stories: componentStories,
+        showKickers,
+        showNumbers
       },
     } = this.props;
 
@@ -31,6 +34,12 @@ class FiveUpComponent extends Component {
       '740': 'mt3_fiveup--desktop'
     };
 
+    let containerClassName = classNames({
+      'mt3_fiveup': true,
+      'mt3_fiveup--no-kicker': showKickers === false,
+      'mt3_fiveup--no-numbers': showNumbers === false
+    });
+
     const storyCards = componentStories.map((card, index) => {
       // Don't worry about adding to the array if it won't be shown
       if (index >= this.maxCards) {
@@ -38,18 +47,21 @@ class FiveUpComponent extends Component {
       }
 
       const showImage = (index === 0) ? true : false;
-      const containerRowClassName = (index === 0) ? 'mt3_row mt3_fiveup-row mt3_fiveup-row--top' : 'mt3_row mt3_fiveup-row';
+      let containerRowClassName = classNames({
+        'mt3_row mt3_fiveup-row': true,
+        'mt3_fiveup-row--top': index === 0
+      });
 
       return (
         <div key={`fiveUp-promo-row-container-${index}`} className={containerRowClassName}>
-          <FiveUpCard cardNum={index} key={`fiveUp-promo-${index}`} {...card} theme={'dark'} showImage={showImage} />
+          <FiveUpCard cardNum={index} key={`fiveUp-promo-${index}`} {...card} theme={'dark'} showImage={showImage} showKicker={showKickers} />
         </div>
       )
     });
 
     return (
       <EQ elementRef="fiveup" sizeClasses={fiveUpSizes} >
-        <div ref="fiveUpContainer" className="mt3_fiveup">
+        <div ref="fiveUpContainer" className={containerClassName}>
           <div className="mt3_left-and-right-package-header" dangerouslySetInnerHTML={{__html: componentHead}}/>
           {storyCards}
         </div>
@@ -64,6 +76,8 @@ FiveUpComponent.PropTypes = {
     id: PropTypes.string,
     type: PropTypes.string,
     heading: PropTypes.string,
+    showKickers: PropTypes.bool,
+    showNumbers: PropTypes.bool,
     stories: PropTypes.arrayOf(
       PropTypes.shape({
         type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
