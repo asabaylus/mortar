@@ -9,6 +9,15 @@
   They are, and should be placed in, part of its respective components.
 */
 
+
+// Extends
+
+%mt3_text {
+  @extend %mt3_haas;
+  font-weight: 400;
+}
+
+
 .mt3_page-title--large {
   @extend %mt3_verlag;
   font-size: $mt3_fs-med-xlrg;

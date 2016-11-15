@@ -14,7 +14,7 @@
       display: inline-block;
       height: $mt3_checkbox-height;
       margin-right: $mt3_unit * .75;
-      opacity: .9;
+      opacity: $mt3-input-default-opacity;
       vertical-align: bottom;
       width: $mt3_checkbox-width;
     }

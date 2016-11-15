@@ -4,6 +4,11 @@
   padding: $mt3_fs-sm $mt3_unit;
   transition: 400ms;
 
+  &:not(.mt3_textarea) {
+    @extend %mt3_verlag;
+    font-weight: 400;
+  }
+
   &:focus,
   &:hover {
     border: $mt3_border-default-hover;
@@ -32,5 +37,11 @@
 }
 
 .mt3_textarea {
+  @extend %mt3_haas;
+  font-weight: 400;
   min-height: $mt3_unit * 6;
+
+  &::placeholder {
+    @extend %mt3_verlag;
+  }
 }

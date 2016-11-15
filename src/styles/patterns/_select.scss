@@ -21,11 +21,13 @@
 
 // Default state
 .mt3_select-input {
+  @extend %mt3_verlag;
   appearance: none;
   background: $mt3_color-white;
   border: $mt3_border-default;
   border-radius: 0;
   cursor: pointer;
+  font-weight: 400;
   padding: $mt3_fs-sm $mt3_fs-med-xlrg $mt3_fs-sm $mt3_fs-sm;
   width: 100%;
 
