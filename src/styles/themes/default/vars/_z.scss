@@ -73,6 +73,8 @@ $z-index-layers: (
   'promocard-bottom': $mt3_z-main-content-standard-ads,
   'promocard-middle' : $mt3_z-main-content-standard-ads + 3,
   'promocard-top' : $mt3_z-main-content-standard-ads + 10,
+  'promocard-top-link' : $mt3_z-main-content-standard-ads + 11,
+  'promocard-top-kicker-link' : $mt3_z-main-content-standard-ads + 12,
   'showcard-back': $mt3_z-main-content-standard-ads + 2,
   'showcard-middle' : $mt3_z-main-content-standard-ads + 3,
   'showcard-top' : $mt3_z-main-content-standard-ads + 4,
@@ -85,5 +87,3 @@ $z-index-layers: (
   'site-top' : $mt3_z-main-content-standard-ads + 999,
   'channel-branding-middle' : $mt3_z-main-content-standard-ads + 3
 );
-
-
