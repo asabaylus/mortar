@@ -57,7 +57,6 @@ class PodPromoComponent extends Component {
           brandingBadge: componentHeading,
           title: componentTitle,
           credit: photoCredit,
-          affiliation: photoAffiliation,
           assetSource: photoSource,
           kicker: componentKicker,
           sponsorContentLabel: sponsorLabel,
@@ -145,7 +144,7 @@ class PodPromoComponent extends Component {
                 photoCredit ? <div className="mt3_caption-creditname mt3_podpromo-photocredit" dangerouslySetInnerHTML={{__html: photoCredit}} /> : null
               }
               {
-                photoAffiliation ? <div className="mt3_caption-credit mt3_podpromo-affiliation" dangerouslySetInnerHTML={{__html: photoAffiliation}} /> : null
+                photoSource ? <div className="mt3_caption-credit mt3_podpromo-source" dangerouslySetInnerHTML={{__html: photoSource}} /> : null
               }
             </div>
           </div>
@@ -182,8 +181,7 @@ PodPromoComponent.propTypes = {
       title: React.PropTypes.string,
       dek: React.PropTypes.string,
       credit: React.PropTypes.string,
-      affiliation: React.PropTypes.string,
-      assestSource: React.PropTypes.string,
+      assetSource: React.PropTypes.string,
       kicker: React.PropTypes.shape({
         label: React.PropTypes.string,
         url: React.PropTypes.string,
