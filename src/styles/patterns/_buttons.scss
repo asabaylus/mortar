@@ -16,22 +16,12 @@
     background-color: $mt3_color-affirmation;
     border: 1px solid $mt3_color-affirmation;
     color: $mt3_color-white;
-
-    &:hover {
-      background-color: $mt3_color-affirmation-l;
-      border: 1px solid $mt3_color-affirmation-l;
-    }
   }
 
   &--error {
     background-color: $mt3_color-danger;
     border: 1px solid $mt3_color-danger;
     color: $mt3_color-white;
-
-    &:hover {
-      background-color: $mt3_color-danger-l;
-      border: 1px solid $mt3_color-danger-l;
-    }
   }
 }
 
