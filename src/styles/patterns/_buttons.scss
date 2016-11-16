@@ -28,11 +28,6 @@
 .mt3_btn--default {
   background-color: $mt3_color-primary;
 
-  &:hover {
-    background-color: $mt3_color-primary;
-    border: 1px solid $mt3_color-primary;
-  }
-
   &--inverse {
     color: $mt3_color-white;
   }
@@ -46,20 +41,11 @@
 }
 
 .mt3_btn--secondary {
-  border: 1px solid $mt3_color-primary;
-
-  &:hover {
-    background: $mt3_color-primary;
-  }
+  border: 1px solid $mt3_color-black;
 
   &--inverse {
-    border: 1px solid $mt3_color-primary;
+    border: 1px solid $mt3_color-white;
     color: $mt3_color-white;
-
-    &:hover {
-      background: $mt3_color-primary;
-      color: $mt3_color-black;
-    }
   }
 
   &--inactive {
@@ -72,11 +58,6 @@
 .mt3_btn--naked {
   background: none;
 
-  &:hover {
-    background-color: transparent;
-    color: $mt3_color-primary;
-  }
-
   &--inverse {
     color: $mt3_color-white;
   }
@@ -85,14 +66,21 @@
     border: 0;
     color: transparentize($mt3_color-gray-40, .6);
     cursor: default;
+  }
+}
 
-    &:hover {
-      color: transparentize($mt3_color-gray-40, .6);
-    }
+.mt3_btn--alternate {
+  background: $mt3_color-black;
+  color: $mt3_color-white;
+
+  &--inverse {
+    background: $mt3_color-white;
+    color: $mt3_color-black;
   }
 }
 
 .mt3_btn-nakedicon {
+  color: $mt3_color-primary;
   height: 10px;
   margin-left: 10px;
   width: 10px;
