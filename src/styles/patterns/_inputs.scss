@@ -1,12 +1,13 @@
 .mt3_input {
   border: $mt3_border-default;
+  font-size: $mt3_fs-xsm;
   opacity: .9;
   padding: $mt3_fs-sm $mt3_unit;
   transition: 400ms;
 
   &:not(.mt3_textarea) {
     @extend %mt3_verlag;
-    font-weight: 400;
+    font-weight: $mt3_verlag-bold;
   }
 
   &:focus,
@@ -43,5 +44,6 @@
 
   &::placeholder {
     @extend %mt3_verlag;
+    font-weight: $mt3_verlag-bold;
   }
 }
