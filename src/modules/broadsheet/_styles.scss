@@ -1,0 +1,322 @@
+$mt3_tiny: 375px;
+$mt3_small: 768px;
+$mt3_medium: 1024px;
+$mt3_large: 1280px;
+
+
+// Layout
+.mt3_broadsheet_row {
+  align-items: stretch;
+  clear: both;
+  display: flex;
+  flex-direction: row;
+
+  @media(max-width: $mt3_small) {
+    flex-direction: column;
+  }
+}
+
+.mt3_broadsheet_wrapper--grow {
+  transition: box-shadow 1s ease-in-out;
+
+  @media(min-width: $mt3_medium + 1) {
+    box-shadow: inset 0 0 0 60px $mt3_color-primary;
+  }
+
+  @media(min-width: $mt3_tiny + 1) and (max-width: $mt3_medium) {
+    box-shadow: inset 0 0 0 47px $mt3_color-primary;
+  }
+
+  @media(max-width: $mt3_tiny) {
+    box-shadow: inset 0 0 0 23px $mt3_color-primary;
+  }
+}
+
+.mt3_broadsheet {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+
+  header {
+    // permit absolute positioned hero title to align
+    // bottom for mobile screens
+    position: relative;
+  }
+
+  @media(min-width: $mt3_medium + 1) {
+    border: 60px solid rgba(0,0,0,0);
+  }
+
+  @media(min-width: $mt3_tiny + 1) and (max-width: $mt3_medium) {
+    border: 47px solid rgba(0,0,0,0);
+  }
+
+  @media(max-width: $mt3_tiny) {
+    border: 23px solid rgba(0,0,0,0);
+  }
+
+  &-article {
+     flex: 1 0 0;
+     padding-bottom: 2.5rem;
+  }
+
+  &-aside {
+    width: 17.5rem;
+
+    @media(max-width: $mt3_tiny) {
+      width: 14.2rem
+    }
+
+    @media(max-width: $mt3_small) {
+      // because you have a little screen you suck and dont deserve to read the same content -- Mobile Second thank you Code & Theory!
+      display: none;
+    }
+  }
+
+  &-magazine-title {
+    // Natgeo banner cetered in gold border
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    line-height: 0;
+    position: relative;
+    text-decoration: none;
+
+    @media(min-width: $mt3_medium + 1) {
+      top: -28px;
+    }
+
+    @media(min-width: $mt3_tiny + 1) and (max-width: $mt3_medium) {
+      top: -22px;
+    }
+
+    @media(max-width: $mt3_tiny) {
+      display: none;
+    }
+  }
+
+  .mt3_broadsheet-leadMedia {
+    &-header {
+      left: auto;
+      position: absolute;
+      top: 50px;
+      width: 100%;
+      z-index: 1;
+
+      @media(max-width: $mt3_tiny) {
+        // align the hero img title to bottom for mobile
+        bottom: 0px;
+        top: auto;
+      }
+    }
+
+    &-issue-date {
+      border-left: 1px solid rgba(255,255,255,.5);
+      border-right: 1px solid rgba(255,255,255,.5);
+      color: white;
+      font-size: .8rem;
+      font-weight: 100;
+      // font-weight: 600;  // duplicated overriden style
+      letter-spacing: .05em;
+      line-height: 1.15;
+      margin-top: 50px;
+      padding: 0 2rem;
+      text-transform: uppercase;
+    }
+
+    &-title {
+      display: block;
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.15;
+      margin: 0px 20% 30px;
+      padding: 0;
+      text-transform: none;
+
+      @media(max-width: $mt3_tiny) {
+        margin: 0px 10% 30px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+        letter-spacing: .05em;
+        margin: 12px 0;
+
+        @media(max-width: $mt3_tiny) {
+          font-size: 1.3rem;
+        }
+      }
+
+      p {
+        line-height: 0;
+        margin: 6px 0;
+      }
+    }
+
+    &-image {
+      position: relative;
+      top: 0;
+      width: 100%;
+      z-index: 0;
+    }
+
+    &-image-overlay {
+      padding-bottom: 56.49717514124294%;
+    }
+
+    &-by-label,
+    &-photograph-label {
+      color: #CCCCCC;
+      font-size: .7rem;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    &-by,
+    &-photograph {
+      color: $mt3_color-white;
+      font-size: .7rem;
+      font-weight: 500;
+    }
+
+    &-attributions {
+      padding-bottom: 1.2rem;
+    }
+  }
+
+  .mt3_article {
+    padding-left: 104px;
+    text-align: left;
+
+    @media(max-width: $mt3_tiny) {
+      padding-left: 2.7rem;
+    }
+
+    @media(max-width: $mt3_small) {
+      padding-left: 0;
+    }
+
+    p {
+      @media(max-width: $mt3_small) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+
+    .lead-paragraph {
+      font-family: $mt3_verlag-stack;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      line-height: 1.6;
+    }
+  }
+
+  .mt3_broadsheet-aside {
+    background: $mt3_color-gray-2;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    right: -60px;
+
+    // ok this sucks, we both know it's badly done -- deal with it
+    .mt3_broadsheet-aside-v-background {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><line x1="50%" y1="0" x2="50%" y2="100%" stroke-width=".5" stroke="#999999"/></svg>');
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        background: $mt3_color-gray-2;
+        margin: 20px auto 0;
+        padding: 14px;
+        text-align: center;
+      }
+    }
+
+    // remove the centered vertical rule from the right cols last entry
+    &:after {
+      background: $mt3_color-gray-2;
+      clear: both;
+      content: "";
+      float: left;
+      height: 30px;
+      width: 100%;
+    }
+  }
+
+  .mt3_broadsheet-story {
+    &-also-in {
+      background-color: $mt3_color-gray-2;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      line-height: 1.6;
+      margin: 30px 0;
+      padding: 12px;
+    }
+
+    &-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      line-height: 1.15;
+      margin: 0 0 .2rem 0;
+    }
+
+    &-dek {
+      font-family: Georgia, serif;
+      font-size: .9rem;
+      font-weight: normal;
+      line-height: 1.6875;
+      margin: 0;
+    }
+  }
+
+  .mt3_broadsheet-cover-heading {
+    background: $mt3_color-black;
+    color: $mt3_color-white;
+    padding-bottom: 1rem;
+    text-align: center;
+
+    & > p {
+      font-size: .7rem;
+      margin: 0;
+      padding: 1rem;
+    }
+  }
+
+  .mt3_broadsheet-subscribe-label {
+    font-weight: 600;
+    letter-spacing: .1em;
+    line-height: 1.6;
+  }
+
+  section {
+    background-color: $mt3_color-white;
+    position: relative;
+
+    figure {
+      margin: 0;
+    }
+  }
+
+  //specific height rules to match the exact height of the expected text
+  &__title {
+    @media (min-width: $mt3_small) {
+      height: 47px;
+    }
+
+    @media (min-width: $mt3_medium) {
+      height: 64px;
+    }
+
+    @media (min-width: $mt3_large) {
+      height: 93px;
+    }
+  }
+}
