@@ -56,14 +56,6 @@ td, th {
 // ====================
 
 
-.intro-txt {
-  text-align: center;
-
-  @media #{$mt3_mq-lg} {
-    text-align: left;
-  }
-}
-
 .examplelink {
   &:link,
   &:visited {
@@ -79,11 +71,6 @@ td, th {
   word-wrap: break-word;
 }
 
-.version {
-  color: #796204;
-  font-weight: normal;
-  font-size: 1rem;
-}
 
 // ====================
 // Page Wrapper
