@@ -51,15 +51,14 @@
 }
 
 .mt3_page-description {
-  @extend %mt3_haas;
-  font-size: $mt3_fs-med;
-  font-weight: 400;
-  line-height: 1.37;
+  font-family: $mt3_georgia-stack;
+  font-size: $mt3_h-base;
+  line-height: 1.6;
 }
 
 .mt3_kicker {
-  border-right: 1px solid $mt3_color-gray-50;
   @extend %mt3_verlag;
+  border-right: 1px solid $mt3_color-gray-50;
   font-size: .75rem;
   font-weight: 400;
   line-height: 1.5;
@@ -72,7 +71,6 @@
   }
 
   &--link {
-
     & {
       color: inherit;
       text-decoration: none;
