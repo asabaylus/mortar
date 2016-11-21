@@ -7,6 +7,7 @@
 
   &:not(.mt3_textarea) {
     @extend %mt3_verlag;
+    font-size: $mt3_fs-xsm;
     font-weight: $mt3_verlag-bold;
   }
 
@@ -39,11 +40,13 @@
 
 .mt3_textarea {
   @extend %mt3_haas;
+  font-size: $mt3_fs-sm;
   font-weight: 400;
   min-height: $mt3_unit * 6;
 
   &::placeholder {
     @extend %mt3_verlag;
+    font-size: $mt3_fs-xsm;
     font-weight: $mt3_verlag-bold;
   }
 }
