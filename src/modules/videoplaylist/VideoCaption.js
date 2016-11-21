@@ -26,6 +26,7 @@ class VideoCaption extends Component {
       $(this.refs.abstract).trigger('update');
     }, 500)
     window.addEventListener('resize', this.resizeHandler);
+    this.props.onUpdate(this.caption.offsetHeight);
   }
 
   componentWillUnmount() {
@@ -67,7 +68,10 @@ class VideoCaption extends Component {
       : null;
 
     return (
-      <div className="mt3_video-playlist--current-information mt3_bgcolor--gray80">
+      <div
+        className="mt3_video-playlist--current-information"
+        ref={node => { this.caption = node; }}
+      >
         <div className="mt3_kicker-wrapper">
           {subHeadingContent}
         </div>

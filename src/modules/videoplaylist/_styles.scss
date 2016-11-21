@@ -3,6 +3,18 @@
 $mt3_playlist-l-screen: 1600px;
 $mt3_small-title-width: 768px;
 $mt3_medium-title-width: 1024px;
+$animation-duration: 600ms;
+
+@at-root {
+  @keyframes show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
 
 .mt3_video-playlist {
   display: flex;
@@ -76,8 +88,35 @@ $mt3_medium-title-width: 1024px;
     }
   }
 
-  &--current-information {
+  &__video-info-container {
+    backface-visibility: hidden;
     margin-left: 100px;
+    overflow: hidden;
+    transition: all $animation-duration ease;
+
+    @include respond-to(l) {
+      margin-left: 90px;
+    }
+
+    @include respond-to(m) {
+      background-color: $mt3_color-black;
+      margin-left: 0;
+      order: 1;
+    }
+
+    @include respond-to(s) {
+      background-color: $mt3_color-black;
+      margin-left: 0;
+      order: 1;
+    }
+  }
+
+  &--current-information {
+    @include respond-to-multiple(l, xl) {
+      animation: show $animation-duration forwards ease;
+    }
+
+    backface-visibility: hidden;
     padding: 40px 80px 0 60px;
 
     a {
@@ -155,21 +194,14 @@ $mt3_medium-title-width: 1024px;
     }
 
     @include respond-to(l) {
-      margin-left: 90px;
       padding-left: 40px;
     }
 
     @include respond-to(m) {
-      background-color: $mt3_color-black;
-      margin-left: 0;
-      order: 1;
       padding: 15px 70px 40px;
     }
 
     @include respond-to(s) {
-      background-color: $mt3_color-black;
-      margin-left: 0;
-      order: 1;
       padding: 15px 30px 40px;
     }
 

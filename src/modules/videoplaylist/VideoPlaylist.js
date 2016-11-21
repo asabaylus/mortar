@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 import Velocity from 'velocity-animate';
 import classNames from 'classnames';
 import _defer from 'lodash/defer';
+
 import EmbeddedVideo from '../video/video';
 
 import VideoThumbnail, { KICKER_TYPES } from './VideoThumbnail';
@@ -225,12 +226,13 @@ class VideoPlaylist extends Component {
 
   render() {
     const {videos} = this.props.dataModel;
-    const currentVideo = videos[this.state.currentVideoIndex];
+    const {currentVideoIndex: videoIndex} = this.state;
+    const currentVideo = videos[videoIndex];
     const thumbnails = videos.map((item, index) => {
-      const kickerType = KICKER_TYPES[index - this.state.currentVideoIndex];
+      const kickerType = KICKER_TYPES[index - videoIndex];
       const thumbClass = classNames({
         'mt3_video-playlist-container--thumbnail': true,
-        'mt3_video-playlist-container--active-thumbnail': this.state.currentVideoIndex === index,
+        'mt3_video-playlist-container--active-thumbnail': videoIndex === index,
         'mt3_hide-play': !this.props.autoContinue
       });
       return <VideoThumbnail key={index} wrapperClass={thumbClass} kickerType={kickerType} item={item} onClick={this.handleClick.bind(this, index)}/>
@@ -245,12 +247,19 @@ class VideoPlaylist extends Component {
                 <div className="mt3_video-playlist--heading__title mt3_color--white">{this.props.dataModel.heading}</div>
               </div>
             </div>
-            <VideoCaption
-              title={currentVideo.title}
-              abstract={currentVideo.abstract}
-              kicker={currentVideo.kicker}
-              duration={currentVideo.duration}
-            />
+            <div
+              className="mt3_bgcolor--gray80 mt3_video-playlist__video-info-container"
+              ref={node => { this.captionContainer = node; }}
+            >
+              <VideoCaption
+                key={Date.now()}
+                title={currentVideo.title}
+                abstract={currentVideo.abstract}
+                kicker={currentVideo.kicker}
+                duration={currentVideo.duration}
+                onUpdate={height => { this.setHeight(height); }}
+              />
+            </div>
             <EmbeddedVideo model={this.videoModel} lazyLoad={true}/>
           </div>
           <div className="mt3_col-12 mt3_col-md-3">
@@ -263,6 +272,15 @@ class VideoPlaylist extends Component {
         </div>
       </div>
     )
+  }
+
+  setHeight(height) {
+    //Manually set the height of the container in order to see the animation in
+    //height. Without the timeout the captionContainer doesn't any value so it
+    //fails.
+    setTimeout(() => {
+      this.captionContainer.style.height = height + 'px';
+    }, 0)
   }
 }
 
