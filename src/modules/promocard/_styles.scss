@@ -18,7 +18,8 @@ $mt3_large: 1280px;
       opacity: 1;
     }
 
-    &:not(.mt3_promocard-container--large) {
+    &:not(.mt3_promocard-container--large),
+    &.mt3_promocard-container--text-only {
       .mt3_promocard-title {
         color: $mt3_color-gray-40;
       }
