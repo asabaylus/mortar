@@ -39,19 +39,14 @@
   &:hover {
     border: $mt3_border-default-hover;
   }
-}
 
-
-// HACKS
-
-// For IE 11+
-.mt3_select-input {
+  // Hack for IE 11+
   &::-ms-expand {
     display: none;
   }
 }
 
-// For firefox
+// Hack for FF
 .mt3_select-option {
   color: $mt3_color-gray-80;
 }

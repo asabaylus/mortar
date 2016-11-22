@@ -29,6 +29,10 @@
       top: 50%;
       width: 40px;
     }
+
+    th, td {
+      border: 0;
+    }
   }
 
   // This is a fix for the load into the playlist on FF and Edge, due to Flexbox
