@@ -4,7 +4,7 @@ $mt3_color-inverse: $mt3_color-white;
 .mt3_video-modal {
   &-kicker {
     @extend .mt3_kicker;
-    @include couldBeRichText();
+    @include couldBeRichText;
     float: left;
     line-height: 1;
     margin-bottom: 10px;
@@ -12,9 +12,12 @@ $mt3_color-inverse: $mt3_color-white;
     text-decoration: none;
     z-index: zIndex('video-modal-kicker');
 
-    a:hover, a.mt3_promocard-kicker:hover {
-      cursor: pointer;
-      text-decoration: underline;
+    a {
+      &:hover,
+      &.mt3_promocard-kicker:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
     }
 
     &--inverse {
@@ -54,14 +57,15 @@ $mt3_color-inverse: $mt3_color-white;
     font-size: $mt3_h-med9 + (2 / 16);
 
     @include respond-to-multiple(s, m) {
-      font-size: $mt3_h-sm5;
+      font-size: $mt3_h-sm6;
     }
   }
 
   &__description {
     margin: 30px 0 40px;
+
     .mt3_caption-body {
-      @include couldBeRichText();
+      @include couldBeRichText;
     }
   }
 }

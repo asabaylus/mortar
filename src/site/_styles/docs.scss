@@ -164,6 +164,12 @@ hr {
 .footer {
   padding-bottom: 2.5em;
   padding-top: 2.5em;
+
+  .github-wrapper {
+    * {
+      vertical-align: middle;
+    }
+  }
 }
 
 .copyright {

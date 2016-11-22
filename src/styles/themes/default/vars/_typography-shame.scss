@@ -64,17 +64,15 @@
   line-height: 1.5;
   padding: 0 1.25rem;
 
-  //If there are multiple kickers in a row,
+  // If there are multiple kickers in a row,
   // only the first kicker has a border-left
   &:nth-child(1) {
     border-left: 1px solid $mt3_color-gray-50;
   }
 
   &--link {
-    & {
-      color: inherit;
-      text-decoration: none;
-    }
+    color: inherit;
+    text-decoration: none;
 
     &:hover,
     &:active,

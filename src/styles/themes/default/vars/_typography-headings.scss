@@ -77,7 +77,7 @@
 
 .mt3_heading--h2--1,
 .mt3_heading--h2--3 {
-  font-size: $mt3_h-sm6;
+  font-size: $mt3_h-sm7;
 
   @media #{$mt3_mq-md} {
     font-size: $mt3_h-med5;
@@ -102,7 +102,7 @@
 
 .mt3_heading--h3--1,
 .mt3_heading--h3--3 {
-  font-size: $mt3_h-sm4;
+  font-size: $mt3_h-sm5;
 
   @media #{$mt3_mq-md} {
     font-size: $mt3_h-med3;
@@ -127,10 +127,10 @@
 
 .mt3_heading--h4--1,
 .mt3_heading--h4--3 {
-  font-size: $mt3_h-sm6;
+  font-size: $mt3_h-sm7;
 
   @media #{$mt3_mq-md} {
-    font-size: $mt3_h-sm5;
+    font-size: $mt3_h-sm6;
   }
 
   @media #{$mt3_mq-lg} {
@@ -155,24 +155,24 @@
   font-size: $mt3_h-sm2;
 
   @media #{$mt3_mq-md} {
-    font-size: $mt3_h-sm6;
+    font-size: $mt3_h-sm7;
   }
 
   @media #{$mt3_mq-lg} {
-    font-size: $mt3_h-sm3;
+    font-size: $mt3_h-sm4;
   }
 }
 
 .mt3_heading--h5--2 {
   @extend %mt3_verlag;
-  font-size: $mt3_h-sm3;
+  font-size: $mt3_h-sm4;
 
   @media #{$mt3_mq-md} {
-    font-size: $mt3_h-sm4;
+    font-size: $mt3_h-sm5;
   }
 
   @media #{$mt3_mq-lg} {
-    font-size: $mt3_h-sm6;
+    font-size: $mt3_h-sm7;
   }
 }
 

@@ -7,6 +7,7 @@ $mt3_fourup_small_offset: 15px;
 $mt3_fourup_small_image_width: 33%;
 $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
 
+
 .mt3_left-and-right-package {
   background: $mt3_color-gray-86;
 
@@ -33,10 +34,10 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
   }
 
   &-header {
+    @extend %mt3_verlag;
     background: $mt3_color-gray-86;
     border-left: 1px solid $mt3_color-primary;
     color: $mt3_color-white;
-    @extend %mt3_verlag;
     font-size: 30px;
     font-weight: 400;
     line-height: 1.05;
@@ -76,7 +77,9 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
 
   .left-rail,
   .right-rail {
-      min-height: 1px; //this rule enables the rail to still take up space even if it has no relative-positioned content (for parallax purposes)
+      /* this rule enables the rail to still take up space even if it has no
+        relative-positioned content (for parallax purposes) */
+      min-height: 1px;
   }
 }
 
@@ -133,7 +136,6 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
       .mt3_fiveup--no-numbers & {
         width: calc(100% - 60px);
       }
-
     }
 
     @media (min-width: $mt3_medium) {
@@ -155,8 +157,6 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
         }
       }
     }
-
-
   }
 
   &-divlink {
@@ -170,12 +170,11 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     z-index: 3;
 
     &::after {
+      @extend %mt3_verlag;
       bottom: 0;
       color: $mt3_color-gray-86;
       content: counter(row-count);
       counter-increment: row-count;
-
-      @extend %mt3_verlag;
       font-size: 80px;
       font-weight: 400;
       line-height: .7;
@@ -213,13 +212,9 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     }
   }
 
-  &-no-kicker {
-    margin-top: 19px;
-  }
-
   .mt3_fiveup-card-title {
-    color: $mt3_color-white;
     @extend %mt3_haas;
+    color: $mt3_color-white;
     font-size: 18px;
     font-weight: 600;
     line-height: 1.3;
@@ -232,11 +227,16 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     z-index: 2;
   }
 
+  &-no-kicker {
+    margin-top: 19px;
+  }
+
   &-row {
     background-color: $mt3_color-black;
     position: relative;
 
-    // in the case where kickers are turned off, we still need to give the last card the bottom margin to hold space in the component
+    /* in the case where kickers are turned off, we still need to give
+       the last card the bottom margin to hold space in the component */
     &:last-of-type {
       .mt3_fiveup--no-kicker & {
         .mt3_fiveup-card {
@@ -246,7 +246,6 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
     }
 
     &--top {
-
       .mt3_fiveup-card {
         padding-bottom: 30px;
         padding-top: 30px;
@@ -271,12 +270,10 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
           color: $mt3_color-primary;
         }
       }
-
     }
   }
 
   .mt3_fiveup-row:hover {
-
     .mt3_videopromo-button {
       background-color: $mt3_color-primary;
       color: $mt3_color-black;
@@ -285,9 +282,7 @@ $mt3_fourup_small_text_width: (100 - $mt3_fourup_small_image_width);
   }
 }
 
-
 .mt3_fourup {
-
   &-row {
     padding-left: $mt3_left_and_right_package_padding;
 

@@ -1,7 +1,7 @@
-@mixin couldBeRichText($type:"") {
-  //if the type "inline-block" is passed, both the element and potential child <p> elements will be styled as inline-block
+@mixin couldBeRichText($type: "") {
   @if $type == "inline-block" {
-    &, p {
+    &,
+    p {
       display: inline-block;
     }
   }
@@ -12,15 +12,14 @@
     }
   }
 
-
   p {
     margin-bottom: 0;
 
-    //when there are multiple paragraphs, only the first will have no top margin
     &:first-of-type {
       margin-top: 0;
     }
   }
+
   a {
     color: inherit;
     text-decoration: inherit;

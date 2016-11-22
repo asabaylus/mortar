@@ -10,23 +10,19 @@ rules:
   force-pseudo-nesting:
     - 0
   function-name-format:
-    - 1
-    -
-      convention: 'mt3_([a-z0-9\-]+)'
-      convention-explanation: 'All function names must be prefaced with "mt3_" and contain only lowercase letters and dashes afterward'
+    - 0
   no-mergeable-selectors:
     - 2
     -
       whitelist:
         - '.mt3_col-,#{$mt3_bp}-$mt3_i'
+  no-css-comments: 0
   placeholder-name-format:
     - 2
     -
       convention: 'mt3_([a-z0-9\-]+)'
       convention-explanation: 'All placeholder names must be prefaced with "mt3_" and contain only lowercase letters and dashes afterward'
   property-sort-order: 2
+  space-before-colon: 0
   variable-name-format:
-    - 1
-    -
-      convention: 'mt3_([a-z0-9\-]+)'
-      convention-explanation: 'All variable names must be prefaced with "mt3_" and contain only lowercase letters and dashes afterward'
+    - 0

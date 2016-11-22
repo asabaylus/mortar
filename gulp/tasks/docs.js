@@ -13,6 +13,10 @@ const fs = require('fs');
 
 const paths = require('./paths');
 
+const packageJson = JSON.parse(fs.readFileSync('./package.json'));
+const curVersion = packageJson.version.toString();
+
+
 // Static server
 gulp.task('docs', ['icons'], function() {
   const fileList = fs.readdirSync(paths.mortarIconDir);
@@ -51,6 +55,7 @@ gulp.task('docs', ['icons'], function() {
     }
   }
 
+  debugger;
   Metalsmith('./')
   .clean(false)
   .source('./' + paths.siteSrc)
@@ -59,7 +64,8 @@ gulp.task('docs', ['icons'], function() {
     'title': 'Mortar',
     'description': 'A living styleguide for National Geographic Partners',
     'iconSprite': fs.readFileSync(paths.mortarIconsDest + 'mortar-symbol-sprite.svg', 'utf8'),
-    'cssSuffix': argv.p ? '.min' : ''
+    'cssSuffix': argv.p ? '.min' : '',
+    'version': curVersion ? 'v' + curVersion : 'Version not found! :S'
   })
   .ignore([
     '_layouts',

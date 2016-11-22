@@ -44,15 +44,15 @@ $mt3_large: 1280px;
   }
 
   @media(min-width: $mt3_medium + 1) {
-    border: 60px solid rgba(0,0,0,0);
+    border: 60px solid transparent;
   }
 
   @media(min-width: $mt3_tiny + 1) and (max-width: $mt3_medium) {
-    border: 47px solid rgba(0,0,0,0);
+    border: 47px solid transparent;
   }
 
   @media(max-width: $mt3_tiny) {
-    border: 23px solid rgba(0,0,0,0);
+    border: 23px solid transparent;
   }
 
   &-article {
@@ -68,13 +68,12 @@ $mt3_large: 1280px;
     }
 
     @media(max-width: $mt3_small) {
-      // because you have a little screen you suck and dont deserve to read the same content -- Mobile Second thank you Code & Theory!
       display: none;
     }
   }
 
   &-magazine-title {
-    // Natgeo banner cetered in gold border
+    // Natgeo banner centered in gold border
     display: block;
     font-size: 12px;
     font-weight: 600;
@@ -112,9 +111,9 @@ $mt3_large: 1280px;
     }
 
     &-issue-date {
-      border-left: 1px solid rgba(255,255,255,.5);
-      border-right: 1px solid rgba(255,255,255,.5);
-      color: white;
+      border-left: 1px solid rgba($mt3_color-white, .5);
+      border-right: 1px solid rgba($mt3_color-white, .5);
+      color: $mt3_color-white;
       font-size: .8rem;
       font-weight: 100;
       // font-weight: 600;  // duplicated overriden style
@@ -162,12 +161,12 @@ $mt3_large: 1280px;
     }
 
     &-image-overlay {
-      padding-bottom: 56.49717514124294%;
+      padding-bottom: 56.497%;
     }
 
     &-by-label,
     &-photograph-label {
-      color: #CCCCCC;
+      color: $mt3_color-gray-30;
       font-size: .7rem;
       font-style: italic;
       font-weight: 500;
@@ -242,7 +241,7 @@ $mt3_large: 1280px;
     &:after {
       background: $mt3_color-gray-2;
       clear: both;
-      content: "";
+      content: '';
       float: left;
       height: 30px;
       width: 100%;

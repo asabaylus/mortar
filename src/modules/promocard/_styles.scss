@@ -6,6 +6,7 @@ $mt3_small: 768px;
 $mt3_medium: 1024px;
 $mt3_large: 1280px;
 
+
 .mt3_promocard-container {
   margin-bottom: 40px;
   overflow: hidden;
@@ -34,24 +35,30 @@ $mt3_large: 1280px;
     background: $mt3_color-black;
     border-top: 3px solid $mt3_color-primary;
     padding: 30px;
+
     &.mt3_promocard-container--large {
       .mt3_promocard-kicker {
         margin-left: 1.725%; /*matches .mt3_col-gut padding*/
       }
+
       @media(min-width: $mt3_small) {
-        /*not using shorthand to keep top and bottom padding as is - should match .hero-with-two-rails__rails left/right padding*/
+        /*not using shorthand to keep top and bottom padding as is
+        - should match .hero-with-two-rails__rails left/right padding*/
         padding-left: 40px;
         padding-right: 40px;
       }
+
       @media (min-width: $mt3_medium) {
-        /*not using shorthand to keep top and bottom padding as is - should match .hero-with-two-rails__rails left/right padding*/
+        /*not using shorthand to keep top and bottom padding as is
+        - should match .hero-with-two-rails__rails left/right padding*/
         padding-left: 60px;
         padding-right: 60px;
       }
     }
   }
 
-  a.mt3_div-link, div.mt3_div-link {
+  a.mt3_div-link,
+  div.mt3_div-link {
     cursor: pointer;
     height: 100%;
     left: 0;
@@ -61,7 +68,7 @@ $mt3_large: 1280px;
     z-index: zIndex('promocard-middle');
   }
 
-  &:-webkit-any-link{
+  &:-webkit-any-link {
     text-decoration: none;
   }
 
@@ -70,7 +77,8 @@ $mt3_large: 1280px;
     position: relative;
   }
 
-  &--large figure, figure.mt3_promocard-image--large {
+  &--large figure,
+  figure.mt3_promocard-image--large {
     margin: 0;
   }
 
@@ -154,7 +162,7 @@ $mt3_large: 1280px;
   }
 
   .mt3_promocard-pad {
-    padding-right:30px;
+    padding-right: 30px;
   }
 
   .mt3_promocard-gallery-images {
@@ -177,8 +185,8 @@ $mt3_large: 1280px;
         height: calc(100% - 60px);
         width: calc(100% - 60px);
       }
-
     }
+
     &--image2 {
       height: calc(100% - 30px);
       position: absolute;
@@ -191,7 +199,7 @@ $mt3_large: 1280px;
         bottom: 0;
         content: '';
         height: 100%;
-        opacity: 0.4;
+        opacity: .4;
         position: absolute;
         width: 100%;
         z-index: 2;
@@ -201,18 +209,18 @@ $mt3_large: 1280px;
         height: calc(100% - 40px);
         width: calc(100% - 40px);
       }
+
       &-large {
         height: calc(100% - 60px);
         width: calc(100% - 60px);
       }
-
     }
   }
 
   .mt3_promocard-gallery-cta {
-    font-size: 0.75rem;
+    font-size: .75rem;
     left: 60px;
-    letter-spacing: 0.2em;
+    letter-spacing: .2em;
     padding: 0;
     position: absolute;
     text-align: left;
@@ -231,13 +239,15 @@ $mt3_large: 1280px;
       left: 70px;
       top: 13px;
     }
+
     &--large {
       left: 90px;
       top: 24px;
     }
   }
 
-  .mt3_btn:hover, .mt3_btn--naked:hover {
+  .mt3_btn:hover,
+  .mt3_btn--naked:hover {
     color: white;
   }
 
@@ -254,7 +264,8 @@ $mt3_large: 1280px;
       position: relative;
     }
 
-    &[href], a[href] {
+    &[href],
+    a[href] {
       // if kicker is a link set it above big massive link
       z-index: zIndex('promocard-top-kicker-link');
 
@@ -284,7 +295,8 @@ $mt3_large: 1280px;
     margin-bottom: 10px;
     position: relative;
     text-decoration: none;
-     /*overwrite extended mt3_kicker*/
+
+    // overwrite extended mt3_kicker
     &:nth-child(1) {
       border-left: 1px solid #7694CB;
     }
@@ -300,9 +312,11 @@ $mt3_large: 1280px;
     &--small {
       font-size: 22px;
     }
+
     &--medium {
       font-size: 30px;
     }
+
     &--large {
       font-size: 42px;
     }
@@ -340,17 +354,19 @@ $mt3_large: 1280px;
   }
 
   .mt3_promocard-branding {
-    background-color: yellow;
+    background-color: $mt3_color-primary;
     padding: .5em 1em;
     position: absolute;
     top: 2em;
   }
-  /*overridden styles for kicker style = prompt*/
+
+  // overridden styles for kicker style = prompt
   &.mt3_promocard-container--prompt {
-    .mt3_promocard-kicker, .mt3_promocard-sponsored {
+    .mt3_promocard-kicker,
+    .mt3_promocard-sponsored {
+      @extend %mt3_haas;
       border: 0;
       color: $mt3_color-primary;
-      @extend %mt3_haas;
       font-size: 16px;
       font-weight: 600;
       padding: 0;

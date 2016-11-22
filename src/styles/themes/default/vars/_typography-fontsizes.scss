@@ -13,7 +13,7 @@ $mt3_fs-lrg:    1.375rem;    // 22px
 $mt3_fs-xlrg:   1.6875rem;   // 27px
 
 $mt3_fs-med-lrg:  2.5rem;    // 40px
-$mt3_fs-med-xlrg: 2.875rem; // 46px
+$mt3_fs-med-xlrg: 2.875rem;  // 46px
 
 $mt3_fs-xxlrg:  3.375rem;    // 54px
 $mt3_fs-xxxlrg: 4.0625rem;   // 65px
@@ -33,27 +33,26 @@ $mt3_unit-quadruple: $mt3_unit * 4;
 $mt3_h-base: 1.125rem;  // 18px
 
 $mt3_h-sm1: $mt3_h-base;
-$mt3_h-sm2: $mt3_h-base + (2/16);    // 20px
-$mt3_h-sm6: $mt3_h-base + (3/16);    // 22px
+$mt3_h-sm2: $mt3_h-base + (2 / 16);     // 20px
+$mt3_h-sm3: $mt3_h-base + (3 / 16);     // 22px
+$mt3_h-sm4: $mt3_h-base + (5 / 16);     // 23px
+$mt3_h-sm5: $mt3_h-base + (7 / 16);     // 25px
+$mt3_h-sm6: $mt3_h-base + (8 / 16);     // 26px
+$mt3_h-sm7: $mt3_h-base + (9 / 16);     // 27px
 
-$mt3_h-sm3: $mt3_h-base + (5/16);    // 23px
-$mt3_h-sm4: $mt3_h-base + (7/16);    // 25px
-$mt3_h-sm5: $mt3_h-base + (8/16);    // 26px
-$mt3_h-sm6: $mt3_h-base + (9/16);    // 27px
+$mt3_h-med1: $mt3_h-base + (10 / 16);   // 28px
+$mt3_h-med2: $mt3_h-base + (11 / 16);   // 29px
+$mt3_h-med3: $mt3_h-base + (12 / 16);   // 30px
+$mt3_h-med4: $mt3_h-base + (14 / 16);   // 32px
+$mt3_h-med5: $mt3_h-base + (16 / 16);   // 34px
+$mt3_h-med6: $mt3_h-base + (18 / 16);   // 36px
+$mt3_h-med7: $mt3_h-base + (20 / 16);   // 38px
+$mt3_h-med8: $mt3_h-base + (21 / 16);   // 39px
+$mt3_h-med9: $mt3_h-base + (22 / 16);   // 40px
+$mt3_h-med10: $mt3_h-base + (27 / 16);  // 45px
+$mt3_h-med11: $mt3_h-base + (28 / 16);  // 46px
 
-$mt3_h-med1: $mt3_h-base + (10/16);   // 28px
-$mt3_h-med2: $mt3_h-base + (11/16);   // 29px
-$mt3_h-med3: $mt3_h-base + (12/16);   // 30px
-$mt3_h-med4: $mt3_h-base + (14/16);   // 32px
-$mt3_h-med5: $mt3_h-base + (16/16);   // 34px
-$mt3_h-med6: $mt3_h-base + (18/16);   // 36px
-$mt3_h-med7: $mt3_h-base + (20/16);   // 38px
-$mt3_h-med8: $mt3_h-base + (21/16);   // 39px
-$mt3_h-med9: $mt3_h-base + (22/16);   // 40px
-$mt3_h-med10: $mt3_h-base + (27/16);   // 45px
-$mt3_h-med11: $mt3_h-base + (28/16);   // 46px
-
-$mt3_h-lg: $mt3_h-base + (29/16);   // 47px
-$mt3_h-lg2: $mt3_h-base + (32/16);   // 50px
-$mt3_h-xlg: $mt3_h-base + (37/16);  // 55px
-$mt3_h-xxlg: $mt3_h-base + (47/16);  // 65px
+$mt3_h-lg: $mt3_h-base + (29 / 16);     // 47px
+$mt3_h-lg2: $mt3_h-base + (32 / 16);    // 50px
+$mt3_h-xlg: $mt3_h-base + (37 / 16);    // 55px
+$mt3_h-xxlg: $mt3_h-base + (47 / 16);   // 65px

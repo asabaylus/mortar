@@ -17,10 +17,11 @@
     position: absolute;
     top: 0;
     width: 100%;
+
     &:after {
       border: 6px solid $mt3_default-modules-images-box-logo;
       box-sizing: border-box;
-      content: " ";
+      content: ' ';
       height: 58px;
       left: 50%;
       margin: -29px 0 0 -20px;
@@ -30,8 +31,8 @@
     }
   }
 
-  //This is a fix for the load into the playlist on FF and Edge, due to Flexbox
-  //and the aspect ratio didn't show the video box.
+  // This is a fix for the load into the playlist on FF and Edge, due to Flexbox
+  // and the aspect ratio didn't show the video box.
   &::after {
     content: '';
     display: block;

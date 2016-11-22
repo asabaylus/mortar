@@ -1,32 +1,32 @@
 .mt3_caption-body {
   @extend %mt3_haas;
-  font-size: 0.875rem;
+  font-size: .875rem;
   font-weight: 400;
   line-height: 1.43;
 }
 
 .mt3_caption-title {
   @extend %mt3_verlag;
-  font-size: 0.875rem;
+  font-size: .875rem;
   font-weight: 600;
   line-height: 1.43;
 }
 
 .mt3_caption-credit {
   @extend %mt3_verlag;
-  font-size: 0.6875rem;
+  font-size: .6875rem;
   font-weight: 400;
   line-height: 1.5;
 }
 
 .mt3_caption-creditname {
   @extend %mt3_verlag;
-  font-size: 0.6875rem;
+  font-size: .6875rem;
   font-weight: 700;
   line-height: 1.5;
 }
 
 .mt3_caption-container--indent {
-  border-left: 1px solid lightgray;
+  border-left: 1px solid $mt3_color-gray-10;
   padding-left: 30px;
 }

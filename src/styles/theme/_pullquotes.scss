@@ -1,7 +1,14 @@
 %mt3_pullquote {
+  border-bottom: 1px solid $mt3_color-gray-10;
+  border-top: 1px solid $mt3_color-gray-10;
+  color: $mt3_color-gray-80;
+  margin: ($mt3_fs-xxxlrg / 2) 0;
+  padding: ($mt3_fs-xxxlrg / 2) 0;
+
   p {
-    font-family: Georgia, serif;
-    // Font-size & line-height values are carried over from the existing .mt3_h3 styles
+    /* Font-size & line-height values are carried over
+      from the existing .mt3_h3 styles */
+    font-family: $mt3_georgia-stack;
     font-size: $mt3_fs-lrg;
     line-height: 1.185;
     margin-top: 0;
@@ -23,12 +30,6 @@
       content: '\201D';
     }
   }
-
-  border-bottom: 1px solid $mt3_color-gray-10;
-  border-top: 1px solid $mt3_color-gray-10;
-  color: $mt3_color-gray-80;
-  margin: ($mt3_fs-xxxlrg / 2) 0;
-  padding: ($mt3_fs-xxxlrg / 2) 0;
 
   @media #{$mt3_mq-lg} {
     padding: $mt3_fs-xxxlrg / 2;
@@ -63,5 +64,4 @@
   &--attributionname + &--attributiontitle {
     border-left: 0;
   }
-
 }

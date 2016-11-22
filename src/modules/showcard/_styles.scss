@@ -4,6 +4,7 @@
     color: $mt3_color-white;
     margin-bottom: 40px;
     position: relative;
+
     .mt3_div-link {
       cursor: pointer;
       height: 100%;
@@ -13,11 +14,13 @@
       width: 100%;
       z-index: zIndex('showcard-top');
     }
-    /*lead media*/
+
+    // lead media
     figure {
       margin: 0;
       position: relative;
     }
+
     .mt3_promocard-text--overlay {
       background: rgba(0,0,0, 0.2);
       bottom: 0;
@@ -28,6 +31,7 @@
       z-index: zIndex('showcard-back');
     }
   }
+
   &-text-container {
     height: 100%;
     left: 0;
@@ -36,27 +40,33 @@
     top: 0;
     width: 100%;
     z-index: zIndex('showcard-middle');
+
     .mt3_showcard--tablet & {
       padding: 0 60px;
     }
+
     .mt3_showcard--desktop & {
       padding: 0 100px;
     }
+
     .mt3_showcard--lg-desktop & {
       padding: 0 160px;
     }
   }
-  /*vertically center show card text*/
+
+  // vertically center show card text
   &-text-center {
     display: table;
     height: 100%;
     width: 100%;
   }
+
   &-text-cell {
     display: table-cell;
     text-align: center;
 		vertical-align: middle;
   }
+
   &-text {
     color: $mt3_color-white;
     display: inline-block;
@@ -67,9 +77,11 @@
     text-align: left;
     vertical-align: middle;
   }
-  &-heading, &-airdate {
+
+  &-heading,
+  &-airdate {
     display: block;
-    font-size: 0.75rem;
+    font-size: .75rem;
     line-height: 1.4;
     padding-left: 60px;
     .mt3_showcard--tablet & {
@@ -82,49 +94,59 @@
       padding-left: 160px;
     }
   }
-  &-heading, &-title {
-    @include couldBeRichText();
+
+  &-heading,
+  &-title {
+    @include couldBeRichText;
   }
+
   &-title {
     font-size: 22px;
     font-weight: 400;
     margin: 0.5em 0;
     padding-left: 30px;
     position: relative;
-    /*yellow index*/
+
+    // yellow index
     &:before {
       border-left: 3px solid map-get($mt3_colors, 'primary');
       content: '';
       display: inline-block;
-      height: 17px; //(fontsize - 5px)
+      height: 17px;  // (fontsize - 5px)
       left: 0;
       position: absolute;
       top: 2px;
     }
+
     .mt3_showcard--tablet & {
       font-size: 36px;
       padding-left: 40px;
-      /*yellow index*/
+
+      // yellow index
       &:before {
-        height: 28px; //(fontsize - 8px)
+        height: 28px;  // (fontsize - 8px)
         top: 3px;
       }
     }
+
     .mt3_showcard--desktop & {
       font-size: 50px;
       padding-left: 60px;
-      /*yellow index*/
+
+      // yellow index
       &:before {
-        height: 38px; //(fontsize - 12px)
+        height: 38px;  // (fontsize - 12px)
         top: 6px;
       }
     }
+
     .mt3_showcard--lg-desktop & {
       font-size: 60px;
       padding-left: 80px;
-      /*yellow index*/
+
+      // yellow index
       &:before {
-        height: 46px; //(fontsize - 14px)
+        height: 46px;  // (fontsize - 14px)
         top: 7px;
       }
     }

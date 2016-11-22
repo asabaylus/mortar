@@ -4,7 +4,7 @@
 
 
 @font-face {
-  font-family: "Haas";
+  font-family: 'Haas';
   font-style: normal;
   font-weight: 600;
   src:  url('//fonts.ngeo.com/haas/1-0-0/NeueHaasGroteskDispW04-65Md.woff2') format('woff2'),
@@ -12,7 +12,7 @@
 }
 
 @font-face {
-  font-family: "Haas";
+  font-family: 'Haas';
   font-style: italic;
   font-weight: 600;
   src:  url('//fonts.ngeo.com/haas/1-0-0/NeueHaasGroteskDispW04-66MdIt.woff') format('woff'),
@@ -20,7 +20,7 @@
 }
 
 @font-face {
-  font-family: "Haas";
+  font-family: 'Haas';
   font-style: normal;
   font-weight: 400;
   src:  url('//fonts.ngeo.com/haas/1-0-0/NeueHaasGroteskDispW04-55Rm.woff2') format('woff2'),
@@ -28,7 +28,7 @@
 }
 
 @font-face {
-  font-family: "Haas";
+  font-family: 'Haas';
   font-style: italic;
   font-weight: 400;
   src:  url('//fonts.ngeo.com/haas/1-0-0/NeueHaasGroteskDispW04-56It.woff2') format('woff2'),
@@ -44,12 +44,12 @@ $mt3_verlag-bold: 700;
 
 %mt3_verlag {
   font-family: $mt3_verlag-stack;
-  letter-spacing: 0.2em;
+  letter-spacing: .2em;
   text-transform: uppercase;
-  word-spacing: 0.05em;
+  word-spacing: .05em;
 }
 
 %mt3_haas {
   font-family: $mt3_haas-stack;
-  letter-spacing: 0.04em;
+  letter-spacing: .04em;
 }

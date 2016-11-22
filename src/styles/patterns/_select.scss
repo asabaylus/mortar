@@ -32,17 +32,20 @@
   padding: $mt3_fs-sm $mt3_fs-med-xlrg $mt3_fs-sm $mt3_fs-sm;
   width: 100%;
 
-  // Selected state
   &:focus {
     color: $mt3_color-gray-80;
   }
 
-  // Hover state
   &:hover {
     border: $mt3_border-default-hover;
   }
+}
 
-  // For IE 11+
+
+// HACKS
+
+// For IE 11+
+.mt3_select-input {
   &::-ms-expand {
     display: none;
   }
