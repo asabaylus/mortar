@@ -22,7 +22,7 @@
     }
 
     .mt3_promocard-text--overlay {
-      background: rgba(0,0,0, 0.2);
+      background: $mt3_color-black-semit-l;
       bottom: 0;
       left: 0;
       position: absolute;
@@ -64,13 +64,13 @@
   &-text-cell {
     display: table-cell;
     text-align: center;
-		vertical-align: middle;
+    vertical-align: middle;
   }
 
   &-text {
+    @extend %mt3_verlag;
     color: $mt3_color-white;
     display: inline-block;
-    @extend %mt3_verlag;
     font-weight: 400;
     line-height: 1.05;
     /*horizontally center show card text*/
@@ -84,12 +84,15 @@
     font-size: .75rem;
     line-height: 1.4;
     padding-left: 60px;
+
     .mt3_showcard--tablet & {
       padding-left: 80px;
     }
+
     .mt3_showcard--desktop & {
       padding-left: 120px;
     }
+
     .mt3_showcard--lg-desktop & {
       padding-left: 160px;
     }
@@ -97,19 +100,19 @@
 
   &-heading,
   &-title {
-    @include couldBeRichText;
+    @include could-be-rich-text;
   }
 
   &-title {
     font-size: 22px;
     font-weight: 400;
-    margin: 0.5em 0;
+    margin: .5em 0;
     padding-left: 30px;
     position: relative;
 
     // yellow index
-    &:before {
-      border-left: 3px solid map-get($mt3_colors, 'primary');
+    &::before {
+      border-left: 3px solid $mt3_color-primary;
       content: '';
       display: inline-block;
       height: 17px;  // (fontsize - 5px)
@@ -123,7 +126,7 @@
       padding-left: 40px;
 
       // yellow index
-      &:before {
+      &::before {
         height: 28px;  // (fontsize - 8px)
         top: 3px;
       }
@@ -134,7 +137,7 @@
       padding-left: 60px;
 
       // yellow index
-      &:before {
+      &::before {
         height: 38px;  // (fontsize - 12px)
         top: 6px;
       }
@@ -145,7 +148,7 @@
       padding-left: 80px;
 
       // yellow index
-      &:before {
+      &::before {
         height: 46px;  // (fontsize - 14px)
         top: 7px;
       }

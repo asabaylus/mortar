@@ -1,10 +1,9 @@
 $mt3_videomodal-max-width: 860px;
-$mt3_color-inverse: $mt3_color-white;
 
 .mt3_video-modal {
   &-kicker {
     @extend .mt3_kicker;
-    @include couldBeRichText;
+    @include could-be-rich-text;
     float: left;
     line-height: 1;
     margin-bottom: 10px;
@@ -54,18 +53,18 @@ $mt3_color-inverse: $mt3_color-white;
   }
 
   &__title {
-    font-size: $mt3_h-med9 + (2 / 16);
-
     @include respond-to-multiple(s, m) {
       font-size: $mt3_h-sm6;
     }
+
+    font-size: $mt3_h-med9 + (2 / 16);
   }
 
   &__description {
     margin: 30px 0 40px;
 
     .mt3_caption-body {
-      @include couldBeRichText;
+      @include could-be-rich-text;
     }
   }
 }

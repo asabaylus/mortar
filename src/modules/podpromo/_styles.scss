@@ -57,7 +57,7 @@ $mt3_white: #fff;
         top: 20px;
         z-index: $mt3_contentLinkIndex;
 
-        a.mt3_btn {
+        .mt3_btn {
           border: 0;
           color: $mt3_white;
 
@@ -168,14 +168,14 @@ $mt3_white: #fff;
   }
 
   &-elevate {
-    @include couldBeRichText("inline-block");
+    @include could-be-rich-text('inline-block');
     position: relative;
     z-index: $mt3_contentLinkIndex;
   }
 
   &-heading {
-    color: $mt3_white;
     @extend %mt3_verlag;
+    color: $mt3_white;
     font-size: 50px;
     font-weight: 400;
     line-height: 1.05;
@@ -257,10 +257,10 @@ $mt3_white: #fff;
   }
 
   &-title {
-    @include couldBeRichText();
+    @extend %mt3_haas;
+    @include could-be-rich-text;
 
     color: $mt3_white;
-    @extend %mt3_haas;
     font-size: 42px;
     font-weight: 600;
     line-height: 1.15;
@@ -316,8 +316,10 @@ $mt3_white: #fff;
   &.mt3_podpromo--mobile {
 
     // adds margin when it's the first element on AEM page at the mobile breakpoint
-    .parsys.content .section:first-of-type & {
-      border-top: 30px solid #fff;
+    .parsys.content {
+      .section:first-of-type & {
+        border-top: 30px solid $mt3_color-white;
+      }
     }
 
     .mt3_kicker {
@@ -326,20 +328,20 @@ $mt3_white: #fff;
 
       &--sponsored {
         @extend .mt3_kicker;
-        @include couldBeRichText();
+        @include could-be-rich-text;
         border-left: 1px solid $mt3_color-sponsor;
         border-right: 1px solid $mt3_color-sponsor;
         color: $mt3_color-sponsor;
         font-weight: 600;
+
         /*overwrite extended mt3_kicker*/
         &:nth-child(1) {
-         border-left: 1px solid $mt3_color-sponsor;
+          border-left: 1px solid $mt3_color-sponsor;
         }
       }
     }
 
     .mt3_podpromo-ctacontainer {
-
       .mt3_podpromo-ctaBtn-wrapper {
         display: inline-block;
         margin: 18px 0 18px 60px;
@@ -347,7 +349,7 @@ $mt3_white: #fff;
         z-index: 6;
       }
 
-      a.mt3_btn {
+      .mt3_btn {
         color: $mt3_black;
         margin: 0;
         padding: 0;

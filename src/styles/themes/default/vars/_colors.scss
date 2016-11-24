@@ -9,6 +9,7 @@ $mt3_color-black: #000;
 $mt3_color-gray-86: #222;
 $mt3_color-gray-80: #333;
 $mt3_color-gray-66: #555;
+$mt3_color-gray-50: #808080;
 $mt3_color-gray-40: #999;
 $mt3_color-gray-30: #ccc;
 $mt3_color-gray-10: #e6e6e6;
@@ -17,21 +18,20 @@ $mt3_color-gray-2: #fafafa;
 $mt3_color-white: #fff;
 
 
+// Neutrals extended
+
+$mt3_color-white-semit: rgba($mt3_color-white, .5);
+$mt3_color-gray-semit: rgba(179, 179, 179, .4);
+$mt3_color-black-semit: rgba($mt3_color-black, .5);
+$mt3_color-black-semit-l: rgba($mt3_color-black, .2);
+
+
 // Main colors
 
 $mt3_color-primary: hsl(48, 100%, 50%);
 $mt3_color-affirmation: hsl(124, 73%, 43%);
 $mt3_color-danger: #fc4349;
 $mt3_color-sponsor: #7694cb;
-$mt3_color-gray-50: #808080;
-
-$mt3_colors: (
-  primary: $mt3_color-primary,
-  affirmation: $mt3_color-affirmation,
-  danger: $mt3_color-danger,
-  gray50: $mt3_color-gray-50,
-  sponsor: $mt3_color-sponsor
-);
 
 
 // Social Colors
@@ -52,8 +52,8 @@ $mt3_social-colors: (
   youtube: #cd201f
 );
 
+
 $mt3_colors: (
-  primary: $mt3_color-primary,
   black: $mt3_color-black,  // scss-lint ignore: line
   gray86: $mt3_color-gray-86,
   gray80: $mt3_color-gray-80,
@@ -64,14 +64,21 @@ $mt3_colors: (
   gray5: $mt3_color-gray-5,
   gray2: $mt3_color-gray-2,
   white: $mt3_color-white,  // sasslint disable no-color-keywords
+
+  primary: $mt3_color-primary,
   affirmation: $mt3_color-affirmation,
   danger: $mt3_color-danger,
   sponsor: $mt3_color-sponsor
 );
 
 
-// overrides
+// Modifiers
+
+$mt3_color-inverse: $mt3_color-white;
+
+
+// Overrides
 
 // some vars to match placeholder colors against the defaults in modules-images
-$mt3_default-modules-images-background: rgba(179, 179, 179, .4);
+$mt3_default-modules-images-background: $mt3_color-gray-semit;
 $mt3_default-modules-images-box-logo: $mt3_color-primary;

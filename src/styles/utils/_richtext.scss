@@ -1,12 +1,12 @@
-@mixin couldBeRichText($type: "") {
-  @if $type == "inline-block" {
+@mixin could-be-rich-text($type: '') {
+  @if $type == 'inline-block' {
     &,
     p {
       display: inline-block;
     }
   }
 
-  @if $type == "inline" {
+  @if $type == 'inline' {
     p {
       display: inline;
     }

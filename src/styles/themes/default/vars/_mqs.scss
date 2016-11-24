@@ -29,21 +29,21 @@ $mt3_layout-bps: (
 @mixin respond-to($breakpoint) {
 
   @if $breakpoint == s {
-    @media (max-width: #{$screen-s - 0.01}) {
+    @media (max-width: #{$screen-s - .01}) {
       @content;
     }
   }
 
   @else if $breakpoint == m {
     // respond to medium and small
-    @media (min-width: #{$screen-s}) and (max-width: #{$screen-m - 0.01}) {
+    @media (min-width: #{$screen-s}) and (max-width: #{$screen-m - .01}) {
       @content;
     }
   }
 
   @else if $breakpoint == l {
     // respond to medium and bigweb
-    @media (min-width: #{$screen-m}) and (max-width: #{$screen-l - 0.01}) {
+    @media (min-width: #{$screen-m}) and (max-width: #{$screen-l - .01}) {
       @content;
     }
   }
@@ -54,7 +54,6 @@ $mt3_layout-bps: (
       @content;
     }
   }
-
 }
 
 @mixin respond-to-multiple($breakpoints...) {

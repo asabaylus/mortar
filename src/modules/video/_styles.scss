@@ -18,7 +18,7 @@
     top: 0;
     width: 100%;
 
-    &:after {
+    &::after {
       border: 6px solid $mt3_default-modules-images-box-logo;
       box-sizing: border-box;
       content: ' ';
@@ -28,10 +28,6 @@
       position: absolute;
       top: 50%;
       width: 40px;
-    }
-
-    th, td {
-      border: 0;
     }
   }
 
