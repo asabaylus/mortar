@@ -1,0 +1,12 @@
+.mt3_table {
+  border-collapse: collapse;
+  max-width: 100%;
+  table-layout: fixed;
+  word-wrap: break-word;
+
+  td, th {
+    border: 1px solid $mt3_color-gray-10;
+    padding: .5rem;
+    text-align: left;
+  }
+}

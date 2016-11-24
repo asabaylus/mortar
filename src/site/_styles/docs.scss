@@ -14,19 +14,6 @@ body {
   margin: 0;
 }
 
-table {
-  border-collapse: collapse;
-  table-layout: fixed;
-  width: 100%;
-  word-wrap: break-word;
-}
-
-
-td, th {
-  border: 1px solid $mt3_color-gray-10;
-  padding: .5rem;
-  text-align: left;
-}
 
 // ====================
 // ====================
@@ -35,17 +22,17 @@ td, th {
 // ====================
 
 .badge {
+  background-color: #F45840;
+  color: #fff;
   display: inline-block;
-  min-width: 10px;
-  padding: 3px 7px;
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  color: #fff;
+  min-width: 10px;
+  padding: 3px 7px;
   text-align: center;
-  white-space: nowrap;
   vertical-align: middle;
-  background-color: #F45840;
+  white-space: nowrap;
 }
 
 
