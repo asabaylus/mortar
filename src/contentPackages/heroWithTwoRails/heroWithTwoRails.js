@@ -85,7 +85,7 @@ class HeroWithTwoRails extends Component {
       return;
     }
 
-    const viewportHeight = this._window.height();
+    const viewportHeight = this._window.height;
     const callHeadingParallax = this.props.parallaxHeading && this.props.heading && this.props.heading !== "";
 
     // build heading scenes

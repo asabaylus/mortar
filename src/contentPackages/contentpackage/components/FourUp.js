@@ -1,11 +1,13 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-import EQ from '../../../util/EQ.js';
-import { default as MTPromoCard } from '../../../modules/promocard/MTPromoCard';
 import _debounce from 'lodash/debounce';
 
-class FourUpComponent extends Component {
+import EQ from '../../../util/EQ.js';
+import MTPromoCard from '../../../modules/promocard/MTPromoCard';
+
+
+export default class FourUpComponent extends Component {
 
   constructor(props) {
     super(props);
@@ -54,6 +56,14 @@ class FourUpComponent extends Component {
 
     // We want to force the aspect ratio of the first two cards in the stack based on business rules. Here we look at the zero based index and make that decision
     switch(index) {
+      // First card set to 3:2
+      case 0:
+        currentCard.config.cardAspectRatio = '3:2';
+        break;
+      // Second card set to 16:9
+      case 1:
+        currentCard.config.cardAspectRatio = '16:9';
+        break;
       // cards 3 and 4 are rendered differently, and need a different aspect ratio based on the parent container width
       // set type to 'article' if type is not 'article' or 'video' to account for gallery cards not rendering correctly in the 3rd and 4th slots
       case 2:
@@ -69,15 +79,9 @@ class FourUpComponent extends Component {
         if(currentCard.text.dek) {
           currentCard.text.dek = null;
         }
-      break;
-      // Second card set to 16:9
-      case 1:
-        currentCard.config.cardAspectRatio = '16:9';
-      break;
-      // First card set to 3:2
-      case 0:
-        currentCard.config.cardAspectRatio = '3:2';
-      break;
+        break;
+      default:
+        console.log(`sorry, no case specified for value: ${index}.`)
     }
 
     this.storyCards.push(<MTPromoCard key={index} {...currentCard} theme={'dark'} parentWidth={parentWidth}/>);
@@ -180,5 +184,3 @@ FourUpComponent.PropTypes = {
     )
   })
 };
-
-export default FourUpComponent;

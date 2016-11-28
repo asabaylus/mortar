@@ -195,7 +195,6 @@ PodPromoComponent.propTypes = {
       linkText: React.PropTypes.string,
       linkTarget: React.PropTypes.string,
       linkSeoTitle: React.PropTypes.string,
-
     }),
   }).isRequired,
 };

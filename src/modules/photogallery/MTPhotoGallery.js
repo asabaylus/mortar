@@ -6,30 +6,35 @@ import Counter from './components/Counter';
 import Slider from '../slider/MTSlider';
 import Captions from './components/Captions';
 
+
 class PhotoGallery extends Component {
   render() {
     let noCounter;
 
-    if(!this.props.showCounter){
+    if (!this.props.showCounter) {
       noCounter = ' mt3_photogallery-heading--spacer';
     }
 
-    return(
+    return (
       <div>
         <div className={'mt3_row' + noCounter}>
           <Heading title={this.props.title} description={this.props.description} />
         </div>
+
         <div className="mt3_row">
           {this.props.showCounter ? <Counter showCounter={this.props.showCounter} slides={this.props.slides} /> : null}
         </div>
-        <Slider frameAspectRatio={this.props.frameAspectRatio}
-                infinite={this.props.infinite}
-                lazyLoad={true}
-                letterbox={this.props.letterbox}
-                letterboxBackgroundColor={this.props.letterboxBackgroundColor}
-                showArrows={this.props.showArrows}
-                slides={this.props.slides}
+
+        <Slider
+          frameAspectRatio={this.props.frameAspectRatio}
+          infinite={this.props.infinite}
+          lazyLoad={true}
+          letterbox={this.props.letterbox}
+          letterboxBackgroundColor={this.props.letterboxBackgroundColor}
+          showArrows={this.props.showArrows}
+          slides={this.props.slides}
         />
+
         <Captions slides={this.props.slides} />
       </div>
     );

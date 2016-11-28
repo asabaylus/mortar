@@ -20,7 +20,7 @@ class LeftAndRightContentPackage extends Component {
   }
 
   resetParallax() {
-    const viewportHeight = this._window.height();
+    const viewportHeight = this._window.height;
     const contentWidth = this.props.parentEl.getBoundingClientRect().width;
 
     //if the component width is < mobileBreakpoint, cancel parallax effects

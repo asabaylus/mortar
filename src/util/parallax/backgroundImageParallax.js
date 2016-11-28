@@ -24,7 +24,7 @@ class BackgroundImageParallax extends Component {
     const frameHeight = this.refs.frame.getBoundingClientRect().height;
     const contentHeight = this.refs.content.getBoundingClientRect().height;
     const contentWidth = this.refs.content.getBoundingClientRect().width;
-    const viewportHeight = this._window.height();
+    const viewportHeight = this._window.height;
 
     if(contentHeight < frameHeight || contentWidth < 768) {
       //cancel parallax, frame is larger than content or we're "mobile" width

@@ -1,9 +1,11 @@
 'use strict';
 
-import FourUpComponent from '../../../../../src/contentPackages/contentpackage/components/FourUp';
-import mockModel from './testData';
 import {shallow} from 'enzyme';
 import React from 'react';
+
+import mockModel from './testData';
+import FourUpComponent from '../../../../../src/contentPackages/contentpackage/components/FourUp';
+
 
 describe('FourUp Component', () => {
   let el;

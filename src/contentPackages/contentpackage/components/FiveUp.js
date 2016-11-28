@@ -1,9 +1,11 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
+
 import EQ from '../../../util/EQ.js';
 import FiveUpCard from './FiveUpCard.js';
-import classNames from 'classnames';
+
 
 class FiveUpComponent extends Component {
 

@@ -1,10 +1,11 @@
 'use strict';
 
 import React, { Component, PropTypes }  from 'react';
+import {Pestle} from '@natgeo/pestle';
+
 import EQ from '../../util/EQ.js';
 import PromoImage from '../promocard/components/shared/PromoImage';
 import { generateHref } from '../promocard/generateHref';
-import {Pestle} from '@natgeo/pestle';
 
 
 class ShowCard extends Component {
@@ -18,13 +19,11 @@ class ShowCard extends Component {
       '920': 'mt3_showcard--desktop',
       '1280': 'mt3_showcard--lg-desktop'
     };
-
     const aspectRatio = config.cardAspectRatio === '16:9' ? 'mt3_intratio--broadcast'
       : config.cardAspectRatio === '3:2' ? 'mt3_intratio--photo'
       : config.cardAspectRatio === '2:1' ? 'mt3_intratio--two-one'
       : config.cardAspectRatio === '1:1' ? 'mt3_intratio--square'
       : 'mt3_intratio--photo';
-
 
     let brandingTheme = 'mt3_channelbranding--nobranding';
     if (config.channelMapping) {

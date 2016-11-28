@@ -9,8 +9,10 @@
 import Module from './module';
 import {guid} from './util/guid';
 
+
 const defaultModuleNameAttribute = 'data-pestle-module';
 const defaultModuleParamsAttribute = 'data-pestle-options';
+
 
 class ModuleManager {
 
@@ -27,11 +29,11 @@ class ModuleManager {
   // from the module class and that it does not already exist. if it satisfies
   // those conditions it is registered
   register(name, module) {
-    if(!(module.prototype instanceof Module)) {
+    if (!(module.prototype instanceof Module)) {
       throw new Error('[Module.register] module should inherit from Module')
     }
 
-    if(this.isRegistered(name)) {
+    if (this.isRegistered(name)) {
       throw new Error(`[Module.register] there's already a module called '${name}'`);
     }
 
@@ -107,11 +109,11 @@ class ModuleManager {
     let modules = document.querySelectorAll(selector);
 
     // Initialize every module
-    for(let i = 0, element; element = modules[i]; i++) {
+    for (let i = 0, element; element = modules[i]; i++) {
       let moduleName = element.getAttribute(defaultModuleNameAttribute);
       let dataInstance = this.createInstance(moduleName, element);
 
-      if(dataInstance) {
+      if (dataInstance) {
         // Add module's instance on the list
         this.modules.runningInstances[dataInstance.id] = dataInstance;
       }
@@ -127,7 +129,7 @@ class ModuleManager {
       let modulesWorking,
         modulesFailing;
 
-      if(err) {
+      if (err) {
         instanceData.error = err;
         console.error(
           'Error on Module: ' + instanceData.name,
@@ -142,12 +144,12 @@ class ModuleManager {
       }
 
       countModules++;
-      if(countModules < totalModules) {
+      if (countModules < totalModules) {
         return;
       }
 
       // Preparing for calling init() callback
-      if(!callback) {
+      if (!callback) {
         return;
       }
 
@@ -157,7 +159,7 @@ class ModuleManager {
 
       // Separate instances ok from those failing
       Object.keys(runningInstances).forEach((instanceId) => {
-        if(runningInstances[instanceId].error) {
+        if (runningInstances[instanceId].error) {
           modulesFailing.push(runningInstances[instanceId]);
         } else {
           modulesWorking.push(runningInstances[instanceId]);
@@ -165,11 +167,11 @@ class ModuleManager {
       });
 
       // Nulling variables (node.js convention)
-      if(modulesFailing.length === 0) {
+      if (modulesFailing.length === 0) {
         modulesFailing = null;
       }
 
-      if(modulesWorking.length === 0) {
+      if (modulesWorking.length === 0) {
         modulesWorking = null;
       }
 
@@ -184,7 +186,7 @@ class ModuleManager {
         instance = instanceData.instance;
 
       // If init() has params use async call
-      if(init.length > 0) {
+      if (init.length > 0) {
         init(done.bind(instanceData));
       } else { // else sync call
         try {
@@ -215,7 +217,7 @@ class ModuleManager {
       id;
     let module = this.getModule(moduleName);
 
-    if(!module) {
+    if (!module) {
       // =======================================================
       // ATTN: Remove this once we have a proper logging utility
       // console.warn("Module:", moduleName, "no exists");
@@ -223,7 +225,7 @@ class ModuleManager {
       return;
     }
 
-    if(!el) {
+    if (!el) {
       return;
     }
 
@@ -266,7 +268,7 @@ class ModuleManager {
   // destroy a single instance of a module by ID
   destroyInstance(instanceId) {
     let runningInstances = this.modules.runningInstances;
-    if(!runningInstances.hasOwnProperty(instanceId)) {
+    if (!runningInstances.hasOwnProperty(instanceId)) {
       return;
     }
 

@@ -2,8 +2,10 @@
 
 import React from 'react';
 import * as ReactDOM from 'react-dom';
-import {Pestle, Module} from '@natgeo/pestle';
-import MTShowCardComponent from './showCard';
+
+import { Pestle, Module } from '@natgeo/pestle';
+import MTShowCard from './showCard';
+
 
 class ShowCard extends Module {
 
@@ -13,7 +15,7 @@ class ShowCard extends Module {
   }
 
   init() {
-    ReactDOM.render(<MTShowCardComponent
+    ReactDOM.render(<MTShowCard
       itemId={this.options.itemId}
       type={this.options.type}
       config={this.options.config}

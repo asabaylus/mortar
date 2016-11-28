@@ -1,9 +1,11 @@
 'use strict';
 
+import React from 'react';
+import {shallow} from 'enzyme';
+
 import FiveUpComponent from '../../../../../src/contentPackages/contentpackage/components/FiveUp';
 import mockModel from './testData';
-import {shallow} from 'enzyme';
-import React from 'react';
+
 
 
 describe('FiveUp Component', () => {

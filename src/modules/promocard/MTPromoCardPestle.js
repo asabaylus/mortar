@@ -2,8 +2,11 @@
 
 import React from 'react';
 import * as ReactDOM from 'react-dom';
-import {Pestle, Module} from '@natgeo/pestle';
-import {default as MTPromoCardComponent} from './MTPromoCard';
+
+import { Pestle, Module } from '@natgeo/pestle';
+
+import MTPromoCard from './MTPromoCard';
+
 
 class PromoCard extends Module {
 
@@ -13,7 +16,7 @@ class PromoCard extends Module {
   }
 
   init() {
-    ReactDOM.render(<MTPromoCardComponent
+    ReactDOM.render(<MTPromoCard
       itemId={this.options.itemId}
       theme={this.options.theme}
       type={this.options.type}

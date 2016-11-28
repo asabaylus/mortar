@@ -12,6 +12,7 @@ module.exports = function(config) {
 
     basePath: '',
 
+    // browsers: ['Chrome'],
     browsers: ['PhantomJS'],
     // browsers: ['Chrome', 'Firefox', 'Safari', 'PhantomJS'],
 

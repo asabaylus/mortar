@@ -8,6 +8,7 @@ import _isEqual from 'lodash/isEqual';
 // add the NatGeo modules-video to the global window
 window.ngsPlayer = require('@natgeo/modules-video');
 
+
 class Video extends Component {
 
   constructor(props) {
@@ -32,7 +33,7 @@ class Video extends Component {
 
   createPlayer() {
     let options = this.shapeModel();
-    ngsPlayer.init(options);
+    window.ngsPlayer.init(options);
   }
 
   componentDidMount() {

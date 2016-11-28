@@ -20,6 +20,7 @@ const paths = require('./paths');
 const packagesSrc = paths.pestleSrc + 'src/**/*.js'
 const packagesDest = paths.pestleDest;
 
+
 gulp.task('packages', function() {
   gulp.src(paths.pestleSrc + 'README.md')
     .pipe(gulp.dest(packagesDest));
@@ -48,7 +49,6 @@ gulp.task('scripts', ['packages'], function(){
       presets: ['es2015', 'react', 'stage-0']
     }))
     .pipe(gulp.dest(paths.mortarDest));
-
 
   return browserify('./src/scripts/main.js')
     .transform('babelify', {presets: ['es2015', 'stage-0', 'react']})

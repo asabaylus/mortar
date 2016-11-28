@@ -55,7 +55,6 @@ describe('VideoModal Component', () => {
     it('should mount', () => {
       expect(Pestle.ModuleManager.getInstancesByName('VideoModal')).to.have.length.at.least(1);
     });
-
   });
 
   describe('VideoModal Component', () => {
