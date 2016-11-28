@@ -68,7 +68,7 @@ class CodeSnippet extends Component {
   }
 
   get codeString() {
-    const { componentName, code } = props,
+    const { componentName, code } = this.props,
           hlCode = Prism.highlight(JSON.stringify(code, null, 2), Prism.languages.javascript);
 
     let start = `<div data-pestle-module="${componentName}">\n<script type="text/json" data-pestle-options>\n`,
