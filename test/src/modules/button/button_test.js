@@ -8,7 +8,7 @@ import CTAButtonComponent from '../../../../src/modules/button/CTAButton';
 import {shallow, mount} from 'enzyme';
 import React from 'react';
 
-describe.only('CTAButton', () => {
+describe('CTAButton', () => {
 
   const icon = {
     "name" : "#share",
