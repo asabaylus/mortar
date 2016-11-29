@@ -53,11 +53,11 @@ $mt3_videomodal-max-width: 860px;
   }
 
   &__title {
+    font-size: $mt3_h-med9 + (2 / 16);
+
     @include respond-to-multiple(s, m) {
       font-size: $mt3_h-sm6;
     }
-
-    font-size: $mt3_h-med9 + (2 / 16);
   }
 
   &__description {

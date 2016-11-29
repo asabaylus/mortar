@@ -1,9 +1,4 @@
 .mt3_modal-button {
-  @include respond-to-multiple(s, m) {
-    right: $mt3_unit - .0625;
-    top: $mt3_unit - .0625;
-  }
-
   background-color: transparent;
   border: 0;
   color: $mt3_color-white;
@@ -11,6 +6,11 @@
   position: absolute;
   right: $mt3_unit-double - .125;
   top: $mt3_unit-double - .125;
+
+  @include respond-to-multiple(s, m) {
+    right: $mt3_unit - .0625;
+    top: $mt3_unit - .0625;
+  }
 }
 
 .mt3_modal-container {
