@@ -4,7 +4,6 @@
 @import 'reset';
 
 @import 'grid/columns';
-@import 'grid/column-gutters';
 @import 'grid/rows';
 
 @import 'utils/intratios';
@@ -49,6 +48,7 @@
 @import '../modules/videoplaylist/styles';
 @import '../modules/podpromo/styles';
 @import '../modules/videomodal/styles';
+
 @import '../contentPackages/contentpackage/styles';
 @import '../contentPackages/heroWithTwoRails/styles';
 
