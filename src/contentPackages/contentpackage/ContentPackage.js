@@ -16,20 +16,20 @@ class LeftAndRightContentPackage extends Component {
     super(props);
     this.resizeHandler = null;
     this._window = $(window);
-    this.resetParallax = this.resetParallax.bind(this);
+    this.resetParallax = ::this.resetParallax;
   }
 
   resetParallax() {
-    const viewportHeight = this._window.height;
+    const viewportHeight = this._window.height();
     const contentWidth = this.props.parentEl.getBoundingClientRect().width;
 
     //if the component width is < mobileBreakpoint, cancel parallax effects
-    if(contentWidth < mobileBreakpoint) {
+    if (contentWidth < mobileBreakpoint) {
       return;
     }
 
     //build rails scene
-    if(this.props.parallaxRails) {
+    if (this.props.parallaxRails) {
       railsParallax({
         leftRail: this.props.parentEl.getElementsByClassName("left-rail")[0],
         rightRail: this.props.parentEl.getElementsByClassName("right-rail")[0],
@@ -40,7 +40,7 @@ class LeftAndRightContentPackage extends Component {
   }
 
   componentDidMount() {
-    if(this.props.parallaxRails) {
+    if (this.props.parallaxRails) {
       this.resetParallax();
       this.resizeHandler = _debounce(this.resetParallax, 250);
       window.addEventListener('resize', this.resizeHandler);
@@ -48,7 +48,7 @@ class LeftAndRightContentPackage extends Component {
   }
 
   componentWillUnmount() {
-    if(this.props.parallaxRails) {
+    if (this.props.parallaxRails) {
       window.removeEventListener('resize', this.resizeHandler);
     }
   }

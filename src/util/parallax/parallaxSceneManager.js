@@ -24,7 +24,7 @@ module.exports = class ParallaxSceneManager {
       documentHeight: null,
       viewportHeight: null
     };
-    this.onResize = this.onResize.bind(this);
+    this.onResize = ::this.onResize;
     this.scenes = [];
     this.updateScrollInterval = null;
   }
