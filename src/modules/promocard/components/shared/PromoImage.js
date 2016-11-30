@@ -31,19 +31,20 @@ const searchAndGetCroppingSrcset = (croppingSrcset, aspectRatio) => {
   return srcset;
 };
 
-const PromoImage = (props) => {
-  let src = props.leadMedia.url || props.leadMedia.imageUrl;
-  let srcset = props.leadMedia.srcset;
-  let aspectRatio = props.leadMedia.aspectRatio;
+class PromoImage extends React.Component {
+  render() {
+    let src = this.props.leadMedia.url || this.props.leadMedia.imageUrl;
+    let srcset = this.props.leadMedia.srcset;
+    let aspectRatio = this.props.leadMedia.aspectRatio;
 
-  const attrs = props.link ? {
-    className: 'mt3_promocardtext--overlay-link',
-    href: props.link ? generateHref(props.link.url, props.link.trackingCodes) : null,
-    target: props.link ? props.link.target : null
-  } : null;
+    const attrs = this.props.link ? {
+      className: 'mt3_promocardtext--overlay-link',
+      href: this.props.link.url ? generateHref(this.props.link.url, this.props.link.trackingCodes) : null,
+      target: this.props.link.target ? this.props.link.target : null
+    } : null;
 
-  const playButton =
-      <button className="mt3_videopromo-button" onClick={props.type === 'video' ? props.launchModal : null}>
+    const playButton =
+      <button className="mt3_videopromo-button" onClick={this.props.type === 'video' ? this.props.launchModal : null}>
         <a {...attrs} />
         <span className="mt3_visuallyhidden">Play</span>
         <div className="mt3_videopromo-button-container mt3_intratio--natgeo">
@@ -53,57 +54,61 @@ const PromoImage = (props) => {
         </div>
       </button>;
 
-  const overlayClass = props.breakpoint > (768 - 60) ? 'mt3_promocard-gradient-overlay' : '';
+    const overlayClass = this.props.breakpoint > (768 - 60) ? 'mt3_promocard-gradient-overlay' : '';
 
-  let frameAspectRatio = (props.type === 'gallery' && props.galleryImage) ? props.childFrameAspectRatio : props.config.cardAspectRatio;
+    let frameAspectRatio = (this.props.type === 'gallery' && this.props.galleryImage) ? this.props.childFrameAspectRatio : this.props.config.cardAspectRatio;
 
-  if(props.type === 'gallery' && props.galleryImage) {
-    frameAspectRatio = props.childFrameAspectRatio;
-  } else {
-    //"hero" promos get an enforced frameAspectRatio depending on the current breakpoint
-    if(props.cardLocation === 'hero') {
-      if (props.breakpoint > 768) {
-        frameAspectRatio = '2:1';
-      } else {
-        frameAspectRatio = '1:1';
-      }
+    if (this.props.type === 'gallery' && this.props.galleryImage) {
+      frameAspectRatio = this.props.childFrameAspectRatio;
     } else {
-      frameAspectRatio = props.config.cardAspectRatio;
+      //"hero" promos get an enforced frameAspectRatio depending on the current breakpoint
+      if (this.props.cardLocation === 'hero') {
+        if (this.props.breakpoint > 768) {
+          frameAspectRatio = '2:1';
+        } else {
+          frameAspectRatio = '1:1';
+        }
+      } else {
+        frameAspectRatio = this.props.config.cardAspectRatio;
+      }
     }
-  }
 
-  if (props.config.cardAspectRatio && props.leadMedia.croppings) {
-    const croppingSrcset = searchAndGetCroppingSrcset(props.leadMedia.croppings, frameAspectRatio);
-    if (croppingSrcset) {
-      srcset = croppingSrcset;
-      aspectRatio = frameAspectRatio;
+    if (this.props.config.cardAspectRatio && this.props.leadMedia.croppings) {
+      const croppingSrcset = searchAndGetCroppingSrcset(this.props.leadMedia.croppings, frameAspectRatio);
+      if (croppingSrcset) {
+        srcset = croppingSrcset;
+        aspectRatio = frameAspectRatio;
+      }
     }
-  }
 
-  return(
-    <figure>
-      {props.config.overlay && !props.secondImage ?
-      <div className={overlayClass}>
-        <div></div>
-      </div>
-      : null}
-      {props.brandingBadgeLabel ? <figcaption className="mt3_promocard-branding">{props.brandingBadgeLabel}</figcaption> : null}
-      <Image
-        key={src}
-        aspectRatio={aspectRatio}
-        frameAspectRatio={frameAspectRatio}
-        lazyLoad={false}
-        altText={props.leadMedia.altText}
-        src={src}
-        srcset={srcset}
-      />
-      <div className="mt3_promocard-text--overlay">
-        {props.type === 'video' ? <div className='mt3_promocardtext--overlay-link' onClick={props.launchModal}></div> : <a {...attrs} /> }
-        {(props.config.showPlayButton && props.type !== 'gallery') || props.type === 'video' ? playButton : null }
-        {(props.config.overlay && !props.secondImage) && props.text ? <PromoText {...props} /> : null}
-      </div>
-    </figure>
-  );
+    return (
+      <figure>
+        {this.props.config.overlay && !this.props.secondImage ?
+        <div className={overlayClass}>
+          <div/>
+        </div>
+        : null}
+
+        {this.props.brandingBadgeLabel ? <figcaption className="mt3_promocard-branding">{this.props.brandingBadgeLabel}</figcaption> : null}
+
+        <Image
+          key={src}
+          aspectRatio={aspectRatio}
+          frameAspectRatio={frameAspectRatio}
+          lazyLoad={false}
+          altText={this.props.leadMedia.altText}
+          src={src}
+          srcset={srcset}
+        />
+
+        <div className="mt3_promocard-text--overlay">
+          {this.props.type === 'video' ? <div className='mt3_promocardtext--overlay-link' onClick={this.props.launchModal}></div> : <a {...attrs} /> }
+          {(this.props.config.showPlayButton && this.props.type !== 'gallery') || this.props.type === 'video' ? playButton : null }
+          {(this.props.config.overlay && !this.props.secondImage) && this.props.text ? <PromoText {...this.props} /> : null}
+        </div>
+      </figure>
+    );
+  }
 };
 
 PromoImage.PropTypes = {

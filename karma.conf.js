@@ -13,6 +13,7 @@ module.exports = function(config) {
     basePath: '',
 
     browsers: ['PhantomJS'],
+    // browsers: ['Chrome', 'Firefox', 'Safari', 'PhantomJS'],
 
     files: [
       'node_modules/babel-polyfill/dist/polyfill.js',
@@ -28,12 +29,19 @@ module.exports = function(config) {
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['mocha'],
+    // reporters: ['mocha'],
+    reporters: ['mocha', 'coverage'],
 
     browserify: {
       debug: true,
       transform: [
-        ['babelify', {presets: ["es2015", "stage-0", "react"]}],
+        ['babelify', {
+          presets: ["es2015", "stage-0", "react"],
+          plugins: ["istanbul"]
+        }],
+        ['browserify-istanbul', { instrumenterConfig: {
+          embedSource: true
+        }}],
         ['aliasify', { replacements: {
           '^@natgeo/pestle$': './src/scripts/pestle/src/main.js',
           '@natgeo\/pestle\/(.+)' : './src/scripts/pestle/src/$1.js',
@@ -47,6 +55,22 @@ module.exports = function(config) {
           bundle.external('react/lib/ReactContext');
           bundle.external('react/lib/ExecutionEnvironment');
         });
+      }
+    },
+
+    coverageReporter: {
+      reporters: [
+        {'type': 'text'},
+        {'type': 'html', dir: 'coverage'},
+        {'type': 'lcov'}
+      ],
+      check: {
+        global: {
+          statements: 50,
+          branches: 40,
+          functions: 50,
+          lines: 50
+        }
       }
     },
 

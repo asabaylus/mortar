@@ -146,14 +146,7 @@ describe('Module Manager', () => {
       createModules();
       registerModules();
 
-      var fixture = `
-        <div data-pestle-module="Module1"></div>
-        <div data-pestle-module="Module2">
-          <script type="text/json" data-pestle-options>
-            {"prop value"}
-          </script>
-        </div>
-      `;
+      var fixture = `<div data-pestle-module="Module1"></div>`;
 
       insertFixture(fixture);
     });
@@ -180,12 +173,6 @@ describe('Module Manager', () => {
       var selector = "[data-pestle-module=Module1]";
       var dataInstance = moduleManager.createInstance("Module1", document.querySelector(selector));
       expect(dataInstance.instance.options).to.be.null;
-    });
-
-    it('should save the error when module throw an error (ex: invalid json)', () => {
-      var selector = "[data-pestle-module=Module2]";
-      var instance = moduleManager.createInstance("Module2", document.querySelector(selector));
-      expect(instance.error).to.not.be.null;
     });
   });
 
@@ -254,7 +241,6 @@ describe('Module Manager', () => {
       `;
 
       insertFixture(fixture);
-
       moduleManager.init(callbackFn);
     });
 

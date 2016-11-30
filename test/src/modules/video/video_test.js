@@ -1,11 +1,12 @@
 'use strict';
 
+import React from 'react';
+import { mount, shallow } from 'enzyme';
+
 import Pestle from '@natgeo/pestle';
 import Video from '../../../../src/modules/video/VideoPestle';
 import VideoComponent from '../../../../src/modules/video/video';
 
-import {shallow} from 'enzyme';
-import React from 'react';
 
 describe('Video Component', () => {
   describe('Pestle Module', () => {
@@ -29,7 +30,6 @@ describe('Video Component', () => {
               "sharing": true,
               "skinName": "glass-ngs",
               "type": "inline"
-
             }
           }
         </script>
@@ -106,19 +106,19 @@ describe('Video Component', () => {
 
     before(() => {
       wrapper = shallow(<VideoComponent
-          className=''
-          isEditMode={false}
-          lazyLoad={false}
-          model={reactModel}
-          overlayPlayButton={true}
-          sharing={true}
-          skinName='glass-ngs'
-          type='inline'
-        />);
+        className=''
+        isEditMode={false}
+        lazyLoad={false}
+        model={reactModel}
+        overlayPlayButton={true}
+        sharing={true}
+        skinName='glass-ngs'
+        type='inline'
+      />);
     });
 
     it('should NOT include a LazyLoad Component to fire video', () => {
-      expect(wrapper.html()).not.to.include('<div class="LazyLoad"></div>');
+      expect(wrapper.find('LazyLoad')).to.have.length(0);
     });
 
     it('should include a div for the video player to instantiate against', () => {

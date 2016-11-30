@@ -95,7 +95,6 @@ describe('Hero With Two Rails Content Package', () => {
   let testParent = {
     className: "foo",
     getElementsByClassName: function(arg){
-      console.log(arg);
       let fakeEl = {};
       switch (arg) {
         case "hero-with-two-rails__rails":
@@ -107,6 +106,7 @@ describe('Hero With Two Rails Content Package', () => {
             }
           };
           break;
+
         case "hero-with-two-rails__heading":
           fakeEl = {
             getBoundingClientRect: function() {
@@ -122,6 +122,7 @@ describe('Hero With Two Rails Content Package', () => {
       }
       return [fakeEl];
     },
+
     getBoundingClientRect: function() {
       return {
         width: 1400
