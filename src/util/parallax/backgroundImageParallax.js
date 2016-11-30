@@ -1,10 +1,12 @@
 'use strict';
 
 import React, { Component } from 'react';
-import Image from '@natgeo/modules-images';
-import {Pestle} from '@natgeo/pestle';
-import $ from 'jquery';
 import _debounce from 'lodash/debounce';
+import $ from 'jquery';
+
+import { Pestle } from '@natgeo/pestle';
+import Image from '@natgeo/modules-images';
+
 
 class BackgroundImageParallax extends Component {
   constructor(props) {
@@ -24,9 +26,9 @@ class BackgroundImageParallax extends Component {
     const frameHeight = this.refs.frame.getBoundingClientRect().height;
     const contentHeight = this.refs.content.getBoundingClientRect().height;
     const contentWidth = this.refs.content.getBoundingClientRect().width;
-    const viewportHeight = this._window.height;
+    const viewportHeight = this._window.height();
 
-    if(contentHeight < frameHeight || contentWidth < 768) {
+    if (contentHeight < frameHeight || contentWidth < 768) {
       //cancel parallax, frame is larger than content or we're "mobile" width
       return;
     }
@@ -111,7 +113,6 @@ BackgroundImageParallax.propTypes = {
   enableParallax: React.PropTypes.bool,
   frameRatio: React.PropTypes.string
 };
-
 
 BackgroundImageParallax.defaultProps = {
   enableParallax: true
