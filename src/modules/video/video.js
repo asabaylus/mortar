@@ -13,7 +13,7 @@ class Video extends Component {
 
   constructor(props) {
     super(props);
-    this.handleOnLoad = this.handleOnLoad.bind(this);
+    this.handleOnLoad = ::this.handleOnLoad;
     this.videoContainer = `<div id="${props.model.instance}" class="mt3_video-player" data-guid="${props.model.guid}"></div>`;
   }
 
@@ -65,7 +65,7 @@ class Video extends Component {
   }
 
   render() {
-    let {
+    const {
       className: className,
       lazyLoad: lazyLoad,
       model: {
@@ -76,8 +76,8 @@ class Video extends Component {
 
     return (
       <figure itemType="http://schema.org/VideoObject" className={`mt3_video mt3_videopromo-container mt3_bgcolor--black ${className}` }>
-        <div className="mt3_video-wrapper" dangerouslySetInnerHTML={{__html: this.videoContainer}}>
-        </div>
+        <div className="mt3_video-wrapper" dangerouslySetInnerHTML={{__html: this.videoContainer}} />
+
         { lazyLoad &&
           /** Don't use LazyLoad's onContentVisible callback.
            * Lazyload triggers twice the callback if the element

@@ -1,12 +1,14 @@
 'use strict';
 
 import React, { Component } from 'react';
-import Image from '@natgeo/modules-images';
-import CTA from '../button/CTAButton';
-import BackgroundImageParallax from '../../util/parallax/backgroundImageParallax';
-import LazyLoad from 'react-lazy-load';
-import EQ from '../../util/EQ.js';
 import classNames from 'classnames';
+
+import BackgroundImageParallax from '../../util/parallax/backgroundImageParallax';
+import CTA from '../button/CTAButton';
+import EQ from '../../util/EQ.js';
+import Image from '@natgeo/modules-images';
+import LazyLoad from 'react-lazy-load';
+
 
 class PodPromoComponent extends Component {
 
@@ -120,16 +122,17 @@ class PodPromoComponent extends Component {
           }
           <div className="mt3_podpromo-imagewrapper">
             <BackgroundImageParallax frameRatio={"16:9"} enableParallax={componentConfig.parallax}>
-                <Image
-                  aspectRatio={componentImage[0].aspectRatio}
-                  frameAspectRatio={componentConfig.parallax ? '3:2' : '16:9'}
-                  lazyLoad={true}
-                  altText={componentImage.altText}
-                  src={componentImage[0].url}
-                  srcset={componentImage[0].srcset}
-                />
+              <Image
+                aspectRatio={componentImage[0].aspectRatio}
+                frameAspectRatio={componentConfig.parallax ? '3:2' : '16:9'}
+                lazyLoad={true}
+                altText={componentImage.altText}
+                src={componentImage[0].url}
+                srcset={componentImage[0].srcset}
+              />
             </BackgroundImageParallax>
           </div>
+
           <div className="mt3_podpromo-content-container mt3_podpromo-content-container-bottom mt3_podpromo-content-container-left mt3_podpromo-autoindex mt3_podpromo-fade">
             {
               componentConfig.sponsored ? <div className='mt3_kicker mt3_kicker--sponsored'>{sponsorLabel}</div> : componentKicker ? this.kickerLink(componentKicker) : null
@@ -139,12 +142,16 @@ class PodPromoComponent extends Component {
 
           <div className="mt3_podpromo-content-container mt3_podpromo-content-container-bottom mt3_podpromo-content-container-right mt3_podpromo-fade">
             <div className="mt3_podpromo-photocredit-container">
-
-              {
-                photoCredit ? <div className="mt3_caption-creditname mt3_podpromo-photocredit" dangerouslySetInnerHTML={{__html: photoCredit}} /> : null
+              {photoCredit &&
+                <div
+                  className="mt3_caption-creditname mt3_podpromo-photocredit"
+                  dangerouslySetInnerHTML={{__html: photoCredit}} />
               }
-              {
-                photoSource ? <div className="mt3_caption-credit mt3_podpromo-source" dangerouslySetInnerHTML={{__html: photoSource}} /> : null
+
+              {photoSource &&
+                <div
+                  className="mt3_caption-credit mt3_podpromo-source"
+                  dangerouslySetInnerHTML={{__html: photoSource}} />
               }
             </div>
           </div>

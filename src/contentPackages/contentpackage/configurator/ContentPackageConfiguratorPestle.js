@@ -7,6 +7,7 @@ import deepForceUpdate from 'react-deep-force-update';
 import {Pestle, Module} from '@natgeo/pestle';
 import ContentPackageConfiguratorComponent from './ContentPackageConfigurator';
 
+
 class ContentPackageConfigurator extends Module {
   forceUpdate() {
     deepForceUpdate(this.instance);
@@ -557,8 +558,7 @@ class ContentPackageConfigurator extends Module {
       },
       "parentEl": document.getElementById("configurator")
     };
-    console.log("QQ");
-    console.log(props.parentEl);
+
     this.instance = ReactDOM.render(<ContentPackageConfiguratorComponent initialProps={props} />, this.el);
     Pestle.PubSub.subscribe('Configurator.ForceUpdate', () => { this.forceUpdate(); });
   }

@@ -1,9 +1,11 @@
 'use strict';
 
 import React, { Component, PropTypes }  from 'react';
+import classNames from 'classnames';
+
 import {Pestle} from '@natgeo/pestle';
 import events from '../promocard/events';
-import classNames from 'classnames';
+
 
 class Modal extends Component {
   constructor() {
@@ -12,7 +14,7 @@ class Modal extends Component {
       shouldRender: false,
       renderNGSModal: false
     };
-    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleKeyDown = ::this.handleKeyDown;
   }
 
   static defaultProps = {
@@ -29,14 +31,14 @@ class Modal extends Component {
   }
 
   handleKeyDown(event) {
-    //esc closes modal
+    // ESC key closes modal
     if (event.keyCode == 27) {
       this.props.onClose(event);
     }
   }
 
   componentWillReceiveProps(props){
-    if(this.props.renderNGSModal != props.renderNGSModal) {
+    if (this.props.renderNGSModal != props.renderNGSModal) {
       this.shouldRender = props.renderNGSModal;
       this.setState({renderNGSModal: props.renderNGSModal});
     }
@@ -49,8 +51,8 @@ class Modal extends Component {
       'mt3_modal-container--active': this.state.renderNGSModal
     });
 
-    //if the modal hasn't been called yet, it should not render
-    if(!this.shouldRender) {
+    // if the modal hasn't been called yet, it should not render
+    if (!this.shouldRender) {
       return null;
     }
 

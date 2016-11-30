@@ -9,29 +9,30 @@ let i = 0;
 class Captions extends Component {
   constructor(props) {
     super(props);
-    this.state = { currentSlide : 0 };
+    this.state = {
+      currentSlide : 0
+    };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     Pestle.PubSub.subscribe(events.slideChange, this.updateCaption.bind(this));
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     Pestle.PubSub.unsubscribe(events.slideChange);
   }
 
-  updateCaption(msg, data){
+  updateCaption(msg, data) {
     this.setState({
       currentSlide: data.currentSlideIndex
     });
   }
 
-  render(){
-    const props = this.props;
+  render() {
+    const slide = this.props.slides[this.state.currentSlide];
     let captions = [];
 
-    let slide = props.slides[this.state.currentSlide];
-    if(slide.title || slide.caption){
+    if (slide.title || slide.caption) {
       captions.push(
         <p key={i++} className="mt3_color--gray80 mt3_row-gut-half">
           <span className="mt3_h5">{slide.title}</span>
@@ -39,7 +40,8 @@ class Captions extends Component {
         </p>
       );
     }
-    if(slide.credit || slide.assetSource){
+
+    if (slide.credit || slide.assetSource) {
       captions.push(
         <span key={i++} className="mt3_subh3 mt3_color--gray40">
           Photograph by {slide.credit}<br />
@@ -48,13 +50,12 @@ class Captions extends Component {
       );
     }
 
-    return(
+    return (
       <figcaption>
         {captions}
       </figcaption>
     );
   }
-
 }
 
 Captions.propTypes = {
