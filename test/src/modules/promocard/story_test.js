@@ -1,10 +1,12 @@
 'use strict';
 
-import Story from '../../../../src/modules/promocard/components/types/Story.js';
+import React from 'react';
+import { mount } from 'enzyme';
+
 import PromoImage from '../../../../src/modules/promocard/components/shared/PromoImage.js';
 import PromoText from '../../../../src/modules/promocard/components/shared/PromoText.js';
-import {shallow, mount} from 'enzyme';
-import React from 'react';
+import Story from '../../../../src/modules/promocard/components/types/Story.js';
+
 
 describe('Story Component', () => {
   describe('Article', () => {

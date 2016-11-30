@@ -1,12 +1,22 @@
 'use strict';
 
 import React, { PropTypes }  from 'react';
-import {Pestle} from '@natgeo/pestle';
-import Story from './components/types/Story';
-import ShowCard from '../showcard/showCard';
 
-const MTPromoCard = (props) => {
-  return props.type === 'show' ? <ShowCard {...props}/> : <Story {...props}/>;
+import { Pestle } from '@natgeo/pestle';
+
+import ShowCard from '../showcard/showCard';
+import Story from './components/types/Story';
+
+
+export default class MTPromoCard extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const { type } = this.props;
+    return type === 'show' ? <ShowCard {...this.props}/> : <Story {...this.props}/>;
+  }
 };
 
 MTPromoCard.PropTypes = {
@@ -58,5 +68,3 @@ MTPromoCard.PropTypes = {
   modal: PropTypes.bool,
   onClick: PropTypes.func
 };
-
-export default MTPromoCard;
