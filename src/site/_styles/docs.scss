@@ -1,7 +1,10 @@
 @import '../../styles/themes/default/vars/mqs';
 @import '../../styles/themes/default/vars/colors';
 @import '../../styles/themes/default/vars/inputs';
+@import '../../styles/themes/default/vars/typography-fontfaces';
+@import '../../styles/themes/default/vars/typography-fontsizes';
 @import '../../styles/themes/default/vars/z';
+
 
 // ====================
 // ====================
@@ -22,7 +25,8 @@ table {
 }
 
 
-td, th {
+td,
+th {
   border: 1px solid $mt3_color-gray-10;
   padding: .5rem;
   text-align: left;
@@ -338,6 +342,7 @@ hr {
   }
 }
 
+
 .branding-grey-border {
   background-color: $mt3_color-gray-10;
   display: inline-block;
@@ -382,6 +387,47 @@ hr {
     text-decoration: underline;
   }
 }
+
+// ====================
+// ====================
+// Site Secondary Nav
+// ====================
+// ====================
+
+
+.secondarynav {
+  display: none;
+
+  @media #{$mt3_mq-lg} {
+    display: block;
+    position: relative;
+  }
+}
+
+.secondarynav-list {
+  padding-left: 0;
+}
+
+.secondarynav-list-item {
+  display: block;
+  font-family: $mt3_haas-stack;
+  font-size: $mt3_fs-norm;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.secondarynav-item-link {
+  &,
+  &:active {
+    color: $mt3_color-gray-86;
+    text-decoration: none;
+  }
+
+  &:hover {
+    border-bottom: 2px solid $mt3_color-primary;
+  }
+}
+
 
 // ====================
 // ====================

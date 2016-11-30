@@ -37,6 +37,9 @@ const MTJQ = jQuery.noConflict();
   require('../contentPackages/heroWithTwoRails/configurator/heroWithTwoRailsConfiguratorPestle');
 
 
+// Secondary Nav
+  require('../site/nav/SecondaryNav');
+
 })(MTJQUERY, MTJQ, Pestle);
 
 let parallaxSceneManager =  new ParallaxSceneManager;

@@ -175,6 +175,10 @@
             .removeClass('codesnippet-icon--expand');
        }
     });
+
+    $(function(){
+      window.mortarSite.renderSecondaryNavigation(document.getElementById('secondaryNav'));
+    });
   </script>
 
   <script src="{{rootPath}}.{% if title != 'Home' %}.{% endif %}/scripts/main.js"></script>
