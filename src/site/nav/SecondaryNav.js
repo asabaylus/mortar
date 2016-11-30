@@ -4,7 +4,7 @@ import { zip } from 'lodash';
 
 export default class SecondaryNav extends Component {
   render() {
-    const navText = Array.from(document.querySelectorAll("h3.mt3_h3"))
+    const navText = Array.from(document.querySelectorAll("h3.mt3_heading--h4--2"))
                           .map(i => i.textContent.replace('In Development', ''));
     const navAnchors = Array.from(document.querySelectorAll(".anchor-link"))
                             .map(i => i.name);
