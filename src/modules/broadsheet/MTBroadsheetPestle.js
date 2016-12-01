@@ -9,18 +9,18 @@ class Broadsheet extends Module {
 
   init() {
     const issue = this.options.endpoint.issue,
-          heroImage = issue && issue.leadMedia && issue.leadMedia.length ? issue.leadMedia[0] : null;
+      heroImage = issue && issue.leadMedia && issue.leadMedia.length ? issue.leadMedia[0] : null;
 
     //component must have at least a lead image to render
     if(issue && heroImage) {
       let author,
-          body = issue.body,
-          heroKicker,
-          heroTitle,
-          heroUrl,
-          photographer,
-          subscribeCardProps,
-          substoryProps;
+        body = issue.body,
+        heroKicker,
+        heroTitle,
+        heroUrl,
+        photographer,
+        subscribeCardProps,
+        substoryProps;
 
       if(issue.text) {
         heroTitle = issue.text.title;
