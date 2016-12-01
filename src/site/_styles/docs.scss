@@ -5,6 +5,9 @@
 @import '../../styles/themes/default/vars/typography-fontsizes';
 @import '../../styles/themes/default/vars/z';
 
+// Variables
+
+$default-size-value: 1rem;
 
 // ====================
 // ====================
@@ -365,7 +368,7 @@ hr {
 
 .nav-item {
   display: block;
-  font-size: 1rem;
+  font-size: $default-size-value;
 
   @media #{$mt3_mq-lg} {
     display: inline-block;
@@ -411,7 +414,7 @@ hr {
 .secondarynav-list-item {
   display: block;
   font-family: $mt3_haas-stack;
-  font-size: $mt3_fs-norm;
+  font-size: $default-size-value;
   font-weight: 400;
   line-height: 1.4;
 }
