@@ -49,4 +49,14 @@
   ul {
     @extend %mt3_list;
   }
+
+  //add smartquote characters around corresponding span element
+  span.smart-quote {
+    &::before {
+      content: "\201C";
+    }
+    &::after {
+      content: "\201D";
+    }
+  }
 }
