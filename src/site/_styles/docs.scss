@@ -2,9 +2,11 @@
 @import '../../styles/themes/default/vars/colors';
 @import '../../styles/themes/default/vars/inputs';
 @import '../../styles/themes/default/vars/typography-fontfaces';
-@import '../../styles/themes/default/vars/typography-fontsizes';
 @import '../../styles/themes/default/vars/z';
 
+// Variables
+
+$default-size-value: 1rem;
 
 // ====================
 // ====================
@@ -153,7 +155,7 @@ hr {
 
 .typographyexamples-item {
   border: 1px solid $mt3_color-gray-10;
-  padding: 0 1rem;
+  padding: 0 $default-size-value;
 }
 
 .examplepadding {
@@ -226,7 +228,7 @@ hr {
 // ====================
 
 .sectionpadding {
-  padding-top: 1rem;
+  padding-top: $default-size-value;
 
   @media #{$mt3_mq-lg} {
     padding-top: 3rem;
@@ -365,7 +367,7 @@ hr {
 
 .nav-item {
   display: block;
-  font-size: 1rem;
+  font-size: $default-size-value;
 
   @media #{$mt3_mq-lg} {
     display: inline-block;
@@ -411,7 +413,7 @@ hr {
 .secondarynav-list-item {
   display: block;
   font-family: $mt3_haas-stack;
-  font-size: $mt3_fs-norm;
+  font-size: $default-size-value;
   font-weight: 400;
   line-height: 1.4;
 }
@@ -528,7 +530,7 @@ code {
   border: 0;
   cursor: pointer;
   margin: 0;
-  padding: 1rem;
+  padding: $default-size-value;
 
   .constrainheight &,
   .constrainheight-mobile & {
@@ -555,8 +557,8 @@ $snippet-chevron-up: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fww
     background-size: 1.5rem;
     content: '';
     display: inline-block;
-    margin-left: 1rem;
-    padding: 1rem;
+    margin-left: $default-size-value;
+    padding: $default-size-value;
     vertical-align: middle;
   }
 
