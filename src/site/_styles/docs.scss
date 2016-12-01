@@ -138,7 +138,11 @@ hr {
 .illustratedexamples-item {
   text-align: center;
   list-style-type: none;
-  min-height: 217px;
+  min-height: 270px;
+
+  @media #{$mt3_mq-lg} {
+    min-height: 217px;
+  }
 }
 
 .circle {
