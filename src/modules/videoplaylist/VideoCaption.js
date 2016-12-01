@@ -1,6 +1,7 @@
 'use strict';
 
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import _debounce from 'lodash/debounce';
 import $ from 'jquery';
 import 'dotdotdot';
@@ -12,25 +13,38 @@ class VideoCaption extends Component {
 
   constructor() {
     super();
+    this.onAnimationEnd = this.onAnimationEnd.bind(this);
     this.truncateAbstract = this.truncateAbstract.bind(this);
     this.resizeHandler = null;
   }
 
-  componentDidUpdate() {
-    this.truncateAbstract();
-  }
-
   componentDidMount() {
+    this.el = ReactDOM.findDOMNode(this);
+
     this.truncateAbstract();
     this.resizeHandler = _debounce(() => {
+      this.refreshParentHeight(el);
       $(this.refs.abstract).trigger('update');
     }, 500)
     window.addEventListener('resize', this.resizeHandler);
-    this.props.onUpdate(this.caption.offsetHeight);
+
+    this.el.parentNode.addEventListener('transitionend', this.onAnimationEnd, false);
+
+    Object.assign(this.el.style, {
+      opacity: 1,
+    });
+    this.refreshParentHeight(this.el);
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.resizeHandler);
+    this.el.parentNode.removeEventListener('transitionend', this.onAnimationEnd);
+  }
+
+  onAnimationEnd(event) {
+    if(event.propertyName === 'height') {
+      this.props.onAnimationEnd();
+    }
   }
 
   truncateAbstract() {
@@ -48,6 +62,14 @@ class VideoCaption extends Component {
             .css({ height: 'auto' });
         });
       }
+    });
+  }
+
+  refreshParentHeight(el) {
+    const height = el.offsetHeight;
+
+    Object.assign(el.parentNode.style, {
+      height: `${height}px`,
     });
   }
 
@@ -70,7 +92,6 @@ class VideoCaption extends Component {
     return (
       <div
         className="mt3_video-playlist--current-information"
-        ref={node => { this.caption = node; }}
       >
         <div className="mt3_kicker-wrapper">
           {subHeadingContent}
@@ -93,7 +114,8 @@ VideoCaption.propTypes = {
   title: React.PropTypes.string.isRequired,
   abstract: React.PropTypes.string.isRequired,
   kicker: React.PropTypes.object,
-  duration: React.PropTypes.string
+  duration: React.PropTypes.string,
+  onAnimationEnd: React.PropTypes.func.isRequired,
 };
 
 export default VideoCaption;

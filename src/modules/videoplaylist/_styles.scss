@@ -3,18 +3,7 @@
 $mt3_playlist-l-screen: 1600px;
 $mt3_small-title-width: 768px;
 $mt3_medium-title-width: 1024px;
-$animation-duration: 600ms;
-
-@at-root {
-  @keyframes show {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-}
+$animation-duration: 200ms;
 
 .mt3_video-playlist {
   display: flex;
@@ -92,7 +81,9 @@ $animation-duration: 600ms;
     backface-visibility: hidden;
     margin-left: 100px;
     overflow: hidden;
-    transition: all $animation-duration ease;
+    @include respond-to-multiple(l, xl) {
+      transition: height $animation-duration ease;
+    }
 
     @include respond-to(l) {
       margin-left: 90px;
@@ -113,7 +104,8 @@ $animation-duration: 600ms;
 
   &--current-information {
     @include respond-to-multiple(l, xl) {
-      animation: show $animation-duration forwards ease;
+      opacity: 0.01;
+      transition: opacity $animation-duration ease;
     }
 
     backface-visibility: hidden;

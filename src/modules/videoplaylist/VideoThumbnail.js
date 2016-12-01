@@ -22,11 +22,7 @@ class VideoThumbnail extends Component {
 
   onClick(e) {
     e.preventDefault();
-    this.props.onClick();
-  }
-
-  componentDidUpdate() {
-    this.truncateVideo();
+    this.props.onClick(this.props.index);
   }
 
   componentDidMount() {
@@ -34,7 +30,7 @@ class VideoThumbnail extends Component {
     this.truncateVideo();
     this.resizeHandler = _debounce(() => {
       this.videoTitleElement.trigger('update');
-    }, 100)
+    }, 100);
     window.addEventListener('resize', this.resizeHandler);
   }
 

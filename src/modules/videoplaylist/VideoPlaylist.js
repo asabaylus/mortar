@@ -20,6 +20,8 @@ class VideoPlaylist extends Component {
     this.autoPlay = false;
     this.playerInstanceName = `platformPlaylistVideoPlayer_${this.props.divID}`;
     this.adPlaying = false;
+    this.handleAnimationEnd = this.handleAnimationEnd.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.handleEvent = this.handleEvent.bind(this);
     this.manualPlay = false;
     this.didLoop = false;
@@ -36,16 +38,17 @@ class VideoPlaylist extends Component {
     };
   }
 
-  componentWillUpdate(nextProps, nextState) {
-    this.loadVideo(nextProps.dataModel.videos[nextState.currentVideoIndex].directLink, nextState);
-  }
-
   componentDidMount() {
     this.pdkCheck(this.activateEventListeners.bind(this));
   }
 
   componentWillMount() {
     this.changeVideo(this.state.currentVideoIndex);
+  }
+
+  handleAnimationEnd() {
+    const { props, state } = this;
+    this.loadVideo(props.dataModel.videos[state.currentVideoIndex].directLink, state);
   }
 
   //Return true if the elements is out of the viewport.
@@ -126,22 +129,12 @@ class VideoPlaylist extends Component {
     });
   }
 
-  loadVideo(url, nextState) {
+  loadVideo(url, state) {
     const formatUrl = url.match(/http.*\?|policy=\d*&|mbr=.*/g).join('');
-    this.playVideo(url, formatUrl, nextState);
+    this.playVideo(url, formatUrl, state);
   }
 
-  playVideo(originalUrl, formatUrl, nextState) {
-    //This block validates if the properties were changes, it means the state
-    //into the component keep the same, so we need to check if the direct link
-    //is different in order to update the player with the new video.
-    if (nextState.currentVideoIndex === this.state.currentVideoIndex) {
-      if (this.props.dataModel.videos[nextState.currentVideoIndex].directLink !== originalUrl) {
-        this.resetVideo(this.playerInstanceName, formatUrl);
-        window.dispatchEvent(new Event('resize'));
-      }
-      return;
-    }
+  playVideo(originalUrl, formatUrl, state) {
     const videoContainer = document.getElementById(this.playerInstanceName);
     const stickyHeaderEl = document.getElementById('header-ad');
     const scrollOffset = (stickyHeaderEl) ? (stickyHeaderEl.getBoundingClientRect().height + 20) * -1 : 0;
@@ -172,7 +165,7 @@ class VideoPlaylist extends Component {
       resetVideo(this.playerInstanceName, formatUrl);
     }
 
-    this.showHiddenThumb(nextState);
+    this.showHiddenThumb(state);
     //this will scroll to the video player when it is out of the viewport
     if (this.isElementOutViewport(videoContainer)) {
       Velocity(videoContainer, 'scroll', {
@@ -209,9 +202,9 @@ class VideoPlaylist extends Component {
     }
   }
 
-  showHiddenThumb(nextState) {
+  showHiddenThumb(state) {
     const currThumbs = this.refs.thumbnailContainer.querySelectorAll('.mt3_video-playlist-container--thumbnail');
-    let currThumb = currThumbs[nextState.currentVideoIndex];
+    let currThumb = currThumbs[state.currentVideoIndex];
     let currThumbParent = currThumb.parentNode;
     let thumbOffset = 0;
     if (!this.isElementVisible(currThumb, currThumbParent)) {
@@ -235,7 +228,7 @@ class VideoPlaylist extends Component {
         'mt3_video-playlist-container--active-thumbnail': videoIndex === index,
         'mt3_hide-play': !this.props.autoContinue
       });
-      return <VideoThumbnail key={index} wrapperClass={thumbClass} kickerType={kickerType} item={item} onClick={this.handleClick.bind(this, index)}/>
+      return <VideoThumbnail key={index} index={index} wrapperClass={thumbClass} kickerType={kickerType} item={item} onClick={this.handleClick}/>
     });
     return(
 
@@ -257,7 +250,7 @@ class VideoPlaylist extends Component {
                 abstract={currentVideo.abstract}
                 kicker={currentVideo.kicker}
                 duration={currentVideo.duration}
-                onUpdate={height => { this.setHeight(height); }}
+                onAnimationEnd={this.handleAnimationEnd}
               />
             </div>
             <EmbeddedVideo model={this.videoModel} lazyLoad={true}/>
@@ -272,15 +265,6 @@ class VideoPlaylist extends Component {
         </div>
       </div>
     )
-  }
-
-  setHeight(height) {
-    //Manually set the height of the container in order to see the animation in
-    //height. Without the timeout the captionContainer doesn't any value so it
-    //fails.
-    setTimeout(() => {
-      this.captionContainer.style.height = height + 'px';
-    }, 0)
   }
 }
 
