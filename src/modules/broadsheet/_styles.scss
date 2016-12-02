@@ -56,15 +56,15 @@ $mt3_large: 1280px;
   }
 
   &-article {
-     flex: 1 0 0;
-     padding-bottom: 2.5rem;
+    flex: 1 0 0;
+    padding-bottom: 2.5rem;
   }
 
   &-aside {
     width: 17.5rem;
 
     @media(max-width: $mt3_tiny) {
-      width: 14.2rem
+      width: 14.2rem;
     }
 
     @media(max-width: $mt3_small) {
@@ -105,14 +105,14 @@ $mt3_large: 1280px;
 
       @media(max-width: $mt3_tiny) {
         // align the hero img title to bottom for mobile
-        bottom: 0px;
+        bottom: 0;
         top: auto;
       }
     }
 
     &-issue-date {
-      border-left: 1px solid rgba($mt3_color-white, .5);
-      border-right: 1px solid rgba($mt3_color-white, .5);
+      border-left: 1px solid $mt3_color-white-semit;
+      border-right: 1px solid $mt3_color-white-semit;
       color: $mt3_color-white;
       font-size: .8rem;
       font-weight: 100;
@@ -129,12 +129,12 @@ $mt3_large: 1280px;
       font-size: 26px;
       font-weight: 600;
       line-height: 1.15;
-      margin: 0px 20% 30px;
+      margin: 0 20% 30px;
       padding: 0;
       text-transform: none;
 
       @media(max-width: $mt3_tiny) {
-        margin: 0px 10% 30px;
+        margin: 0 10% 30px;
       }
 
       h1 {
@@ -238,7 +238,7 @@ $mt3_large: 1280px;
     }
 
     // remove the centered vertical rule from the right cols last entry
-    &:after {
+    &::after {
       background: $mt3_color-gray-2;
       clear: both;
       content: '';
@@ -264,7 +264,7 @@ $mt3_large: 1280px;
       font-weight: 600;
       letter-spacing: .05em;
       line-height: 1.15;
-      margin: 0 0 .2rem 0;
+      margin: 0 0 .2rem;
     }
 
     &-dek {

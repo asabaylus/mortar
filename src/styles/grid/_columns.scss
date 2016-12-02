@@ -1,4 +1,5 @@
 $mt3_columns: 12;
+$mt3_col-gutter: 1.725%;
 
 // Object oriented grid classes in the style of bootstrap
 // Reference: http://getbootstrap.com/css/#grid
@@ -80,4 +81,9 @@ $mt3_columns: 12;
       left: auto;
     }
   }
+}
+
+.mt3_col-gut {
+  padding-left: $mt3_col-gutter;
+  padding-right: $mt3_col-gutter;
 }

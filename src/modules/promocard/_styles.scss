@@ -1,7 +1,9 @@
 $mt3_button-width: 8em;
 $mt3_button-height: 8em;
-$mt3_gradient: rgba(0, 0, 0, .5), transparent;
+
+$mt3_gradient: $mt3_color-black-semit, transparent;
 $mt3_gradientIndex: 3;
+
 $mt3_small: 768px;
 $mt3_medium: 1024px;
 $mt3_large: 1280px;
@@ -96,12 +98,12 @@ $mt3_large: 1280px;
     }
   }
 
-  .mt3_videopromo-button{
+  .mt3_videopromo-button {
     display: inline-block;
     position: relative;
     vertical-align: bottom;
 
-    a.mt3_promocardtext--overlay-link {
+    .mt3_promocardtext--overlay-link {
       left: 0;
       z-index: zIndex('promocard-middle');
     }
@@ -114,7 +116,7 @@ $mt3_large: 1280px;
     z-index: zIndex('promocard-top');
 
     &:hover {
-     cursor: pointer;
+      cursor: pointer;
     }
   }
 
@@ -181,6 +183,7 @@ $mt3_large: 1280px;
         height: calc(100% - 40px);
         width: calc(100% - 40px);
       }
+
       &-large {
         height: calc(100% - 60px);
         width: calc(100% - 60px);
@@ -195,7 +198,7 @@ $mt3_large: 1280px;
       width: calc(100% - 30px);
 
       figure:first-child::after {
-        background: black;
+        background: $mt3_color-black;
         bottom: 0;
         content: '';
         height: 100%;
@@ -248,12 +251,12 @@ $mt3_large: 1280px;
 
   .mt3_btn:hover,
   .mt3_btn--naked:hover {
-    color: white;
+    color: $mt3_color-white;
   }
 
   .mt3_promocard-kicker {
     @extend .mt3_kicker;
-    @include couldBeRichText();
+    @include could-be-rich-text;
     float: left;
     line-height: 1;
     margin-bottom: 10px;
@@ -276,19 +279,19 @@ $mt3_large: 1280px;
     }
 
     &--inverse {
-      border-right: 1px solid white;
+      border-right: 1px solid $mt3_color-white;
 
       &:nth-child(1) {
-        border-left: 1px solid white;
+        border-left: 1px solid $mt3_color-white;
       }
     }
   }
 
   .mt3_promocard-sponsored {
     @extend .mt3_kicker;
-    @include couldBeRichText();
-    border-left: 1px solid #7694CB;
-    border-right: 1px solid #7694CB;
+    @include could-be-rich-text;
+    border-left: 1px solid $mt3_color-sponsor;
+    border-right: 1px solid $mt3_color-sponsor;
     float: left;
     font-weight: 600;
     line-height: 1;
@@ -298,13 +301,13 @@ $mt3_large: 1280px;
 
     // overwrite extended mt3_kicker
     &:nth-child(1) {
-      border-left: 1px solid #7694CB;
+      border-left: 1px solid $mt3_color-sponsor;
     }
   }
 
   .mt3_promocard-title {
-    @include couldBeRichText();
     @extend %mt3_haas;
+    @include could-be-rich-text;
     font-size: 18px;
     font-weight: 600;
     line-height: 1.3;
@@ -323,8 +326,8 @@ $mt3_large: 1280px;
   }
 
   .mt3_promocard-dek {
-    @include couldBeRichText();
-    border-left: 1px solid #808080;
+    @include could-be-rich-text;
+    border-left: 1px solid $mt3_color-gray-50;
     font-family: $mt3_georgia-stack;
     font-size: 15px;
     line-height: 1.7;
@@ -332,11 +335,11 @@ $mt3_large: 1280px;
     padding-left: 30px;
 
     &--inverse {
-      border-left: 1px solid white;
+      border-left: 1px solid $mt3_color-white;
     }
 
     &--text-only {
-      border-left: none;
+      border-left: 0;
       color: $mt3_color-gray-40;
       padding-left: 0;
     }

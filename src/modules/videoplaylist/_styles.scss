@@ -26,6 +26,8 @@ $animation-duration: 200ms;
   }
 
   &__main-head {
+    padding-left: 100px;
+
     @include respond-to(l) {
       padding-left: 90px;
     }
@@ -33,8 +35,6 @@ $animation-duration: 200ms;
     @include respond-to-multiple(m, s) {
       padding-left: 30px;
     }
-
-    padding-left: 100px;
   }
 
   &--heading {
@@ -42,7 +42,7 @@ $animation-duration: 200ms;
     margin-left: 60px;
 
     &--border {
-      border-left: 1px solid map-get($mt3_colors, 'primary');
+      border-left: 1px solid $mt3_color-primary;
     }
 
     &__title {
@@ -52,13 +52,13 @@ $animation-duration: 200ms;
       padding-left: 2.5rem;
       padding-top: 2.5rem;
 
-      @media (max-width: #{$mt3_small-title-width - 0.01}) {
+      @media (max-width: #{$mt3_small-title-width - .01}) {
         font-size: $mt3_h-med3;
         padding-left: 1.875rem;
         padding-right: 1.875rem;
       }
 
-      @media (min-width: #{$mt3_small-title-width}) and (max-width: #{$mt3_medium-title-width - 0.01}) {
+      @media (min-width: #{$mt3_small-title-width}) and (max-width: #{$mt3_medium-title-width - .01}) {
         font-size: $mt3_h-med6;
       }
 
@@ -81,6 +81,7 @@ $animation-duration: 200ms;
     backface-visibility: hidden;
     margin-left: 100px;
     overflow: hidden;
+
     @include respond-to-multiple(l, xl) {
       transition: height $animation-duration ease;
     }
@@ -103,13 +104,25 @@ $animation-duration: 200ms;
   }
 
   &--current-information {
+    backface-visibility: hidden;
+    padding: 40px 80px 0 60px;
+
     @include respond-to-multiple(l, xl) {
       opacity: 0.01;
       transition: opacity $animation-duration ease;
     }
 
-    backface-visibility: hidden;
-    padding: 40px 80px 0 60px;
+    @include respond-to(l) {
+      padding-left: 40px;
+    }
+
+    @include respond-to(m) {
+      padding: 15px 70px 40px;
+    }
+
+    @include respond-to(s) {
+      padding: 15px 30px 40px;
+    }
 
     a {
       color: $mt3_color-white;
@@ -125,10 +138,10 @@ $animation-duration: 200ms;
       font-family: $mt3_georgia-stack;
       font-size: 15px;
       font-weight: normal;
-      line-height: 1.8666667;
+      line-height: 1.87;
       margin: 0;
       position: relative;
-      top: -0.4375rem;
+      top: -.4375rem;
 
       * {
         margin: 0;
@@ -145,13 +158,19 @@ $animation-duration: 200ms;
         &:focus,
         &:active {
           border-bottom: 0;
-          color: map-get($mt3_colors, 'gray-40');
+          color: $mt3_color-gray-40;
         }
       }
-
     }
 
     &__title {
+      @extend %mt3_haas;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+      margin-top: 10px;
+
       @include respond-to(xl) {
         font-size: 42px;
       }
@@ -167,38 +186,17 @@ $animation-duration: 200ms;
       @include respond-to(s) {
         margin-bottom: 0;
       }
-
-      @extend %mt3_haas;
-      font-size: 24px;
-      font-weight: 600;
-      line-height: 1.1;
-      margin-bottom: 1.25rem;
-      margin-top: 10px;
     }
 
     .mt3_caption-container--indent--gray {
+      border-left: 1px solid $mt3_color-gray-50;
+      padding-bottom: 1.25rem;
+
       @include respond-to-multiple(m, s) {
         display: none;
       }
-
-      border-left: 1px solid map-get($mt3_colors, 'gray50');
-      padding-bottom: 1.25rem;
     }
-
-    @include respond-to(l) {
-      padding-left: 40px;
-    }
-
-    @include respond-to(m) {
-      padding: 15px 70px 40px;
-    }
-
-    @include respond-to(s) {
-      padding: 15px 30px 40px;
-    }
-
   }
-
 
   // forcing font styles to match sizes set on p tag in _multiLayoutPromos.scss when the data isn't in a p tag
   .mt3_btn--naked {
@@ -243,6 +241,7 @@ $animation-duration: 200ms;
         overflow-y: scroll;
         position: absolute;
         width: 100%;
+
         &::-webkit-scrollbar {
           display: none;
         }
@@ -256,9 +255,8 @@ $animation-duration: 200ms;
         left: 0;
         opacity: 1;
         pointer-events: none;
-        position: relative;
         position: absolute;
-        transition-duration: 0.5s;
+        transition-duration: .5s;
         transition-property: opacity;
         transition-timing-function: ease-in-out;
         width: 100%;
@@ -274,15 +272,15 @@ $animation-duration: 200ms;
 
     // container text over the image.
     .thumbnail-overlay {
+      @extend %mt3_haas;
       bottom: 0;
       color: $mt3_color-white;
       display: flex;
       flex-direction: column;
-      @extend %mt3_haas;
       font-size: 14px;
       font-weight: 600;
       justify-content: center;
-      left: 0px;
+      left: 0;
       line-height: 1.43;
       padding: 0 30px;
       position: absolute;
@@ -309,6 +307,7 @@ $animation-duration: 200ms;
         border-color: $mt3_color-black;
         font-weight: 600;
       }
+
       .thumbnail-kicker--next {
         border-color: $mt3_color-primary;
         font-weight: 600;
@@ -321,7 +320,7 @@ $animation-duration: 200ms;
     }
 
     .modules-images {
-      &:before {
+      &::before {
         background-color: $mt3_color-black;
         content: '';
         height: 100%;
@@ -349,6 +348,7 @@ $animation-duration: 200ms;
           right: 15px;
         }
       }
+
       // right column
       &:nth-child(even) {
         padding-left: 15px;
@@ -374,13 +374,13 @@ $animation-duration: 200ms;
     }
 
     .modules-images {
-      &:before {
+      &::before {
         background-color: $mt3_color-primary;
       }
     }
 
     @media #{$mt3_mq-md} {
-      &:after {
+      &::after {
         border-bottom: 15px solid transparent;
         border-left: 15px solid $mt3_color-black;
         border-top: 15px solid transparent;
