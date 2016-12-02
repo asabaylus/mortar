@@ -2,6 +2,7 @@
 @import '../../styles/themes/default/vars/colors';
 @import '../../styles/themes/default/vars/inputs';
 @import '../../styles/themes/default/vars/typography-fontfaces';
+@import '../../styles/themes/default/vars/typography-fontsizes';
 @import '../../styles/themes/default/vars/z';
 
 // Variables
@@ -40,17 +41,17 @@ th {
 // ====================
 
 .badge {
+  background-color: #F45840;
+  color: #fff;
   display: inline-block;
-  min-width: 10px;
-  padding: 3px 7px;
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  color: #fff;
+  min-width: 10px;
+  padding: 3px 7px;
   text-align: center;
-  white-space: nowrap;
   vertical-align: middle;
-  background-color: #F45840;
+  white-space: nowrap;
 }
 
 
@@ -135,9 +136,9 @@ hr {
 }
 
 .illustratedexamples-item {
-  text-align: center;
   list-style-type: none;
   min-height: 270px;
+  text-align: center;
 
   @media #{$mt3_mq-lg} {
     min-height: 217px;
@@ -219,8 +220,8 @@ hr {
   &:visited,
   &:hover {
     color: $mt3_color-gray-80;
-    text-decoration: none;
     display: block;
+    text-decoration: none;
   }
 }
 
@@ -288,110 +289,102 @@ hr {
 
 .branding {
   margin-top: 0.83125rem;
+  * {
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
 
-.site-logo {
-  padding-right: .5rem;
-  text-decoration: none;
+.sitelogo {
+  margin-right: 0.2rem;
 }
 
-.navbutton {
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  vertical-align: bottom;
+.sitetitle {
+  @extend %mt3_verlag;
+  font-size: $mt3_h-sm5;
+  font-weight: $mt3_verlag-bold;
+
+  &,
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $mt3_color-black;
+    text-decoration: none;
+  }
+}
+
+.navlist {
+  @extend %mt3_verlag;
+  display: none;
 
   @media #{$mt3_mq-lg} {
-    cursor: default;
+    text-align: right;
+    display: block;
+    font-size: $mt3_fs-xsm;
+    top: .7rem;
+  }
+}
+
+.navitem {
+  display: inline-block;
+  margin-left: 1.375rem;
+}
+
+.navlink {
+  &,
+  &:link,
+  &:visited {
+    color: $mt3_color-gray-40;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:active {
+    color: $mt3_color-black;
+    text-decoration: underline;
   }
 }
 
 .navicon {
-  transition: 400ms;
-  vertical-align: middle;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 
   @media #{$mt3_mq-lg} {
     display: none;
   }
-
-  &--flipped {
-    transform: rotate(180deg);
-  }
 }
 
-.navcontainer {
-  display: none;
+.navlist-modal {
+  @extend %mt3_verlag;
+  font-size: $mt3_h-sm6;
+  margin-top: $default-size-value * 6;
+  padding: $mt3_h-sm6;
 
-  @media #{$mt3_mq-lg} {
+  * {
     display: block;
   }
 
-  &--active {
-    background-color: $mt3_color-white;
-    border: 1px solid $mt3_color-gray-10;
-    border-bottom: 6px solid $mt3_color-primary;
-    display: block;
-    margin-left: 5rem;
-    position: absolute;
-    top: 100%;
-    transition: 400ms;
-    width: 200px;
-    z-index: 1;
+  &--item {
+    border-bottom: 1px solid $mt3_color-gray-40;
+  }
 
-    @media #{$mt3_mq-lg} {
-      border: 0;
-      margin-left: 0;
-      position: static;
-      width: initial;
+  &--link {
+    padding: $mt3_h-sm6 0 $mt3_h-sm6;
+
+    &,
+    &:link,
+    &:visited,
+    &:active {
+      color: $mt3_color-gray-40;
+      text-decoration: none;
     }
   }
 }
 
-
-.branding-grey-border {
-  background-color: $mt3_color-gray-10;
-  display: inline-block;
-  height: 2rem;
-  width: .0625rem;
-}
-
-.navcontainer-yellow-border {
-  background-color: $mt3_color-primary;
-  display: block;
-  height: .375rem;
-  position: absolute;
-  top: -3%;
-  width: 9.5rem;
-
-  @media #{$mt3_mq-lg} {
-    display: none;
-  }
-}
-
-.nav-item {
-  display: block;
-  font-size: $default-size-value;
-
-  @media #{$mt3_mq-lg} {
-    display: inline-block;
-    margin-bottom: 0;
-    margin-right: 1.375em;
-  }
-}
-
-.nav-link {
-  &,
-  &:link,
-  &:visited {
-    color: $mt3_color-gray-80;
-    text-decoration: none;
-  }
-
-  &:hover {
-    color: $mt3_color-gray-50;
-    text-decoration: underline;
-  }
-}
 
 // ====================
 // ====================
@@ -489,9 +482,9 @@ pre {
 .configurator-codesnippet {
   // Additional styles imported from prism to accomodate the configurator codesnippet
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   line-height: 1.5;
   overflow: auto;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   white-space: pre;
   word-break: normal;
   word-wrap: normal;
@@ -513,8 +506,8 @@ code {
 // Code snippet button
 
 .codesnippet-wrapper {
-  position: relative;
   margin-bottom: 2.5rem;
+  position: relative;
 }
 
 .codesnippet-button {
@@ -593,7 +586,7 @@ $snippet-chevron-up: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fww
 }
 
 .anchor-link {
-  padding-top: 9.375rem;
-  margin-top: -9.375rem;
   display: block;
+  margin-top: -9.375rem;
+  padding-top: 9.375rem;
 }

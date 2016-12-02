@@ -33,8 +33,10 @@ export default class SecondaryNav extends Component {
   }
 }
 
-window.mortarSite = {
-  renderSecondaryNavigation: function(el){
-    DOMrender(<SecondaryNav />, el);
-  }
+if(!window.mortarSite){
+  window.mortarSite = {};
+}
+window.mortarSite.renderSecondaryNavigation = function (el) {
+  if(!el){ return; }
+  DOMrender(<SecondaryNav />, el);
 }
