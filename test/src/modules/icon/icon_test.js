@@ -43,7 +43,7 @@ describe('Icon', () => {
     });
   });
 
-  describe('React Component', () => {
+  describe('Icon: Default', () => {
     let wrapper;
 
     before(() => {
@@ -68,6 +68,35 @@ describe('Icon', () => {
 
     it('has use element with link reference', () => {
       expect(wrapper.find('use').props().xlinkHref).to.equal('#share');
+    });
+
+  });
+
+  describe('Icon: Small Size, Inverse Color', () => {
+    let wrapper;
+
+    before(() => {
+
+      wrapper = shallow(<IconComponent
+          name="#camera"
+          align="left"
+          size=""
+          color="white"
+          alt="Camera icon"
+      />);
+
+    });
+
+    it('has svg element with appropriate classes', () => {
+      expect(wrapper.find('svg').props().className).to.equal('mt3_icon mt3_icon--left mt3_color--white');
+    });
+
+    it('has title element with alt text', () => {
+      wrapper.find('title').text('Camera icon');
+    });
+
+    it('has use element with link reference', () => {
+      expect(wrapper.find('use').props().xlinkHref).to.equal('#camera');
     });
 
   });
