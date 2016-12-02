@@ -7,6 +7,7 @@ import _delay from 'lodash/delay';
 import Image from '@natgeo/modules-images';
 
 import PromoImage from '../promocard/components/shared/PromoImage';
+import SubscribeCard from '../subscribecard/subscribeCard';
 import Attributions from './MTAttributions';
 
 
@@ -48,6 +49,10 @@ class Broadsheet extends Component {
     _delay(this.reveal, 2000);
     window.addEventListener('resize', this.debouncedReveal);
     window.addEventListener('scroll', this.debouncedReveal);
+
+    if(this.props.mountedCallBack) {
+      this.props.mountedCallBack(this.props.id)
+    }
   }
 
   componentDidUnMount() {
@@ -57,52 +62,71 @@ class Broadsheet extends Component {
   render() {
     // set the aspect ratio for the 'hero' image
     // if mobile then 1:1 otherwise 16:9
-    // let cardAspectRatio = 0.5649717514124294;
     const cardAspectRatio = window.innerWidth < 768 ? 1 : 0.565;
-    const {
-      coverImage,
-      issueDate,
-      issueUrl,
-      leadMedia,
-      mainAuthor,
-      mainPhotographer,
-      mainTitle,
-      mainUrl,
-      subStories,
-      height, width,
-    } = this.props;
-    const bodyNodes = this.props.mainBody.map((node, index) => {
 
-      if (node.type === 'text') {
-        return (
-          <div key={index} dangerouslySetInnerHTML={{__html: node.text}} />
-        )
-      }
+    const { author,
+            body,
+            heroKicker,
+            heroImage,
+            heroTitle,
+            heroUrl,
+            photographer,
+            subscribeCardProps,
+            substoryProps} = this.props;
 
-      if (node.type === 'image') {
-        return(
-          <div key={index}>
-            <Image
-              aspectRatio={node.aspectRatio}
-              frameAspectRatio={node.aspectRatio}
-              lazyLoad={true}
-              placeholder='none'
-              height={height}
-              width={width}
-              altText={node.altText || ''}
-              src={node.imageUrl}
-              srcset={node.srcset} />
-            <Attributions
-              caption={node.caption}
-              credit={node.credit} />
-          </div>
-        )
-      }
+    let i = 0;
+    let bodyNodes = null;
+    let contributorsBlock = [];
 
-      return (
-        <span key={index}>Content Not Found</span>
+    if(author) {
+      contributorsBlock.push(
+        <p key={i++}>
+          <span className='mt3_georgia-heading mt3_broadsheet-leadMedia-by-label'>By:</span>
+          <span className='mt3_georgia-heading mt3_broadsheet-leadMedia-by'>{author}</span>
+        </p>
       );
-    });
+    }
+
+    if(photographer) {
+      contributorsBlock.push(
+        <p key={i++}>
+          <span className='mt3_georgia-heading mt3_broadsheet-leadMedia-photograph-label'>Photography:</span>
+          <span className='mt3_georgia-heading mt3_broadsheet-leadMedia-photograph'>{photographer}</span>
+        </p>
+      );
+    }
+
+    if(body) {
+      bodyNodes = body.map((node, index) => {
+        if (node.type === 'text') {
+          return (
+            <div key={index} dangerouslySetInnerHTML={{__html: node.text}} />
+          )
+        }
+
+        if (node.type === 'image') {
+          return(
+            <div key={index}>
+              <Image
+                aspectRatio={node.aspectRatio}
+                frameAspectRatio={node.aspectRatio}
+                lazyLoad={true}
+                placeholder='none'
+                altText={node.altText || ''}
+                src={node.imageUrl}
+                srcset={node.srcset} />
+              <Attributions
+                caption={node.caption}
+                credit={node.credit} />
+            </div>
+          )
+        }
+
+        return (
+          <span key={index}>Content Not Found</span>
+        );
+      });
+    }
 
     return (
       <div ref={ref => this.broadsheet = ref} className='mt3_broadsheet_wrapper' data-reveal='true'>
@@ -111,23 +135,19 @@ class Broadsheet extends Component {
 
           <section className='mt3_bgcolor--white'>
             <header className='mt3_row'>
-              <div className='mt3_broadsheet-leadMedia-header'>
-                <a className='mt3_broadsheet-leadMedia-issue-date mt3_color--white mt3_haas-heading' href={issueUrl}>
-                  <span className='mt3_georgia-heading mt3_broadsheet-leadMedia-issue-date-label mt3_visuallyhidden'>
-                  Issue Date:</span>
-                  {issueDate}
-                </a>
+                <div className='mt3_broadsheet-leadMedia-header'>
 
-                <a className='mt3_broadsheet-leadMedia-title mt3_btn mt3_btn--naked' href={mainUrl}>
-                  <h1 className='mt3_color--white mt3_haas-heading'>{mainTitle}</h1>
-                  <p>
-                    <span className='mt3_georgia-heading mt3_broadsheet-leadMedia-by-label'>By:</span>
-                    <span className='mt3_georgia-heading mt3_broadsheet-leadMedia-by'>{mainAuthor}</span>
-                  </p>
-                  <p>
-                    <span className='mt3_georgia-heading mt3_broadsheet-leadMedia-photograph-label'>Photography:</span>
-                    <span className='mt3_georgia-heading mt3_broadsheet-leadMedia-photograph'>{mainPhotographer}</span>
-                  </p>
+                {heroKicker ?
+                  <a className='mt3_broadsheet-leadMedia-issue-date mt3_color--white mt3_haas-heading' href={heroKicker.url}>
+                    {heroKicker.label}
+                  </a>
+                : null }
+
+                <a className='mt3_broadsheet-leadMedia-title mt3_btn mt3_btn--naked' href={heroUrl}>
+                  <h1 className='mt3_color--white mt3_haas-heading'>{heroTitle}</h1>
+                  {contributorsBlock.length ?
+                    contributorsBlock
+                  : null}
                 </a>
               </div>
 
@@ -138,7 +158,7 @@ class Broadsheet extends Component {
                     cardAspectRatio
                   }}
                   fadeSpeed={0}
-                  leadMedia={leadMedia}
+                  leadMedia={heroImage}
                   secondImage={false} />
               </div>
             </header>
@@ -146,42 +166,34 @@ class Broadsheet extends Component {
             <div className='mt3_broadsheet_row'>
               <div className='mt3_article mt3_broadsheet-article'>
                 <Attributions
-                  caption={leadMedia.caption}
-                  credit={leadMedia.credit} />
+                  caption={heroImage.caption}
+                  credit={heroImage.credit} />
 
+                <div id={`${this.props.id}__smartbody`}>
                   {bodyNodes}
+                </div>
               </div>
 
               <aside className='mt3_broadsheet-aside'>
                 <div className='mt3_broadsheet-aside-v-background'>
-                  <header className='mt3_broadsheet-cover-heading mt3_verlag-heading'>
-                    <p><span className='mt3_broadsheet-subscribe-label'>Subscribe</span><br/> National Geographic Magazine</p>
+                  {subscribeCardProps ?
+                    <SubscribeCard image = {subscribeCardProps.image}/>
+                  : null}
 
-                    <Image
-                      aspectRatio={coverImage.aspectRatio}
-                      lazyLoad={false}
-                      placeholderBackgroundColor={'rgb(0,0,0)'}
-                      letterboxBackgroundColor = {'rgb(0,0,0)'}
-                      placeholder='none'
-                      fadeSpeed={0}
-                      height={height}
-                      width={width}
-                      altText='National Geographic Magazine Cover Image'
-                      src={coverImage.src}
-                      srcset={coverImage.srcset}
-                    />
-                  </header>
+                  {substoryProps && substoryProps.stories.length ?
+                    <div>
+                      <p className='mt3_broadsheet-story-also-in mt3_verlag-heading'>{substoryProps.heading}</p>
 
-                  <p className='mt3_broadsheet-story-also-in mt3_verlag-heading'>Also in this issue</p>
-
-                  <ul className='mt3_body'>
-                  {subStories.map((item, index) => (
-                    <li key={index}>
-                      <h2 className='mt3_broadsheet-story-title mt3_haas-heading mt3_color--black'>{item.text.title}</h2>
-                      <p className='mt3_broadsheet-story-dek mt3_color--gray66'>{item.text.dek}</p>
-                    </li>
-                  ))}
-                  </ul>
+                      <ul className='mt3_body'>
+                        {substoryProps.stories.map((item, index) => (
+                          <li key={index}>
+                            <h2 className='mt3_broadsheet-story-title mt3_haas-heading mt3_color--black'>{item.text.title}</h2>
+                            <p className='mt3_broadsheet-story-dek mt3_color--gray66'>{item.text.dek}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  : null }
                 </div>
               </aside>
             </div>
@@ -193,25 +205,19 @@ class Broadsheet extends Component {
 }
 
 Broadsheet.propTypes = {
-  coverImage: PropTypes.shape({
-    aspectRatio: PropTypes.number,
-    srcset: PropTypes.array,
-    src: PropTypes.string,
-  }),
-  issueDate: PropTypes.string,
-  issueUrl: PropTypes.string,
-  leadMedia: PropTypes.shape({
+  author: PropTypes.string,
+  body: PropTypes.array,
+  heroImage: PropTypes.shape({
     caption: PropTypes.string,
     credit: PropTypes.string
-  }),
-  subStories: PropTypes.array,
-  mainAuthor: PropTypes.string,
-  mainBody: PropTypes.array,
-  mainPhotographer: PropTypes.string,
-  mainTitle: PropTypes.string,
-  mainUrl: PropTypes.string,
-  height: PropTypes.number,
-  width: PropTypes.number,
+  }).isRequired,
+  heroKicker: PropTypes.string,
+  heroTitle: PropTypes.string,
+  heroUrl: PropTypes.string,
+  photographer: PropTypes.string,
+  subscribeCardProps: PropTypes.object,
+  substoryProps: PropTypes.object,
+  writer: PropTypes.string
 }
 
 export default Broadsheet;

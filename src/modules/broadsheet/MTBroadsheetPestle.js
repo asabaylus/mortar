@@ -8,21 +8,49 @@ import MTBroadsheet from './MTBroadsheet';
 class Broadsheet extends Module {
 
   init() {
-    const issue = this.options.endpoint.issue;
+    const issue = this.options.endpoint.issue,
+      heroImage = issue && issue.leadMedia && issue.leadMedia.length ? issue.leadMedia[0] : null;
 
-    ReactDOM.render(<MTBroadsheet
-      coverImage={issue.subscribe.image}
-      issueUrl={issue.url}
-      issueDate={issue.text.kicker.label}
-      mainAuthor={issue.text.contributors.writers[0].name}
-      mainBody={issue.body}
-      mainPhotographer={issue.text.contributors.photographers[0].name}
-      mainTitle={issue.text.title}
-      mainUrl={issue.text.kicker.url}
-      leadMedia={issue.leadMedia[0]}
-      subStoryHeading={issue.subStories.heading}
-      subStories={issue.subStories.stories}
-    />, this.el);
+    //component must have at least a lead image to render
+    if(issue && heroImage) {
+      let author,
+        body = issue.body,
+        heroKicker,
+        heroTitle,
+        heroUrl,
+        photographer,
+        subscribeCardProps,
+        substoryProps;
+
+      if(issue.text) {
+        heroTitle = issue.text.title;
+        heroUrl = issue.url;
+        subscribeCardProps = issue.subscribe;
+        substoryProps = issue.subStories;
+
+        if(issue.text.contributors) {
+          if(issue.text.contributors.writers && issue.text.contributors.writers.length && issue.text.contributors.writers[0].name) {
+            author = issue.text.contributors.writers[0].name;
+          }
+
+          if(issue.text.contributors.photographers && issue.text.contributors.photographers.length && issue.text.contributors.photographers[0].name) {
+            photographer = issue.text.contributors.photographers[0].name;
+          }
+        }
+      }
+
+      ReactDOM.render(<MTBroadsheet
+        author = {author}
+        body = {body}
+        heroImage = {heroImage}
+        heroKicker = {heroKicker}
+        heroTitle = {heroTitle}
+        heroUrl = {heroUrl}
+        photographer = {photographer}
+        subscribeCardProps = {subscribeCardProps}
+        substoryProps = {substoryProps}
+      />, this.el);
+    }
   }
 }
 
