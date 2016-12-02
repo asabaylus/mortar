@@ -108,7 +108,8 @@ class FourUpComponent extends Component {
     ];
 
     // This sets the markup for the last two components when the parent component's width is >= 440
-    const tabDeskBottomRow = (
+    // Only create this row if cards are present to account for bottom alignment with left rail
+    const tabDeskBottomRow = this.storyCards[2] ? (
       <div className="mt3_row mt3_fourup-row">
         <div className="mt3_col-6 mt3_fourup-col--extrasmall">
           {this.storyCards[2]}
@@ -116,7 +117,7 @@ class FourUpComponent extends Component {
         <div className="mt3_col-6 mt3_fourup-col--extrasmall">
           {this.storyCards[3]}
         </div>
-      </div>);
+      </div>) : null;
 
     const bottomRow = (this.state.contentWidth < 440) ? mobileBottomRows : tabDeskBottomRow;
 
