@@ -67,7 +67,7 @@
               {
                 'type': 'gallery',
                 'config': {
-                  'sponsored': false,
+                  'sponsored': true,
                   'showPlayButton': false,
                   'showByline': false,
                   'aspectRatio': '3:2'
@@ -138,24 +138,28 @@
                 }
               },
               {
-                'type': 'video',
+                'type': 'article',
                 'config': {
-                  'sponsored': false,
+                  'sponsored': true,
                   'showPlayButton': true,
                   'showByline': true
                 },
+                'link': {
+                  'url': 'http:\/\/www.yahoo.com',
+                  'target': '_blank'
+                },
                 'leadMedia': [
                   {
-                    'guid': '47746161-1e00-4514-9b4f-168f0b552c66',
-                    'videoUrl': 'http:\/\/news.localhost.nationalgeographic.com:4502\/content\/dam\/natgeo\/video\/mpx\/news\/c\/ch\/cha\/chasing-ice-photographer-talks-melting-glaciers.mp4',
-                    'imageUrl': 'http:\/\/pmdvod.nationalgeographic.com\/NG_Video\/334\/483\/160127-utah-wolverines-runners-vin_640x360_609324611664.jpg',
-                    'renditionUrl': 'http:\/\/pmdvod.nationalgeographic.com\/NG_Video\/334\/483\/160127-utah-wolverines-runners-vin_640x360_609324611664.jpg',
-                    'duration': '2:48'
+                    'imageUrl': 'http:\/\/www.lovethispic.com\/uploaded_images\/90725-Colorful-Kittens.jpg'
                   }
                 ],
                 'text': {
-                  'title': '&quot;Chasing Ice&quot; Photographer Talks Melting Glacierss',
-                  'dek': 'December 18, 2012 National Geographic photographer James Balog discusses Chasing Ice, a new documentary featuring time-lapse photographs of the rapidly melting Arctic. Balog has been photographing shrinking glaciers since 2007 as part of the Extreme Ice Survey.'
+                  'title': 'Short Titles are Funny Things',
+                  'dek': '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>\n',
+                  'kicker': {
+                    'label': 'Technology'
+                  },
+                  'sponsorContentLabel': 'Partner Content'
                 }
               },
               {
