@@ -1,19 +1,35 @@
 'use strict';
 
+import React from 'react';
+import { shallow, mount } from 'enzyme';
+
 import Pestle from '@natgeo/pestle';
-import ShowCard from '../../../../src/modules/showcard/showCardPestle.js';
+
 import MTShowCardComponent from '../../../../src/modules/showcard/showCard.js';
 import PromoImage from '../../../../src/modules/promocard/components/shared/PromoImage.js';
+import ShowCard from '../../../../src/modules/showcard/showCardPestle.js';
 
-import {shallow, mount} from 'enzyme';
-import React from 'react';
 
 describe('ShowCard', () => {
   describe('Pestle Module', () => {
     before(() => {
-      const html = `<div
-        data-pestle-module='ShowCard'
-        ></div>`
+      const html = `<div data-pestle-module='ShowCard'>
+        <script type="text/json" data-pestle-options>
+          {
+            "type": "show",
+            "config": {
+              "cardAspectRatio": "16:9",
+              "sponsored": false,
+              "showPlayButton": false,
+              "channelMapping": true,
+              "showByline": true
+            },
+            "text": {
+              "brandingBadge": "Heading"
+            }
+          }
+        </script>
+      </div>`
 
       insertFixture(html);
       Pestle.init();

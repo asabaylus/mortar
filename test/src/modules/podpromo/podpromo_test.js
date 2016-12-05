@@ -13,7 +13,7 @@ describe('POD Promo Component', () => {
       const html = `<div data-pestle-module='PodPromo'>
         <script type="text/json" data-pestle-options>
           {
-            "id": "f89234jw",
+            "itemId": "f89234jw",
             "dataModel": {
               "id": "12344678910",
               "type": "pod",
