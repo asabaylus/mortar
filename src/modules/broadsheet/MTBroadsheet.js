@@ -8,7 +8,7 @@ import Image from '@natgeo/modules-images';
 
 import PromoImage from '../promocard/components/shared/PromoImage';
 import SubscribeCard from '../subscribecard/subscribeCard';
-import Attributions from './MTAttributions';
+import Captions from '../captions/MTCaptions';
 
 
 class Broadsheet extends Component {
@@ -115,9 +115,11 @@ class Broadsheet extends Component {
                 altText={node.altText || ''}
                 src={node.imageUrl}
                 srcset={node.srcset} />
-              <Attributions
+              <Captions
+                affiliation={node.affiliation}
                 caption={node.caption}
-                credit={node.credit} />
+                credit={node.credit}
+                title={node.title} />
             </div>
           )
         }
@@ -165,9 +167,11 @@ class Broadsheet extends Component {
 
             <div className='mt3_broadsheet_row'>
               <div className='mt3_article mt3_broadsheet-article'>
-                <Attributions
+                <Captions
+                  affiliation={heroImage.affiliation}
                   caption={heroImage.caption}
-                  credit={heroImage.credit} />
+                  credit={heroImage.credit}
+                  title={heroImage.title}/>
 
                 <div id={`${this.props.id}__smartbody`}>
                   {bodyNodes}
