@@ -43,7 +43,7 @@ class FourUpComponent extends Component {
     });
   }
 
-  pushCard(card, index, componentStories) {
+  pushCard(card, index) {
     // Don't worry about adding to the array if it won't be shown
     if (index >= this.maxCards) {
       return;
