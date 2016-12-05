@@ -9,6 +9,8 @@
 
 $default-size-value: 1rem;
 
+$secondary-nav-fixed-top: 90px;
+
 // ====================
 // ====================
 // Reset
@@ -399,6 +401,11 @@ hr {
   @media #{$mt3_mq-lg} {
     display: block;
     position: relative;
+
+    &-sticky {
+      position: fixed;
+      top: $secondary-nav-fixed-top;
+    }
   }
 }
 

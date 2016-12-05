@@ -12,11 +12,27 @@ title: Color
   </div>
 </div>
 
-<div class="mt3_bgcolor--gray5 mt3_row-gut-4 divider">&nbsp;</div>
 
-{% include "src/styles/theme/colordoc.html" %}
-<div class="mt3_bgcolor--gray5 mt3_row-gut-4 divider">&nbsp;</div>
-{% include "src/styles/theme/primary.html" %}
-{% include "src/styles/theme/neutrals.html" %}
-{% include "src/styles/theme/miscellaneous.html" %}
-{% include "src/styles/theme/socialbrands.html" %}
+<div class="pagewrapper mt3_col-gut">
+  <div id="secondaryNav" class="secondary-nav-sticky"></div>
+
+  <a class="anchor-link" name="colordoc"></a>
+  {% include "src/styles/theme/colordoc.html" %}
+  <div class="mt3_bgcolor--gray5 mt3_col-lg-offset-3 mt3_row-gut-4 divider">&nbsp;</div>
+
+  <a class="anchor-link" name="primary"></a>
+  {% include "src/styles/theme/primary.html" %}
+
+  <a class="anchor-link" name="neutrals"></a>
+  {% include "src/styles/theme/neutrals.html" %}
+
+  <a class="anchor-link" name="miscellaneous"></a>
+  {% include "src/styles/theme/miscellaneous.html" %}
+
+  <a class="anchor-link" name="socialbrands"></a>
+  {% include "src/styles/theme/socialbrands.html" %}
+</div>
+
+<script>
+
+</script>

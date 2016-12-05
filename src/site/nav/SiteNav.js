@@ -62,10 +62,11 @@ export default class SiteNav extends Component {
   }
 }
 
-if(!window.mortarSite){
-  window.mortarSite = {};
-}
+window.mortarSite = window.mortarSite || {};
 window.mortarSite.renderSiteNav = function (el) {
-  if(!el){ return; }
+  if (!el) {
+    return;
+  }
+
   DOMrender(<SiteNav />, el);
 }
