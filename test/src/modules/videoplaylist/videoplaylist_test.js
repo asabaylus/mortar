@@ -20,7 +20,7 @@ describe('VideoPlaylist Component', () => {
             {
               "id": "abc123",
               "autocontinue": "false",
-              "endpoint": "http://www.nationalgeographic.com/versions/20160804-v1/_jcr_content/content/videoplaylist.promo-all.json"
+              "endpoint": "http://style-guide.nationalgeographic.com/beta/mockdata/videoplaylist/data.json"
             }
           </script>
         </div>`;
