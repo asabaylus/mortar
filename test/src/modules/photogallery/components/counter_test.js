@@ -4,7 +4,7 @@ import React from 'react';
 import {shallow, mount} from 'enzyme';
 import Counter from '../../../../../src/modules/photogallery/components/Counter';
 
-describe.only('Counter Component', () => {
+describe('Counter Component', () => {
   let wrapper;
 
   const slides = [
@@ -38,7 +38,7 @@ describe.only('Counter Component', () => {
     }
   ];
 
-  describe('Counter: Initial', () => {
+  describe('React Component', () => {
     before(() => {
       wrapper = shallow(<Counter
         showCounter={true}
@@ -46,20 +46,28 @@ describe.only('Counter Component', () => {
       />);
     });
 
-    it('Logs to console', () => {
-      console.log(wrapper.find('mt3_photogallery-countercontainer'));
-    });
-
-    it('Should contain a left button', () => {
-      expect(wrapper.find('mt3_photogallery-countercontainer').childAt(0).props().type).to.equal(button);
-    });
-
     it('Left button should have appropriate class', () => {
-      expect(wrapper.find('mt3_photogallery-countercontainer').childAt(0).props().className).to.equal("mt3_h5 mt3_numericcounter-button");
+      expect(wrapper.find('.mt3_photogallery-countercontainer').childAt(0).props().className).to.equal("mt3_h5 mt3_numericcounter-button");
     });
 
     it('Left button should contain initial index number', () => {
-      expect(wrapper.find('mt3_photogallery-countercontainer').childAt(0).props().children).to.equal(1);
+      expect(wrapper.find('.mt3_photogallery-countercontainer').childAt(0).props().children).to.equal(1);
+    });
+
+    it('Divider should have appropriate class', () => {
+      expect(wrapper.find('.mt3_photogallery-countercontainer').childAt(1).props().className).to.equal("mt3_h5");
+    });
+
+    it('Divider should be a slash', () => {
+      expect(wrapper.find('.mt3_photogallery-countercontainer').childAt(1).props().children).to.equal("/");
+    });
+
+    it('Right button should have appropriate class', () => {
+      expect(wrapper.find('.mt3_photogallery-countercontainer').childAt(2).props().className).to.equal("mt3_h5 mt3_numericcounter-button");
+    });
+
+    it('Right button should contain total number of slides', () => {
+      expect(wrapper.find('.mt3_photogallery-countercontainer').childAt(2).props().children).to.equal(2);
     });
 
   });
