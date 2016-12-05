@@ -43,7 +43,7 @@ class FourUpComponent extends Component {
     });
   }
 
-  pushCard(card, index) {
+  pushCard(card, index, componentStories) {
     // Don't worry about adding to the array if it won't be shown
     if (index >= this.maxCards) {
       return;
@@ -81,6 +81,7 @@ class FourUpComponent extends Component {
     }
 
     this.storyCards.push(<MTPromoCard key={index} {...currentCard} theme={'dark'} parentWidth={parentWidth}/>);
+
   }
 
   render() {
@@ -96,6 +97,19 @@ class FourUpComponent extends Component {
       '440': 'mt3_fourup--tablet',
       '740': 'mt3_fourup--desktop'
     };
+
+    // Only create as many rows as there are number of cards - min. 1
+    const firstRow = (
+      <div className="mt3_row mt3_fourup-row mt3_fourup-row--top">
+        {this.storyCards[0]}
+      </div>
+    );
+
+    const secondRow = this.storyCards[1] ? (
+      <div className="mt3_row mt3_fourup-row">
+        {this.storyCards[1]}
+      </div>
+    ) : null;
 
     // This sets the markup for the last two components when the parent component's width is less than 440
     const mobileBottomRows = [
@@ -125,13 +139,9 @@ class FourUpComponent extends Component {
       <EQ elementRef="fourup" sizeClasses={fourUpSizes}>
         <div ref="fourUpContainer" className="mt3_fourup">
           <div className="mt3_left-and-right-package-header" dangerouslySetInnerHTML={{__html: componentHead}}/>
-          <div className="mt3_row mt3_fourup-row mt3_fourup-row--top">
-            {this.storyCards[0]}
-          </div>
-          <div className="mt3_row mt3_fourup-row">
-            {this.storyCards[1]}
-          </div>
-          { bottomRow }
+            { firstRow }
+            { secondRow }
+            { bottomRow }
         </div>
       </EQ>
     );
