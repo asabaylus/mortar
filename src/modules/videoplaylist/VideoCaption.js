@@ -42,27 +42,34 @@ class VideoCaption extends Component {
   }
 
   onAnimationEnd(event) {
-    if(event.propertyName === 'height') {
+    if (event.propertyName === 'height') {
       this.props.onAnimationEnd();
     }
   }
 
   truncateAbstract() {
-    $(this.refs.abstract).css({height: '6em'}).dotdotdot({
-      after: $('<a class="mt3_show-more-link mt3_color--white" href="#">Read More</a>'),
-      callback: (isTruncated, original) => {
-        const $abstractEl = $(this.refs.abstract);
-        if (!isTruncated) {
-          $abstractEl.css({height: 'auto'});
-        }
-        $('.mt3_show-more-link').on('click', (event) => {
-          event.preventDefault();
-          $abstractEl
-            .trigger('destroy')
-            .css({ height: 'auto' });
+    let abstractElem = $(this.refs.abstract);
+    if (abstractElem) {
+      abstractElem
+        .css({height: '6em'})
+        .dotdotdot({
+          after: $('<a class="mt3_show-more-link mt3_color--white" href="#">Read More</a>'),
+          callback: (isTruncated, original) => {
+            const $abstractEl = $(this.refs.abstract);
+
+            if (!isTruncated) {
+              $abstractEl.css({height: 'auto'});
+            }
+
+            $('.mt3_show-more-link').on('click', (event) => {
+              event.preventDefault();
+              $abstractEl
+                .trigger('destroy')
+                .css({ height: 'auto' });
+            });
+          }
         });
-      }
-    });
+    }
   }
 
   refreshParentHeight(el) {
