@@ -48,8 +48,12 @@ describe('Tooltip', () => {
       />);
     });
 
-    it('should render the proper markup', () => {
-      expect(wrapper.html()).to.equal('<div class="mt3_tooltip-container"><span></span><button class="mt3_h5 mt3_color--gray80 mt3_bordercolor--gray10 mt3_bgcolor--white mt3_tooltip-btn">?</button></div>');
+    it('should be wrapped in the proper className', () => {
+      expect(wrapper.find('div').first().hasClass('mt3_tooltip-container')).to.equal(true);
+    });
+
+    it('the button should have the proper className', () => {
+      expect(wrapper.find('button').hasClass('mt3_tooltip-btn')).to.equal(true);
     });
   });
 
