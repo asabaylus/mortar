@@ -37,8 +37,11 @@ const MTJQ = jQuery.noConflict();
   require('../contentPackages/heroWithTwoRails/configurator/heroWithTwoRailsConfiguratorPestle');
 
 
-// Secondary Nav
+// Navs
+
   require('../site/nav/SecondaryNav');
+  require('../site/nav/SiteNav');
+
 
 })(MTJQUERY, MTJQ, Pestle);
 
