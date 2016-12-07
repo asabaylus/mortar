@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React from 'react';
 import update from 'react/lib/update';
 
 import Configurator from '../../../contentPackages/configurator/Configurator';
@@ -10,10 +10,10 @@ import TextField from '../../../contentPackages/configurator/TextField';
 import CheckboxField from '../../../contentPackages/configurator/CheckboxField';
 import ForceButton from '../../../contentPackages/configurator/ForceButton';
 import { createObjectFromString } from '../../../contentPackages/configurator/utils';
-
 import MTPodPromo from '../PodPromo';
 
-class PodPromoConfigurator extends Component {
+
+export default class PodPromoConfigurator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,7 +59,7 @@ class PodPromoConfigurator extends Component {
 
   onBoolChange(stateProperty) {
     return (event) => {
-      let value = event.target.value === 'true' ? true : false;
+      let value = event.target.value === 'true';
       this.updateState(stateProperty, { $set: value });
     };
   }
@@ -158,5 +158,3 @@ class PodPromoConfigurator extends Component {
     );
   }
 }
-
-export default PodPromoConfigurator;

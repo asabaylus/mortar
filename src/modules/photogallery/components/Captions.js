@@ -1,16 +1,16 @@
 'use strict';
 
-import React, { Component, PropTypes }  from 'react';
+import React from 'react';
 import {Pestle} from '@natgeo/pestle';
+
 import events from '../../slider/events';
 
-let i = 0;
 
-class Captions extends Component {
-  constructor(props) {
-    super(props);
+export default class Captions extends React.Component {
+  constructor() {
+    super();
     this.state = {
-      currentSlide : 0
+      currentSlide: 0
     };
   }
 
@@ -29,46 +29,39 @@ class Captions extends Component {
   }
 
   render() {
-    const slide = this.props.slides[this.state.currentSlide];
-    let captions = [];
-
-    if (slide.title || slide.caption) {
-      captions.push(
-        <p key={i++} className="mt3_color--gray80 mt3_row-gut-half">
-          <span className="mt3_h5">{slide.title}</span>
-          <span className="mt3_subh4">{slide.caption}</span>
-        </p>
-      );
-    }
-
-    if (slide.credit || slide.assetSource) {
-      captions.push(
-        <span key={i++} className="mt3_subh3 mt3_color--gray40">
-          Photograph by {slide.credit}<br />
-          Source: {slide.assetSource}
-        </span>
-      );
-    }
+    const slide = this.props.slides[this.state.currentSlide],
+      hasTitleHtml = slide.title || slide.caption,
+      hasCreditHtml = slide.credit || slide.assetSource;
 
     return (
       <figcaption>
-        {captions}
+        {hasTitleHtml &&
+          <p className="mt3_color--gray80 mt3_row-gut-half">
+            <span className="mt3_h5">{slide.title}</span>
+            <span className="mt3_subh4">{slide.caption}</span>
+          </p>}
+
+        {hasCreditHtml &&
+          <span className="mt3_subh3 mt3_color--gray40">
+            Photograph by {slide.credit}<br />
+            Source: {slide.assetSource}
+          </span>}
       </figcaption>
     );
   }
 }
 
 Captions.propTypes = {
-  slides: PropTypes.arrayOf(PropTypes.shape({
-    aspectRatio: PropTypes.string,
-    assetSource: PropTypes.string,
-    caption: PropTypes.string,
-    credit: PropTypes.string,
-    title: PropTypes.string,
-    type: PropTypes.string.isRequired,
-    src: PropTypes.string,
-    srcSet: PropTypes.array
-  })).isRequired
+  slides: React.PropTypes.arrayOf(
+    React.PropTypes.shape({
+      aspectRatio: React.PropTypes.string,
+      assetSource: React.PropTypes.string,
+      caption: React.PropTypes.string,
+      credit: React.PropTypes.string,
+      title: React.PropTypes.string,
+      type: React.PropTypes.string.isRequired,
+      src: React.PropTypes.string,
+      srcSet: React.PropTypes.array
+    })
+  ).isRequired
 }
-
-export default Captions;

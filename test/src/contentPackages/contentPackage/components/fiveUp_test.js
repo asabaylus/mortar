@@ -7,7 +7,6 @@ import FiveUpComponent from '../../../../../src/contentPackages/contentpackage/c
 import mockModel from './testData';
 
 
-
 describe('FiveUp Component', () => {
   describe(':: Default', () => {
     let el;
@@ -57,6 +56,7 @@ describe('FiveUp Component', () => {
   describe(':: No Numbers', () => {
     let el;
     const options = mockModel;
+
     before(() => {
       let testModel = options.dataModel.components[0];
       testModel.showNumbers = false;
@@ -66,6 +66,7 @@ describe('FiveUp Component', () => {
           model={testModel}
       />);
     });
+
     it('FiveUp div should be rendered with expected class', () => {
       expect(el.props().children.props.className).to.equal("mt3_fiveup mt3_fiveup--no-numbers");
     });
@@ -85,6 +86,7 @@ describe('FiveUp Component', () => {
           model={testModel}
       />);
     });
+
     it('FiveUp div should be rendered with expected class', () => {
       expect(el.props().children.props.className).to.equal("mt3_fiveup mt3_fiveup--no-kicker");
     });
@@ -104,6 +106,7 @@ describe('FiveUp Component', () => {
           model={testModel}
       />);
     });
+
     it('FiveUp div should be rendered with expected class', () => {
       expect(el.props().children.props.className).to.equal("mt3_fiveup mt3_fiveup--no-kicker mt3_fiveup--no-numbers");
     });

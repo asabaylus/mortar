@@ -100,8 +100,8 @@ class ModuleManager {
   // 3. creates an instance of each module in the order it is found
   // 4. marks instances as 'running' after they have initialized
   init(callback) {
-    let self = this;
-    let totalModules,
+    let self = this,
+      totalModules,
       runningInstances,
       countModules;
 
@@ -125,19 +125,23 @@ class ModuleManager {
 
     // Internal callback for each created instance
     function done(err) {
-      let instanceData = this;
-      let modulesWorking,
+      let instanceData = this,
+        modulesWorking,
         modulesFailing;
 
       if (err) {
         instanceData.error = err;
-        console.error(
-          'Error on Module: ' + instanceData.name,
-          '\n Instance Id:' + instanceData.id,
-          '\n Message: ' + err.message,
-          (err.fileName) ? '\n File:' + err.fileName + ' (' + err.lineNumber + ',' + err.columnNumber + ')' : '',
-          '\n Stack:', (err.stack) ? err.stack : err
-        );
+        // =======================================================
+        // FIXME: Remove this once we have a proper logging utility
+        // console.error(
+        //   'Error on Module: ' + instanceData.name,
+        //   '\n Instance Id:' + instanceData.id,
+        //   '\n Message: ' + err.message,
+        //   (err.fileName) ? '\n File:' + err.fileName + ' (' + err.lineNumber + ',' + err.columnNumber + ')' : '',
+        //   '\n Stack:', (err.stack) ? err.stack : err
+        // );
+        // =======================================================
+        return;
       }
       else {
         instanceData.instance.isLoaded = true;
@@ -219,7 +223,7 @@ class ModuleManager {
 
     if (!module) {
       // =======================================================
-      // ATTN: Remove this once we have a proper logging utility
+      // FIXME: Remove this once we have a proper logging utility
       // console.warn("Module:", moduleName, "no exists");
       // =======================================================
       return;

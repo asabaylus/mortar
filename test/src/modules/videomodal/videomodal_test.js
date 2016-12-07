@@ -1,13 +1,13 @@
 'use strict';
 
-
+import React from 'react';
+import {shallow, mount} from 'enzyme';
 import Pestle from '@natgeo/pestle';
 
-import VideoModalPestle from '../../../../src/modules/videomodal/VideoModalPestle';
-import VideoModal from '../../../../src/modules/videomodal/VideoModal';
 import Modal from '../../../../src/modules/modals/Modal';
-import {shallow, mount} from 'enzyme';
-import React from 'react';
+import VideoModal from '../../../../src/modules/videomodal/VideoModal';
+import VideoModalPestle from '../../../../src/modules/videomodal/VideoModalPestle';
+
 
 describe('VideoModal Component', () => {
   describe('Pestle Module', () => {
@@ -61,7 +61,12 @@ describe('VideoModal Component', () => {
     let wrapper;
     before(() => {
       wrapper = mount(<VideoModal />);
-      wrapper.setState({ open: true });
+      wrapper.setState({
+        guid: "00000156-46b5-dca8-ab77-7ffdfcf90000",
+        account: "2423130747",
+        directLink: "http://link.theplatform.com/s/ngs/media/guid/2423130747/00000156-46b5-dca8-ab77-7ffdfcf90000?format=redirect&policy=12441385&manifest=m3u&mbr=true",
+        open: true
+      });
     });
 
     it('should render correctly', () => {
@@ -83,7 +88,5 @@ describe('VideoModal Component', () => {
     it('Should have a description', () => {
       expect(wrapper.find('.mt3_video-modal-container').childAt(3).hasClass("mt3_video-modal__description")).to.equal(true);
     });
-
   });
-
 });

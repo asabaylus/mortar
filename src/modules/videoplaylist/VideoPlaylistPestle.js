@@ -2,11 +2,12 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import {Pestle, Module} from '@natgeo/pestle';
 import VideoPlaylist from './VideoPlaylist';
 
-class VideoPlaylistPestle extends Module {
 
+export default class VideoPlaylistPestle extends Module {
   init() {
     const rqs = new XMLHttpRequest();
     rqs.open('GET', this.options.endpoint);
@@ -28,8 +29,6 @@ class VideoPlaylistPestle extends Module {
       throw new Error(`Server response with ${response.target.status}`);
     }
   }
-
 }
 
 Pestle.ModuleManager.register('VideoPlaylist', VideoPlaylistPestle);
-export default VideoPlaylistPestle;

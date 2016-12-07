@@ -1,69 +1,70 @@
 'use strict';
 
-import React, { Component, PropTypes } from 'react';
-import {default as MTPromoCard} from '../../modules/promocard/MTPromoCard';
+import React from 'react';
+import _debounce from 'lodash/debounce';
+import cx from 'classnames';
+
 import {Pestle} from '@natgeo/pestle';
+import MTPromoCard from '../../modules/promocard/MTPromoCard';
+import railsParallax from '../../util/parallax/railsParallax';
 import PortalWrapper from '../../util/PortalWrapper';
 
-import $ from 'jquery';
-import _debounce from 'lodash/debounce';
-import railsParallax from '../../util/parallax/railsParallax';
 
-const mobileBreakpoint = 768;
+const mobileBreakpoint = 768;  // FIXME
 
-class HeroWithTwoRails extends Component {
-  constructor(props) {
-    super(props);
+export default class HeroWithTwoRails extends React.Component {
+  constructor() {
+    super();
     this.heroExists = false;
     this.resizeHandler = null;
-    this._window = $(window);
     this.resetParallax = ::this.resetParallax;
   }
 
   headingParallax(viewportHeight, position) {
-    const railsDiv = this.props.parentEl.getElementsByClassName("hero-with-two-rails__rails")[0];
-    const headingDiv = this.props.parentEl.getElementsByClassName("hero-with-two-rails__heading")[0];
+    const { parentEl } = this.props;
+    const railsDiv = parentEl.getElementsByClassName("hero-with-two-rails__rails")[0];
+    const headingDiv = parentEl.getElementsByClassName("hero-with-two-rails__heading")[0];
     const headingHeight = headingDiv.getBoundingClientRect().height;
     const pageHeadingOffset = (viewportHeight - headingHeight) / 2;
 
-    let bottomPositionOverride = null;
-    let heroDiv = null;
-    let heroHeight = null;
-    let percentageUnpinned = 0.5;
-    let railsHeight = railsDiv.getBoundingClientRect().height;
-    let sceneDuration;
-    let setPin = true;
-    let transformDistance;
-    let triggerElement = railsDiv;
+    let bottomPositionOverride = null,
+      heroDiv = null,
+      heroHeight = null,
+      percentageUnpinned = 0.5,
+      railsHeight = railsDiv.getBoundingClientRect().height,
+      sceneDuration,
+      setPin = true,
+      transformDistance,
+      triggerElement = railsDiv;
 
-    //if the header is ABOVE the hero (and there is a hero)
     if (position === "above" && this.heroExists) {
-      heroDiv = this.props.parentEl.getElementsByClassName("hero-with-two-rails__hero")[0];
+      heroDiv = parentEl.getElementsByClassName("hero-with-two-rails__hero")[0];
 
-      //add hero's height to height of rails
+      // add hero's height to height of rails
       if (heroDiv) {
         heroHeight = heroDiv.getBoundingClientRect().height;
-
         railsHeight += heroHeight;
 
-        //percentage of scene that the content is unpinned should roughly equal where the gap between
-        //hero and rails ends, centered in the viewport
+        // percentage of scene that the content is unpinned should roughly equal where the gap between
+        // hero and rails ends, centered in the viewport
         percentageUnpinned = (heroHeight - (viewportHeight / 2) + headingHeight ) / railsHeight;
         triggerElement = heroDiv;
+
       } else {
         position = "below";
       }
     }
 
-    //animate differently depending if both rails are larger than the whole viewport or not
+    // animate differently depending if both rails are larger than the whole viewport or not
     if (viewportHeight > railsHeight) {
       setPin = false;
       sceneDuration = railsHeight * 0.7;
       transformDistance = railsHeight - headingHeight;
+
     } else {
       sceneDuration = railsHeight - pageHeadingOffset - headingHeight;
       bottomPositionOverride = railsHeight - headingHeight;
-      transformDistance = pageHeadingOffset
+      transformDistance = pageHeadingOffset;
     }
 
     Pestle.PubSub.publish('ParallaxScenes.addParallaxScene', {
@@ -84,16 +85,16 @@ class HeroWithTwoRails extends Component {
       parallaxHeading,
       parallaxRails,
       parentEl,
-    } = this.props;
-    const contentWidth = parentEl.getBoundingClientRect().width;
+    } = this.props,
+      contentWidth = parentEl.getBoundingClientRect().width;
 
     // if the component width is < mobileBreakpoint, cancel parallax effects
     if (contentWidth < mobileBreakpoint) {
       return;
     }
 
-    const viewportHeight = this._window.height();
-    const callHeadingParallax = parallaxHeading && heading && heading !== "";
+    const viewportHeight = window.innerHeight,
+      callHeadingParallax = parallaxHeading && heading && heading !== "";
 
     // build heading scenes
     if (callHeadingParallax) {
@@ -134,20 +135,22 @@ class HeroWithTwoRails extends Component {
       parentEl,
       theme,
     } = this.props;
+
     let portalContent = [];
 
     // Promo Cards
     if (cards && cards.length) {
+
       let i = 0;
       for (const card of cards) {
-        //make sure target div exists
-        const cardDiv = document.getElementById(card.itemId);
-        const cardLocation = card.config.itemPos || card.itemPos || null;
+        // make sure target div exists
+        const cardDiv = document.getElementById(card.itemId),
+          cardLocation = card.config.itemPos || card.itemPos || null;
 
-        //pass class if it's the first promo
+        // pass class if it's the first promo  // REIMPLEMENT ME
         const additionalClasses = !i ? "mt3_promocard--first" : "";
 
-        //initial promo width
+        // initial promo width
         let promoWidth = null;
         const parentWidth = parentEl.getBoundingClientRect().width;
 
@@ -177,6 +180,7 @@ class HeroWithTwoRails extends Component {
                 theme={theme} />
             </PortalWrapper>
           );
+
         } else {
           portalContent.push(
             <MTPromoCard
@@ -212,6 +216,7 @@ class HeroWithTwoRails extends Component {
             </div>
           </PortalWrapper>
         );
+
       } else {
         portalContent.push(
           <div
@@ -223,27 +228,18 @@ class HeroWithTwoRails extends Component {
       }
     }
 
-    // FIXME apply classnames() here
-    //apply "theme" class manually to parent element
-    let parentClasses = "hero with two rails mt3_row";
-    if (theme) {
-      parentClasses += ` hero-with-two-rails--${theme}`;
-    }
-
-    if (headingSize === 'large') {
-      parentClasses += ' hero-with-two-rails--large-heading';
-    }
-
-    if (!this.heroExists) {
-      parentClasses += ` hero-with-two-rails--no-hero`;
-    }
-    if (!heading || heading === "") {
-      parentClasses += ` hero-with-two-rails--no-heading`;
-    } else {
-      parentClasses += ` hero-with-two-rails--heading-${headingPosition}`;
-    }
-
-    parentEl.className = parentClasses;
+    let hasHeading = heading && heading !== "";
+    parentEl.className = cx(
+      'hero-with-two-rails',
+      'mt3_row',
+      {
+        [`hero-with-two-rails--${theme}`]: theme,
+        'hero-with-two-rails--large-heading': headingSize === 'large',
+        'hero-with-two-rails--no-hero': !this.heroExists,
+        'hero-with-two-rails--no-heading': !hasHeading,
+        [`hero-with-two-rails--heading-${headingPosition}`]: hasHeading ,
+      }
+    );
 
     return (
       <div className="hero-with-two-rails__app">
@@ -254,14 +250,14 @@ class HeroWithTwoRails extends Component {
 }
 
 HeroWithTwoRails.propTypes = {
-  cards: PropTypes.array,
-  heading: PropTypes.string,
-  headingPosition: PropTypes.string,
-  headingSize: PropTypes.string,
-  parallaxHeading: PropTypes.bool,
-  parallaxRails: PropTypes.bool,
-  theme: PropTypes.string,
-  parentEl: PropTypes.object.isRequired
+  cards: React.PropTypes.array,
+  heading: React.PropTypes.string,
+  headingPosition: React.PropTypes.string,
+  headingSize: React.PropTypes.string,
+  parallaxHeading: React.PropTypes.bool,
+  parallaxRails: React.PropTypes.bool,
+  theme: React.PropTypes.string,
+  parentEl: React.PropTypes.object.isRequired
 };
 
 HeroWithTwoRails.defaultProps = {
@@ -270,5 +266,3 @@ HeroWithTwoRails.defaultProps = {
   parallaxRails: true,
   theme: 'light'
 };
-
-export default HeroWithTwoRails;

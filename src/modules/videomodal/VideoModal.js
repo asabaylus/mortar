@@ -1,41 +1,44 @@
 'use strict';
 
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import { Pestle } from '@natgeo/pestle';
+
 import events from '../promocard/events';
 import Modal from '../modals/Modal';
 import Video from '../video/video';
+
 let i = 0;
 
+const initialState = {
+  guid: null,
+  account: null,
+  title: '',
+  label: '',
+  duration: '',
+  dek: '',
+  open: false
+};
 
-class VideoModal extends Component {
-
+export default class VideoModal extends React.Component {
   constructor() {
     super();
-    this.state = {
-      guid: null,
-      account: null,
-      title: '',
-      label: '',
-      duration: '',
-      dek: '',
-      open: false
-    };
+    this.state = initialState;
     this.showVideoModal = ::this.showVideoModal;
     this.closeNGSModal = ::this.closeNGSModal;
   }
 
   showVideoModal(msg, data) {
-    this.guid = data.leadMedia[0].guid;
-    this.account = data.leadMedia[0].account;
-    this.label = data.text.kicker && data.text.kicker.label ? data.text.kicker.label : null;
-    this.duration = data.text.duration ? data.text.duration : null;
-    this.title = data.text.title ? data.text.title : null;
-    this.dek = data.text.dek ? data.text.dek : null;
-    VideoModal.toggleBodyOverflow(true);
+    console.log('showvideomodal', data.leadMedia[0]);
     this.setState({
+      guid: data.leadMedia[0].guid,
+      account: data.leadMedia[0].account,
+      label: data.text.kicker && data.text.kicker.label ? data.text.kicker.label : null,
+      duration: data.text.duration ? data.text.duration : null,
+      title: data.text.title ? data.text.title : null,
+      dek: data.text.dek ? data.text.dek : null,
       open: true
     });
+    VideoModal.toggleBodyOverflow(true);
   }
 
   closeNGSModal() {
@@ -43,9 +46,7 @@ class VideoModal extends Component {
       ngsPlayer.api.unload('platformModalVideoPlayer'+i);
     }
     VideoModal.toggleBodyOverflow(false);
-    this.setState({
-      open: false
-    });
+    this.setState(initialState);
   }
 
   componentDidMount() {
@@ -67,19 +68,25 @@ class VideoModal extends Component {
     // this model is what will be passed to instantiate the video player.
     const videoModel = {
       instance: 'platformModalVideoPlayer'+i,
-      guid: this.guid,
-      account: this.account,
+      guid: this.state.guid,
+      account: this.state.account,
       autoplay: true
     };
-    let isOpen = this.state.open;
 
     return (
-      <Modal onClose={this.closeNGSModal} renderNGSModal={isOpen}>
-        {isOpen ?
+      <Modal onClose={this.closeNGSModal} renderNGSModal={this.state.open}>
+        {this.state.open &&
           <div className="mt3_video-modal-container">
             <div className="mt3_row">
-              { this.label ? <span className="mt3_video-modal-kicker" dangerouslySetInnerHTML={{__html: this.label}} /> : null }
-              { this.duration ? <span className="mt3_video-modal-kicker" dangerouslySetInnerHTML={{__html: this.duration}} /> : null }
+              { this.label &&
+                <span
+                  className="mt3_video-modal-kicker"
+                  dangerouslySetInnerHTML={{__html: this.label}} /> }
+
+              { this.duration &&
+                <span
+                  className="mt3_video-modal-kicker"
+                  dangerouslySetInnerHTML={{__html: this.duration}} /> }
             </div>
 
             <div className="mt3_video-modal__head">
@@ -91,13 +98,13 @@ class VideoModal extends Component {
             <Video key={i} model={videoModel} lazyLoad={true} />
 
             <figcaption className="mt3_video-modal__description mt3_caption-container--indent mt3_border--gray40">
-              <div className="mt3_caption-body mt3_color--gray40" dangerouslySetInnerHTML={{__html: this.dek}}/>
+              <div
+                className="mt3_caption-body mt3_color--gray40"
+                dangerouslySetInnerHTML={{__html: this.dek}} />
             </figcaption>
           </div>
-        : null}
+        }
       </Modal>
     );
   }
 }
-
-export default VideoModal;

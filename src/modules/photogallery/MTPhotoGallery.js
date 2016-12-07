@@ -1,69 +1,76 @@
 'use strict';
 
-import React, { Component, PropTypes }  from 'react';
-import Heading from './components/Heading';
-import Counter from './components/Counter';
-import Slider from '../slider/MTSlider';
+import React from 'react';
+
 import Captions from './components/Captions';
+import Counter from './components/Counter';
+import Heading from './components/Heading';
+import Slider from '../slider/MTSlider';
 
 
-class PhotoGallery extends Component {
+export default class PhotoGallery extends React.Component {
   render() {
-    let noCounter;
-
-    if (!this.props.showCounter) {
-      noCounter = ' mt3_photogallery-heading--spacer';
-    }
+    const {
+      description,
+      frameAspectRatio,
+      infinite,
+      letterbox,
+      letterboxBackgroundColor,
+      showArrows,
+      showCounter,
+      slides,
+      title,
+    } = this.props,
+      noCounterClass = !showCounter ? 'mt3_photogallery-heading--spacer' : null;
 
     return (
       <div>
-        <div className={'mt3_row' + noCounter}>
-          <Heading title={this.props.title} description={this.props.description} />
+        <div className={`mt3_row ${noCounterClass}`}>
+          <Heading title={title} description={description} />
         </div>
 
         <div className="mt3_row">
-          {this.props.showCounter ? <Counter showCounter={this.props.showCounter} slides={this.props.slides} /> : null}
+          {showCounter &&
+            <Counter showCounter={showCounter} slides={slides} />}
         </div>
 
         <Slider
-          frameAspectRatio={this.props.frameAspectRatio}
-          infinite={this.props.infinite}
+          frameAspectRatio={frameAspectRatio}
+          infinite={infinite}
           lazyLoad={true}
-          letterbox={this.props.letterbox}
-          letterboxBackgroundColor={this.props.letterboxBackgroundColor}
-          showArrows={this.props.showArrows}
-          slides={this.props.slides}
+          letterbox={letterbox}
+          letterboxBackgroundColor={letterboxBackgroundColor}
+          showArrows={showArrows}
+          slides={slides}
         />
 
-        <Captions slides={this.props.slides} />
+        <Captions slides={slides} />
       </div>
     );
   }
 }
 
+PhotoGallery.propTypes = {
+  frameAspectRatio: React.PropTypes.string,
+  letterboxBackgroundColor: React.PropTypes.string,
+  description: React.PropTypes.string,
+  infinite: React.PropTypes.bool,
+  letterbox: React.PropTypes.bool,
+  showArrows: React.PropTypes.bool,
+  showCounter: React.PropTypes.bool,
+  slides: React.PropTypes.arrayOf(React.PropTypes.shape({
+    aspectRatio: React.PropTypes.string,
+    assetSource: React.PropTypes.string,
+    caption: React.PropTypes.string,
+    credit: React.PropTypes.string,
+    title: React.PropTypes.string,
+    type: React.PropTypes.string.isRequired,
+    src: React.PropTypes.string,
+    srcset: React.PropTypes.array
+  })).isRequired,
+  title: React.PropTypes.string
+}
+
 PhotoGallery.defaultProps = {
   showCounter: true
 }
-
-PhotoGallery.propTypes = {
-  frameAspectRatio: PropTypes.string,
-  letterboxBackgroundColor: PropTypes.string,
-  description: PropTypes.string,
-  infinite: PropTypes.bool,
-  letterbox: PropTypes.bool,
-  showArrows: PropTypes.bool,
-  showCounter: PropTypes.bool,
-  slides: PropTypes.arrayOf(PropTypes.shape({
-    aspectRatio: PropTypes.string,
-    assetSource: PropTypes.string,
-    caption: PropTypes.string,
-    credit: PropTypes.string,
-    title: PropTypes.string,
-    type: PropTypes.string.isRequired,
-    src: PropTypes.string,
-    srcset: PropTypes.array
-  })).isRequired,
-  title: PropTypes.string
-}
-
-export default PhotoGallery;

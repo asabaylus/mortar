@@ -8,7 +8,7 @@ import {Pestle, Module} from '@natgeo/pestle';
 import ContentPackageConfiguratorComponent from './ContentPackageConfigurator';
 
 
-class ContentPackageConfigurator extends Module {
+export default class ContentPackageConfigurator extends Module {
   forceUpdate() {
     deepForceUpdate(this.instance);
   }
@@ -565,5 +565,3 @@ class ContentPackageConfigurator extends Module {
 }
 
 Pestle.ModuleManager.register('ContentPackageConfigurator', ContentPackageConfigurator);
-
-export default ContentPackageConfigurator;

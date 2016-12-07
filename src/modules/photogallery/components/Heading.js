@@ -1,34 +1,27 @@
 'use strict';
 
-import React, { Component, PropTypes }  from 'react';
+import React from 'react';
 import Counter from './Counter';
 
-class Heading extends Component {
-
+export default class Heading extends React.Component {
   render() {
-    let title = [],
-      i = 0;
-
-    if(this.props.title){
-      title.push(<div key={i++} className="mt3_h3 mt3_color--gray80">{this.props.title}</div>);
-    }
-
-    if(this.props.description){
-      title.push(<div key={i++} className="mt3_subh4 mt3_color--gray80">{this.props.description}</div>);
-    }
+    const {
+      description,
+      title,
+    } = this.props;
 
     return (
       <div className="mt3_photogallery-heading">
-        { title }
+        {title &&
+          <div className="mt3_h3 mt3_color--gray80">{title}</div>}
+        {description &&
+          <div className="mt3_subh4 mt3_color--gray80">{description}</div>}
       </div>
     );
   }
-
 }
 
 Heading.propTypes = {
-  description: PropTypes.string,
-  title: PropTypes.string
+  description: React.PropTypes.string,
+  title: React.PropTypes.string
 }
-
-export default Heading;

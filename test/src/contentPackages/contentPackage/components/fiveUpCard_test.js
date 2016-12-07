@@ -1,9 +1,10 @@
 'use strict';
 
+import React from 'react';
+import {shallow, mount} from 'enzyme';
+
 import FiveUpCard from '../../../../../src/contentPackages/contentpackage/components/FiveUpCard';
 import mockModel from './testData';
-import {shallow} from 'enzyme';
-import React from 'react';
 
 
 describe('FiveUp Card', () => {
@@ -13,8 +14,15 @@ describe('FiveUp Card', () => {
     const options = mockModel;
 
     before(() => {
-
-      el = shallow(<FiveUpCard cardNum={1} key={'fiveUp-promo-1'} {...options.dataModel.components[0].stories[0]} theme={'dark'} showImage={true} showKicker={true} />);
+      el = shallow(
+        <FiveUpCard
+          cardNum={1}
+          key={'fiveUp-promo-1'}
+          {...options.dataModel.components[0].stories[0]}
+          theme={'dark'}
+          showImage={true}
+          showKicker={true} />
+      );
     });
 
     it('FiveUpCard wrapper should be rendered with expected class', () => {
@@ -61,7 +69,6 @@ describe('FiveUp Card', () => {
     it('The proper frameAspectRatio should be passed to the component', () => {
       expect(el.childAt(3).props().frameAspectRatio).to.equal('16:9');
     });
-
   });
 
   describe(':: Light Theme', () => {
@@ -76,7 +83,6 @@ describe('FiveUp Card', () => {
     it('The kicker should have the proper class for its theme', () => {
       expect(el.find('.mt3_kicker').props().className).to.equal('mt3_color--gray40 mt3_kicker');
     });
-
   });
 
   describe(':: Kicker :: No Link', () => {
@@ -84,9 +90,9 @@ describe('FiveUp Card', () => {
     const options = mockModel;
 
     before(() => {
-
       el = shallow(<FiveUpCard cardNum={1} key={'fiveUp-promo-1'} {...options.dataModel.components[0].stories[4]} theme={'light'} showImage={true} showKicker={false} />);
     });
+
     it('There should NOT be a link in the kicker', () => {
       expect(el.find('.mt3_kicker').find('a').length).to.equal(0);
     });
@@ -101,9 +107,9 @@ describe('FiveUp Card', () => {
     const options = mockModel;
 
     before(() => {
-
       el = shallow(<FiveUpCard cardNum={1} key={'fiveUp-promo-1'} {...options.dataModel.components[0].stories[0]} theme={'light'} showImage={true} showKicker={false} />);
     });
+
     it('There should NOT be a kicker', () => {
       expect(el.find('.mt3_kicker').length).to.equal(0);
     });
@@ -114,9 +120,9 @@ describe('FiveUp Card', () => {
     const options = mockModel;
 
     before(() => {
-
       el = shallow(<FiveUpCard cardNum={1} key={'fiveUp-promo-1'} {...options.dataModel.components[0].stories[1]} theme={'light'} showImage={true} showKicker={false} />);
     });
+
     it('There should be a "No Kicker" class', () => {
       expect(el.find('.mt3_fiveup-no-kicker').length).to.equal(1);
     });
@@ -128,8 +134,14 @@ describe('FiveUp Card', () => {
     const options = mockModel;
 
     before(() => {
-      el = shallow(<FiveUpCard cardNum={1} key={'fiveUp-promo-1'} {...options.dataModel.components[0].stories[0]} theme={'light'} showImage={false} showKicker={false} />);
-      debugger;
+      el = mount(
+        <FiveUpCard
+          cardNum={1}
+          key={'fiveUp-promo-1'}
+          {...options.dataModel.components[0].stories[0]}
+          theme={'light'}
+          showImage={false}
+          showKicker={false} />);
     });
 
     it('The wrapping div should NOT indicate there is an image', () => {

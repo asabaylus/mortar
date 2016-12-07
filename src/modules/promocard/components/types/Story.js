@@ -11,36 +11,33 @@ import _debounce from 'lodash/debounce';
 import VideoModal from '../../../videomodal/VideoModal';
 
 
-class Story extends Component {
+export default class Story extends Component {
   constructor(props) {
     super(props);
+
     this.resizeHandler = null;
-    this.getWidth = this.getWidth.bind(this);
-    this.calcAspectRatio = this.calcAspectRatio.bind(this);
-    this.launchModal = this.launchModal.bind(this);
+    this.getWidth = ::this.getWidth;
+    this.calcAspectRatio = ::this.calcAspectRatio;
+    this.launchModal = ::this.launchModal;
+
     this.state = {
-      breakpoint: this.props.parentWidth || null
+      breakpoint: props.parentWidth || null
     }
   }
 
-  static defaultProps = {
-    ...Component.defaultProps,
-    config: {
-      overlay: false
-    }
-  };
-
   launchModal() {
-    const videoData = {
-      'itemId': this.props.itemId,
-      'leadMedia': this.props.leadMedia,
-      'text': this.props.text
-    };
+    const { itemId, leadMedia, text } = this.props,
+      videoData = {
+        itemId,
+        leadMedia,
+        text,
+      };
     Pestle.PubSub.publish(events.launchVideoModal, videoData);
   }
 
   getWidth() {
-    const containerWidth = this.refs.promocardContainer.getBoundingClientRect().width;
+    const containerWidth = this.promocardContainer.getBoundingClientRect().width;
+
     if (this.state.containerWidth !== containerWidth) {
       this.setState({
         breakpoint: containerWidth
@@ -52,6 +49,7 @@ class Story extends Component {
     const width = this.state.breakpoint;
     const parentFrameAspectRatio = this.props.config.cardAspectRatio;
     let parentFrameHeightMultiplier;
+
     switch (parentFrameAspectRatio) {
     case '16:9':
       parentFrameHeightMultiplier = 0.5625;
@@ -88,7 +86,18 @@ class Story extends Component {
   }
 
   render() {
-    const {itemId, additionalClasses, type, config, cardLocation, link, leadMedia, brandingBadgeLabel, text, theme, ...props} = this.props;
+    const {
+      itemId,
+      additionalClasses,
+      type, config,
+      cardLocation,
+      link,
+      leadMedia,
+      brandingBadgeLabel,
+      text,
+      theme,
+      ...props} = this.props;
+
     const attrs = link || type !== 'video' ? {
       className: 'mt3_div-link',
       href: link ? generateHref(link.url, link.trackingCodes) : null,
@@ -121,41 +130,70 @@ class Story extends Component {
         Object.assign(config, {
           overlay: true
         });
+
         if (type === 'gallery' && leadMedia.length > 1) {
           const ctaSizeClass = 'mt3_promocard-gallery-cta--large';
           content.push(
             <div key={i++} className={`mt3_row ${galleryImageClass} ${aspectRatio}`}>
               <div
                 className={`mt3_color--white mt3_btn mt3_btn--naked mt3_fullwidth mt3_promocard-gallery-cta ${ctaSizeClass}`}>
+
                 <a {...attrs} />
+
                 <span>Photo Gallery</span>
+
                 <svg className="mt3_promocard-gallery-cta-icon">
                   <use xlinkHref="#plus"></use>
                 </svg>
               </div>
+
               <div className="mt3_row mt3_promocard-gallery-images--image1 mt3_promocard-gallery-images--image1-large">
+
                 <a {...attrs} />
-                <PromoImage type={type} config={config} leadMedia={leadMedia[0]}
-                            childFrameAspectRatio={this.calcAspectRatio()} link={link}
-                            brandingBadgeLabel={brandingBadgeLabel} text={text} breakpoint={this.state.breakpoint} galleryImage={true}
+
+                <PromoImage
+                  type={type}
+                  config={config}
+                  leadMedia={leadMedia[0]}
+                  childFrameAspectRatio={this.calcAspectRatio()}
+                  link={link}
+                  brandingBadgeLabel={brandingBadgeLabel}
+                  text={text}
+                  breakpoint={this.state.breakpoint}
+                  galleryImage={true}
                 />
               </div>
+
               <div className="mt3_row mt3_promocard-gallery-images--image2 mt3_promocard-gallery-images--image2-large">
-                <PromoImage type={type} config={config} leadMedia={leadMedia[1]}
-                            childFrameAspectRatio={this.calcAspectRatio()} galleryImage={true}
-                            breakpoint={this.state.breakpoint}
+                <PromoImage
+                  type={type}
+                  config={config}
+                  leadMedia={leadMedia[1]}
+                  childFrameAspectRatio={this.calcAspectRatio()}
+                  galleryImage={true}
+                  breakpoint={this.state.breakpoint}
                 />
               </div>
             </div>
           );
+
         } else {
           content.push(
-            <PromoImage key={i++} type={type} config={config} cardLocation={cardLocation} link={link}
-                        leadMedia={leadMedia[0]} brandingBadgeLabel={brandingBadgeLabel} text={text}
-                        breakpoint={this.state.breakpoint} launchModal={this.launchModal}
+            <PromoImage
+              key={i++}
+              type={type}
+              config={config}
+              cardLocation={cardLocation}
+              link={link}
+              leadMedia={leadMedia[0]}
+              brandingBadgeLabel={brandingBadgeLabel}
+              text={text}
+              breakpoint={this.state.breakpoint}
+              launchModal={this.launchModal}
             />
           );
         }
+
       } else if (!noImages && this.state.breakpoint < 768) {
         if (type === 'gallery' && leadMedia.length > 1) {
           const ctaSizeClass = this.state.breakpoint > 375 ? 'mt3_promocard-gallery-cta--medium' : '';
@@ -166,29 +204,50 @@ class Story extends Component {
               <div className='mt3_promocard-gallery-cta--medium'>
                 <div
                   className={`mt3_color--white mt3_btn mt3_btn--naked mt3_fullwidth mt3_promocard-gallery-cta ${ctaSizeClass}`}>
+
                   <a {...attrs} />
+
                   <span>Photo Gallery</span>
+
                   <svg className="mt3_promocard-gallery-cta-icon">
                     <use xlinkHref="#plus"></use>
                   </svg>
                 </div>
               </div>
+
               <div className={`mt3_row mt3_promocard-gallery-images--image1 ${imageSizeClass}`}>
                 <a {...attrs} />
-                <PromoImage type={type} config={config} leadMedia={leadMedia[0]}
-                            childFrameAspectRatio={this.calcAspectRatio()} breakpoint={this.state.breakpoint} galleryImage={true}
+                <PromoImage
+                  type={type}
+                  config={config}
+                  leadMedia={leadMedia[0]}
+                  childFrameAspectRatio={this.calcAspectRatio()}
+                  breakpoint={this.state.breakpoint}
+                  galleryImage={true}
                 />
               </div>
 
               <div className={`mt3_row mt3_promocard-gallery-images--image2 ${imageSizeClass}`}>
-                <PromoImage type={type} config={config} leadMedia={leadMedia[1]}
-                            childFrameAspectRatio={this.calcAspectRatio()} galleryImage={true}
-                            breakpoint={this.state.breakpoint}
+                <PromoImage
+                  type={type}
+                  config={config}
+                  leadMedia={leadMedia[1]}
+                  childFrameAspectRatio={this.calcAspectRatio()}
+                  galleryImage={true}
+                  breakpoint={this.state.breakpoint}
                 />
               </div>
             </div>,
-            <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type} leadMedia={leadMedia}
-                       breakpoint={this.state.breakpoint}
+
+            <PromoText
+              key={i++}
+              config={config}
+              link={link}
+              text={text}
+              theme={theme}
+              type={type}
+              leadMedia={leadMedia}
+              breakpoint={this.state.breakpoint}
             />
           );
         } else {
@@ -204,8 +263,15 @@ class Story extends Component {
         }
       } else {
         content.push(
-          <PromoText key={i++} config={config} link={link} text={text} theme={theme} type={type} noImages={noImages}
-                     breakpoint={this.state.breakpoint}
+          <PromoText
+            key={i++}
+            config={config}
+            link={link}
+            text={text}
+            theme={theme}
+            type={type}
+            noImages={noImages}
+            breakpoint={this.state.breakpoint}
           />
         );
       }
@@ -213,12 +279,11 @@ class Story extends Component {
 
     return (
       <div className={`mt3_row mt3_col-12 mt3_promocard-container ${promoContainerClass} ${kickerStyle} ${additionalClasses}`}
-           ref='promocardContainer'>
+           ref={(ref) => {this.promocardContainer = ref}}>
         {content}
       </div>
     );
   }
-
 }
 
 Story.PropTypes = {
@@ -248,4 +313,8 @@ Story.PropTypes = {
   modal: PropTypes.bool
 };
 
-export default Story;
+Story.defaultProps = {
+  config: {
+    overlay: false
+  }
+}

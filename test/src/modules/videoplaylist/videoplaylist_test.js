@@ -1,12 +1,13 @@
 'use strict';
 
+import React from 'react';
+import {shallow} from 'enzyme';
 import Pestle from '@natgeo/pestle';
+
 import VideoPlaylistPestle from '../../../../src/modules/videoplaylist/VideoPlaylistPestle';
 import VideoPlaylist from '../../../../src/modules/videoplaylist/VideoPlaylist';
 import VideoThumbnail from '../../../../src/modules/videoplaylist/VideoThumbnail';
 
-import {shallow} from 'enzyme';
-import React from 'react';
 
 //this may or may not help with an error we're seeing in the pipeline. Let's give it a shot.
 const START_VIDEO_INDEX = 0;

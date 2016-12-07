@@ -7,6 +7,7 @@ import IconComponent from '../../../../src/modules/icon/Icon';
 import {shallow, mount} from 'enzyme';
 import React from 'react';
 
+
 describe('Icon', () => {
   describe('Pestle Module', () => {
     before(() => {
@@ -47,7 +48,6 @@ describe('Icon', () => {
     let wrapper;
 
     before(() => {
-
       wrapper = shallow(<IconComponent
           name="#share"
           align="left"
@@ -55,7 +55,6 @@ describe('Icon', () => {
           color="black"
           alt="Sharing is Caring"
       />);
-
     });
 
     it('has svg element with appropriate classes', () => {
@@ -76,7 +75,6 @@ describe('Icon', () => {
     let wrapper;
 
     before(() => {
-
       wrapper = shallow(<IconComponent
           name="#camera"
           align="left"
@@ -84,7 +82,6 @@ describe('Icon', () => {
           color="white"
           alt="Camera icon"
       />);
-
     });
 
     it('has svg element with appropriate classes', () => {
@@ -98,6 +95,5 @@ describe('Icon', () => {
     it('has use element with link reference', () => {
       expect(wrapper.find('use').props().xlinkHref).to.equal('#camera');
     });
-
   });
 });

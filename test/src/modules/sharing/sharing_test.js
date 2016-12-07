@@ -1,18 +1,18 @@
 'use strict';
 
+import React from 'react';
+import {shallow, mount} from 'enzyme';
+
 import Pestle from '@natgeo/pestle';
 import Sharing from '../../../../src/modules/sharing/MTSharingPestle';
 import SharingComponent from '../../../../src/modules/sharing/MTSharing';
 import SocialButton from '../../../../src/modules/sharing/MTSocialButton';
 
-import {shallow, mount} from 'enzyme';
-import React from 'react';
 
 describe('sharing', () => {
   describe('Pestle Module', () => {
     before(() => {
       const html = `<div data-pestle-module='Sharing'></div>`
-
       insertFixture(html);
       Pestle.init();
     });
@@ -43,7 +43,8 @@ describe('sharing', () => {
     ];
 
     before(() => {
-      wrapper = mount(<SharingComponent buttons={socialOptions} url="http://natgeo.com" title="title"/>);
+      wrapper = mount(<SharingComponent
+        buttons={socialOptions} url="http://natgeo.com" title="title" />);
     });
 
     it('has correct number of children', () => {

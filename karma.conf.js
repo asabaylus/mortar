@@ -12,8 +12,8 @@ module.exports = function(config) {
 
     basePath: '',
 
-    // browsers: ['Chrome'],
     browsers: ['PhantomJS'],
+    // browsers: ['Chrome'],
     // browsers: ['Chrome', 'Firefox', 'Safari', 'PhantomJS'],
 
     files: [
@@ -30,7 +30,6 @@ module.exports = function(config) {
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    // reporters: ['mocha'],
     reporters: ['mocha', 'coverage'],
 
     browserify: {
@@ -82,7 +81,7 @@ module.exports = function(config) {
     colors: true,
 
     // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    // possible values: config.[LOG_DISABLE|LOG_ERROR|LOG_WARN|LOG_INFO|LOG_DEBUG]
     logLevel: config.LOG_WARN,
 
     // Continuous Integration mode
@@ -90,6 +89,6 @@ module.exports = function(config) {
     singleRun: true,
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false
+    autoWatch: true
   });
 };

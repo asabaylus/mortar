@@ -1,15 +1,16 @@
 'use strict';
 
-import React, { Component }  from 'react';
+import React from 'react';
 import LazyLoad from 'react-lazy-load';
 import _defaultsDeep from 'lodash/defaultsDeep';
 import _isEqual from 'lodash/isEqual';
+
 
 // add the NatGeo modules-video to the global window
 window.ngsPlayer = require('@natgeo/modules-video');
 
 
-class Video extends Component {
+export default class Video extends React.Component {
 
   constructor(props) {
     super(props);
@@ -75,8 +76,13 @@ class Video extends Component {
     } = this.props;
 
     return (
-      <figure itemType="http://schema.org/VideoObject" className={`mt3_video mt3_videopromo-container mt3_bgcolor--black ${className}` }>
-        <div className="mt3_video-wrapper" dangerouslySetInnerHTML={{__html: this.videoContainer}} />
+      <figure
+        itemType="http://schema.org/VideoObject"
+        className={`mt3_video mt3_videopromo-container mt3_bgcolor--black ${className}` }>
+
+        <div
+          className="mt3_video-wrapper"
+          dangerouslySetInnerHTML={{__html: this.videoContainer}} />
 
         { lazyLoad &&
           /** Don't use LazyLoad's onContentVisible callback.
@@ -110,5 +116,3 @@ Video.defaultProps = {
   lazyLoad: true,
   isEditMode: false
 }
-
-export default Video;

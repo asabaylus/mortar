@@ -146,7 +146,6 @@ describe('MTPhotoGallery', () => {
     ];
 
     before(() => {
-
       wrapper = shallow(<MTPhotoGalleryComponent
         frameAspectRatio="photo"
         letterboxBackgroundColor="light"
@@ -200,6 +199,5 @@ describe('MTPhotoGallery', () => {
     it('Captions component should have slides prop', () => {
       expect(wrapper.find('Captions').props().slides).to.equal(slides);
     });
-
   });
 });

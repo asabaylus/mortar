@@ -1,10 +1,10 @@
 'use strict';
 
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
 import Prism from 'prismjs';
 
 
-class CodeSnippet extends Component {
+export default class CodeSnippet extends React.Component {
   constructor(props) {
     super(props);
 
@@ -31,15 +31,15 @@ class CodeSnippet extends Component {
 
     // get window width & height of codesnippetWrapper
     const width = window.innerWidth,
-          containerHeight = parseInt(window.getComputedStyle(this.refs.codesnippetWrapper).height),
+          containerHeight = parseInt(window.getComputedStyle(this.codesnippetWrapper).height),
           isMobile = width < mobileWidth;
 
     // On small screens, truncate snippet when containerheight > 240px
     if (isMobile) {
       return containerHeight > mobileValue;
-    }
+
     // On large screens, truncate snippet when containerheight > 320px
-    else {
+    } else {
       return containerHeight > desktopValue;
     }
   }
@@ -69,21 +69,23 @@ class CodeSnippet extends Component {
 
   get codeString() {
     const { componentName, code } = this.props,
-          hlCode = Prism.highlight(JSON.stringify(code, null, 2), Prism.languages.javascript);
+      hlCode = Prism.highlight(JSON.stringify(code, null, 2), Prism.languages.javascript);
 
     let start = `<div data-pestle-module="${componentName}">\n<script type="text/json" data-pestle-options>\n`,
         end = "\n</script>\n</div>";
 
-    start = Prism.highlight(start, Prism.languages.markup)
-    end = Prism.highlight(end, Prism.languages.markup)
+    start = Prism.highlight(start, Prism.languages.markup);
+    end = Prism.highlight(end, Prism.languages.markup);
     return start + hlCode + end;
   }
 
   renderSimpleState() {
     return (
-      <div className="codesnippet-wrapper expandheight" ref="codesnippetWrapper">
+      <div className="codesnippet-wrapper expandheight" ref={(ref) => {this.codesnippetWrapper = ref}}>
         <pre className="configurator-codesnippet">
-          <code className="configurator-markup" dangerouslySetInnerHTML={{__html: this.codeString }} />
+          <code
+            className="configurator-markup"
+            dangerouslySetInnerHTML={{__html: this.codeString }} />
         </pre>
       </div>
     )
@@ -94,15 +96,19 @@ class CodeSnippet extends Component {
       this.state.collapsed ? "codesnippet-wrapper constrainheight" : "codesnippet-wrapper expandheight";
 
     return (
-      <div className={codeSnippetWrapperClass} ref="codesnippetWrapper">
+      <div
+        className={codeSnippetWrapperClass}
+        ref={(ref) => {this.codesnippetWrapper = ref}}>
+
         <pre className="configurator-codesnippet">
-          <code className="configurator-markup" dangerouslySetInnerHTML={{__html: this.codeString}} />
+          <code
+            className="configurator-markup"
+            dangerouslySetInnerHTML={{__html: this.codeString}} />
         </pre>
-        {
-          this.state.collapsed
+
+        {this.state.collapsed
           ? <button onClick={this.onClick} className="codesnippet-button mt3_col-12 mt3_h5 codesnippet-icon codesnippet-icon--expand">Expand</button>
-          : <button onClick={this.onClick} className="codesnippet-button mt3_col-12 mt3_h5 codesnippet-icon codesnippet-icon--collapse">Collapse</button>
-        }
+          : <button onClick={this.onClick} className="codesnippet-button mt3_col-12 mt3_h5 codesnippet-icon codesnippet-icon--collapse">Collapse</button>}
       </div>
     )
   }
@@ -114,5 +120,3 @@ class CodeSnippet extends Component {
     return this.renderComplexState();
   }
 }
-
-export default CodeSnippet;

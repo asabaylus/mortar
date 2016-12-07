@@ -123,7 +123,6 @@ describe('Story Component', () => {
     };
 
     before(() => {
-
       wrapper = mount(<Story
         id={options.id}
         type={options.type}
@@ -226,7 +225,6 @@ describe('Story Component', () => {
     };
 
     before(() => {
-
       wrapper = mount(<Story
         id={options.id}
         type={options.type}
@@ -288,7 +286,5 @@ describe('Story Component', () => {
       expect(wrapper.find('PromoText').props().text.dek).to.equal("This is a short dek for the card.");
       expect(wrapper.find('PromoText').props().text.kicker.label).to.equal("Weird & Wild");
     });
-
   });
-
 });

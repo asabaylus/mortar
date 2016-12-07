@@ -1,14 +1,13 @@
 'use strict';
 
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import _debounce from 'lodash/debounce';
 
 import EQ from '../../../util/EQ.js';
 import MTPromoCard from '../../../modules/promocard/MTPromoCard';
 
 
-export default class FourUpComponent extends Component {
-
+export default class FourUpComponent extends React.Component {
   constructor(props) {
     super(props);
     this.parentClassName = 'mt3_fourup';
@@ -81,10 +80,11 @@ export default class FourUpComponent extends Component {
         }
         break;
       default:
-        console.log(`sorry, no case specified for value: ${index}.`)
+        console.log(`Sorry, no case specified for value: ${index}.`)
     }
 
-    this.storyCards.push(<MTPromoCard key={index} {...currentCard} theme={'dark'} parentWidth={parentWidth}/>);
+    this.storyCards.push(
+      <MTPromoCard key={index} {...currentCard} theme={'dark'} parentWidth={parentWidth}/>);
 
   }
 
@@ -153,32 +153,32 @@ export default class FourUpComponent extends Component {
 }
 
 FourUpComponent.PropTypes = {
-  theme: PropTypes.string,
-  model: PropTypes.shape({
-    id: PropTypes.string,
-    type: PropTypes.string,
-    heading: PropTypes.string,
-    stories: PropTypes.arrayOf(
-      PropTypes.shape({
-        type: PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
-        config: PropTypes.object,
-        link: PropTypes.shape({
-          url: PropTypes.string.isRequired,
-          target: PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
-          trackingCodes: PropTypes.array || PropTypes.string
+  theme: React.PropTypes.string,
+  model: React.PropTypes.shape({
+    id: React.PropTypes.string,
+    type: React.PropTypes.string,
+    heading: React.PropTypes.string,
+    stories: React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        type: React.PropTypes.oneOf(['article', 'video', 'gallery', 'show', 'schedule']),
+        config: React.PropTypes.object,
+        link: React.PropTypes.shape({
+          url: React.PropTypes.string.isRequired,
+          target: React.PropTypes.oneOf(['_self', '_parent', '_blank', '_top']),
+          trackingCodes: React.PropTypes.array || React.PropTypes.string
         }),
-        leadMedia: PropTypes.shape({
-          url: PropTypes.string,
-          aspectRatio: PropTypes.number,
-          altText: PropTypes.string,
-          srcset: PropTypes.array,
-          imageUrl: PropTypes.string
+        leadMedia: React.PropTypes.shape({
+          url: React.PropTypes.string,
+          aspectRatio: React.PropTypes.number,
+          altText: React.PropTypes.string,
+          srcset: React.PropTypes.array,
+          imageUrl: React.PropTypes.string
         }),
-        cta: PropTypes.shape({
-          url: PropTypes.string,
-          title: PropTypes.string,
-          target: PropTypes.string,
-          seoTitle: PropTypes.string
+        cta: React.PropTypes.shape({
+          url: React.PropTypes.string,
+          title: React.PropTypes.string,
+          target: React.PropTypes.string,
+          seoTitle: React.PropTypes.string
         })
       })
     )

@@ -37,13 +37,13 @@ describe('CTAButton', () => {
           <script type="text/json" data-pestle-options>
           {
             "icon": {
-              "name" : "#map-geolocator",
-              "align" : "left",
-              "alt" : "Map Pin Icon"
+              "name": "#map-geolocator",
+              "align": "left",
+              "alt": "Map Pin Icon"
             },
-            "label" : "Find My Location",
-            "style" : "default",
-            "type" : "button"
+            "label": "Find My Location",
+            "style": "default",
+            "type": "button"
           }
           </script>
         </div>`
@@ -73,7 +73,6 @@ describe('CTAButton', () => {
     let wrapper;
 
     before(() => {
-
       wrapper = shallow(<CTAButtonComponent
         icon={icon}
         label="This is a button"

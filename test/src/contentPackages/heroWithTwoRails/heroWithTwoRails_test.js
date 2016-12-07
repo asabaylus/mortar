@@ -33,7 +33,7 @@ describe('Hero With Two Rails Content Package', () => {
         },
         "leadMedia":[
           {
-          "url":"/content/dam/travel/rights-exempt/Travel-2016/how-explore-pantanal/caiman-swim-pantanal-brazil.jpg",
+          "url":"http:\/\/www.nationalgeographic.com\/content\/dam\/travel\/rights-exempt\/Travel-2016\/how-explore-pantanal\/caiman-swim-pantanal-brazil.jpg",
           "aspectRatio":0.6666666666666666,
           "height":2000,
           "width":3000,

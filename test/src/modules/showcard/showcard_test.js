@@ -4,7 +4,6 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 
 import Pestle from '@natgeo/pestle';
-
 import MTShowCardComponent from '../../../../src/modules/showcard/showCard.js';
 import PromoImage from '../../../../src/modules/promocard/components/shared/PromoImage.js';
 import ShowCard from '../../../../src/modules/showcard/showCardPestle.js';
@@ -56,44 +55,35 @@ describe('ShowCard', () => {
     let wrapper;
 
     const options = {
-        "id": "hero_promocard_0",
-        "type": "show",
-        "config": {
-          "cardAspectRatio": "16:9",
-          "channelMapping":true
-        },
-        "link": {
-          "url": "http://ngm.nationalgeographic.com/2007/05/zambia-wildlife/eckstrom-text",
-          "target": "_blank",
-          "trackingCodes": [
-            "utm_medium=website",
-            "utm_source=site"
-          ]
-        },
-        "leadMedia": [{
-          "url": "http://placehold.it/800x600",
-          "aspectRatio": 0.6667,
-          "altText": "Picture of a caiman swimming underwater in Pantanal, Brazil",
-          "srcset": ["http://placehold.it/400x300 400w", "http://placehold.it/800x600 800w", "http://placehold.it/1600x1200 1600w"]
-        }],
-        "text": {
-          "brandingBadge": "This is a heading",
-          "title": "This is the show title",
-          "time": "8pm"
-        }
+      "id": "hero_promocard_0",
+      "type": "show",
+      "config": {
+        "cardAspectRatio": "16:9",
+        "channelMapping":true
+      },
+      "link": {
+        "url": "http://ngm.nationalgeographic.com/2007/05/zambia-wildlife/eckstrom-text",
+        "target": "_blank",
+        "trackingCodes": [
+          "utm_medium=website",
+          "utm_source=site"
+        ]
+      },
+      "leadMedia": [{
+        "url": "http://placehold.it/800x600",
+        "aspectRatio": 0.6667,
+        "altText": "Picture of a caiman swimming underwater in Pantanal, Brazil",
+        "srcset": ["http://placehold.it/400x300 400w", "http://placehold.it/800x600 800w", "http://placehold.it/1600x1200 1600w"]
+      }],
+      "text": {
+        "brandingBadge": "This is a heading",
+        "title": "This is the show title",
+        "time": "8pm"
+      }
     };
 
     before(() => {
-
-       wrapper = shallow(<MTShowCardComponent
-        id={options.id}
-        type={options.type}
-        config={options.config}
-        link={options.link}
-        leadMedia={options.leadMedia}
-        text={options.text}
-        onClick={()=>{}}
-      />);
+      wrapper = mount(<MTShowCardComponent {...options} onClick={() => {}} />);
     });
 
     it('Should have a containing div', () => {
@@ -128,8 +118,5 @@ describe('ShowCard', () => {
       expect(wrapper.find('PromoImage').props().leadMedia.srcset[1]).to.equal("http://placehold.it/800x600 800w");
       expect(wrapper.find('PromoImage').props().leadMedia.srcset[2]).to.equal("http://placehold.it/1600x1200 1600w");
     });
-
   });
-
 });
-

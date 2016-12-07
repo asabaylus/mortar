@@ -1,13 +1,13 @@
 'use strict';
 
-import React, { Component, PropTypes }  from 'react';
+import React from 'react';
 import {Pestle} from '@natgeo/pestle';
 import events from '../../slider/events';
 
-class Counter extends Component {
 
-  constructor(props) {
-    super(props);
+export default class Counter extends React.Component {
+  constructor() {
+    super();
     this.state = {
       currentSlide : 1,
       firstSlideActive: true,
@@ -32,20 +32,19 @@ class Counter extends Component {
   }
 
   render() {
-
     return (
       <div className="mt3_photogallery-countercontainer">
-          <button className="mt3_h5 mt3_numericcounter-button">{this.state.currentSlide}</button>
-          <span className="mt3_h5">/</span>
-          <button className="mt3_h5 mt3_numericcounter-button">{this.props.slides.length}</button>
+        <button className="mt3_h5 mt3_numericcounter-button">
+          {this.state.currentSlide}</button>
+        <span className="mt3_h5">/</span>
+        <button className="mt3_h5 mt3_numericcounter-button">
+          {this.props.slides.length}</button>
       </div>
     );
   }
 }
 
 Counter.propTypes = {
-  showCounter: PropTypes.bool,
-  slides: PropTypes.array.isRequired
+  showCounter: React.PropTypes.bool,
+  slides: React.PropTypes.array.isRequired
 }
-
-export default Counter;

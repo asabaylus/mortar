@@ -1,38 +1,38 @@
 'use strict';
 
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import _debounce from 'lodash/debounce';
-import $ from 'jquery';
 
 import FourUpComponent from './components/FourUp.js';
 import FiveUpComponent from './components/FiveUp.js';
 import PortalWrapper from '../../util/PortalWrapper';
 import railsParallax from '../../util/parallax/railsParallax';
 
+
 const mobileBreakpoint = 768;
 
-class LeftAndRightContentPackage extends Component {
-  constructor(props) {
-    super(props);
+export default class LeftAndRightContentPackage extends React.Component {
+  constructor() {
+    super();
     this.resizeHandler = null;
-    this._window = $(window);
     this.resetParallax = ::this.resetParallax;
   }
 
   resetParallax() {
-    const viewportHeight = this._window.height();
-    const contentWidth = this.props.parentEl.getBoundingClientRect().width;
+    const viewportHeight = window.innerHeight,
+      { parentEl, parallaxRails } = this.props,
+      contentWidth = parentEl.getBoundingClientRect().width;
 
-    //if the component width is < mobileBreakpoint, cancel parallax effects
+    // if the component width is < mobileBreakpoint, cancel parallax effects
     if (contentWidth < mobileBreakpoint) {
       return;
     }
 
-    //build rails scene
-    if (this.props.parallaxRails) {
+    // build rails scene
+    if (parallaxRails) {
       railsParallax({
-        leftRail: this.props.parentEl.getElementsByClassName("left-rail")[0],
-        rightRail: this.props.parentEl.getElementsByClassName("right-rail")[0],
+        leftRail: parentEl.getElementsByClassName("left-rail")[0],
+        rightRail: parentEl.getElementsByClassName("right-rail")[0],
         viewportHeight: viewportHeight,
         resetFunction: this.resetParallax
       });
@@ -54,37 +54,40 @@ class LeftAndRightContentPackage extends Component {
   }
 
   render() {
-    const portalContent = [
-      <PortalWrapper targetDiv={document.getElementById(this.props.fourUpModel.itemId)} key={"fourUpWrapper"}>
-        <FourUpComponent
-          theme={this.props.theme}
-          initialWidth={this.props.fourUpWidth}
-          model={this.props.fourUpModel}
-        />
-      </PortalWrapper>,
-      <PortalWrapper targetDiv={document.getElementById(this.props.fiveUpModel.itemId)} key={"fiveUpWrapper"}>
-        <FiveUpComponent
-          theme={this.props.theme}
-          initialWidth={this.props.fiveUpWidth}
-          model={this.props.fiveUpModel}
-        />
-      </PortalWrapper>
-    ];
+    const {
+      fiveUpModel,
+      fiveUpWidth,
+      fourUpModel,
+      fourUpWidth,
+      theme,
+    } = this.props;
 
     return (
       <div className="mt3_left-and-right-package__portal-wrap">
-        {portalContent}
+        <PortalWrapper targetDiv={document.getElementById(fourUpModel.itemId)} key={"fourUpWrapper"}>
+          <FourUpComponent
+            theme={theme}
+            initialWidth={fourUpWidth}
+            model={fourUpModel}
+          />
+        </PortalWrapper>
+
+        <PortalWrapper targetDiv={document.getElementById(fiveUpModel.itemId)} key={"fiveUpWrapper"}>
+          <FiveUpComponent
+            theme={theme}
+            initialWidth={fiveUpWidth}
+            model={fiveUpModel}
+          />
+        </PortalWrapper>
       </div>
     )
   }
 }
 
 LeftAndRightContentPackage.propTypes = {
-  parallaxRails: PropTypes.bool
+  parallaxRails: React.PropTypes.bool
 };
 
 LeftAndRightContentPackage.defaultProps = {
   parallaxRails: true
 };
-
-export default LeftAndRightContentPackage;
