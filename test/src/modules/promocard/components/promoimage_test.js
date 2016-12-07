@@ -12,14 +12,26 @@ describe('PromoImage Component', () => {
     const options = {
       "type": "article",
       "config": {
-        "aspectRatio": "photo",
+        "cardAspectRatio": "16:9",
+        "showPlayButton": true,
         "sponsored": true
       },
       "leadMedia": [{
         "url": "http://placehold.it/800x600",
         "aspectRatio": 0.6667,
         "altText": "Picture of a caiman swimming underwater in Pantanal, Brazil",
-        "srcset": ["http://placehold.it/400x300 400w", "http://placehold.it/800x600 800w", "http://placehold.it/1600x1200 1600w"]
+        "srcset": [
+          "http://placehold.it/400x300 400w",
+          "http://placehold.it/800x600 800w",
+          "http://placehold.it/1600x1200 1600w"
+        ],
+        "croppings": {
+          "SixteenNine": [
+            "http://placehold.it/400x225 400w",
+            "http://placehold.it/800x450 800w",
+            "http://placehold.it/1600x900 1600w"
+          ]
+        }
       }],
       link: {
         url: "http://www.google.com",
@@ -36,17 +48,12 @@ describe('PromoImage Component', () => {
       />);
     });
 
-    it('Should log to console', () => {
-      console.log(wrapper.debug());
-      console.log(wrapper.find('PictureFill').childAt(1).props());
-    });
-
     it('Should be of type article', () => {
       expect(wrapper.find('PromoImage').props().type).to.equal("article");
     });
 
     it('Should have config with props', () => {
-      expect(wrapper.find('PromoImage').props().config.aspectRatio).to.equal("photo");
+      expect(wrapper.find('PromoImage').props().config.cardAspectRatio).to.equal("16:9");
       expect(wrapper.find('PromoImage').props().config.sponsored).to.equal(true);
     });
 
@@ -57,6 +64,9 @@ describe('PromoImage Component', () => {
       expect(wrapper.find('PromoImage').props().leadMedia.srcset[0]).to.equal("http://placehold.it/400x300 400w");
       expect(wrapper.find('PromoImage').props().leadMedia.srcset[1]).to.equal("http://placehold.it/800x600 800w");
       expect(wrapper.find('PromoImage').props().leadMedia.srcset[2]).to.equal("http://placehold.it/1600x1200 1600w");
+      expect(wrapper.find('PromoImage').props().leadMedia.croppings.SixteenNine[0]).to.equal("http://placehold.it/400x225 400w");
+      expect(wrapper.find('PromoImage').props().leadMedia.croppings.SixteenNine[1]).to.equal("http://placehold.it/800x450 800w");
+      expect(wrapper.find('PromoImage').props().leadMedia.croppings.SixteenNine[2]).to.equal("http://placehold.it/1600x900 1600w");
     });
 
     it('Should have link with props', () => {
@@ -69,13 +79,11 @@ describe('PromoImage Component', () => {
     });
 
     it('Image component should have props', () => {
+      expect(wrapper.find('Image').props().aspectRatio).to.equal("16:9");
+      expect(wrapper.find('Image').props().frameAspectRatio).to.equal("16:9");
+      expect(wrapper.find('Image').props().lazyLoad).to.equal(false);
       expect(wrapper.find('Image').props().src).to.equal("http://placehold.it/800x600");
       expect(wrapper.find('Image').props().altText).to.equal("Picture of a caiman swimming underwater in Pantanal, Brazil");
-    });
-
-    it('Should have placeholder div', () => {
-      expect(wrapper.find('Frame').childAt(0).type()).to.equal("div");
-      expect(wrapper.find('Frame').childAt(0).props().className).to.equal("modules-images__placeholder");
     });
 
     it('Should have PictureFill component', () => {
@@ -100,5 +108,29 @@ describe('PromoImage Component', () => {
       expect(wrapper.find('.mt3_promocard-text--overlay').childAt(0).props().className).to.equal("mt3_promocardtext--overlay-link");
     });
 
+    it('Text overlay should have a play button', () => {
+      expect(wrapper.find('.mt3_promocard-text--overlay').childAt(1).type()).to.equal("button");
+    });
+
+    it('Button should have a tag with classes and attributes', () => {
+      expect(wrapper.find('.mt3_videopromo-button').childAt(0).type()).to.equal("a");
+      expect(wrapper.find('.mt3_videopromo-button').childAt(0).props().className).to.equal("mt3_promocardtext--overlay-link");
+      expect(wrapper.find('.mt3_videopromo-button').childAt(0).props().href).to.equal("http://www.google.com");
+      expect(wrapper.find('.mt3_videopromo-button').childAt(0).props().target).to.equal("_self");
+    });
+
+    it('Button should have ARIA text', () => {
+      expect(wrapper.find('.mt3_visuallyhidden').props().children).to.equal("Play");
+    });
+
+    it('Button should have containing div for icon', () => {
+      expect(wrapper.find('.mt3_videopromo-button').childAt(2).type()).to.equal("div");
+      expect(wrapper.find('.mt3_videopromo-button').childAt(2).props().className).to.equal("mt3_videopromo-button-container mt3_intratio--natgeo");
+    });
+
+    it('Containing div should have an icon', () => {
+      expect(wrapper.find('.mt3_videopromo-button-container').childAt(0).type()).to.equal("svg");
+      expect(wrapper.find('.mt3_videopromo-button-container').childAt(0).props().className).to.equal("mt3_videopromo-button-icon");
+    });
 
 });
