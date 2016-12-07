@@ -4,6 +4,9 @@ import Pestle from '@natgeo/pestle';
 import VideoPlaylistPestle from '../../../../src/modules/videoplaylist/VideoPlaylistPestle';
 import VideoPlaylist from '../../../../src/modules/videoplaylist/VideoPlaylist';
 import VideoThumbnail from '../../../../src/modules/videoplaylist/VideoThumbnail';
+import VideoCaption from '../../../../src/modules/videoplaylist/VideoCaption';
+
+import 'dotdotdot';
 
 import {shallow} from 'enzyme';
 import React from 'react';
@@ -11,7 +14,7 @@ import React from 'react';
 //this may or may not help with an error we're seeing in the pipeline. Let's give it a shot.
 const START_VIDEO_INDEX = 0;
 
-describe('VideoPlaylist Component', () => {
+describe.only('VideoPlaylist Component', () => {
   describe('Pestle Module', () => {
     before(() => {
       const html = `
@@ -128,27 +131,51 @@ describe('VideoPlaylist Component', () => {
 
   describe('VideoThumbnail Component', () => {
     let wrapper;
+    const onClickThumnail = sinon.spy();
+    const thumbnailModel = {
+      "title": "Wednesday, August 3: New Studies Reveal Secrets From a Dead City",
+      "path": "/content/dam/natgeo/video/mpx/news/p/po/pom/pompeii-new-studies-reveal-secrets-from-a-dead-city.mp4",
+      "abstract": "<p>The remains of Pompeii’s inhabitants provide details about life in the Roman Empire.</p>",
+      "publishDate": "Mon Aug 01 16:14:54 EDT 2016",
+      "thumbnail": "http://pmdvod.nationalgeographic.com/NG_Video/587/943/160728-news-pompeii-italy_txls_split_ds1602001-69~_640x360_737363523925.jpg",
+      "damThumbnail": "/content/dam/natgeo/video/mpx/news/p/po/pom/pompeii-new-studies-reveal-secrets-from-a-dead-city.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png",
+      "directLink": "http://link.theplatform.com/s/ngs/media/guid/2423130747/00000156-47be-dca8-ab77-7ffe94e00000?format=redirect&policy=12441385&manifest=m3u&mbr=true",
+    }
 
-    it('should render correclty', () => {
-      const onClickThumnail = sinon.spy();
-      const thumbnailModel = {
-        "title": "Wednesday, August 3: New Studies Reveal Secrets From a Dead City",
-        "path": "/content/dam/natgeo/video/mpx/news/p/po/pom/pompeii-new-studies-reveal-secrets-from-a-dead-city.mp4",
-        "abstract": "<p>The remains of Pompeii’s inhabitants provide details about life in the Roman Empire.</p>",
-        "publishDate": "Mon Aug 01 16:14:54 EDT 2016",
-        "thumbnail": "http://pmdvod.nationalgeographic.com/NG_Video/587/943/160728-news-pompeii-italy_txls_split_ds1602001-69~_640x360_737363523925.jpg",
-        "damThumbnail": "/content/dam/natgeo/video/mpx/news/p/po/pom/pompeii-new-studies-reveal-secrets-from-a-dead-city.mp4/jcr:content/renditions/cq5dam.thumbnail.319.319.png",
-        "directLink": "http://link.theplatform.com/s/ngs/media/guid/2423130747/00000156-47be-dca8-ab77-7ffe94e00000?format=redirect&policy=12441385&manifest=m3u&mbr=true",
-      }
+    before(() => {
       wrapper = shallow(<VideoThumbnail
         wrapperClass='mt3_video-playlist-container--thumbnail'
         item={thumbnailModel}
         onClick={onClickThumnail}
       />);
+    });
+
+    it('should respond to a click', () => {
       wrapper.simulate('click');
       expect(onClickThumnail.calledOnce, true);
+    });
+
+    it('should have one image', () => {
       expect(wrapper.find('Image').length, 1);
     });
+  });
+
+  describe('VideoCaption Component', () => {
+    let wrapper;
+    const onAnimationEnd = sinon.spy();
+
+    before(() => {
+      wrapper = shallow(<VideoCaption
+        title={'Video Caption Title'}
+        abstract={'This is the video caption abstract'}
+        onAnimationEnd={onAnimationEnd}
+      />);
+      debugger;
+    });
+
+    it('should not have a kicker', () => {
+      expect(wrapper.find('.mt3_kicker').length).to.equal(0);
+    })
 
 
   });
