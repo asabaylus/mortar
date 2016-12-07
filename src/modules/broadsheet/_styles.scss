@@ -224,7 +224,15 @@ $mt3_large: 1280px;
     margin: 0;
     padding: 0;
     position: relative;
-    right: -60px;
+    right: -23px;
+
+    @media(min-width: $mt3_medium + 1) {
+      right: -60px;
+    }
+
+    @media(min-width: $mt3_tiny + 1) and (max-width: $mt3_medium) {
+      right: -47px;
+    }
 
     // ok this sucks, we both know it's badly done -- deal with it
     .mt3_broadsheet-aside-v-background {
@@ -283,33 +291,14 @@ $mt3_large: 1280px;
     }
   }
 
-  .mt3_broadsheet-cover-heading {
-    background: $mt3_color-black;
-    color: $mt3_color-white;
-    padding-bottom: 1rem;
-    text-align: center;
-
-    & > p {
-      font-size: .7rem;
-      margin: 0;
-      padding: 1rem;
-    }
-  }
-
-  .mt3_broadsheet-subscribe-label {
-    font-weight: 600;
-    letter-spacing: .1em;
-    line-height: 1.6;
-  }
-
   section {
     background-color: $mt3_color-white;
     position: relative;
-
-    figure {
-      margin: 0;
-    }
   }
+
+  figure {
+    margin: 0;
+  }  
 
   //specific height rules to match the exact height of the expected text
   &__title {

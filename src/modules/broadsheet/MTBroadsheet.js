@@ -7,7 +7,7 @@ import _delay from 'lodash/delay';
 import Image from '@natgeo/modules-images';
 
 import PromoImage from '../promocard/components/shared/PromoImage';
-import SubscribeCard from '../subscribecard/subscribeCard';
+import SubscribeCard from '../subscribecard/MTSubscribeCard';
 import Captions from '../captions/MTCaptions';
 
 
@@ -24,13 +24,10 @@ class Broadsheet extends Component {
     // if component gets visible (within viewport) sets class for
     // animating yellow border
     const el = this.broadsheet,
-      { top, left, width, height } = el.getBoundingClientRect(),
-      { pageXOffset, pageYOffset,
-        innerWidth, innerHeight } = window;
+      { top, height } = el.getBoundingClientRect(),
+      { innerHeight } = window;
 
-    if (top < (pageYOffset + innerHeight) && left < (pageXOffset + innerWidth)
-      && (top + height) > pageYOffset && (left + width) > pageXOffset)
-    {
+    if (top < innerHeight) {
       // When the BroadSheet enters the viewport animate the gold border, once
       this.broadsheet.classList.add('mt3_broadsheet_wrapper--grow');
       this.removeListeners();
@@ -181,7 +178,7 @@ class Broadsheet extends Component {
               <aside className='mt3_broadsheet-aside'>
                 <div className='mt3_broadsheet-aside-v-background'>
                   {subscribeCardProps ?
-                    <SubscribeCard image = {subscribeCardProps.image}/>
+                    <SubscribeCard model={subscribeCardProps}/>
                   : null}
 
                   {substoryProps && substoryProps.stories.length ?
