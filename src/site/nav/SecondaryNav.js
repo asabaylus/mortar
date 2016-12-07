@@ -7,8 +7,8 @@ import zip from 'lodash/zip';
 const SECONDARY_NAV_FIXED_TOP = 90; // px
 
 export default class SecondaryNav extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.setStickyMenu = ::this.setStickyMenu;
     this.handleStickyMenu = throttle(this.setStickyMenu, 50);
@@ -19,7 +19,7 @@ export default class SecondaryNav extends Component {
   }
 
   componentDidMount() {
-    if(!this.props.sticky) {
+    if (!this.props.sticky) {
       return;
     }
 
@@ -58,7 +58,7 @@ export default class SecondaryNav extends Component {
       'mt3_col-lg-3',
       'secondarynav',
       'mt3_subh4', {
-      'secondarynav-sticky': this.state.fixed
+      'secondarynav-fixed': this.state.fixed
     });
 
     return (
@@ -77,18 +77,6 @@ export default class SecondaryNav extends Component {
     this.setState({
       fixed: isFixed,
     });
-
-    /*if (windowTop + SECONDARY_NAV_FIXED_TOP > this.secondaryNavTop) {
-      Object.assign(this.secondaryNavEl.style, {
-        position: 'fixed',
-        top: SECONDARY_NAV_FIXED_TOP + 'px'
-      });
-    } else {
-      Object.assign(this.secondaryNavEl.style, {
-        position: 'relative',
-        top: ''
-      });
-    }*/
   }
 }
 

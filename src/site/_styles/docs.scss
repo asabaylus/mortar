@@ -402,7 +402,7 @@ hr {
     display: block;
     position: relative;
 
-    &-sticky {
+    &-fixed {
       position: fixed;
       top: $secondary-nav-fixed-top;
     }
