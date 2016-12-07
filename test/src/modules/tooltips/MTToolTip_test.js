@@ -75,7 +75,6 @@ describe('Tooltip', () => {
     it('should have the proper class on the tooltip', () => {
       expect(wrapper.find('.mt3_tooltip').hasClass('mt3_tooltip--top')).to.equal(true);
     });
-
   });
 
   describe('Tooltip :: Open :: Bottom', () => {
