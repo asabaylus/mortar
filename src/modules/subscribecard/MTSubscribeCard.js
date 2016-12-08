@@ -15,12 +15,15 @@ class MTSubscribeCard extends Component {
       leadMedia,
       text } = this.props.model;
 
-    //all data required to render
-    if(!link || !leadMedia || !text || !leadMedia[0]) {
+    //text data required to render
+    if(!text) {
       return false;
     }
 
-    const href = generateHref(link.url, link.trackingCodes);
+    const isImage = leadMedia && leadMedia[0] && (leadMedia[0].src || leadMedia[0].srcset);
+
+
+    const href = link && link.url ? generateHref(link.url, link.trackingCodes) : null;
 
     let textBlock = [];
 
@@ -44,21 +47,24 @@ class MTSubscribeCard extends Component {
 
     return (
       <div className='mt3_subscribe-card'>
-        <a href={href} className="mt3_div-link"/>
+        {href ?
+          <a href={href} className="mt3_div-link"/>
+        : null}
         <div className='mt3_subscribe-card__text'>
           {textBlock}
         </div>
-
-        <Image
-          aspectRatio={leadMedia[0].aspectRatio}
-          frameAspectRatio={imageFrameAspectRatio}
-          letterbox={true}
-          placeholderBackgroundColor={'rgb(0,0,0)'}
-          letterboxBackgroundColor = {'rgb(0,0,0)'}
-          placeholder='none'
-          src={leadMedia[0].imageUrl}
-          srcset={leadMedia[0].srcset}
-        />
+        {isImage ?
+          <Image
+            aspectRatio={leadMedia[0].aspectRatio}
+            frameAspectRatio={imageFrameAspectRatio}
+            letterbox={true}
+            placeholderBackgroundColor={'rgb(0,0,0)'}
+            letterboxBackgroundColor = {'rgb(0,0,0)'}
+            placeholder='none'
+            src={leadMedia[0].imageUrl}
+            srcset={leadMedia[0].srcset}
+          />
+        : null}
       </div>
     );
   }
