@@ -6,15 +6,13 @@ import VideoPlaylist from '../../../../src/modules/videoplaylist/VideoPlaylist';
 import VideoThumbnail from '../../../../src/modules/videoplaylist/VideoThumbnail';
 import VideoCaption from '../../../../src/modules/videoplaylist/VideoCaption';
 
-import 'dotdotdot';
-
 import {shallow} from 'enzyme';
 import React from 'react';
 
 //this may or may not help with an error we're seeing in the pipeline. Let's give it a shot.
 const START_VIDEO_INDEX = 0;
 
-describe.only('VideoPlaylist Component', () => {
+describe('VideoPlaylist Component', () => {
   describe('Pestle Module', () => {
     before(() => {
       const html = `
@@ -160,7 +158,7 @@ describe.only('VideoPlaylist Component', () => {
     });
   });
 
-  describe('VideoCaption Component', () => {
+  describe('VideoCaption Component :: No Kicker', () => {
     let wrapper;
     const onAnimationEnd = sinon.spy();
 
@@ -170,12 +168,95 @@ describe.only('VideoPlaylist Component', () => {
         abstract={'This is the video caption abstract'}
         onAnimationEnd={onAnimationEnd}
       />);
-      debugger;
+    });
+
+    it('should have an empty kicker wrapper', () => {
+      expect(wrapper.find('.mt3_kicker-wrapper').nodes[0].props.children.length).to.equal(0);
+
     });
 
     it('should not have a kicker', () => {
       expect(wrapper.find('.mt3_kicker').length).to.equal(0);
     })
+
+    it('should have the proper headine markup', () => {
+      expect(wrapper.find('span[itemProp="headline"]').html()).to.equal('<span itemprop="headline">Video Caption Title</span>');
+    });
+
+    it('should have the proper abstract markup', () => {
+      expect(wrapper.find('.mt3_caption-container--indent .mt3_caption-body span[itemProp="description"]').html()).to.equal('<span itemprop="description">This is the video caption abstract</span>');
+    });
+  });
+
+  describe('VideoCaption Component :: With Kicker, not linked', () => {
+    let wrapper;
+    const onAnimationEnd = sinon.spy();
+    const kickerObj = {
+        "label": "Wild"
+      };
+
+    before(() => {
+      wrapper = shallow(<VideoCaption
+        title={'Video Caption Title'}
+        abstract={'This is the video caption abstract'}
+        kicker={kickerObj}
+        onAnimationEnd={onAnimationEnd}
+      />);
+    });
+
+
+    it('should have a kicker', () => {
+      expect(wrapper.find('.mt3_kicker').length).to.equal(1);
+    })
+
+    it('should NOT have an anchor tag', () => {
+      expect(wrapper.find('.mt3_kicker').find('a').length).to.equal(0);
+    });
+
+
+    it('should have the proper headine markup', () => {
+      expect(wrapper.find('.mt3_kicker').html()).to.equal('<span class="mt3_kicker mt3_color--white">Wild</span>');
+    });
+
+  });
+
+    describe('VideoCaption Component :: With Kicker, linked', () => {
+    let wrapper;
+    const onAnimationEnd = sinon.spy();
+    const kickerObj = {
+        "label": "Wild",
+        "url": "http://www.google.com"
+      };
+
+    before(() => {
+      wrapper = shallow(<VideoCaption
+        title={'Video Caption Title'}
+        abstract={'This is the video caption abstract'}
+        kicker={kickerObj}
+        onAnimationEnd={onAnimationEnd}
+      />);
+    });
+
+    it('should have the correct className Prop', () => {
+      expect(wrapper.find('.mt3_kicker').props().className).to.equal('mt3_kicker mt3_color--white');
+    });
+
+    it('should have the correct href Prop', () => {
+      expect(wrapper.find('.mt3_kicker').props().href).to.equal('http://www.google.com');
+    });
+
+    it('should have an anchor tag', () => {
+      expect(wrapper.find('.mt3_kicker').find('a').length).to.equal(1);
+    });
+
+    it('should have the proper headine markup', () => {
+      expect(wrapper.find('.mt3_kicker').html()).to.equal('<a class="mt3_kicker mt3_color--white" href="http://www.google.com">Wild</a>');
+    });
+
+    it('animationOnEnd should be fired', () => {
+      wrapper.simulate('onAnimationEnd');
+      expect(onAnimationEnd.calledOnce, true);
+    });
 
 
   });
