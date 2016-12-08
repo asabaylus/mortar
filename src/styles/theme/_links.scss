@@ -17,3 +17,14 @@
 .mt3_textlink {
   @extend %mt3_textlink;
 }
+//absolutely positioned link that will fill container. 
+a.mt3_div-link,
+div.mt3_div-link {
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: zIndex('promocard-middle');
+}

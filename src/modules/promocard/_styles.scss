@@ -59,17 +59,6 @@ $mt3_large: 1280px;
     }
   }
 
-  a.mt3_div-link,
-  div.mt3_div-link {
-    cursor: pointer;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: zIndex('promocard-middle');
-  }
-
   &:-webkit-any-link {
     text-decoration: none;
   }
