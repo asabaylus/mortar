@@ -137,13 +137,11 @@ class Broadsheet extends Component {
                 <div className='mt3_broadsheet-leadMedia-header'>
 
                 {heroKicker ?
-                  <a className='mt3_broadsheet-leadMedia-issue-date mt3_color--white mt3_haas-heading' href={heroKicker.url}>
-                    {heroKicker.label}
-                  </a>
+                  <span className='mt3_broadsheet-leadMedia-issue-date mt3_color--white mt3_haas-heading' dangerouslySetInnerHTML={{__html: heroKicker}} />
                 : null }
 
                 <a className='mt3_broadsheet-leadMedia-title mt3_btn mt3_btn--naked' href={heroUrl}>
-                  <h1 className='mt3_color--white mt3_haas-heading'>{heroTitle}</h1>
+                  <h1 className='mt3_color--white mt3_haas-heading' dangerouslySetInnerHTML={{__html: heroTitle}} />
                   {contributorsBlock.length ?
                     contributorsBlock
                   : null}
@@ -183,13 +181,13 @@ class Broadsheet extends Component {
 
                   {substoryProps && substoryProps.stories.length ?
                     <div>
-                      <p className='mt3_broadsheet-story-also-in mt3_verlag-heading'>{substoryProps.heading}</p>
+                      <p className='mt3_broadsheet-story-also-in mt3_verlag-heading' dangerouslySetInnerHTML={{__html: substoryProps.heading}} />
 
                       <ul className='mt3_body'>
                         {substoryProps.stories.map((item, index) => (
                           <li key={index}>
-                            <h2 className='mt3_broadsheet-story-title mt3_haas-heading mt3_color--black'>{item.text.title}</h2>
-                            <p className='mt3_broadsheet-story-dek mt3_color--gray66'>{item.text.dek}</p>
+                            <h2 className='mt3_broadsheet-story-title mt3_haas-heading mt3_color--black' dangerouslySetInnerHTML={{__html: item.text.title}} />
+                            <p className='mt3_broadsheet-story-dek mt3_color--gray66' dangerouslySetInnerHTML={{__html: item.text.dek}} />
                           </li>
                         ))}
                       </ul>
