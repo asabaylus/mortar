@@ -88,6 +88,10 @@ $mt3_large: 1280px;
       margin: 0;
       padding-bottom: 21px;
       padding-top: 21px;
+
+      .mt3_iconandlabel--horizontal {
+        line-height: 1.2;
+      }
     }
 
   @media(min-width: $mt3_tiny + 1) and (max-width: $mt3_medium) {
