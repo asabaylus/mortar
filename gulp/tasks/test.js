@@ -6,8 +6,7 @@ const eslint = require('gulp-eslint');
 
 gulp.task('test', [
   'eslint',
-  'sasslint',
-  'karma'
+  'sasslint'
 ]);
 
 gulp.task('eslint', function(){
