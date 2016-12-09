@@ -15,7 +15,7 @@ class Broadsheet extends Module {
     if(issue && heroImage) {
       let author,
         body = issue.body,
-        heroKicker,
+        heroKicker = (issue && issue.issueDate) ? issue.issueDate : null,
         heroTitle,
         heroUrl,
         photographer,
