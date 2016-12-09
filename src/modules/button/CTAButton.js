@@ -38,6 +38,7 @@ class CTAButton extends Component {
       inverse,
       inactive,
       label,
+      fullWidth,
       ...props
       } = this.props;
 
@@ -53,8 +54,9 @@ class CTAButton extends Component {
     } else {
       classes = classNames({
         'mt3_btn': true,
-        'mt3_fullwidth': true,
+        'mt3_fullwidth': fullWidth !== false,
         'mt3_btn--default': props.style === 'default',
+        'mt3_btn--alternate': props.style === 'alternate',
         'mt3_btn--default--inactive': inactive && props.style === 'default',
         'mt3_btn--secondary': props.style === 'secondary',
         'mt3_btn--secondary--inactive': inactive && props.style === 'secondary',
@@ -91,6 +93,7 @@ class CTAButton extends Component {
 }
 
 CTAButton.propTypes = {
+  fullWidth: PropTypes.bool,
   icon: PropTypes.shape({
     name: PropTypes.string,
     align: PropTypes.string,
@@ -116,7 +119,7 @@ CTAButton.propTypes = {
   onClick: PropTypes.func,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
-  style: PropTypes.oneOf(['default', 'secondary','naked', 'success', 'error']),
+  style: PropTypes.oneOf(['default', 'alternate', 'secondary','naked', 'success', 'error']),
   type: PropTypes.oneOf(['button', 'submit', 'reset', 'link'])
 }
 

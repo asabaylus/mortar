@@ -24,7 +24,7 @@ class Broadsheet extends Module {
 
       if(issue.text) {
         heroTitle = issue.text.title;
-        heroUrl = issue.url;
+        heroUrl = (issue.link && issue.link.url) ? issue.link.url : null;
         subscribeCardProps = issue.subscribe;
         substoryProps = issue.subStories;
 
