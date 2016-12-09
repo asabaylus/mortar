@@ -5,11 +5,10 @@ import _debounce from 'lodash/debounce';
 import _delay from 'lodash/delay';
 
 import Image from '@natgeo/modules-images';
-
+import CTA from '../button/CTAButton';
 import PromoImage from '../promocard/components/shared/PromoImage';
 import SubscribeCard from '../subscribecard/MTSubscribeCard';
 import Captions from '../captions/MTCaptions';
-
 
 class Broadsheet extends Component {
 
@@ -17,6 +16,7 @@ class Broadsheet extends Component {
     super(props);
     this.reveal = ::this.reveal;
     this.removeListeners = ::this.removeListeners;
+    this.handleClick = ::this.handleClick;
     this.debouncedReveal = _debounce(this.reveal, 500);
   }
 
@@ -37,6 +37,12 @@ class Broadsheet extends Component {
   removeListeners() {
     window.removeEventListener('resize', this.debouncedReveal);
     window.removeEventListener('scroll', this.debouncedReveal);
+  }
+
+  handleClick(url) {
+    if(url) {
+      window.location.href = url;
+    }
   }
 
   componentDidMount() {
@@ -173,8 +179,18 @@ class Broadsheet extends Component {
                 <div id={`${this.props.id}__smartbody`}>
                   {bodyNodes}
                 </div>
+                {heroUrl ?
+                  <div className='mt3_broadsheet-CTA'>
+                    <CTA
+                      label={'Read More'}
+                      style="alternate"
+                      inverse={false}
+                      fullWidth={false}
+                      onClick={() => this.handleClick(heroUrl)}
+                    />
+                  </div>
+                : null }
               </div>
-
               <aside className='mt3_broadsheet-aside'>
                 <div className='mt3_broadsheet-aside-v-background'>
                   {subscribeCardProps ?
